@@ -1,10 +1,3 @@
-export interface Env {
-  DB: D1Database;
-  ADMIN_TOKEN: string;
-  ALLOWED_ORIGINS: string;
-  VAPID_PUBLIC_KEY: string;
-}
-
 interface SubscriptionBody {
   endpoint?: string;
   expirationTime?: number | null;
@@ -52,11 +45,20 @@ function corsHeaders(origin: string | null): HeadersInit {
     : {};
 }
 
-function isAdmin(request: Request, env: Env) {
+async function isAdmin(request: Request, env: Env) {
   const authorization = request.headers.get("authorization");
-  return Boolean(
-    env.ADMIN_TOKEN &&
-      authorization === `Bearer ${env.ADMIN_TOKEN}`,
+  if (!authorization?.startsWith("Bearer ") || !env.ADMIN_TOKEN) return false;
+  const encoder = new TextEncoder();
+  const [providedHash, expectedHash] = await Promise.all([
+    crypto.subtle.digest(
+      "SHA-256",
+      encoder.encode(authorization.slice("Bearer ".length)),
+    ),
+    crypto.subtle.digest("SHA-256", encoder.encode(env.ADMIN_TOKEN)),
+  ]);
+  return crypto.subtle.timingSafeEqual(
+    new Uint8Array(providedHash),
+    new Uint8Array(expectedHash),
   );
 }
 
@@ -126,7 +128,9 @@ async function handleSubscriptions(
     if (
       !body?.endpoint ||
       body.endpoint.length > MAX_ENDPOINT_LENGTH ||
-      (request.headers.has("origin") && !origin && !isAdmin(request, env))
+      (request.headers.has("origin") &&
+        !origin &&
+        !(await isAdmin(request, env)))
     ) {
       return json({ error: "Invalid request" }, 400, corsHeaders(origin));
     }
@@ -137,7 +141,9 @@ async function handleSubscriptions(
   }
 
   if (request.method === "GET") {
-    if (!isAdmin(request, env)) return json({ error: "Unauthorized" }, 401);
+    if (!(await isAdmin(request, env))) {
+      return json({ error: "Unauthorized" }, 401);
+    }
     const url = new URL(request.url);
     const limit = Math.min(
       Math.max(Number.parseInt(url.searchParams.get("limit") ?? "250", 10), 1),
@@ -168,7 +174,9 @@ async function handleBroadcastClaim(request: Request, env: Env) {
   if (request.method !== "POST") {
     return json({ error: "Method not allowed" }, 405);
   }
-  if (!isAdmin(request, env)) return json({ error: "Unauthorized" }, 401);
+  if (!(await isAdmin(request, env))) {
+    return json({ error: "Unauthorized" }, 401);
+  }
   const body = await parseJson<{ fetchedAt?: string }>(request);
   if (
     !body?.fetchedAt ||

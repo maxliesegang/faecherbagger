@@ -11,60 +11,38 @@ limits and stays inside the free tier.
 Requirements: a free Cloudflare account and administrator access to the GitHub
 repository.
 
-1. Generate one VAPID key pair and a separate administrator token:
+The production resources for this repository are already provisioned:
 
-   ```bash
-   npm run push:keys
-   openssl rand -hex 32
-   ```
+- Worker: `https://faecherbagger-push.faecherbagger.workers.dev`
+- D1 database: `faecherbagger-push` in Western Europe
+- Allowed web origin: `https://maxliesegang.github.io`
 
-   Keep the private key and administrator token secret. VAPID keys must remain
-   stable; replacing them invalidates existing browser subscriptions.
+The one-time provisioning was performed with:
 
-2. Authenticate Wrangler and create the free D1 database:
+```bash
+npx wrangler login
+npx wrangler d1 create faecherbagger-push --location weur
+npm run push:db:init:remote
+npm run push:deploy
+npm run push:secrets:setup
+npm run push:github:setup
+```
 
-   ```bash
-   npx wrangler login
-   npx wrangler d1 create faecherbagger-push
-   ```
+`push:secrets:setup` refuses to overwrite an existing local secret set because
+rotating VAPID keys invalidates every current browser subscription. The ignored
+file `push-worker/.production-secrets.local.json` is mode `0600` and is the
+recovery copy for the GitHub Actions secrets.
 
-3. In `wrangler.jsonc`:
+The GitHub repository contains these values:
 
-   - replace `REPLACE_WITH_D1_DATABASE_ID` with the returned database ID;
-   - replace the `ALLOWED_ORIGINS` placeholder with the Pages origin, for
-     example `https://example.github.io` (no path).
+| Kind | Names |
+| --- | --- |
+| Variables | `PUSH_API_URL`, `APP_URL`, `VAPID_PUBLIC_KEY`, `VAPID_SUBJECT` |
+| Secrets | `PUSH_ADMIN_TOKEN`, `VAPID_PRIVATE_KEY` |
 
-4. Configure the Worker secrets, initialize D1, and deploy:
-
-   ```bash
-   npx wrangler secret put ADMIN_TOKEN --config push-worker/wrangler.jsonc
-   npx wrangler secret put VAPID_PUBLIC_KEY --config push-worker/wrangler.jsonc
-   npm run push:db:init:remote
-   npm run push:deploy
-   ```
-
-5. Add these GitHub repository **variables**:
-
-   | Name | Value |
-   | --- | --- |
-   | `PUSH_API_URL` | Worker URL printed by `push:deploy` |
-   | `APP_URL` | Full Pages app URL, including `/faecherbagger/` |
-   | `VAPID_PUBLIC_KEY` | Generated public VAPID key |
-   | `VAPID_SUBJECT` | A contact `mailto:` URL or the HTTPS app URL |
-
-6. Add these GitHub repository **secrets**:
-
-   | Name | Value |
-   | --- | --- |
-   | `PUSH_ADMIN_TOKEN` | Random administrator token from step 1 |
-   | `VAPID_PRIVATE_KEY` | Generated private VAPID key |
-   | `CLOUDFLARE_API_TOKEN` | Token allowed to edit Workers, Worker secrets, and D1 |
-   | `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID |
-
-7. Run the **Deploy to GitHub Pages** workflow once. The public
-   `PUSH_API_URL` variable is embedded during the Vite build. Future Worker
-   changes can be deployed through the manually triggered **Deploy push
-   worker** workflow.
+Future Worker deployments can be done locally with `npm run push:deploy`.
+Alternatively, configure `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` as
+GitHub secrets and run the manual **Deploy push worker** workflow.
 
 ## Local Worker
 

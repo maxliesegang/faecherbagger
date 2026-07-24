@@ -3,15 +3,21 @@
   "name": "faecherbagger-push",
   "main": "src/index.ts",
   "compatibility_date": "2026-07-24",
+  "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "vars": {
-    "ALLOWED_ORIGINS": "https://REPLACE_WITH_GITHUB_PAGES_ORIGIN"
+    "ALLOWED_ORIGINS": "https://maxliesegang.github.io"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": { "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.05 }
   },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "faecherbagger-push",
-      "database_id": "REPLACE_WITH_D1_DATABASE_ID"
+      "database_id": "f008673f-a0fb-4d56-9ca8-b31238a0ce70"
     }
   ]
 }

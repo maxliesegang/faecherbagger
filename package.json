@@ -17,6 +17,8 @@
     "test:watch": "vitest",
     "data": "tsx scripts/fetch-baustellen.ts",
     "push:keys": "tsx scripts/generate-vapid-keys.ts",
+    "push:secrets:setup": "tsx scripts/configure-push-secrets.ts",
+    "push:github:setup": "tsx scripts/configure-github-push.ts",
     "push:send": "tsx scripts/send-push.ts",
     "push:dev": "wrangler dev --config push-worker/wrangler.jsonc",
     "push:deploy": "wrangler deploy --config push-worker/wrangler.jsonc",
@@ -31,13 +33,13 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20260724.1",
     "@types/geojson": "^7946.0.16",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@types/web-push": "^3.6.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "libsodium-wrappers": "^0.8.4",
     "tsx": "^4.19.2",
     "typescript": "^5.7.0",
     "vite": "^6.0.0",

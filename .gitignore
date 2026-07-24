@@ -21,3 +21,5 @@ npm-debug.log*
 .wrangler/
 .dev.vars
 push-worker/.dev.vars
+push-worker/.production-secrets.local.json
+*.cpuprofile
