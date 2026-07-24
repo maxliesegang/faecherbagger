@@ -53,12 +53,12 @@ async function main(): Promise<void> {
     return normalized;
   }));
   const records: Baustelle[] = recordsByPhase.flat();
-  records.sort((a, b) => a.id.localeCompare(b.id));
+  records.sort((left, right) => left.id.localeCompare(right.id));
 
   if (unknownArt.size > 0) {
     console.warn(
       `Unknown 'art' values mapped to "other": ${[...unknownArt]
-        .map((a) => JSON.stringify(a))
+        .map((art) => JSON.stringify(art))
         .join(", ")}`,
     );
   }
@@ -72,18 +72,20 @@ async function main(): Promise<void> {
   const changes = computeChanges(previous, records, previousMeta?.fetchedAt ?? null);
 
   const fetchedAt = new Date().toISOString();
-  const attribution = [...new Set(records.map((r) => r.source))].sort();
+  const attribution = [
+    ...new Set(records.map((record) => record.source)),
+  ].sort();
   const meta: Meta = {
     fetchedAt,
     recordCount: records.length,
     counts: {
-      active: records.filter((r) => r.phase === "active").length,
-      upcoming: records.filter((r) => r.phase === "upcoming").length,
+      active: records.filter((record) => record.phase === "active").length,
+      upcoming: records.filter((record) => record.phase === "upcoming").length,
     },
     source: {
       name: "TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal",
       url: WFS_BASE,
-      layers: PHASES.map((p) => LAYERS[p]),
+      layers: PHASES.map((phase) => LAYERS[phase]),
     },
     attribution,
   };

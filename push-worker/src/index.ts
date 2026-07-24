@@ -1,3 +1,5 @@
+import { isNotificationArea } from "../../src/lib/notification-area-validation.ts";
+
 interface SubscriptionBody {
   endpoint?: string;
   expirationTime?: number | null;
@@ -14,8 +16,6 @@ interface SubscriptionBody {
 const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
 const MAX_ENDPOINT_LENGTH = 4096;
 const MAX_KEY_LENGTH = 512;
-const MIN_RADIUS_KM = 1;
-const MAX_RADIUS_KM = 50;
 
 function json(data: unknown, status = 200, extraHeaders?: HeadersInit) {
   return new Response(JSON.stringify(data), {
@@ -93,29 +93,12 @@ function validSubscription(value: SubscriptionBody) {
 function parseNotificationPreferences(
   preferences: SubscriptionBody["preferences"],
 ) {
-  if (!preferences || !Array.isArray(preferences.center)) return null;
+  if (!isNotificationArea(preferences)) return null;
   const [longitude, latitude] = preferences.center;
-  const radiusKm = preferences.radiusKm;
-  if (
-    typeof longitude !== "number" ||
-    !Number.isFinite(longitude) ||
-    longitude < -180 ||
-    longitude > 180 ||
-    typeof latitude !== "number" ||
-    !Number.isFinite(latitude) ||
-    latitude < -90 ||
-    latitude > 90 ||
-    typeof radiusKm !== "number" ||
-    !Number.isFinite(radiusKm) ||
-    radiusKm < MIN_RADIUS_KM ||
-    radiusKm > MAX_RADIUS_KM
-  ) {
-    return null;
-  }
   return {
     longitude,
     latitude,
-    radiusMeters: Math.round(radiusKm * 1_000),
+    radiusMeters: Math.round(preferences.radiusKm * 1_000),
   };
 }
 

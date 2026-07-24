@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import {
   KernAlert,
   KernContainer,
@@ -7,33 +7,35 @@ import {
   KernLink,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import type { Baustelle, Meta, NotificationArea } from "./types/index.ts";
-import { loadBaustellen, loadMeta } from "./lib/data.ts";
-import { applyFilters, EMPTY_FILTERS, type Filters } from "./lib/filter.ts";
+import type { NotificationArea } from "./types/index.ts";
+import {
+  applyFilters,
+  EMPTY_FILTERS,
+  type Filters,
+} from "./lib/filter.ts";
 import { BaustellenFilter } from "./components/BaustellenFilter.tsx";
 import { BaustellenTable } from "./components/BaustellenTable.tsx";
-import { BaustellenMap } from "./components/BaustellenMap.tsx";
 import { LocationControl } from "./components/LocationControl.tsx";
 import { PwaControls } from "./components/PwaControls.tsx";
 import { useCurrentLocation } from "./hooks/useCurrentLocation.ts";
-import { isEmptyFilters } from "./lib/filter.ts";
+import { useBaustellenData } from "./hooks/useBaustellenData.ts";
 import {
   loadNotificationArea,
   saveNotificationArea,
 } from "./lib/notification-area.ts";
 import "./App.css";
 
-type LoadState =
-  | { status: "loading" }
-  | { status: "ready"; meta: Meta; baustellen: Baustelle[] }
-  | { status: "error"; message: string };
+const BaustellenMap = lazy(() =>
+  import("./components/BaustellenMap.tsx").then((module) => ({
+    default: module.BaustellenMap,
+  })),
+);
 
 /**
- * Loads the static JSON (`meta.json` + `baustellen.json`) on mount and renders
- * the construction sites as a sortable summary plus a table.
+ * Renders the construction sites as a filterable map and sortable list.
  */
 export function App() {
-  const [state, setState] = useState<LoadState>({ status: "loading" });
+  const state = useBaustellenData();
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS);
   const [view, setView] = useState<"map" | "list">("map");
   const [selectedId, setSelectedId] = useState<string | undefined>(() => {
@@ -51,38 +53,23 @@ export function App() {
   );
 
   useEffect(() => {
-    const controller = new AbortController();
-    const refresh = () =>
-      Promise.all([
-        loadMeta(controller.signal),
-        loadBaustellen(controller.signal),
-      ])
-      .then(([meta, baustellen]) => setState({ status: "ready", meta, baustellen }))
-      .catch((error: unknown) => {
-        if (controller.signal.aborted) return;
-        setState({
-          status: "error",
-          message: error instanceof Error ? error.message : "Unbekannter Fehler",
-        });
-      });
-    void refresh();
-
-    const onWorkerMessage = (event: MessageEvent) => {
+    const focusSearch = (event: KeyboardEvent) => {
       if (
-        event.data?.type === "DATA_UPDATED" ||
-        event.data?.type === "REFRESH_VIEW"
+        event.key !== "/" ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        event.target instanceof HTMLInputElement ||
+        event.target instanceof HTMLTextAreaElement ||
+        event.target instanceof HTMLSelectElement
       ) {
-        void refresh();
+        return;
       }
+      event.preventDefault();
+      document.querySelector<HTMLInputElement>("#filter-search")?.focus();
     };
-    navigator.serviceWorker?.addEventListener("message", onWorkerMessage);
-    return () => {
-      controller.abort();
-      navigator.serviceWorker?.removeEventListener(
-        "message",
-        onWorkerMessage,
-      );
-    };
+    window.addEventListener("keydown", focusSearch);
+    return () => window.removeEventListener("keydown", focusSearch);
   }, []);
 
   return (
@@ -98,7 +85,8 @@ export function App() {
               <KernText className="app-hero__eyebrow">Region Karlsruhe</KernText>
               <KernHeading level={1}>Baustellen im Blick</KernHeading>
               <KernText className="app-hero__intro">
-                Aktuelle und geplante Straßenbaustellen schnell finden.
+                Aktuelle und geplante Straßenbaustellen schnell finden,
+                vergleichen und im Blick behalten.
               </KernText>
             </div>
             {state.status === "ready" && (
@@ -129,17 +117,17 @@ export function App() {
               <section className="overview" aria-label="Übersicht">
                 <div className="overview__item overview__item--active">
                   <span className="overview__value">{state.meta.counts.active}</span>
-                  <span className="overview__label">Aktuell</span>
+                  <span className="overview__label">aktuell</span>
                 </div>
                 <div className="overview__item overview__item--upcoming">
                   <span className="overview__value">
                     {state.meta.counts.upcoming}
                   </span>
-                  <span className="overview__label">Geplant</span>
+                  <span className="overview__label">geplant</span>
                 </div>
                 <div className="overview__item">
                   <span className="overview__value">{state.meta.recordCount}</span>
-                  <span className="overview__label">Insgesamt</span>
+                  <span className="overview__label">insgesamt</span>
                 </div>
               </section>
 
@@ -150,22 +138,23 @@ export function App() {
                 onReset={() => setFilters(EMPTY_FILTERS)}
               />
 
-              <LocationControl location={location} />
-
-              <PwaControls
-                location={location}
-                notificationArea={notificationArea}
-                onNotificationAreaChange={(area) => {
-                  saveNotificationArea(area);
-                  setNotificationArea(area);
-                }}
-              />
+              <aside className="personal-tools" aria-label="Persönliche Werkzeuge">
+                <LocationControl location={location} />
+                <PwaControls
+                  location={location}
+                  notificationArea={notificationArea}
+                  onNotificationAreaChange={(area) => {
+                    saveNotificationArea(area);
+                    setNotificationArea(area);
+                  }}
+                />
+              </aside>
 
               <section className="results" aria-labelledby="results-heading">
                 <div className="results__header">
-                  <div>
+                  <div className="results__summary">
                     <KernHeading level={2} id="results-heading">
-                      Baustellen
+                      Ergebnisse
                     </KernHeading>
                     <KernText muted aria-live="polite" aria-atomic="true">
                       {filtered.length === state.baustellen.length
@@ -173,19 +162,7 @@ export function App() {
                         : `${filtered.length} von ${state.baustellen.length} Einträgen`}
                     </KernText>
                   </div>
-                  {!isEmptyFilters(filters) && (
-                    <button
-                      type="button"
-                      className="results__reset"
-                      onClick={() => setFilters(EMPTY_FILTERS)}
-                    >
-                      Alle Filter löschen
-                    </button>
-                  )}
-                </div>
-
-                {filtered.length > 0 ? (
-                  <>
+                  {filtered.length > 0 && (
                     <div
                       className="view-switcher"
                       role="group"
@@ -208,20 +185,40 @@ export function App() {
                         Liste
                       </button>
                     </div>
+                  )}
+                </div>
 
+                {filtered.length > 0 ? (
+                  <>
                     {view === "map" ? (
-                      <BaustellenMap
-                        records={filtered}
-                        selectedId={selectedId}
-                        currentLocation={
-                          location.state.status === "ready"
-                            ? location.state.point
-                            : undefined
+                      <Suspense
+                        fallback={
+                          <div
+                            className="app-status"
+                            role="status"
+                            aria-live="polite"
+                          >
+                            <span
+                              className="app-status__spinner"
+                              aria-hidden="true"
+                            />
+                            <KernText>Karte wird geladen …</KernText>
+                          </div>
                         }
-                        notificationArea={notificationArea ?? undefined}
-                        onSelect={setSelectedId}
-                        onShowList={() => setView("list")}
-                      />
+                      >
+                        <BaustellenMap
+                          records={filtered}
+                          selectedId={selectedId}
+                          currentLocation={
+                            location.state.status === "ready"
+                              ? location.state.point
+                              : undefined
+                          }
+                          notificationArea={notificationArea ?? undefined}
+                          onSelect={setSelectedId}
+                          onShowList={() => setView("list")}
+                        />
+                      </Suspense>
                     ) : (
                       <BaustellenTable
                         records={filtered}

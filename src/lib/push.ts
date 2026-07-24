@@ -1,3 +1,5 @@
+import type { NotificationArea } from "../types/index.ts";
+
 const PUSH_API_URL = import.meta.env.VITE_PUSH_API_URL?.replace(/\/+$/, "");
 
 export const isPushConfigured = Boolean(PUSH_API_URL);
@@ -100,4 +102,3 @@ export async function unsubscribeFromPush() {
     await subscription.unsubscribe();
   }
 }
-import type { NotificationArea } from "../types/index.ts";

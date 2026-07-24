@@ -67,20 +67,23 @@ export const CLOSURE_VALUES: ClosureSeverity[] = [
 /** Both phases, current first (for filter dropdowns). */
 export const PHASE_VALUES: Phase[] = ["active", "upcoming"];
 
-export const categoryLabel = (c: Category): string => CATEGORY_LABELS[c];
-export const closureLabel = (c: ClosureSeverity): string => CLOSURE_LABELS[c];
-export const closureVariant = (c: ClosureSeverity): BadgeVariant =>
-  CLOSURE_VARIANTS[c];
-export const phaseLabel = (p: Phase): string => PHASE_LABELS[p];
-export const phaseVariant = (p: Phase): BadgeVariant => PHASE_VARIANTS[p];
+export const categoryLabel = (category: Category): string =>
+  CATEGORY_LABELS[category];
+export const closureLabel = (closure: ClosureSeverity): string =>
+  CLOSURE_LABELS[closure];
+export const closureVariant = (closure: ClosureSeverity): BadgeVariant =>
+  CLOSURE_VARIANTS[closure];
+export const phaseLabel = (phase: Phase): string => PHASE_LABELS[phase];
+export const phaseVariant = (phase: Phase): BadgeVariant =>
+  PHASE_VARIANTS[phase];
 
-const DATE_FMT = new Intl.DateTimeFormat("de-DE", {
+const DATE_FORMAT = new Intl.DateTimeFormat("de-DE", {
   day: "2-digit",
   month: "2-digit",
   year: "numeric",
 });
 
-const TIMESTAMP_FMT = new Intl.DateTimeFormat("de-DE", {
+const TIMESTAMP_FORMAT = new Intl.DateTimeFormat("de-DE", {
   dateStyle: "short",
   timeStyle: "short",
 });
@@ -101,13 +104,13 @@ export function formatDate(iso: string): string {
   }
 
   const date = new Date(iso);
-  return Number.isNaN(date.getTime()) ? iso : DATE_FMT.format(date);
+  return Number.isNaN(date.getTime()) ? iso : DATE_FORMAT.format(date);
 }
 
 /** Formats an ISO timestamp for display; passes through invalid input. */
 export function formatTimestamp(iso: string): string {
   const date = new Date(iso);
-  return Number.isNaN(date.getTime()) ? iso : TIMESTAMP_FMT.format(date);
+  return Number.isNaN(date.getTime()) ? iso : TIMESTAMP_FORMAT.format(date);
 }
 
 /** Renders a start/end range; open-ended (`null` end) shows as `"ab <start>"`. */

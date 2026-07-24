@@ -56,18 +56,21 @@ const ENTITIES: Record<string, string> = {
  */
 export function sanitizeText(raw: string | null | undefined): string | null {
   if (!raw) return null;
-  let s = raw
+  let text = raw
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<[^>]+>/g, "")
-    .replace(/&#?\w+;/g, (m) => ENTITIES[m.toLowerCase()] ?? ENTITIES[m] ?? m)
+    .replace(
+      /&#?\w+;/g,
+      (entity) => ENTITIES[entity.toLowerCase()] ?? ENTITIES[entity] ?? entity,
+    )
     .replace(/\r\n?/g, "\n");
-  s = s
+  text = text
     .split("\n")
     .map((line) => line.replace(/[ \t]+/g, " ").trim())
     .join("\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
-  return s.length > 0 ? s : null;
+  return text.length > 0 ? text : null;
 }
 
 function toLngLat(position: Position): LngLat | null {
@@ -118,7 +121,7 @@ function buildGeometry(
 export function normalizeFeatures(
   features: readonly WfsBaustelleFeature[],
   phase: Phase,
-  opts: NormalizeOptions = {},
+  options: NormalizeOptions = {},
 ): Baustelle[] {
   const groups = new Map<string, WfsBaustelleFeature[]>();
   for (const feature of features) {
@@ -132,7 +135,7 @@ export function normalizeFeatures(
 
   const records: Baustelle[] = [];
   for (const [vorgangsnummer, members] of groups) {
-    const p = members[0]!.properties;
+    const properties = members[0]!.properties;
 
     const points: LngLat[] = [];
     const areaGeometries: Geometry[] = [];
@@ -140,9 +143,9 @@ export function normalizeFeatures(
       collectGeometryParts(member.geometry, points, areaGeometries);
     }
 
-    const startDate = toBerlinDate(p.vorgangszeitraum_von);
+    const startDate = toBerlinDate(properties.vorgangszeitraum_von);
     if (startDate == null) {
-      opts.onWarn?.(`Skipping ${vorgangsnummer}: missing start date`);
+      options.onWarn?.(`Skipping ${vorgangsnummer}: missing start date`);
       continue;
     }
 
@@ -151,34 +154,34 @@ export function normalizeFeatures(
         ? meanPoint(points)
         : firstCoordinate(areaGeometries);
     if (point == null) {
-      opts.onWarn?.(`Skipping ${vorgangsnummer}: no usable geometry`);
+      options.onWarn?.(`Skipping ${vorgangsnummer}: no usable geometry`);
       continue;
     }
 
     records.push({
       id: vorgangsnummer,
       phase,
-      category: mapCategory(p.art, opts.onUnknownArt),
-      artRaw: p.art ?? "",
-      closure: mapClosure(p.sperrung),
-      siteType: mapSiteType(p.tagesbaustelle),
-      municipality: p.gemeinde ?? "",
-      location: (p.lage ?? "").trim(),
-      notes: sanitizeText(p.zusatzinfo),
-      cause: sanitizeText(p.verursacher),
+      category: mapCategory(properties.art, options.onUnknownArt),
+      artRaw: properties.art ?? "",
+      closure: mapClosure(properties.sperrung),
+      siteType: mapSiteType(properties.tagesbaustelle),
+      municipality: properties.gemeinde ?? "",
+      location: (properties.lage ?? "").trim(),
+      notes: sanitizeText(properties.zusatzinfo),
+      cause: sanitizeText(properties.verursacher),
       startDate,
-      endDate: toBerlinDate(p.vorgangszeitraum_bis),
+      endDate: toBerlinDate(properties.vorgangszeitraum_bis),
       point,
       geometry: buildGeometry(
         areaGeometries,
         points.length > 0 ? points : [point],
       ),
-      source: p.datenquelle ?? "",
-      lastModified: p.stand ?? "",
+      source: properties.datenquelle ?? "",
+      lastModified: properties.stand ?? "",
     });
   }
 
-  records.sort((a, b) => a.id.localeCompare(b.id));
+  records.sort((left, right) => left.id.localeCompare(right.id));
   return records;
 }
 
@@ -218,22 +221,22 @@ function firstCoordinate(geometries: readonly Geometry[]): LngLat | null {
   return null;
 }
 
-function firstPosition(g: Geometry): Position | null {
-  switch (g.type) {
+function firstPosition(geometry: Geometry): Position | null {
+  switch (geometry.type) {
     case "Point":
-      return g.coordinates;
+      return geometry.coordinates;
     case "LineString":
     case "MultiPoint":
-      return g.coordinates[0] ?? null;
+      return geometry.coordinates[0] ?? null;
     case "Polygon":
     case "MultiLineString":
-      return g.coordinates[0]?.[0] ?? null;
+      return geometry.coordinates[0]?.[0] ?? null;
     case "MultiPolygon":
-      return g.coordinates[0]?.[0]?.[0] ?? null;
+      return geometry.coordinates[0]?.[0]?.[0] ?? null;
     case "GeometryCollection":
-      for (const sub of g.geometries) {
-        const pos = firstPosition(sub);
-        if (pos) return pos;
+      for (const child of geometry.geometries) {
+        const position = firstPosition(child);
+        if (position) return position;
       }
       return null;
     default:

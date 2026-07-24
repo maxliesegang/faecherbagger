@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import {
   KernAlert,
   KernButton,
-  KernHeading,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import {
@@ -57,6 +56,10 @@ function sendToWorker(message: object) {
     );
   });
 }
+
+/** Message from a caught error, falling back to a localized default. */
+const errorMessage = (error: unknown, fallback: string): string =>
+  error instanceof Error ? error.message : fallback;
 
 export function PwaControls({
   location,
@@ -151,9 +154,10 @@ export function PwaControls({
       setFeedback(message);
     } catch (error) {
       setFeedback(
-        error instanceof Error
-          ? error.message
-          : "Der Benachrichtigungsradius konnte nicht gespeichert werden.",
+        errorMessage(
+          error,
+          "Der Benachrichtigungsradius konnte nicht gespeichert werden.",
+        ),
       );
     } finally {
       setSavingArea(false);
@@ -178,9 +182,7 @@ export function PwaControls({
       );
     } catch (error) {
       setFeedback(
-        error instanceof Error
-          ? error.message
-          : "Der Standort konnte nicht bestimmt werden.",
+        errorMessage(error, "Der Standort konnte nicht bestimmt werden."),
       );
     }
   };
@@ -226,9 +228,10 @@ export function PwaControls({
       localStorage.setItem(NOTIFICATIONS_KEY, "false");
       setNotificationsEnabled(false);
       setFeedback(
-        error instanceof Error
-          ? error.message
-          : "Benachrichtigungen konnten nicht aktiviert werden.",
+        errorMessage(
+          error,
+          "Benachrichtigungen konnten nicht aktiviert werden.",
+        ),
       );
     }
   };
@@ -241,9 +244,10 @@ export function PwaControls({
       setFeedback("Baustellenbenachrichtigungen sind ausgeschaltet.");
     } catch (error) {
       setFeedback(
-        error instanceof Error
-          ? error.message
-          : "Benachrichtigungen konnten nicht ausgeschaltet werden.",
+        errorMessage(
+          error,
+          "Benachrichtigungen konnten nicht ausgeschaltet werden.",
+        ),
       );
     }
   };
@@ -256,22 +260,25 @@ export function PwaControls({
     setInstallPrompt(undefined);
   };
 
-  const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-  const canOfferNotifications = !isiOS || installed;
+  const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const canOfferNotifications = !isIos || installed;
 
   return (
-    <section className="pwa-panel" aria-labelledby="pwa-heading">
-      <div>
-        <KernHeading level={2} id="pwa-heading">
-          App und Benachrichtigungen
-        </KernHeading>
-        <KernText>
-          Installieren Sie Fächerbagger für schnellen Zugriff und aktuelle
-          Baustellendaten – auch bei einer schlechten Verbindung.
+    <details className="kern-accordion pwa-panel">
+      <summary className="kern-accordion__header">
+        <span className="kern-title">
+          {notificationsEnabled
+            ? "Benachrichtigungen sind aktiv"
+            : "App & Benachrichtigungen"}
+        </span>
+      </summary>
+      <section className="kern-accordion__body pwa-panel__body">
+        <KernText className="pwa-panel__intro">
+          Neue Baustellen in Ihrem Umkreis melden lassen, App installieren oder
+          Daten manuell aktualisieren.
         </KernText>
-      </div>
 
-      <fieldset className="pwa-panel__area">
+        <fieldset className="pwa-panel__area">
         <legend>Gebiet für neue Baustellen</legend>
         <KernText>
           Mittelpunkt ist Ihr gewählter Standort. Der Kreis wird auf der Karte
@@ -319,9 +326,9 @@ export function PwaControls({
             Standort.
           </KernText>
         )}
-      </fieldset>
+        </fieldset>
 
-      <div className="pwa-panel__actions">
+        <div className="pwa-panel__actions">
         {!installed && installPrompt && (
           <KernButton
             type="button"
@@ -358,38 +365,38 @@ export function PwaControls({
             setFeedback("Aktualisierung wurde angefordert.");
           }}
         />
-      </div>
+        </div>
 
-      {!installed && !installPrompt && isiOS && (
+        {!installed && !installPrompt && isIos && (
         <KernText muted className="pwa-panel__hint">
           Auf iPhone/iPad: In Safari „Teilen“ und danach „Zum Home-Bildschirm“
           wählen. Benachrichtigungen sind anschließend in der installierten App
           verfügbar.
         </KernText>
-      )}
-      {!isPushConfigured && (
+        )}
+        {!isPushConfigured && (
         <KernText muted className="pwa-panel__hint">
           Der Web-Push-Dienst muss für diese Bereitstellung noch konfiguriert
           werden.
         </KernText>
-      )}
-      {isPushConfigured && (
+        )}
+        {isPushConfigured && (
         <KernText muted className="pwa-panel__hint">
           Beim Aktivieren wird eine anonyme Geräteadresse beim
           Benachrichtigungsdienst gespeichert. Mittelpunkt und Radius werden
           nur zur Auswahl passender neuer Baustellen verwendet. Beim
           Ausschalten wird die Geräteadresse einschließlich Gebiet gelöscht.
         </KernText>
-      )}
-      {notificationsEnabled && !notificationArea && (
+        )}
+        {notificationsEnabled && !notificationArea && (
         <KernAlert variant="warning" title="Benachrichtigungsgebiet fehlt">
           <KernText>
             Legen Sie einen Standort und Radius fest, damit nur passende neue
             Baustellen gemeldet werden.
           </KernText>
         </KernAlert>
-      )}
-      {notificationState === "denied" && (
+        )}
+        {notificationState === "denied" && (
         <KernAlert
           variant="warning"
           title="Benachrichtigungen sind blockiert"
@@ -399,12 +406,13 @@ export function PwaControls({
             Ihres Geräts frei.
           </KernText>
         </KernAlert>
-      )}
-      {feedback && (
+        )}
+        {feedback && (
         <KernText className="pwa-panel__feedback" aria-live="polite">
           {feedback}
         </KernText>
-      )}
-    </section>
+        )}
+      </section>
+    </details>
   );
 }

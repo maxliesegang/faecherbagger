@@ -1,10 +1,17 @@
 .baustellen-table {
-  max-height: 72vh;
+  max-height: 68vh;
   border-bottom: 1px solid var(--kern-color-layout-border, #c9c9c9);
 }
 
 .baustellen-table .kern-table {
-  min-width: 76rem;
+  min-width: 72rem;
+  font-size: 0.925rem;
+}
+
+.baustellen-table .kern-table__cell,
+.baustellen-table .kern-table__header {
+  padding-block: 0.45rem;
+  padding-inline: 0.65rem;
 }
 
 .baustellen-table .kern-table__head {
@@ -130,7 +137,7 @@
   }
 
   .baustellen-card {
-    padding: 0.9rem 1rem;
+    padding: 0.75rem 0.85rem;
     border: 1px solid var(--kern-color-layout-border, #c9c9c9);
     border-inline-start: 0.3rem solid
       var(--kern-color-decorative-brand-default, #454b6b);
@@ -141,7 +148,7 @@
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
 
   .baustellen-card__title {
@@ -151,7 +158,7 @@
   }
 
   .baustellen-card__municipality {
-    margin-block: 0 0.65rem;
+    margin-block: 0 0.5rem;
     color: var(--kern-color-layout-text-default, #444);
   }
 

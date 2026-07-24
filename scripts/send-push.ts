@@ -7,6 +7,7 @@ import type {
   NotificationArea,
 } from "../src/types/index.ts";
 import { matchingNewBaustellen } from "../src/lib/notification-area.ts";
+import { formatDate } from "../src/lib/labels.ts";
 
 interface StoredSubscription {
   endpoint: string;
@@ -192,15 +193,6 @@ function subscriptionArea(
     center: [longitude, latitude],
     radiusKm: radiusMeters / 1_000,
   };
-}
-
-function formatDate(value: string) {
-  return new Intl.DateTimeFormat("de-DE", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    timeZone: "Europe/Berlin",
-  }).format(new Date(`${value}T12:00:00+02:00`));
 }
 
 async function mapWithConcurrency<T>(

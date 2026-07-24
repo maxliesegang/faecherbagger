@@ -4,6 +4,7 @@ import {
   matchingNewBaustellen,
   notificationAreaContains,
 } from "../src/lib/notification-area.ts";
+import { isLngLat } from "../src/lib/notification-area-validation.ts";
 import type { Baustelle, NotificationArea } from "../src/types/index.ts";
 
 const area: NotificationArea = {
@@ -33,6 +34,13 @@ function record(id: string, point: [number, number]): Baustelle {
 }
 
 describe("notification area", () => {
+  it("validates GeoJSON coordinates", () => {
+    expect(isLngLat([8.4044, 49.0069])).toBe(true);
+    expect(isLngLat([181, 49])).toBe(false);
+    expect(isLngLat([8.4, Number.NaN])).toBe(false);
+    expect(isLngLat([8.4])).toBe(false);
+  });
+
   it("validates coordinate and radius bounds", () => {
     expect(isNotificationArea(area)).toBe(true);
     expect(isNotificationArea({ ...area, radiusKm: 0 })).toBe(false);

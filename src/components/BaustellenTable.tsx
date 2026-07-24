@@ -40,29 +40,14 @@ interface Column {
 
 const BASE_COLUMNS: readonly Column[] = [
   {
-    key: "municipality",
-    label: "Ort",
-    render: (record) => record.municipality,
-  },
-  {
     key: "location",
     label: "Lage",
     render: (record) => record.location,
   },
   {
-    key: "category",
-    label: "Art",
-    render: (record) => categoryLabel(record.category),
-  },
-  {
-    key: "closure",
-    label: "Sperrung",
-    render: (record) => (
-      <KernBadge
-        variant={closureVariant(record.closure)}
-        label={closureLabel(record.closure)}
-      />
-    ),
+    key: "municipality",
+    label: "Ort",
+    render: (record) => record.municipality,
   },
   {
     key: "phase",
@@ -78,6 +63,21 @@ const BASE_COLUMNS: readonly Column[] = [
     key: "period",
     label: "Zeitraum",
     render: (record) => formatPeriod(record.startDate, record.endDate),
+  },
+  {
+    key: "category",
+    label: "Art",
+    render: (record) => categoryLabel(record.category),
+  },
+  {
+    key: "closure",
+    label: "Sperrung",
+    render: (record) => (
+      <KernBadge
+        variant={closureVariant(record.closure)}
+        label={closureLabel(record.closure)}
+      />
+    ),
   },
   {
     key: "lastModified",

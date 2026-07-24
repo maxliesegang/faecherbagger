@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef } from "react";
 import maplibregl, {
   LngLatBounds,
+  type ExpressionSpecification,
   type GeoJSONSource,
   type Map as MapLibreMap,
 } from "maplibre-gl";
-import type { Feature, FeatureCollection, Geometry, Point } from "geojson";
+import type { Point } from "geojson";
 import type {
   Baustelle,
   LngLat,
@@ -16,6 +17,13 @@ import {
   formatPeriod,
   phaseLabel,
 } from "../lib/labels.ts";
+import {
+  notificationAreaGeoJson,
+  notificationAreaPolygon,
+  recordsToGeometries,
+  recordsToPoints,
+  userLocationGeoJson,
+} from "../lib/map-data.ts";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./BaustellenMap.css";
 
@@ -28,42 +36,26 @@ interface Props {
   onShowList: () => void;
 }
 
-type PointProperties = {
-  id: string;
-  phase: Baustelle["phase"];
-};
-
 const POINT_SOURCE = "baustellen-points";
 const GEOMETRY_SOURCE = "baustellen-geometries";
 const USER_LOCATION_SOURCE = "user-location";
 const NOTIFICATION_AREA_SOURCE = "notification-area";
 const ACTIVE_COLOR = "#1d5e9e";
 const UPCOMING_COLOR = "#ad6800";
-const EARTH_RADIUS_KM = 6_371;
+const FIT_PADDING = { top: 54, right: 54, bottom: 54, left: 54 };
+const CURRENT_LOCATION_ZOOM = 15;
 
-const recordsToPoints = (
-  records: readonly Baustelle[],
-): FeatureCollection<Point, PointProperties> => ({
-  type: "FeatureCollection",
-  features: records.map((record) => ({
-    type: "Feature",
-    id: record.id,
-    geometry: { type: "Point", coordinates: record.point },
-    properties: { id: record.id, phase: record.phase },
-  })),
-});
+/** Data-driven paint color: {@link ACTIVE_COLOR} for active sites, else upcoming. */
+const phaseColor: ExpressionSpecification = [
+  "match",
+  ["get", "phase"],
+  "active",
+  ACTIVE_COLOR,
+  UPCOMING_COLOR,
+];
 
-const recordsToGeometries = (
-  records: readonly Baustelle[],
-): FeatureCollection<Geometry, PointProperties> => ({
-  type: "FeatureCollection",
-  features: records.map((record) => ({
-    type: "Feature",
-    id: record.id,
-    geometry: record.geometry,
-    properties: { id: record.id, phase: record.phase },
-  })) as Feature<Geometry, PointProperties>[],
-});
+const geoJsonSource = (map: MapLibreMap, id: string): GeoJSONSource =>
+  map.getSource(id) as GeoJSONSource;
 
 function fitRecords(map: MapLibreMap, records: readonly Baustelle[]) {
   if (records.length === 0) return;
@@ -75,68 +67,29 @@ function fitRecords(map: MapLibreMap, records: readonly Baustelle[]) {
   const bounds = new LngLatBounds();
   records.forEach((record) => bounds.extend(record.point));
   map.fitBounds(bounds, {
-    padding: { top: 54, right: 54, bottom: 54, left: 54 },
+    padding: FIT_PADDING,
     maxZoom: 14,
     duration: 500,
   });
 }
 
-function notificationAreaGeoJson(
-  area?: NotificationArea,
-): FeatureCollection<Geometry> {
-  if (!area) return { type: "FeatureCollection", features: [] };
-  const [longitude, latitude] = area.center;
-  const angularDistance = area.radiusKm / EARTH_RADIUS_KM;
-  const latitudeRadians = (latitude * Math.PI) / 180;
-  const longitudeRadians = (longitude * Math.PI) / 180;
-  const coordinates: LngLat[] = [];
-
-  for (let step = 0; step <= 64; step += 1) {
-    const bearing = (step / 64) * Math.PI * 2;
-    const pointLatitude = Math.asin(
-      Math.sin(latitudeRadians) * Math.cos(angularDistance) +
-        Math.cos(latitudeRadians) *
-          Math.sin(angularDistance) *
-          Math.cos(bearing),
-    );
-    const pointLongitude =
-      longitudeRadians +
-      Math.atan2(
-        Math.sin(bearing) *
-          Math.sin(angularDistance) *
-          Math.cos(latitudeRadians),
-        Math.cos(angularDistance) -
-          Math.sin(latitudeRadians) * Math.sin(pointLatitude),
-      );
-    coordinates.push([
-      (pointLongitude * 180) / Math.PI,
-      (pointLatitude * 180) / Math.PI,
-    ]);
-  }
-
-  return {
-    type: "FeatureCollection",
-    features: [
-      {
-        type: "Feature",
-        properties: {},
-        geometry: { type: "Polygon", coordinates: [coordinates] },
-      },
-    ],
-  };
-}
-
 function fitNotificationArea(map: MapLibreMap, area: NotificationArea) {
-  const feature = notificationAreaGeoJson(area).features[0];
-  if (!feature || feature.geometry.type !== "Polygon") return;
   const bounds = new LngLatBounds();
-  feature.geometry.coordinates[0].forEach((point) =>
+  notificationAreaPolygon(area).coordinates[0].forEach((point) =>
     bounds.extend(point as LngLat),
   );
   map.fitBounds(bounds, {
-    padding: { top: 54, right: 54, bottom: 54, left: 54 },
+    padding: FIT_PADDING,
     maxZoom: 14,
     duration: 500,
+  });
+}
+
+function focusCurrentLocation(map: MapLibreMap, location: LngLat) {
+  map.easeTo({
+    center: location,
+    zoom: Math.max(map.getZoom(), CURRENT_LOCATION_ZOOM),
+    duration: 650,
   });
 }
 
@@ -150,18 +103,24 @@ export function BaustellenMap({
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
-  const recordsRef = useRef(records);
-  const selectedIdRef = useRef(selectedId);
-  const currentLocationRef = useRef(currentLocation);
-  const notificationAreaRef = useRef(notificationArea);
-  const onSelectRef = useRef(onSelect);
   const mapReadyRef = useRef(false);
 
-  recordsRef.current = records;
-  selectedIdRef.current = selectedId;
-  currentLocationRef.current = currentLocation;
-  notificationAreaRef.current = notificationArea;
-  onSelectRef.current = onSelect;
+  // Latest props, read by the one-shot init effect and event handlers below,
+  // which must not re-run when these change. Adding a value is a one-line edit.
+  const latest = useRef({
+    records,
+    selectedId,
+    currentLocation,
+    notificationArea,
+    onSelect,
+  });
+  latest.current = {
+    records,
+    selectedId,
+    currentLocation,
+    notificationArea,
+    onSelect,
+  };
 
   const selected = useMemo(
     () => records.find((record) => record.id === selectedId),
@@ -173,7 +132,7 @@ export function BaustellenMap({
 
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: "https://tiles.openfreemap.org/styles/positron",
+      style: "https://tiles.openfreemap.org/styles/liberty",
       center: [8.4044, 49.0069],
       zoom: 9,
       attributionControl: false,
@@ -190,33 +149,25 @@ export function BaustellenMap({
     );
 
     map.on("load", () => {
+      const initial = latest.current;
       map.addSource(POINT_SOURCE, {
         type: "geojson",
-        data: recordsToPoints(recordsRef.current),
+        data: recordsToPoints(initial.records),
         cluster: true,
         clusterMaxZoom: 12,
         clusterRadius: 42,
       });
       map.addSource(GEOMETRY_SOURCE, {
         type: "geojson",
-        data: recordsToGeometries(recordsRef.current),
+        data: recordsToGeometries(initial.records),
       });
       map.addSource(USER_LOCATION_SOURCE, {
         type: "geojson",
-        data: currentLocationRef.current
-          ? {
-              type: "Feature",
-              geometry: {
-                type: "Point",
-                coordinates: currentLocationRef.current,
-              },
-              properties: {},
-            }
-          : { type: "FeatureCollection", features: [] },
+        data: userLocationGeoJson(initial.currentLocation),
       });
       map.addSource(NOTIFICATION_AREA_SOURCE, {
         type: "geojson",
-        data: notificationAreaGeoJson(notificationAreaRef.current),
+        data: notificationAreaGeoJson(initial.notificationArea),
       });
 
       map.addLayer({
@@ -225,7 +176,7 @@ export function BaustellenMap({
         source: NOTIFICATION_AREA_SOURCE,
         paint: {
           "fill-color": "#2459a9",
-          "fill-opacity": 0.08,
+          "fill-opacity": 0.035,
         },
       });
       map.addLayer({
@@ -234,8 +185,9 @@ export function BaustellenMap({
         source: NOTIFICATION_AREA_SOURCE,
         paint: {
           "line-color": "#2459a9",
-          "line-width": 2,
-          "line-dasharray": [3, 2],
+          "line-width": 1,
+          "line-opacity": 0.55,
+          "line-dasharray": [2, 2],
         },
       });
       map.addLayer({
@@ -244,13 +196,7 @@ export function BaustellenMap({
         source: GEOMETRY_SOURCE,
         minzoom: 12,
         paint: {
-          "fill-color": [
-            "match",
-            ["get", "phase"],
-            "active",
-            ACTIVE_COLOR,
-            UPCOMING_COLOR,
-          ],
+          "fill-color": phaseColor,
           "fill-opacity": 0.2,
         },
       });
@@ -260,13 +206,7 @@ export function BaustellenMap({
         source: GEOMETRY_SOURCE,
         minzoom: 11,
         paint: {
-          "line-color": [
-            "match",
-            ["get", "phase"],
-            "active",
-            ACTIVE_COLOR,
-            UPCOMING_COLOR,
-          ],
+          "line-color": phaseColor,
           "line-width": 3,
           "line-opacity": 0.9,
         },
@@ -308,13 +248,7 @@ export function BaustellenMap({
         source: POINT_SOURCE,
         filter: ["!", ["has", "point_count"]],
         paint: {
-          "circle-color": [
-            "match",
-            ["get", "phase"],
-            "active",
-            ACTIVE_COLOR,
-            UPCOMING_COLOR,
-          ],
+          "circle-color": phaseColor,
           "circle-radius": 7,
           "circle-stroke-color": "#fff",
           "circle-stroke-width": 2,
@@ -350,8 +284,10 @@ export function BaustellenMap({
         })[0];
         const clusterId = feature?.properties?.cluster_id as number | undefined;
         if (clusterId === undefined) return;
-        const source = map.getSource(POINT_SOURCE) as GeoJSONSource;
-        const zoom = await source.getClusterExpansionZoom(clusterId);
+        const zoom = await geoJsonSource(
+          map,
+          POINT_SOURCE,
+        ).getClusterExpansionZoom(clusterId);
         const coordinates = (feature.geometry as Point).coordinates as [
           number,
           number,
@@ -361,7 +297,7 @@ export function BaustellenMap({
 
       map.on("click", "baustellen-points", (event) => {
         const id = event.features?.[0]?.properties?.id as string | undefined;
-        if (id) onSelectRef.current(id);
+        if (id) latest.current.onSelect(id);
       });
 
       for (const layer of ["baustellen-clusters", "baustellen-points"]) {
@@ -374,20 +310,27 @@ export function BaustellenMap({
       }
 
       mapReadyRef.current = true;
+      const {
+        records,
+        selectedId,
+        currentLocation,
+        notificationArea,
+      } = latest.current;
       map.setFilter("baustellen-selected", [
         "==",
         ["get", "id"],
-        selectedIdRef.current ?? "",
+        selectedId ?? "",
       ]);
-      fitRecords(map, recordsRef.current);
-      if (notificationAreaRef.current) {
-        fitNotificationArea(map, notificationAreaRef.current);
-      }
-      const initiallySelected = recordsRef.current.find(
-        (record) => record.id === selectedIdRef.current,
+      fitRecords(map, records);
+      const initiallySelected = records.find(
+        (record) => record.id === selectedId,
       );
       if (initiallySelected) {
         map.easeTo({ center: initiallySelected.point, zoom: 15, duration: 0 });
+      } else if (currentLocation) {
+        focusCurrentLocation(map, currentLocation);
+      } else if (notificationArea) {
+        fitNotificationArea(map, notificationArea);
       }
     });
 
@@ -401,36 +344,28 @@ export function BaustellenMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !mapReadyRef.current) return;
-    (map.getSource(POINT_SOURCE) as GeoJSONSource).setData(
-      recordsToPoints(records),
-    );
-    (map.getSource(GEOMETRY_SOURCE) as GeoJSONSource).setData(
-      recordsToGeometries(records),
-    );
+    geoJsonSource(map, POINT_SOURCE).setData(recordsToPoints(records));
+    geoJsonSource(map, GEOMETRY_SOURCE).setData(recordsToGeometries(records));
     fitRecords(map, records);
   }, [records]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !mapReadyRef.current) return;
-    (map.getSource(USER_LOCATION_SOURCE) as GeoJSONSource).setData(
-      currentLocation
-        ? {
-            type: "Feature",
-            geometry: { type: "Point", coordinates: currentLocation },
-            properties: {},
-          }
-        : { type: "FeatureCollection", features: [] },
+    geoJsonSource(map, USER_LOCATION_SOURCE).setData(
+      userLocationGeoJson(currentLocation),
     );
-  }, [currentLocation]);
+    if (currentLocation && !selectedId) {
+      focusCurrentLocation(map, currentLocation);
+    }
+  }, [currentLocation, selectedId]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !mapReadyRef.current) return;
-    (map.getSource(NOTIFICATION_AREA_SOURCE) as GeoJSONSource).setData(
+    geoJsonSource(map, NOTIFICATION_AREA_SOURCE).setData(
       notificationAreaGeoJson(notificationArea),
     );
-    if (notificationArea) fitNotificationArea(map, notificationArea);
   }, [notificationArea]);
 
   useEffect(() => {

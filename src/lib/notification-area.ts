@@ -1,38 +1,15 @@
 import type { Baustelle, LngLat, NotificationArea } from "../types/index.ts";
 import { distanceInMeters } from "./distance.ts";
+import { isNotificationArea } from "./notification-area-validation.ts";
+export {
+  DEFAULT_NOTIFICATION_RADIUS_KM,
+  isNotificationArea,
+  MAX_NOTIFICATION_RADIUS_KM,
+  MIN_NOTIFICATION_RADIUS_KM,
+} from "./notification-area-validation.ts";
 
-export const DEFAULT_NOTIFICATION_RADIUS_KM = 5;
-export const MIN_NOTIFICATION_RADIUS_KM = 1;
-export const MAX_NOTIFICATION_RADIUS_KM = 50;
 export const NOTIFICATION_AREA_STORAGE_KEY =
   "faecherbagger-notification-area";
-
-function validCenter(value: unknown): value is LngLat {
-  return (
-    Array.isArray(value) &&
-    value.length === 2 &&
-    typeof value[0] === "number" &&
-    Number.isFinite(value[0]) &&
-    value[0] >= -180 &&
-    value[0] <= 180 &&
-    typeof value[1] === "number" &&
-    Number.isFinite(value[1]) &&
-    value[1] >= -90 &&
-    value[1] <= 90
-  );
-}
-
-export function isNotificationArea(value: unknown): value is NotificationArea {
-  if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<NotificationArea>;
-  return (
-    validCenter(candidate.center) &&
-    typeof candidate.radiusKm === "number" &&
-    Number.isFinite(candidate.radiusKm) &&
-    candidate.radiusKm >= MIN_NOTIFICATION_RADIUS_KM &&
-    candidate.radiusKm <= MAX_NOTIFICATION_RADIUS_KM
-  );
-}
 
 export function loadNotificationArea(): NotificationArea | null {
   try {

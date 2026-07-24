@@ -27,12 +27,12 @@ export const EMPTY_FILTERS: Readonly<Filters> = {
 };
 
 /** True when no filter is active (used to hide the "reset" affordance). */
-export const isEmptyFilters = (f: Filters): boolean =>
-  f.search.trim() === "" &&
-  f.municipality === "" &&
-  f.phase === "" &&
-  f.category === "" &&
-  f.closure === "";
+export const isEmptyFilters = (filters: Filters): boolean =>
+  filters.search.trim() === "" &&
+  filters.municipality === "" &&
+  filters.phase === "" &&
+  filters.category === "" &&
+  filters.closure === "";
 
 /** Returns the records matching every active filter. Pure; input untouched. */
 export function applyFilters(
@@ -40,16 +40,16 @@ export function applyFilters(
   filters: Readonly<Filters>,
 ): Baustelle[] {
   const query = filters.search.trim().toLocaleLowerCase("de");
-  return records.filter((r) => {
-    if (filters.municipality && r.municipality !== filters.municipality) {
+  return records.filter((record) => {
+    if (filters.municipality && record.municipality !== filters.municipality) {
       return false;
     }
-    if (filters.phase && r.phase !== filters.phase) return false;
-    if (filters.category && r.category !== filters.category) return false;
-    if (filters.closure && r.closure !== filters.closure) return false;
+    if (filters.phase && record.phase !== filters.phase) return false;
+    if (filters.category && record.category !== filters.category) return false;
+    if (filters.closure && record.closure !== filters.closure) return false;
     if (query) {
       const haystack =
-        `${r.municipality} ${r.location} ${r.notes ?? ""} ${r.cause ?? ""}`.toLocaleLowerCase(
+        `${record.municipality} ${record.location} ${record.notes ?? ""} ${record.cause ?? ""}`.toLocaleLowerCase(
           "de",
         );
       if (!haystack.includes(query)) return false;
@@ -60,10 +60,10 @@ export function applyFilters(
 
 /** Distinct municipalities present in the data, sorted for a German locale. */
 export const distinctMunicipalities = (records: readonly Baustelle[]): string[] =>
-  [...new Set(records.map((r) => r.municipality))].sort((a, b) =>
-    a.localeCompare(b, "de"),
+  [...new Set(records.map((record) => record.municipality))].sort(
+    (left, right) => left.localeCompare(right, "de"),
   );
 
 /** Distinct categories present in the data (unsorted; caller sorts by label). */
 export const distinctCategories = (records: readonly Baustelle[]): Category[] =>
-  [...new Set(records.map((r) => r.category))];
+  [...new Set(records.map((record) => record.category))];
