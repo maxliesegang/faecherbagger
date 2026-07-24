@@ -1,12 +1,21 @@
 import webpush from "web-push";
 import { readFile } from "node:fs/promises";
-import type { Changes, Meta } from "../src/types/index.ts";
+import type {
+  Baustelle,
+  Changes,
+  Meta,
+  NotificationArea,
+} from "../src/types/index.ts";
+import { matchingNewBaustellen } from "../src/lib/notification-area.ts";
 
 interface StoredSubscription {
   endpoint: string;
   p256dh: string;
   auth: string;
   expirationTime: number | null;
+  notificationLongitude: number | null;
+  notificationLatitude: number | null;
+  notificationRadiusMeters: number | null;
 }
 
 interface SubscriptionPage {
@@ -34,15 +43,14 @@ const headers = {
   "content-type": "application/json",
 };
 
-const [changes, meta] = await Promise.all([
+const [changes, meta, baustellen] = await Promise.all([
   readJson<Changes>("public/data/changes.json"),
   readJson<Meta>("public/data/meta.json"),
+  readJson<Baustelle[]>("public/data/baustellen.json"),
 ]);
 
-const totalChanges =
-  changes.added.length + changes.modified.length + changes.removed.length;
-if (totalChanges === 0) {
-  console.log("No Baustellen changes to broadcast.");
+if (changes.added.length === 0) {
+  console.log("No new Baustellen to broadcast.");
   process.exit(0);
 }
 
@@ -66,28 +74,43 @@ webpush.setVapidDetails(
   process.env.VAPID_PRIVATE_KEY!,
 );
 
-const body = [
-  changes.added.length ? `${changes.added.length} neu` : "",
-  changes.modified.length ? `${changes.modified.length} geändert` : "",
-  changes.removed.length ? `${changes.removed.length} beendet` : "",
-]
-  .filter(Boolean)
-  .join(", ");
-const payload = JSON.stringify({
-  title: "Neue Baustelleninformationen",
-  body,
-  url: process.env.APP_URL,
-  fetchedAt: meta.fetchedAt,
-});
+const addedIds = new Set(changes.added);
 
 let cursor: string | null = "";
 let sent = 0;
+let outsideArea = 0;
 let removed = 0;
 let failed = 0;
 
 while (cursor !== null) {
   const page = await getPage(cursor);
   await mapWithConcurrency(page.subscriptions, 20, async (subscription) => {
+    const area = subscriptionArea(subscription);
+    if (!area) {
+      outsideArea += 1;
+      return;
+    }
+    const matches = matchingNewBaustellen(baustellen, addedIds, area);
+    if (matches.length === 0) {
+      outsideArea += 1;
+      return;
+    }
+    const first = matches[0];
+    const target = new URL(process.env.APP_URL!);
+    if (matches.length === 1) target.searchParams.set("baustelle", first.id);
+    const payload = JSON.stringify({
+      title:
+        matches.length === 1
+          ? `Neue Baustelle in ${first.municipality}`
+          : `${matches.length} neue Baustellen in Ihrem Umkreis`,
+      body:
+        matches.length === 1
+          ? `${first.location} · ab ${formatDate(first.startDate)}`
+          : `Unter anderem: ${first.location}, ${first.municipality}`,
+      url: target.href,
+      count: matches.length,
+      fetchedAt: meta.fetchedAt,
+    });
     try {
       await webpush.sendNotification(
         {
@@ -119,7 +142,8 @@ while (cursor !== null) {
 }
 
 console.log(
-  `Push broadcast complete: ${sent} sent, ${removed} expired removed, ${failed} failed.`,
+  `Push broadcast complete: ${sent} sent, ${outsideArea} without an area or matches, ` +
+    `${removed} expired removed, ${failed} failed.`,
 );
 if (failed > 0 && sent === 0) process.exitCode = 1;
 
@@ -146,6 +170,37 @@ async function deleteSubscription(endpoint: string) {
   if (!response.ok) {
     console.warn(`Could not remove expired subscription: ${response.status}`);
   }
+}
+
+function subscriptionArea(
+  subscription: StoredSubscription,
+): NotificationArea | undefined {
+  const longitude = subscription.notificationLongitude;
+  const latitude = subscription.notificationLatitude;
+  const radiusMeters = subscription.notificationRadiusMeters;
+  if (
+    typeof longitude !== "number" ||
+    !Number.isFinite(longitude) ||
+    typeof latitude !== "number" ||
+    !Number.isFinite(latitude) ||
+    typeof radiusMeters !== "number" ||
+    !Number.isFinite(radiusMeters)
+  ) {
+    return undefined;
+  }
+  return {
+    center: [longitude, latitude],
+    radiusKm: radiusMeters / 1_000,
+  };
+}
+
+function formatDate(value: string) {
+  return new Intl.DateTimeFormat("de-DE", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    timeZone: "Europe/Berlin",
+  }).format(new Date(`${value}T12:00:00+02:00`));
 }
 
 async function mapWithConcurrency<T>(

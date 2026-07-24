@@ -52,6 +52,14 @@
   background: #fff;
 }
 
+.map-legend__radius {
+  display: inline-block;
+  width: 1rem;
+  height: 0.65rem;
+  border: 2px dashed #2459a9;
+  background: rgb(36 89 169 / 8%);
+}
+
 .map-legend__hint {
   color: var(--kern-color-layout-text-muted, #595959);
 }

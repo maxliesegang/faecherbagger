@@ -7,7 +7,7 @@ import {
   KernLink,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import type { Baustelle, Meta } from "./types/index.ts";
+import type { Baustelle, Meta, NotificationArea } from "./types/index.ts";
 import { loadBaustellen, loadMeta } from "./lib/data.ts";
 import { applyFilters, EMPTY_FILTERS, type Filters } from "./lib/filter.ts";
 import { BaustellenFilter } from "./components/BaustellenFilter.tsx";
@@ -17,6 +17,10 @@ import { LocationControl } from "./components/LocationControl.tsx";
 import { PwaControls } from "./components/PwaControls.tsx";
 import { useCurrentLocation } from "./hooks/useCurrentLocation.ts";
 import { isEmptyFilters } from "./lib/filter.ts";
+import {
+  loadNotificationArea,
+  saveNotificationArea,
+} from "./lib/notification-area.ts";
 import "./App.css";
 
 type LoadState =
@@ -32,7 +36,12 @@ export function App() {
   const [state, setState] = useState<LoadState>({ status: "loading" });
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS);
   const [view, setView] = useState<"map" | "list">("map");
-  const [selectedId, setSelectedId] = useState<string>();
+  const [selectedId, setSelectedId] = useState<string | undefined>(() => {
+    const id = new URLSearchParams(window.location.search).get("baustelle");
+    return id || undefined;
+  });
+  const [notificationArea, setNotificationArea] =
+    useState<NotificationArea | null>(loadNotificationArea);
   const location = useCurrentLocation();
 
   const records = state.status === "ready" ? state.baustellen : undefined;
@@ -143,7 +152,14 @@ export function App() {
 
               <LocationControl location={location} />
 
-              <PwaControls />
+              <PwaControls
+                location={location}
+                notificationArea={notificationArea}
+                onNotificationAreaChange={(area) => {
+                  saveNotificationArea(area);
+                  setNotificationArea(area);
+                }}
+              />
 
               <section className="results" aria-labelledby="results-heading">
                 <div className="results__header">
@@ -202,6 +218,7 @@ export function App() {
                             ? location.state.point
                             : undefined
                         }
+                        notificationArea={notificationArea ?? undefined}
                         onSelect={setSelectedId}
                         onShowList={() => setView("list")}
                       />

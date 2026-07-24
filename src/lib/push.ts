@@ -38,14 +38,14 @@ export async function getPushSubscription() {
   return registration.pushManager.getSubscription();
 }
 
-export async function subscribeToPush() {
+export async function subscribeToPush(preferences?: NotificationArea) {
   if (!isPushSupported) {
     throw new Error("Web Push wird von diesem Browser nicht unterstützt.");
   }
   const registration = await navigator.serviceWorker.ready;
   const existing = await registration.pushManager.getSubscription();
   if (existing) {
-    await storeSubscription(existing);
+    await storeSubscription(existing, preferences);
     return existing;
   }
 
@@ -59,7 +59,7 @@ export async function subscribeToPush() {
     applicationServerKey: base64UrlToUint8Array(config.vapidPublicKey),
   });
   try {
-    await storeSubscription(subscription);
+    await storeSubscription(subscription, preferences);
     return subscription;
   } catch (error) {
     await subscription.unsubscribe();
@@ -67,11 +67,25 @@ export async function subscribeToPush() {
   }
 }
 
-async function storeSubscription(subscription: PushSubscription) {
+async function storeSubscription(
+  subscription: PushSubscription,
+  preferences?: NotificationArea,
+) {
   await api("/subscriptions", {
     method: "POST",
-    body: JSON.stringify(subscription.toJSON()),
+    body: JSON.stringify({
+      ...subscription.toJSON(),
+      ...(preferences ? { preferences } : {}),
+    }),
   });
+}
+
+export async function updatePushPreferences(preferences: NotificationArea) {
+  const subscription = await getPushSubscription();
+  if (!subscription) {
+    throw new Error("Benachrichtigungen sind auf diesem Gerät nicht aktiviert.");
+  }
+  await storeSubscription(subscription, preferences);
 }
 
 export async function unsubscribeFromPush() {
@@ -86,3 +100,4 @@ export async function unsubscribeFromPush() {
     await subscription.unsubscribe();
   }
 }
+import type { NotificationArea } from "../types/index.ts";

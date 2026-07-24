@@ -7,6 +7,7 @@ export type {
   IsoTimestamp,
   LngLat,
   Meta,
+  NotificationArea,
   Phase,
   SiteType,
 } from "./baustelle.ts";

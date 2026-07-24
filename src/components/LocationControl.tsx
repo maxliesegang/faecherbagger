@@ -32,7 +32,8 @@ export function LocationControl({ location }: Props) {
       <section className="kern-accordion__body location-control__body">
         <KernText>
           Zeigt die Luftlinie zu jeder Baustelle und ermöglicht die Sortierung
-          danach. Der Standort bleibt ausschließlich in diesem Browser.
+          danach. Der Standort bleibt im Browser, außer Sie verwenden ihn
+          ausdrücklich als Mittelpunkt für Baustellenbenachrichtigungen.
         </KernText>
 
         {state.status === "ready" ? (
@@ -52,7 +53,7 @@ export function LocationControl({ location }: Props) {
                 : "Meinen Standort verwenden"
             }
             disabled={state.status === "requesting"}
-            onClick={request}
+            onClick={() => void request()}
           />
         )}
 

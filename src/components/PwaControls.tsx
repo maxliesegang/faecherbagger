@@ -11,7 +11,15 @@ import {
   isPushSupported,
   subscribeToPush,
   unsubscribeFromPush,
+  updatePushPreferences,
 } from "../lib/push.ts";
+import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
+import type { NotificationArea } from "../types/index.ts";
+import {
+  DEFAULT_NOTIFICATION_RADIUS_KM,
+  MAX_NOTIFICATION_RADIUS_KM,
+  MIN_NOTIFICATION_RADIUS_KM,
+} from "../lib/notification-area.ts";
 import "./PwaControls.css";
 
 const NOTIFICATIONS_KEY = "faecherbagger-notifications";
@@ -36,6 +44,12 @@ type PwaRegistration = ServiceWorkerRegistration & {
   sync?: BackgroundSyncManager;
 };
 
+interface Props {
+  location: CurrentLocationController;
+  notificationArea: NotificationArea | null;
+  onNotificationAreaChange: (area: NotificationArea) => void;
+}
+
 function sendToWorker(message: object) {
   void navigator.serviceWorker.ready.then((registration) => {
     (registration.active ?? navigator.serviceWorker.controller)?.postMessage(
@@ -44,7 +58,11 @@ function sendToWorker(message: object) {
   });
 }
 
-export function PwaControls() {
+export function PwaControls({
+  location,
+  notificationArea,
+  onNotificationAreaChange,
+}: Props) {
   const [installPrompt, setInstallPrompt] =
     useState<BeforeInstallPromptEvent>();
   const [installed, setInstalled] = useState(
@@ -59,6 +77,10 @@ export function PwaControls() {
     localStorage.getItem(NOTIFICATIONS_KEY) === "true",
   );
   const [feedback, setFeedback] = useState<string>();
+  const [radiusKm, setRadiusKm] = useState(
+    notificationArea?.radiusKm ?? DEFAULT_NOTIFICATION_RADIUS_KM,
+  );
+  const [savingArea, setSavingArea] = useState(false);
 
   useEffect(() => {
     const onInstallPrompt = (event: Event) => {
@@ -87,17 +109,13 @@ export function PwaControls() {
         } catch {
           // Browsers may reject background sync based on engagement or settings.
         }
-        sendToWorker({
-          type: "SET_NOTIFICATIONS",
-          enabled: notificationsEnabled,
-        });
         sendToWorker({ type: "REFRESH_DATA" });
         if (isPushSupported) {
           try {
             const subscription = await getPushSubscription();
             const subscribed = Boolean(subscription);
             if (subscription && isPushConfigured) {
-              await subscribeToPush();
+              await subscribeToPush(notificationArea ?? undefined);
             }
             setNotificationsEnabled(subscribed);
             localStorage.setItem(NOTIFICATIONS_KEY, String(subscribed));
@@ -121,10 +139,71 @@ export function PwaControls() {
       window.removeEventListener("online", refreshWhenOnline);
       document.removeEventListener("visibilitychange", refreshWhenOnline);
     };
-  }, [notificationsEnabled]);
+  }, []);
+
+  const saveArea = async (area: NotificationArea, message: string) => {
+    setSavingArea(true);
+    try {
+      if (notificationsEnabled) {
+        await updatePushPreferences(area);
+      }
+      onNotificationAreaChange(area);
+      setFeedback(message);
+    } catch (error) {
+      setFeedback(
+        error instanceof Error
+          ? error.message
+          : "Der Benachrichtigungsradius konnte nicht gespeichert werden.",
+      );
+    } finally {
+      setSavingArea(false);
+    }
+  };
+
+  const useLocationForNotifications = async () => {
+    try {
+      const point =
+        location.state.status === "ready" && !notificationArea
+          ? location.state.point
+          : await location.request();
+      const center: [number, number] = [
+        Number(point[0].toFixed(5)),
+        Number(point[1].toFixed(5)),
+      ];
+      await saveArea(
+        { center, radiusKm },
+        notificationsEnabled
+          ? `Benachrichtigungsradius von ${radiusKm} km ist gespeichert.`
+          : `Standort und Radius von ${radiusKm} km sind vorgemerkt.`,
+      );
+    } catch (error) {
+      setFeedback(
+        error instanceof Error
+          ? error.message
+          : "Der Standort konnte nicht bestimmt werden.",
+      );
+    }
+  };
+
+  const saveRadius = async () => {
+    if (!notificationArea) {
+      setFeedback("Legen Sie zuerst den Mittelpunkt über Ihren Standort fest.");
+      return;
+    }
+    await saveArea(
+      { ...notificationArea, radiusKm },
+      `Benachrichtigungsradius auf ${radiusKm} km aktualisiert.`,
+    );
+  };
 
   const enableNotifications = async () => {
     if (!("Notification" in window)) return;
+    if (!notificationArea) {
+      setFeedback(
+        "Legen Sie zuerst Standort und Radius für Benachrichtigungen fest.",
+      );
+      return;
+    }
     try {
       const permission = await Notification.requestPermission();
       setNotificationState(permission);
@@ -132,13 +211,12 @@ export function PwaControls() {
         setFeedback("Benachrichtigungen wurden nicht freigegeben.");
         return;
       }
-      await subscribeToPush();
+      await subscribeToPush(notificationArea);
       localStorage.setItem(NOTIFICATIONS_KEY, "true");
       setNotificationsEnabled(true);
-      sendToWorker({ type: "SET_NOTIFICATIONS", enabled: true });
       const registration = await navigator.serviceWorker.ready;
       await registration.showNotification("Benachrichtigungen aktiviert", {
-        body: "Fächerbagger informiert Sie über neue Baustelleninformationen.",
+        body: `Sie erhalten Hinweise zu neuen Baustellen im Umkreis von ${notificationArea.radiusKm} km.`,
         icon: `${import.meta.env.BASE_URL}icons/faecherbagger-192.png`,
         badge: `${import.meta.env.BASE_URL}icons/faecherbagger-192.png`,
         tag: "faecherbagger-test",
@@ -160,7 +238,6 @@ export function PwaControls() {
       await unsubscribeFromPush();
       localStorage.setItem(NOTIFICATIONS_KEY, "false");
       setNotificationsEnabled(false);
-      sendToWorker({ type: "SET_NOTIFICATIONS", enabled: false });
       setFeedback("Baustellenbenachrichtigungen sind ausgeschaltet.");
     } catch (error) {
       setFeedback(
@@ -193,6 +270,56 @@ export function PwaControls() {
           Baustellendaten – auch bei einer schlechten Verbindung.
         </KernText>
       </div>
+
+      <fieldset className="pwa-panel__area">
+        <legend>Gebiet für neue Baustellen</legend>
+        <KernText>
+          Mittelpunkt ist Ihr gewählter Standort. Der Kreis wird auf der Karte
+          angezeigt.
+        </KernText>
+        <div className="pwa-panel__radius">
+          <label htmlFor="notification-radius">
+            Radius: <strong>{radiusKm} km</strong>
+          </label>
+          <input
+            id="notification-radius"
+            type="range"
+            min={MIN_NOTIFICATION_RADIUS_KM}
+            max={MAX_NOTIFICATION_RADIUS_KM}
+            step="1"
+            value={radiusKm}
+            onChange={(event) => setRadiusKm(Number(event.currentTarget.value))}
+          />
+        </div>
+        <div className="pwa-panel__area-actions">
+          <KernButton
+            type="button"
+            variant="secondary"
+            label={
+              notificationArea
+                ? "Mittelpunkt aktualisieren"
+                : "Meinen Standort als Mittelpunkt"
+            }
+            disabled={savingArea || location.state.status === "requesting"}
+            onClick={() => void useLocationForNotifications()}
+          />
+          {notificationArea && radiusKm !== notificationArea.radiusKm && (
+            <KernButton
+              type="button"
+              variant="tertiary"
+              label="Radius speichern"
+              disabled={savingArea}
+              onClick={() => void saveRadius()}
+            />
+          )}
+        </div>
+        {notificationArea && (
+          <KernText muted>
+            Gespeichert: {notificationArea.radiusKm} km um den gewählten
+            Standort.
+          </KernText>
+        )}
+      </fieldset>
 
       <div className="pwa-panel__actions">
         {!installed && installPrompt && (
@@ -249,9 +376,18 @@ export function PwaControls() {
       {isPushConfigured && (
         <KernText muted className="pwa-panel__hint">
           Beim Aktivieren wird eine anonyme Geräteadresse beim
-          Benachrichtigungsdienst gespeichert. Sie wird beim Ausschalten wieder
-          gelöscht.
+          Benachrichtigungsdienst gespeichert. Mittelpunkt und Radius werden
+          nur zur Auswahl passender neuer Baustellen verwendet. Beim
+          Ausschalten wird die Geräteadresse einschließlich Gebiet gelöscht.
         </KernText>
+      )}
+      {notificationsEnabled && !notificationArea && (
+        <KernAlert variant="warning" title="Benachrichtigungsgebiet fehlt">
+          <KernText>
+            Legen Sie einen Standort und Radius fest, damit nur passende neue
+            Baustellen gemeldet werden.
+          </KernText>
+        </KernAlert>
       )}
       {notificationState === "denied" && (
         <KernAlert

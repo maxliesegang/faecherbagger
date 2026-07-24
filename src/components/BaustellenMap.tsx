@@ -5,7 +5,11 @@ import maplibregl, {
   type Map as MapLibreMap,
 } from "maplibre-gl";
 import type { Feature, FeatureCollection, Geometry, Point } from "geojson";
-import type { Baustelle, LngLat } from "../types/index.ts";
+import type {
+  Baustelle,
+  LngLat,
+  NotificationArea,
+} from "../types/index.ts";
 import {
   categoryLabel,
   closureLabel,
@@ -19,6 +23,7 @@ interface Props {
   records: Baustelle[];
   selectedId?: string;
   currentLocation?: LngLat;
+  notificationArea?: NotificationArea;
   onSelect: (id: string) => void;
   onShowList: () => void;
 }
@@ -31,8 +36,10 @@ type PointProperties = {
 const POINT_SOURCE = "baustellen-points";
 const GEOMETRY_SOURCE = "baustellen-geometries";
 const USER_LOCATION_SOURCE = "user-location";
+const NOTIFICATION_AREA_SOURCE = "notification-area";
 const ACTIVE_COLOR = "#1d5e9e";
 const UPCOMING_COLOR = "#ad6800";
+const EARTH_RADIUS_KM = 6_371;
 
 const recordsToPoints = (
   records: readonly Baustelle[],
@@ -74,10 +81,70 @@ function fitRecords(map: MapLibreMap, records: readonly Baustelle[]) {
   });
 }
 
+function notificationAreaGeoJson(
+  area?: NotificationArea,
+): FeatureCollection<Geometry> {
+  if (!area) return { type: "FeatureCollection", features: [] };
+  const [longitude, latitude] = area.center;
+  const angularDistance = area.radiusKm / EARTH_RADIUS_KM;
+  const latitudeRadians = (latitude * Math.PI) / 180;
+  const longitudeRadians = (longitude * Math.PI) / 180;
+  const coordinates: LngLat[] = [];
+
+  for (let step = 0; step <= 64; step += 1) {
+    const bearing = (step / 64) * Math.PI * 2;
+    const pointLatitude = Math.asin(
+      Math.sin(latitudeRadians) * Math.cos(angularDistance) +
+        Math.cos(latitudeRadians) *
+          Math.sin(angularDistance) *
+          Math.cos(bearing),
+    );
+    const pointLongitude =
+      longitudeRadians +
+      Math.atan2(
+        Math.sin(bearing) *
+          Math.sin(angularDistance) *
+          Math.cos(latitudeRadians),
+        Math.cos(angularDistance) -
+          Math.sin(latitudeRadians) * Math.sin(pointLatitude),
+      );
+    coordinates.push([
+      (pointLongitude * 180) / Math.PI,
+      (pointLatitude * 180) / Math.PI,
+    ]);
+  }
+
+  return {
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        properties: {},
+        geometry: { type: "Polygon", coordinates: [coordinates] },
+      },
+    ],
+  };
+}
+
+function fitNotificationArea(map: MapLibreMap, area: NotificationArea) {
+  const feature = notificationAreaGeoJson(area).features[0];
+  if (!feature || feature.geometry.type !== "Polygon") return;
+  const bounds = new LngLatBounds();
+  feature.geometry.coordinates[0].forEach((point) =>
+    bounds.extend(point as LngLat),
+  );
+  map.fitBounds(bounds, {
+    padding: { top: 54, right: 54, bottom: 54, left: 54 },
+    maxZoom: 14,
+    duration: 500,
+  });
+}
+
 export function BaustellenMap({
   records,
   selectedId,
   currentLocation,
+  notificationArea,
   onSelect,
   onShowList,
 }: Props) {
@@ -86,12 +153,14 @@ export function BaustellenMap({
   const recordsRef = useRef(records);
   const selectedIdRef = useRef(selectedId);
   const currentLocationRef = useRef(currentLocation);
+  const notificationAreaRef = useRef(notificationArea);
   const onSelectRef = useRef(onSelect);
   const mapReadyRef = useRef(false);
 
   recordsRef.current = records;
   selectedIdRef.current = selectedId;
   currentLocationRef.current = currentLocation;
+  notificationAreaRef.current = notificationArea;
   onSelectRef.current = onSelect;
 
   const selected = useMemo(
@@ -145,7 +214,30 @@ export function BaustellenMap({
             }
           : { type: "FeatureCollection", features: [] },
       });
+      map.addSource(NOTIFICATION_AREA_SOURCE, {
+        type: "geojson",
+        data: notificationAreaGeoJson(notificationAreaRef.current),
+      });
 
+      map.addLayer({
+        id: "notification-area-fill",
+        type: "fill",
+        source: NOTIFICATION_AREA_SOURCE,
+        paint: {
+          "fill-color": "#2459a9",
+          "fill-opacity": 0.08,
+        },
+      });
+      map.addLayer({
+        id: "notification-area-line",
+        type: "line",
+        source: NOTIFICATION_AREA_SOURCE,
+        paint: {
+          "line-color": "#2459a9",
+          "line-width": 2,
+          "line-dasharray": [3, 2],
+        },
+      });
       map.addLayer({
         id: "baustellen-area-fill",
         type: "fill",
@@ -288,6 +380,9 @@ export function BaustellenMap({
         selectedIdRef.current ?? "",
       ]);
       fitRecords(map, recordsRef.current);
+      if (notificationAreaRef.current) {
+        fitNotificationArea(map, notificationAreaRef.current);
+      }
       const initiallySelected = recordsRef.current.find(
         (record) => record.id === selectedIdRef.current,
       );
@@ -332,6 +427,15 @@ export function BaustellenMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !mapReadyRef.current) return;
+    (map.getSource(NOTIFICATION_AREA_SOURCE) as GeoJSONSource).setData(
+      notificationAreaGeoJson(notificationArea),
+    );
+    if (notificationArea) fitNotificationArea(map, notificationArea);
+  }, [notificationArea]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapReadyRef.current) return;
     map.setFilter("baustellen-selected", [
       "==",
       ["get", "id"],
@@ -365,6 +469,12 @@ export function BaustellenMap({
             <span>
               <i className="map-legend__dot map-legend__dot--location" />
               Mein Standort
+            </span>
+          )}
+          {notificationArea && (
+            <span>
+              <i className="map-legend__radius" />
+              Benachrichtigungsradius ({notificationArea.radiusKm} km)
             </span>
           )}
         </div>

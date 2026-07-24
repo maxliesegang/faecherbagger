@@ -1,6 +1,7 @@
 # Fächerbagger Web Push Worker
 
-This Cloudflare Worker stores standards-based Web Push subscriptions in D1.
+This Cloudflare Worker stores standards-based Web Push subscriptions and their
+anonymous radius preferences in D1.
 It deliberately does not fan out pushes itself: after a successful Pages
 deployment, the existing GitHub Actions runner reads subscriptions in paginated
 batches and sends the encrypted notifications. This avoids Worker subrequest
@@ -26,6 +27,15 @@ npm run push:db:init:remote
 npm run push:deploy
 npm run push:secrets:setup
 npm run push:github:setup
+```
+
+For an existing database created before radius filtering, apply the migration
+once before deploying the updated Worker:
+
+```bash
+npx wrangler d1 execute faecherbagger-push --remote \
+  --file=push-worker/migrations/0001_notification_radius.sql \
+  --config=push-worker/wrangler.jsonc
 ```
 
 `push:secrets:setup` refuses to overwrite an existing local secret set because
@@ -61,7 +71,9 @@ allows the Vite origin.
 
 - `GET /health` — unauthenticated health check.
 - `GET /config` — returns the public VAPID key.
-- `POST /subscriptions` — creates or refreshes a browser subscription.
+- `POST /subscriptions` — creates or refreshes a browser subscription and
+  optionally stores `{ preferences: { center: [longitude, latitude],
+  radiusKm } }`.
 - `DELETE /subscriptions` — removes a browser subscription.
 - `GET /subscriptions` — administrator-only cursor-paginated export.
 - `POST /broadcasts/claim` — administrator-only idempotency claim.

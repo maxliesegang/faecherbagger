@@ -5,11 +5,17 @@ interface SubscriptionBody {
     p256dh?: string;
     auth?: string;
   };
+  preferences?: {
+    center?: unknown;
+    radiusKm?: unknown;
+  };
 }
 
 const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
 const MAX_ENDPOINT_LENGTH = 4096;
 const MAX_KEY_LENGTH = 512;
+const MIN_RADIUS_KM = 1;
+const MAX_RADIUS_KM = 50;
 
 function json(data: unknown, status = 200, extraHeaders?: HeadersInit) {
   return new Response(JSON.stringify(data), {
@@ -78,8 +84,39 @@ function validSubscription(value: SubscriptionBody) {
     p256dh.length <= MAX_KEY_LENGTH &&
     typeof auth === "string" &&
     auth.length > 0 &&
-    auth.length <= MAX_KEY_LENGTH
+    auth.length <= MAX_KEY_LENGTH &&
+    (value.preferences === undefined ||
+      parseNotificationPreferences(value.preferences) !== null)
   );
+}
+
+function parseNotificationPreferences(
+  preferences: SubscriptionBody["preferences"],
+) {
+  if (!preferences || !Array.isArray(preferences.center)) return null;
+  const [longitude, latitude] = preferences.center;
+  const radiusKm = preferences.radiusKm;
+  if (
+    typeof longitude !== "number" ||
+    !Number.isFinite(longitude) ||
+    longitude < -180 ||
+    longitude > 180 ||
+    typeof latitude !== "number" ||
+    !Number.isFinite(latitude) ||
+    latitude < -90 ||
+    latitude > 90 ||
+    typeof radiusKm !== "number" ||
+    !Number.isFinite(radiusKm) ||
+    radiusKm < MIN_RADIUS_KM ||
+    radiusKm > MAX_RADIUS_KM
+  ) {
+    return null;
+  }
+  return {
+    longitude,
+    latitude,
+    radiusMeters: Math.round(radiusKm * 1_000),
+  };
 }
 
 async function parseJson<T>(request: Request): Promise<T | null> {
@@ -103,14 +140,28 @@ async function handleSubscriptions(
     if (!subscription || !validSubscription(subscription)) {
       return json({ error: "Invalid push subscription" }, 400, corsHeaders(origin));
     }
+    const preferences = parseNotificationPreferences(subscription.preferences);
     await env.DB.prepare(
       `INSERT INTO subscriptions
-        (endpoint, p256dh, auth, expiration_time, created_at, updated_at)
-       VALUES (?1, ?2, ?3, ?4, unixepoch(), unixepoch())
+        (endpoint, p256dh, auth, expiration_time, notification_longitude,
+         notification_latitude, notification_radius_m, created_at, updated_at)
+       VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, unixepoch(), unixepoch())
        ON CONFLICT(endpoint) DO UPDATE SET
         p256dh = excluded.p256dh,
         auth = excluded.auth,
         expiration_time = excluded.expiration_time,
+        notification_longitude = COALESCE(
+          excluded.notification_longitude,
+          subscriptions.notification_longitude
+        ),
+        notification_latitude = COALESCE(
+          excluded.notification_latitude,
+          subscriptions.notification_latitude
+        ),
+        notification_radius_m = COALESCE(
+          excluded.notification_radius_m,
+          subscriptions.notification_radius_m
+        ),
         updated_at = unixepoch()`,
     )
       .bind(
@@ -118,6 +169,9 @@ async function handleSubscriptions(
         subscription.keys!.p256dh,
         subscription.keys!.auth,
         subscription.expirationTime ?? null,
+        preferences?.longitude ?? null,
+        preferences?.latitude ?? null,
+        preferences?.radiusMeters ?? null,
       )
       .run();
     return json({ ok: true }, 201, corsHeaders(origin));
@@ -151,7 +205,10 @@ async function handleSubscriptions(
     );
     const after = url.searchParams.get("after") ?? "";
     const result = await env.DB.prepare(
-      `SELECT endpoint, p256dh, auth, expiration_time AS expirationTime
+      `SELECT endpoint, p256dh, auth, expiration_time AS expirationTime,
+          notification_longitude AS notificationLongitude,
+          notification_latitude AS notificationLatitude,
+          notification_radius_m AS notificationRadiusMeters
        FROM subscriptions
        WHERE endpoint > ?2
        ORDER BY endpoint

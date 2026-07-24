@@ -27,30 +27,40 @@ function locationErrorMessage(error: GeolocationPositionError): string {
 export function useCurrentLocation() {
   const [state, setState] = useState<LocationState>({ status: "idle" });
 
-  const request = useCallback(() => {
+  const request = useCallback(async (): Promise<LngLat> => {
     if (!navigator.geolocation) {
+      const message =
+        "Standortzugriff wird von diesem Browser nicht unterstützt.";
       setState({
         status: "error",
-        message: "Standortzugriff wird von diesem Browser nicht unterstützt.",
+        message,
       });
-      return;
+      throw new Error(message);
     }
 
     setState({ status: "requesting" });
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) =>
-        setState({
-          status: "ready",
-          point: [coords.longitude, coords.latitude],
-        }),
-      (error) =>
-        setState({ status: "error", message: locationErrorMessage(error) }),
-      {
-        enableHighAccuracy: false,
-        maximumAge: 300_000,
-        timeout: 10_000,
-      },
-    );
+    return new Promise<LngLat>((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        ({ coords }) => {
+          const point: LngLat = [coords.longitude, coords.latitude];
+          setState({
+            status: "ready",
+            point,
+          });
+          resolve(point);
+        },
+        (error) => {
+          const message = locationErrorMessage(error);
+          setState({ status: "error", message });
+          reject(new Error(message));
+        },
+        {
+          enableHighAccuracy: false,
+          maximumAge: 300_000,
+          timeout: 10_000,
+        },
+      );
+    });
   }, []);
 
   const clear = useCallback(() => setState({ status: "idle" }), []);

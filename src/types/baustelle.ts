@@ -9,6 +9,12 @@ export type IsoTimestamp = string;
 /** WGS84 position in GeoJSON order: `[longitude, latitude]`. */
 export type LngLat = [number, number];
 
+/** Anonymous notification area centered on a user-selected WGS84 point. */
+export interface NotificationArea {
+  center: LngLat;
+  radiusKm: number;
+}
+
 /**
  * Lifecycle phase of a construction site.
  *
