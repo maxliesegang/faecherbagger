@@ -137,17 +137,22 @@ self.addEventListener("notificationclick", (event) => {
     (event.notification.data as { url?: string } | undefined)?.url ??
     self.registration.scope;
   event.waitUntil(
-    self.clients
-      .matchAll({ type: "window", includeUncontrolled: true })
-      .then(async (windows) => {
-        const existing = windows[0] as WindowClient | undefined;
-        if (existing) {
-          if ("navigate" in existing) await existing.navigate(targetUrl);
-          await existing.focus();
-          existing.postMessage({ type: "REFRESH_VIEW" });
-          return;
-        }
-        await self.clients.openWindow(targetUrl);
-      }),
+    Promise.all([
+      "clearAppBadge" in self.navigator
+        ? self.navigator.clearAppBadge().catch(() => undefined)
+        : Promise.resolve(),
+      self.clients
+        .matchAll({ type: "window", includeUncontrolled: true })
+        .then(async (windows) => {
+          const existing = windows[0] as WindowClient | undefined;
+          if (existing) {
+            if ("navigate" in existing) await existing.navigate(targetUrl);
+            await existing.focus();
+            existing.postMessage({ type: "REFRESH_VIEW" });
+            return;
+          }
+          await self.clients.openWindow(targetUrl);
+        }),
+    ]),
   );
 });
