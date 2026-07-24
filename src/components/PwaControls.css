@@ -1,0 +1,46 @@
+.pwa-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 2rem;
+  align-items: center;
+  max-width: none;
+  margin-block: 0.75rem 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--kern-color-layout-border, #c9c9c9);
+  border-inline-start: 0.3rem solid
+    var(--kern-color-decorative-brand-default, #454b6b);
+  background: var(--kern-color-layout-background-level-1, #f5f5f5);
+}
+
+.pwa-panel h2,
+.pwa-panel p {
+  margin-block: 0 0.35rem;
+}
+
+.pwa-panel__actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.pwa-panel__hint,
+.pwa-panel__feedback,
+.pwa-panel > .kern-alert {
+  grid-column: 1 / -1;
+}
+
+.pwa-panel__feedback {
+  font-weight: 700;
+}
+
+@media (max-width: 48rem) {
+  .pwa-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .pwa-panel__actions {
+    justify-content: start;
+  }
+}

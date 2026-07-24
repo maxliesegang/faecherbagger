@@ -1,0 +1,199 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "baustellen_aktuell.838",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.55538,
+          48.3303
+        ]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": 838,
+        "gemeinde": null,
+        "vorgangszeitraum_von": "2026-02-13T23:00:00Z",
+        "vorgangszeitraum_bis": null,
+        "art": "KC1-route-inondee",
+        "lage": "D203 - Kogenheim",
+        "tagesbaustelle": null,
+        "verursacher": null,
+        "zusatzinfo": "Route barrée : Inondation<br /><br />Déviation: Par Benfeld en empruntant la D83, la D5 et la D212",
+        "sperrung": null,
+        "projektnummer": "5617",
+        "vorgangsnummer": null,
+        "datenquelle": "Collectivité européenne d’Alsace",
+        "stand": "2026-07-23T22:00:00Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "baustellen_aktuell.12136590",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.40304,
+          49.009
+        ]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": 12136590,
+        "gemeinde": "Karlsruhe",
+        "vorgangszeitraum_von": "2023-01-08T23:00:00Z",
+        "vorgangszeitraum_bis": "2026-12-31T22:59:59Z",
+        "art": "Bauliche Sondernutzung",
+        "lage": "Zähringerstraße zwischen Marktplatz und Lammstraße",
+        "tagesbaustelle": null,
+        "verursacher": "Stadt Karlsruhe",
+        "zusatzinfo": "nur Fußweg frei",
+        "sperrung": "mit Vollsperrung",
+        "projektnummer": "36069",
+        "vorgangsnummer": "2022V5840",
+        "datenquelle": "Stadt Karlsruhe",
+        "stand": "2026-06-17T22:00:00Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "baustellen_aktuell.12136581",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.40281,
+              49.00902
+            ],
+            [
+              8.40256,
+              49.00903
+            ],
+            [
+              8.40255,
+              49.00899
+            ],
+            [
+              8.40343,
+              49.00894
+            ],
+            [
+              8.40344,
+              49.00901
+            ],
+            [
+              8.40281,
+              49.00904
+            ],
+            [
+              8.40281,
+              49.00902
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": 12136581,
+        "gemeinde": "Karlsruhe",
+        "vorgangszeitraum_von": "2023-01-08T23:00:00Z",
+        "vorgangszeitraum_bis": "2026-12-31T22:59:59Z",
+        "art": "Bauliche Sondernutzung",
+        "lage": "Zähringerstraße zwischen Marktplatz und Lammstraße",
+        "tagesbaustelle": null,
+        "verursacher": "Stadt Karlsruhe",
+        "zusatzinfo": "nur Fußweg frei",
+        "sperrung": "mit Vollsperrung",
+        "projektnummer": "36069",
+        "vorgangsnummer": "2022V5840",
+        "datenquelle": "Stadt Karlsruhe",
+        "stand": "2026-06-17T22:00:00Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "baustellen_aktuell.11730647",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.39506,
+              49.00599
+            ],
+            [
+              8.39643,
+              49.0072
+            ],
+            [
+              8.39636,
+              49.00718
+            ],
+            [
+              8.395,
+              49.00602
+            ],
+            [
+              8.39506,
+              49.00599
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": 11730647,
+        "gemeinde": "Karlsruhe",
+        "vorgangszeitraum_von": "2020-02-02T23:00:00Z",
+        "vorgangszeitraum_bis": null,
+        "art": "Zeitreisebau",
+        "lage": "Herrenstraße zw. Karlstraße und Amalienstraße",
+        "tagesbaustelle": null,
+        "verursacher": "Privat",
+        "zusatzinfo": "Vollsperrung wegen Bauarbeiten.<br />Umleitung ist ausgeschildert.\r\n\r\nDauer unklar.",
+        "sperrung": "mit Verkehrsbehinderung",
+        "projektnummer": "25221",
+        "vorgangsnummer": "2019V3783",
+        "datenquelle": "Stadt Karlsruhe",
+        "stand": "2026-04-28T22:00:00Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "baustellen_aktuell.11730648",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.39565,
+          49.00654
+        ]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": 11730648,
+        "gemeinde": "Karlsruhe",
+        "vorgangszeitraum_von": "2020-02-02T23:00:00Z",
+        "vorgangszeitraum_bis": null,
+        "art": "Zeitreisebau",
+        "lage": "Herrenstraße zw. Karlstraße und Amalienstraße",
+        "tagesbaustelle": null,
+        "verursacher": "Privat",
+        "zusatzinfo": "Vollsperrung wegen Bauarbeiten.<br />Umleitung ist ausgeschildert.\r\n\r\nDauer unklar.",
+        "sperrung": "mit Verkehrsbehinderung",
+        "projektnummer": "25221",
+        "vorgangsnummer": "2019V3783",
+        "datenquelle": "Stadt Karlsruhe",
+        "stand": "2026-04-28T22:00:00Z"
+      }
+    }
+  ]
+}

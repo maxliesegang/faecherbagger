@@ -1,0 +1,102 @@
+name: Deploy to GitHub Pages
+
+# Builds the static site and deploys it to GitHub Pages. Runs on:
+#   - pushes to main that touch source/config,
+#   - manual dispatch,
+#   - completion of the "Update data" workflow (data commits by GITHUB_TOKEN do
+#     not trigger `push`, so we listen via workflow_run instead).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "index.html"
+      - "package.json"
+      - "package-lock.json"
+      - "vite.config.ts"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Update data"]
+    types: [completed]
+
+# Permissions required by the Pages deployment.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One in-flight deployment at a time; let the newest win.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # Skip if the triggering data run failed.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm test
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_PUSH_API_URL: ${{ vars.PUSH_API_URL }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  notify:
+    # Only data-update runs produce a Baustellen broadcast. The D1 claim also
+    # makes this idempotent when a workflow is retried.
+    if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Broadcast Baustellen changes
+        env:
+          PUSH_API_URL: ${{ vars.PUSH_API_URL }}
+          APP_URL: ${{ vars.APP_URL }}
+          VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT }}
+          PUSH_ADMIN_TOKEN: ${{ secrets.PUSH_ADMIN_TOKEN }}
+        run: |
+          if [[ -z "$PUSH_API_URL" || -z "$APP_URL" || -z "$VAPID_PUBLIC_KEY" || -z "$VAPID_PRIVATE_KEY" || -z "$VAPID_SUBJECT" || -z "$PUSH_ADMIN_TOKEN" ]]; then
+            echo "Web Push is not configured; skipping broadcast."
+          else
+            npm run push:send
+          fi

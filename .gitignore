@@ -1,0 +1,23 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Cloudflare Worker local state and secrets
+.wrangler/
+.dev.vars
+push-worker/.dev.vars

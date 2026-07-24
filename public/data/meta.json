@@ -1,0 +1,25 @@
+{
+  "fetchedAt": "2026-07-24T18:16:58.659Z",
+  "recordCount": 500,
+  "counts": {
+    "active": 271,
+    "upcoming": 229
+  },
+  "source": {
+    "name": "TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal",
+    "url": "https://mobil.trk.de/geoserver/TBA/ows",
+    "layers": [
+      "TBA:baustellen_aktuell",
+      "TBA:baustellen_vorschau"
+    ]
+  },
+  "attribution": [
+    "Stadt Baden-Baden",
+    "Stadt Bruchsal",
+    "Stadt Ettlingen",
+    "Stadt Karlsruhe",
+    "Stadt Rastatt",
+    "Stadt Rheinstetten",
+    "Stadt Stutensee"
+  ]
+}
