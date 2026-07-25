@@ -1,6 +1,6 @@
 import { isNotificationArea } from "../../src/lib/notification-area-validation.ts";
 
-interface SubscriptionBody {
+interface PushSubscriptionRequest {
   endpoint?: string;
   expirationTime?: number | null;
   keys?: {
@@ -17,14 +17,18 @@ const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
 const MAX_ENDPOINT_LENGTH = 4096;
 const MAX_KEY_LENGTH = 512;
 
-function json(data: unknown, status = 200, extraHeaders?: HeadersInit) {
-  return new Response(JSON.stringify(data), {
+function createJsonResponse(
+  body: unknown,
+  status = 200,
+  extraHeaders?: HeadersInit,
+) {
+  return new Response(JSON.stringify(body), {
     status,
     headers: { ...JSON_HEADERS, ...extraHeaders },
   });
 }
 
-function allowedOrigin(request: Request, env: Env) {
+function getAllowedOrigin(request: Request, env: Env) {
   const origin = request.headers.get("origin");
   if (!origin) return null;
   const allowed = env.ALLOWED_ORIGINS.split(",")
@@ -39,7 +43,7 @@ function allowedOrigin(request: Request, env: Env) {
   return null;
 }
 
-function corsHeaders(origin: string | null): HeadersInit {
+function createCorsHeaders(origin: string | null): HeadersInit {
   return origin
     ? {
         "access-control-allow-origin": origin,
@@ -51,7 +55,7 @@ function corsHeaders(origin: string | null): HeadersInit {
     : {};
 }
 
-async function isAdmin(request: Request, env: Env) {
+async function hasAdminAccess(request: Request, env: Env) {
   const authorization = request.headers.get("authorization");
   if (!authorization?.startsWith("Bearer ") || !env.ADMIN_TOKEN) return false;
   const encoder = new TextEncoder();
@@ -68,7 +72,7 @@ async function isAdmin(request: Request, env: Env) {
   );
 }
 
-function validSubscription(value: SubscriptionBody) {
+function isValidPushSubscription(value: PushSubscriptionRequest) {
   if (
     typeof value.endpoint !== "string" ||
     value.endpoint.length > MAX_ENDPOINT_LENGTH ||
@@ -91,7 +95,7 @@ function validSubscription(value: SubscriptionBody) {
 }
 
 function parseNotificationPreferences(
-  preferences: SubscriptionBody["preferences"],
+  preferences: PushSubscriptionRequest["preferences"],
 ) {
   if (!isNotificationArea(preferences)) return null;
   const [longitude, latitude] = preferences.center;
@@ -102,7 +106,7 @@ function parseNotificationPreferences(
   };
 }
 
-async function parseJson<T>(request: Request): Promise<T | null> {
+async function parseJsonBody<T>(request: Request): Promise<T | null> {
   try {
     return (await request.json()) as T;
   } catch {
@@ -110,18 +114,22 @@ async function parseJson<T>(request: Request): Promise<T | null> {
   }
 }
 
-async function handleSubscriptions(
+async function handleSubscriptionRequest(
   request: Request,
   env: Env,
   origin: string | null,
 ) {
   if (request.method === "POST") {
     if (request.headers.has("origin") && !origin) {
-      return json({ error: "Origin not allowed" }, 403);
+      return createJsonResponse({ error: "Origin not allowed" }, 403);
     }
-    const subscription = await parseJson<SubscriptionBody>(request);
-    if (!subscription || !validSubscription(subscription)) {
-      return json({ error: "Invalid push subscription" }, 400, corsHeaders(origin));
+    const subscription = await parseJsonBody<PushSubscriptionRequest>(request);
+    if (!subscription || !isValidPushSubscription(subscription)) {
+      return createJsonResponse(
+        { error: "Invalid push subscription" },
+        400,
+        createCorsHeaders(origin),
+      );
     }
     const preferences = parseNotificationPreferences(subscription.preferences);
     await env.DB.prepare(
@@ -157,29 +165,33 @@ async function handleSubscriptions(
         preferences?.radiusMeters ?? null,
       )
       .run();
-    return json({ ok: true }, 201, corsHeaders(origin));
+    return createJsonResponse({ ok: true }, 201, createCorsHeaders(origin));
   }
 
   if (request.method === "DELETE") {
-    const body = await parseJson<{ endpoint?: string }>(request);
+    const body = await parseJsonBody<{ endpoint?: string }>(request);
     if (
       !body?.endpoint ||
       body.endpoint.length > MAX_ENDPOINT_LENGTH ||
       (request.headers.has("origin") &&
         !origin &&
-        !(await isAdmin(request, env)))
+        !(await hasAdminAccess(request, env)))
     ) {
-      return json({ error: "Invalid request" }, 400, corsHeaders(origin));
+      return createJsonResponse(
+        { error: "Invalid request" },
+        400,
+        createCorsHeaders(origin),
+      );
     }
     await env.DB.prepare("DELETE FROM subscriptions WHERE endpoint = ?1")
       .bind(body.endpoint)
       .run();
-    return json({ ok: true }, 200, corsHeaders(origin));
+    return createJsonResponse({ ok: true }, 200, createCorsHeaders(origin));
   }
 
   if (request.method === "GET") {
-    if (!(await isAdmin(request, env))) {
-      return json({ error: "Unauthorized" }, 401);
+    if (!(await hasAdminAccess(request, env))) {
+      return createJsonResponse({ error: "Unauthorized" }, 401);
     }
     const url = new URL(request.url);
     const limit = Math.min(
@@ -200,30 +212,34 @@ async function handleSubscriptions(
       .bind(limit, after)
       .all();
     const last = result.results.at(-1) as { endpoint?: string } | undefined;
-    return json({
+    return createJsonResponse({
       subscriptions: result.results,
       nextCursor:
         result.results.length === limit && last?.endpoint ? last.endpoint : null,
     });
   }
 
-  return json({ error: "Method not allowed" }, 405, corsHeaders(origin));
+  return createJsonResponse(
+    { error: "Method not allowed" },
+    405,
+    createCorsHeaders(origin),
+  );
 }
 
-async function handleBroadcastClaim(request: Request, env: Env) {
+async function handleBroadcastClaimRequest(request: Request, env: Env) {
   if (request.method !== "POST") {
-    return json({ error: "Method not allowed" }, 405);
+    return createJsonResponse({ error: "Method not allowed" }, 405);
   }
-  if (!(await isAdmin(request, env))) {
-    return json({ error: "Unauthorized" }, 401);
+  if (!(await hasAdminAccess(request, env))) {
+    return createJsonResponse({ error: "Unauthorized" }, 401);
   }
-  const body = await parseJson<{ fetchedAt?: string }>(request);
+  const body = await parseJsonBody<{ fetchedAt?: string }>(request);
   if (
     !body?.fetchedAt ||
     body.fetchedAt.length > 64 ||
     Number.isNaN(Date.parse(body.fetchedAt))
   ) {
-    return json({ error: "Invalid fetchedAt" }, 400);
+    return createJsonResponse({ error: "Invalid fetchedAt" }, 400);
   }
   const result = await env.DB.prepare(
     `INSERT OR IGNORE INTO broadcasts (fetched_at, created_at)
@@ -231,37 +247,40 @@ async function handleBroadcastClaim(request: Request, env: Env) {
   )
     .bind(body.fetchedAt)
     .run();
-  return json({ claimed: (result.meta.changes ?? 0) > 0 });
+  return createJsonResponse({ claimed: (result.meta.changes ?? 0) > 0 });
 }
 
 export default {
   async fetch(request, env): Promise<Response> {
     const url = new URL(request.url);
-    const origin = allowedOrigin(request, env);
+    const origin = getAllowedOrigin(request, env);
 
     if (request.method === "OPTIONS") {
       if (!origin) return new Response(null, { status: 403 });
-      return new Response(null, { status: 204, headers: corsHeaders(origin) });
+      return new Response(null, {
+        status: 204,
+        headers: createCorsHeaders(origin),
+      });
     }
     if (url.pathname === "/health") {
-      return json({ ok: true });
+      return createJsonResponse({ ok: true });
     }
     if (url.pathname === "/config" && request.method === "GET") {
       if (request.headers.has("origin") && !origin) {
-        return json({ error: "Origin not allowed" }, 403);
+        return createJsonResponse({ error: "Origin not allowed" }, 403);
       }
-      return json(
+      return createJsonResponse(
         { vapidPublicKey: env.VAPID_PUBLIC_KEY },
         200,
-        corsHeaders(origin),
+        createCorsHeaders(origin),
       );
     }
     if (url.pathname === "/subscriptions") {
-      return handleSubscriptions(request, env, origin);
+      return handleSubscriptionRequest(request, env, origin);
     }
     if (url.pathname === "/broadcasts/claim") {
-      return handleBroadcastClaim(request, env);
+      return handleBroadcastClaimRequest(request, env);
     }
-    return json({ error: "Not found" }, 404);
+    return createJsonResponse({ error: "Not found" }, 404);
   },
 } satisfies ExportedHandler<Env>;

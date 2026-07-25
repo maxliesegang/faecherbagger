@@ -6,14 +6,16 @@ import {
 import { useState } from "react";
 import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
 
-interface Props {
-  location: CurrentLocationController;
+interface CurrentLocationControlProps {
+  locationController: CurrentLocationController;
 }
 
-export function LocationControl({ location }: Props) {
-  const { state, request, clear } = location;
+export function CurrentLocationControl({
+  locationController,
+}: CurrentLocationControlProps) {
+  const { locationState, requestLocation, clearLocation } = locationController;
   const [open, setOpen] = useState(
-    state.status === "ready" || state.status === "error",
+    locationState.status === "ready" || locationState.status === "error",
   );
 
   return (
@@ -24,7 +26,7 @@ export function LocationControl({ location }: Props) {
     >
       <summary className="kern-accordion__header">
         <span className="kern-title">
-          {state.status === "ready"
+          {locationState.status === "ready"
             ? "Entfernung zu meinem Standort wird angezeigt"
             : "Nach Entfernung sortieren"}
         </span>
@@ -36,30 +38,30 @@ export function LocationControl({ location }: Props) {
           ausdrücklich als Mittelpunkt für Baustellenbenachrichtigungen.
         </KernText>
 
-        {state.status === "ready" ? (
+        {locationState.status === "ready" ? (
           <KernButton
             type="button"
             variant="secondary"
             label="Standort entfernen"
-            onClick={clear}
+            onClick={clearLocation}
           />
         ) : (
           <KernButton
             type="button"
             variant="secondary"
             label={
-              state.status === "requesting"
+              locationState.status === "requesting"
                 ? "Standort wird ermittelt …"
                 : "Meinen Standort verwenden"
             }
-            disabled={state.status === "requesting"}
-            onClick={() => void request()}
+            disabled={locationState.status === "requesting"}
+            onClick={() => void requestLocation()}
           />
         )}
 
-        {state.status === "error" && (
+        {locationState.status === "error" && (
           <KernAlert variant="warning" title="Standort nicht verfügbar">
-            <KernText>{state.message}</KernText>
+            <KernText>{locationState.message}</KernText>
           </KernAlert>
         )}
       </section>

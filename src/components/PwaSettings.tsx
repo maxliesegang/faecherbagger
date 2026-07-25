@@ -19,11 +19,11 @@ import {
   MAX_NOTIFICATION_RADIUS_KM,
   MIN_NOTIFICATION_RADIUS_KM,
 } from "../lib/notification-area.ts";
-import "./PwaControls.css";
+import "./PwaSettings.css";
 
-const NOTIFICATIONS_KEY = "faecherbagger-notifications";
+const NOTIFICATIONS_STORAGE_KEY = "faecherbagger-notifications";
 const REFRESH_TAG = "refresh-baustellen";
-const REFRESH_INTERVAL = 12 * 60 * 60 * 1000;
+const REFRESH_INTERVAL_MS = 12 * 60 * 60 * 1000;
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -43,13 +43,13 @@ type PwaRegistration = ServiceWorkerRegistration & {
   sync?: BackgroundSyncManager;
 };
 
-interface Props {
-  location: CurrentLocationController;
+interface PwaSettingsProps {
+  locationController: CurrentLocationController;
   notificationArea: NotificationArea | null;
   onNotificationAreaChange: (area: NotificationArea) => void;
 }
 
-function sendToWorker(message: object) {
+function postMessageToServiceWorker(message: object) {
   void navigator.serviceWorker.ready.then((registration) => {
     (registration.active ?? navigator.serviceWorker.controller)?.postMessage(
       message,
@@ -58,32 +58,32 @@ function sendToWorker(message: object) {
 }
 
 /** Message from a caught error, falling back to a localized default. */
-const errorMessage = (error: unknown, fallback: string): string =>
+const getErrorMessage = (error: unknown, fallback: string): string =>
   error instanceof Error ? error.message : fallback;
 
-export function PwaControls({
-  location,
+export function PwaSettings({
+  locationController,
   notificationArea,
   onNotificationAreaChange,
-}: Props) {
+}: PwaSettingsProps) {
   const [installPrompt, setInstallPrompt] =
     useState<BeforeInstallPromptEvent>();
-  const [installed, setInstalled] = useState(
+  const [isInstalled, setIsInstalled] = useState(
     window.matchMedia("(display-mode: standalone)").matches,
   );
-  const [notificationState, setNotificationState] = useState<
+  const [notificationPermission, setNotificationPermission] = useState<
     NotificationPermission | "unsupported"
   >(
     "Notification" in window ? Notification.permission : "unsupported",
   );
-  const [notificationsEnabled, setNotificationsEnabled] = useState(
-    localStorage.getItem(NOTIFICATIONS_KEY) === "true",
+  const [areNotificationsEnabled, setAreNotificationsEnabled] = useState(
+    localStorage.getItem(NOTIFICATIONS_STORAGE_KEY) === "true",
   );
-  const [feedback, setFeedback] = useState<string>();
+  const [feedbackMessage, setFeedbackMessage] = useState<string>();
   const [radiusKm, setRadiusKm] = useState(
     notificationArea?.radiusKm ?? DEFAULT_NOTIFICATION_RADIUS_KM,
   );
-  const [savingArea, setSavingArea] = useState(false);
+  const [isSavingArea, setIsSavingArea] = useState(false);
 
   useEffect(() => {
     const onInstallPrompt = (event: Event) => {
@@ -91,9 +91,9 @@ export function PwaControls({
       setInstallPrompt(event as BeforeInstallPromptEvent);
     };
     const onInstalled = () => {
-      setInstalled(true);
+      setIsInstalled(true);
       setInstallPrompt(undefined);
-      setFeedback("Fächerbagger wurde installiert.");
+      setFeedbackMessage("Fächerbagger wurde installiert.");
     };
     window.addEventListener("beforeinstallprompt", onInstallPrompt);
     window.addEventListener("appinstalled", onInstalled);
@@ -104,7 +104,7 @@ export function PwaControls({
         try {
           if (pwaRegistration.periodicSync) {
             await pwaRegistration.periodicSync.register(REFRESH_TAG, {
-              minInterval: REFRESH_INTERVAL,
+              minInterval: REFRESH_INTERVAL_MS,
             });
           } else if (pwaRegistration.sync) {
             await pwaRegistration.sync.register(REFRESH_TAG);
@@ -112,7 +112,7 @@ export function PwaControls({
         } catch {
           // Browsers may reject background sync based on engagement or settings.
         }
-        sendToWorker({ type: "REFRESH_DATA" });
+        postMessageToServiceWorker({ type: "REFRESH_DATA" });
         if (isPushSupported) {
           try {
             const subscription = await getPushSubscription();
@@ -120,8 +120,8 @@ export function PwaControls({
             if (subscription && isPushConfigured) {
               await subscribeToPush(notificationArea ?? undefined);
             }
-            setNotificationsEnabled(subscribed);
-            localStorage.setItem(NOTIFICATIONS_KEY, String(subscribed));
+            setAreNotificationsEnabled(subscribed);
+            localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, String(subscribed));
           } catch {
             // A temporary push API failure must not prevent the PWA from loading.
           }
@@ -131,7 +131,7 @@ export function PwaControls({
 
     const refreshWhenOnline = () => {
       if (document.visibilityState === "visible") {
-        sendToWorker({ type: "REFRESH_DATA" });
+        postMessageToServiceWorker({ type: "REFRESH_DATA" });
       }
     };
     window.addEventListener("online", refreshWhenOnline);
@@ -144,55 +144,61 @@ export function PwaControls({
     };
   }, []);
 
-  const saveArea = async (area: NotificationArea, message: string) => {
-    setSavingArea(true);
+  const saveNotificationPreferences = async (
+    area: NotificationArea,
+    message: string,
+  ) => {
+    setIsSavingArea(true);
     try {
-      if (notificationsEnabled) {
+      if (areNotificationsEnabled) {
         await updatePushPreferences(area);
       }
       onNotificationAreaChange(area);
-      setFeedback(message);
+      setFeedbackMessage(message);
     } catch (error) {
-      setFeedback(
-        errorMessage(
+      setFeedbackMessage(
+        getErrorMessage(
           error,
           "Der Benachrichtigungsradius konnte nicht gespeichert werden.",
         ),
       );
     } finally {
-      setSavingArea(false);
+      setIsSavingArea(false);
     }
   };
 
-  const useLocationForNotifications = async () => {
+  const setNotificationAreaFromCurrentLocation = async () => {
     try {
       const point =
-        location.state.status === "ready" && !notificationArea
-          ? location.state.point
-          : await location.request();
+        locationController.locationState.status === "ready" &&
+        !notificationArea
+          ? locationController.locationState.point
+          : await locationController.requestLocation();
       const center: [number, number] = [
         Number(point[0].toFixed(5)),
         Number(point[1].toFixed(5)),
       ];
-      await saveArea(
+      await saveNotificationPreferences(
         { center, radiusKm },
-        notificationsEnabled
+        areNotificationsEnabled
           ? `Benachrichtigungsradius von ${radiusKm} km ist gespeichert.`
           : `Standort und Radius von ${radiusKm} km sind vorgemerkt.`,
       );
     } catch (error) {
-      setFeedback(
-        errorMessage(error, "Der Standort konnte nicht bestimmt werden."),
+      setFeedbackMessage(
+        getErrorMessage(error, "Der Standort konnte nicht bestimmt werden."),
       );
     }
   };
 
-  const saveRadius = async () => {
+  const saveNotificationRadius = async () => {
     if (!notificationArea) {
-      setFeedback("Legen Sie zuerst den Mittelpunkt über Ihren Standort fest.");
+      setFeedbackMessage(
+        "Legen Sie zuerst den Mittelpunkt über Ihren Standort fest.",
+      );
       return;
     }
-    await saveArea(
+    await saveNotificationPreferences(
       { ...notificationArea, radiusKm },
       `Benachrichtigungsradius auf ${radiusKm} km aktualisiert.`,
     );
@@ -201,21 +207,21 @@ export function PwaControls({
   const enableNotifications = async () => {
     if (!("Notification" in window)) return;
     if (!notificationArea) {
-      setFeedback(
+      setFeedbackMessage(
         "Legen Sie zuerst Standort und Radius für Benachrichtigungen fest.",
       );
       return;
     }
     try {
       const permission = await Notification.requestPermission();
-      setNotificationState(permission);
+      setNotificationPermission(permission);
       if (permission !== "granted") {
-        setFeedback("Benachrichtigungen wurden nicht freigegeben.");
+        setFeedbackMessage("Benachrichtigungen wurden nicht freigegeben.");
         return;
       }
       await subscribeToPush(notificationArea);
-      localStorage.setItem(NOTIFICATIONS_KEY, "true");
-      setNotificationsEnabled(true);
+      localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, "true");
+      setAreNotificationsEnabled(true);
       const registration = await navigator.serviceWorker.ready;
       await registration.showNotification("Benachrichtigungen aktiviert", {
         body: `Sie erhalten Hinweise zu neuen Baustellen im Umkreis von ${notificationArea.radiusKm} km.`,
@@ -223,12 +229,12 @@ export function PwaControls({
         badge: `${import.meta.env.BASE_URL}icons/faecherbagger-192.png`,
         tag: "faecherbagger-test",
       });
-      setFeedback("Testbenachrichtigung wurde gesendet.");
+      setFeedbackMessage("Testbenachrichtigung wurde gesendet.");
     } catch (error) {
-      localStorage.setItem(NOTIFICATIONS_KEY, "false");
-      setNotificationsEnabled(false);
-      setFeedback(
-        errorMessage(
+      localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, "false");
+      setAreNotificationsEnabled(false);
+      setFeedbackMessage(
+        getErrorMessage(
           error,
           "Benachrichtigungen konnten nicht aktiviert werden.",
         ),
@@ -239,12 +245,12 @@ export function PwaControls({
   const disableNotifications = async () => {
     try {
       await unsubscribeFromPush();
-      localStorage.setItem(NOTIFICATIONS_KEY, "false");
-      setNotificationsEnabled(false);
-      setFeedback("Baustellenbenachrichtigungen sind ausgeschaltet.");
+      localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, "false");
+      setAreNotificationsEnabled(false);
+      setFeedbackMessage("Baustellenbenachrichtigungen sind ausgeschaltet.");
     } catch (error) {
-      setFeedback(
-        errorMessage(
+      setFeedbackMessage(
+        getErrorMessage(
           error,
           "Benachrichtigungen konnten nicht ausgeschaltet werden.",
         ),
@@ -252,22 +258,22 @@ export function PwaControls({
     }
   };
 
-  const install = async () => {
+  const promptAppInstallation = async () => {
     if (!installPrompt) return;
     await installPrompt.prompt();
     const choice = await installPrompt.userChoice;
-    if (choice.outcome === "accepted") setInstalled(true);
+    if (choice.outcome === "accepted") setIsInstalled(true);
     setInstallPrompt(undefined);
   };
 
-  const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
-  const canOfferNotifications = !isIos || installed;
+  const isIosDevice = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const canOfferNotifications = !isIosDevice || isInstalled;
 
   return (
     <details className="kern-accordion pwa-panel">
       <summary className="kern-accordion__header">
         <span className="kern-title">
-          {notificationsEnabled
+          {areNotificationsEnabled
             ? "Benachrichtigungen sind aktiv"
             : "App & Benachrichtigungen"}
         </span>
@@ -307,16 +313,19 @@ export function PwaControls({
                 ? "Mittelpunkt aktualisieren"
                 : "Meinen Standort als Mittelpunkt"
             }
-            disabled={savingArea || location.state.status === "requesting"}
-            onClick={() => void useLocationForNotifications()}
+            disabled={
+              isSavingArea ||
+              locationController.locationState.status === "requesting"
+            }
+            onClick={() => void setNotificationAreaFromCurrentLocation()}
           />
           {notificationArea && radiusKm !== notificationArea.radiusKm && (
             <KernButton
               type="button"
               variant="tertiary"
               label="Radius speichern"
-              disabled={savingArea}
-              onClick={() => void saveRadius()}
+              disabled={isSavingArea}
+              onClick={() => void saveNotificationRadius()}
             />
           )}
         </div>
@@ -329,15 +338,15 @@ export function PwaControls({
         </fieldset>
 
         <div className="pwa-panel__actions">
-        {!installed && installPrompt && (
+        {!isInstalled && installPrompt && (
           <KernButton
             type="button"
             label="App installieren"
-            onClick={() => void install()}
+            onClick={() => void promptAppInstallation()}
           />
         )}
-        {!notificationsEnabled &&
-          notificationState !== "unsupported" &&
+        {!areNotificationsEnabled &&
+          notificationPermission !== "unsupported" &&
           canOfferNotifications &&
           isPushSupported &&
           isPushConfigured && (
@@ -348,7 +357,7 @@ export function PwaControls({
             onClick={() => void enableNotifications()}
           />
           )}
-        {notificationsEnabled && (
+        {areNotificationsEnabled && (
           <KernButton
             type="button"
             variant="tertiary"
@@ -361,13 +370,13 @@ export function PwaControls({
           variant="tertiary"
           label="Jetzt aktualisieren"
           onClick={() => {
-            sendToWorker({ type: "REFRESH_DATA" });
-            setFeedback("Aktualisierung wurde angefordert.");
+            postMessageToServiceWorker({ type: "REFRESH_DATA" });
+            setFeedbackMessage("Aktualisierung wurde angefordert.");
           }}
         />
         </div>
 
-        {!installed && !installPrompt && isIos && (
+        {!isInstalled && !installPrompt && isIosDevice && (
         <KernText muted className="pwa-panel__hint">
           Auf iPhone/iPad: In Safari „Teilen“ und danach „Zum Home-Bildschirm“
           wählen. Benachrichtigungen sind anschließend in der installierten App
@@ -388,7 +397,7 @@ export function PwaControls({
           Ausschalten wird die Geräteadresse einschließlich Gebiet gelöscht.
         </KernText>
         )}
-        {notificationsEnabled && !notificationArea && (
+        {areNotificationsEnabled && !notificationArea && (
         <KernAlert variant="warning" title="Benachrichtigungsgebiet fehlt">
           <KernText>
             Legen Sie einen Standort und Radius fest, damit nur passende neue
@@ -396,7 +405,7 @@ export function PwaControls({
           </KernText>
         </KernAlert>
         )}
-        {notificationState === "denied" && (
+        {notificationPermission === "denied" && (
         <KernAlert
           variant="warning"
           title="Benachrichtigungen sind blockiert"
@@ -407,9 +416,9 @@ export function PwaControls({
           </KernText>
         </KernAlert>
         )}
-        {feedback && (
+        {feedbackMessage && (
         <KernText className="pwa-panel__feedback" aria-live="polite">
-          {feedback}
+          {feedbackMessage}
         </KernText>
         )}
       </section>

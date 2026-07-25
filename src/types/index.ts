@@ -1,19 +1,19 @@
 export type {
-  Baustelle,
-  Category,
-  Changes,
+  ConstructionCategory,
+  ConstructionPhase,
+  ConstructionSite,
+  ConstructionSiteChanges,
+  ConstructionSiteMetadata,
+  ConstructionSiteMobility,
   ClosureSeverity,
   IsoDate,
   IsoTimestamp,
   LngLat,
-  Meta,
   NotificationArea,
-  Phase,
-  SiteType,
-} from "./baustelle.ts";
-export { CLOSURE_SEVERITY_RANK } from "./baustelle.ts";
+} from "./construction-site.ts";
+export { CLOSURE_SEVERITY_SORT_RANK } from "./construction-site.ts";
 export type {
-  WfsBaustelleCollection,
-  WfsBaustelleFeature,
-  WfsBaustelleProperties,
+  WfsConstructionSiteCollection,
+  WfsConstructionSiteFeature,
+  WfsConstructionSiteProperties,
 } from "./wfs.ts";

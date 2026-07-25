@@ -40,11 +40,11 @@
 }
 
 .map-legend__dot--active {
-  background: #1d5e9e;
+  background: var(--phase-active, #1d5e9e);
 }
 
 .map-legend__dot--upcoming {
-  background: #ad6800;
+  background: var(--phase-upcoming, #ad6800);
 }
 
 .map-legend__dot--location {

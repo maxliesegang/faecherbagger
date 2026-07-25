@@ -6,103 +6,108 @@ import {
   type ReactNode,
 } from "react";
 import { KernBadge } from "@kern-ux-annex/kern-react-kit";
-import type { Baustelle, LngLat } from "../types/index.ts";
+import type { ConstructionSite, LngLat } from "../types/index.ts";
 import { distanceInMeters, formatDistance } from "../lib/distance.ts";
 import {
-  sortBaustellen,
-  sortBaustellenForDisplay,
-  type BaustellenSort,
-  type BaustellenSortKey,
-} from "../lib/sort.ts";
+  sortConstructionSites,
+  sortConstructionSitesForDisplay,
+  type ConstructionSiteSort,
+  type ConstructionSiteSortKey,
+} from "../lib/construction-site-sort.ts";
 import {
-  categoryLabel,
-  closureLabel,
-  closureVariant,
-  formatPeriod,
-  formatTimestamp,
-  phaseLabel,
-  phaseVariant,
-} from "../lib/labels.ts";
-import "./BaustellenTable.css";
+  getConstructionCategoryLabel,
+  getClosureLabel,
+  getClosureBadgeVariant,
+  formatConstructionPeriod,
+  formatIsoTimestamp,
+  getConstructionPhaseLabel,
+  getConstructionPhaseBadgeVariant,
+} from "../lib/construction-site-labels.ts";
+import "./ConstructionSiteTable.css";
 
-interface Props {
-  records: Baustelle[];
+interface ConstructionSiteTableProps {
+  constructionSites: readonly ConstructionSite[];
   currentLocation?: LngLat;
-  onShowOnMap?: (id: string) => void;
+  onShowSiteOnMap?: (siteId: string) => void;
 }
 
-interface Column {
-  key: BaustellenSortKey;
+interface ConstructionSiteTableColumn {
+  key: ConstructionSiteSortKey;
   label: string;
-  render: (record: Baustelle) => ReactNode;
+  render: (site: ConstructionSite) => ReactNode;
   numeric?: boolean;
 }
 
-const BASE_COLUMNS: readonly Column[] = [
+const BASE_COLUMNS: readonly ConstructionSiteTableColumn[] = [
   {
     key: "location",
     label: "Lage",
-    render: (record) => record.location,
+    render: (site) => site.location,
   },
   {
     key: "municipality",
     label: "Ort",
-    render: (record) => record.municipality,
+    render: (site) => site.municipality,
   },
   {
     key: "phase",
     label: "Status",
-    render: (record) => (
+    render: (site) => (
       <KernBadge
-        variant={phaseVariant(record.phase)}
-        label={phaseLabel(record.phase)}
+        variant={getConstructionPhaseBadgeVariant(site.phase)}
+        label={getConstructionPhaseLabel(site.phase)}
       />
     ),
   },
   {
     key: "period",
     label: "Zeitraum",
-    render: (record) => formatPeriod(record.startDate, record.endDate),
+    render: (site) => formatConstructionPeriod(site.startDate, site.endDate),
   },
   {
     key: "category",
     label: "Art",
-    render: (record) => categoryLabel(record.category),
+    render: (site) => getConstructionCategoryLabel(site.category),
   },
   {
     key: "closure",
     label: "Sperrung",
-    render: (record) => (
+    render: (site) => (
       <KernBadge
-        variant={closureVariant(record.closure)}
-        label={closureLabel(record.closure)}
+        variant={getClosureBadgeVariant(site.closure)}
+        label={getClosureLabel(site.closure)}
       />
     ),
   },
   {
     key: "lastModified",
     label: "Aktualisiert",
-    render: (record) => formatTimestamp(record.lastModified),
+    render: (site) => formatIsoTimestamp(site.lastModified),
   },
 ];
 
-function nextSort(current: BaustellenSort | null, key: BaustellenSortKey) {
+function getNextSort(
+  current: ConstructionSiteSort | null,
+  key: ConstructionSiteSortKey,
+) {
   return {
     key,
     direction:
       current?.key === key && current.direction === "ascending"
         ? "descending"
         : "ascending",
-  } satisfies BaustellenSort;
+  } satisfies ConstructionSiteSort;
 }
 
-export function BaustellenTable({
-  records,
+export function ConstructionSiteTable({
+  constructionSites,
   currentLocation,
-  onShowOnMap,
-}: Props) {
-  const [sort, setSort] = useState<BaustellenSort | null>(null);
-  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  onShowSiteOnMap,
+}: ConstructionSiteTableProps) {
+  const [sort, setSort] = useState<ConstructionSiteSort | null>(null);
+  const [expandedSiteIds, setExpandedSiteIds] = useState<Set<string>>(
+    new Set(),
+  );
   const effectiveSort =
     sort?.key === "distance" && !currentLocation ? null : sort;
 
@@ -112,7 +117,7 @@ export function BaustellenTable({
     }
   }, [currentLocation]);
 
-  const columns = useMemo<readonly Column[]>(
+  const columns = useMemo<readonly ConstructionSiteTableColumn[]>(
     () =>
       currentLocation
         ? [
@@ -121,24 +126,28 @@ export function BaustellenTable({
               key: "distance",
               label: "Entfernung (Luftlinie)",
               numeric: true,
-              render: (record: Baustelle) =>
-                formatDistance(distanceInMeters(currentLocation, record.point)),
+              render: (site: ConstructionSite) =>
+                formatDistance(distanceInMeters(currentLocation, site.point)),
             },
           ]
         : BASE_COLUMNS,
     [currentLocation],
   );
 
-  const sortedRecords = useMemo(
+  const sortedConstructionSites = useMemo(
     () =>
       effectiveSort
-        ? sortBaustellen(records, effectiveSort, currentLocation)
-        : sortBaustellenForDisplay(records),
-    [currentLocation, effectiveSort, records],
+        ? sortConstructionSites(
+            constructionSites,
+            effectiveSort,
+            currentLocation,
+          )
+        : sortConstructionSitesForDisplay(constructionSites),
+    [constructionSites, currentLocation, effectiveSort],
   );
 
   const toggleExpanded = (id: string) => {
-    setExpanded((current) => {
+    setExpandedSiteIds((current) => {
       const next = new Set(current);
       if (next.has(id)) next.delete(id);
       else next.add(id);
@@ -148,7 +157,7 @@ export function BaustellenTable({
 
   return (
     <>
-      <div className="baustellen-table kern-table-responsive">
+      <div className="construction-site-table kern-table-responsive">
         <table className="kern-table kern-table--striped kern-table--small">
           <thead className="kern-table__head">
             <tr className="kern-table__row">
@@ -169,15 +178,15 @@ export function BaustellenTable({
                   >
                     <button
                       type="button"
-                      className="baustellen-table__sort-button"
+                      className="construction-site-table__sort-button"
                       aria-label={`${column.label} ${nextDirection} sortieren`}
                       onClick={() =>
-                        setSort((current) => nextSort(current, column.key))
+                        setSort((current) => getNextSort(current, column.key))
                       }
                     >
                       {column.label}
                       <span
-                        className="baustellen-table__sort-icon"
+                        className="construction-site-table__sort-icon"
                         aria-hidden="true"
                       >
                         {direction === "ascending"
@@ -196,10 +205,10 @@ export function BaustellenTable({
             </tr>
           </thead>
           <tbody className="kern-table__body">
-            {sortedRecords.map((record) => {
-              const isExpanded = expanded.has(record.id);
+            {sortedConstructionSites.map((site) => {
+              const isExpanded = expandedSiteIds.has(site.id);
               return (
-                <Fragment key={record.id}>
+                <Fragment key={site.id}>
                   <tr className="kern-table__row">
                     {columns.map((column) => (
                       <td
@@ -208,26 +217,26 @@ export function BaustellenTable({
                           column.numeric ? " kern-table__cell--numeric" : ""
                         }`}
                       >
-                        {column.render(record)}
+                        {column.render(site)}
                       </td>
                     ))}
                     <td className="kern-table__cell">
-                      <div className="baustellen-table__actions">
-                        {onShowOnMap && (
+                      <div className="construction-site-table__actions">
+                        {onShowSiteOnMap && (
                           <button
                             type="button"
-                            className="baustellen-table__map-button"
-                            onClick={() => onShowOnMap(record.id)}
+                            className="construction-site-table__map-button"
+                            onClick={() => onShowSiteOnMap(site.id)}
                           >
                             Auf Karte
                           </button>
                         )}
                         <button
                           type="button"
-                          className="baustellen-table__details-button"
+                          className="construction-site-table__details-button"
                           aria-expanded={isExpanded}
-                          aria-controls={`details-${record.id}`}
-                          onClick={() => toggleExpanded(record.id)}
+                          aria-controls={`details-${site.id}`}
+                          onClick={() => toggleExpanded(site.id)}
                         >
                           {isExpanded ? "Schließen" : "Details"}
                         </button>
@@ -236,12 +245,12 @@ export function BaustellenTable({
                   </tr>
                   {isExpanded && (
                     <tr
-                      key={`${record.id}-details`}
-                      id={`details-${record.id}`}
-                      className="baustellen-table__details-row"
+                      key={`${site.id}-details`}
+                      id={`details-${site.id}`}
+                      className="construction-site-table__details-row"
                     >
                       <td colSpan={columns.length + 1}>
-                        <RecordDetails record={record} />
+                        <ConstructionSiteDetails site={site} />
                       </td>
                     </tr>
                   )}
@@ -252,50 +261,50 @@ export function BaustellenTable({
         </table>
       </div>
 
-      <div className="baustellen-cards" aria-label="Baustellenliste">
-        {sortedRecords.map((record) => (
-          <article className="baustellen-card" key={record.id}>
-            <div className="baustellen-card__topline">
+      <div className="construction-site-cards" aria-label="Baustellenliste">
+        {sortedConstructionSites.map((site) => (
+          <article className="construction-site-card" key={site.id}>
+            <div className="construction-site-card__topline">
               <KernBadge
-                variant={phaseVariant(record.phase)}
-                label={phaseLabel(record.phase)}
+                variant={getConstructionPhaseBadgeVariant(site.phase)}
+                label={getConstructionPhaseLabel(site.phase)}
               />
               <KernBadge
-                variant={closureVariant(record.closure)}
-                label={closureLabel(record.closure)}
+                variant={getClosureBadgeVariant(site.closure)}
+                label={getClosureLabel(site.closure)}
               />
             </div>
-            <h3 className="baustellen-card__title">{record.location}</h3>
-            <p className="baustellen-card__municipality">{record.municipality}</p>
-            <dl className="baustellen-card__facts">
+            <h3 className="construction-site-card__title">{site.location}</h3>
+            <p className="construction-site-card__municipality">{site.municipality}</p>
+            <dl className="construction-site-card__facts">
               <div>
                 <dt>Zeitraum</dt>
-                <dd>{formatPeriod(record.startDate, record.endDate)}</dd>
+                <dd>{formatConstructionPeriod(site.startDate, site.endDate)}</dd>
               </div>
               <div>
                 <dt>Art</dt>
-                <dd>{categoryLabel(record.category)}</dd>
+                <dd>{getConstructionCategoryLabel(site.category)}</dd>
               </div>
               {currentLocation && (
                 <div>
                   <dt>Entfernung</dt>
                   <dd>
                     {formatDistance(
-                      distanceInMeters(currentLocation, record.point),
+                      distanceInMeters(currentLocation, site.point),
                     )}
                   </dd>
                 </div>
               )}
             </dl>
-            <details className="baustellen-card__details">
+            <details className="construction-site-card__details">
               <summary>Weitere Angaben</summary>
-              <RecordDetails record={record} />
+              <ConstructionSiteDetails site={site} />
             </details>
-            {onShowOnMap && (
+            {onShowSiteOnMap && (
               <button
                 type="button"
-                className="baustellen-card__map-button"
-                onClick={() => onShowOnMap(record.id)}
+                className="construction-site-card__map-button"
+                onClick={() => onShowSiteOnMap(site.id)}
               >
                 Auf Karte zeigen
               </button>
@@ -307,30 +316,30 @@ export function BaustellenTable({
   );
 }
 
-function RecordDetails({ record }: { record: Baustelle }) {
+function ConstructionSiteDetails({ site }: { site: ConstructionSite }) {
   return (
-    <dl className="record-details">
-      {record.notes && (
-        <div className="record-details__wide">
+    <dl className="construction-site-details">
+      {site.notes && (
+        <div className="construction-site-details__wide">
           <dt>Hinweis</dt>
-          <dd>{record.notes}</dd>
+          <dd>{site.notes}</dd>
         </div>
       )}
       <div>
         <dt>Verantwortlich</dt>
-        <dd>{record.cause ?? "Keine Angabe"}</dd>
+        <dd>{site.cause ?? "Keine Angabe"}</dd>
       </div>
       <div>
         <dt>Datenquelle</dt>
-        <dd>{record.source}</dd>
+        <dd>{site.source}</dd>
       </div>
       <div>
         <dt>Vorgangsnummer</dt>
-        <dd>{record.id}</dd>
+        <dd>{site.id}</dd>
       </div>
       <div>
         <dt>Aktualisiert</dt>
-        <dd>{formatTimestamp(record.lastModified)}</dd>
+        <dd>{formatIsoTimestamp(site.lastModified)}</dd>
       </div>
     </dl>
   );

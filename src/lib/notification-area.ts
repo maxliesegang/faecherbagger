@@ -1,4 +1,8 @@
-import type { Baustelle, LngLat, NotificationArea } from "../types/index.ts";
+import type {
+  ConstructionSite,
+  LngLat,
+  NotificationArea,
+} from "../types/index.ts";
 import { distanceInMeters } from "./distance.ts";
 import { isNotificationArea } from "./notification-area-validation.ts";
 export {
@@ -26,21 +30,21 @@ export function saveNotificationArea(area: NotificationArea): void {
   localStorage.setItem(NOTIFICATION_AREA_STORAGE_KEY, JSON.stringify(area));
 }
 
-export function notificationAreaContains(
+export function isPointInNotificationArea(
   area: NotificationArea,
   point: LngLat,
 ): boolean {
   return distanceInMeters(area.center, point) <= area.radiusKm * 1_000;
 }
 
-export function matchingNewBaustellen(
-  records: readonly Baustelle[],
+export function findNewConstructionSitesInArea(
+  constructionSites: readonly ConstructionSite[],
   addedIds: ReadonlySet<string>,
   area?: NotificationArea,
-): Baustelle[] {
-  return records.filter(
-    (record) =>
-      addedIds.has(record.id) &&
-      (!area || notificationAreaContains(area, record.point)),
+): ConstructionSite[] {
+  return constructionSites.filter(
+    (site) =>
+      addedIds.has(site.id) &&
+      (!area || isPointInNotificationArea(area, site.point)),
   );
 }

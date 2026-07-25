@@ -1,12 +1,12 @@
 import { describe, expect, it } from "vitest";
-import type { Baustelle } from "../src/types/index.ts";
+import type { ConstructionSite } from "../src/types/index.ts";
 import {
-  sortBaustellen,
-  sortBaustellenForDisplay,
-  type BaustellenSortKey,
-} from "../src/lib/sort.ts";
+  sortConstructionSites,
+  sortConstructionSitesForDisplay,
+  type ConstructionSiteSortKey,
+} from "../src/lib/construction-site-sort.ts";
 
-function record(overrides: Partial<Baustelle>): Baustelle {
+function createConstructionSite(overrides: Partial<ConstructionSite>): ConstructionSite {
   return {
     id: "X",
     phase: "active",
@@ -28,17 +28,17 @@ function record(overrides: Partial<Baustelle>): Baustelle {
   };
 }
 
-describe("sortBaustellenForDisplay", () => {
+describe("sortConstructionSitesForDisplay", () => {
   it("orders by phase, closure severity, start date and id", () => {
     const input = [
-      record({ id: "upcoming", phase: "upcoming", closure: "full" }),
-      record({ id: "later", closure: "full", startDate: "2026-02-01" }),
-      record({ id: "B", closure: "full" }),
-      record({ id: "none", closure: "none" }),
-      record({ id: "A", closure: "full" }),
+      createConstructionSite({ id: "upcoming", phase: "upcoming", closure: "full" }),
+      createConstructionSite({ id: "later", closure: "full", startDate: "2026-02-01" }),
+      createConstructionSite({ id: "B", closure: "full" }),
+      createConstructionSite({ id: "none", closure: "none" }),
+      createConstructionSite({ id: "A", closure: "full" }),
     ];
 
-    expect(sortBaustellenForDisplay(input).map(({ id }) => id)).toEqual([
+    expect(sortConstructionSitesForDisplay(input).map(({ id }) => id)).toEqual([
       "A",
       "B",
       "later",
@@ -55,8 +55,8 @@ describe("sortBaustellenForDisplay", () => {
   });
 });
 
-describe("sortBaustellen", () => {
-  const earlier = record({
+describe("sortConstructionSites", () => {
+  const earlier = createConstructionSite({
     id: "earlier",
     municipality: "Baden-Baden",
     location: "Allee 2",
@@ -68,7 +68,7 @@ describe("sortBaustellen", () => {
     lastModified: "2026-01-01T00:00:00Z",
     point: [8.4, 49],
   });
-  const later = record({
+  const later = createConstructionSite({
     id: "later",
     municipality: "Karlsruhe",
     location: "Zähringerstraße 10",
@@ -81,7 +81,7 @@ describe("sortBaustellen", () => {
     point: [9.4, 49],
   });
 
-  const ascendingCases: Array<[BaustellenSortKey, string[]]> = [
+  const ascendingCases: Array<[ConstructionSiteSortKey, string[]]> = [
     ["municipality", ["earlier", "later"]],
     ["location", ["earlier", "later"]],
     ["category", ["earlier", "later"]],
@@ -93,7 +93,7 @@ describe("sortBaustellen", () => {
   ];
 
   it.each(ascendingCases)("sorts the %s column ascending", (key, expected) => {
-    const sorted = sortBaustellen(
+    const sorted = sortConstructionSites(
       [later, earlier],
       { key, direction: "ascending" },
       [8.4, 49],
@@ -102,7 +102,7 @@ describe("sortBaustellen", () => {
   });
 
   it("reverses the selected column when descending", () => {
-    const sorted = sortBaustellen(
+    const sorted = sortConstructionSites(
       [earlier, later],
       { key: "municipality", direction: "descending" },
     );
@@ -111,7 +111,7 @@ describe("sortBaustellen", () => {
 
   it("does not mutate the input", () => {
     const input = [later, earlier];
-    sortBaustellen(input, { key: "location", direction: "ascending" });
+    sortConstructionSites(input, { key: "location", direction: "ascending" });
     expect(input).toEqual([later, earlier]);
   });
 });

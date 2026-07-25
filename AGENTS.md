@@ -32,7 +32,7 @@
 
 ## Development Practices
 
-- Use Node.js 22 (see `.nvmrc`) and npm. From a clean checkout, install with
+- Use Node.js 24 (see `.nvmrc`) and npm. From a clean checkout, install with
   `npm ci`.
 - Keep TypeScript strict and use explicit, narrow types. Avoid `any`; narrow
   `unknown` at external boundaries.
@@ -71,8 +71,9 @@
 
 ## Generated Data
 
-- `public/data/baustellen.json`, `meta.json`, and `changes.json` are generated
-  and committed artifacts. Do not hand-edit them.
+- `public/data/baustellen.json`, `meta.json`, `changes.json`,
+  `public/baustellen.xml`, and `public/baustellen.atom` are generated and
+  committed artifacts. Do not hand-edit them.
 - Regenerate them only with `npm run data`; this requires network access to
   `mobil.trk.de` and intentionally diffs against the previous committed data.
 - A normal UI or domain-logic change should not refresh generated data.
@@ -112,7 +113,7 @@ npm run build
 ```
 
 - Run the focused Vitest file first while iterating, for example:
-  `npx vitest run test/normalize.test.ts`.
+  `npx vitest run test/construction-site-normalization.test.ts`.
 - `npm run build` already runs `npm run typecheck`, but run both when reporting
   their results independently.
 - For pipeline changes, also run `npm run data` when network access and an

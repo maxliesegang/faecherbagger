@@ -1,11 +1,11 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it, vi } from "vitest";
-import type { WfsBaustelleCollection } from "../src/types/index.ts";
+import type { WfsConstructionSiteCollection } from "../src/types/index.ts";
 import {
-  normalizeFeatures,
+  normalizeConstructionSites,
   sanitizeText,
   toBerlinDate,
-} from "../src/lib/normalize.ts";
+} from "../src/lib/construction-site-normalization.ts";
 
 /**
  * The fixture is real WFS output (EPSG:4326) from `baustellen_aktuell`, with
@@ -17,11 +17,11 @@ import {
  */
 const fixture = JSON.parse(
   readFileSync(new URL("./fixtures/wfs-aktuell-sample.json", import.meta.url), "utf8"),
-) as WfsBaustelleCollection;
+) as WfsConstructionSiteCollection;
 
-describe("normalizeFeatures", () => {
+describe("normalizeConstructionSites", () => {
   it("drops Alsace/France records and deduplicates by vorgangsnummer", () => {
-    const records = normalizeFeatures(fixture.features, "active");
+    const records = normalizeConstructionSites(fixture.features, "active");
     // 5 features -> Alsace (null vorgangsnummer) dropped, two Vorgänge (each a
     // point+polygon pair) collapsed to one record each.
     expect(records.map((r) => r.id)).toEqual(["2019V3783", "2022V5840"]);
@@ -29,7 +29,10 @@ describe("normalizeFeatures", () => {
   });
 
   it("keeps a representative point and the area geometry per Vorgang", () => {
-    const [, sondernutzung] = normalizeFeatures(fixture.features, "active");
+    const [, sondernutzung] = normalizeConstructionSites(
+      fixture.features,
+      "active",
+    );
     expect(sondernutzung!.id).toBe("2022V5840");
     // Representative point comes from the Point feature; map geometry is the Polygon.
     expect(sondernutzung!.point).toEqual([8.40304, 49.009]);
@@ -52,14 +55,17 @@ describe("normalizeFeatures", () => {
         geometries: [point!.geometry!, polygon!.geometry!],
       },
     };
-    const [record] = normalizeFeatures([nested], "active");
+    const [record] = normalizeConstructionSites([nested], "active");
 
     expect(record!.point).toEqual([8.40304, 49.009]);
     expect(record!.geometry).toEqual(polygon!.geometry);
   });
 
   it("normalizes category, closure, dates and phase", () => {
-    const [openEnded, sondernutzung] = normalizeFeatures(fixture.features, "active");
+    const [openEnded, sondernutzung] = normalizeConstructionSites(
+      fixture.features,
+      "active",
+    );
 
     expect(sondernutzung!.category).toBe("special-use");
     expect(sondernutzung!.closure).toBe("full");
@@ -74,7 +80,7 @@ describe("normalizeFeatures", () => {
   });
 
   it("sanitizes HTML/CRLF zusatzinfo to plain text", () => {
-    const [openEnded] = normalizeFeatures(fixture.features, "active");
+    const [openEnded] = normalizeConstructionSites(fixture.features, "active");
     expect(openEnded!.notes).toBe(
       "Vollsperrung wegen Bauarbeiten.\nUmleitung ist ausgeschildert.\n\nDauer unklar.",
     );
@@ -83,7 +89,7 @@ describe("normalizeFeatures", () => {
 
   it("reports unknown art values via onUnknownArt (excluding filtered Alsace)", () => {
     const onUnknownArt = vi.fn();
-    normalizeFeatures(fixture.features, "active", { onUnknownArt });
+    normalizeConstructionSites(fixture.features, "active", { onUnknownArt });
     expect(onUnknownArt).toHaveBeenCalledWith("Zeitreisebau");
     // The Alsace record's French art code is never seen: it is filtered first.
     expect(onUnknownArt).not.toHaveBeenCalledWith("KC1-route-inondee");

@@ -5,49 +5,54 @@ import {
   KernInput,
   KernSelect,
 } from "@kern-ux-annex/kern-react-kit";
-import type { Baustelle } from "../types/index.ts";
+import type { ConstructionSite } from "../types/index.ts";
 import {
-  CLOSURE_VALUES,
-  PHASE_VALUES,
-  categoryLabel,
-  closureLabel,
-  phaseLabel,
-} from "../lib/labels.ts";
+  CLOSURE_SEVERITIES,
+  getConstructionCategoryLabel,
+  getClosureLabel,
+} from "../lib/construction-site-labels.ts";
 import {
-  distinctCategories,
-  distinctMunicipalities,
-  isEmptyFilters,
-  type Filters,
-} from "../lib/filter.ts";
+  getCategoryOptions,
+  getMunicipalityOptions,
+  hasNoConstructionSiteFilters,
+  type ConstructionSiteFilters,
+} from "../lib/construction-site-filter.ts";
 
-interface Props {
-  records: Baustelle[];
-  filters: Filters;
-  onChange: (filters: Filters) => void;
-  onReset: () => void;
+interface ConstructionSiteFilterProps {
+  constructionSites: readonly ConstructionSite[];
+  filters: ConstructionSiteFilters;
+  onFiltersChange: (filters: ConstructionSiteFilters) => void;
+  onFiltersReset: () => void;
 }
 
 /**
  * Controlled filter bar. Options for Ort/Art are derived from the data (so only
  * values that actually occur are offered); Status/Sperrung use the fixed enums.
  */
-export function BaustellenFilter({ records, filters, onChange, onReset }: Props) {
+export function ConstructionSiteFilter({
+  constructionSites,
+  filters,
+  onFiltersChange,
+  onFiltersReset,
+}: ConstructionSiteFilterProps) {
   const [advancedOpen, setAdvancedOpen] = useState(
     Boolean(filters.municipality || filters.category || filters.closure),
   );
-  const setFilter = <K extends keyof Filters>(key: K, value: Filters[K]) =>
-    onChange({ ...filters, [key]: value });
+  const setFilter = <K extends keyof ConstructionSiteFilters>(
+    key: K,
+    value: ConstructionSiteFilters[K],
+  ) => onFiltersChange({ ...filters, [key]: value });
 
   const municipalities = useMemo(
-    () => distinctMunicipalities(records),
-    [records],
+    () => getMunicipalityOptions(constructionSites),
+    [constructionSites],
   );
   const categories = useMemo(
     () =>
-      distinctCategories(records).sort((left, right) =>
-        categoryLabel(left).localeCompare(categoryLabel(right), "de"),
+      getCategoryOptions(constructionSites).sort((left, right) =>
+        getConstructionCategoryLabel(left).localeCompare(getConstructionCategoryLabel(right), "de"),
       ),
-    [records],
+    [constructionSites],
   );
   const advancedFilterCount = [
     filters.municipality,
@@ -67,18 +72,18 @@ export function BaustellenFilter({ records, filters, onChange, onReset }: Props)
           <span className="filter-panel__shortcut" aria-hidden="true">
             <kbd>/</kbd> Suche
           </span>
-          {!isEmptyFilters(filters) && (
+          {!hasNoConstructionSiteFilters(filters) && (
             <KernButton
               type="button"
               variant="tertiary"
               label="Zurücksetzen"
-              onClick={onReset}
+              onClick={onFiltersReset}
             />
           )}
         </div>
       </div>
 
-      <div className="filter-panel__primary">
+      <div className="filter-panel__search">
         <KernInput
           id="filter-search"
           type="search"
@@ -87,29 +92,6 @@ export function BaustellenFilter({ records, filters, onChange, onReset }: Props)
           value={filters.search}
           onChange={(event) => setFilter("search", event.currentTarget.value)}
         />
-
-        <fieldset className="phase-filter">
-          <legend>Status</legend>
-          <div className="phase-filter__options">
-            {[
-              { value: "" as const, label: "Alle" },
-              ...PHASE_VALUES.map((value) => ({
-                value,
-                label: phaseLabel(value),
-              })),
-            ].map((option) => (
-              <button
-                key={option.value || "all"}
-                type="button"
-                className="phase-filter__button"
-                aria-pressed={filters.phase === option.value}
-                onClick={() => setFilter("phase", option.value)}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
-        </fieldset>
       </div>
 
       <details
@@ -151,14 +133,15 @@ export function BaustellenFilter({ records, filters, onChange, onReset }: Props)
             onChange={(event) =>
               setFilter(
                 "category",
-                event.currentTarget.value as Filters["category"],
+                event.currentTarget
+                  .value as ConstructionSiteFilters["category"],
               )
             }
           >
             <option value="">Alle Arten</option>
             {categories.map((category) => (
               <option key={category} value={category}>
-                {categoryLabel(category)}
+                {getConstructionCategoryLabel(category)}
               </option>
             ))}
           </KernSelect>
@@ -170,14 +153,14 @@ export function BaustellenFilter({ records, filters, onChange, onReset }: Props)
             onChange={(event) =>
               setFilter(
                 "closure",
-                event.currentTarget.value as Filters["closure"],
+                event.currentTarget.value as ConstructionSiteFilters["closure"],
               )
             }
           >
             <option value="">Alle Auswirkungen</option>
-            {CLOSURE_VALUES.map((closure) => (
+            {CLOSURE_SEVERITIES.map((closure) => (
               <option key={closure} value={closure}>
-                {closureLabel(closure)}
+                {getClosureLabel(closure)}
               </option>
             ))}
           </KernSelect>

@@ -1,13 +1,15 @@
 import { useCallback, useState } from "react";
 import type { LngLat } from "../types/index.ts";
 
-type LocationState =
+type CurrentLocationState =
   | { status: "idle" }
   | { status: "requesting" }
   | { status: "ready"; point: LngLat }
   | { status: "error"; message: string };
 
-function locationErrorMessage(error: GeolocationPositionError): string {
+function getGeolocationErrorMessage(
+  error: GeolocationPositionError,
+): string {
   switch (error.code) {
     case error.PERMISSION_DENIED:
       return "Der Standortzugriff wurde nicht erlaubt.";
@@ -25,33 +27,35 @@ function locationErrorMessage(error: GeolocationPositionError): string {
  * is kept solely in React memory and can be discarded without a page reload.
  */
 export function useCurrentLocation() {
-  const [state, setState] = useState<LocationState>({ status: "idle" });
+  const [locationState, setLocationState] = useState<CurrentLocationState>({
+    status: "idle",
+  });
 
-  const request = useCallback(async (): Promise<LngLat> => {
+  const requestLocation = useCallback(async (): Promise<LngLat> => {
     if (!navigator.geolocation) {
       const message =
         "Standortzugriff wird von diesem Browser nicht unterstützt.";
-      setState({
+      setLocationState({
         status: "error",
         message,
       });
       throw new Error(message);
     }
 
-    setState({ status: "requesting" });
+    setLocationState({ status: "requesting" });
     return new Promise<LngLat>((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
         ({ coords }) => {
           const point: LngLat = [coords.longitude, coords.latitude];
-          setState({
+          setLocationState({
             status: "ready",
             point,
           });
           resolve(point);
         },
         (error) => {
-          const message = locationErrorMessage(error);
-          setState({ status: "error", message });
+          const message = getGeolocationErrorMessage(error);
+          setLocationState({ status: "error", message });
           reject(new Error(message));
         },
         {
@@ -63,9 +67,12 @@ export function useCurrentLocation() {
     });
   }, []);
 
-  const clear = useCallback(() => setState({ status: "idle" }), []);
+  const clearLocation = useCallback(
+    () => setLocationState({ status: "idle" }),
+    [],
+  );
 
-  return { state, request, clear };
+  return { locationState, requestLocation, clearLocation };
 }
 
 export type CurrentLocationController = ReturnType<typeof useCurrentLocation>;

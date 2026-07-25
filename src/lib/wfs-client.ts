@@ -1,9 +1,12 @@
-import type { Phase, WfsBaustelleCollection } from "../types/index.ts";
+import type {
+  ConstructionPhase,
+  WfsConstructionSiteCollection,
+} from "../types/index.ts";
 
-export const WFS_BASE = "https://mobil.trk.de/geoserver/TBA/ows";
+export const WFS_ENDPOINT_URL = "https://mobil.trk.de/geoserver/TBA/ows";
 
-/** WFS type names for the two operational Baustellen layers and their phase. */
-export const LAYERS: Readonly<Record<Phase, string>> = {
+/** WFS type names for the two operational construction-site layers. */
+export const WFS_LAYERS: Readonly<Record<ConstructionPhase, string>> = {
   active: "TBA:baustellen_aktuell",
   upcoming: "TBA:baustellen_vorschau",
 };
@@ -13,7 +16,7 @@ export const LAYERS: Readonly<Record<Phase, string>> = {
  * GeoServer drops the geometry otherwise. `projektnummer` is omitted (it is
  * only a project year and is not used).
  */
-const PROPERTY_NAMES = [
+const WFS_PROPERTY_NAMES = [
   "geom",
   "id",
   "gemeinde",
@@ -34,10 +37,10 @@ const PROPERTY_NAMES = [
  * Excludes Alsace/France at the source: those records have a null `gemeinde`
  * (correlating 1:1 with `datenquelle = "Collectivité européenne d'Alsace"`).
  */
-const CQL_FILTER = "gemeinde IS NOT NULL";
+const WFS_CQL_FILTER = "gemeinde IS NOT NULL";
 
 /** Builds a WFS 1.0.0 GetFeature URL requesting GeoJSON in EPSG:4326. */
-export function buildWfsUrl(typeName: string): string {
+export function createWfsRequestUrl(typeName: string): string {
   const params = new URLSearchParams({
     service: "WFS",
     version: "1.0.0",
@@ -47,23 +50,23 @@ export function buildWfsUrl(typeName: string): string {
     // Server reprojects correctly to WGS84 with GeoJSON [lon, lat] axis order,
     // so no client-side proj4 step is needed.
     srsName: "EPSG:4326",
-    propertyName: PROPERTY_NAMES.join(","),
-    CQL_FILTER,
+    propertyName: WFS_PROPERTY_NAMES.join(","),
+    WFS_CQL_FILTER,
   });
-  return `${WFS_BASE}?${params.toString()}`;
+  return `${WFS_ENDPOINT_URL}?${params.toString()}`;
 }
 
-/** Fetches and parses one Baustellen layer as a GeoJSON FeatureCollection. */
-export async function fetchLayer(
-  phase: Phase,
+/** Fetches and parses one construction-site layer as GeoJSON. */
+export async function fetchConstructionSiteLayer(
+  phase: ConstructionPhase,
   fetchImpl: typeof fetch = fetch,
-): Promise<WfsBaustelleCollection> {
-  const url = buildWfsUrl(LAYERS[phase]);
+): Promise<WfsConstructionSiteCollection> {
+  const url = createWfsRequestUrl(WFS_LAYERS[phase]);
   const response = await fetchImpl(url);
   if (!response.ok) {
     throw new Error(
-      `WFS request for ${LAYERS[phase]} failed: ${response.status} ${response.statusText}`,
+      `WFS request for ${WFS_LAYERS[phase]} failed: ${response.status} ${response.statusText}`,
     );
   }
-  return (await response.json()) as WfsBaustelleCollection;
+  return (await response.json()) as WfsConstructionSiteCollection;
 }

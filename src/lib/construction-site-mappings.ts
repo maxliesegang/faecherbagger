@@ -1,7 +1,12 @@
-import type { Category, ClosureSeverity, SiteType } from "../types/index.ts";
+import type {
+  ConstructionCategory,
+  ConstructionSiteMobility,
+  ClosureSeverity,
+} from "../types/index.ts";
 
 /**
- * Maps the free-form `art` vocabulary to normalized {@link Category} values.
+ * Maps the source system's free-form `art` vocabulary to normalized
+ * {@link ConstructionCategory} values.
  *
  * Only the German (non-Alsace) vocabulary is listed: after excluding Alsace,
  * the observed `art` values are entirely German. French codes
@@ -9,7 +14,7 @@ import type { Category, ClosureSeverity, SiteType } from "../types/index.ts";
  * Alsace records, which are filtered out before normalization. Anything not
  * listed here falls back to `"other"` and is reported via `onUnknownArt`.
  */
-export const ART_TO_CATEGORY: Readonly<Record<string, Category>> = {
+export const CONSTRUCTION_CATEGORY_BY_SOURCE_ART: Readonly<Record<string, ConstructionCategory>> = {
   "Bauliche Sondernutzung": "special-use",
   "Strom bzw. TK-Versorgung": "power-telecom",
   Fernwärmeversorgung: "district-heating",
@@ -32,25 +37,27 @@ export const ART_TO_CATEGORY: Readonly<Record<string, Category>> = {
 };
 
 /** Maps the `sperrung` vocabulary to {@link ClosureSeverity}; null -> `"unknown"`. */
-export const SPERRUNG_TO_CLOSURE: Readonly<Record<string, ClosureSeverity>> = {
+export const CLOSURE_SEVERITY_BY_SOURCE_VALUE: Readonly<Record<string, ClosureSeverity>> = {
   "keine Verkehrsbehinderung": "none",
   "mit Verkehrsbehinderung": "obstruction",
   "mit Sperrung in eine Fahrtrichtung": "one-direction",
   "mit Vollsperrung": "full",
 };
 
-/** Maps the `tagesbaustelle` vocabulary to {@link SiteType}; null -> `null`. */
-export const TAGESBAUSTELLE_TO_SITETYPE: Readonly<Record<string, SiteType>> = {
+/** Maps `tagesbaustelle` to {@link ConstructionSiteMobility}; null -> `null`. */
+export const CONSTRUCTION_SITE_TYPE_BY_SOURCE_VALUE: Readonly<
+  Record<string, ConstructionSiteMobility>
+> = {
   "Stationäre Baustelle": "stationary",
   Wanderbaustelle: "mobile",
 };
 
-export function mapCategory(
+export function normalizeConstructionCategory(
   art: string | null,
   onUnknown?: (art: string) => void,
-): Category {
+): ConstructionCategory {
   if (art == null) return "other";
-  const category = ART_TO_CATEGORY[art];
+  const category = CONSTRUCTION_CATEGORY_BY_SOURCE_ART[art];
   if (category === undefined) {
     onUnknown?.(art);
     return "other";
@@ -58,12 +65,14 @@ export function mapCategory(
   return category;
 }
 
-export function mapClosure(sperrung: string | null): ClosureSeverity {
+export function normalizeClosureSeverity(sperrung: string | null): ClosureSeverity {
   if (sperrung == null) return "unknown";
-  return SPERRUNG_TO_CLOSURE[sperrung] ?? "unknown";
+  return CLOSURE_SEVERITY_BY_SOURCE_VALUE[sperrung] ?? "unknown";
 }
 
-export function mapSiteType(tagesbaustelle: string | null): SiteType {
+export function normalizeConstructionSiteType(
+  tagesbaustelle: string | null,
+): ConstructionSiteMobility {
   if (tagesbaustelle == null) return null;
-  return TAGESBAUSTELLE_TO_SITETYPE[tagesbaustelle] ?? null;
+  return CONSTRUCTION_SITE_TYPE_BY_SOURCE_VALUE[tagesbaustelle] ?? null;
 }

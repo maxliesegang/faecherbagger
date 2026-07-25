@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   KernAlert,
   KernContainer,
@@ -9,48 +9,32 @@ import {
 } from "@kern-ux-annex/kern-react-kit";
 import type { NotificationArea } from "./types/index.ts";
 import {
-  applyFilters,
-  EMPTY_FILTERS,
-  type Filters,
-} from "./lib/filter.ts";
-import { BaustellenFilter } from "./components/BaustellenFilter.tsx";
-import { BaustellenTable } from "./components/BaustellenTable.tsx";
-import { LocationControl } from "./components/LocationControl.tsx";
-import { PwaControls } from "./components/PwaControls.tsx";
+  EMPTY_CONSTRUCTION_SITE_FILTERS,
+  type ConstructionSiteFilters,
+} from "./lib/construction-site-filter.ts";
+import { ConstructionSiteFilter } from "./components/ConstructionSiteFilter.tsx";
+import { ConstructionSiteResults } from "./components/ConstructionSiteResults.tsx";
+import { CurrentLocationControl } from "./components/CurrentLocationControl.tsx";
+import { PwaSettings } from "./components/PwaSettings.tsx";
 import { useCurrentLocation } from "./hooks/useCurrentLocation.ts";
-import { useBaustellenData } from "./hooks/useBaustellenData.ts";
+import { useConstructionSiteData } from "./hooks/useConstructionSiteData.ts";
 import {
   loadNotificationArea,
   saveNotificationArea,
 } from "./lib/notification-area.ts";
 import "./App.css";
 
-const BaustellenMap = lazy(() =>
-  import("./components/BaustellenMap.tsx").then((module) => ({
-    default: module.BaustellenMap,
-  })),
-);
-
 /**
  * Renders the construction sites as a filterable map and sortable list.
  */
 export function App() {
-  const state = useBaustellenData();
-  const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS);
-  const [view, setView] = useState<"map" | "list">("map");
-  const [selectedId, setSelectedId] = useState<string | undefined>(() => {
-    const id = new URLSearchParams(window.location.search).get("baustelle");
-    return id || undefined;
-  });
+  const dataState = useConstructionSiteData();
+  const [filters, setFilters] = useState<ConstructionSiteFilters>(
+    EMPTY_CONSTRUCTION_SITE_FILTERS,
+  );
   const [notificationArea, setNotificationArea] =
     useState<NotificationArea | null>(loadNotificationArea);
-  const location = useCurrentLocation();
-
-  const records = state.status === "ready" ? state.baustellen : undefined;
-  const filtered = useMemo(
-    () => (records ? applyFilters(records, filters) : []),
-    [records, filters],
-  );
+  const locationController = useCurrentLocation();
 
   useEffect(() => {
     const focusSearch = (event: KeyboardEvent) => {
@@ -81,167 +65,124 @@ export function App() {
       <main id="main-content">
         <KernContainer>
           <header className="app-hero">
-            <div>
+            <div className="app-hero__text">
               <KernText className="app-hero__eyebrow">Region Karlsruhe</KernText>
               <KernHeading level={1}>Baustellen im Blick</KernHeading>
               <KernText className="app-hero__intro">
-                Aktuelle und geplante Straßenbaustellen schnell finden,
-                vergleichen und im Blick behalten.
+                Aktuelle und geplante Straßenbaustellen finden, vergleichen und
+                im Blick behalten.
               </KernText>
             </div>
-            {state.status === "ready" && (
+            {dataState.status === "ready" && (
               <KernText muted className="app-hero__updated">
-                Stand {new Date(state.meta.fetchedAt).toLocaleString("de-DE")}
+                Stand{" "}
+                {new Date(dataState.metadata.fetchedAt).toLocaleString("de-DE")}
               </KernText>
             )}
           </header>
 
-          {state.status === "loading" && (
+          {dataState.status === "loading" && (
             <div className="app-status" role="status" aria-live="polite">
               <span className="app-status__spinner" aria-hidden="true" />
               <KernText>Daten werden geladen …</KernText>
             </div>
           )}
 
-          {state.status === "error" && (
+          {dataState.status === "error" && (
             <KernAlert variant="warning" title="Daten noch nicht verfügbar">
               <KernText>
                 Die Baustellendaten konnten nicht geladen werden. Versuchen Sie
-                es später erneut. ({state.message})
+                es später erneut. ({dataState.message})
               </KernText>
             </KernAlert>
           )}
 
-          {state.status === "ready" && (
+          {dataState.status === "ready" && (
             <>
-              <section className="overview" aria-label="Übersicht">
-                <div className="overview__item overview__item--active">
-                  <span className="overview__value">{state.meta.counts.active}</span>
-                  <span className="overview__label">aktuell</span>
-                </div>
-                <div className="overview__item overview__item--upcoming">
-                  <span className="overview__value">
-                    {state.meta.counts.upcoming}
-                  </span>
-                  <span className="overview__label">geplant</span>
-                </div>
-                <div className="overview__item">
-                  <span className="overview__value">{state.meta.recordCount}</span>
-                  <span className="overview__label">insgesamt</span>
-                </div>
-              </section>
-
-              <BaustellenFilter
-                records={state.baustellen}
-                filters={filters}
-                onChange={setFilters}
-                onReset={() => setFilters(EMPTY_FILTERS)}
-              />
-
-              <aside className="personal-tools" aria-label="Persönliche Werkzeuge">
-                <LocationControl location={location} />
-                <PwaControls
-                  location={location}
-                  notificationArea={notificationArea}
-                  onNotificationAreaChange={(area) => {
-                    saveNotificationArea(area);
-                    setNotificationArea(area);
-                  }}
-                />
-              </aside>
-
-              <section className="results" aria-labelledby="results-heading">
-                <div className="results__header">
-                  <div className="results__summary">
-                    <KernHeading level={2} id="results-heading">
-                      Ergebnisse
-                    </KernHeading>
-                    <KernText muted aria-live="polite" aria-atomic="true">
-                      {filtered.length === state.baustellen.length
-                        ? `${filtered.length} Einträge`
-                        : `${filtered.length} von ${state.baustellen.length} Einträgen`}
-                    </KernText>
-                  </div>
-                  {filtered.length > 0 && (
-                    <div
-                      className="view-switcher"
-                      role="group"
-                      aria-label="Darstellung wählen"
+              <div className="app-shell">
+                <section
+                  className="overview"
+                  role="group"
+                  aria-label="Baustellen nach Status filtern"
+                >
+                  {(
+                    [
+                      {
+                        value: "",
+                        label: "Alle",
+                        count: dataState.metadata.recordCount,
+                        kind: "total",
+                      },
+                      {
+                        value: "active",
+                        label: "Aktuell",
+                        count: dataState.metadata.counts.active,
+                        kind: "active",
+                      },
+                      {
+                        value: "upcoming",
+                        label: "Geplant",
+                        count: dataState.metadata.counts.upcoming,
+                        kind: "upcoming",
+                      },
+                    ] as const
+                  ).map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      className={`overview__item overview__item--${item.kind}`}
+                      aria-pressed={filters.phase === item.value}
+                      onClick={() =>
+                        setFilters((current) => ({
+                          ...current,
+                          phase: item.value,
+                        }))
+                      }
                     >
-                      <button
-                        type="button"
-                        className="view-switcher__button"
-                        aria-pressed={view === "map"}
-                        onClick={() => setView("map")}
-                      >
-                        Karte
-                      </button>
-                      <button
-                        type="button"
-                        className="view-switcher__button"
-                        aria-pressed={view === "list"}
-                        onClick={() => setView("list")}
-                      >
-                        Liste
-                      </button>
-                    </div>
-                  )}
-                </div>
+                      <span className="overview__value">{item.count}</span>
+                      <span className="overview__label">{item.label}</span>
+                    </button>
+                  ))}
+                </section>
 
-                {filtered.length > 0 ? (
-                  <>
-                    {view === "map" ? (
-                      <Suspense
-                        fallback={
-                          <div
-                            className="app-status"
-                            role="status"
-                            aria-live="polite"
-                          >
-                            <span
-                              className="app-status__spinner"
-                              aria-hidden="true"
-                            />
-                            <KernText>Karte wird geladen …</KernText>
-                          </div>
-                        }
-                      >
-                        <BaustellenMap
-                          records={filtered}
-                          selectedId={selectedId}
-                          currentLocation={
-                            location.state.status === "ready"
-                              ? location.state.point
-                              : undefined
-                          }
-                          notificationArea={notificationArea ?? undefined}
-                          onSelect={setSelectedId}
-                          onShowList={() => setView("list")}
-                        />
-                      </Suspense>
-                    ) : (
-                      <BaustellenTable
-                        records={filtered}
-                        currentLocation={
-                          location.state.status === "ready"
-                            ? location.state.point
-                            : undefined
-                        }
-                        onShowOnMap={(id) => {
-                          setSelectedId(id);
-                          setView("map");
-                        }}
-                      />
-                    )}
-                  </>
-                ) : (
-                  <KernAlert variant="info" title="Keine passenden Baustellen">
-                    <KernText>
-                      Ändern Sie Ihre Suche oder löschen Sie die gewählten Filter.
-                    </KernText>
-                  </KernAlert>
-                )}
-              </section>
+                <ConstructionSiteFilter
+                  constructionSites={dataState.constructionSites}
+                  filters={filters}
+                  onFiltersChange={setFilters}
+                  onFiltersReset={() =>
+                    setFilters(EMPTY_CONSTRUCTION_SITE_FILTERS)
+                  }
+                />
+
+                <ConstructionSiteResults
+                  constructionSites={dataState.constructionSites}
+                  changes={dataState.changes}
+                  filters={filters}
+                  currentLocation={
+                    locationController.locationState.status === "ready"
+                      ? locationController.locationState.point
+                      : undefined
+                  }
+                  notificationArea={notificationArea ?? undefined}
+                />
+
+                <aside
+                  className="personal-tools"
+                  aria-label="Persönliche Werkzeuge"
+                >
+                  <CurrentLocationControl
+                    locationController={locationController}
+                  />
+                  <PwaSettings
+                    locationController={locationController}
+                    notificationArea={notificationArea}
+                    onNotificationAreaChange={(area) => {
+                      saveNotificationArea(area);
+                      setNotificationArea(area);
+                    }}
+                  />
+                </aside>
+              </div>
 
               <footer className="app-footer">
                 <details className="kern-accordion app-footer__details">
@@ -250,13 +191,27 @@ export function App() {
                   </summary>
                   <section className="kern-accordion__body">
                     <KernText>
-                      Daten: {state.meta.source.name}. Quellen:{" "}
-                      {state.meta.attribution.join(", ")}. Letzte Aktualisierung:{" "}
-                      {new Date(state.meta.fetchedAt).toLocaleString("de-DE")}.
+                      Daten: {dataState.metadata.source.name}. Quellen:{" "}
+                      {dataState.metadata.attribution.join(", ")}. Letzte
+                      Aktualisierung:{" "}
+                      {new Date(dataState.metadata.fetchedAt).toLocaleString(
+                        "de-DE",
+                      )}
+                      .
                     </KernText>
                     <KernLink
                       href="https://mobil.trk.de/"
                       label="Zum Mobilitätsportal der TRK"
+                    />
+                    {" · "}
+                    <KernLink
+                      href={`${import.meta.env.BASE_URL}baustellen.xml`}
+                      label="RSS-Feed abonnieren"
+                    />
+                    {" · "}
+                    <KernLink
+                      href={`${import.meta.env.BASE_URL}baustellen.atom`}
+                      label="Atom-Feed abonnieren"
                     />
                   </section>
                 </details>

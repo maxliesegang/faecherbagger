@@ -1,9 +1,12 @@
-import type { Baustelle, LngLat } from "../types/index.ts";
-import { CLOSURE_SEVERITY_RANK } from "../types/index.ts";
+import type { ConstructionSite, LngLat } from "../types/index.ts";
+import { CLOSURE_SEVERITY_SORT_RANK } from "../types/index.ts";
 import { distanceInMeters } from "./distance.ts";
-import { categoryLabel, phaseLabel } from "./labels.ts";
+import {
+  getConstructionCategoryLabel,
+  getConstructionPhaseLabel,
+} from "./construction-site-labels.ts";
 
-export type BaustellenSortKey =
+export type ConstructionSiteSortKey =
   | "municipality"
   | "location"
   | "category"
@@ -13,11 +16,11 @@ export type BaustellenSortKey =
   | "lastModified"
   | "distance";
 
-export type SortDirection = "ascending" | "descending";
+export type ConstructionSiteSortDirection = "ascending" | "descending";
 
-export interface BaustellenSort {
-  key: BaustellenSortKey;
-  direction: SortDirection;
+export interface ConstructionSiteSort {
+  key: ConstructionSiteSortKey;
+  direction: ConstructionSiteSortDirection;
 }
 
 const GERMAN_COLLATOR = new Intl.Collator("de", {
@@ -35,9 +38,9 @@ function compareNullableStrings(
 }
 
 function compareByKey(
-  left: Baustelle,
-  right: Baustelle,
-  key: BaustellenSortKey,
+  left: ConstructionSite,
+  right: ConstructionSite,
+  key: ConstructionSiteSortKey,
   currentLocation?: LngLat,
 ): number {
   switch (key) {
@@ -47,18 +50,18 @@ function compareByKey(
       return GERMAN_COLLATOR.compare(left.location, right.location);
     case "category":
       return GERMAN_COLLATOR.compare(
-        categoryLabel(left.category),
-        categoryLabel(right.category),
+        getConstructionCategoryLabel(left.category),
+        getConstructionCategoryLabel(right.category),
       );
     case "closure":
       return (
-        CLOSURE_SEVERITY_RANK[left.closure] -
-        CLOSURE_SEVERITY_RANK[right.closure]
+        CLOSURE_SEVERITY_SORT_RANK[left.closure] -
+        CLOSURE_SEVERITY_SORT_RANK[right.closure]
       );
     case "phase":
       return GERMAN_COLLATOR.compare(
-        phaseLabel(left.phase),
-        phaseLabel(right.phase),
+        getConstructionPhaseLabel(left.phase),
+        getConstructionPhaseLabel(right.phase),
       );
     case "period": {
       const start = left.startDate.localeCompare(right.startDate);
@@ -81,15 +84,15 @@ function compareByKey(
  * disruptive closures first, then earliest start. The id is the final
  * tiebreaker so the result is deterministic regardless of input order.
  */
-export function compareBaustellenForDisplay(
-  left: Baustelle,
-  right: Baustelle,
+export function compareConstructionSitesForDisplay(
+  left: ConstructionSite,
+  right: ConstructionSite,
 ): number {
   if (left.phase !== right.phase) return left.phase === "active" ? -1 : 1;
 
   const closureDifference =
-    CLOSURE_SEVERITY_RANK[right.closure] -
-    CLOSURE_SEVERITY_RANK[left.closure];
+    CLOSURE_SEVERITY_SORT_RANK[right.closure] -
+    CLOSURE_SEVERITY_SORT_RANK[left.closure];
   if (closureDifference !== 0) return closureDifference;
 
   const startDifference = left.startDate.localeCompare(right.startDate);
@@ -99,20 +102,20 @@ export function compareBaustellenForDisplay(
 }
 
 /** Returns a display-sorted copy without modifying the input. */
-export function sortBaustellenForDisplay(
-  records: readonly Baustelle[],
-): Baustelle[] {
-  return [...records].sort(compareBaustellenForDisplay);
+export function sortConstructionSitesForDisplay(
+  constructionSites: readonly ConstructionSite[],
+): ConstructionSite[] {
+  return [...constructionSites].sort(compareConstructionSitesForDisplay);
 }
 
 /** Sorts a copy by the selected visible column, using the id as a tiebreaker. */
-export function sortBaustellen(
-  records: readonly Baustelle[],
-  sort: BaustellenSort,
+export function sortConstructionSites(
+  constructionSites: readonly ConstructionSite[],
+  sort: ConstructionSiteSort,
   currentLocation?: LngLat,
-): Baustelle[] {
+): ConstructionSite[] {
   const direction = sort.direction === "ascending" ? 1 : -1;
-  return [...records].sort((left, right) => {
+  return [...constructionSites].sort((left, right) => {
     const difference = compareByKey(
       left,
       right,

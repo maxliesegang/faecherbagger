@@ -1,5 +1,5 @@
 /**
- * Data pipeline: fetch the two TRK Baustellen WFS layers, normalize and
+ * Data pipeline: fetch the two TRK construction-site WFS layers, normalize and
  * deduplicate them, diff against the previous run, and write the static JSON
  * files the client consumes.
  *
@@ -7,20 +7,35 @@
  *   public/data/baustellen.json – normalized, deduplicated, Karlsruhe-region records
  *   public/data/meta.json       – fetch timestamp, counts, source attribution
  *   public/data/changes.json    – records added / modified / removed since last run
+ *   public/baustellen.xml       – RSS 2.0 feed of current records and revisions
+ *   public/baustellen.atom      – Atom 1.0 feed of current records and revisions
  *
  * Run with: `npm run data`
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { Baustelle, Meta, Phase } from "../src/types/index.ts";
-import { computeChanges } from "../src/lib/changes.ts";
-import { normalizeFeatures } from "../src/lib/normalize.ts";
-import { LAYERS, WFS_BASE, fetchLayer } from "../src/lib/wfs.ts";
+import type {
+  ConstructionPhase,
+  ConstructionSite,
+  ConstructionSiteMetadata,
+} from "../src/types/index.ts";
+import { computeConstructionSiteChanges } from "../src/lib/construction-site-changes.ts";
+import { normalizeConstructionSites } from "../src/lib/construction-site-normalization.ts";
+import {
+  CONSTRUCTION_SITE_FEED_FILENAMES,
+  createConstructionSiteFeeds,
+} from "../src/lib/construction-site-feeds.ts";
+import {
+  WFS_ENDPOINT_URL,
+  WFS_LAYERS,
+  fetchConstructionSiteLayer,
+} from "../src/lib/wfs-client.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_DIR = join(ROOT, "public", "data");
-const PHASES: Phase[] = ["active", "upcoming"];
+const DEFAULT_APP_URL = "https://maxliesegang.github.io/faecherbagger/";
+const CONSTRUCTION_PHASES: ConstructionPhase[] = ["active", "upcoming"];
 
 async function readJsonIfExists<T>(path: string): Promise<T | null> {
   try {
@@ -40,20 +55,26 @@ async function main(): Promise<void> {
   const onUnknownArt = (art: string) => unknownArt.add(art);
   const onWarn = (message: string) => console.warn(`  warn: ${message}`);
 
-  const recordsByPhase = await Promise.all(PHASES.map(async (phase) => {
-    console.log(`Fetching ${LAYERS[phase]} ...`);
-    const collection = await fetchLayer(phase);
-    const normalized = normalizeFeatures(collection.features, phase, {
-      onUnknownArt,
-      onWarn,
-    });
-    console.log(
-      `  ${collection.features.length} features -> ${normalized.length} records`,
-    );
-    return normalized;
-  }));
-  const records: Baustelle[] = recordsByPhase.flat();
-  records.sort((left, right) => left.id.localeCompare(right.id));
+  const sitesByPhase = await Promise.all(
+    CONSTRUCTION_PHASES.map(async (phase) => {
+      console.log(`Fetching ${WFS_LAYERS[phase]} ...`);
+      const featureCollection = await fetchConstructionSiteLayer(phase);
+      const normalizedSites = normalizeConstructionSites(
+        featureCollection.features,
+        phase,
+        {
+          onUnknownArt,
+          onWarn,
+        },
+      );
+      console.log(
+        `  ${featureCollection.features.length} features -> ${normalizedSites.length} records`,
+      );
+      return normalizedSites;
+    }),
+  );
+  const constructionSites: ConstructionSite[] = sitesByPhase.flat();
+  constructionSites.sort((left, right) => left.id.localeCompare(right.id));
 
   if (unknownArt.size > 0) {
     console.warn(
@@ -65,38 +86,63 @@ async function main(): Promise<void> {
 
   await mkdir(DATA_DIR, { recursive: true });
 
-  const previous =
-    (await readJsonIfExists<Baustelle[]>(join(DATA_DIR, "baustellen.json"))) ??
-    [];
-  const previousMeta = await readJsonIfExists<Meta>(join(DATA_DIR, "meta.json"));
-  const changes = computeChanges(previous, records, previousMeta?.fetchedAt ?? null);
+  const previousSites =
+    (await readJsonIfExists<ConstructionSite[]>(
+      join(DATA_DIR, "baustellen.json"),
+    )) ?? [];
+  const previousMetadata = await readJsonIfExists<ConstructionSiteMetadata>(
+    join(DATA_DIR, "meta.json"),
+  );
+  const changes = computeConstructionSiteChanges(
+    previousSites,
+    constructionSites,
+    previousMetadata?.fetchedAt ?? null,
+  );
 
   const fetchedAt = new Date().toISOString();
   const attribution = [
-    ...new Set(records.map((record) => record.source)),
+    ...new Set(constructionSites.map((site) => site.source)),
   ].sort();
-  const meta: Meta = {
+  const metadata: ConstructionSiteMetadata = {
     fetchedAt,
-    recordCount: records.length,
+    recordCount: constructionSites.length,
     counts: {
-      active: records.filter((record) => record.phase === "active").length,
-      upcoming: records.filter((record) => record.phase === "upcoming").length,
+      active: constructionSites.filter((site) => site.phase === "active").length,
+      upcoming: constructionSites.filter((site) => site.phase === "upcoming")
+        .length,
     },
     source: {
       name: "TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal",
-      url: WFS_BASE,
-      layers: PHASES.map((phase) => LAYERS[phase]),
+      url: WFS_ENDPOINT_URL,
+      layers: CONSTRUCTION_PHASES.map((phase) => WFS_LAYERS[phase]),
     },
     attribution,
   };
 
-  await writeJson(join(DATA_DIR, "baustellen.json"), records);
-  await writeJson(join(DATA_DIR, "meta.json"), meta);
+  await writeJson(join(DATA_DIR, "baustellen.json"), constructionSites);
+  await writeJson(join(DATA_DIR, "meta.json"), metadata);
   await writeJson(join(DATA_DIR, "changes.json"), changes);
+  const feeds = createConstructionSiteFeeds(
+    constructionSites,
+    metadata,
+    process.env.APP_URL ?? DEFAULT_APP_URL,
+  );
+  await Promise.all([
+    writeFile(
+      join(ROOT, "public", CONSTRUCTION_SITE_FEED_FILENAMES.rss),
+      feeds.rss,
+      "utf8",
+    ),
+    writeFile(
+      join(ROOT, "public", CONSTRUCTION_SITE_FEED_FILENAMES.atom),
+      feeds.atom,
+      "utf8",
+    ),
+  ]);
 
   console.log(
-    `Wrote ${records.length} records (active ${meta.counts.active}, ` +
-      `upcoming ${meta.counts.upcoming}). Changes: +${changes.added.length} ` +
+    `Wrote ${constructionSites.length} records (active ${metadata.counts.active}, ` +
+      `upcoming ${metadata.counts.upcoming}). changes: +${changes.added.length} ` +
       `~${changes.modified.length} -${changes.removed.length}.`,
   );
 }

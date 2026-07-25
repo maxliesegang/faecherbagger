@@ -52,6 +52,8 @@ For each of the two source layers (`baustellen_aktuell` = active,
    text, and converts timestamps to Europe/Berlin calendar dates.
 4. **Diffs** against the previous run (`stand` timestamp + `vorgangsnummer`) to
    produce `changes.json` — the basis for later notifications.
+5. **Generates feeds** from one shared `feed` model in RSS 2.0 and Atom 1.0
+   formats.
 
 Outputs (committed to the repo, served by Vite from `public/`):
 
@@ -60,17 +62,20 @@ Outputs (committed to the repo, served by Vite from `public/`):
 | `public/data/baustellen.json` | Normalized, deduplicated records |
 | `public/data/meta.json` | Fetch timestamp, counts, source attribution |
 | `public/data/changes.json` | Records added / modified / removed since last run |
+| `public/baustellen.xml` | RSS 2.0 feed of current records, newest revisions first |
+| `public/baustellen.atom` | Atom 1.0 feed generated from the same feed model |
 
 The shared domain model lives in [`src/types/`](src/types/) and is imported by
 both the Node pipeline and the React app — one source of truth.
 
 ## Running locally
 
-Requires Node ≥ 20 (see `.nvmrc`).
+Requires Node ≥ 24 (see `.nvmrc`).
 
 ```bash
 npm install       # install dependencies
 npm run data      # fetch the WFS and (re)generate public/data/*.json
+npm run feeds     # regenerate RSS and Atom from the existing local JSON
 npm run dev       # start the dev server
 npm test          # run the normalizer tests (Vitest)
 npm run typecheck # strict TypeScript check (app + node projects)
@@ -133,7 +138,9 @@ be overridden at build time with the `BASE_PATH` env var. Enable Pages with the
 
 ### Data model highlights
 
-See [`src/types/baustelle.ts`](src/types/baustelle.ts). Notable normalizations:
+See
+[`src/types/construction-site.ts`](src/types/construction-site.ts). Notable
+normalizations:
 
 - `id` = `vorgangsnummer` (a **string**, e.g. `"2026V2026"`).
 - `phase` = `"active"` | `"upcoming"` (from the source layer, robust to date).

@@ -20,10 +20,10 @@ registerSW({
   },
 });
 
-const container = document.getElementById("root");
-if (!container) throw new Error("Root element #root not found");
+const rootElement = document.getElementById("root");
+if (!rootElement) throw new Error("Root element #root not found");
 
-createRoot(container).render(
+createRoot(rootElement).render(
   <StrictMode>
     <KernContextProvider>
       <App />

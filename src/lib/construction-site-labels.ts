@@ -1,14 +1,18 @@
-import type { Category, ClosureSeverity, Phase } from "../types/index.ts";
+import type {
+  ConstructionCategory,
+  ConstructionPhase,
+  ClosureSeverity,
+} from "../types/index.ts";
 
 /**
- * German display strings and badge variants for the normalized enums. These are
+ * German construction-site labels and badge variants for normalized enums.
  * UI-only: the pipeline works with the stable machine values in
- * `src/lib/mappings.ts`; this module turns them into what the table shows.
+ * `src/lib/construction-site-mappings.ts`; this module turns them into what the table shows.
  */
 
 type BadgeVariant = "success" | "danger" | "warning" | "info";
 
-const CATEGORY_LABELS: Record<Category, string> = {
+const CATEGORY_LABELS: Record<ConstructionCategory, string> = {
   "special-use": "Bauliche Sondernutzung",
   "power-telecom": "Strom/TK-Versorgung",
   "district-heating": "Fernwärme",
@@ -45,18 +49,18 @@ const CLOSURE_VARIANTS: Record<ClosureSeverity, BadgeVariant> = {
   unknown: "info",
 };
 
-const PHASE_LABELS: Record<Phase, string> = {
+const PHASE_LABELS: Record<ConstructionPhase, string> = {
   active: "Aktuell",
   upcoming: "Geplant",
 };
 
-const PHASE_VARIANTS: Record<Phase, BadgeVariant> = {
+const PHASE_VARIANTS: Record<ConstructionPhase, BadgeVariant> = {
   active: "info",
   upcoming: "warning",
 };
 
 /** All closure severities, most disruptive first (for filter dropdowns). */
-export const CLOSURE_VALUES: ClosureSeverity[] = [
+export const CLOSURE_SEVERITIES: ClosureSeverity[] = [
   "full",
   "one-direction",
   "obstruction",
@@ -65,16 +69,17 @@ export const CLOSURE_VALUES: ClosureSeverity[] = [
 ];
 
 /** Both phases, current first (for filter dropdowns). */
-export const PHASE_VALUES: Phase[] = ["active", "upcoming"];
+export const CONSTRUCTION_PHASES: ConstructionPhase[] = ["active", "upcoming"];
 
-export const categoryLabel = (category: Category): string =>
+export const getConstructionCategoryLabel = (category: ConstructionCategory): string =>
   CATEGORY_LABELS[category];
-export const closureLabel = (closure: ClosureSeverity): string =>
+export const getClosureLabel = (closure: ClosureSeverity): string =>
   CLOSURE_LABELS[closure];
-export const closureVariant = (closure: ClosureSeverity): BadgeVariant =>
+export const getClosureBadgeVariant = (closure: ClosureSeverity): BadgeVariant =>
   CLOSURE_VARIANTS[closure];
-export const phaseLabel = (phase: Phase): string => PHASE_LABELS[phase];
-export const phaseVariant = (phase: Phase): BadgeVariant =>
+export const getConstructionPhaseLabel = (phase: ConstructionPhase): string =>
+  PHASE_LABELS[phase];
+export const getConstructionPhaseBadgeVariant = (phase: ConstructionPhase): BadgeVariant =>
   PHASE_VARIANTS[phase];
 
 const DATE_FORMAT = new Intl.DateTimeFormat("de-DE", {
@@ -91,7 +96,7 @@ const TIMESTAMP_FORMAT = new Intl.DateTimeFormat("de-DE", {
 const ISO_DATE_PATTERN = /^(\d{4})-(\d{2})-(\d{2})$/;
 
 /** `"2026-07-24"` -> `"24.07.2026"`; passes through anything unparseable. */
-export function formatDate(iso: string): string {
+export function formatIsoDate(iso: string): string {
   const match = ISO_DATE_PATTERN.exec(iso);
   if (match) {
     const [, year, month, day] = match;
@@ -108,13 +113,13 @@ export function formatDate(iso: string): string {
 }
 
 /** Formats an ISO timestamp for display; passes through invalid input. */
-export function formatTimestamp(iso: string): string {
+export function formatIsoTimestamp(iso: string): string {
   const date = new Date(iso);
   return Number.isNaN(date.getTime()) ? iso : TIMESTAMP_FORMAT.format(date);
 }
 
 /** Renders a start/end range; open-ended (`null` end) shows as `"ab <start>"`. */
-export function formatPeriod(startDate: string, endDate: string | null): string {
-  const start = formatDate(startDate);
-  return endDate ? `${start} – ${formatDate(endDate)}` : `ab ${start}`;
+export function formatConstructionPeriod(startDate: string, endDate: string | null): string {
+  const start = formatIsoDate(startDate);
+  return endDate ? `${start} – ${formatIsoDate(endDate)}` : `ab ${start}`;
 }

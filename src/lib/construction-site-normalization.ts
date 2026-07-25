@@ -1,14 +1,18 @@
 import type { Geometry, Point, Position } from "geojson";
 import type {
-  Baustelle,
+  ConstructionPhase,
+  ConstructionSite,
   IsoDate,
   LngLat,
-  Phase,
-  WfsBaustelleFeature,
+  WfsConstructionSiteFeature,
 } from "../types/index.ts";
-import { mapCategory, mapClosure, mapSiteType } from "./mappings.ts";
+import {
+  normalizeConstructionCategory,
+  normalizeClosureSeverity,
+  normalizeConstructionSiteType,
+} from "./construction-site-mappings.ts";
 
-export interface NormalizeOptions {
+export interface ConstructionSiteNormalizationOptions {
   /** Called once per normalized record whose `art` is not in the mapping table. */
   onUnknownArt?: (art: string) => void;
   /** Called for records that had to be skipped (e.g. no usable geometry). */
@@ -112,18 +116,18 @@ function buildGeometry(
 
 /**
  * Normalizes and deduplicates the features of a single WFS layer into
- * {@link Baustelle} records — one per `vorgangsnummer`.
+ * {@link ConstructionSite} records — one per `vorgangsnummer`.
  *
  * Alsace/France records (null `gemeinde` / null `vorgangsnummer`) are dropped
  * defensively here even though the server-side `CQL_FILTER` already excludes
  * them. Records are returned sorted by `id` for stable diffs between runs.
  */
-export function normalizeFeatures(
-  features: readonly WfsBaustelleFeature[],
-  phase: Phase,
-  options: NormalizeOptions = {},
-): Baustelle[] {
-  const groups = new Map<string, WfsBaustelleFeature[]>();
+export function normalizeConstructionSites(
+  features: readonly WfsConstructionSiteFeature[],
+  phase: ConstructionPhase,
+  options: ConstructionSiteNormalizationOptions = {},
+): ConstructionSite[] {
+  const groups = new Map<string, WfsConstructionSiteFeature[]>();
   for (const feature of features) {
     const { vorgangsnummer, gemeinde } = feature.properties;
     // Exclude Alsace (null gemeinde) and any record without a grouping key.
@@ -133,7 +137,7 @@ export function normalizeFeatures(
     else groups.set(vorgangsnummer, [feature]);
   }
 
-  const records: Baustelle[] = [];
+  const constructionSites: ConstructionSite[] = [];
   for (const [vorgangsnummer, members] of groups) {
     const properties = members[0]!.properties;
 
@@ -158,13 +162,13 @@ export function normalizeFeatures(
       continue;
     }
 
-    records.push({
+    constructionSites.push({
       id: vorgangsnummer,
       phase,
-      category: mapCategory(properties.art, options.onUnknownArt),
+      category: normalizeConstructionCategory(properties.art, options.onUnknownArt),
       artRaw: properties.art ?? "",
-      closure: mapClosure(properties.sperrung),
-      siteType: mapSiteType(properties.tagesbaustelle),
+      closure: normalizeClosureSeverity(properties.sperrung),
+      siteType: normalizeConstructionSiteType(properties.tagesbaustelle),
       municipality: properties.gemeinde ?? "",
       location: (properties.lage ?? "").trim(),
       notes: sanitizeText(properties.zusatzinfo),
@@ -181,8 +185,8 @@ export function normalizeFeatures(
     });
   }
 
-  records.sort((left, right) => left.id.localeCompare(right.id));
-  return records;
+  constructionSites.sort((left, right) => left.id.localeCompare(right.id));
+  return constructionSites;
 }
 
 /**

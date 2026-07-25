@@ -1,21 +1,34 @@
 import { useEffect, useState } from "react";
-import type { Baustelle, Meta } from "../types/index.ts";
-import { loadBaustellen, loadMeta } from "../lib/data.ts";
+import type {
+  ConstructionSite,
+  ConstructionSiteChanges,
+  ConstructionSiteMetadata,
+} from "../types/index.ts";
+import {
+  loadConstructionSiteChanges,
+  loadConstructionSiteMetadata,
+  loadConstructionSites,
+} from "../lib/construction-site-data.ts";
 
-export type BaustellenDataState =
+export type ConstructionSiteDataState =
   | { status: "loading" }
-  | { status: "ready"; meta: Meta; baustellen: Baustelle[] }
+  | {
+      status: "ready";
+      metadata: ConstructionSiteMetadata;
+      constructionSites: ConstructionSite[];
+      changes: ConstructionSiteChanges;
+    }
   | { status: "error"; message: string };
 
-const requestsDataRefresh = (event: MessageEvent): boolean =>
+const isConstructionSiteRefreshMessage = (event: MessageEvent): boolean =>
   event.data?.type === "DATA_UPDATED" || event.data?.type === "REFRESH_VIEW";
 
 /**
  * Owns the static-data lifecycle and refresh messages from the service worker.
  * Only the most recently requested refresh may update state.
  */
-export function useBaustellenData(): BaustellenDataState {
-  const [state, setState] = useState<BaustellenDataState>({
+export function useConstructionSiteData(): ConstructionSiteDataState {
+  const [dataState, setDataState] = useState<ConstructionSiteDataState>({
     status: "loading",
   });
 
@@ -23,19 +36,25 @@ export function useBaustellenData(): BaustellenDataState {
     const controller = new AbortController();
     let latestRequest = 0;
 
-    const refresh = async () => {
+    const refreshConstructionSiteData = async () => {
       const request = ++latestRequest;
       try {
-        const [meta, baustellen] = await Promise.all([
-          loadMeta(controller.signal),
-          loadBaustellen(controller.signal),
+        const [metadata, constructionSites, changes] = await Promise.all([
+          loadConstructionSiteMetadata(controller.signal),
+          loadConstructionSites(controller.signal),
+          loadConstructionSiteChanges(controller.signal),
         ]);
         if (!controller.signal.aborted && request === latestRequest) {
-          setState({ status: "ready", meta, baustellen });
+          setDataState({
+            status: "ready",
+            metadata,
+            constructionSites,
+            changes,
+          });
         }
       } catch (error) {
         if (!controller.signal.aborted && request === latestRequest) {
-          setState((current) =>
+          setDataState((current) =>
             current.status === "ready"
               ? current
               : {
@@ -51,10 +70,12 @@ export function useBaustellenData(): BaustellenDataState {
     };
 
     const onWorkerMessage = (event: MessageEvent) => {
-      if (requestsDataRefresh(event)) void refresh();
+      if (isConstructionSiteRefreshMessage(event)) {
+        void refreshConstructionSiteData();
+      }
     };
 
-    void refresh();
+    void refreshConstructionSiteData();
     navigator.serviceWorker?.addEventListener("message", onWorkerMessage);
     return () => {
       controller.abort();
@@ -65,5 +86,5 @@ export function useBaustellenData(): BaustellenDataState {
     };
   }, []);
 
-  return state;
+  return dataState;
 }

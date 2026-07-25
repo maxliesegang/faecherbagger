@@ -22,14 +22,14 @@ export interface NotificationArea {
  * `baustellen_vorschau` -> `"upcoming"`) and cross-checked against the dates,
  * so the UI can filter on it independently of the source layer.
  */
-export type Phase = "active" | "upcoming";
+export type ConstructionPhase = "active" | "upcoming";
 
 /**
  * Normalized construction category, mapped from the free-form `art` field.
  * `"other"` is the fallback for values not in the mapping table; unknown `art`
  * strings are logged at build time so the table can be extended.
  */
-export type Category =
+export type ConstructionCategory =
   | "special-use" // Bauliche Sondernutzung
   | "power-telecom" // Strom bzw. TK-Versorgung
   | "district-heating" // Fernwärmeversorgung
@@ -51,7 +51,7 @@ export type Category =
 
 /**
  * Closure severity, mapped from the `sperrung` field. Ordinal: the
- * {@link CLOSURE_SEVERITY_RANK} table gives the sort order (`"none"` lowest,
+ * {@link CLOSURE_SEVERITY_SORT_RANK} table gives the sort order (`"none"` lowest,
  * `"full"` highest). `"unknown"` represents a null `sperrung`.
  */
 export type ClosureSeverity =
@@ -62,7 +62,7 @@ export type ClosureSeverity =
   | "unknown";
 
 /** Sort ranks for {@link ClosureSeverity}; higher means more disruptive. */
-export const CLOSURE_SEVERITY_RANK: Record<ClosureSeverity, number> = {
+export const CLOSURE_SEVERITY_SORT_RANK: Record<ClosureSeverity, number> = {
   none: 0,
   obstruction: 1,
   "one-direction": 2,
@@ -71,7 +71,7 @@ export const CLOSURE_SEVERITY_RANK: Record<ClosureSeverity, number> = {
 };
 
 /** Site mobility, mapped from `tagesbaustelle`; `null` when unspecified. */
-export type SiteType = "stationary" | "mobile" | null;
+export type ConstructionSiteMobility = "stationary" | "mobile" | null;
 
 /**
  * A single deduplicated construction site (one per `vorgangsnummer`).
@@ -80,15 +80,15 @@ export type SiteType = "stationary" | "mobile" | null;
  * `vorgangsnummer`) are excluded upstream, so `municipality` and `id` are
  * always present here.
  */
-export interface Baustelle {
+export interface ConstructionSite {
   /** Stable logical key: the TRK `vorgangsnummer` (a string, e.g. `"2026V2026"`). */
   id: string;
-  phase: Phase;
-  category: Category;
+  phase: ConstructionPhase;
+  category: ConstructionCategory;
   /** The original `art` value, kept for tooltips and reviewing `"other"`. */
   artRaw: string;
   closure: ClosureSeverity;
-  siteType: SiteType;
+  siteType: ConstructionSiteMobility;
 
   /** Municipality (`gemeinde`). */
   municipality: string;
@@ -116,7 +116,7 @@ export interface Baustelle {
 }
 
 /** Contents of `data/meta.json`. */
-export interface Meta {
+export interface ConstructionSiteMetadata {
   /** When the pipeline fetched the data. */
   fetchedAt: IsoTimestamp;
   /** Total deduplicated records in `baustellen.json`. */
@@ -138,7 +138,7 @@ export interface Meta {
  * Contents of `data/changes.json`: what changed relative to the previous run.
  * All arrays hold `vorgangsnummer` values. Basis for later notifications.
  */
-export interface Changes {
+export interface ConstructionSiteChanges {
   /** `fetchedAt` of the previous run, or `null` on the first run. */
   since: IsoTimestamp | null;
   added: string[];

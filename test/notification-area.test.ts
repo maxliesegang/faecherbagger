@@ -1,18 +1,21 @@
 import { describe, expect, it } from "vitest";
 import {
   isNotificationArea,
-  matchingNewBaustellen,
-  notificationAreaContains,
+  findNewConstructionSitesInArea,
+  isPointInNotificationArea,
 } from "../src/lib/notification-area.ts";
 import { isLngLat } from "../src/lib/notification-area-validation.ts";
-import type { Baustelle, NotificationArea } from "../src/types/index.ts";
+import type {
+  ConstructionSite,
+  NotificationArea,
+} from "../src/types/index.ts";
 
 const area: NotificationArea = {
   center: [8.4044, 49.0069],
   radiusKm: 5,
 };
 
-function record(id: string, point: [number, number]): Baustelle {
+function createConstructionSite(id: string, point: [number, number]): ConstructionSite {
   return {
     id,
     point,
@@ -48,17 +51,17 @@ describe("notification area", () => {
   });
 
   it("matches points inside the configured radius", () => {
-    expect(notificationAreaContains(area, [8.45, 49.0069])).toBe(true);
-    expect(notificationAreaContains(area, [8.5, 49.0069])).toBe(false);
+    expect(isPointInNotificationArea(area, [8.45, 49.0069])).toBe(true);
+    expect(isPointInNotificationArea(area, [8.5, 49.0069])).toBe(false);
   });
 
-  it("returns only added Baustellen inside the radius", () => {
-    const nearby = record("nearby", [8.41, 49.01]);
-    const farAway = record("far", [8.6, 49.01]);
-    const unchanged = record("unchanged", [8.42, 49.01]);
+  it("returns only added construction sites inside the radius", () => {
+    const nearby = createConstructionSite("nearby", [8.41, 49.01]);
+    const farAway = createConstructionSite("far", [8.6, 49.01]);
+    const unchanged = createConstructionSite("unchanged", [8.42, 49.01]);
 
     expect(
-      matchingNewBaustellen(
+      findNewConstructionSitesInArea(
         [nearby, farAway, unchanged],
         new Set(["nearby", "far"]),
         area,

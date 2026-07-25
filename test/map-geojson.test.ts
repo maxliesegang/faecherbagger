@@ -1,15 +1,18 @@
 import { describe, expect, it } from "vitest";
 import { distanceInMeters } from "../src/lib/distance.ts";
 import {
-  notificationAreaGeoJson,
-  notificationAreaPolygon,
-  recordsToGeometries,
-  recordsToPoints,
-  userLocationGeoJson,
-} from "../src/lib/map-data.ts";
-import type { Baustelle, NotificationArea } from "../src/types/index.ts";
+  constructionSitesToGeometryFeatures,
+  constructionSitesToPointFeatures,
+  createNotificationAreaFeatureCollection,
+  createNotificationAreaPolygon,
+  createUserLocationFeatureCollection,
+} from "../src/lib/map-geojson.ts";
+import type {
+  ConstructionSite,
+  NotificationArea,
+} from "../src/types/index.ts";
 
-const record: Baustelle = {
+const constructionSite: ConstructionSite = {
   id: "site-1",
   phase: "active",
   category: "road-construction",
@@ -36,22 +39,32 @@ const record: Baustelle = {
 
 describe("map data", () => {
   it("creates point and full-geometry features with shared map properties", () => {
-    const pointFeature = recordsToPoints([record]).features[0];
-    const geometryFeature = recordsToGeometries([record]).features[0];
+    const pointFeature = constructionSitesToPointFeatures([
+      constructionSite,
+    ]).features[0];
+    const geometryFeature = constructionSitesToGeometryFeatures([
+      constructionSite,
+    ]).features[0];
 
     expect(pointFeature).toMatchObject({
-      id: record.id,
-      geometry: { type: "Point", coordinates: record.point },
-      properties: { id: record.id, phase: record.phase },
+      id: constructionSite.id,
+      geometry: { type: "Point", coordinates: constructionSite.point },
+      properties: {
+        id: constructionSite.id,
+        phase: constructionSite.phase,
+      },
     });
-    expect(geometryFeature?.geometry).toEqual(record.geometry);
+    expect(geometryFeature?.geometry).toEqual(constructionSite.geometry);
   });
 
   it("represents an absent or present user location consistently", () => {
-    expect(userLocationGeoJson().features).toEqual([]);
-    expect(userLocationGeoJson(record.point).features[0]?.geometry).toEqual({
+    expect(createUserLocationFeatureCollection().features).toEqual([]);
+    expect(
+      createUserLocationFeatureCollection(constructionSite.point).features[0]
+        ?.geometry,
+    ).toEqual({
       type: "Point",
-      coordinates: record.point,
+      coordinates: constructionSite.point,
     });
   });
 
@@ -60,7 +73,7 @@ describe("map data", () => {
       center: [8.4044, 49.0069],
       radiusKm: 5,
     };
-    const ring = notificationAreaPolygon(area).coordinates[0];
+    const ring = createNotificationAreaPolygon(area).coordinates[0];
 
     expect(ring).toHaveLength(65);
     expect(ring[0]).toEqual(ring.at(-1));
@@ -73,9 +86,9 @@ describe("map data", () => {
   });
 
   it("uses an empty feature collection when no area is configured", () => {
-    expect(notificationAreaGeoJson().features).toEqual([]);
+    expect(createNotificationAreaFeatureCollection().features).toEqual([]);
     expect(
-      notificationAreaGeoJson({
+      createNotificationAreaFeatureCollection({
         center: [8.4044, 49.0069],
         radiusKm: 5,
       }).features,

@@ -1,13 +1,13 @@
 import webpush from "web-push";
 import { readFile } from "node:fs/promises";
 import type {
-  Baustelle,
-  Changes,
-  Meta,
+  ConstructionSite,
+  ConstructionSiteChanges,
+  ConstructionSiteMetadata,
   NotificationArea,
 } from "../src/types/index.ts";
-import { matchingNewBaustellen } from "../src/lib/notification-area.ts";
-import { formatDate } from "../src/lib/labels.ts";
+import { findNewConstructionSitesInArea } from "../src/lib/notification-area.ts";
+import { formatIsoDate } from "../src/lib/construction-site-labels.ts";
 
 interface StoredSubscription {
   endpoint: string;
@@ -24,7 +24,7 @@ interface SubscriptionPage {
   nextCursor: string | null;
 }
 
-const required = [
+const REQUIRED_ENVIRONMENT_VARIABLES = [
   "PUSH_API_URL",
   "PUSH_ADMIN_TOKEN",
   "VAPID_PUBLIC_KEY",
@@ -33,7 +33,7 @@ const required = [
   "APP_URL",
 ] as const;
 
-for (const name of required) {
+for (const name of REQUIRED_ENVIRONMENT_VARIABLES) {
   if (!process.env[name]) throw new Error(`Missing environment variable ${name}`);
 }
 
@@ -44,28 +44,28 @@ const headers = {
   "content-type": "application/json",
 };
 
-const [changes, meta, baustellen] = await Promise.all([
-  readJson<Changes>("public/data/changes.json"),
-  readJson<Meta>("public/data/meta.json"),
-  readJson<Baustelle[]>("public/data/baustellen.json"),
+const [changes, metadata, constructionSites] = await Promise.all([
+  readJson<ConstructionSiteChanges>("public/data/changes.json"),
+  readJson<ConstructionSiteMetadata>("public/data/meta.json"),
+  readJson<ConstructionSite[]>("public/data/baustellen.json"),
 ]);
 
 if (changes.added.length === 0) {
-  console.log("No new Baustellen to broadcast.");
+  console.log("No new construction sites to broadcast.");
   process.exit(0);
 }
 
 const claimResponse = await fetch(`${apiUrl}/broadcasts/claim`, {
   method: "POST",
   headers,
-  body: JSON.stringify({ fetchedAt: meta.fetchedAt }),
+  body: JSON.stringify({ fetchedAt: metadata.fetchedAt }),
 });
 if (!claimResponse.ok) {
   throw new Error(`Could not claim broadcast: ${claimResponse.status}`);
 }
 const claim = (await claimResponse.json()) as { claimed?: boolean };
 if (!claim.claimed) {
-  console.log(`Broadcast for ${meta.fetchedAt} was already sent.`);
+  console.log(`Broadcast for ${metadata.fetchedAt} was already sent.`);
   process.exit(0);
 }
 
@@ -91,26 +91,32 @@ while (cursor !== null) {
       outsideArea += 1;
       return;
     }
-    const matches = matchingNewBaustellen(baustellen, addedIds, area);
-    if (matches.length === 0) {
+    const matchingSites = findNewConstructionSitesInArea(
+      constructionSites,
+      addedIds,
+      area,
+    );
+    if (matchingSites.length === 0) {
       outsideArea += 1;
       return;
     }
-    const first = matches[0];
+    const firstSite = matchingSites[0];
     const target = new URL(process.env.APP_URL!);
-    if (matches.length === 1) target.searchParams.set("baustelle", first.id);
+    if (matchingSites.length === 1) {
+      target.searchParams.set("baustelle", firstSite.id);
+    }
     const payload = JSON.stringify({
       title:
-        matches.length === 1
-          ? `Neue Baustelle in ${first.municipality}`
-          : `${matches.length} neue Baustellen in Ihrem Umkreis`,
+        matchingSites.length === 1
+          ? `Neue Baustelle in ${firstSite.municipality}`
+          : `${matchingSites.length} neue Baustellen in Ihrem Umkreis`,
       body:
-        matches.length === 1
-          ? `${first.location} · ab ${formatDate(first.startDate)}`
-          : `Unter anderem: ${first.location}, ${first.municipality}`,
+        matchingSites.length === 1
+          ? `${firstSite.location} · ab ${formatIsoDate(firstSite.startDate)}`
+          : `Unter anderem: ${firstSite.location}, ${firstSite.municipality}`,
       url: target.href,
-      count: matches.length,
-      fetchedAt: meta.fetchedAt,
+      count: matchingSites.length,
+      fetchedAt: metadata.fetchedAt,
     });
     try {
       await webpush.sendNotification(
