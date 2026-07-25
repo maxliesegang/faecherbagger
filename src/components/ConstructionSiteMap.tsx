@@ -8,7 +8,7 @@ import {
   type GeoJSONSource,
   type Map as MapLibreMap,
 } from "maplibre-gl";
-import mapLibreWorkerURL from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
+import mapLibreWorkerURL from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import type {
   ConstructionSite,
   LngLat,
@@ -35,8 +35,7 @@ import {
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./ConstructionSiteMap.css";
 
-// MapLibre 6 discovers its worker relative to the library module by default.
-// After Vite bundles this lazy component, that inferred file does not exist.
+// Bundle the worker and its shared module dependency into one deployable asset.
 setWorkerUrl(mapLibreWorkerURL);
 
 interface ConstructionSiteMapProps {
