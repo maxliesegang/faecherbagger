@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { ConstructionSite } from "../src/types/index.ts";
 import {
-  changedConstructionSiteIds,
+  getChangedConstructionSiteIds,
   computeConstructionSiteChanges,
 } from "../src/lib/construction-site-changes.ts";
 
@@ -70,7 +70,7 @@ describe("computeConstructionSiteChanges", () => {
 
   it("returns displayable added and modified IDs after a comparison", () => {
     expect(
-      changedConstructionSiteIds({
+      getChangedConstructionSiteIds({
         since: "2026-01-10T00:00:00Z",
         added: ["A"],
         modified: ["B"],
@@ -81,7 +81,7 @@ describe("computeConstructionSiteChanges", () => {
 
   it("does not label the initial dataset as entirely new", () => {
     expect(
-      changedConstructionSiteIds({
+      getChangedConstructionSiteIds({
         since: null,
         added: ["A", "B"],
         modified: [],

@@ -22,7 +22,8 @@
   notification, and push helpers.
 - `src/types/`: shared domain and WFS types used by the app and data pipeline.
 - `src/sw.ts`: inject-manifest service worker and offline refresh behavior.
-- `scripts/fetch-baustellen.ts`: WFS fetch, normalization, deduplication, diff,
+- `scripts/fetch-construction-sites.ts`: WFS fetch, normalization,
+  deduplication, diff,
   and generation of `public/data/*.json`.
 - `scripts/*push*.ts`: VAPID, GitHub configuration, and notification fan-out.
 - `push-worker/`: subscription API, D1 schema/migrations, and Wrangler config.
@@ -38,6 +39,14 @@
   `unknown` at external boundaries.
 - Include `.ts`/`.tsx` extensions in local imports and use `import type` for
   type-only imports, matching the existing `verbatimModuleSyntax` setup.
+- Use full domain nouns for exported symbols and component props. Prefer
+  `constructionSite`/`constructionSites` over generic `item`/`data`, predicate
+  prefixes such as `is`, `has`, or `show` for booleans, and `on...` for event
+  callbacks.
+- Capitalize standard acronyms in identifiers (`URL`, `JSON`, `WFS`, `ISO`).
+  Keep established third-party domain names such as MapLibre's `LngLat`.
+- Keep German TRK field names only in WFS and serialized-data boundary code;
+  use normalized English names everywhere else.
 - Prefer pure helpers in `src/lib/` for behavior that can be tested without the
   DOM. Keep components focused on rendering and interaction wiring.
 - Preserve the established formatting: two spaces, double quotes, semicolons,

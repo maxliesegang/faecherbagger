@@ -1,11 +1,12 @@
 :root {
   color-scheme: light;
-  --app-content-width: 84rem;
-  --app-sidebar-width: 21rem;
+  --app-content-width: 92rem;
+  --app-rail-width: 20.5rem;
   --app-border: var(--kern-color-layout-border, #c9c9c9);
   --app-page: var(--kern-color-layout-background-level-1, #f4f4f5);
   --app-card: var(--kern-color-layout-background-default, #fff);
   --app-accent: var(--kern-color-action-default, #454b6b);
+  --app-muted: var(--kern-color-layout-text-muted, #595959);
 
   /* Status hues shared with the map markers/legend (single source of truth). */
   --phase-active: #1d5e9e;
@@ -32,6 +33,7 @@ main > .kern-container {
   width: min(100% - 2rem, var(--app-content-width));
   max-width: var(--app-content-width);
   margin-inline: auto;
+  padding-bottom: 1.5rem;
 }
 
 button,
@@ -47,7 +49,7 @@ select {
   left: 0.5rem;
   padding: 0.75rem 1rem;
   color: var(--kern-color-action-on-default, #fff);
-  background: var(--kern-color-action-default, #454b6b);
+  background: var(--app-accent);
   transform: translateY(-150%);
 }
 
@@ -55,60 +57,63 @@ select {
   transform: translateY(0);
 }
 
-/* Hero — kept intentionally slim so the map/results lead the page. */
-.app-hero {
+/*
+ * Page bar. Deliberately one line tall on desktop: the KERN Kopfzeile already
+ * carries the brand, so this only orients the visitor and shows data freshness
+ * before the map takes over.
+ */
+.app-bar {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.75rem 1.5rem;
   align-items: baseline;
   justify-content: space-between;
+  flex-wrap: wrap;
   max-width: none;
-  padding-block: 1rem 0.85rem;
+  padding-block: 0.85rem 0.7rem;
 }
 
-.app-hero .kern-title,
-.app-hero h1 {
+.app-bar__titles {
+  display: flex;
+  gap: 0.15rem 0.9rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.app-bar .kern-title,
+.app-bar h1 {
   max-width: none;
-  margin-block: 0.1rem;
-  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.9rem);
-  line-height: 1.15;
+  margin-block: 0;
+  padding-block: 0;
+  font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
+  line-height: 1.2;
   text-wrap: balance;
 }
 
-.app-hero__eyebrow {
+.app-bar__intro {
   margin: 0;
-  color: var(--kern-color-action-default, #454b6b);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.app-hero__intro {
-  margin: 0.15rem 0 0;
-  max-width: 48rem;
-  color: var(--kern-color-layout-text-muted, #4a4a4a);
-  font-size: 0.95rem;
-  line-height: 1.4;
+  max-width: 46rem;
+  color: var(--app-muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
 }
 
 /* Freshness chip with a live dot. */
-.app-hero__updated {
+.app-bar__updated {
   display: inline-flex;
   gap: 0.45rem;
   align-items: center;
   flex: 0 0 auto;
   margin: 0;
-  padding: 0.3rem 0.65rem;
+  padding: 0.25rem 0.6rem;
   border: 1px solid var(--app-border);
-  border-radius: 1rem;
   background: var(--app-card);
-  color: var(--kern-color-layout-text-muted, #595959);
+  color: var(--app-muted);
   font-size: 0.8rem;
   white-space: nowrap;
 }
 
-.app-hero__updated::before {
-  content: "";
+.app-bar__dot {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
@@ -125,8 +130,8 @@ select {
 .app-status__spinner {
   width: 1.25rem;
   height: 1.25rem;
-  border: 3px solid var(--kern-color-layout-border, #b5b5b5);
-  border-top-color: var(--kern-color-action-default, #454b6b);
+  border: 3px solid var(--app-border);
+  border-top-color: var(--app-accent);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -138,60 +143,129 @@ select {
 }
 
 /*
- * Two-column app shell on desktop: a persistent controls rail (search, filters,
- * personal tools) beside a results-forward main column. Grid areas let the DOM
- * order stay mobile-first (status, search, results, tools) while desktop pulls
- * the controls into the rail. `align-items: start` keeps the rail at the top so
- * it can be made sticky without stretching to the map's height.
+ * Desktop is a two-column app: a narrow control rail that stacks everything
+ * vertically (search, status, detail filters, personal tools) beside a results
+ * column that gets the full remaining height. The DOM order is mobile-first —
+ * controls, then results — and the rail simply moves beside them when there is
+ * room, so no source reordering is needed.
  */
 .app-shell {
   display: grid;
-  gap: 1rem 1.5rem;
+  gap: 1rem;
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "overview"
-    "filter"
-    "results"
-    "tools";
   align-items: start;
+}
+
+.app-rail {
+  display: grid;
+  gap: 0.65rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.app-rail__tools {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+/*
+ * Without the rail there is no reason to keep the personal tools above the
+ * results, so the rail dissolves into the shell grid and only the filters stay
+ * on top. `order` never applies on desktop, where the rail is a real column.
+ */
+@media (max-width: 63.999rem) {
+  .app-rail {
+    display: contents;
+  }
+
+  .filter-panel {
+    order: 1;
+  }
+
+  .results {
+    order: 2;
+  }
+
+  .app-rail__tools {
+    order: 3;
+  }
 }
 
 @media (min-width: 64rem) {
   .app-shell {
-    grid-template-columns: var(--app-sidebar-width) minmax(0, 1fr);
-    grid-template-areas:
-      "filter  overview"
-      "filter  results"
-      "tools   results";
+    gap: 1rem 1.25rem;
+    grid-template-columns: var(--app-rail-width) minmax(0, 1fr);
   }
 
-  .filter-panel {
+  /*
+   * The rail follows the map instead of scrolling away, and scrolls inside
+   * itself when the tools make it taller than the viewport.
+   */
+  .app-rail {
     position: sticky;
-    top: 0.75rem;
+    top: 0.5rem;
+    max-height: calc(100dvh - 1rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
   }
 }
 
-/* Overview counts double as the primary status filter (stat-tile segmentation). */
-.overview {
-  grid-area: overview;
+/* Two-up tools on tablets, where the rail is still stacked above the results. */
+@media (min-width: 40rem) and (max-width: 63.999rem) {
+  .app-rail__tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+/* Cards share a flat white surface + hairline border on the tinted page. */
+.filter-panel {
+  padding: 0.75rem 0.85rem 0.85rem;
+  border: 1px solid var(--app-border);
+  border-top: 0.2rem solid var(--app-accent);
+  background: var(--app-card);
+}
+
+.filter-panel__heading {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2rem;
+}
+
+.filter-panel__heading h2 {
+  margin: 0;
+  padding-block: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.filter-panel__search .kern-form-input {
+  margin-top: 0.15rem;
+}
+
+/* Status switch: counts double as the label, so it reads as a summary too. */
+.phase-switch {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.6rem;
-  max-width: none;
-  margin: 0;
+  gap: 0.35rem;
+  margin-top: 0.7rem;
 }
 
-.overview__item {
+.phase-switch__item {
   --tile-accent: var(--app-accent);
   --tile-tint: var(--phase-total-tint);
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.05rem;
   justify-content: center;
-  min-height: 3.4rem;
-  padding: 0.5rem 0.85rem;
+  min-height: 3rem;
+  padding: 0.35rem 0.5rem;
   border: 1px solid var(--app-border);
-  border-inline-start: 3px solid var(--tile-accent);
+  border-block-start: 3px solid var(--tile-accent);
   background: var(--app-card);
   color: inherit;
   text-align: start;
@@ -202,122 +276,155 @@ select {
     color 0.15s ease;
 }
 
-.overview__item--active {
+.phase-switch__item--active {
   --tile-accent: var(--phase-active);
   --tile-tint: var(--phase-active-tint);
 }
 
-.overview__item--upcoming {
+.phase-switch__item--upcoming {
   --tile-accent: var(--phase-upcoming);
   --tile-tint: var(--phase-upcoming-tint);
 }
 
-.overview__item:hover:not([aria-pressed="true"]) {
+.phase-switch__item:hover:not([aria-pressed="true"]) {
   background: var(--tile-tint);
 }
 
-.overview__item[aria-pressed="true"] {
+.phase-switch__item[aria-pressed="true"] {
   background: var(--tile-accent);
   border-color: var(--tile-accent);
 }
 
-.overview__item:focus-visible {
-  position: relative;
-  z-index: 1;
-  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
-  outline-offset: 2px;
-}
-
-.overview__value {
+.phase-switch__value {
   color: var(--kern-color-layout-text-default, #1d1d1b);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
 }
 
-.overview__item--active .overview__value {
+.phase-switch__item--active .phase-switch__value {
   color: var(--phase-active);
 }
 
-.overview__item--upcoming .overview__value {
+.phase-switch__item--upcoming .phase-switch__value {
   color: var(--phase-upcoming);
 }
 
-.overview__label {
-  color: var(--kern-color-layout-text-muted, #595959);
-  font-size: 0.85rem;
+.phase-switch__label {
+  color: var(--app-muted);
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
-.overview__item[aria-pressed="true"] .overview__value {
+.phase-switch__item[aria-pressed="true"] .phase-switch__value,
+.phase-switch__item[aria-pressed="true"] .phase-switch__label {
   color: var(--kern-color-action-on-default, #fff);
 }
 
-.overview__item[aria-pressed="true"] .overview__label {
-  color: rgb(255 255 255 / 88%);
-}
-
-/* Cards share a flat white surface + hairline border on the tinted page. */
-.filter-panel {
-  grid-area: filter;
-  padding: 0.9rem 1rem 1rem;
-  border: 1px solid var(--app-border);
-  border-top: 0.2rem solid var(--app-accent);
-  background: var(--app-card);
-}
-
-.filter-panel__heading,
-.results__header {
+/* Scope toggle for the "what changed since the last refresh" view. */
+.filter-panel__scope {
   display: flex;
-  gap: 1rem;
-  align-items: start;
-  justify-content: space-between;
-}
-
-.filter-panel__heading h2,
-.results__summary h2 {
-  font-size: 1.15rem;
-}
-
-.filter-panel__heading h2,
-.filter-panel__heading p,
-.results__header h2,
-.results__header p {
-  margin-block: 0 0.35rem;
-}
-
-.filter-panel__heading-actions {
-  display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 2.5rem;
+  margin-top: 0.35rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--app-border);
+  color: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: start;
+  background: var(--app-card);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
-.filter-panel__shortcut {
-  color: var(--kern-color-layout-text-muted, #595959);
+.filter-panel__scope:hover:not([aria-pressed="true"]):not(:disabled) {
+  background: var(--accent-tint);
+}
+
+.filter-panel__scope[aria-pressed="true"] {
+  border-color: var(--app-accent);
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+}
+
+.filter-panel__scope:disabled {
+  color: var(--app-muted);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.filter-panel__scope-count {
+  min-width: 1.5rem;
+  padding-inline: 0.35rem;
+  border-radius: 1rem;
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.filter-panel__scope[aria-pressed="true"] .filter-panel__scope-count {
+  color: var(--app-accent);
+  background: var(--kern-color-action-on-default, #fff);
+}
+
+/* Active narrowing filters, each removable in one click. */
+.filter-chips {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filter-chips__chip {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.15rem 0.4rem 0.15rem 0.55rem;
+  border: 1px solid var(--app-accent);
+  color: var(--app-accent);
   font-size: 0.8rem;
+  background: var(--accent-tint);
+  cursor: pointer;
+}
+
+.filter-chips__chip:hover {
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+}
+
+.filter-chips__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.filter-panel__shortcut kbd {
-  display: inline-grid;
-  min-width: 1.4rem;
-  min-height: 1.4rem;
-  place-items: center;
-  border: 1px solid var(--app-border);
-  border-bottom-width: 2px;
-  background: var(--app-page);
-  font: inherit;
-}
-
-.filter-panel__search {
-  margin-top: 0.35rem;
+.filter-chips__remove {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .filter-panel__advanced {
-  margin-top: 0.85rem;
+  margin-top: 0.7rem;
   border-top: 1px solid var(--app-border);
-  padding-top: 0.35rem;
+  border-bottom: 0;
+  padding-top: 0.15rem;
+}
+
+.filter-panel__advanced > .kern-accordion__header {
+  padding-block: 0.6rem;
 }
 
 .filter-panel__active-count {
@@ -332,41 +439,76 @@ select {
   vertical-align: middle;
 }
 
-/* One column in the rail; three-up when the panel is wide (mid-width, mobile). */
+/* One column in the rail; three-up when the panel is wide (tablet, mobile). */
 .filter-panel__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.65rem;
+  gap: 0.55rem;
   align-items: end;
+  padding-block: 0.2rem 0.4rem;
 }
 
-@media (min-width: 30rem) and (max-width: 64rem) {
+@media (min-width: 40rem) and (max-width: 63.999rem) {
   .filter-panel__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem 1rem;
   }
 }
 
-.personal-tools {
-  grid-area: tools;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.65rem;
-}
-
-@media (min-width: 30rem) and (max-width: 64rem) {
-  .personal-tools {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
+/* Location card: compact, because it directly changes what the results show. */
 .location-control {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: start;
   max-width: none;
   margin: 0;
+  padding: 0.65rem 0.85rem 0.75rem;
   border: 1px solid var(--app-border);
   background: var(--app-card);
 }
 
-.location-control > .kern-accordion__header,
+.location-control__heading {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.location-control__heading h2 {
+  margin: 0;
+  padding-block: 0;
+  flex: 0 1 auto;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.location-control__state {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex: 0 0 auto;
+  color: var(--app-muted);
+  font-size: 0.8rem;
+}
+
+.location-control__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--kern-color-feedback-success, #2f8132);
+}
+
+.location-control__intro {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.location-control .kern-alert {
+  width: 100%;
+}
+
 .pwa-panel > .kern-accordion__header {
   min-height: 2.75rem;
   padding-block: 0.55rem;
@@ -374,59 +516,88 @@ select {
   transition: background-color 0.15s ease;
 }
 
-.location-control > .kern-accordion__header:hover,
 .pwa-panel > .kern-accordion__header:hover {
   background: var(--accent-tint);
 }
 
-.location-control__body > :first-child {
-  max-width: 80ch;
-  margin-top: 0;
-}
-
+/*
+ * Results column. It is a query container so the table can switch to cards
+ * based on the space it actually has, not the viewport: with the rail beside
+ * it a 70rem window leaves the table barely 48rem.
+ */
 .results {
-  grid-area: results;
   min-width: 0;
+  container: results / inline-size;
 }
 
-.results__header {
+.results__toolbar {
+  display: flex;
+  gap: 0.5rem 1rem;
   align-items: center;
-  margin-bottom: 0.6rem;
-  padding-bottom: 0.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--app-border);
 }
 
-.results__summary {
-  display: flex;
-  gap: 0.75rem;
-  align-items: baseline;
+.results__count {
+  margin: 0;
   min-width: 0;
+  color: var(--app-muted);
+  font-size: 0.95rem;
 }
 
-.results__summary h2,
-.results__summary p {
-  margin: 0;
+.results__count strong {
+  color: var(--kern-color-layout-text-default, #1d1d1b);
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .results__controls {
   display: flex;
-  gap: 0.65rem;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.results__sort {
+  display: flex;
+  gap: 0.45rem;
   align-items: center;
 }
 
-.result-mode,
+.results__sort .kern-label {
+  padding: 0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.results__sort .kern-form-input__select-wrapper {
+  width: clamp(11rem, 22vw, 18rem);
+  height: 2.75rem;
+}
+
+.results__sort .kern-form-input__select-wrapper::after {
+  top: 1.375rem;
+}
+
+.results__sort .kern-form-input__select {
+  padding-block: 0.2rem;
+  font-size: 0.9rem;
+}
+
 .view-switcher {
   display: inline-grid;
-  grid-template-columns: repeat(2, minmax(6rem, 1fr));
+  grid-template-columns: repeat(2, minmax(5rem, 1fr));
   flex: 0 0 auto;
 }
 
-.result-mode__button,
 .view-switcher__button {
   min-height: 2.75rem;
   padding: 0.35rem 1rem;
-  border: 1px solid var(--kern-color-action-default, #454b6b);
-  color: var(--kern-color-action-default, #454b6b);
+  border: 1px solid var(--app-accent);
+  color: var(--app-accent);
   font-weight: 700;
   background: var(--app-card);
   cursor: pointer;
@@ -435,54 +606,39 @@ select {
     color 0.15s ease;
 }
 
-.result-mode__button + .result-mode__button,
 .view-switcher__button + .view-switcher__button {
   border-inline-start: 0;
 }
 
-.result-mode__button:hover:not([aria-pressed="true"]),
 .view-switcher__button:hover:not([aria-pressed="true"]) {
   background: var(--accent-tint);
 }
 
-.result-mode__button[aria-pressed="true"],
 .view-switcher__button[aria-pressed="true"] {
   color: var(--kern-color-action-on-default, #fff);
-  background: var(--kern-color-action-default, #454b6b);
+  background: var(--app-accent);
 }
 
-.result-mode__button:focus-visible,
-.view-switcher__button:focus-visible {
+.results__change-summary {
+  margin-block: 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* One consistent focus ring for every control this file styles. */
+.phase-switch__item:focus-visible,
+.filter-panel__scope:focus-visible,
+.filter-chips__chip:focus-visible,
+.view-switcher__button:focus-visible,
+.results__sort select:focus-visible {
   position: relative;
   z-index: 1;
   outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: 2px;
 }
 
-.result-mode__count {
-  display: inline-block;
-  min-width: 1.25rem;
-  margin-inline-start: 0.4rem;
-  padding-inline: 0.25rem;
-  border-radius: 1rem;
-  color: var(--kern-color-action-default, #454b6b);
-  background: var(--kern-color-action-on-default, #fff);
-  font-size: 0.75rem;
-  line-height: 1.5;
-}
-
-.result-mode__button[aria-pressed="true"] .result-mode__count {
-  color: var(--kern-color-action-on-default, #fff);
-  background: rgb(255 255 255 / 22%);
-}
-
-.results__change-summary {
-  margin-block: 0 0.55rem;
-}
-
 .app-footer {
-  margin-block: 1.5rem;
-  padding-top: 0.85rem;
+  margin-block: 1.25rem 0;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--app-border);
 }
 
@@ -490,69 +646,44 @@ select {
   max-width: 50rem;
 }
 
-@media (max-width: 64rem) {
-  .app-hero {
-    align-items: end;
-  }
-}
-
 @media (max-width: 48rem) {
   main > .kern-container {
     width: min(100% - 1.25rem, var(--app-content-width));
   }
 
-  .app-hero {
-    display: block;
-  }
-
-  .app-hero__updated {
-    margin-top: 0.6rem;
+  .app-bar {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
 @media (max-width: 32rem) {
-  .overview {
-    gap: 0.4rem;
+  .phase-switch__item {
+    min-height: 2.75rem;
+    padding-inline: 0.4rem;
   }
 
-  .overview__item {
-    min-height: 3rem;
-    padding-inline: 0.6rem;
+  .phase-switch__value {
+    font-size: 1.15rem;
   }
 
-  .overview__value {
-    font-size: 1.2rem;
-  }
-
-  .filter-panel__heading,
-  .results__header {
-    display: block;
-  }
-
-  .filter-panel__heading-actions {
-    margin-top: 0.5rem;
-  }
-
-  .filter-panel__shortcut {
-    display: none;
-  }
-
-  .results__header {
-    display: flex;
+  .results__toolbar {
     align-items: end;
   }
 
   .results__controls {
-    flex-wrap: wrap;
+    gap: 0.5rem;
     justify-content: end;
   }
 
-  .results__summary {
-    display: block;
+  .results__sort {
+    flex: 1 1 100%;
   }
 
-  .results__summary p {
-    margin-top: 0.15rem;
+  .results__sort .kern-form-input__select-wrapper {
+    width: auto;
+    flex: 1 1 auto;
   }
 
   .view-switcher {
@@ -561,21 +692,6 @@ select {
 
   .view-switcher__button {
     padding-inline: 0.6rem;
-  }
-}
-
-@media (max-width: 24rem) {
-  .results__header {
-    display: block;
-  }
-
-  .results__controls {
-    margin-top: 0.5rem;
-  }
-
-  .result-mode,
-  .view-switcher {
-    width: 100%;
   }
 }
 
@@ -588,10 +704,10 @@ select {
     animation-duration: 1.6s;
   }
 
-  .overview__item,
-  .result-mode__button,
+  .phase-switch__item,
+  .filter-panel__scope,
+  .filter-chips__chip,
   .view-switcher__button,
-  .location-control > .kern-accordion__header,
   .pwa-panel > .kern-accordion__header {
     transition: none;
   }

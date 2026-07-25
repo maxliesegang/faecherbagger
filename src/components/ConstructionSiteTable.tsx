@@ -1,34 +1,30 @@
-import {
-  Fragment,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { useMemo, type ReactNode } from "react";
 import { KernBadge } from "@kern-ux-annex/kern-react-kit";
 import type { ConstructionSite, LngLat } from "../types/index.ts";
 import { distanceInMeters, formatDistance } from "../lib/distance.ts";
-import {
-  sortConstructionSites,
-  sortConstructionSitesForDisplay,
-  type ConstructionSiteSort,
-  type ConstructionSiteSortKey,
+import type {
+  ConstructionSiteSort,
+  ConstructionSiteSortKey,
 } from "../lib/construction-site-sort.ts";
 import {
   getConstructionCategoryLabel,
   getClosureLabel,
   getClosureBadgeVariant,
   formatConstructionPeriod,
-  formatIsoTimestamp,
   getConstructionPhaseLabel,
   getConstructionPhaseBadgeVariant,
 } from "../lib/construction-site-labels.ts";
 import "./ConstructionSiteTable.css";
 
 interface ConstructionSiteTableProps {
+  /** Already sorted by the caller; the header buttons only report intent. */
   constructionSites: readonly ConstructionSite[];
+  sort: ConstructionSiteSort | null;
+  onSortChange: (sort: ConstructionSiteSort | null) => void;
   currentLocation?: LngLat;
   onShowSiteOnMap?: (siteId: string) => void;
+  getSiteDetailsHref: (siteId: string) => string;
+  onShowSiteDetails: (siteId: string) => void;
 }
 
 interface ConstructionSiteTableColumn {
@@ -79,11 +75,6 @@ const BASE_COLUMNS: readonly ConstructionSiteTableColumn[] = [
       />
     ),
   },
-  {
-    key: "lastModified",
-    label: "Aktualisiert",
-    render: (site) => formatIsoTimestamp(site.lastModified),
-  },
 ];
 
 function getNextSort(
@@ -101,22 +92,13 @@ function getNextSort(
 
 export function ConstructionSiteTable({
   constructionSites,
+  sort,
+  onSortChange,
   currentLocation,
   onShowSiteOnMap,
+  getSiteDetailsHref,
+  onShowSiteDetails,
 }: ConstructionSiteTableProps) {
-  const [sort, setSort] = useState<ConstructionSiteSort | null>(null);
-  const [expandedSiteIds, setExpandedSiteIds] = useState<Set<string>>(
-    new Set(),
-  );
-  const effectiveSort =
-    sort?.key === "distance" && !currentLocation ? null : sort;
-
-  useEffect(() => {
-    if (!currentLocation) {
-      setSort((current) => (current?.key === "distance" ? null : current));
-    }
-  }, [currentLocation]);
-
   const columns = useMemo<readonly ConstructionSiteTableColumn[]>(
     () =>
       currentLocation
@@ -124,7 +106,7 @@ export function ConstructionSiteTable({
             ...BASE_COLUMNS,
             {
               key: "distance",
-              label: "Entfernung (Luftlinie)",
+              label: "Entfernung",
               numeric: true,
               render: (site: ConstructionSite) =>
                 formatDistance(distanceInMeters(currentLocation, site.point)),
@@ -133,27 +115,6 @@ export function ConstructionSiteTable({
         : BASE_COLUMNS,
     [currentLocation],
   );
-
-  const sortedConstructionSites = useMemo(
-    () =>
-      effectiveSort
-        ? sortConstructionSites(
-            constructionSites,
-            effectiveSort,
-            currentLocation,
-          )
-        : sortConstructionSitesForDisplay(constructionSites),
-    [constructionSites, currentLocation, effectiveSort],
-  );
-
-  const toggleExpanded = (id: string) => {
-    setExpandedSiteIds((current) => {
-      const next = new Set(current);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  };
 
   return (
     <>
@@ -171,6 +132,7 @@ export function ConstructionSiteTable({
                   <th
                     key={column.key}
                     scope="col"
+                    data-column={column.key}
                     {...(direction ? { "aria-sort": direction } : {})}
                     className={`kern-table__header${
                       column.numeric ? " kern-table__header--numeric" : ""
@@ -181,7 +143,7 @@ export function ConstructionSiteTable({
                       className="construction-site-table__sort-button"
                       aria-label={`${column.label} ${nextDirection} sortieren`}
                       onClick={() =>
-                        setSort((current) => getNextSort(current, column.key))
+                        onSortChange(getNextSort(sort, column.key))
                       }
                     >
                       {column.label}
@@ -205,64 +167,59 @@ export function ConstructionSiteTable({
             </tr>
           </thead>
           <tbody className="kern-table__body">
-            {sortedConstructionSites.map((site) => {
-              const isExpanded = expandedSiteIds.has(site.id);
-              return (
-                <Fragment key={site.id}>
-                  <tr className="kern-table__row">
-                    {columns.map((column) => (
-                      <td
-                        key={column.key}
-                        className={`kern-table__cell${
-                          column.numeric ? " kern-table__cell--numeric" : ""
-                        }`}
+            {constructionSites.map((site) => (
+              <tr className="kern-table__row" key={site.id}>
+                {columns.map((column) => (
+                  <td
+                    key={column.key}
+                    data-column={column.key}
+                    className={`kern-table__cell${
+                      column.numeric ? " kern-table__cell--numeric" : ""
+                    }`}
+                  >
+                    {column.render(site)}
+                  </td>
+                ))}
+                <td className="kern-table__cell">
+                  <div className="construction-site-table__actions">
+                    {onShowSiteOnMap && (
+                      <button
+                        type="button"
+                        className="construction-site-table__map-button"
+                        onClick={() => onShowSiteOnMap(site.id)}
                       >
-                        {column.render(site)}
-                      </td>
-                    ))}
-                    <td className="kern-table__cell">
-                      <div className="construction-site-table__actions">
-                        {onShowSiteOnMap && (
-                          <button
-                            type="button"
-                            className="construction-site-table__map-button"
-                            onClick={() => onShowSiteOnMap(site.id)}
-                          >
-                            Auf Karte
-                          </button>
-                        )}
-                        <button
-                          type="button"
-                          className="construction-site-table__details-button"
-                          aria-expanded={isExpanded}
-                          aria-controls={`details-${site.id}`}
-                          onClick={() => toggleExpanded(site.id)}
-                        >
-                          {isExpanded ? "Schließen" : "Details"}
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  {isExpanded && (
-                    <tr
-                      key={`${site.id}-details`}
-                      id={`details-${site.id}`}
-                      className="construction-site-table__details-row"
+                        Auf Karte
+                      </button>
+                    )}
+                    <a
+                      className="construction-site-table__details-button"
+                      href={getSiteDetailsHref(site.id)}
+                      onClick={(event) => {
+                        if (
+                          event.button !== 0 ||
+                          event.metaKey ||
+                          event.ctrlKey ||
+                          event.shiftKey ||
+                          event.altKey
+                        ) {
+                          return;
+                        }
+                        event.preventDefault();
+                        onShowSiteDetails(site.id);
+                      }}
                     >
-                      <td colSpan={columns.length + 1}>
-                        <ConstructionSiteDetails site={site} />
-                      </td>
-                    </tr>
-                  )}
-                </Fragment>
-              );
-            })}
+                      Details
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
 
       <div className="construction-site-cards" aria-label="Baustellenliste">
-        {sortedConstructionSites.map((site) => (
+        {constructionSites.map((site) => (
           <article className="construction-site-card" key={site.id}>
             <div className="construction-site-card__topline">
               <KernBadge
@@ -296,10 +253,25 @@ export function ConstructionSiteTable({
                 </div>
               )}
             </dl>
-            <details className="construction-site-card__details">
-              <summary>Weitere Angaben</summary>
-              <ConstructionSiteDetails site={site} />
-            </details>
+            <a
+              className="construction-site-card__details-link"
+              href={getSiteDetailsHref(site.id)}
+              onClick={(event) => {
+                if (
+                  event.button !== 0 ||
+                  event.metaKey ||
+                  event.ctrlKey ||
+                  event.shiftKey ||
+                  event.altKey
+                ) {
+                  return;
+                }
+                event.preventDefault();
+                onShowSiteDetails(site.id);
+              }}
+            >
+              Details ansehen
+            </a>
             {onShowSiteOnMap && (
               <button
                 type="button"
@@ -313,34 +285,5 @@ export function ConstructionSiteTable({
         ))}
       </div>
     </>
-  );
-}
-
-function ConstructionSiteDetails({ site }: { site: ConstructionSite }) {
-  return (
-    <dl className="construction-site-details">
-      {site.notes && (
-        <div className="construction-site-details__wide">
-          <dt>Hinweis</dt>
-          <dd>{site.notes}</dd>
-        </div>
-      )}
-      <div>
-        <dt>Verantwortlich</dt>
-        <dd>{site.cause ?? "Keine Angabe"}</dd>
-      </div>
-      <div>
-        <dt>Datenquelle</dt>
-        <dd>{site.source}</dd>
-      </div>
-      <div>
-        <dt>Vorgangsnummer</dt>
-        <dd>{site.id}</dd>
-      </div>
-      <div>
-        <dt>Aktualisiert</dt>
-        <dd>{formatIsoTimestamp(site.lastModified)}</dd>
-      </div>
-    </dl>
   );
 }

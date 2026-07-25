@@ -26,7 +26,7 @@ registerRoute(
   }),
 );
 
-function getDataUrl(filename: string) {
+function getDataURL(filename: string) {
   return new URL(`data/${filename}`, self.registration.scope).href;
 }
 
@@ -40,16 +40,16 @@ async function notifyClientsOfDataUpdate() {
 
 async function refreshConstructionSiteData() {
   const cache = await caches.open(DATA_CACHE_NAME);
-  const metadataUrl = getDataUrl("meta.json");
-  const cachedMetadata = await cache.match(metadataUrl);
+  const metadataURL = getDataURL("meta.json");
+  const cachedMetadata = await cache.match(metadataURL);
   const previousFetchedAt = cachedMetadata
     ? ((await cachedMetadata.clone().json()) as { fetchedAt?: string }).fetchedAt
     : undefined;
 
   const urls = [
-    metadataUrl,
-    getDataUrl("baustellen.json"),
-    getDataUrl("changes.json"),
+    metadataURL,
+    getDataURL("baustellen.json"),
+    getDataURL("changes.json"),
   ];
   const responses = await Promise.all(
     urls.map((url) => fetch(url, { cache: "no-store" })),
@@ -136,7 +136,7 @@ self.addEventListener("push", (event) => {
 
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
-  const targetUrl =
+  const targetURL =
     (event.notification.data as { url?: string } | undefined)?.url ??
     self.registration.scope;
   event.waitUntil(
@@ -149,12 +149,12 @@ self.addEventListener("notificationclick", (event) => {
         .then(async (windows) => {
           const existing = windows[0] as WindowClient | undefined;
           if (existing) {
-            if ("navigate" in existing) await existing.navigate(targetUrl);
+            if ("navigate" in existing) await existing.navigate(targetURL);
             await existing.focus();
             existing.postMessage({ type: "REFRESH_VIEW" });
             return;
           }
-          await self.clients.openWindow(targetUrl);
+          await self.clients.openWindow(targetURL);
         }),
     ]),
   );

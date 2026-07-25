@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react";
 import type { LngLat } from "../types/index.ts";
 
+const LOCATION_TIMEOUT_MS = 30_000;
+
 type CurrentLocationState =
   | { status: "idle" }
   | { status: "requesting" }
@@ -61,7 +63,9 @@ export function useCurrentLocation() {
         {
           enableHighAccuracy: false,
           maximumAge: 300_000,
-          timeout: 10_000,
+          // A granted permission only allows the lookup; it does not guarantee
+          // that the browser's location provider can return a fix quickly.
+          timeout: LOCATION_TIMEOUT_MS,
         },
       );
     });

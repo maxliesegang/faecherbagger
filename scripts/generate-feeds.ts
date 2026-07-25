@@ -17,15 +17,15 @@ import {
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DEFAULT_APP_URL = "https://maxliesegang.github.io/faecherbagger/";
 
-async function readJson<T>(path: string): Promise<T> {
+async function readJSON<T>(path: string): Promise<T> {
   return JSON.parse(await readFile(path, "utf8")) as T;
 }
 
 const [constructionSites, metadata] = await Promise.all([
-  readJson<ConstructionSite[]>(
+  readJSON<ConstructionSite[]>(
     join(ROOT, "public", "data", "baustellen.json"),
   ),
-  readJson<ConstructionSiteMetadata>(
+  readJSON<ConstructionSiteMetadata>(
     join(ROOT, "public", "data", "meta.json"),
   ),
 ]);

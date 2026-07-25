@@ -23,6 +23,58 @@ export interface ConstructionSiteSort {
   direction: ConstructionSiteSortDirection;
 }
 
+const SORT_KEYS = new Set<ConstructionSiteSortKey>([
+  "municipality",
+  "location",
+  "category",
+  "closure",
+  "phase",
+  "period",
+  "lastModified",
+  "distance",
+]);
+
+/**
+ * Sort orders offered as a single control above the results. `null` is the
+ * display order (see {@link compareConstructionSitesByDefaultOrder}); the table
+ * header buttons can still produce combinations not listed here, which the
+ * control then reports as "Eigene Sortierung".
+ */
+export const CONSTRUCTION_SITE_SORT_PRESETS: readonly {
+  sort: ConstructionSiteSort | null;
+  label: string;
+  /** Only offered when the user shared a location. */
+  needsLocation?: boolean;
+}[] = [
+  { sort: null, label: "Empfohlen (aktuell und einschneidend zuerst)" },
+  {
+    sort: { key: "distance", direction: "ascending" },
+    label: "Entfernung (nächste zuerst)",
+    needsLocation: true,
+  },
+  { sort: { key: "period", direction: "ascending" }, label: "Beginn (früheste zuerst)" },
+  { sort: { key: "period", direction: "descending" }, label: "Beginn (späteste zuerst)" },
+  { sort: { key: "closure", direction: "descending" }, label: "Verkehrsauswirkung" },
+  { sort: { key: "lastModified", direction: "descending" }, label: "Zuletzt aktualisiert" },
+  { sort: { key: "municipality", direction: "ascending" }, label: "Ort (A–Z)" },
+  { sort: { key: "location", direction: "ascending" }, label: "Lage (A–Z)" },
+];
+
+/** Stable token for a sort, used by the select and the URL (`""` = default). */
+export const serializeConstructionSiteSort = (
+  sort: ConstructionSiteSort | null,
+): string => (sort ? `${sort.key}:${sort.direction}` : "");
+
+/** Inverse of {@link serializeConstructionSiteSort}; unknown tokens yield `null`. */
+export function parseConstructionSiteSort(
+  value: string | null | undefined,
+): ConstructionSiteSort | null {
+  const [key, direction] = (value ?? "").split(":");
+  if (!SORT_KEYS.has(key as ConstructionSiteSortKey)) return null;
+  if (direction !== "ascending" && direction !== "descending") return null;
+  return { key: key as ConstructionSiteSortKey, direction };
+}
+
 const GERMAN_COLLATOR = new Intl.Collator("de", {
   numeric: true,
   sensitivity: "base",
@@ -84,7 +136,7 @@ function compareByKey(
  * disruptive closures first, then earliest start. The id is the final
  * tiebreaker so the result is deterministic regardless of input order.
  */
-export function compareConstructionSitesForDisplay(
+export function compareConstructionSitesByDefaultOrder(
   left: ConstructionSite,
   right: ConstructionSite,
 ): number {
@@ -102,14 +154,14 @@ export function compareConstructionSitesForDisplay(
 }
 
 /** Returns a display-sorted copy without modifying the input. */
-export function sortConstructionSitesForDisplay(
+export function sortConstructionSitesByDefaultOrder(
   constructionSites: readonly ConstructionSite[],
 ): ConstructionSite[] {
-  return [...constructionSites].sort(compareConstructionSitesForDisplay);
+  return [...constructionSites].sort(compareConstructionSitesByDefaultOrder);
 }
 
 /** Sorts a copy by the selected visible column, using the id as a tiebreaker. */
-export function sortConstructionSites(
+export function sortConstructionSitesBy(
   constructionSites: readonly ConstructionSite[],
   sort: ConstructionSiteSort,
   currentLocation?: LngLat,

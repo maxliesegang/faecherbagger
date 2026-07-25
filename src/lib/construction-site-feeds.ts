@@ -28,7 +28,7 @@ function parseFeedDate(timestamp: string): Date {
   return date;
 }
 
-const normalizeBaseUrl = (url: string): string =>
+const normalizeBaseURL = (url: string): string =>
   `${url.replace(/\/+$/, "")}/`;
 
 function createFeedItemDescription(site: ConstructionSite): string {
@@ -51,21 +51,21 @@ function createFeedItemDescription(site: ConstructionSite): string {
 export function createConstructionSiteFeeds(
   constructionSites: readonly ConstructionSite[],
   metadata: ConstructionSiteMetadata,
-  appUrl: string,
+  appURL: string,
 ): ConstructionSiteFeeds {
-  const baseUrl = normalizeBaseUrl(appUrl);
+  const baseURL = normalizeBaseURL(appURL);
   const feed = new Feed({
     title: "Fächerbagger – Baustellen in der Region Karlsruhe",
     description:
       "Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.",
-    id: baseUrl,
-    link: baseUrl,
+    id: baseURL,
+    link: baseURL,
     language: "de",
     updated: parseFeedDate(metadata.fetchedAt),
     generator: "Fächerbagger",
     feedLinks: {
-      rss: new URL(CONSTRUCTION_SITE_FEED_FILENAMES.rss, baseUrl).href,
-      atom: new URL(CONSTRUCTION_SITE_FEED_FILENAMES.atom, baseUrl).href,
+      rss: new URL(CONSTRUCTION_SITE_FEED_FILENAMES.rss, baseURL).href,
+      atom: new URL(CONSTRUCTION_SITE_FEED_FILENAMES.atom, baseURL).href,
     },
     author: {
       name: metadata.source.name,
@@ -79,7 +79,7 @@ export function createConstructionSiteFeeds(
       return byModified || left.id.localeCompare(right.id);
     })
     .forEach((site) => {
-      const link = new URL(baseUrl);
+      const link = new URL(baseURL);
       link.searchParams.set("baustelle", site.id);
       const title = `${getConstructionPhaseLabel(site.phase)}: ${site.location} – ${site.municipality}`;
       const revisionId = `faecherbagger:${site.id}:${site.lastModified}`;

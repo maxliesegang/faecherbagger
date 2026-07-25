@@ -6,9 +6,10 @@ import type {
   ClosureSeverity,
 } from "../src/types/index.ts";
 import {
+  countConstructionSitesByPhase,
   EMPTY_CONSTRUCTION_SITE_FILTERS,
   filterConstructionSites,
-  getMunicipalityOptions,
+  getConstructionSiteMunicipalityOptions,
   hasNoConstructionSiteFilters,
   type ConstructionSiteFilters,
 } from "../src/lib/construction-site-filter.ts";
@@ -119,13 +120,48 @@ describe("hasNoConstructionSiteFilters", () => {
   });
 });
 
-describe("getMunicipalityOptions", () => {
+describe("countConstructionSitesByPhase", () => {
+  const constructionSites = [
+    createConstructionSite({ id: "A", municipality: "Karlsruhe", phase: "active" }),
+    createConstructionSite({ id: "B", municipality: "Karlsruhe", phase: "upcoming" }),
+    createConstructionSite({ id: "C", municipality: "Ettlingen", phase: "upcoming" }),
+  ];
+
+  it("counts every record when no filter is active", () => {
+    expect(
+      countConstructionSitesByPhase(constructionSites, createFilters()),
+    ).toEqual({ total: 3, active: 1, upcoming: 2 });
+  });
+
+  it("applies the other filters", () => {
+    expect(
+      countConstructionSitesByPhase(
+        constructionSites,
+        createFilters({ municipality: "Karlsruhe" }),
+      ),
+    ).toEqual({ total: 2, active: 1, upcoming: 1 });
+  });
+
+  it("ignores the phase filter so each option keeps its own count", () => {
+    expect(
+      countConstructionSitesByPhase(
+        constructionSites,
+        createFilters({ phase: "active" }),
+      ),
+    ).toEqual({ total: 3, active: 1, upcoming: 2 });
+  });
+});
+
+describe("getConstructionSiteMunicipalityOptions", () => {
   it("returns unique municipalities sorted for a German locale", () => {
     const constructionSites = [
       createConstructionSite({ municipality: "Ettlingen" }),
       createConstructionSite({ municipality: "Karlsruhe" }),
       createConstructionSite({ municipality: "Ettlingen" }),
     ];
-    expect(getMunicipalityOptions(constructionSites)).toEqual(["Ettlingen", "Karlsruhe"]);
+    expect(getConstructionSiteMunicipalityOptions(constructionSites)).toEqual([
+      "Ettlingen",
+      "Karlsruhe",
+    ]);
   });
 });

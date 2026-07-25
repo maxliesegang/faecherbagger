@@ -1,70 +1,76 @@
 import {
   KernAlert,
   KernButton,
+  KernHeading,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import { useState } from "react";
 import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
 
 interface CurrentLocationControlProps {
   locationController: CurrentLocationController;
 }
 
+/**
+ * Compact rail card. Sharing a location unlocks distances and the "nearest
+ * first" sort, so it stays one click away instead of behind a disclosure.
+ */
 export function CurrentLocationControl({
   locationController,
 }: CurrentLocationControlProps) {
   const { locationState, requestLocation, clearLocation } = locationController;
-  const [open, setOpen] = useState(
-    locationState.status === "ready" || locationState.status === "error",
-  );
+  const isReady = locationState.status === "ready";
 
   return (
-    <details
-      className="kern-accordion location-control"
-      open={open}
-      onToggle={(event) => setOpen(event.currentTarget.open)}
-    >
-      <summary className="kern-accordion__header">
-        <span className="kern-title">
-          {locationState.status === "ready"
-            ? "Entfernung zu meinem Standort wird angezeigt"
-            : "Nach Entfernung sortieren"}
-        </span>
-      </summary>
-      <section className="kern-accordion__body location-control__body">
-        <KernText>
-          Zeigt die Luftlinie zu jeder Baustelle und ermöglicht die Sortierung
-          danach. Der Standort bleibt im Browser, außer Sie verwenden ihn
-          ausdrücklich als Mittelpunkt für Baustellenbenachrichtigungen.
-        </KernText>
-
-        {locationState.status === "ready" ? (
-          <KernButton
-            type="button"
-            variant="secondary"
-            label="Standort entfernen"
-            onClick={clearLocation}
-          />
-        ) : (
-          <KernButton
-            type="button"
-            variant="secondary"
-            label={
-              locationState.status === "requesting"
-                ? "Standort wird ermittelt …"
-                : "Meinen Standort verwenden"
-            }
-            disabled={locationState.status === "requesting"}
-            onClick={() => void requestLocation()}
-          />
+    <section className="location-control" aria-labelledby="location-heading">
+      <div className="location-control__heading">
+        <KernHeading level={2} id="location-heading">
+          Mein Standort
+        </KernHeading>
+        {isReady && (
+          <span className="location-control__state">
+            <span className="location-control__dot" aria-hidden="true" />
+            aktiv
+          </span>
         )}
+      </div>
 
-        {locationState.status === "error" && (
-          <KernAlert variant="warning" title="Standort nicht verfügbar">
-            <KernText>{locationState.message}</KernText>
-          </KernAlert>
-        )}
-      </section>
-    </details>
+      <KernText muted className="location-control__intro">
+        {isReady
+          ? "Entfernungen werden angezeigt und lassen sich sortieren. Der Standort bleibt im Browser."
+          : "Zeigt die Luftlinie zu jeder Baustelle und ermöglicht die Sortierung nach Nähe. Der Standort bleibt im Browser."}
+      </KernText>
+
+      {isReady ? (
+        <KernButton
+          type="button"
+          variant="tertiary"
+          label="Standort entfernen"
+          onClick={clearLocation}
+        />
+      ) : (
+        <KernButton
+          type="button"
+          variant="secondary"
+          label={
+            locationState.status === "requesting"
+              ? "Standort wird ermittelt …"
+              : "Meinen Standort verwenden"
+          }
+          disabled={locationState.status === "requesting"}
+          onClick={() => {
+            // The hook exposes the failure through locationState for this
+            // control. Consume the rejected promise to avoid an uncaught
+            // rejection in the browser console.
+            void requestLocation().catch(() => undefined);
+          }}
+        />
+      )}
+
+      {locationState.status === "error" && (
+        <KernAlert variant="warning" title="Standort nicht verfügbar">
+          <KernText>{locationState.message}</KernText>
+        </KernAlert>
+      )}
+    </section>
   );
 }

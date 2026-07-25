@@ -7,7 +7,7 @@ import type { Feature, FeatureCollection, Geometry } from "geojson";
  *
  * @see https://mobil.trk.de/geoserver/TBA/ows
  */
-export interface WfsConstructionSiteProperties {
+export interface WFSConstructionSiteProperties {
   id: number | null;
   gemeinde: string | null;
   vorgangszeitraum_von: string | null;
@@ -26,13 +26,13 @@ export interface WfsConstructionSiteProperties {
 }
 
 /** A single WFS feature. Geometry is `Point` for list features, otherwise the area/line geometry. */
-export type WfsConstructionSiteFeature = Feature<
+export type WFSConstructionSiteFeature = Feature<
   Geometry | null,
-  WfsConstructionSiteProperties
+  WFSConstructionSiteProperties
 >;
 
 /** WFS GetFeature response for a construction-site layer (GeoJSON, EPSG:4326). */
-export type WfsConstructionSiteCollection = FeatureCollection<
+export type WFSConstructionSiteFeatureCollection = FeatureCollection<
   Geometry | null,
-  WfsConstructionSiteProperties
+  WFSConstructionSiteProperties
 >;

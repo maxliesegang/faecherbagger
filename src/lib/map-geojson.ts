@@ -37,7 +37,7 @@ function createConstructionSiteFeatureCollection(
   };
 }
 
-export function constructionSitesToPointFeatures(
+export function createConstructionSitePointFeatureCollection(
   constructionSites: readonly ConstructionSite[],
 ): FeatureCollection<Geometry, ConstructionSiteFeatureProperties> {
   return createConstructionSiteFeatureCollection(constructionSites, (site) => ({
@@ -46,7 +46,7 @@ export function constructionSitesToPointFeatures(
   }));
 }
 
-export function constructionSitesToGeometryFeatures(
+export function createConstructionSiteGeometryFeatureCollection(
   constructionSites: readonly ConstructionSite[],
 ): FeatureCollection<Geometry, ConstructionSiteFeatureProperties> {
   return createConstructionSiteFeatureCollection(

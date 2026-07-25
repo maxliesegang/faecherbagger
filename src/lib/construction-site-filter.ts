@@ -60,8 +60,28 @@ export function filterConstructionSites(
   });
 }
 
+/**
+ * Counts per phase for the current query with the phase filter itself removed,
+ * so the status switch can show how many records each option would yield.
+ */
+export function countConstructionSitesByPhase(
+  constructionSites: readonly ConstructionSite[],
+  filters: Readonly<ConstructionSiteFilters>,
+): { total: number; active: number; upcoming: number } {
+  const matching = filterConstructionSites(constructionSites, {
+    ...filters,
+    phase: "",
+  });
+  const active = matching.filter((site) => site.phase === "active").length;
+  return {
+    total: matching.length,
+    active,
+    upcoming: matching.length - active,
+  };
+}
+
 /** Distinct municipalities present in the data, sorted for a German locale. */
-export const getMunicipalityOptions = (
+export const getConstructionSiteMunicipalityOptions = (
   constructionSites: readonly ConstructionSite[],
 ): string[] =>
   [...new Set(constructionSites.map((site) => site.municipality))].sort(
@@ -69,7 +89,7 @@ export const getMunicipalityOptions = (
   );
 
 /** Distinct categories present in the data (unsorted; caller sorts by label). */
-export const getCategoryOptions = (
+export const getConstructionSiteCategoryOptions = (
   constructionSites: readonly ConstructionSite[],
 ): ConstructionCategory[] =>
   [...new Set(constructionSites.map((site) => site.category))];

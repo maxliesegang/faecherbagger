@@ -2,14 +2,14 @@ import type { Geometry, Point, Position } from "geojson";
 import type {
   ConstructionPhase,
   ConstructionSite,
-  IsoDate,
+  ISODate,
   LngLat,
-  WfsConstructionSiteFeature,
+  WFSConstructionSiteFeature,
 } from "../types/index.ts";
 import {
   normalizeConstructionCategory,
   normalizeClosureSeverity,
-  normalizeConstructionSiteType,
+  normalizeConstructionSiteMobility,
 } from "./construction-site-mappings.ts";
 
 export interface ConstructionSiteNormalizationOptions {
@@ -33,11 +33,13 @@ const BERLIN_DATE = new Intl.DateTimeFormat("en-CA", {
  * `"2026-07-23T22:00:00Z"` is midnight CEST), so the correct calendar date only
  * appears after converting to Europe/Berlin. Returns `null` for null/invalid input.
  */
-export function toBerlinDate(ts: string | null | undefined): IsoDate | null {
-  if (!ts) return null;
-  const d = new Date(ts);
-  if (Number.isNaN(d.getTime())) return null;
-  return BERLIN_DATE.format(d); // en-CA formats as YYYY-MM-DD
+export function toBerlinDate(
+  timestamp: string | null | undefined,
+): ISODate | null {
+  if (!timestamp) return null;
+  const date = new Date(timestamp);
+  if (Number.isNaN(date.getTime())) return null;
+  return BERLIN_DATE.format(date); // en-CA formats as YYYY-MM-DD
 }
 
 const ENTITIES: Record<string, string> = {
@@ -123,22 +125,22 @@ function buildGeometry(
  * them. Records are returned sorted by `id` for stable diffs between runs.
  */
 export function normalizeConstructionSites(
-  features: readonly WfsConstructionSiteFeature[],
+  features: readonly WFSConstructionSiteFeature[],
   phase: ConstructionPhase,
   options: ConstructionSiteNormalizationOptions = {},
 ): ConstructionSite[] {
-  const groups = new Map<string, WfsConstructionSiteFeature[]>();
+  const featureGroupsBySiteId = new Map<string, WFSConstructionSiteFeature[]>();
   for (const feature of features) {
     const { vorgangsnummer, gemeinde } = feature.properties;
     // Exclude Alsace (null gemeinde) and any record without a grouping key.
     if (vorgangsnummer == null || gemeinde == null) continue;
-    const group = groups.get(vorgangsnummer);
+    const group = featureGroupsBySiteId.get(vorgangsnummer);
     if (group) group.push(feature);
-    else groups.set(vorgangsnummer, [feature]);
+    else featureGroupsBySiteId.set(vorgangsnummer, [feature]);
   }
 
   const constructionSites: ConstructionSite[] = [];
-  for (const [vorgangsnummer, members] of groups) {
+  for (const [vorgangsnummer, members] of featureGroupsBySiteId) {
     const properties = members[0]!.properties;
 
     const points: LngLat[] = [];
@@ -168,7 +170,7 @@ export function normalizeConstructionSites(
       category: normalizeConstructionCategory(properties.art, options.onUnknownArt),
       artRaw: properties.art ?? "",
       closure: normalizeClosureSeverity(properties.sperrung),
-      siteType: normalizeConstructionSiteType(properties.tagesbaustelle),
+      siteType: normalizeConstructionSiteMobility(properties.tagesbaustelle),
       municipality: properties.gemeinde ?? "",
       location: (properties.lage ?? "").trim(),
       notes: sanitizeText(properties.zusatzinfo),

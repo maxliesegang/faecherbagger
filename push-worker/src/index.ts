@@ -17,7 +17,7 @@ const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
 const MAX_ENDPOINT_LENGTH = 4096;
 const MAX_KEY_LENGTH = 512;
 
-function createJsonResponse(
+function createJSONResponse(
   body: unknown,
   status = 200,
   extraHeaders?: HeadersInit,
@@ -106,7 +106,7 @@ function parseNotificationPreferences(
   };
 }
 
-async function parseJsonBody<T>(request: Request): Promise<T | null> {
+async function parseJSONBody<T>(request: Request): Promise<T | null> {
   try {
     return (await request.json()) as T;
   } catch {
@@ -121,11 +121,11 @@ async function handleSubscriptionRequest(
 ) {
   if (request.method === "POST") {
     if (request.headers.has("origin") && !origin) {
-      return createJsonResponse({ error: "Origin not allowed" }, 403);
+      return createJSONResponse({ error: "Origin not allowed" }, 403);
     }
-    const subscription = await parseJsonBody<PushSubscriptionRequest>(request);
+    const subscription = await parseJSONBody<PushSubscriptionRequest>(request);
     if (!subscription || !isValidPushSubscription(subscription)) {
-      return createJsonResponse(
+      return createJSONResponse(
         { error: "Invalid push subscription" },
         400,
         createCorsHeaders(origin),
@@ -165,11 +165,11 @@ async function handleSubscriptionRequest(
         preferences?.radiusMeters ?? null,
       )
       .run();
-    return createJsonResponse({ ok: true }, 201, createCorsHeaders(origin));
+    return createJSONResponse({ ok: true }, 201, createCorsHeaders(origin));
   }
 
   if (request.method === "DELETE") {
-    const body = await parseJsonBody<{ endpoint?: string }>(request);
+    const body = await parseJSONBody<{ endpoint?: string }>(request);
     if (
       !body?.endpoint ||
       body.endpoint.length > MAX_ENDPOINT_LENGTH ||
@@ -177,7 +177,7 @@ async function handleSubscriptionRequest(
         !origin &&
         !(await hasAdminAccess(request, env)))
     ) {
-      return createJsonResponse(
+      return createJSONResponse(
         { error: "Invalid request" },
         400,
         createCorsHeaders(origin),
@@ -186,12 +186,12 @@ async function handleSubscriptionRequest(
     await env.DB.prepare("DELETE FROM subscriptions WHERE endpoint = ?1")
       .bind(body.endpoint)
       .run();
-    return createJsonResponse({ ok: true }, 200, createCorsHeaders(origin));
+    return createJSONResponse({ ok: true }, 200, createCorsHeaders(origin));
   }
 
   if (request.method === "GET") {
     if (!(await hasAdminAccess(request, env))) {
-      return createJsonResponse({ error: "Unauthorized" }, 401);
+      return createJSONResponse({ error: "Unauthorized" }, 401);
     }
     const url = new URL(request.url);
     const limit = Math.min(
@@ -212,14 +212,14 @@ async function handleSubscriptionRequest(
       .bind(limit, after)
       .all();
     const last = result.results.at(-1) as { endpoint?: string } | undefined;
-    return createJsonResponse({
+    return createJSONResponse({
       subscriptions: result.results,
       nextCursor:
         result.results.length === limit && last?.endpoint ? last.endpoint : null,
     });
   }
 
-  return createJsonResponse(
+  return createJSONResponse(
     { error: "Method not allowed" },
     405,
     createCorsHeaders(origin),
@@ -228,18 +228,18 @@ async function handleSubscriptionRequest(
 
 async function handleBroadcastClaimRequest(request: Request, env: Env) {
   if (request.method !== "POST") {
-    return createJsonResponse({ error: "Method not allowed" }, 405);
+    return createJSONResponse({ error: "Method not allowed" }, 405);
   }
   if (!(await hasAdminAccess(request, env))) {
-    return createJsonResponse({ error: "Unauthorized" }, 401);
+    return createJSONResponse({ error: "Unauthorized" }, 401);
   }
-  const body = await parseJsonBody<{ fetchedAt?: string }>(request);
+  const body = await parseJSONBody<{ fetchedAt?: string }>(request);
   if (
     !body?.fetchedAt ||
     body.fetchedAt.length > 64 ||
     Number.isNaN(Date.parse(body.fetchedAt))
   ) {
-    return createJsonResponse({ error: "Invalid fetchedAt" }, 400);
+    return createJSONResponse({ error: "Invalid fetchedAt" }, 400);
   }
   const result = await env.DB.prepare(
     `INSERT OR IGNORE INTO broadcasts (fetched_at, created_at)
@@ -247,7 +247,7 @@ async function handleBroadcastClaimRequest(request: Request, env: Env) {
   )
     .bind(body.fetchedAt)
     .run();
-  return createJsonResponse({ claimed: (result.meta.changes ?? 0) > 0 });
+  return createJSONResponse({ claimed: (result.meta.changes ?? 0) > 0 });
 }
 
 export default {
@@ -263,13 +263,13 @@ export default {
       });
     }
     if (url.pathname === "/health") {
-      return createJsonResponse({ ok: true });
+      return createJSONResponse({ ok: true });
     }
     if (url.pathname === "/config" && request.method === "GET") {
       if (request.headers.has("origin") && !origin) {
-        return createJsonResponse({ error: "Origin not allowed" }, 403);
+        return createJSONResponse({ error: "Origin not allowed" }, 403);
       }
-      return createJsonResponse(
+      return createJSONResponse(
         { vapidPublicKey: env.VAPID_PUBLIC_KEY },
         200,
         createCorsHeaders(origin),
@@ -281,6 +281,6 @@ export default {
     if (url.pathname === "/broadcasts/claim") {
       return handleBroadcastClaimRequest(request, env);
     }
-    return createJsonResponse({ error: "Not found" }, 404);
+    return createJSONResponse({ error: "Not found" }, 404);
   },
 } satisfies ExportedHandler<Env>;

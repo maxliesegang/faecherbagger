@@ -1,0 +1,108 @@
+.construction-site-detail {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  border: 1px solid var(--app-border);
+  border-top: 0.25rem solid var(--app-accent);
+  background: var(--app-card);
+}
+
+.construction-site-detail__back,
+.construction-site-detail__map-button {
+  color: var(--kern-color-action-default, #454b6b);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.construction-site-detail__header {
+  margin-block: 1.25rem;
+}
+
+.construction-site-detail__badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+}
+
+.construction-site-detail__header h2 {
+  margin-block: 0 0.25rem;
+  font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.25rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.construction-site-detail__header p,
+.construction-site-detail__notice p {
+  margin: 0;
+}
+
+.construction-site-detail__header p {
+  color: var(--app-muted);
+  font-size: 1.1rem;
+}
+
+.construction-site-detail__notice {
+  margin-block: 1.25rem;
+  padding: 1rem;
+  border-inline-start: 0.3rem solid var(--phase-upcoming);
+  background: var(--phase-upcoming-tint);
+}
+
+.construction-site-detail__notice h3 {
+  margin-block: 0 0.35rem;
+  font-size: 1rem;
+}
+
+.construction-site-detail__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-block: 1.5rem;
+  border-top: 1px solid var(--app-border);
+}
+
+.construction-site-detail__facts > div {
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.construction-site-detail__facts > div:nth-child(odd) {
+  padding-right: 1rem;
+}
+
+.construction-site-detail__facts dt {
+  margin-bottom: 0.25rem;
+  color: var(--app-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.construction-site-detail__facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.construction-site-detail__map-button {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--app-accent);
+  background: transparent;
+  cursor: pointer;
+}
+
+.construction-site-detail__back:focus-visible,
+.construction-site-detail__map-button:focus-visible {
+  outline: 4px solid
+    var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+@media (max-width: 38rem) {
+  .construction-site-detail__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .construction-site-detail__facts > div:nth-child(odd) {
+    padding-right: 0;
+  }
+}

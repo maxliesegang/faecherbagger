@@ -1,7 +1,7 @@
 import type {
   ConstructionSite,
   ConstructionSiteChanges,
-  IsoTimestamp,
+  ISOTimestamp,
 } from "../types/index.ts";
 
 /**
@@ -12,7 +12,7 @@ import type {
 export function computeConstructionSiteChanges(
   previousSites: readonly ConstructionSite[],
   currentSites: readonly ConstructionSite[],
-  since: IsoTimestamp | null,
+  since: ISOTimestamp | null,
 ): ConstructionSiteChanges {
   const previousSitesById = new Map(
     previousSites.map((site) => [site.id, site]),
@@ -46,7 +46,7 @@ export function computeConstructionSiteChanges(
  * IDs that can still be shown in the current dataset's "new/changed" mode.
  * A first-run diff has no comparison point and must not label every record new.
  */
-export function changedConstructionSiteIds(
+export function getChangedConstructionSiteIds(
   changes: Readonly<ConstructionSiteChanges>,
 ): Set<string> {
   return changes.since === null

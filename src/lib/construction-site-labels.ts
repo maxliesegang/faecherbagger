@@ -59,6 +59,11 @@ const PHASE_VARIANTS: Record<ConstructionPhase, BadgeVariant> = {
   upcoming: "warning",
 };
 
+/** Every known category (for validating filter values from the URL). */
+export const CONSTRUCTION_CATEGORIES = Object.keys(
+  CATEGORY_LABELS,
+) as ConstructionCategory[];
+
 /** All closure severities, most disruptive first (for filter dropdowns). */
 export const CLOSURE_SEVERITIES: ClosureSeverity[] = [
   "full",
@@ -96,8 +101,8 @@ const TIMESTAMP_FORMAT = new Intl.DateTimeFormat("de-DE", {
 const ISO_DATE_PATTERN = /^(\d{4})-(\d{2})-(\d{2})$/;
 
 /** `"2026-07-24"` -> `"24.07.2026"`; passes through anything unparseable. */
-export function formatIsoDate(iso: string): string {
-  const match = ISO_DATE_PATTERN.exec(iso);
+export function formatISODate(isoDate: string): string {
+  const match = ISO_DATE_PATTERN.exec(isoDate);
   if (match) {
     const [, year, month, day] = match;
     const date = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
@@ -105,21 +110,23 @@ export function formatIsoDate(iso: string): string {
       date.getUTCFullYear() === Number(year) &&
       date.getUTCMonth() === Number(month) - 1 &&
       date.getUTCDate() === Number(day);
-    return isValid ? `${day}.${month}.${year}` : iso;
+    return isValid ? `${day}.${month}.${year}` : isoDate;
   }
 
-  const date = new Date(iso);
-  return Number.isNaN(date.getTime()) ? iso : DATE_FORMAT.format(date);
+  const date = new Date(isoDate);
+  return Number.isNaN(date.getTime()) ? isoDate : DATE_FORMAT.format(date);
 }
 
 /** Formats an ISO timestamp for display; passes through invalid input. */
-export function formatIsoTimestamp(iso: string): string {
-  const date = new Date(iso);
-  return Number.isNaN(date.getTime()) ? iso : TIMESTAMP_FORMAT.format(date);
+export function formatISOTimestamp(isoTimestamp: string): string {
+  const date = new Date(isoTimestamp);
+  return Number.isNaN(date.getTime())
+    ? isoTimestamp
+    : TIMESTAMP_FORMAT.format(date);
 }
 
 /** Renders a start/end range; open-ended (`null` end) shows as `"ab <start>"`. */
 export function formatConstructionPeriod(startDate: string, endDate: string | null): string {
-  const start = formatIsoDate(startDate);
-  return endDate ? `${start} – ${formatIsoDate(endDate)}` : `ab ${start}`;
+  const start = formatISODate(startDate);
+  return endDate ? `${start} – ${formatISODate(endDate)}` : `ab ${start}`;
 }

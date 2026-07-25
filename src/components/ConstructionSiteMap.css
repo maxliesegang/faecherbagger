@@ -60,12 +60,9 @@
   background: rgb(36 89 169 / 4%);
 }
 
-.map-legend__hint {
-  color: var(--kern-color-layout-text-muted, #595959);
-}
-
 .map-explorer__fit,
-.map-selection__list-button {
+.map-selection__list-button,
+.map-selection__details-link {
   flex: 0 0 auto;
   padding: 0.35rem 0;
   border: 0;
@@ -76,14 +73,21 @@
   cursor: pointer;
 }
 
+/*
+ * The map is the primary result view, so it takes the height the compact page
+ * chrome leaves over instead of a fixed block. The clamp keeps it usable on
+ * very short and very tall viewports.
+ */
 .map-explorer__map {
   width: 100%;
-  height: clamp(28rem, 60vh, 38rem);
+  height: clamp(24rem, calc(100dvh - 13rem), 48rem);
 }
 
 .map-explorer__map:focus-visible,
 .map-explorer__fit:focus-visible,
-.map-selection__list-button:focus-visible {
+.map-selection__list-button:focus-visible,
+.map-selection__details-link:focus-visible,
+.map-selection__close:focus-visible {
   outline: 4px solid
     var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: 2px;
@@ -100,7 +104,7 @@
   align-items: end;
   justify-content: space-between;
   max-width: 44rem;
-  padding: 0.7rem 0.85rem;
+  padding: 0.7rem 2.4rem 0.7rem 0.85rem;
   border-inline-start: 0.35rem solid
     var(--kern-color-decorative-brand-default, #454b6b);
   background: rgb(255 255 255 / 96%);
@@ -130,6 +134,33 @@
   font-size: 0.9rem;
 }
 
+.map-selection__notes {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 0.25rem !important;
+  color: var(--kern-color-layout-text-muted, #595959);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.map-selection__close {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  color: var(--kern-color-layout-text-muted, #595959);
+  font-size: 1.4rem;
+  line-height: 1;
+  background: transparent;
+  cursor: pointer;
+}
+
+.map-selection__close:hover {
+  color: var(--kern-color-layout-text-default, #1d1d1b);
+}
+
 .maplibregl-ctrl-group {
   border-radius: 0 !important;
 }
@@ -141,10 +172,6 @@
 
   .map-legend {
     gap: 0.45rem 0.85rem;
-  }
-
-  .map-legend__hint {
-    flex-basis: 100%;
   }
 
   .map-explorer__map {
@@ -159,13 +186,15 @@
   .map-selection__list-button {
     margin-top: 0.5rem;
   }
+
+  .map-selection__details-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+  }
 }
 
 @media (max-width: 28rem) {
-  .map-legend__hint {
-    display: none;
-  }
-
   .map-selection {
     right: 0.65rem;
     bottom: 1.25rem;

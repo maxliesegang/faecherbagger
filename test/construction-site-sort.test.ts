@@ -1,8 +1,11 @@
 import { describe, expect, it } from "vitest";
 import type { ConstructionSite } from "../src/types/index.ts";
 import {
-  sortConstructionSites,
-  sortConstructionSitesForDisplay,
+  CONSTRUCTION_SITE_SORT_PRESETS,
+  serializeConstructionSiteSort,
+  parseConstructionSiteSort,
+  sortConstructionSitesBy,
+  sortConstructionSitesByDefaultOrder,
   type ConstructionSiteSortKey,
 } from "../src/lib/construction-site-sort.ts";
 
@@ -28,7 +31,7 @@ function createConstructionSite(overrides: Partial<ConstructionSite>): Construct
   };
 }
 
-describe("sortConstructionSitesForDisplay", () => {
+describe("sortConstructionSitesByDefaultOrder", () => {
   it("orders by phase, closure severity, start date and id", () => {
     const input = [
       createConstructionSite({ id: "upcoming", phase: "upcoming", closure: "full" }),
@@ -38,7 +41,9 @@ describe("sortConstructionSitesForDisplay", () => {
       createConstructionSite({ id: "A", closure: "full" }),
     ];
 
-    expect(sortConstructionSitesForDisplay(input).map(({ id }) => id)).toEqual([
+    expect(
+      sortConstructionSitesByDefaultOrder(input).map(({ id }) => id),
+    ).toEqual([
       "A",
       "B",
       "later",
@@ -55,7 +60,7 @@ describe("sortConstructionSitesForDisplay", () => {
   });
 });
 
-describe("sortConstructionSites", () => {
+describe("sortConstructionSitesBy", () => {
   const earlier = createConstructionSite({
     id: "earlier",
     municipality: "Baden-Baden",
@@ -93,7 +98,7 @@ describe("sortConstructionSites", () => {
   ];
 
   it.each(ascendingCases)("sorts the %s column ascending", (key, expected) => {
-    const sorted = sortConstructionSites(
+    const sorted = sortConstructionSitesBy(
       [later, earlier],
       { key, direction: "ascending" },
       [8.4, 49],
@@ -102,7 +107,7 @@ describe("sortConstructionSites", () => {
   });
 
   it("reverses the selected column when descending", () => {
-    const sorted = sortConstructionSites(
+    const sorted = sortConstructionSitesBy(
       [earlier, later],
       { key: "municipality", direction: "descending" },
     );
@@ -111,7 +116,43 @@ describe("sortConstructionSites", () => {
 
   it("does not mutate the input", () => {
     const input = [later, earlier];
-    sortConstructionSites(input, { key: "location", direction: "ascending" });
+    sortConstructionSitesBy(input, {
+      key: "location",
+      direction: "ascending",
+    });
     expect(input).toEqual([later, earlier]);
+  });
+});
+
+describe("sort tokens", () => {
+  it("round-trips every preset offered by the sort control", () => {
+    for (const preset of CONSTRUCTION_SITE_SORT_PRESETS) {
+      expect(
+        parseConstructionSiteSort(serializeConstructionSiteSort(preset.sort)),
+      ).toEqual(preset.sort);
+    }
+  });
+
+  it("represents the display order as an empty token", () => {
+    expect(serializeConstructionSiteSort(null)).toBe("");
+  });
+
+  it("rejects unknown keys, directions and malformed tokens", () => {
+    expect(parseConstructionSiteSort("lage:ascending")).toBeNull();
+    expect(parseConstructionSiteSort("period:seitwaerts")).toBeNull();
+    expect(parseConstructionSiteSort("period")).toBeNull();
+    expect(parseConstructionSiteSort(null)).toBeNull();
+  });
+
+  it("offers exactly one location-dependent preset", () => {
+    expect(
+      CONSTRUCTION_SITE_SORT_PRESETS.filter((preset) => preset.needsLocation),
+    ).toEqual([
+      {
+        sort: { key: "distance", direction: "ascending" },
+        label: "Entfernung (nächste zuerst)",
+        needsLocation: true,
+      },
+    ]);
   });
 });

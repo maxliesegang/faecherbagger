@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it, vi } from "vitest";
-import type { WfsConstructionSiteCollection } from "../src/types/index.ts";
+import type { WFSConstructionSiteFeatureCollection } from "../src/types/index.ts";
 import {
   normalizeConstructionSites,
   sanitizeText,
@@ -17,7 +17,7 @@ import {
  */
 const fixture = JSON.parse(
   readFileSync(new URL("./fixtures/wfs-aktuell-sample.json", import.meta.url), "utf8"),
-) as WfsConstructionSiteCollection;
+) as WFSConstructionSiteFeatureCollection;
 
 describe("normalizeConstructionSites", () => {
   it("drops Alsace/France records and deduplicates by vorgangsnummer", () => {

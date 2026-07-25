@@ -7,7 +7,7 @@ import type {
   NotificationArea,
 } from "../src/types/index.ts";
 import { findNewConstructionSitesInArea } from "../src/lib/notification-area.ts";
-import { formatIsoDate } from "../src/lib/construction-site-labels.ts";
+import { formatISODate } from "../src/lib/construction-site-labels.ts";
 
 interface StoredSubscription {
   endpoint: string;
@@ -37,7 +37,7 @@ for (const name of REQUIRED_ENVIRONMENT_VARIABLES) {
   if (!process.env[name]) throw new Error(`Missing environment variable ${name}`);
 }
 
-const apiUrl = process.env.PUSH_API_URL!.replace(/\/+$/, "");
+const apiURL = process.env.PUSH_API_URL!.replace(/\/+$/, "");
 const adminToken = process.env.PUSH_ADMIN_TOKEN!;
 const headers = {
   authorization: `Bearer ${adminToken}`,
@@ -45,9 +45,9 @@ const headers = {
 };
 
 const [changes, metadata, constructionSites] = await Promise.all([
-  readJson<ConstructionSiteChanges>("public/data/changes.json"),
-  readJson<ConstructionSiteMetadata>("public/data/meta.json"),
-  readJson<ConstructionSite[]>("public/data/baustellen.json"),
+  readJSON<ConstructionSiteChanges>("public/data/changes.json"),
+  readJSON<ConstructionSiteMetadata>("public/data/meta.json"),
+  readJSON<ConstructionSite[]>("public/data/baustellen.json"),
 ]);
 
 if (changes.added.length === 0) {
@@ -55,7 +55,7 @@ if (changes.added.length === 0) {
   process.exit(0);
 }
 
-const claimResponse = await fetch(`${apiUrl}/broadcasts/claim`, {
+const claimResponse = await fetch(`${apiURL}/broadcasts/claim`, {
   method: "POST",
   headers,
   body: JSON.stringify({ fetchedAt: metadata.fetchedAt }),
@@ -112,7 +112,7 @@ while (cursor !== null) {
           : `${matchingSites.length} neue Baustellen in Ihrem Umkreis`,
       body:
         matchingSites.length === 1
-          ? `${firstSite.location} · ab ${formatIsoDate(firstSite.startDate)}`
+          ? `${firstSite.location} · ab ${formatISODate(firstSite.startDate)}`
           : `Unter anderem: ${firstSite.location}, ${firstSite.municipality}`,
       url: target.href,
       count: matchingSites.length,
@@ -154,14 +154,14 @@ console.log(
 );
 if (failed > 0 && sent === 0) process.exitCode = 1;
 
-async function readJson<T>(path: string): Promise<T> {
+async function readJSON<T>(path: string): Promise<T> {
   return JSON.parse(await readFile(path, "utf8")) as T;
 }
 
 async function getPage(pageCursor: string): Promise<SubscriptionPage> {
   const query = new URLSearchParams({ limit: "500" });
   if (pageCursor) query.set("after", pageCursor);
-  const response = await fetch(`${apiUrl}/subscriptions?${query}`, { headers });
+  const response = await fetch(`${apiURL}/subscriptions?${query}`, { headers });
   if (!response.ok) {
     throw new Error(`Could not read subscriptions: ${response.status}`);
   }
@@ -169,7 +169,7 @@ async function getPage(pageCursor: string): Promise<SubscriptionPage> {
 }
 
 async function deleteSubscription(endpoint: string) {
-  const response = await fetch(`${apiUrl}/subscriptions`, {
+  const response = await fetch(`${apiURL}/subscriptions`, {
     method: "DELETE",
     headers,
     body: JSON.stringify({ endpoint }),

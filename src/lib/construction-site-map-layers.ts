@@ -8,8 +8,8 @@ import type {
   NotificationArea,
 } from "../types/index.ts";
 import {
-  constructionSitesToGeometryFeatures,
-  constructionSitesToPointFeatures,
+  createConstructionSiteGeometryFeatureCollection,
+  createConstructionSitePointFeatureCollection,
   createNotificationAreaFeatureCollection,
   createUserLocationFeatureCollection,
 } from "./map-geojson.ts";
@@ -26,9 +26,7 @@ export const MAP_LAYER_IDS = {
   notificationAreaLine: "notification-area-line",
   areaFill: "baustellen-area-fill",
   geometryLine: "baustellen-geometry-line",
-  clusters: "baustellen-clusters",
-  clusterCount: "baustellen-cluster-count",
-  points: "baustellen-points",
+  geometryPoints: "baustellen-geometry-points",
   selected: "baustellen-selected",
   userLocation: "user-location",
 } as const;
@@ -57,14 +55,15 @@ export function addConstructionSiteMapLayers(
 ): void {
   map.addSource(MAP_SOURCE_IDS.points, {
     type: "geojson",
-    data: constructionSitesToPointFeatures(initialData.constructionSites),
-    cluster: true,
-    clusterMaxZoom: 12,
-    clusterRadius: 42,
+    data: createConstructionSitePointFeatureCollection(
+      initialData.constructionSites,
+    ),
   });
   map.addSource(MAP_SOURCE_IDS.geometries, {
     type: "geojson",
-    data: constructionSitesToGeometryFeatures(initialData.constructionSites),
+    data: createConstructionSiteGeometryFeatureCollection(
+      initialData.constructionSites,
+    ),
   });
   map.addSource(MAP_SOURCE_IDS.userLocation, {
     type: "geojson",
@@ -101,7 +100,6 @@ export function addConstructionSiteMapLayers(
     id: MAP_LAYER_IDS.areaFill,
     type: "fill",
     source: MAP_SOURCE_IDS.geometries,
-    minzoom: 12,
     paint: {
       "fill-color": CONSTRUCTION_PHASE_COLOR,
       "fill-opacity": 0.2,
@@ -111,7 +109,6 @@ export function addConstructionSiteMapLayers(
     id: MAP_LAYER_IDS.geometryLine,
     type: "line",
     source: MAP_SOURCE_IDS.geometries,
-    minzoom: 11,
     paint: {
       "line-color": CONSTRUCTION_PHASE_COLOR,
       "line-width": 3,
@@ -119,41 +116,9 @@ export function addConstructionSiteMapLayers(
     },
   });
   map.addLayer({
-    id: MAP_LAYER_IDS.clusters,
+    id: MAP_LAYER_IDS.geometryPoints,
     type: "circle",
-    source: MAP_SOURCE_IDS.points,
-    filter: ["has", "point_count"],
-    paint: {
-      "circle-color": "#454b6b",
-      "circle-radius": [
-        "step",
-        ["get", "point_count"],
-        18,
-        20,
-        23,
-        75,
-        29,
-      ],
-      "circle-stroke-color": "#fff",
-      "circle-stroke-width": 2,
-    },
-  });
-  map.addLayer({
-    id: MAP_LAYER_IDS.clusterCount,
-    type: "symbol",
-    source: MAP_SOURCE_IDS.points,
-    filter: ["has", "point_count"],
-    layout: {
-      "text-field": ["get", "point_count_abbreviated"],
-      "text-size": 13,
-    },
-    paint: { "text-color": "#fff" },
-  });
-  map.addLayer({
-    id: MAP_LAYER_IDS.points,
-    type: "circle",
-    source: MAP_SOURCE_IDS.points,
-    filter: ["!", ["has", "point_count"]],
+    source: MAP_SOURCE_IDS.geometries,
     paint: {
       "circle-color": CONSTRUCTION_PHASE_COLOR,
       "circle-radius": 7,

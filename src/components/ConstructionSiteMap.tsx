@@ -8,8 +8,7 @@ import {
   type GeoJSONSource,
   type Map as MapLibreMap,
 } from "maplibre-gl";
-import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
-import type { Point } from "geojson";
+import mapLibreWorkerURL from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
 import type {
   ConstructionSite,
   LngLat,
@@ -22,8 +21,8 @@ import {
   getConstructionPhaseLabel,
 } from "../lib/construction-site-labels.ts";
 import {
-  constructionSitesToGeometryFeatures,
-  constructionSitesToPointFeatures,
+  createConstructionSiteGeometryFeatureCollection,
+  createConstructionSitePointFeatureCollection,
   createNotificationAreaFeatureCollection,
   createNotificationAreaPolygon,
   createUserLocationFeatureCollection,
@@ -38,21 +37,23 @@ import "./ConstructionSiteMap.css";
 
 // MapLibre 6 discovers its worker relative to the library module by default.
 // After Vite bundles this lazy component, that inferred file does not exist.
-setWorkerUrl(maplibreWorkerUrl);
+setWorkerUrl(mapLibreWorkerURL);
 
 interface ConstructionSiteMapProps {
   constructionSites: readonly ConstructionSite[];
   selectedSiteId?: string;
   currentLocation?: LngLat;
   notificationArea?: NotificationArea;
-  onSiteSelect: (siteId: string) => void;
+  onSiteSelect: (siteId: string | undefined) => void;
+  getSiteDetailsHref: (siteId: string) => string;
+  onSiteDetailsRequest: (siteId: string) => void;
   onListViewRequest: () => void;
 }
 
 const FIT_PADDING = { top: 54, right: 54, bottom: 54, left: 54 };
 const CURRENT_LOCATION_ZOOM = 15;
 
-const getGeoJsonSource = (map: MapLibreMap, id: string): GeoJSONSource =>
+const getGeoJSONSource = (map: MapLibreMap, id: string): GeoJSONSource =>
   map.getSource(id) as GeoJSONSource;
 
 function fitConstructionSites(
@@ -100,6 +101,8 @@ export function ConstructionSiteMap({
   currentLocation,
   notificationArea,
   onSiteSelect,
+  getSiteDetailsHref,
+  onSiteDetailsRequest,
   onListViewRequest,
 }: ConstructionSiteMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -157,29 +160,16 @@ export function ConstructionSiteMap({
         notificationArea: initial.notificationArea,
       });
 
-      map.on("click", MAP_LAYER_IDS.clusters, async (event) => {
-        const feature = map.queryRenderedFeatures(event.point, {
-          layers: [MAP_LAYER_IDS.clusters],
-        })[0];
-        const clusterId = feature?.properties?.cluster_id as number | undefined;
-        if (clusterId === undefined) return;
-        const zoom = await getGeoJsonSource(
-          map,
-          MAP_SOURCE_IDS.points,
-        ).getClusterExpansionZoom(clusterId);
-        const coordinates = (feature.geometry as Point).coordinates as [
-          number,
-          number,
-        ];
-        map.easeTo({ center: coordinates, zoom });
-      });
-
-      map.on("click", MAP_LAYER_IDS.points, (event) => {
-        const id = event.features?.[0]?.properties?.id as string | undefined;
-        if (id) latestPropsRef.current.onSiteSelect(id);
-      });
-
-      for (const layer of [MAP_LAYER_IDS.clusters, MAP_LAYER_IDS.points]) {
+      const interactiveGeometryLayers = [
+        MAP_LAYER_IDS.areaFill,
+        MAP_LAYER_IDS.geometryLine,
+        MAP_LAYER_IDS.geometryPoints,
+      ] as const;
+      for (const layer of interactiveGeometryLayers) {
+        map.on("click", layer, (event) => {
+          const id = event.features?.[0]?.properties?.id as string | undefined;
+          if (id) latestPropsRef.current.onSiteSelect(id);
+        });
         map.on("mouseenter", layer, () => {
           map.getCanvas().style.cursor = "pointer";
         });
@@ -223,11 +213,11 @@ export function ConstructionSiteMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !isMapReadyRef.current) return;
-    getGeoJsonSource(map, MAP_SOURCE_IDS.points).setData(
-      constructionSitesToPointFeatures(constructionSites),
+    getGeoJSONSource(map, MAP_SOURCE_IDS.points).setData(
+      createConstructionSitePointFeatureCollection(constructionSites),
     );
-    getGeoJsonSource(map, MAP_SOURCE_IDS.geometries).setData(
-      constructionSitesToGeometryFeatures(constructionSites),
+    getGeoJSONSource(map, MAP_SOURCE_IDS.geometries).setData(
+      createConstructionSiteGeometryFeatureCollection(constructionSites),
     );
     fitConstructionSites(map, constructionSites);
   }, [constructionSites]);
@@ -235,7 +225,7 @@ export function ConstructionSiteMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !isMapReadyRef.current) return;
-    getGeoJsonSource(map, MAP_SOURCE_IDS.userLocation).setData(
+    getGeoJSONSource(map, MAP_SOURCE_IDS.userLocation).setData(
       createUserLocationFeatureCollection(currentLocation),
     );
     if (currentLocation && !selectedSiteId) {
@@ -246,7 +236,7 @@ export function ConstructionSiteMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !isMapReadyRef.current) return;
-    getGeoJsonSource(map, MAP_SOURCE_IDS.notificationArea).setData(
+    getGeoJSONSource(map, MAP_SOURCE_IDS.notificationArea).setData(
       createNotificationAreaFeatureCollection(notificationArea),
     );
   }, [notificationArea]);
@@ -268,6 +258,15 @@ export function ConstructionSiteMap({
     }
   }, [selectedSite, selectedSiteId]);
 
+  useEffect(() => {
+    if (!selectedSiteId) return;
+    const closeSelection = (event: KeyboardEvent) => {
+      if (event.key === "Escape") latestPropsRef.current.onSiteSelect(undefined);
+    };
+    window.addEventListener("keydown", closeSelection);
+    return () => window.removeEventListener("keydown", closeSelection);
+  }, [selectedSiteId]);
+
   return (
     <div className="map-explorer">
       <div className="map-explorer__toolbar">
@@ -279,9 +278,6 @@ export function ConstructionSiteMap({
           <span>
             <i className="map-legend__dot map-legend__dot--upcoming" />
             Geplant
-          </span>
-          <span className="map-legend__hint">
-            Gruppen anklicken, um hineinzuzoomen
           </span>
           {currentLocation && (
             <span>
@@ -320,7 +316,8 @@ export function ConstructionSiteMap({
         <article className="map-selection" aria-live="polite">
           <div className="map-selection__content">
             <div className="map-selection__eyebrow">
-              {getConstructionPhaseLabel(selectedSite.phase)} · {selectedSite.municipality}
+              {getConstructionPhaseLabel(selectedSite.phase)} ·{" "}
+              {selectedSite.municipality}
             </div>
             <h3>{selectedSite.location}</h3>
             <p>
@@ -328,8 +325,14 @@ export function ConstructionSiteMap({
               {getClosureLabel(selectedSite.closure)}
             </p>
             <p>
-              {formatConstructionPeriod(selectedSite.startDate, selectedSite.endDate)}
+              {formatConstructionPeriod(
+                selectedSite.startDate,
+                selectedSite.endDate,
+              )}
             </p>
+            {selectedSite.notes && (
+              <p className="map-selection__notes">{selectedSite.notes}</p>
+            )}
           </div>
           <button
             type="button"
@@ -337,6 +340,33 @@ export function ConstructionSiteMap({
             onClick={onListViewRequest}
           >
             In der Liste ansehen
+          </button>
+          <a
+            className="map-selection__details-link"
+            href={getSiteDetailsHref(selectedSite.id)}
+            onClick={(event) => {
+              if (
+                event.button !== 0 ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+              ) {
+                return;
+              }
+              event.preventDefault();
+              onSiteDetailsRequest(selectedSite.id);
+            }}
+          >
+            Detailansicht
+          </a>
+          <button
+            type="button"
+            className="map-selection__close"
+            aria-label="Auswahl schließen"
+            onClick={() => onSiteSelect(undefined)}
+          >
+            <span aria-hidden="true">×</span>
           </button>
         </article>
       )}

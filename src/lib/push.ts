@@ -15,7 +15,7 @@ function base64UrlToUint8Array(value: string): Uint8Array<ArrayBuffer> {
   return new Uint8Array(bytes.buffer);
 }
 
-async function requestPushApi(path: string, init?: RequestInit) {
+async function requestPushAPI(path: string, init?: RequestInit) {
   if (!PUSH_API_URL) {
     throw new Error("Der Benachrichtigungsdienst ist noch nicht konfiguriert.");
   }
@@ -51,7 +51,7 @@ export async function subscribeToPush(preferences?: NotificationArea) {
     return existing;
   }
 
-  const configResponse = await requestPushApi("/config");
+  const configResponse = await requestPushAPI("/config");
   const config = (await configResponse.json()) as { vapidPublicKey?: string };
   if (!config.vapidPublicKey) {
     throw new Error("Der Benachrichtigungsdienst liefert keinen VAPID-Schlüssel.");
@@ -73,7 +73,7 @@ async function storeSubscription(
   subscription: PushSubscription,
   preferences?: NotificationArea,
 ) {
-  await requestPushApi("/subscriptions", {
+  await requestPushAPI("/subscriptions", {
     method: "POST",
     body: JSON.stringify({
       ...subscription.toJSON(),
@@ -94,7 +94,7 @@ export async function unsubscribeFromPush() {
   const subscription = await getPushSubscription();
   if (!subscription) return;
   try {
-    await requestPushApi("/subscriptions", {
+    await requestPushAPI("/subscriptions", {
       method: "DELETE",
       body: JSON.stringify({ endpoint: subscription.endpoint }),
     });

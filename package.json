@@ -15,7 +15,7 @@
     "typecheck": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json && tsc -p push-worker/tsconfig.json",
     "test": "vitest run",
     "test:watch": "vitest",
-    "data": "tsx scripts/fetch-baustellen.ts",
+    "data": "tsx scripts/fetch-construction-sites.ts",
     "feeds": "tsx scripts/generate-feeds.ts",
     "push:keys": "tsx scripts/generate-vapid-keys.ts",
     "push:secrets:setup": "tsx scripts/configure-push-secrets.ts",

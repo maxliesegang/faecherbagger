@@ -11,10 +11,12 @@ import type {
  */
 const STATIC_DATA_BASE_URL = `${import.meta.env.BASE_URL}data/`;
 
-async function loadJson<T>(file: string, signal?: AbortSignal): Promise<T> {
-  const response = await fetch(`${STATIC_DATA_BASE_URL}${file}`, { signal });
+async function loadJSON<T>(filename: string, signal?: AbortSignal): Promise<T> {
+  const response = await fetch(`${STATIC_DATA_BASE_URL}${filename}`, { signal });
   if (!response.ok) {
-    throw new Error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
+    throw new Error(
+      `Failed to load ${filename}: ${response.status} ${response.statusText}`,
+    );
   }
   return (await response.json()) as T;
 }
@@ -22,14 +24,14 @@ async function loadJson<T>(file: string, signal?: AbortSignal): Promise<T> {
 export const loadConstructionSiteMetadata = (
   signal?: AbortSignal,
 ): Promise<ConstructionSiteMetadata> =>
-  loadJson<ConstructionSiteMetadata>("meta.json", signal);
+  loadJSON<ConstructionSiteMetadata>("meta.json", signal);
 
 export const loadConstructionSites = (
   signal?: AbortSignal,
 ): Promise<ConstructionSite[]> =>
-  loadJson<ConstructionSite[]>("baustellen.json", signal);
+  loadJSON<ConstructionSite[]>("baustellen.json", signal);
 
 export const loadConstructionSiteChanges = (
   signal?: AbortSignal,
 ): Promise<ConstructionSiteChanges> =>
-  loadJson<ConstructionSiteChanges>("changes.json", signal);
+  loadJSON<ConstructionSiteChanges>("changes.json", signal);

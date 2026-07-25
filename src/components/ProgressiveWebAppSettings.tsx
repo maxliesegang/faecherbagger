@@ -19,7 +19,7 @@ import {
   MAX_NOTIFICATION_RADIUS_KM,
   MIN_NOTIFICATION_RADIUS_KM,
 } from "../lib/notification-area.ts";
-import "./PwaSettings.css";
+import "./ProgressiveWebAppSettings.css";
 
 const NOTIFICATIONS_STORAGE_KEY = "faecherbagger-notifications";
 const REFRESH_TAG = "refresh-baustellen";
@@ -38,12 +38,12 @@ interface BackgroundSyncManager {
   register(tag: string): Promise<void>;
 }
 
-type PwaRegistration = ServiceWorkerRegistration & {
+type ProgressiveWebAppRegistration = ServiceWorkerRegistration & {
   periodicSync?: PeriodicSyncManager;
   sync?: BackgroundSyncManager;
 };
 
-interface PwaSettingsProps {
+interface ProgressiveWebAppSettingsProps {
   locationController: CurrentLocationController;
   notificationArea: NotificationArea | null;
   onNotificationAreaChange: (area: NotificationArea) => void;
@@ -61,11 +61,11 @@ function postMessageToServiceWorker(message: object) {
 const getErrorMessage = (error: unknown, fallback: string): string =>
   error instanceof Error ? error.message : fallback;
 
-export function PwaSettings({
+export function ProgressiveWebAppSettings({
   locationController,
   notificationArea,
   onNotificationAreaChange,
-}: PwaSettingsProps) {
+}: ProgressiveWebAppSettingsProps) {
   const [installPrompt, setInstallPrompt] =
     useState<BeforeInstallPromptEvent>();
   const [isInstalled, setIsInstalled] = useState(
@@ -100,14 +100,18 @@ export function PwaSettings({
 
     if ("serviceWorker" in navigator) {
       void navigator.serviceWorker.ready.then(async (registration) => {
-        const pwaRegistration = registration as PwaRegistration;
+        const progressiveWebAppRegistration =
+          registration as ProgressiveWebAppRegistration;
         try {
-          if (pwaRegistration.periodicSync) {
-            await pwaRegistration.periodicSync.register(REFRESH_TAG, {
-              minInterval: REFRESH_INTERVAL_MS,
-            });
-          } else if (pwaRegistration.sync) {
-            await pwaRegistration.sync.register(REFRESH_TAG);
+          if (progressiveWebAppRegistration.periodicSync) {
+            await progressiveWebAppRegistration.periodicSync.register(
+              REFRESH_TAG,
+              {
+                minInterval: REFRESH_INTERVAL_MS,
+              },
+            );
+          } else if (progressiveWebAppRegistration.sync) {
+            await progressiveWebAppRegistration.sync.register(REFRESH_TAG);
           }
         } catch {
           // Browsers may reject background sync based on engagement or settings.

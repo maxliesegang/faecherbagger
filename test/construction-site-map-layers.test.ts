@@ -32,9 +32,7 @@ describe("addConstructionSiteMapLayers", () => {
       MAP_LAYER_IDS.notificationAreaLine,
       MAP_LAYER_IDS.areaFill,
       MAP_LAYER_IDS.geometryLine,
-      MAP_LAYER_IDS.clusters,
-      MAP_LAYER_IDS.clusterCount,
-      MAP_LAYER_IDS.points,
+      MAP_LAYER_IDS.geometryPoints,
       MAP_LAYER_IDS.selected,
       MAP_LAYER_IDS.userLocation,
     ]);

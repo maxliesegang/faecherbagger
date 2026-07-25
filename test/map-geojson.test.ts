@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { distanceInMeters } from "../src/lib/distance.ts";
 import {
-  constructionSitesToGeometryFeatures,
-  constructionSitesToPointFeatures,
+  createConstructionSiteGeometryFeatureCollection,
+  createConstructionSitePointFeatureCollection,
   createNotificationAreaFeatureCollection,
   createNotificationAreaPolygon,
   createUserLocationFeatureCollection,
@@ -39,10 +39,10 @@ const constructionSite: ConstructionSite = {
 
 describe("map data", () => {
   it("creates point and full-geometry features with shared map properties", () => {
-    const pointFeature = constructionSitesToPointFeatures([
+    const pointFeature = createConstructionSitePointFeatureCollection([
       constructionSite,
     ]).features[0];
-    const geometryFeature = constructionSitesToGeometryFeatures([
+    const geometryFeature = createConstructionSiteGeometryFeatureCollection([
       constructionSite,
     ]).features[0];
 

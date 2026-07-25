@@ -1,10 +1,10 @@
 import type { Geometry } from "geojson";
 
 /** Date-only string in the Europe/Berlin calendar, e.g. `"2026-07-24"`. */
-export type IsoDate = string;
+export type ISODate = string;
 
 /** ISO-8601 timestamp, e.g. `"2026-07-23T22:00:00Z"`. */
-export type IsoTimestamp = string;
+export type ISOTimestamp = string;
 
 /** WGS84 position in GeoJSON order: `[longitude, latitude]`. */
 export type LngLat = [number, number];
@@ -100,9 +100,9 @@ export interface ConstructionSite {
   cause: string | null;
 
   /** Start date (`vorgangszeitraum_von`), Europe/Berlin calendar date. */
-  startDate: IsoDate;
+  startDate: ISODate;
   /** End date (`vorgangszeitraum_bis`); `null` when open-ended. */
-  endDate: IsoDate | null;
+  endDate: ISODate | null;
 
   /** Representative point for lists and distance (mean of member points). */
   point: LngLat;
@@ -112,13 +112,13 @@ export interface ConstructionSite {
   /** Attribution: the source authority (`datenquelle`, e.g. `"Stadt Karlsruhe"`). */
   source: string;
   /** Source last-modified timestamp (`stand`); change-detection key with `id`. */
-  lastModified: IsoTimestamp;
+  lastModified: ISOTimestamp;
 }
 
 /** Contents of `data/meta.json`. */
 export interface ConstructionSiteMetadata {
   /** When the pipeline fetched the data. */
-  fetchedAt: IsoTimestamp;
+  fetchedAt: ISOTimestamp;
   /** Total deduplicated records in `baustellen.json`. */
   recordCount: number;
   counts: {
@@ -140,7 +140,7 @@ export interface ConstructionSiteMetadata {
  */
 export interface ConstructionSiteChanges {
   /** `fetchedAt` of the previous run, or `null` on the first run. */
-  since: IsoTimestamp | null;
+  since: ISOTimestamp | null;
   added: string[];
   modified: string[];
   removed: string[];

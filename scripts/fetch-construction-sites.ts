@@ -28,7 +28,7 @@ import {
 } from "../src/lib/construction-site-feeds.ts";
 import {
   WFS_ENDPOINT_URL,
-  WFS_LAYERS,
+  WFS_LAYER_NAME_BY_PHASE,
   fetchConstructionSiteLayer,
 } from "../src/lib/wfs-client.ts";
 
@@ -37,7 +37,7 @@ const DATA_DIR = join(ROOT, "public", "data");
 const DEFAULT_APP_URL = "https://maxliesegang.github.io/faecherbagger/";
 const CONSTRUCTION_PHASES: ConstructionPhase[] = ["active", "upcoming"];
 
-async function readJsonIfExists<T>(path: string): Promise<T | null> {
+async function readJSONIfExists<T>(path: string): Promise<T | null> {
   try {
     return JSON.parse(await readFile(path, "utf8")) as T;
   } catch (error) {
@@ -46,7 +46,7 @@ async function readJsonIfExists<T>(path: string): Promise<T | null> {
   }
 }
 
-async function writeJson(path: string, value: unknown): Promise<void> {
+async function writeJSON(path: string, value: unknown): Promise<void> {
   await writeFile(path, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
@@ -57,7 +57,7 @@ async function main(): Promise<void> {
 
   const sitesByPhase = await Promise.all(
     CONSTRUCTION_PHASES.map(async (phase) => {
-      console.log(`Fetching ${WFS_LAYERS[phase]} ...`);
+      console.log(`Fetching ${WFS_LAYER_NAME_BY_PHASE[phase]} ...`);
       const featureCollection = await fetchConstructionSiteLayer(phase);
       const normalizedSites = normalizeConstructionSites(
         featureCollection.features,
@@ -87,10 +87,10 @@ async function main(): Promise<void> {
   await mkdir(DATA_DIR, { recursive: true });
 
   const previousSites =
-    (await readJsonIfExists<ConstructionSite[]>(
+    (await readJSONIfExists<ConstructionSite[]>(
       join(DATA_DIR, "baustellen.json"),
     )) ?? [];
-  const previousMetadata = await readJsonIfExists<ConstructionSiteMetadata>(
+  const previousMetadata = await readJSONIfExists<ConstructionSiteMetadata>(
     join(DATA_DIR, "meta.json"),
   );
   const changes = computeConstructionSiteChanges(
@@ -114,14 +114,16 @@ async function main(): Promise<void> {
     source: {
       name: "TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal",
       url: WFS_ENDPOINT_URL,
-      layers: CONSTRUCTION_PHASES.map((phase) => WFS_LAYERS[phase]),
+      layers: CONSTRUCTION_PHASES.map(
+        (phase) => WFS_LAYER_NAME_BY_PHASE[phase],
+      ),
     },
     attribution,
   };
 
-  await writeJson(join(DATA_DIR, "baustellen.json"), constructionSites);
-  await writeJson(join(DATA_DIR, "meta.json"), metadata);
-  await writeJson(join(DATA_DIR, "changes.json"), changes);
+  await writeJSON(join(DATA_DIR, "baustellen.json"), constructionSites);
+  await writeJSON(join(DATA_DIR, "meta.json"), metadata);
+  await writeJSON(join(DATA_DIR, "changes.json"), changes);
   const feeds = createConstructionSiteFeeds(
     constructionSites,
     metadata,

@@ -45,7 +45,7 @@ export const CLOSURE_SEVERITY_BY_SOURCE_VALUE: Readonly<Record<string, ClosureSe
 };
 
 /** Maps `tagesbaustelle` to {@link ConstructionSiteMobility}; null -> `null`. */
-export const CONSTRUCTION_SITE_TYPE_BY_SOURCE_VALUE: Readonly<
+export const CONSTRUCTION_SITE_MOBILITY_BY_SOURCE_VALUE: Readonly<
   Record<string, ConstructionSiteMobility>
 > = {
   "Stationäre Baustelle": "stationary",
@@ -70,9 +70,9 @@ export function normalizeClosureSeverity(sperrung: string | null): ClosureSeveri
   return CLOSURE_SEVERITY_BY_SOURCE_VALUE[sperrung] ?? "unknown";
 }
 
-export function normalizeConstructionSiteType(
+export function normalizeConstructionSiteMobility(
   tagesbaustelle: string | null,
 ): ConstructionSiteMobility {
   if (tagesbaustelle == null) return null;
-  return CONSTRUCTION_SITE_TYPE_BY_SOURCE_VALUE[tagesbaustelle] ?? null;
+  return CONSTRUCTION_SITE_MOBILITY_BY_SOURCE_VALUE[tagesbaustelle] ?? null;
 }

@@ -18,7 +18,7 @@ is large). Instead a scheduled GitHub Action runs the pipeline and commits stati
 JSON into the repo; the client only ever fetches those files.
 
 ```
-TRK GeoServer WFS ──(GitHub Action, twice daily)──▶ scripts/fetch-baustellen.ts
+TRK GeoServer WFS ──(GitHub Action, twice daily)──▶ scripts/fetch-construction-sites.ts
                                                           │
                                        fetch + reproject + dedupe + normalize
                                                           │
@@ -30,7 +30,7 @@ TRK GeoServer WFS ──(GitHub Action, twice daily)──▶ scripts/fetch-baus
                               React app  ──fetch──▶  public/data/*.json
 ```
 
-### Pipeline (`scripts/fetch-baustellen.ts`)
+### Pipeline (`scripts/fetch-construction-sites.ts`)
 
 For each of the two source layers (`baustellen_aktuell` = active,
 `baustellen_vorschau` = upcoming) it:

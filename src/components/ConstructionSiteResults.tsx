@@ -1,20 +1,24 @@
-import { lazy, Suspense, useMemo, useState } from "react";
-import {
-  KernAlert,
-  KernHeading,
-  KernText,
-} from "@kern-ux-annex/kern-react-kit";
+import { lazy, Suspense, useMemo } from "react";
+import { KernAlert, KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
 import type {
   ConstructionSite,
   ConstructionSiteChanges,
   LngLat,
   NotificationArea,
 } from "../types/index.ts";
-import { changedConstructionSiteIds } from "../lib/construction-site-changes.ts";
 import {
   filterConstructionSites,
   type ConstructionSiteFilters,
 } from "../lib/construction-site-filter.ts";
+import {
+  CONSTRUCTION_SITE_SORT_PRESETS,
+  serializeConstructionSiteSort,
+  parseConstructionSiteSort,
+  sortConstructionSitesBy,
+  sortConstructionSitesByDefaultOrder,
+  type ConstructionSiteSort,
+} from "../lib/construction-site-sort.ts";
+import type { ConstructionSiteResultView } from "../lib/url-state.ts";
 import { ConstructionSiteTable } from "./ConstructionSiteTable.tsx";
 
 const ConstructionSiteMap = lazy(() =>
@@ -23,127 +27,153 @@ const ConstructionSiteMap = lazy(() =>
   })),
 );
 
-type ResultMode = "all" | "changed";
-type ResultView = "map" | "list";
-
 interface ConstructionSiteResultsProps {
   constructionSites: readonly ConstructionSite[];
   changes: Readonly<ConstructionSiteChanges>;
+  changedSiteIds: ReadonlySet<string>;
   filters: Readonly<ConstructionSiteFilters>;
+  showOnlyChanged: boolean;
+  view: ConstructionSiteResultView;
+  onViewChange: (view: ConstructionSiteResultView) => void;
+  sort: ConstructionSiteSort | null;
+  onSortChange: (sort: ConstructionSiteSort | null) => void;
+  selectedSiteId?: string;
+  onSelectedSiteIdChange: (siteId: string | undefined) => void;
+  getDetailHref: (siteId: string) => string;
+  onDetailOpen: (siteId: string) => void;
   currentLocation?: LngLat;
   notificationArea?: NotificationArea;
 }
 
-function getInitialSelectedSiteId(): string | undefined {
-  const id = new URLSearchParams(window.location.search).get("baustelle");
-  return id || undefined;
-}
-
 /**
- * Owns filtering, change selection, and map/list navigation for the result set.
- * Keeping this state together prevents the page shell from depending on the
- * details of either result presentation.
+ * The result column: one compact toolbar (count, sort, presentation) above the
+ * map or the list. Sorting lives here rather than in the table so the card view
+ * and the map-to-list handoff share the same order.
  */
 export function ConstructionSiteResults({
   constructionSites,
   changes,
+  changedSiteIds,
   filters,
+  showOnlyChanged,
+  view,
+  onViewChange,
+  sort,
+  onSortChange,
+  selectedSiteId,
+  onSelectedSiteIdChange,
+  getDetailHref,
+  onDetailOpen,
   currentLocation,
   notificationArea,
 }: ConstructionSiteResultsProps) {
-  const [resultMode, setResultMode] = useState<ResultMode>("all");
-  const [resultView, setResultView] = useState<ResultView>("map");
-  const [selectedSiteId, setSelectedSiteId] = useState<string | undefined>(
-    getInitialSelectedSiteId,
-  );
-
   const filteredConstructionSites = useMemo(
     () => filterConstructionSites(constructionSites, filters),
     [constructionSites, filters],
   );
-  const changedSiteIds = useMemo(
-    () => changedConstructionSiteIds(changes),
-    [changes],
-  );
   const displayedConstructionSites = useMemo(
     () =>
-      resultMode === "changed"
-        ? filteredConstructionSites.filter((site) =>
-            changedSiteIds.has(site.id),
-          )
+      showOnlyChanged
+        ? filteredConstructionSites.filter((site) => changedSiteIds.has(site.id))
         : filteredConstructionSites,
-    [changedSiteIds, filteredConstructionSites, resultMode],
+    [changedSiteIds, filteredConstructionSites, showOnlyChanged],
   );
+
+  // A distance sort is meaningless without a location, so fall back silently
+  // when the user withdraws it instead of showing an arbitrary order.
+  const effectiveSort =
+    sort?.key === "distance" && !currentLocation ? null : sort;
+  const sortedConstructionSites = useMemo(
+    () =>
+      effectiveSort
+        ? sortConstructionSitesBy(
+            displayedConstructionSites,
+            effectiveSort,
+            currentLocation,
+          )
+        : sortConstructionSitesByDefaultOrder(displayedConstructionSites),
+    [currentLocation, displayedConstructionSites, effectiveSort],
+  );
+
+  const sortPresets = CONSTRUCTION_SITE_SORT_PRESETS.filter(
+    (preset) => !preset.needsLocation || currentLocation,
+  );
+  const sortValue = serializeConstructionSiteSort(effectiveSort);
+  const isCustomSort =
+    sortValue !== "" &&
+    !sortPresets.some(
+      (preset) => serializeConstructionSiteSort(preset.sort) === sortValue,
+    );
 
   return (
     <section className="results" aria-labelledby="results-heading">
-      <div className="results__header">
-        <div className="results__summary">
-          <KernHeading level={2} id="results-heading">
-            Ergebnisse
-          </KernHeading>
-          <KernText muted aria-live="polite" aria-atomic="true">
-            {resultMode === "changed"
-              ? `${displayedConstructionSites.length} von ${changedSiteIds.size} Änderungen`
-              : filteredConstructionSites.length === constructionSites.length
-                ? `${filteredConstructionSites.length} Einträge`
-                : `${filteredConstructionSites.length} von ${constructionSites.length} Einträgen`}
-          </KernText>
-        </div>
+      <div className="results__toolbar">
+        <KernHeading level={2} id="results-heading" className="kern-sr-only">
+          Ergebnisse
+        </KernHeading>
+        <p className="results__count" aria-live="polite" aria-atomic="true">
+          <strong>{displayedConstructionSites.length}</strong>
+          {displayedConstructionSites.length === constructionSites.length
+            ? " Baustellen"
+            : ` von ${constructionSites.length} Baustellen`}
+          {showOnlyChanged && " · neu oder geändert"}
+        </p>
+
         <div className="results__controls">
+          <div className="results__sort">
+            <label htmlFor="results-sort" className="kern-label">
+              Sortierung
+            </label>
+            <div className="kern-form-input__select-wrapper">
+              <select
+                id="results-sort"
+                className="kern-form-input__select"
+                value={sortValue}
+                onChange={(event) =>
+                  onSortChange(parseConstructionSiteSort(event.target.value))
+                }
+              >
+                {isCustomSort && (
+                  <option value={sortValue}>Eigene Sortierung</option>
+                )}
+                {sortPresets.map((preset) => (
+                  <option
+                    key={serializeConstructionSiteSort(preset.sort)}
+                    value={serializeConstructionSiteSort(preset.sort)}
+                  >
+                    {preset.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
           <div
-            className="result-mode"
+            className="view-switcher"
             role="group"
-            aria-label="Ergebnisumfang wählen"
+            aria-label="Darstellung wählen"
           >
             <button
               type="button"
-              className="result-mode__button"
-              aria-pressed={resultMode === "all"}
-              onClick={() => setResultMode("all")}
+              className="view-switcher__button"
+              aria-pressed={view === "map"}
+              onClick={() => onViewChange("map")}
             >
-              Alle
+              Karte
             </button>
             <button
               type="button"
-              className="result-mode__button"
-              aria-pressed={resultMode === "changed"}
-              onClick={() => setResultMode("changed")}
+              className="view-switcher__button"
+              aria-pressed={view === "list"}
+              onClick={() => onViewChange("list")}
             >
-              Neu/Geändert
-              {changedSiteIds.size > 0 && (
-                <span className="result-mode__count">{changedSiteIds.size}</span>
-              )}
+              Liste
             </button>
           </div>
-          {displayedConstructionSites.length > 0 && (
-            <div
-              className="view-switcher"
-              role="group"
-              aria-label="Darstellung wählen"
-            >
-              <button
-                type="button"
-                className="view-switcher__button"
-                aria-pressed={resultView === "map"}
-                onClick={() => setResultView("map")}
-              >
-                Karte
-              </button>
-              <button
-                type="button"
-                className="view-switcher__button"
-                aria-pressed={resultView === "list"}
-                onClick={() => setResultView("list")}
-              >
-                Liste
-              </button>
-            </div>
-          )}
         </div>
       </div>
 
-      {resultMode === "changed" && changes.since !== null && (
+      {showOnlyChanged && changes.since !== null && (
         <KernText muted className="results__change-summary">
           Seit {new Date(changes.since).toLocaleString("de-DE")}:{" "}
           {changes.added.length} neu, {changes.modified.length} geändert
@@ -153,8 +183,8 @@ export function ConstructionSiteResults({
         </KernText>
       )}
 
-      {displayedConstructionSites.length > 0 ? (
-        resultView === "map" ? (
+      {sortedConstructionSites.length > 0 ? (
+        view === "map" ? (
           <Suspense
             fallback={
               <div className="app-status" role="status" aria-live="polite">
@@ -163,22 +193,30 @@ export function ConstructionSiteResults({
               </div>
             }
           >
+            {/* The map is order-independent; passing the unsorted set keeps
+                a sort change from rebuilding its sources and refitting. */}
             <ConstructionSiteMap
               constructionSites={displayedConstructionSites}
               selectedSiteId={selectedSiteId}
               currentLocation={currentLocation}
               notificationArea={notificationArea}
-              onSiteSelect={setSelectedSiteId}
-              onListViewRequest={() => setResultView("list")}
+              onSiteSelect={onSelectedSiteIdChange}
+              getSiteDetailsHref={getDetailHref}
+              onSiteDetailsRequest={onDetailOpen}
+              onListViewRequest={() => onViewChange("list")}
             />
           </Suspense>
         ) : (
           <ConstructionSiteTable
-            constructionSites={displayedConstructionSites}
+            constructionSites={sortedConstructionSites}
+            sort={effectiveSort}
+            onSortChange={onSortChange}
             currentLocation={currentLocation}
+            getSiteDetailsHref={getDetailHref}
+            onShowSiteDetails={onDetailOpen}
             onShowSiteOnMap={(siteId) => {
-              setSelectedSiteId(siteId);
-              setResultView("map");
+              onSelectedSiteIdChange(siteId);
+              onViewChange("map");
             }}
           />
         )
@@ -186,15 +224,15 @@ export function ConstructionSiteResults({
         <KernAlert
           variant="info"
           title={
-            resultMode === "changed"
+            showOnlyChanged
               ? "Keine neuen oder geänderten Baustellen"
               : "Keine passenden Baustellen"
           }
         >
           <KernText>
-            {resultMode === "changed" && changes.since === null
+            {showOnlyChanged && changes.since === null
               ? "Für diesen Datenstand liegt noch kein vorheriger Vergleich vor."
-              : resultMode === "changed"
+              : showOnlyChanged
                 ? "Seit der vorherigen Aktualisierung gibt es für die gewählten Filter keine Änderungen."
                 : "Ändern Sie Ihre Suche oder löschen Sie die gewählten Filter."}
           </KernText>

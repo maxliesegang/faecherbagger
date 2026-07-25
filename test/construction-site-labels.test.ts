@@ -1,18 +1,18 @@
 import { describe, expect, it } from "vitest";
 import {
-  formatIsoDate,
+  formatISODate,
   formatConstructionPeriod,
-  formatIsoTimestamp,
+  formatISOTimestamp,
 } from "../src/lib/construction-site-labels.ts";
 
-describe("formatIsoDate", () => {
+describe("formatISODate", () => {
   it("formats valid date-only values without a timezone conversion", () => {
-    expect(formatIsoDate("2026-07-24")).toBe("24.07.2026");
+    expect(formatISODate("2026-07-24")).toBe("24.07.2026");
   });
 
   it("passes invalid date-only values through unchanged", () => {
-    expect(formatIsoDate("2026-02-30")).toBe("2026-02-30");
-    expect(formatIsoDate("not-a-date")).toBe("not-a-date");
+    expect(formatISODate("2026-02-30")).toBe("2026-02-30");
+    expect(formatISODate("not-a-date")).toBe("not-a-date");
   });
 });
 
@@ -25,8 +25,8 @@ describe("formatConstructionPeriod", () => {
   });
 });
 
-describe("formatIsoTimestamp", () => {
+describe("formatISOTimestamp", () => {
   it("passes invalid timestamps through unchanged", () => {
-    expect(formatIsoTimestamp("not-a-date")).toBe("not-a-date");
+    expect(formatISOTimestamp("not-a-date")).toBe("not-a-date");
   });
 });
