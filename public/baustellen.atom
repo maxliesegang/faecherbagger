@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-07-26T16:42:38.159Z</updated>
+    <updated>2026-07-27T06:57:15.506Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -12,11 +12,35 @@
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
     <entry>
-        <title type="html"><![CDATA[Geplant: Schinnrainstraße, Raiherwiesenstraße, Hauptbahnstraße, Bleichstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3531:2026-07-26T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3531"/>
+        <updated>2026-07-26T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gleisbau · Mit Behinderung
+Zeitraum: 22.06.2026 – 30.07.2026
+Hinweis: 1-streifige Verkehrsführung, Auffahrt B10/ Südtangente Richtung Landau frei, Knoten Entenfang = Vollsperrung
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Bismarckstraße 10 – Bruchsal]]></title>
+        <id>faecherbagger:40140:2026-07-25T08:41:54Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40140"/>
+        <updated>2026-07-25T08:41:54.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
+Zeitraum: 27.07.2026 – 14.08.2026
+Hinweis: Fahrbahn wegen der Behebung von Fahrbahnschäden verengt. Dauer: Einige Tage im Zeitraum.
+Verantwortlich: Fachgebiet Baubetriebshof
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Schinnrainstraße, Raiherwiesenstraße, Hauptbahnstraße, Bleichstraße – Karlsruhe]]></title>
         <id>faecherbagger:2024V1741:2026-07-23T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V1741"/>
         <updated>2026-07-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 27.07.2026 – 15.08.2026
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
@@ -69,11 +93,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Kösliner Straße und Beuthener Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Kösliner Straße und Beuthener Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4338:2026-07-23T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4338"/>
         <updated>2026-07-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gleisbau · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Gleisbau · Vollsperrung
 Zeitraum: 27.07.2026 – 29.07.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
@@ -159,22 +183,36 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Busenbacher Str. 13 – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Busenbacher Str. 13 – Karlsruhe]]></title>
         <id>faecherbagger:2026V4632:2026-07-23T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4632"/>
         <updated>2026-07-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
 Zeitraum: 27.07.2026 – 24.08.2027
 Verantwortlich: Hochbau und Gebäudewirtschaft
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Raiherwiesenstraße, Blotterstraße, Auer Straße, Karlsruher Allee, Schinnrainstraße, Christofstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Kirrlacher Straße 3 – Bruchsal]]></title>
+        <id>faecherbagger:40139:2026-07-23T13:03:28Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40139"/>
+        <updated>2026-07-23T13:03:28.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Vollsperrung
+Zeitraum: 27.07.2026 – 07.08.2026
+Hinweis: Behebung von Fahrbahnschäden und Absenkung des Bordsteines an einer Einfahrt.
+Die Straße wird für Kfz gesperrt.
+Fußgänger können passieren.
+Verantwortlich: Fachgebiet Baubetriebshof
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Raiherwiesenstraße, Blotterstraße, Auer Straße, Karlsruher Allee, Schinnrainstraße, Christofstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V1500:2026-07-22T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V1500"/>
         <updated>2026-07-22T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 27.07.2026 – 22.08.2026
 Hinweis: Arbeitsstellen im Geh- und Radwegbereich, Ausführung in mehreren Abschnitten
 Verantwortlich: Telekommunikation
@@ -242,11 +280,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Zirkel zw. Herrenstraße u. Ritterstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Zirkel zw. Herrenstraße u. Ritterstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4269:2026-07-22T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4269"/>
         <updated>2026-07-22T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kanalbau · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
 Zeitraum: 27.07.2026 – 07.08.2026
 Hinweis: Fuß- und Radverkehr frei
 Verantwortlich: Privat
@@ -254,11 +292,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Pforzheimer Straße und  Waldshuter Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Pforzheimer Straße und  Waldshuter Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4597:2026-07-22T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4597"/>
         <updated>2026-07-22T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kanalbau · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
 Zeitraum: 27.07.2026 – 07.08.2026
 Hinweis: Halteverbote im Bereich der Arbeitsstellen/ Kanalschächte
 Verantwortlich: Tiefbauamt
@@ -276,6 +314,18 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Inlinereinzug in Kanal, Ausführ
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Am Mantel 7 – Bruchsal]]></title>
+        <id>faecherbagger:30168:2026-07-22T06:46:21Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30168"/>
+        <updated>2026-07-22T06:46:21.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 27.07.2026 – 08.08.2026
+Hinweis: Kabelarbeiten mit Verengung Fahrbahn und Sperrung Gehweg
+Verantwortlich: Telekommunikation
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Goethestraße zw. Uhlandstraße und Yorckstraße – Karlsruhe]]></title>
@@ -545,11 +595,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Südendstraße zw. Brauerstraße und Boeckhstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Südendstraße zw. Brauerstraße und Boeckhstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4484:2026-07-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4484"/>
         <updated>2026-07-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 27.07.2026 – 30.09.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich = Südseite gesperrt, signalisierter Überweg
 Verantwortlich: Stadtwerke Karlsruhe
@@ -2215,11 +2265,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Koellestraße zw. Hohleichweg und Fettweisstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Koellestraße zw. Hohleichweg und Fettweisstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3928:2026-06-18T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3928"/>
         <updated>2026-06-18T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
 Zeitraum: 27.07.2026 – 30.07.2026
 Hinweis: Höhe Haus Nr 7
 Verantwortlich: Privat
@@ -2661,11 +2711,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Johann-Strauß-Straße zw. Josef-Kraus-Straße und Dornwaldstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Johann-Strauß-Straße zw. Josef-Kraus-Straße und Dornwaldstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V2013:2026-06-09T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2013"/>
         <updated>2026-06-09T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
 Zeitraum: 27.07.2026 – 09.09.2026
 Hinweis: Restarbeiten
 Verantwortlich: Stadtwerke Karlsruhe
@@ -2918,18 +2968,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Brücke Dea-Scholven-Straße zw. Raffineriestraße und Maxau Papierfabrik Tor 2 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3526:2026-06-04T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3526"/>
-        <updated>2026-06-04T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Brückenbau · Mit Behinderung
-Zeitraum: 14.06.2026 – 26.07.2026
-Hinweis: 1-streifige Verkehrsführung
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Brückenbau" term="bridge"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Roonstraße zw. Hirschstraße und Jollystraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3595:2026-06-04T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3595"/>
@@ -2964,18 +3002,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: B36/ Michelinstraße zw. Franz-Abt-Straße und Entenfang – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3531:2026-06-02T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3531"/>
-        <updated>2026-06-02T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gleisbau · Mit Behinderung
-Zeitraum: 22.06.2026 – 29.07.2026
-Hinweis: 1-streifige Verkehrsführung, Auffahrt B10/ Südtangente Richtung Landau frei, Knoten Entenfang = Vollsperrung
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>

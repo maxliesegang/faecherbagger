@@ -922,7 +922,7 @@
   },
   {
     "id": "2024V1741",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -34682,7 +34682,7 @@
   },
   {
     "id": "2025V1500",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -59933,7 +59933,7 @@
   },
   {
     "id": "2026V2013",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -60284,6 +60284,33 @@
           "coordinates": [
             [
               [
+                8.39276437,
+                48.99961238
+              ],
+              [
+                8.39282331,
+                48.99960963
+              ],
+              [
+                8.3928288,
+                48.99966831
+              ],
+              [
+                8.39276831,
+                48.99967054
+              ],
+              [
+                8.39276437,
+                48.99961238
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
                 8.39286887,
                 48.99971634
               ],
@@ -60329,33 +60356,6 @@
               [
                 8.39260679,
                 48.99964589
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                8.39276437,
-                48.99961238
-              ],
-              [
-                8.39282331,
-                48.99960963
-              ],
-              [
-                8.3928288,
-                48.99966831
-              ],
-              [
-                8.39276831,
-                48.99967054
-              ],
-              [
-                8.39276437,
-                48.99961238
               ]
             ]
           ]
@@ -61914,77 +61914,6 @@
           "coordinates": [
             [
               [
-                8.35664643,
-                49.02297217
-              ],
-              [
-                8.35670857,
-                49.0230779
-              ],
-              [
-                8.35678168,
-                49.02324216
-              ],
-              [
-                8.35684693,
-                49.02341022
-              ],
-              [
-                8.35689418,
-                49.02353514
-              ],
-              [
-                8.35691793,
-                49.02358732
-              ],
-              [
-                8.35693633,
-                49.02360027
-              ],
-              [
-                8.35696338,
-                49.02362356
-              ],
-              [
-                8.35698278,
-                49.02363459
-              ],
-              [
-                8.35696083,
-                49.02366981
-              ],
-              [
-                8.3569385,
-                49.02365876
-              ],
-              [
-                8.35688728,
-                49.02361542
-              ],
-              [
-                8.35685314,
-                49.02353491
-              ],
-              [
-                8.35671514,
-                49.02317432
-              ],
-              [
-                8.35666409,
-                49.02304231
-              ],
-              [
-                8.35664643,
-                49.02297217
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
                 8.3559738,
                 49.0243165
               ],
@@ -62058,6 +61987,77 @@
               [
                 8.35693523,
                 49.0241638
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.35664643,
+                49.02297217
+              ],
+              [
+                8.35670857,
+                49.0230779
+              ],
+              [
+                8.35678168,
+                49.02324216
+              ],
+              [
+                8.35684693,
+                49.02341022
+              ],
+              [
+                8.35689418,
+                49.02353514
+              ],
+              [
+                8.35691793,
+                49.02358732
+              ],
+              [
+                8.35693633,
+                49.02360027
+              ],
+              [
+                8.35696338,
+                49.02362356
+              ],
+              [
+                8.35698278,
+                49.02363459
+              ],
+              [
+                8.35696083,
+                49.02366981
+              ],
+              [
+                8.3569385,
+                49.02365876
+              ],
+              [
+                8.35688728,
+                49.02361542
+              ],
+              [
+                8.35685314,
+                49.02353491
+              ],
+              [
+                8.35671514,
+                49.02317432
+              ],
+              [
+                8.35666409,
+                49.02304231
+              ],
+              [
+                8.35664643,
+                49.02297217
               ]
             ]
           ]
@@ -81308,53 +81308,6 @@
     "lastModified": "2026-06-01T22:00:00Z"
   },
   {
-    "id": "2026V3526",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Brücke Dea-Scholven-Straße zw. Raffineriestraße und Maxau Papierfabrik Tor 2",
-    "notes": "1-streifige Verkehrsführung",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-06-14",
-    "endDate": "2026-07-26",
-    "point": [
-      8.32081224,
-      49.04265373
-    ],
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [
-            8.32056238,
-            49.04293983
-          ],
-          [
-            8.32090032,
-            49.04228094
-          ],
-          [
-            8.32106438,
-            49.04236293
-          ],
-          [
-            8.32072065,
-            49.04303159
-          ],
-          [
-            8.32056238,
-            49.04293983
-          ]
-        ]
-      ]
-    },
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-04T22:00:00Z"
-  },
-  {
     "id": "2026V3528",
     "phase": "upcoming",
     "category": "road-maintenance",
@@ -81668,7 +81621,7 @@
     "notes": "1-streifige Verkehrsführung, Auffahrt B10/ Südtangente Richtung Landau frei, Knoten Entenfang = Vollsperrung",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-06-22",
-    "endDate": "2026-07-29",
+    "endDate": "2026-07-30",
     "point": [
       8.35383156,
       49.00833394
@@ -81817,7 +81770,7 @@
       ]
     },
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-02T22:00:00Z"
+    "lastModified": "2026-07-26T22:00:00Z"
   },
   {
     "id": "2026V3546",
@@ -84758,7 +84711,7 @@
   },
   {
     "id": "2026V3928",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -88528,7 +88481,7 @@
   },
   {
     "id": "2026V4269",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "full",
@@ -89780,7 +89733,7 @@
   },
   {
     "id": "2026V4338",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -91422,7 +91375,7 @@
   },
   {
     "id": "2026V4484",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -93463,7 +93416,7 @@
   },
   {
     "id": "2026V4597",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -93885,7 +93838,7 @@
   },
   {
     "id": "2026V4632",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
@@ -97272,6 +97225,85 @@
     "lastModified": "2026-07-17T06:11:02Z"
   },
   {
+    "id": "30168",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Am Mantel 7",
+    "notes": "Kabelarbeiten mit Verengung Fahrbahn und Sperrung Gehweg",
+    "cause": "Telekommunikation",
+    "startDate": "2026-07-27",
+    "endDate": "2026-08-08",
+    "point": [
+      8.56290803,
+      49.139122709999995
+    ],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.56268077,
+                49.13961277
+              ],
+              [
+                8.56269165,
+                49.1396308
+              ],
+              [
+                8.56258406,
+                49.13965873
+              ],
+              [
+                8.56257318,
+                49.13964069
+              ],
+              [
+                8.56268077,
+                49.13961277
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.56317951,
+                49.13863243
+              ],
+              [
+                8.56315142,
+                49.13859699
+              ],
+              [
+                8.56318969,
+                49.13858749
+              ],
+              [
+                8.56321485,
+                49.13862228
+              ],
+              [
+                8.56317951,
+                49.13863243
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-22T06:46:21Z"
+  },
+  {
     "id": "30347",
     "phase": "active",
     "category": "sewer",
@@ -100515,6 +100547,100 @@
     },
     "source": "Stadt Ettlingen",
     "lastModified": "2026-04-09T09:34:51Z"
+  },
+  {
+    "id": "40139",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kirrlacher Straße 3",
+    "notes": "Behebung von Fahrbahnschäden und Absenkung des Bordsteines an einer Einfahrt.\nDie Straße wird für Kfz gesperrt.\nFußgänger können passieren.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-07-27",
+    "endDate": "2026-08-07",
+    "point": [
+      8.58433169,
+      49.13068412
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.58433998,
+            49.13076115
+          ],
+          [
+            8.58425097,
+            49.13063232
+          ],
+          [
+            8.58432951,
+            49.13060819
+          ],
+          [
+            8.58440967,
+            49.13074019
+          ],
+          [
+            8.58433998,
+            49.13076115
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-23T13:03:28Z"
+  },
+  {
+    "id": "40140",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Bismarckstraße 10",
+    "notes": "Fahrbahn wegen der Behebung von Fahrbahnschäden verengt. Dauer: Einige Tage im Zeitraum.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-07-27",
+    "endDate": "2026-08-14",
+    "point": [
+      8.59102909,
+      49.12245208
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.59094444,
+            49.12246124
+          ],
+          [
+            8.59108675,
+            49.12241741
+          ],
+          [
+            8.59111494,
+            49.12244257
+          ],
+          [
+            8.59096968,
+            49.12248704
+          ],
+          [
+            8.59094444,
+            49.12246124
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-25T08:41:54Z"
   },
   {
     "id": "40172",
