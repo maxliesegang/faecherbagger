@@ -18,6 +18,7 @@ import { fileURLToPath } from "node:url";
 import type {
   ConstructionPhase,
   ConstructionSite,
+  ConstructionSiteChanges,
   ConstructionSiteMetadata,
 } from "../src/types/index.ts";
 import { computeConstructionSiteChanges } from "../src/lib/construction-site-changes.ts";
@@ -86,20 +87,22 @@ async function main(): Promise<void> {
 
   await mkdir(DATA_DIR, { recursive: true });
 
+  const fetchedAt = new Date().toISOString();
+
   const previousSites =
     (await readJSONIfExists<ConstructionSite[]>(
       join(DATA_DIR, "baustellen.json"),
     )) ?? [];
-  const previousMetadata = await readJSONIfExists<ConstructionSiteMetadata>(
-    join(DATA_DIR, "meta.json"),
-  );
+  const previousChanges =
+    await readJSONIfExists<ConstructionSiteChanges>(
+      join(DATA_DIR, "changes.json"),
+    );
   const changes = computeConstructionSiteChanges(
     previousSites,
     constructionSites,
-    previousMetadata?.fetchedAt ?? null,
+    previousChanges,
+    fetchedAt,
   );
-
-  const fetchedAt = new Date().toISOString();
   const attribution = [
     ...new Set(constructionSites.map((site) => site.source)),
   ].sort();

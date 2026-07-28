@@ -2,6 +2,7 @@ export type {
   ConstructionCategory,
   ConstructionPhase,
   ConstructionSite,
+  ConstructionSiteChangeEntry,
   ConstructionSiteChanges,
   ConstructionSiteMetadata,
   ConstructionSiteMobility,

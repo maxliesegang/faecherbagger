@@ -1,11 +1,17 @@
 import { describe, expect, it } from "vitest";
-import type { ConstructionSite } from "../src/types/index.ts";
+import type {
+  ConstructionSite,
+  ConstructionSiteChanges,
+} from "../src/types/index.ts";
 import {
   getChangedConstructionSiteIds,
   computeConstructionSiteChanges,
 } from "../src/lib/construction-site-changes.ts";
 
-function createConstructionSite(id: string, lastModified: string): ConstructionSite {
+function createConstructionSite(
+  id: string,
+  lastModified: string,
+): ConstructionSite {
   return {
     id,
     phase: "active",
@@ -26,9 +32,14 @@ function createConstructionSite(id: string, lastModified: string): ConstructionS
   };
 }
 
+const FETCHED_AT = "2026-07-20T12:00:00Z";
+
 describe("computeConstructionSiteChanges", () => {
   it("detects added, modified (by lastModified) and removed records", () => {
-    const previous = [createConstructionSite("A", "2026-01-01T00:00:00Z"), createConstructionSite("B", "2026-01-01T00:00:00Z")];
+    const previous = [
+      createConstructionSite("A", "2026-01-01T00:00:00Z"),
+      createConstructionSite("B", "2026-01-01T00:00:00Z"),
+    ];
     const current = [
       createConstructionSite("A", "2026-01-01T00:00:00Z"), // unchanged
       createConstructionSite("B", "2026-02-01T00:00:00Z"), // stand changed -> modified
@@ -36,24 +47,26 @@ describe("computeConstructionSiteChanges", () => {
     ];
 
     expect(
-      computeConstructionSiteChanges(
-        previous,
-        current,
-        "2026-01-10T00:00:00Z",
-      ),
+      computeConstructionSiteChanges(previous, current, null, FETCHED_AT),
     ).toEqual({
-      since: "2026-01-10T00:00:00Z",
-      added: ["C"],
-      modified: ["B"],
+      since: "2026-07-13T12:00:00.000Z",
+      added: [{ id: "C", detectedAt: FETCHED_AT }],
+      modified: [{ id: "B", detectedAt: FETCHED_AT }],
       removed: [],
     });
   });
 
   it("reports every record as added on the first run", () => {
-    const current = [createConstructionSite("B", "x"), createConstructionSite("A", "x")];
-    const changes = computeConstructionSiteChanges([], current, null);
+    const current = [
+      createConstructionSite("B", "x"),
+      createConstructionSite("A", "x"),
+    ];
+    const changes = computeConstructionSiteChanges([], current, null, FETCHED_AT);
     expect(changes.since).toBeNull();
-    expect(changes.added).toEqual(["A", "B"]); // sorted
+    expect(changes.added).toEqual([
+      { id: "A", detectedAt: FETCHED_AT },
+      { id: "B", detectedAt: FETCHED_AT },
+    ]);
     expect(changes.modified).toEqual([]);
     expect(changes.removed).toEqual([]);
   });
@@ -62,18 +75,154 @@ describe("computeConstructionSiteChanges", () => {
     const changes = computeConstructionSiteChanges(
       [createConstructionSite("A", "x")],
       [],
-      "2026-01-10T00:00:00Z",
+      null,
+      FETCHED_AT,
     );
     expect(changes.removed).toEqual(["A"]);
     expect(changes.added).toEqual([]);
   });
 
+  it("carries forward added entries within the 7-day window", () => {
+    const previousSites = [createConstructionSite("A", "2026-01-01T00:00:00Z")];
+    const currentSites = [createConstructionSite("A", "2026-01-01T00:00:00Z")];
+
+    const threeDaysAgo = new Date(
+      new Date(FETCHED_AT).getTime() - 3 * 24 * 60 * 60 * 1000,
+    ).toISOString();
+    const previousChanges: ConstructionSiteChanges = {
+      since: "2026-07-10T00:00:00Z",
+      added: [{ id: "A", detectedAt: threeDaysAgo }],
+      modified: [],
+      removed: [],
+    };
+
+    const changes = computeConstructionSiteChanges(
+      previousSites,
+      currentSites,
+      previousChanges,
+      FETCHED_AT,
+    );
+
+    expect(changes.added).toEqual([{ id: "A", detectedAt: threeDaysAgo }]);
+    expect(changes.modified).toEqual([]);
+    expect(changes.since).not.toBeNull();
+  });
+
+  it("drops carried-forward entries older than 7 days", () => {
+    const previousSites = [createConstructionSite("A", "2026-01-01T00:00:00Z")];
+    const currentSites = [createConstructionSite("A", "2026-01-01T00:00:00Z")];
+
+    const tenDaysAgo = new Date(
+      new Date(FETCHED_AT).getTime() - 10 * 24 * 60 * 60 * 1000,
+    ).toISOString();
+    const previousChanges: ConstructionSiteChanges = {
+      since: "2026-07-10T00:00:00Z",
+      added: [{ id: "A", detectedAt: tenDaysAgo }],
+      modified: [],
+      removed: [],
+    };
+
+    const changes = computeConstructionSiteChanges(
+      previousSites,
+      currentSites,
+      previousChanges,
+      FETCHED_AT,
+    );
+
+    expect(changes.added).toEqual([]);
+    expect(changes.modified).toEqual([]);
+  });
+
+  it("ignores previous changes entries in legacy string format", () => {
+    const previousSites = [createConstructionSite("A", "2026-01-01T00:00:00Z")];
+    const currentSites = [createConstructionSite("A", "2026-01-01T00:00:00Z")];
+
+    const previousChanges = {
+      since: "2026-07-10T00:00:00Z",
+      added: ["A", "B"],
+      modified: ["C"],
+      removed: [],
+    } as unknown as ConstructionSiteChanges;
+
+    const changes = computeConstructionSiteChanges(
+      previousSites,
+      currentSites,
+      previousChanges,
+      FETCHED_AT,
+    );
+
+    expect(changes.added).toEqual([]);
+    expect(changes.modified).toEqual([]);
+  });
+
+  it("preserves 'added' status when a previously added site gets modified", () => {
+    const twoDaysAgo = new Date(
+      new Date(FETCHED_AT).getTime() - 2 * 24 * 60 * 60 * 1000,
+    ).toISOString();
+    const previousSites = [createConstructionSite("A", "2026-01-01T00:00:00Z")];
+    const currentSites = [createConstructionSite("A", "2026-02-01T00:00:00Z")];
+
+    const previousChanges: ConstructionSiteChanges = {
+      since: "2026-07-10T00:00:00Z",
+      added: [{ id: "A", detectedAt: twoDaysAgo }],
+      modified: [],
+      removed: [],
+    };
+
+    const changes = computeConstructionSiteChanges(
+      previousSites,
+      currentSites,
+      previousChanges,
+      FETCHED_AT,
+    );
+
+    expect(changes.added).toEqual([{ id: "A", detectedAt: twoDaysAgo }]);
+    expect(changes.modified).toEqual([]);
+  });
+
+  it("carries forward modified entries for unchanged sites within the window", () => {
+    const fourDaysAgo = new Date(
+      new Date(FETCHED_AT).getTime() - 4 * 24 * 60 * 60 * 1000,
+    ).toISOString();
+    const previousSites = [
+      createConstructionSite("A", "2026-01-01T00:00:00Z"),
+      createConstructionSite("B", "2026-02-01T00:00:00Z"),
+    ];
+    const currentSites = [
+      createConstructionSite("A", "2026-01-01T00:00:00Z"), // unchanged
+      createConstructionSite("B", "2026-02-01T00:00:00Z"), // unchanged, was modified
+    ];
+
+    const previousChanges: ConstructionSiteChanges = {
+      since: "2026-07-10T00:00:00Z",
+      added: [
+        { id: "A", detectedAt: fourDaysAgo }, // still new
+      ],
+      modified: [
+        { id: "B", detectedAt: fourDaysAgo }, // modified 4 days ago, unchanged now
+      ],
+      removed: [],
+    };
+
+    const changes = computeConstructionSiteChanges(
+      previousSites,
+      currentSites,
+      previousChanges,
+      FETCHED_AT,
+    );
+
+    expect(changes.added).toEqual([{ id: "A", detectedAt: fourDaysAgo }]);
+    expect(changes.modified).toEqual([{ id: "B", detectedAt: fourDaysAgo }]);
+  });
+});
+
+describe("getChangedConstructionSiteIds", () => {
   it("returns displayable added and modified IDs after a comparison", () => {
     expect(
       getChangedConstructionSiteIds({
-        since: "2026-01-10T00:00:00Z",
-        added: ["A"],
-        modified: ["B"],
+        since: "2026-07-13T12:00:00Z",
+        added: [{ id: "A", detectedAt: "2026-07-19T00:00:00Z" }],
+        modified: [{ id: "B", detectedAt: "2026-07-18T00:00:00Z" }],
         removed: ["C"],
       }),
     ).toEqual(new Set(["A", "B"]));
@@ -83,7 +232,7 @@ describe("computeConstructionSiteChanges", () => {
     expect(
       getChangedConstructionSiteIds({
         since: null,
-        added: ["A", "B"],
+        added: [{ id: "A", detectedAt: "2026-07-19T00:00:00Z" }],
         modified: [],
         removed: [],
       }),

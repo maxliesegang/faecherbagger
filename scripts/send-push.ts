@@ -50,7 +50,11 @@ const [changes, metadata, constructionSites] = await Promise.all([
   readJSON<ConstructionSite[]>("public/data/baustellen.json"),
 ]);
 
-if (changes.added.length === 0) {
+const freshlyAddedIds = changes.added
+  .filter((entry) => entry.detectedAt === metadata.fetchedAt)
+  .map((entry) => entry.id);
+
+if (freshlyAddedIds.length === 0) {
   console.log("No new construction sites to broadcast.");
   process.exit(0);
 }
@@ -75,7 +79,7 @@ webpush.setVapidDetails(
   process.env.VAPID_PRIVATE_KEY!,
 );
 
-const addedIds = new Set(changes.added);
+const addedIds = new Set(freshlyAddedIds);
 
 let cursor: string | null = "";
 let sent = 0;

@@ -175,8 +175,9 @@ export function ConstructionSiteResults({
 
       {showOnlyChanged && changes.since !== null && (
         <KernText muted className="results__change-summary">
-          Seit {new Date(changes.since).toLocaleString("de-DE")}:{" "}
-          {changes.added.length} neu, {changes.modified.length} geändert
+          Letzte 7 Tage (seit{" "}
+          {new Date(changes.since).toLocaleString("de-DE")})
+          : {changes.added.length} neu, {changes.modified.length} geändert
           {changes.removed.length > 0 &&
             `, ${changes.removed.length} nicht mehr gelistet`}
           .
@@ -233,7 +234,7 @@ export function ConstructionSiteResults({
             {showOnlyChanged && changes.since === null
               ? "Für diesen Datenstand liegt noch kein vorheriger Vergleich vor."
               : showOnlyChanged
-                ? "Seit der vorherigen Aktualisierung gibt es für die gewählten Filter keine Änderungen."
+                ? "In den letzten 7 Tagen gibt es für die gewählten Filter keine Änderungen."
                 : "Ändern Sie Ihre Suche oder löschen Sie die gewählten Filter."}
           </KernText>
         </KernAlert>

@@ -134,14 +134,31 @@ export interface ConstructionSiteMetadata {
   attribution: string[];
 }
 
+/** A single change entry with its first detection timestamp. */
+export interface ConstructionSiteChangeEntry {
+  /** `vorgangsnummer` of the affected construction site. */
+  id: string;
+  /** When this change was first detected (`fetchedAt` of the pipeline run). */
+  detectedAt: ISOTimestamp;
+}
+
 /**
- * Contents of `data/changes.json`: what changed relative to the previous run.
- * All arrays hold `vorgangsnummer` values. Basis for later notifications.
+ * Contents of `data/changes.json`: what changed, accumulated within a
+ * retention window. The pipeline merges the per-run diff with carry-forward
+ * entries from the previous `changes.json` as long as their `detectedAt`
+ * falls within the retention period.
  */
 export interface ConstructionSiteChanges {
-  /** `fetchedAt` of the previous run, or `null` on the first run. */
+  /**
+   * Start of the retention window, or `null` on the first run when no
+   * comparison base exists.
+   */
   since: ISOTimestamp | null;
-  added: string[];
-  modified: string[];
+  /** Sites first seen within the retention window. */
+  added: ConstructionSiteChangeEntry[];
+  /** Sites whose `lastModified` changed within the retention window, but
+   *  that were already present before the window began. */
+  modified: ConstructionSiteChangeEntry[];
+  /** Sites removed since the *previous run* (not accumulated). */
   removed: string[];
 }
