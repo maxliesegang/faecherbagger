@@ -19816,7 +19816,7 @@
     "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-30",
-    "endDate": "2026-10-16",
+    "endDate": "2026-10-02",
     "point": [
       8.38738159,
       49.009676709999994
@@ -19981,7 +19981,7 @@
       ]
     },
     "source": "Stadt Karlsruhe",
-    "lastModified": "2025-11-24T23:00:00Z"
+    "lastModified": "2026-07-27T22:00:00Z"
   },
   {
     "id": "2024V5525",
@@ -32309,7 +32309,7 @@
     "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße,",
@@ -36757,7 +36757,7 @@
       ]
     },
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
+    "lastModified": "2026-07-27T22:00:00Z"
   },
   {
     "id": "2024V7469",
@@ -39638,6 +39638,57 @@
     },
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-05-25T22:00:00Z"
+  },
+  {
+    "id": "2025V1600",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Schopfheimer Straße zwischen Waldshuter Straße und Funkerstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2025-01-13",
+    "endDate": "2026-08-31",
+    "point": [
+      8.47277169,
+      49.00447925
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.47284825,
+            49.00456044
+          ],
+          [
+            8.4727034,
+            49.00457405
+          ],
+          [
+            8.472679,
+            49.0043972
+          ],
+          [
+            8.47284161,
+            49.00438748
+          ],
+          [
+            8.47286423,
+            49.0045514
+          ],
+          [
+            8.47284825,
+            49.00456044
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
   },
   {
     "id": "2025V2464",
@@ -43666,33 +43717,6 @@
           "coordinates": [
             [
               [
-                8.41291795,
-                49.00305299
-              ],
-              [
-                8.41221594,
-                49.00307703
-              ],
-              [
-                8.41221385,
-                49.00305908
-              ],
-              [
-                8.41291409,
-                49.00303292
-              ],
-              [
-                8.41291795,
-                49.00305299
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
                 8.41220955,
                 49.00300111
               ],
@@ -43711,6 +43735,33 @@
               [
                 8.41220955,
                 49.00300111
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.41316191,
+                49.00345855
+              ],
+              [
+                8.41330173,
+                49.00343576
+              ],
+              [
+                8.41333384,
+                49.00352214
+              ],
+              [
+                8.41319499,
+                49.00354638
+              ],
+              [
+                8.41316191,
+                49.00345855
               ]
             ]
           ]
@@ -43767,24 +43818,24 @@
           "coordinates": [
             [
               [
-                8.41316191,
-                49.00345855
+                8.41291795,
+                49.00305299
               ],
               [
-                8.41330173,
-                49.00343576
+                8.41221594,
+                49.00307703
               ],
               [
-                8.41333384,
-                49.00352214
+                8.41221385,
+                49.00305908
               ],
               [
-                8.41319499,
-                49.00354638
+                8.41291409,
+                49.00303292
               ],
               [
-                8.41316191,
-                49.00345855
+                8.41291795,
+                49.00305299
               ]
             ]
           ]
@@ -47592,7 +47643,7 @@
     "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Zentralhof",
@@ -47648,7 +47699,7 @@
       ]
     },
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
+    "lastModified": "2026-07-27T22:00:00Z"
   },
   {
     "id": "2025V6792",
@@ -65413,33 +65464,6 @@
           "coordinates": [
             [
               [
-                8.40858827,
-                49.00927758
-              ],
-              [
-                8.40856436,
-                49.00926889
-              ],
-              [
-                8.40881876,
-                49.00897844
-              ],
-              [
-                8.40884243,
-                49.00898897
-              ],
-              [
-                8.40858827,
-                49.00927758
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
                 8.40857947,
                 49.00927827
               ],
@@ -65458,6 +65482,33 @@
               [
                 8.40857947,
                 49.00927827
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.40858827,
+                49.00927758
+              ],
+              [
+                8.40856436,
+                49.00926889
+              ],
+              [
+                8.40881876,
+                49.00897844
+              ],
+              [
+                8.40884243,
+                49.00898897
+              ],
+              [
+                8.40858827,
+                49.00927758
               ]
             ]
           ]
@@ -96028,7 +96079,7 @@
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Haselweg",
+    "location": "Haselweg zw. Pulverhausstraße und Birkenweg",
     "notes": "Lokale Sperrung Höhe Nr. 7",
     "cause": "Privat",
     "startDate": "2026-07-30",
@@ -96065,7 +96116,7 @@
       ]
     },
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-19T22:00:00Z"
+    "lastModified": "2026-07-27T22:00:00Z"
   },
   {
     "id": "2026V4426",
@@ -97710,6 +97761,85 @@
     "lastModified": "2026-07-21T22:00:00Z"
   },
   {
+    "id": "2026V4548",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Moosalbstraße zw. Frauenalber Straße und Spessarter Straße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-07-27",
+    "endDate": "2026-08-07",
+    "point": [
+      8.39970937,
+      48.96578041
+    ],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.39969431,
+                48.96580835
+              ],
+              [
+                8.39969187,
+                48.96575031
+              ],
+              [
+                8.39972363,
+                48.96574996
+              ],
+              [
+                8.39972686,
+                48.96581261
+              ],
+              [
+                8.39969431,
+                48.96580835
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.39969431,
+                48.96580835
+              ],
+              [
+                8.39969187,
+                48.96575031
+              ],
+              [
+                8.39972363,
+                48.96574996
+              ],
+              [
+                8.39972686,
+                48.96581261
+              ],
+              [
+                8.39969431,
+                48.96580835
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
+  },
+  {
     "id": "2026V4550",
     "phase": "active",
     "category": "power-telecom",
@@ -99131,6 +99261,585 @@
     },
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-26T22:00:00Z"
+  },
+  {
+    "id": "2026V4673",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hangstraße zw. Siebenmannstraße und Maiblumenstraße",
+    "notes": "Höhe Haus Nr 10",
+    "cause": "Privat",
+    "startDate": "2026-07-31",
+    "endDate": "2026-07-31",
+    "point": [
+      8.4572733,
+      48.9769757
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.4571697,
+            48.97694244
+          ],
+          [
+            8.45722839,
+            48.97690583
+          ],
+          [
+            8.45737689,
+            48.97700896
+          ],
+          [
+            8.45731821,
+            48.97704558
+          ],
+          [
+            8.4571697,
+            48.97694244
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
+  },
+  {
+    "id": "2026V4675",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "An der Bahn zw. Hagdornstraße und Gerhardtstraße",
+    "notes": "Höhe Haus Nr 18",
+    "cause": "Privat",
+    "startDate": "2026-07-29",
+    "endDate": "2026-08-12",
+    "point": [
+      8.45513091,
+      49.03074749
+    ],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.4551035,
+                49.03076324
+              ],
+              [
+                8.45509693,
+                49.03073899
+              ],
+              [
+                8.45515833,
+                49.0307318
+              ],
+              [
+                8.45516498,
+                49.0307559
+              ],
+              [
+                8.4551035,
+                49.03076324
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.4551035,
+                49.03076324
+              ],
+              [
+                8.45509693,
+                49.03073899
+              ],
+              [
+                8.45515833,
+                49.0307318
+              ],
+              [
+                8.45516498,
+                49.0307559
+              ],
+              [
+                8.4551035,
+                49.03076324
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
+  },
+  {
+    "id": "2026V4683",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Isoldestraße zw. Stösserstraße und Niebelungenstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-07-31",
+    "endDate": "2026-10-16",
+    "point": [
+      8.366439,
+      49.01697402
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.36642298,
+            49.01685008
+          ],
+          [
+            8.36656023,
+            49.01688282
+          ],
+          [
+            8.36645272,
+            49.01709747
+          ],
+          [
+            8.3663193,
+            49.01706858
+          ],
+          [
+            8.36642298,
+            49.01685008
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
+  },
+  {
+    "id": "2026V4696",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Essostraße",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-01",
+    "endDate": "2026-12-31",
+    "point": [
+      8.323763443333334,
+      49.042861359999996
+    ],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "LineString",
+          "coordinates": [
+            [
+              8.32202259,
+              49.04148576
+            ],
+            [
+              8.32214502,
+              49.04153853
+            ],
+            [
+              8.32228553,
+              49.04162738
+            ],
+            [
+              8.32250038,
+              49.04178478
+            ],
+            [
+              8.32266206,
+              49.04189818
+            ],
+            [
+              8.32306285,
+              49.04218197
+            ],
+            [
+              8.32352167,
+              49.04251171
+            ],
+            [
+              8.32424065,
+              49.04303578
+            ]
+          ]
+        },
+        {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [
+                  8.32429312,
+                  49.04305648
+                ],
+                [
+                  8.32425739,
+                  49.04307879
+                ],
+                [
+                  8.32421282,
+                  49.04304793
+                ],
+                [
+                  8.32424854,
+                  49.04302562
+                ],
+                [
+                  8.32429312,
+                  49.04305648
+                ]
+              ]
+            ],
+            [
+              [
+                [
+                  8.32367729,
+                  49.04338947
+                ],
+                [
+                  8.32370874,
+                  49.04341473
+                ],
+                [
+                  8.32366109,
+                  49.04344037
+                ],
+                [
+                  8.32362963,
+                  49.04341511
+                ],
+                [
+                  8.32367729,
+                  49.04338947
+                ]
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "LineString",
+          "coordinates": [
+            [
+              8.32424181,
+              49.04306434
+            ],
+            [
+              8.3235283,
+              49.04350691
+            ]
+          ]
+        }
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
+  },
+  {
+    "id": "2026V4698",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kornweg zw. Silcher Straße und Alb",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-24",
+    "endDate": "2026-08-24",
+    "point": [
+      8.34168541,
+      49.00578006
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.34183504,
+            49.00589447
+          ],
+          [
+            8.34166642,
+            49.00582653
+          ],
+          [
+            8.34137709,
+            49.00576919
+          ],
+          [
+            8.34137968,
+            49.00568026
+          ],
+          [
+            8.34190524,
+            49.00574285
+          ],
+          [
+            8.34196371,
+            49.00587897
+          ],
+          [
+            8.34183504,
+            49.00589447
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
+  },
+  {
+    "id": "2026V4700",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Durlacher Allee/ K9654 zw. Abfahrt Durlacher Allee und Brückenbauwerk",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-07-30",
+    "endDate": "2026-07-30",
+    "point": [
+      8.45705508,
+      49.00138053
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          8.45531725,
+          49.00184135
+        ],
+        [
+          8.45579033,
+          49.00167631
+        ],
+        [
+          8.45636286,
+          49.00149133
+        ],
+        [
+          8.4569035,
+          49.00138779
+        ],
+        [
+          8.45736872,
+          49.00136551
+        ],
+        [
+          8.45776558,
+          49.00137554
+        ],
+        [
+          8.45887277,
+          49.00162552
+        ]
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
+  },
+  {
+    "id": "2026V4704",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Im Eichbäumle",
+    "notes": "Abwicklung in mehreren Abschnitten",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-07-30",
+    "endDate": "2026-11-15",
+    "point": [
+      8.44768881,
+      49.02966285
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.44792826,
+            49.02932721
+          ],
+          [
+            8.44807324,
+            49.02929363
+          ],
+          [
+            8.44810876,
+            49.02928963
+          ],
+          [
+            8.44810567,
+            49.02931174
+          ],
+          [
+            8.44808618,
+            49.02931409
+          ],
+          [
+            8.44809132,
+            49.02935803
+          ],
+          [
+            8.448242,
+            49.02945173
+          ],
+          [
+            8.44741417,
+            49.02992615
+          ],
+          [
+            8.4473212,
+            49.02996515
+          ],
+          [
+            8.44718383,
+            49.03002092
+          ],
+          [
+            8.44708425,
+            49.0298631
+          ],
+          [
+            8.44724315,
+            49.0298351
+          ],
+          [
+            8.4473344,
+            49.02980217
+          ],
+          [
+            8.44739938,
+            49.02976387
+          ],
+          [
+            8.44794722,
+            49.02941308
+          ],
+          [
+            8.44792826,
+            49.02932721
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
+  },
+  {
+    "id": "2026V4705",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-07-30",
+    "endDate": "2026-08-11",
+    "point": [
+      8.44196082,
+      49.03089739
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.44150044,
+            49.03076529
+          ],
+          [
+            8.44249502,
+            49.03060951
+          ],
+          [
+            8.44257832,
+            49.03083824
+          ],
+          [
+            8.44239713,
+            49.03086986
+          ],
+          [
+            8.44189957,
+            49.03110047
+          ],
+          [
+            8.441797,
+            49.03126024
+          ],
+          [
+            8.44197467,
+            49.03149451
+          ],
+          [
+            8.44191241,
+            49.03150106
+          ],
+          [
+            8.44150339,
+            49.03094715
+          ],
+          [
+            8.44145708,
+            49.03087794
+          ],
+          [
+            8.44144312,
+            49.03081141
+          ],
+          [
+            8.4414394,
+            49.03077205
+          ],
+          [
+            8.44150044,
+            49.03076529
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-07-27T22:00:00Z"
   },
   {
     "id": "30016",
@@ -101544,53 +102253,6 @@
           "coordinates": [
             [
               [
-                8.29028137,
-                48.95964072
-              ],
-              [
-                8.29009666,
-                48.95944893
-              ],
-              [
-                8.29237145,
-                48.95886946
-              ],
-              [
-                8.29421377,
-                48.9585385
-              ],
-              [
-                8.29441203,
-                48.95879945
-              ],
-              [
-                8.29256862,
-                48.95911306
-              ],
-              [
-                8.29243838,
-                48.95912247
-              ],
-              [
-                8.2916803,
-                48.95927971
-              ],
-              [
-                8.2909722,
-                48.95945022
-              ],
-              [
-                8.29028137,
-                48.95964072
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
                 8.29615844,
                 48.96017635
               ],
@@ -101799,6 +102461,53 @@
               [
                 8.28573165,
                 48.95972703
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.29028137,
+                48.95964072
+              ],
+              [
+                8.29009666,
+                48.95944893
+              ],
+              [
+                8.29237145,
+                48.95886946
+              ],
+              [
+                8.29421377,
+                48.9585385
+              ],
+              [
+                8.29441203,
+                48.95879945
+              ],
+              [
+                8.29256862,
+                48.95911306
+              ],
+              [
+                8.29243838,
+                48.95912247
+              ],
+              [
+                8.2916803,
+                48.95927971
+              ],
+              [
+                8.2909722,
+                48.95945022
+              ],
+              [
+                8.29028137,
+                48.95964072
               ]
             ]
           ]
@@ -103568,6 +104277,71 @@
     "lastModified": "2026-05-20T10:20:00Z"
   },
   {
+    "id": "40044",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Franz-Allgaier-Straße 17",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-06-08",
+    "endDate": "2026-07-31",
+    "point": [
+      8.288868404999999,
+      48.956542845
+    ],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.28880188,
+                48.9565791
+              ],
+              [
+                8.28879735,
+                48.95656879
+              ],
+              [
+                8.28884829,
+                48.95655419
+              ],
+              [
+                8.28885752,
+                48.95656402
+              ],
+              [
+                8.28880188,
+                48.9565791
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "LineString",
+          "coordinates": [
+            [
+              8.28878306,
+              48.95656735
+            ],
+            [
+              8.28903734,
+              48.956471
+            ]
+          ]
+        }
+      ]
+    },
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-05-26T13:51:15Z"
+  },
+  {
     "id": "40047",
     "phase": "active",
     "category": "special-use",
@@ -103959,6 +104733,132 @@
     },
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-07-27T13:10:01Z"
+  },
+  {
+    "id": "40056",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Forchheimer Straße 20",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-07-10",
+    "endDate": "2026-08-07",
+    "point": [
+      8.29649149,
+      48.960980945
+    ],
+    "geometry": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.29637174,
+                48.96097
+              ],
+              [
+                8.29645676,
+                48.96103066
+              ],
+              [
+                8.29644735,
+                48.96103394
+              ],
+              [
+                8.29636348,
+                48.96097483
+              ],
+              [
+                8.29637174,
+                48.96097
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.29644735,
+                48.96103394
+              ],
+              [
+                8.29669095,
+                48.96086863
+              ],
+              [
+                8.29670247,
+                48.96088206
+              ],
+              [
+                8.29646832,
+                48.96104513
+              ],
+              [
+                8.29644735,
+                48.96103394
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-07-28T09:56:21Z"
+  },
+  {
+    "id": "40057",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Fleiderstraße 20",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-07-20",
+    "endDate": "2026-08-14",
+    "point": [
+      8.30163285,
+      48.96229462
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.30159116,
+            48.96232317
+          ],
+          [
+            8.30157527,
+            48.96230798
+          ],
+          [
+            8.3016719,
+            48.96226573
+          ],
+          [
+            8.301689,
+            48.96228337
+          ],
+          [
+            8.30159116,
+            48.96232317
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-07-28T12:40:38Z"
   },
   {
     "id": "40060",

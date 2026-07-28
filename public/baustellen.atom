@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-07-28T06:20:55.393Z</updated>
+    <updated>2026-07-28T17:15:49.256Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -11,6 +11,187 @@
     <link rel="alternate" href="https://maxliesegang.github.io/faecherbagger/"/>
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Fleiderstraße 20 – Rheinstetten]]></title>
+        <id>faecherbagger:40057:2026-07-28T12:40:38Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40057"/>
+        <updated>2026-07-28T12:40:38.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 20.07.2026 – 14.08.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Forchheimer Straße 20 – Rheinstetten]]></title>
+        <id>faecherbagger:40056:2026-07-28T09:56:21Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40056"/>
+        <updated>2026-07-28T09:56:21.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 10.07.2026 – 07.08.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee – Karlsruhe]]></title>
+        <id>faecherbagger:2024V5284:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V5284"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
+Zeitraum: 30.07.2026 – 02.10.2026
+Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße, – Karlsruhe]]></title>
+        <id>faecherbagger:2024V7408:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V7408"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Keine Behinderung
+Zeitraum: 10.08.2026 – 16.10.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Schopfheimer Straße zwischen Waldshuter Straße und Funkerstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V1600:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V1600"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 13.01.2025 – 31.08.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Zentralhof – Karlsruhe]]></title>
+        <id>faecherbagger:2025V6782:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6782"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Keine Behinderung
+Zeitraum: 24.06.2026 – 04.09.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Haselweg zw. Pulverhausstraße und Birkenweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4421:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4421"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 30.07.2026 – 30.07.2026
+Hinweis: Lokale Sperrung Höhe Nr. 7
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Moosalbstraße zw. Frauenalber Straße und Spessarter Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4548:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4548"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
+Zeitraum: 27.07.2026 – 07.08.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Hangstraße zw. Siebenmannstraße und Maiblumenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4673:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4673"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 31.07.2026 – 31.07.2026
+Hinweis: Höhe Haus Nr 10
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: An der Bahn zw. Hagdornstraße und Gerhardtstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4675:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4675"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kanalbau · Vollsperrung
+Zeitraum: 29.07.2026 – 12.08.2026
+Hinweis: Höhe Haus Nr 18
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Isoldestraße zw. Stösserstraße und Niebelungenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4683:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4683"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 31.07.2026 – 16.10.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Essostraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4696:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4696"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 01.09.2026 – 31.12.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Kornweg zw. Silcher Straße und Alb – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4698:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4698"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Vollsperrung
+Zeitraum: 24.08.2026 – 24.08.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Durlacher Allee/ K9654 zw. Abfahrt Durlacher Allee und Brückenbauwerk – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4700:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4700"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 30.07.2026 – 30.07.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Im Eichbäumle – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4704:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4704"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gleisbau · Mit Behinderung
+Zeitraum: 30.07.2026 – 15.11.2026
+Hinweis: Abwicklung in mehreren Abschnitten
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4705:2026-07-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4705"/>
+        <updated>2026-07-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gleisbau · Mit Behinderung
+Zeitraum: 30.07.2026 – 11.08.2026
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Rosenstraße 126 – Rheinstetten]]></title>
         <id>faecherbagger:40055:2026-07-27T13:10:01Z</id>
@@ -43,17 +224,6 @@ Zeitraum: 22.07.2026 – 08.08.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße, – Karlsruhe]]></title>
-        <id>faecherbagger:2024V7408:2026-07-26T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V7408"/>
-        <updated>2026-07-26T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 10.08.2026 – 16.10.2026
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Rüppurrer Straße 104 zw. Tivoli u. Marienstraße – Karlsruhe]]></title>
@@ -102,17 +272,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Zentralhof – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6782:2026-07-26T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6782"/>
-        <updated>2026-07-26T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 24.06.2026 – 04.09.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Amalinestraße und Sophienstraße – Karlsruhe]]></title>
@@ -977,18 +1136,6 @@ Zeitraum: 31.07.2026 – 05.08.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Haselweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4421:2026-07-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4421"/>
-        <updated>2026-07-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
-Zeitraum: 30.07.2026 – 30.07.2026
-Hinweis: Lokale Sperrung Höhe Nr. 7
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Welschneureuter Straße. zw. Neureuter Hauptstraße. und Oberfeldstraße – Karlsruhe]]></title>
@@ -3414,6 +3561,17 @@ Quelle: Stadt Rheinstetten]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Franz-Allgaier-Straße 17 – Rheinstetten]]></title>
+        <id>faecherbagger:40044:2026-05-26T13:51:15Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40044"/>
+        <updated>2026-05-26T13:51:15.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 08.06.2026 – 31.07.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Finterstraße zwischen Baumeiserstraße und Ettlinger Straße – Karlsruhe]]></title>
         <id>faecherbagger:2025V1542:2026-05-25T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V1542"/>
@@ -5594,18 +5752,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee – Karlsruhe]]></title>
-        <id>faecherbagger:2024V5284:2025-11-24T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V5284"/>
-        <updated>2025-11-24T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 30.07.2026 – 16.10.2026
-Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Gleistrasse entlang Steinkreuzstraße – Karlsruhe]]></title>
