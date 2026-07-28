@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-07-27T17:26:38.715Z</updated>
+    <updated>2026-07-28T06:20:55.393Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -184,18 +184,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: K9657/ Südtangente Höhe AS4 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4646:2026-07-26T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4646"/>
-        <updated>2026-07-26T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
-Zeitraum: 27.07.2026 – 27.07.2026
-Hinweis: Fahrtrichtung Durlach, Arbeitsstelle im Mittelstreifen, Reparatur Unfallschaden
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: L605 Höhe Ausfahrt Pulverhausstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4647:2026-07-26T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4647"/>
@@ -203,18 +191,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <summary type="html"><![CDATA[Geplant · Straßenunterhaltung · Mit Behinderung
 Zeitraum: 30.07.2026 – 30.07.2026
 Hinweis: Reparatur Unfallschaden, Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: K9652/ Südtangente Höhe Ottostraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4648:2026-07-26T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4648"/>
-        <updated>2026-07-26T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
-Zeitraum: 27.07.2026 – 27.07.2026
-Hinweis: Reparatur Unfallschaden, Rechtsabbieger in die Ottostraße verkürzt
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
@@ -300,17 +276,6 @@ Zeitraum: 14.07.2026 – 10.08.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4337:2026-07-23T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4337"/>
-        <updated>2026-07-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gleisbau · Vollsperrung
-Zeitraum: 20.07.2026 – 27.07.2026
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Kösliner Straße und Beuthener Straße – Karlsruhe]]></title>
@@ -583,11 +548,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: AS Karlsruhe Nord Zufahrt von der Elfmorgenbruchstraße zur A 5 Fahrtrichtung Süd – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: AS Karlsruhe Nord Zufahrt von der Elfmorgenbruchstraße zur A 5 Fahrtrichtung Süd – Karlsruhe]]></title>
         <id>faecherbagger:2026V2781:2026-07-21T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2781"/>
         <updated>2026-07-21T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Baugrunduntersuchung · Sperrung (1 Richtung)
+        <summary type="html"><![CDATA[Aktuell · Baugrunduntersuchung · Sperrung (1 Richtung)
 Zeitraum: 28.07.2026 – 14.08.2026
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Karlsruhe]]></summary>
@@ -991,11 +956,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Kriegsstraße (oberirdisch) zw. Ettlinger Straße und Meidingerstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Kriegsstraße (oberirdisch) zw. Ettlinger Straße und Meidingerstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4017:2026-07-19T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4017"/>
         <updated>2026-07-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Sperrung (1 Richtung)
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Sperrung (1 Richtung)
 Zeitraum: 28.07.2026 – 29.07.2026
 Hinweis: vs. ab 19:30 Uhr - 6:00 Uhr Sperrung der oberirdischen Fahrbahn Fahrtrichtung Osten
 Verantwortlich: Vermögen und Bau
@@ -1481,18 +1446,6 @@ Zeitraum: 20.07.2026 – 30.07.2026
 Verantwortlich: Tiefbauamt Ettlingen
 Quelle: Stadt Ettlingen]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Gartenstraße zw. Weinbrennerplatz/ Kriegsstraße und Steinhäuserstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0729:2026-07-09T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0729"/>
-        <updated>2026-07-09T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 01.04.2026 – 27.07.2026
-Hinweis: Rechtsabbieger in die Steinhäuserstraße = geänderte Verkehrsführung im Zuge von Baumaßnahmen, LKW Umleitung über Brauerstraße
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Sonntagstraße zw. Jollystraße und Mathystraße – Karlsruhe]]></title>
@@ -5675,25 +5628,6 @@ Zeitraum: 26.11.2025 – 30.09.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Damianstor gesperrt – Bruchsal]]></title>
-        <id>faecherbagger:30347:2025-11-18T06:16:12Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30347"/>
-        <updated>2025-11-18T06:16:12.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
-Zeitraum: 02.02.2026 – 27.07.2026
-Hinweis: Sperrung der Straße für Kanalbau.
-Es wird der Kanal aus Richtung Styrumstraße über das Bären-Gelände angebunden.
-
-Der Verkehr wird über Am Schlossgarten umgeleitet.
-
-Der Schlossbereich ist entgegen der üblichen Verkehrsführung von der Friedrichstraße her erreichbar.
-
-Das Bauende ist zwischen dem 22. und 24.07.2026 geplant.
-Verantwortlich: Eigenbetrieb Umwelttechnik
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: B 10 Augustenburgstraße Tunnel Grötzingen – Karlsruhe]]></title>

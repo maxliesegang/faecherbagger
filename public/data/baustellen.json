@@ -58420,101 +58420,6 @@
     "lastModified": "2026-07-08T22:00:00Z"
   },
   {
-    "id": "2026V0729",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gartenstraße zw. Weinbrennerplatz/ Kriegsstraße und Steinhäuserstraße",
-    "notes": "Rechtsabbieger in die Steinhäuserstraße = geänderte Verkehrsführung im Zuge von Baumaßnahmen, LKW Umleitung über Brauerstraße",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-04-01",
-    "endDate": "2026-07-27",
-    "point": [
-      8.38137369,
-      49.00453656
-    ],
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [
-            8.38086827,
-            49.0046827
-          ],
-          [
-            8.38115451,
-            49.00459813
-          ],
-          [
-            8.381278,
-            49.00456281
-          ],
-          [
-            8.38134286,
-            49.00453103
-          ],
-          [
-            8.38137836,
-            49.00450295
-          ],
-          [
-            8.38142759,
-            49.00447108
-          ],
-          [
-            8.3812827,
-            49.00449858
-          ],
-          [
-            8.38126941,
-            49.00446767
-          ],
-          [
-            8.38146342,
-            49.0044173
-          ],
-          [
-            8.38151149,
-            49.00432118
-          ],
-          [
-            8.38154934,
-            49.00441905
-          ],
-          [
-            8.38151158,
-            49.00447153
-          ],
-          [
-            8.38145225,
-            49.00453033
-          ],
-          [
-            8.38136985,
-            49.00455945
-          ],
-          [
-            8.38105618,
-            49.00465158
-          ],
-          [
-            8.38090141,
-            49.00468801
-          ],
-          [
-            8.38086827,
-            49.0046827
-          ]
-        ]
-      ]
-    },
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-09T22:00:00Z"
-  },
-  {
     "id": "2026V0738",
     "phase": "active",
     "category": "demolition",
@@ -65508,33 +65413,6 @@
           "coordinates": [
             [
               [
-                8.40857947,
-                49.00927827
-              ],
-              [
-                8.40915298,
-                49.00925305
-              ],
-              [
-                8.40915457,
-                49.00927115
-              ],
-              [
-                8.40858073,
-                49.00929627
-              ],
-              [
-                8.40857947,
-                49.00927827
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
                 8.40858827,
                 49.00927758
               ],
@@ -65553,6 +65431,33 @@
               [
                 8.40858827,
                 49.00927758
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.40857947,
+                49.00927827
+              ],
+              [
+                8.40915298,
+                49.00925305
+              ],
+              [
+                8.40915457,
+                49.00927115
+              ],
+              [
+                8.40858073,
+                49.00929627
+              ],
+              [
+                8.40857947,
+                49.00927827
               ]
             ]
           ]
@@ -66664,6 +66569,33 @@
           "coordinates": [
             [
               [
+                8.3559738,
+                49.0243165
+              ],
+              [
+                8.35594574,
+                49.02429514
+              ],
+              [
+                8.35661057,
+                49.0239583
+              ],
+              [
+                8.35662386,
+                49.02398858
+              ],
+              [
+                8.3559738,
+                49.0243165
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
                 8.35664643,
                 49.02297217
               ],
@@ -66726,33 +66658,6 @@
               [
                 8.35664643,
                 49.02297217
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                8.3559738,
-                49.0243165
-              ],
-              [
-                8.35594574,
-                49.02429514
-              ],
-              [
-                8.35661057,
-                49.0239583
-              ],
-              [
-                8.35662386,
-                49.02398858
-              ],
-              [
-                8.3559738,
-                49.0243165
               ]
             ]
           ]
@@ -69148,7 +69053,7 @@
   },
   {
     "id": "2026V2781",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "soil-survey",
     "artRaw": "Baugrunduntersuchung",
     "closure": "one-direction",
@@ -90711,7 +90616,7 @@
   },
   {
     "id": "2026V4017",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "one-direction",
@@ -94660,171 +94565,6 @@
     },
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-09T22:00:00Z"
-  },
-  {
-    "id": "2026V4337",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Beuthener Straße zw. Glogauer Straße und Gustav-Heinemann-Allee",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-07-20",
-    "endDate": "2026-07-27",
-    "point": [
-      8.4455886925,
-      49.0352017525
-    ],
-    "geometry": {
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                8.44550823,
-                49.03490255
-              ],
-              [
-                8.44558679,
-                49.03490004
-              ],
-              [
-                8.44563902,
-                49.03488057
-              ],
-              [
-                8.44569361,
-                49.03485671
-              ],
-              [
-                8.44576352,
-                49.03483478
-              ],
-              [
-                8.44581992,
-                49.03482566
-              ],
-              [
-                8.4458691,
-                49.03490972
-              ],
-              [
-                8.44579001,
-                49.03493464
-              ],
-              [
-                8.44573502,
-                49.03495676
-              ],
-              [
-                8.44567409,
-                49.03498628
-              ],
-              [
-                8.44563894,
-                49.03503349
-              ],
-              [
-                8.44558093,
-                49.0349751
-              ],
-              [
-                8.44550823,
-                49.03490255
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                8.4455975,
-                49.03524192
-              ],
-              [
-                8.44564508,
-                49.03528919
-              ],
-              [
-                8.44549985,
-                49.03535136
-              ],
-              [
-                8.44545111,
-                49.03530298
-              ],
-              [
-                8.4455975,
-                49.03524192
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                8.44570305,
-                49.03521282
-              ],
-              [
-                8.44573336,
-                49.03520085
-              ],
-              [
-                8.44575331,
-                49.03524284
-              ],
-              [
-                8.44572662,
-                49.03526011
-              ],
-              [
-                8.44570305,
-                49.03521282
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                8.44538226,
-                49.0353297
-              ],
-              [
-                8.44542829,
-                49.03538227
-              ],
-              [
-                8.44538049,
-                49.03540036
-              ],
-              [
-                8.44533446,
-                49.03534779
-              ],
-              [
-                8.44538226,
-                49.0353297
-              ]
-            ]
-          ]
-        }
-      ]
-    },
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-23T22:00:00Z"
   },
   {
     "id": "2026V4338",
@@ -99193,53 +98933,6 @@
     "lastModified": "2026-07-26T22:00:00Z"
   },
   {
-    "id": "2026V4646",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "K9657/ Südtangente Höhe AS4",
-    "notes": "Fahrtrichtung Durlach, Arbeitsstelle im Mittelstreifen, Reparatur Unfallschaden",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-07-27",
-    "endDate": "2026-07-27",
-    "point": [
-      8.37815161,
-      48.99280334
-    ],
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [
-            8.37763051,
-            48.99301854
-          ],
-          [
-            8.37768048,
-            48.99296048
-          ],
-          [
-            8.37858524,
-            48.99261568
-          ],
-          [
-            8.378644,
-            48.99264189
-          ],
-          [
-            8.37763051,
-            48.99301854
-          ]
-        ]
-      ]
-    },
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
-  },
-  {
     "id": "2026V4647",
     "phase": "upcoming",
     "category": "road-maintenance",
@@ -99279,57 +98972,6 @@
           [
             8.37303254,
             48.98624928
-          ]
-        ]
-      ]
-    },
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
-  },
-  {
-    "id": "2026V4648",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "K9652/ Südtangente Höhe Ottostraße",
-    "notes": "Reparatur Unfallschaden, Rechtsabbieger in die Ottostraße verkürzt",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-07-27",
-    "endDate": "2026-07-27",
-    "point": [
-      8.42942658,
-      48.99654968
-    ],
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [
-            8.43001562,
-            48.99687105
-          ],
-          [
-            8.42990457,
-            48.99685123
-          ],
-          [
-            8.4287812,
-            48.99619927
-          ],
-          [
-            8.42894458,
-            48.99625661
-          ],
-          [
-            8.4293095,
-            48.99645118
-          ],
-          [
-            8.43001562,
-            48.99687105
           ]
         ]
       ]
@@ -102911,57 +102553,6 @@
     "lastModified": "2026-07-22T06:46:21Z"
   },
   {
-    "id": "30347",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Damianstor gesperrt",
-    "notes": "Sperrung der Straße für Kanalbau.\nEs wird der Kanal aus Richtung Styrumstraße über das Bären-Gelände angebunden.\n\nDer Verkehr wird über Am Schlossgarten umgeleitet.\n\nDer Schlossbereich ist entgegen der üblichen Verkehrsführung von der Friedrichstraße her erreichbar.\n\nDas Bauende ist zwischen dem 22. und 24.07.2026 geplant.",
-    "cause": "Eigenbetrieb Umwelttechnik",
-    "startDate": "2026-02-02",
-    "endDate": "2026-07-27",
-    "point": [
-      8.60016574,
-      49.12947426
-    ],
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [
-            8.60010538,
-            49.12953106
-          ],
-          [
-            8.60004061,
-            49.12942803
-          ],
-          [
-            8.60019465,
-            49.12938744
-          ],
-          [
-            8.60029235,
-            49.1295362
-          ],
-          [
-            8.60020609,
-            49.12954876
-          ],
-          [
-            8.60010538,
-            49.12953106
-          ]
-        ]
-      ]
-    },
-    "source": "Stadt Bruchsal",
-    "lastModified": "2025-11-18T06:16:12Z"
-  },
-  {
     "id": "40000",
     "phase": "active",
     "category": "special-use",
@@ -103411,19 +103002,6 @@
           "type": "LineString",
           "coordinates": [
             [
-              8.30754956,
-              48.98072241
-            ],
-            [
-              8.30855575,
-              48.98010998
-            ]
-          ]
-        },
-        {
-          "type": "LineString",
-          "coordinates": [
-            [
               8.30475299,
               48.97934301
             ],
@@ -103479,6 +103057,19 @@
             [
               8.32506427,
               48.98460367
+            ]
+          ]
+        },
+        {
+          "type": "LineString",
+          "coordinates": [
+            [
+              8.30754956,
+              48.98072241
+            ],
+            [
+              8.30855575,
+              48.98010998
             ]
           ]
         },
