@@ -25,7 +25,11 @@ CREATE TABLE IF NOT EXISTS subscriptions (
 CREATE INDEX IF NOT EXISTS subscriptions_updated_at
   ON subscriptions (updated_at);
 
+-- One row per data run that was picked up for a push fan-out. `completed_at`
+-- stays NULL until the sender reports that it walked every subscription, so an
+-- interrupted run can be reclaimed instead of silently skipping the remainder.
 CREATE TABLE IF NOT EXISTS broadcasts (
   fetched_at TEXT PRIMARY KEY,
-  created_at INTEGER NOT NULL
+  created_at INTEGER NOT NULL,
+  completed_at INTEGER
 );

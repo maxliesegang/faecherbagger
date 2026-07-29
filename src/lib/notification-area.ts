@@ -57,7 +57,7 @@ export function isPointInNotificationArea(
  * An area is required. A subscription without one is not notifiable at all, and
  * the caller has to treat that as its own case rather than receive everything.
  */
-export function findNewConstructionSitesInArea(
+export function selectNotifiableConstructionSites(
   constructionSites: readonly ConstructionSite[],
   addedIds: ReadonlySet<string>,
   area: NotificationArea,

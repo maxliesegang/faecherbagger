@@ -29,12 +29,19 @@ npm run push:secrets:setup
 npm run push:github:setup
 ```
 
-For an existing database created before radius filtering, apply the migration
-once before deploying the updated Worker:
+Migrations under `migrations/` are additive and applied once, in order, **before
+the Worker that needs them is deployed** — `schema.sql` only creates missing
+tables and cannot add a column to an existing one:
 
 ```bash
+# Only for a database created before radius filtering:
 npx wrangler d1 execute faecherbagger-push --remote \
   --file=push-worker/migrations/0001_notification_radius.sql \
+  --config=push-worker/wrangler.jsonc
+
+# Required for the broadcast completion tracking:
+npx wrangler d1 execute faecherbagger-push --remote \
+  --file=push-worker/migrations/0002_broadcast_completion.sql \
   --config=push-worker/wrangler.jsonc
 ```
 
@@ -74,9 +81,19 @@ allows the Vite origin.
 - `POST /subscriptions` — creates or refreshes a browser subscription and
   optionally stores `{ preferences: { center: [longitude, latitude],
   radiusKm } }`.
-- `DELETE /subscriptions` — removes a browser subscription.
+- `DELETE /subscriptions` — removes a browser subscription. A browser must
+  prove possession by sending the subscription's `auth` key alongside the
+  endpoint, so knowing an endpoint URL alone cannot unsubscribe someone else's
+  device. The administrator token skips the proof, because the fan-out prunes
+  endpoints the push service has rejected and holds no key for them.
 - `GET /subscriptions` — administrator-only cursor-paginated export.
-- `POST /broadcasts/claim` — administrator-only idempotency claim.
+- `POST /broadcasts/claim` — administrator-only claim of one data run for one
+  sender. A run that was claimed but never completed becomes claimable again
+  after 30 minutes, so a fan-out that died half-way is retried instead of
+  leaving the remaining subscriptions unnotified.
+- `POST /broadcasts/complete` — administrator-only; the sender reports that it
+  walked every subscription. Individual delivery failures do not reopen a
+  broadcast, because a retry would notify the devices that already received it.
 
 Only endpoint URLs and their Web Push encryption keys are stored. There are no
 user accounts or analytics identifiers.

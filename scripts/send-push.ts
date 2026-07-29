@@ -6,7 +6,7 @@ import type {
   ConstructionSiteMetadata,
   NotificationArea,
 } from "../src/types/index.ts";
-import { findNewConstructionSitesInArea } from "../src/lib/notification-area.ts";
+import { selectNotifiableConstructionSites } from "../src/lib/notification-area.ts";
 import { formatISODate } from "../src/lib/construction-site-labels.ts";
 
 interface StoredSubscription {
@@ -69,7 +69,9 @@ if (!claimResponse.ok) {
 }
 const claim = (await claimResponse.json()) as { claimed?: boolean };
 if (!claim.claimed) {
-  console.log(`Broadcast for ${metadata.fetchedAt} was already sent.`);
+  console.log(
+    `Broadcast for ${metadata.fetchedAt} was already sent or is still running.`,
+  );
   process.exit(0);
 }
 
@@ -87,6 +89,9 @@ let outsideArea = 0;
 let removed = 0;
 let failed = 0;
 
+// Any throw from here on leaves the broadcast claimed but uncompleted, so the
+// next run may reclaim it and finish the fan-out instead of skipping the data
+// run entirely.
 while (cursor !== null) {
   const page = await getPage(cursor);
   await mapWithConcurrency(page.subscriptions, 20, async (subscription) => {
@@ -95,7 +100,7 @@ while (cursor !== null) {
       outsideArea += 1;
       return;
     }
-    const matchingSites = findNewConstructionSitesInArea(
+    const matchingSites = selectNotifiableConstructionSites(
       constructionSites,
       addedIds,
       area,
@@ -152,6 +157,11 @@ while (cursor !== null) {
   cursor = page.nextCursor;
 }
 
+// Every subscription was visited. Individual delivery failures are recorded
+// above and must not reopen the broadcast: a retry would notify every device
+// that already received it.
+await completeBroadcast(metadata.fetchedAt);
+
 console.log(
   `Push broadcast complete: ${sent} sent, ${outsideArea} without an area or matches, ` +
     `${removed} expired removed, ${failed} failed.`,
@@ -170,6 +180,23 @@ async function getPage(pageCursor: string): Promise<SubscriptionPage> {
     throw new Error(`Could not read subscriptions: ${response.status}`);
   }
   return (await response.json()) as SubscriptionPage;
+}
+
+async function completeBroadcast(fetchedAt: string) {
+  const response = await fetch(`${apiURL}/broadcasts/complete`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ fetchedAt }),
+  });
+  if (!response.ok) {
+    // The fan-out itself succeeded; failing here would only make the workflow
+    // look broken. The claim stays open and a later run can reclaim it, which
+    // the notification tag makes tolerable.
+    console.warn(
+      `Could not mark the broadcast as completed: ${response.status}. ` +
+        "It may be re-sent by a later run.",
+    );
+  }
 }
 
 async function deleteSubscription(endpoint: string) {

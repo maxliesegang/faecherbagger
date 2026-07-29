@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   isNotificationArea,
-  findNewConstructionSitesInArea,
+  selectNotifiableConstructionSites,
   isPointInNotificationArea,
 } from "../src/lib/notification-area.ts";
 import {
@@ -78,7 +78,7 @@ describe("notification area", () => {
     const unchanged = createConstructionSite("unchanged", [8.42, 49.01]);
 
     expect(
-      findNewConstructionSitesInArea(
+      selectNotifiableConstructionSites(
         [nearby, farAway, unchanged],
         new Set(["nearby", "far"]),
         area,

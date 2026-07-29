@@ -1,4 +1,7 @@
-import { isNotificationArea } from "../../src/lib/notification-area-validation.ts";
+import {
+  isNotificationArea,
+  roundNotificationCenter,
+} from "../../src/lib/notification-area-validation.ts";
 
 interface PushSubscriptionRequest {
   endpoint?: string;
@@ -55,20 +58,29 @@ function createCorsHeaders(origin: string | null): HeadersInit {
     : {};
 }
 
-async function hasAdminAccess(request: Request, env: Env) {
-  const authorization = request.headers.get("authorization");
-  if (!authorization?.startsWith("Bearer ") || !env.ADMIN_TOKEN) return false;
+/**
+ * Constant-time comparison of two secrets of any length. `timingSafeEqual`
+ * requires equal-length inputs, so both sides are hashed first: the digests are
+ * always 32 bytes and reveal nothing about the originals.
+ */
+async function isEqualSecret(provided: string, expected: string) {
   const encoder = new TextEncoder();
   const [providedHash, expectedHash] = await Promise.all([
-    crypto.subtle.digest(
-      "SHA-256",
-      encoder.encode(authorization.slice("Bearer ".length)),
-    ),
-    crypto.subtle.digest("SHA-256", encoder.encode(env.ADMIN_TOKEN)),
+    crypto.subtle.digest("SHA-256", encoder.encode(provided)),
+    crypto.subtle.digest("SHA-256", encoder.encode(expected)),
   ]);
   return crypto.subtle.timingSafeEqual(
     new Uint8Array(providedHash),
     new Uint8Array(expectedHash),
+  );
+}
+
+async function hasAdminAccess(request: Request, env: Env) {
+  const authorization = request.headers.get("authorization");
+  if (!authorization?.startsWith("Bearer ") || !env.ADMIN_TOKEN) return false;
+  return isEqualSecret(
+    authorization.slice("Bearer ".length),
+    env.ADMIN_TOKEN,
   );
 }
 
@@ -94,16 +106,47 @@ function isValidPushSubscription(value: PushSubscriptionRequest) {
   );
 }
 
+/**
+ * The center is rounded again here, not only in the app: the service must never
+ * store a more precise position than it needs, whatever a client sends.
+ */
 function parseNotificationPreferences(
   preferences: PushSubscriptionRequest["preferences"],
 ) {
   if (!isNotificationArea(preferences)) return null;
-  const [longitude, latitude] = preferences.center;
+  const [longitude, latitude] = roundNotificationCenter(preferences.center);
   return {
     longitude,
     latitude,
     radiusMeters: Math.round(preferences.radiusKm * 1_000),
   };
+}
+
+/**
+ * Proof that the caller holds the subscription it wants removed, not merely its
+ * endpoint URL. The `auth` secret is part of the Web Push key material that the
+ * subscribing browser owns, so presenting it is evidence of possession without
+ * introducing an account or a token the client would have to store.
+ *
+ * A request for an endpoint that is not stored counts as verified: the desired
+ * state is already reached, and answering differently would turn this endpoint
+ * into an oracle for which endpoints exist.
+ */
+async function verifySubscriptionOwnership(
+  env: Env,
+  body: { endpoint?: string; auth?: string },
+): Promise<"verified" | "malformed" | "rejected"> {
+  const { auth } = body;
+  if (typeof auth !== "string" || !auth || auth.length > MAX_KEY_LENGTH) {
+    return "malformed";
+  }
+  const stored = await env.DB.prepare(
+    "SELECT auth FROM subscriptions WHERE endpoint = ?1",
+  )
+    .bind(body.endpoint)
+    .first<{ auth: string }>();
+  if (!stored) return "verified";
+  return (await isEqualSecret(auth, stored.auth)) ? "verified" : "rejected";
 }
 
 async function parseJSONBody<T>(request: Request): Promise<T | null> {
@@ -169,20 +212,33 @@ async function handleSubscriptionRequest(
   }
 
   if (request.method === "DELETE") {
-    const body = await parseJSONBody<{ endpoint?: string }>(request);
-    if (
-      !body?.endpoint ||
-      body.endpoint.length > MAX_ENDPOINT_LENGTH ||
-      (request.headers.has("origin") &&
-        !origin &&
-        !(await hasAdminAccess(request, env)))
-    ) {
+    const body = await parseJSONBody<{ endpoint?: string; auth?: string }>(
+      request,
+    );
+    if (!body?.endpoint || body.endpoint.length > MAX_ENDPOINT_LENGTH) {
       return createJSONResponse(
         { error: "Invalid request" },
         400,
         createCorsHeaders(origin),
       );
     }
+
+    // The fan-out uses this endpoint to prune subscriptions that the push
+    // service has already rejected, and holds no `auth` key for them.
+    if (!(await hasAdminAccess(request, env))) {
+      if (request.headers.has("origin") && !origin) {
+        return createJSONResponse({ error: "Origin not allowed" }, 403);
+      }
+      const proof = await verifySubscriptionOwnership(env, body);
+      if (proof !== "verified") {
+        return createJSONResponse(
+          { error: "Invalid request" },
+          proof === "malformed" ? 400 : 403,
+          createCorsHeaders(origin),
+        );
+      }
+    }
+
     await env.DB.prepare("DELETE FROM subscriptions WHERE endpoint = ?1")
       .bind(body.endpoint)
       .run();
@@ -226,6 +282,33 @@ async function handleSubscriptionRequest(
   );
 }
 
+/**
+ * How long a claimed broadcast may stay uncompleted before another run may take
+ * it over. Long enough that a healthy fan-out is never overtaken, short enough
+ * that a crashed one is retried by the next scheduled data update.
+ */
+const BROADCAST_STALE_SECONDS = 30 * 60;
+
+function readBroadcastKey(body: { fetchedAt?: string } | null) {
+  if (
+    !body?.fetchedAt ||
+    body.fetchedAt.length > 64 ||
+    Number.isNaN(Date.parse(body.fetchedAt))
+  ) {
+    return null;
+  }
+  return body.fetchedAt;
+}
+
+/**
+ * Claims a data run for exactly one sender. A run is claimable when it has
+ * never been claimed, or when a previous claim neither completed nor was
+ * refreshed within {@link BROADCAST_STALE_SECONDS} — that second case is a
+ * sender that died mid-fan-out, whose remaining subscriptions would otherwise
+ * never be notified. Re-claiming can repeat a notification for the devices the
+ * failed run already reached; the notification tag collapses those on the
+ * device, which is the better trade against silently dropping the rest.
+ */
 async function handleBroadcastClaimRequest(request: Request, env: Env) {
   if (request.method !== "POST") {
     return createJSONResponse({ error: "Method not allowed" }, 405);
@@ -233,21 +316,50 @@ async function handleBroadcastClaimRequest(request: Request, env: Env) {
   if (!(await hasAdminAccess(request, env))) {
     return createJSONResponse({ error: "Unauthorized" }, 401);
   }
-  const body = await parseJSONBody<{ fetchedAt?: string }>(request);
-  if (
-    !body?.fetchedAt ||
-    body.fetchedAt.length > 64 ||
-    Number.isNaN(Date.parse(body.fetchedAt))
-  ) {
+  const fetchedAt = readBroadcastKey(
+    await parseJSONBody<{ fetchedAt?: string }>(request),
+  );
+  if (!fetchedAt) {
     return createJSONResponse({ error: "Invalid fetchedAt" }, 400);
   }
+
+  // One statement so two concurrent senders cannot both take the same run:
+  // the insert wins for a fresh run, the conflict branch only updates a claim
+  // that is stale, and `changes` reports whether this caller got it.
   const result = await env.DB.prepare(
-    `INSERT OR IGNORE INTO broadcasts (fetched_at, created_at)
-     VALUES (?1, unixepoch())`,
+    `INSERT INTO broadcasts (fetched_at, created_at)
+     VALUES (?1, unixepoch())
+     ON CONFLICT(fetched_at) DO UPDATE SET created_at = unixepoch()
+     WHERE broadcasts.completed_at IS NULL
+       AND broadcasts.created_at < unixepoch() - ?2`,
   )
-    .bind(body.fetchedAt)
+    .bind(fetchedAt, BROADCAST_STALE_SECONDS)
     .run();
   return createJSONResponse({ claimed: (result.meta.changes ?? 0) > 0 });
+}
+
+/** Marks a claimed fan-out as finished, so it is never reclaimed. */
+async function handleBroadcastCompleteRequest(request: Request, env: Env) {
+  if (request.method !== "POST") {
+    return createJSONResponse({ error: "Method not allowed" }, 405);
+  }
+  if (!(await hasAdminAccess(request, env))) {
+    return createJSONResponse({ error: "Unauthorized" }, 401);
+  }
+  const fetchedAt = readBroadcastKey(
+    await parseJSONBody<{ fetchedAt?: string }>(request),
+  );
+  if (!fetchedAt) {
+    return createJSONResponse({ error: "Invalid fetchedAt" }, 400);
+  }
+
+  const result = await env.DB.prepare(
+    `UPDATE broadcasts SET completed_at = unixepoch()
+     WHERE fetched_at = ?1 AND completed_at IS NULL`,
+  )
+    .bind(fetchedAt)
+    .run();
+  return createJSONResponse({ completed: (result.meta.changes ?? 0) > 0 });
 }
 
 export default {
@@ -280,6 +392,9 @@ export default {
     }
     if (url.pathname === "/broadcasts/claim") {
       return handleBroadcastClaimRequest(request, env);
+    }
+    if (url.pathname === "/broadcasts/complete") {
+      return handleBroadcastCompleteRequest(request, env);
     }
     return createJSONResponse({ error: "Not found" }, 404);
   },
