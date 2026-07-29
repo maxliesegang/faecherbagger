@@ -27,6 +27,7 @@ function createConstructionSite(overrides: Partial<ConstructionSite>): Construct
     geometry: { type: "Point", coordinates: [8.4, 49] },
     source: "Stadt Karlsruhe",
     lastModified: "2026-01-01T00:00:00Z",
+    firstSeenAt: "2026-01-01T00:00:00Z",
     ...overrides,
   };
 }
@@ -71,6 +72,7 @@ describe("sortConstructionSitesBy", () => {
     startDate: "2026-01-01",
     endDate: "2026-01-31",
     lastModified: "2026-01-01T00:00:00Z",
+    firstSeenAt: "2026-01-01T00:00:00Z",
     point: [8.4, 49],
   });
   const later = createConstructionSite({
@@ -83,6 +85,7 @@ describe("sortConstructionSitesBy", () => {
     startDate: "2026-02-01",
     endDate: null,
     lastModified: "2026-02-01T00:00:00Z",
+    firstSeenAt: "2026-02-01T00:00:00Z",
     point: [9.4, 49],
   });
 

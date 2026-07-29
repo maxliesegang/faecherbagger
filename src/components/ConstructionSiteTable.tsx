@@ -1,6 +1,6 @@
 import { useMemo, type ReactNode } from "react";
 import type { ConstructionSite, LngLat } from "../types/index.ts";
-import { distanceInMeters, formatDistance } from "../lib/distance.ts";
+import { distanceInMeters, formatDistance } from "../shared/distance.ts";
 import type {
   ConstructionSiteSort,
   ConstructionSiteSortKey,
@@ -8,7 +8,7 @@ import type {
 import {
   getConstructionCategoryLabel,
   formatConstructionPeriod,
-} from "../lib/construction-site-labels.ts";
+} from "../shared/construction-site-labels.ts";
 import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
 import {
   ClosureBadge,

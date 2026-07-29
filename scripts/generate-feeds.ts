@@ -12,7 +12,7 @@ import type {
 import {
   CONSTRUCTION_SITE_FEED_FILENAMES,
   createConstructionSiteFeeds,
-} from "../src/lib/construction-site-feeds.ts";
+} from "../src/pipeline/construction-site-feeds.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DEFAULT_APP_URL = "https://maxliesegang.github.io/faecherbagger/";

@@ -4,7 +4,7 @@ import {
   formatConstructionPeriod,
   formatISOTimestamp,
   formatRelativeDay,
-} from "../src/lib/construction-site-labels.ts";
+} from "../src/shared/construction-site-labels.ts";
 
 describe("formatISODate", () => {
   it("formats valid date-only values without a timezone conversion", () => {

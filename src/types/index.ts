@@ -2,15 +2,16 @@ export type {
   ConstructionCategory,
   ConstructionPhase,
   ConstructionSite,
-  ConstructionSiteChangeEntry,
-  ConstructionSiteChanges,
+  ConstructionSiteAdditionEntry,
+  ConstructionSiteAdditions,
   ConstructionSiteMetadata,
   ConstructionSiteMobility,
   ClosureSeverity,
   ISODate,
   ISOTimestamp,
   LngLat,
-  NotificationArea,
+  NormalizedConstructionSite,
+  HomeArea,
 } from "./construction-site.ts";
 export { CLOSURE_SEVERITY_SORT_RANK } from "./construction-site.ts";
 export type {

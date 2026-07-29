@@ -3,7 +3,7 @@ import type {
   ConstructionSite,
   ConstructionSiteMetadata,
 } from "../src/types/index.ts";
-import { createConstructionSiteFeeds } from "../src/lib/construction-site-feeds.ts";
+import { createConstructionSiteFeeds } from "../src/pipeline/construction-site-feeds.ts";
 
 const metadata: ConstructionSiteMetadata = {
   fetchedAt: "2026-07-24T18:16:58.659Z",
@@ -35,6 +35,7 @@ function createConstructionSite(
     geometry: { type: "Point", coordinates: [8.4, 49] },
     source: "Stadt Karlsruhe",
     lastModified,
+    firstSeenAt: lastModified,
   };
 }
 

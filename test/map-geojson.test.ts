@@ -1,15 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { distanceInMeters } from "../src/lib/distance.ts";
+import { distanceInMeters } from "../src/shared/distance.ts";
 import {
   createConstructionSiteGeometryFeatureCollection,
   createConstructionSitePointFeatureCollection,
-  createNotificationAreaFeatureCollection,
-  createNotificationAreaPolygon,
+  createHomeAreaFeatureCollection,
+  createHomeAreaPolygon,
   createUserLocationFeatureCollection,
 } from "../src/lib/map-geojson.ts";
 import type {
   ConstructionSite,
-  NotificationArea,
+  HomeArea,
 } from "../src/types/index.ts";
 
 const constructionSite: ConstructionSite = {
@@ -35,6 +35,7 @@ const constructionSite: ConstructionSite = {
   },
   source: "Test",
   lastModified: "2026-07-24T10:00:00Z",
+  firstSeenAt: "2026-07-24T10:00:00Z",
 };
 
 describe("map data", () => {
@@ -69,11 +70,11 @@ describe("map data", () => {
   });
 
   it("creates a closed geodesic notification polygon at the requested radius", () => {
-    const area: NotificationArea = {
+    const area: HomeArea = {
       center: [8.4044, 49.0069],
       radiusKm: 5,
     };
-    const ring = createNotificationAreaPolygon(area).coordinates[0];
+    const ring = createHomeAreaPolygon(area).coordinates[0];
 
     expect(ring).toHaveLength(65);
     expect(ring[0]).toEqual(ring.at(-1));
@@ -86,9 +87,9 @@ describe("map data", () => {
   });
 
   it("uses an empty feature collection when no area is configured", () => {
-    expect(createNotificationAreaFeatureCollection().features).toEqual([]);
+    expect(createHomeAreaFeatureCollection().features).toEqual([]);
     expect(
-      createNotificationAreaFeatureCollection({
+      createHomeAreaFeatureCollection({
         center: [8.4044, 49.0069],
         radiusKm: 5,
       }).features,

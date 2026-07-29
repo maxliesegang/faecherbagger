@@ -12,8 +12,8 @@ interface ProgressiveWebAppSettingsProps {
 
 /**
  * Secondary app-level actions: install the PWA and refresh the committed data
- * on demand. The notification settings live with the notification area in
- * {@link NotificationAreaSetup}, where the visitor decides about them.
+ * on demand. The notification settings live with the home area in
+ * {@link HomeAreaSetup}, where the visitor decides about them.
  */
 export function ProgressiveWebAppSettings({
   progressiveWebApp,

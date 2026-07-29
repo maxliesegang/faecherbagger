@@ -1,10 +1,10 @@
 import type { ConstructionSite, LngLat } from "../types/index.ts";
-import { roundNotificationCenter } from "./notification-area-validation.ts";
+import { roundHomeAreaCenter } from "../shared/home-area-validation.ts";
 
 /**
  * Mean position of the construction sites in a municipality — the fallback
  * center for visitors who cannot or do not want to share a device location.
- * Rounded like every other notification-area center, so a fallback area is
+ * Rounded like every other home-area center, so a fallback area is
  * indistinguishable from one derived from a device position.
  * Returns `undefined` when the municipality has no records in the dataset.
  */
@@ -25,5 +25,5 @@ export function getMunicipalityCenter(
 
   return count === 0
     ? undefined
-    : roundNotificationCenter([longitudeSum / count, latitudeSum / count]);
+    : roundHomeAreaCenter([longitudeSum / count, latitudeSum / count]);
 }

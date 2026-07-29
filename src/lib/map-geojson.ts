@@ -7,7 +7,7 @@ import type {
 import type {
   ConstructionSite,
   LngLat,
-  NotificationArea,
+  HomeArea,
 } from "../types/index.ts";
 
 interface ConstructionSiteFeatureProperties {
@@ -76,7 +76,7 @@ export function createUserLocationFeatureCollection(
  * Approximates a geodesic notification circle as a closed GeoJSON polygon.
  * The fixed segment count keeps rendering cost predictable at every radius.
  */
-export function createNotificationAreaPolygon(area: NotificationArea): Polygon {
+export function createHomeAreaPolygon(area: HomeArea): Polygon {
   const [longitude, latitude] = area.center;
   const angularDistance = area.radiusKm / EARTH_RADIUS_KM;
   const latitudeRadians = (latitude * Math.PI) / 180;
@@ -109,8 +109,8 @@ export function createNotificationAreaPolygon(area: NotificationArea): Polygon {
   return { type: "Polygon", coordinates: [coordinates] };
 }
 
-export function createNotificationAreaFeatureCollection(
-  area?: NotificationArea,
+export function createHomeAreaFeatureCollection(
+  area?: HomeArea,
 ): FeatureCollection<Polygon> {
   return {
     type: "FeatureCollection",
@@ -119,7 +119,7 @@ export function createNotificationAreaFeatureCollection(
           {
             type: "Feature",
             properties: {},
-            geometry: createNotificationAreaPolygon(area),
+            geometry: createHomeAreaPolygon(area),
           },
         ]
       : [],

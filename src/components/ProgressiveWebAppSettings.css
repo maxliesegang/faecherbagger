@@ -1,7 +1,7 @@
 /*
  * Set-up-once panel for installation and manual refresh, so it sits collapsed
  * in the page footer. Everything about notifications belongs to the
- * notification area and is styled in NotificationAreaSetup.css.
+ * home area and is styled in HomeAreaSetup.css.
  */
 .pwa-panel {
   max-width: none;

@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useMemo } from "react";
 import type { LngLat } from "../types/index.ts";
 
 const LOCATION_TIMEOUT_MS = 30_000;
@@ -76,7 +76,10 @@ export function useCurrentLocation() {
     [],
   );
 
-  return { locationState, requestLocation, clearLocation };
+  return useMemo(
+    () => ({ locationState, requestLocation, clearLocation }),
+    [clearLocation, locationState, requestLocation],
+  );
 }
 
 export type CurrentLocationController = ReturnType<typeof useCurrentLocation>;

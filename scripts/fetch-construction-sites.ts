@@ -1,12 +1,11 @@
 /**
  * Data pipeline: fetch the two TRK construction-site WFS layers, normalize and
- * deduplicate them, diff against the previous run, and write the static JSON
- * files the client consumes.
+ * deduplicate them, and write the static JSON files the client consumes.
  *
  * Outputs (in public/data/, so Vite ships them verbatim to the build output):
  *   public/data/baustellen.json – normalized, deduplicated, Karlsruhe-region records
  *   public/data/meta.json       – fetch timestamp, counts, source attribution
- *   public/data/changes.json    – records added / modified / removed since last run
+ *   public/data/changes.json    – records first seen inside the recent window
  *   public/baustellen.xml       – RSS 2.0 feed of current records and revisions
  *   public/baustellen.atom      – Atom 1.0 feed of current records and revisions
  *
@@ -18,20 +17,20 @@ import { fileURLToPath } from "node:url";
 import type {
   ConstructionPhase,
   ConstructionSite,
-  ConstructionSiteChanges,
   ConstructionSiteMetadata,
 } from "../src/types/index.ts";
-import { computeConstructionSiteChanges } from "../src/lib/construction-site-changes.ts";
-import { normalizeConstructionSites } from "../src/lib/construction-site-normalization.ts";
+import { assignFirstSeenAt } from "../src/pipeline/construction-site-first-seen.ts";
+import { buildConstructionSiteAdditions } from "../src/pipeline/construction-site-additions.ts";
+import { normalizeConstructionSites } from "../src/pipeline/construction-site-normalization.ts";
 import {
   CONSTRUCTION_SITE_FEED_FILENAMES,
   createConstructionSiteFeeds,
-} from "../src/lib/construction-site-feeds.ts";
+} from "../src/pipeline/construction-site-feeds.ts";
 import {
   WFS_ENDPOINT_URL,
   WFS_LAYER_NAME_BY_PHASE,
   fetchConstructionSiteLayer,
-} from "../src/lib/wfs-client.ts";
+} from "../src/pipeline/wfs-client.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_DIR = join(ROOT, "public", "data");
@@ -74,8 +73,7 @@ async function main(): Promise<void> {
       return normalizedSites;
     }),
   );
-  const constructionSites: ConstructionSite[] = sitesByPhase.flat();
-  constructionSites.sort((left, right) => left.id.localeCompare(right.id));
+  const normalizedSites = sitesByPhase.flat();
 
   if (unknownArt.size > 0) {
     console.warn(
@@ -89,20 +87,19 @@ async function main(): Promise<void> {
 
   const fetchedAt = new Date().toISOString();
 
+  // The pipeline's only memory of earlier runs: which ids we had already seen.
   const previousSites =
     (await readJSONIfExists<ConstructionSite[]>(
       join(DATA_DIR, "baustellen.json"),
     )) ?? [];
-  const previousChanges =
-    await readJSONIfExists<ConstructionSiteChanges>(
-      join(DATA_DIR, "changes.json"),
-    );
-  const changes = computeConstructionSiteChanges(
+  const constructionSites = assignFirstSeenAt(
+    normalizedSites,
     previousSites,
-    constructionSites,
-    previousChanges,
     fetchedAt,
   );
+  constructionSites.sort((left, right) => left.id.localeCompare(right.id));
+
+  const additions = buildConstructionSiteAdditions(constructionSites, fetchedAt);
   const attribution = [
     ...new Set(constructionSites.map((site) => site.source)),
   ].sort();
@@ -126,7 +123,7 @@ async function main(): Promise<void> {
 
   await writeJSON(join(DATA_DIR, "baustellen.json"), constructionSites);
   await writeJSON(join(DATA_DIR, "meta.json"), metadata);
-  await writeJSON(join(DATA_DIR, "changes.json"), changes);
+  await writeJSON(join(DATA_DIR, "changes.json"), additions);
   const feeds = createConstructionSiteFeeds(
     constructionSites,
     metadata,
@@ -147,8 +144,10 @@ async function main(): Promise<void> {
 
   console.log(
     `Wrote ${constructionSites.length} records (active ${metadata.counts.active}, ` +
-      `upcoming ${metadata.counts.upcoming}). changes: +${changes.added.length} ` +
-      `~${changes.modified.length} -${changes.removed.length}.`,
+      `upcoming ${metadata.counts.upcoming}). ${additions.added.length} first seen ` +
+      `in the last ${additions.windowDays} days, of which ` +
+      `${constructionSites.filter((site) => site.firstSeenAt === fetchedAt).length} ` +
+      `in this run.`,
   );
 }
 

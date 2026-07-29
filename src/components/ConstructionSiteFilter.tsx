@@ -10,23 +10,28 @@ import {
   CLOSURE_SEVERITIES,
   getConstructionCategoryLabel,
   getClosureLabel,
-} from "../lib/construction-site-labels.ts";
+} from "../shared/construction-site-labels.ts";
 import {
   getConstructionSiteCategoryOptions,
   getConstructionSiteMunicipalityOptions,
   hasNoConstructionSiteFilters,
   type ConstructionSiteFilters,
 } from "../lib/construction-site-filter.ts";
+import type { RecentWindowDays } from "../shared/recency.ts";
+import { RecentWindowSelect } from "./RecentWindowSelect.tsx";
 
 interface ConstructionSiteFilterProps {
   constructionSites: readonly ConstructionSite[];
   filters: ConstructionSiteFilters;
   /** Matches per phase for the current query, ignoring the phase filter. */
   phaseCounts: { total: number; active: number; upcoming: number };
-  showOnlyChanged: boolean;
-  changedCount: number;
+  showOnlyNew: boolean;
+  /** How many records fall inside the visitor's time window. */
+  recentCount: number;
+  recentWindowDays: RecentWindowDays;
   onFiltersChange: (filters: ConstructionSiteFilters) => void;
-  onShowOnlyChangedChange: (showOnlyChanged: boolean) => void;
+  onShowOnlyNewChange: (showOnlyNew: boolean) => void;
+  onWindowDaysChange: (recentWindowDays: RecentWindowDays) => void;
   onFiltersReset: () => void;
 }
 
@@ -91,10 +96,12 @@ export function ConstructionSiteFilter({
   constructionSites,
   filters,
   phaseCounts,
-  showOnlyChanged,
-  changedCount,
+  showOnlyNew,
+  recentCount,
+  recentWindowDays,
+  onWindowDaysChange,
   onFiltersChange,
-  onShowOnlyChangedChange,
+  onShowOnlyNewChange,
   onFiltersReset,
 }: ConstructionSiteFilterProps) {
   useSearchShortcut();
@@ -154,7 +161,7 @@ export function ConstructionSiteFilter({
     });
   }
   const isUnfiltered =
-    hasNoConstructionSiteFilters(filters) && !showOnlyChanged;
+    hasNoConstructionSiteFilters(filters) && !showOnlyNew;
   const countForPhase = (phase: ConstructionPhase | "") =>
     phase === "" ? phaseCounts.total : phaseCounts[phase];
 
@@ -209,13 +216,21 @@ export function ConstructionSiteFilter({
       <button
         type="button"
         className="filter-panel__scope"
-        aria-pressed={showOnlyChanged}
-        disabled={changedCount === 0 && !showOnlyChanged}
-        onClick={() => onShowOnlyChangedChange(!showOnlyChanged)}
+        aria-pressed={showOnlyNew}
+        disabled={recentCount === 0 && !showOnlyNew}
+        onClick={() => onShowOnlyNewChange(!showOnlyNew)}
       >
-        Nur neu oder geändert
-        <span className="filter-panel__scope-count">{changedCount}</span>
+        Nur neue Baustellen
+        <span className="filter-panel__scope-count">{recentCount}</span>
       </button>
+
+      {showOnlyNew && (
+        <RecentWindowSelect
+          recentWindowDays={recentWindowDays}
+          onWindowDaysChange={onWindowDaysChange}
+          label="Zeitraum für neue Baustellen"
+        />
+      )}
 
       {activeChips.length > 0 && (
         <ul className="filter-chips" aria-label="Aktive Filter">

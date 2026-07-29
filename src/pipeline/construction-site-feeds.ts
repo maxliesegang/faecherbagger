@@ -8,7 +8,7 @@ import {
   getClosureLabel,
   formatConstructionPeriod,
   getConstructionPhaseLabel,
-} from "./construction-site-labels.ts";
+} from "../shared/construction-site-labels.ts";
 
 export const CONSTRUCTION_SITE_FEED_FILENAMES = {
   rss: "baustellen.xml",

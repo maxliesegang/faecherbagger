@@ -5,12 +5,12 @@ import type {
 import type {
   ConstructionSite,
   LngLat,
-  NotificationArea,
+  HomeArea,
 } from "../types/index.ts";
 import {
   createConstructionSiteGeometryFeatureCollection,
   createConstructionSitePointFeatureCollection,
-  createNotificationAreaFeatureCollection,
+  createHomeAreaFeatureCollection,
   createUserLocationFeatureCollection,
 } from "./map-geojson.ts";
 
@@ -18,12 +18,12 @@ export const MAP_SOURCE_IDS = {
   points: "baustellen-points",
   geometries: "baustellen-geometries",
   userLocation: "user-location",
-  notificationArea: "notification-area",
+  homeArea: "home-area",
 } as const;
 
 export const MAP_LAYER_IDS = {
-  notificationAreaFill: "notification-area-fill",
-  notificationAreaLine: "notification-area-line",
+  homeAreaFill: "home-area-fill",
+  homeAreaLine: "home-area-line",
   areaFill: "baustellen-area-fill",
   geometryLine: "baustellen-geometry-line",
   geometryPoints: "baustellen-geometry-points",
@@ -34,7 +34,7 @@ export const MAP_LAYER_IDS = {
 interface InitialConstructionSiteMapData {
   constructionSites: readonly ConstructionSite[];
   currentLocation?: LngLat;
-  notificationArea?: NotificationArea;
+  homeArea?: HomeArea;
 }
 
 const CONSTRUCTION_PHASE_COLOR: ExpressionSpecification = [
@@ -69,26 +69,26 @@ export function addConstructionSiteMapLayers(
     type: "geojson",
     data: createUserLocationFeatureCollection(initialData.currentLocation),
   });
-  map.addSource(MAP_SOURCE_IDS.notificationArea, {
+  map.addSource(MAP_SOURCE_IDS.homeArea, {
     type: "geojson",
-    data: createNotificationAreaFeatureCollection(
-      initialData.notificationArea,
+    data: createHomeAreaFeatureCollection(
+      initialData.homeArea,
     ),
   });
 
   map.addLayer({
-    id: MAP_LAYER_IDS.notificationAreaFill,
+    id: MAP_LAYER_IDS.homeAreaFill,
     type: "fill",
-    source: MAP_SOURCE_IDS.notificationArea,
+    source: MAP_SOURCE_IDS.homeArea,
     paint: {
       "fill-color": "#2459a9",
       "fill-opacity": 0.035,
     },
   });
   map.addLayer({
-    id: MAP_LAYER_IDS.notificationAreaLine,
+    id: MAP_LAYER_IDS.homeAreaLine,
     type: "line",
-    source: MAP_SOURCE_IDS.notificationArea,
+    source: MAP_SOURCE_IDS.homeArea,
     paint: {
       "line-color": "#2459a9",
       "line-width": 1,

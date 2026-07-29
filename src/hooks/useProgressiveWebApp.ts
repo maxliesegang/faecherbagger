@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useMemo } from "react";
 
 const REFRESH_TAG = "refresh-baustellen";
 const REFRESH_INTERVAL_MS = 12 * 60 * 60 * 1000;
@@ -102,13 +102,22 @@ export function useProgressiveWebApp() {
     postMessageToServiceWorker({ type: "REFRESH_DATA" });
   }, []);
 
-  return {
-    isInstalled,
-    canInstall: Boolean(installPrompt) && !isInstalled,
-    installMessage,
-    promptInstallation,
-    requestDataRefresh,
-  };
+  return useMemo(
+    () => ({
+      isInstalled,
+      canInstall: Boolean(installPrompt) && !isInstalled,
+      installMessage,
+      promptInstallation,
+      requestDataRefresh,
+    }),
+    [
+      installMessage,
+      installPrompt,
+      isInstalled,
+      promptInstallation,
+      requestDataRefresh,
+    ],
+  );
 }
 
 export type ProgressiveWebAppController = ReturnType<

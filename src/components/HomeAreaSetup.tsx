@@ -5,34 +5,19 @@ import {
   KernSelect,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import type { ConstructionSite, NotificationArea } from "../types/index.ts";
+import { useDataset } from "../context/DatasetContext.tsx";
+import { usePersonal } from "../context/PersonalContext.tsx";
 import {
-  DEFAULT_NOTIFICATION_RADIUS_KM,
-  MAX_NOTIFICATION_RADIUS_KM,
-  MIN_NOTIFICATION_RADIUS_KM,
-} from "../lib/notification-area.ts";
-import { roundNotificationCenter } from "../lib/notification-area.ts";
+  DEFAULT_HOME_AREA_RADIUS_KM,
+  MAX_HOME_AREA_RADIUS_KM,
+  MIN_HOME_AREA_RADIUS_KM,
+} from "../shared/home-area.ts";
+import { roundHomeAreaCenter } from "../shared/home-area.ts";
 import { getConstructionSiteMunicipalityOptions } from "../lib/construction-site-filter.ts";
 import { getMunicipalityCenter } from "../lib/municipality-center.ts";
-import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
-import {
-  canOfferPushNotifications,
-  type PushNotificationController,
-} from "../hooks/usePushNotifications.ts";
+import { canOfferPushNotifications } from "../hooks/usePushNotifications.ts";
 import { isIosDevice } from "../hooks/useProgressiveWebApp.ts";
-import "./NotificationAreaSetup.css";
-
-interface NotificationAreaSetupProps {
-  /** Source for the municipality fallback when no device location is shared. */
-  constructionSites: readonly ConstructionSite[];
-  notificationArea: NotificationArea | null;
-  onNotificationAreaChange: (area: NotificationArea) => void;
-  onNotificationAreaClear: () => void;
-  locationController: CurrentLocationController;
-  pushController: PushNotificationController;
-  /** iOS only exposes Web Push to an installed app. */
-  isInstalled: boolean;
-}
+import "./HomeAreaSetup.css";
 
 /**
  * Defines the area the app watches: a center — from the device location or,
@@ -40,17 +25,19 @@ interface NotificationAreaSetupProps {
  * switches the notifications for that area on and off, because for the visitor
  * these are one decision ("melde mir Baustellen hier").
  */
-export function NotificationAreaSetup({
-  constructionSites,
-  notificationArea,
-  onNotificationAreaChange,
-  onNotificationAreaClear,
-  locationController,
-  pushController,
-  isInstalled,
-}: NotificationAreaSetupProps) {
+export function HomeAreaSetup() {
+  const { constructionSites } = useDataset();
+  const {
+    area: homeArea,
+    setArea: onHomeAreaChange,
+    clearArea: onHomeAreaClear,
+    location: locationController,
+    push: pushController,
+    isInstalled,
+  } = usePersonal();
+
   const [radiusKm, setRadiusKm] = useState(
-    notificationArea?.radiusKm ?? DEFAULT_NOTIFICATION_RADIUS_KM,
+    homeArea?.radiusKm ?? DEFAULT_HOME_AREA_RADIUS_KM,
   );
   const [municipality, setMunicipality] = useState("");
   const municipalities = useMemo(
@@ -62,13 +49,13 @@ export function NotificationAreaSetup({
   const isRequestingLocation =
     locationController.locationState.status === "requesting";
   const hasUnsavedRadius =
-    notificationArea !== null && notificationArea.radiusKm !== radiusKm;
+    homeArea !== null && homeArea.radiusKm !== radiusKm;
 
   const useCurrentLocationAsCenter = async () => {
     try {
       const point = await locationController.requestLocation();
-      onNotificationAreaChange({
-        center: roundNotificationCenter(point),
+      onHomeAreaChange({
+        center: roundHomeAreaCenter(point),
         radiusKm,
       });
       setFeedbackMessage(
@@ -91,18 +78,18 @@ export function NotificationAreaSetup({
       setFeedbackMessage("Bitte wählen Sie zuerst einen Ort aus.");
       return;
     }
-    onNotificationAreaChange({ center, radiusKm });
+    onHomeAreaChange({ center, radiusKm });
     setFeedbackMessage(`Gebiet gespeichert: ${radiusKm} km um ${municipality}.`);
   };
 
   const saveRadius = () => {
-    if (!notificationArea) return;
-    onNotificationAreaChange({ ...notificationArea, radiusKm });
+    if (!homeArea) return;
+    onHomeAreaChange({ ...homeArea, radiusKm });
     setFeedbackMessage(`Radius auf ${radiusKm} km geändert.`);
   };
 
   const removeArea = () => {
-    onNotificationAreaClear();
+    onHomeAreaClear();
     setFeedbackMessage("Das Gebiet wurde entfernt.");
   };
 
@@ -111,11 +98,11 @@ export function NotificationAreaSetup({
       void pushController.disableNotifications();
       return;
     }
-    if (!notificationArea) {
+    if (!homeArea) {
       setFeedbackMessage("Legen Sie zuerst Mittelpunkt und Radius fest.");
       return;
     }
-    void pushController.enableNotifications(notificationArea);
+    void pushController.enableNotifications(homeArea);
   };
 
   const canOfferNotifications = canOfferPushNotifications(
@@ -135,11 +122,11 @@ export function NotificationAreaSetup({
         <div className="area-setup__actions">
           <KernButton
             type="button"
-            variant={notificationArea ? "secondary" : "primary"}
+            variant={homeArea ? "secondary" : "primary"}
             label={
               isRequestingLocation
                 ? "Standort wird ermittelt …"
-                : notificationArea
+                : homeArea
                   ? "Standort neu bestimmen"
                   : "Meinen Standort verwenden"
             }
@@ -181,8 +168,8 @@ export function NotificationAreaSetup({
           id="area-radius"
           type="range"
           className="area-setup__radius"
-          min={MIN_NOTIFICATION_RADIUS_KM}
-          max={MAX_NOTIFICATION_RADIUS_KM}
+          min={MIN_HOME_AREA_RADIUS_KM}
+          max={MAX_HOME_AREA_RADIUS_KM}
           step="1"
           value={radiusKm}
           onChange={(event) => setRadiusKm(Number(event.currentTarget.value))}
@@ -235,7 +222,7 @@ export function NotificationAreaSetup({
         )}
       </fieldset>
 
-      {notificationArea && (
+      {homeArea && (
         <div className="area-setup__actions area-setup__actions--footer">
           <KernButton
             type="button"

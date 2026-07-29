@@ -1,16 +1,17 @@
 import type { Geometry, Point, Position } from "geojson";
 import type {
   ConstructionPhase,
-  ConstructionSite,
   ISODate,
+  ISOTimestamp,
   LngLat,
+  NormalizedConstructionSite,
   WFSConstructionSiteFeature,
 } from "../types/index.ts";
 import {
   normalizeConstructionCategory,
   normalizeClosureSeverity,
   normalizeConstructionSiteMobility,
-} from "./construction-site-mappings.ts";
+} from "../shared/construction-site-mappings.ts";
 
 export interface ConstructionSiteNormalizationOptions {
   /** Called once per normalized record whose `art` is not in the mapping table. */
@@ -40,6 +41,23 @@ export function toBerlinDate(
   const date = new Date(timestamp);
   if (Number.isNaN(date.getTime())) return null;
   return BERLIN_DATE.format(date); // en-CA formats as YYYY-MM-DD
+}
+
+/**
+ * Canonicalizes a source timestamp to exact ISO precision (`…:38.000Z`).
+ *
+ * Everything downstream compares these as plain strings, which is only
+ * chronological when every value has the same shape: the source mixes
+ * `…:38Z` and `…:38.000Z`, and could in principle emit an offset like
+ * `+02:00`. Normalizing once here is what makes `a >= b` trustworthy
+ * everywhere else. Returns `""` for null/invalid input, as before.
+ */
+export function toISOTimestamp(
+  value: string | null | undefined,
+): ISOTimestamp {
+  if (!value) return "";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? "" : date.toISOString();
 }
 
 const ENTITIES: Record<string, string> = {
@@ -118,7 +136,11 @@ function buildGeometry(
 
 /**
  * Normalizes and deduplicates the features of a single WFS layer into
- * {@link ConstructionSite} records — one per `vorgangsnummer`.
+ * {@link NormalizedConstructionSite} records — one per `vorgangsnummer`.
+ *
+ * `firstSeenAt` is deliberately not set here: one WFS response cannot say
+ * whether a record is new. The pipeline stamps it in a separate step
+ * (`assignFirstSeenAt`).
  *
  * Alsace/France records (null `gemeinde` / null `vorgangsnummer`) are dropped
  * defensively here even though the server-side `CQL_FILTER` already excludes
@@ -128,7 +150,7 @@ export function normalizeConstructionSites(
   features: readonly WFSConstructionSiteFeature[],
   phase: ConstructionPhase,
   options: ConstructionSiteNormalizationOptions = {},
-): ConstructionSite[] {
+): NormalizedConstructionSite[] {
   const featureGroupsBySiteId = new Map<string, WFSConstructionSiteFeature[]>();
   for (const feature of features) {
     const { vorgangsnummer, gemeinde } = feature.properties;
@@ -139,7 +161,7 @@ export function normalizeConstructionSites(
     else featureGroupsBySiteId.set(vorgangsnummer, [feature]);
   }
 
-  const constructionSites: ConstructionSite[] = [];
+  const constructionSites: NormalizedConstructionSite[] = [];
   for (const [vorgangsnummer, members] of featureGroupsBySiteId) {
     const properties = members[0]!.properties;
 
@@ -183,7 +205,7 @@ export function normalizeConstructionSites(
         points.length > 0 ? points : [point],
       ),
       source: properties.datenquelle ?? "",
-      lastModified: properties.stand ?? "",
+      lastModified: toISOTimestamp(properties.stand),
     });
   }
 

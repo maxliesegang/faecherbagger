@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { distanceInMeters, formatDistance } from "../src/lib/distance.ts";
+import { distanceInMeters, formatDistance } from "../src/shared/distance.ts";
 
 describe("distanceInMeters", () => {
   it("returns zero for identical points", () => {

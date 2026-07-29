@@ -32,6 +32,7 @@ function createConstructionSite(overrides: Partial<ConstructionSite> = {}): Cons
     geometry: { type: "Point", coordinates: [8.4, 49.0] },
     source: "Stadt Karlsruhe",
     lastModified: "2026-01-01T00:00:00Z",
+    firstSeenAt: "2026-01-01T00:00:00Z",
     ...overrides,
   };
 }

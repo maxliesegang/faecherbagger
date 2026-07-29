@@ -5,48 +5,21 @@ import {
   KernHeading,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import type {
-  ConstructionSite,
-  ConstructionSiteChanges,
-  ConstructionSiteMetadata,
-  ISOTimestamp,
-  NotificationArea,
-} from "../types/index.ts";
-import type { NearbyConstructionSite } from "../lib/nearby-construction-sites.ts";
-import { CHANGES_RETENTION_DAYS } from "../lib/construction-site-changes.ts";
-import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
-import {
-  canOfferPushNotifications,
-  type PushNotificationController,
-} from "../hooks/usePushNotifications.ts";
+import { useDataset } from "../context/DatasetContext.tsx";
+import { usePersonal } from "../context/PersonalContext.tsx";
+import type { SiteSelection } from "../lib/select-sites.ts";
+import { useView } from "../context/ViewContext.tsx";
+import { canOfferPushNotifications } from "../hooks/usePushNotifications.ts";
 import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
 import { NearbyConstructionSiteList } from "./NearbyConstructionSiteList.tsx";
-import { NotificationAreaSetup } from "./NotificationAreaSetup.tsx";
+import { HomeAreaSetup } from "./HomeAreaSetup.tsx";
+import { RecentWindowSelect } from "./RecentWindowSelect.tsx";
 import "./ConstructionSiteSurroundings.css";
 
 interface ConstructionSiteSurroundingsProps {
-  /** Complete dataset; only needed for the municipality fallback in the setup. */
-  constructionSites: readonly ConstructionSite[];
-  /** Everything inside the area, nearest first. */
-  nearbyConstructionSites: readonly NearbyConstructionSite[];
-  /** The subset in the change window, newest first — the primary content. */
-  changedNearbyConstructionSites: readonly NearbyConstructionSite[];
-  /** How many of the changes the visitor has not acknowledged. */
-  unseenCount: number;
-  changes: Readonly<ConstructionSiteChanges>;
-  metadata: ConstructionSiteMetadata;
-  notificationArea: NotificationArea | null;
-  onNotificationAreaChange: (area: NotificationArea) => void;
-  onNotificationAreaClear: () => void;
-  locationController: CurrentLocationController;
-  pushController: PushNotificationController;
-  isInstalled: boolean;
-  seenAt: ISOTimestamp | null;
-  onMarkChangesSeen: () => void;
-  getSiteDetailsHref: (siteId: string) => string;
-  onShowSiteDetails: (siteId: string) => void;
-  onShowSiteOnMap: (siteId: string) => void;
-  onExploreAllConstructionSites: () => void;
+  /** Everything inside the visitor's area, derived once by the caller. */
+  surroundings: SiteSelection;
+  onMarkSitesSeen: () => void;
 }
 
 /**
@@ -55,38 +28,38 @@ interface ConstructionSiteSurroundingsProps {
  * explorer, so this view answers only "muss ich hier etwas wissen?".
  */
 export function ConstructionSiteSurroundings({
-  constructionSites,
-  nearbyConstructionSites,
-  changedNearbyConstructionSites,
-  unseenCount,
-  changes,
-  metadata,
-  notificationArea,
-  onNotificationAreaChange,
-  onNotificationAreaClear,
-  locationController,
-  pushController,
-  isInstalled,
-  seenAt,
-  onMarkChangesSeen,
-  getSiteDetailsHref,
-  onShowSiteDetails,
-  onShowSiteOnMap,
-  onExploreAllConstructionSites,
+  surroundings,
+  onMarkSitesSeen,
 }: ConstructionSiteSurroundingsProps) {
+  const { metadata } = useDataset();
+  const {
+    recentWindow,
+    setWindowDays: onWindowDaysChange,
+    getDetailHref: getSiteDetailsHref,
+    openSiteDetails: onShowSiteDetails,
+    showSiteOnMap: onShowSiteOnMap,
+    showExplorer: onExploreAllConstructionSites,
+  } = useView();
+  const {
+    area: homeArea,
+    hasAcknowledged,
+    location: locationController,
+    push: pushController,
+    isInstalled,
+  } = usePersonal();
   const [isAreaMapOpen, setIsAreaMapOpen] = useState(false);
   const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
 
   const nearbySites = useMemo(
-    () => nearbyConstructionSites.map((entry) => entry.site),
-    [nearbyConstructionSites],
+    () => surroundings.all.map((entry) => entry.site),
+    [surroundings],
   );
   const canOfferNotifications = canOfferPushNotifications(
     pushController.status,
     isInstalled,
   );
 
-  if (!notificationArea) {
+  if (!homeArea) {
     return (
       <section className="surroundings" aria-labelledby="surroundings-heading">
         <header className="surroundings__header">
@@ -101,15 +74,7 @@ export function ConstructionSiteSurroundings({
         </header>
 
         <div className="surroundings__panel surroundings__panel--onboarding">
-          <NotificationAreaSetup
-            constructionSites={constructionSites}
-            notificationArea={notificationArea}
-            onNotificationAreaChange={onNotificationAreaChange}
-            onNotificationAreaClear={onNotificationAreaClear}
-            locationController={locationController}
-            pushController={pushController}
-            isInstalled={isInstalled}
-          />
+          <HomeAreaSetup />
         </div>
 
         <p className="surroundings__explore">
@@ -132,7 +97,7 @@ export function ConstructionSiteSurroundings({
         </KernHeading>
         <p className="surroundings__scope">
           <span className="surroundings__chip">
-            Umkreis {notificationArea.radiusKm} km
+            Umkreis {homeArea.radiusKm} km
           </span>
           <span
             className={`surroundings__chip surroundings__chip--${
@@ -143,7 +108,7 @@ export function ConstructionSiteSurroundings({
             {pushController.isEnabled ? "eingeschaltet" : "aus"}
           </span>
           <span className="surroundings__chip">
-            {nearbyConstructionSites.length} Baustellen im Gebiet
+            {surroundings.all.length} Baustellen im Gebiet
           </span>
         </p>
       </header>
@@ -159,45 +124,48 @@ export function ConstructionSiteSurroundings({
             label="Benachrichtigungen einschalten"
             disabled={pushController.isBusy}
             onClick={() =>
-              void pushController.enableNotifications(notificationArea)
+              void pushController.enableNotifications(homeArea)
             }
           />
         </KernAlert>
       )}
 
       <div className="surroundings__result">
+        <RecentWindowSelect
+          recentWindowDays={recentWindow.days}
+          onWindowDaysChange={onWindowDaysChange}
+          label="Zeitraum für Baustellen in Ihrer Umgebung"
+        />
         <p
           className="surroundings__count"
           aria-live="polite"
           aria-atomic="true"
         >
-          <strong>{changedNearbyConstructionSites.length}</strong>{" "}
-          {changedNearbyConstructionSites.length === 1
-            ? "neue oder geänderte Baustelle"
-            : "neue oder geänderte Baustellen"}{" "}
-          in den letzten {CHANGES_RETENTION_DAYS} Tagen
-          {unseenCount > 0 && (
+          <strong>{surroundings.recent.length}</strong>{" "}
+          {surroundings.recent.length === 1
+            ? "neue Baustelle"
+            : "neue Baustellen"}
+          {surroundings.unseenCount > 0 && (
             <span className="surroundings__unseen">
-              {unseenCount}{" "}
-              {seenAt === null ? "davon ungelesen" : "seit Ihrem letzten Besuch"}
+              {surroundings.unseenCount}{" "}
+              {hasAcknowledged ? "seit Ihrem letzten Besuch" : "davon ungelesen"}
             </span>
           )}
         </p>
-        {unseenCount > 0 && (
+        {surroundings.unseenCount > 0 && (
           <KernButton
             type="button"
             variant="tertiary"
             label="Als gelesen markieren"
-            onClick={onMarkChangesSeen}
+            onClick={onMarkSitesSeen}
           />
         )}
       </div>
 
-      {changedNearbyConstructionSites.length > 0 ? (
+      {surroundings.recent.length > 0 ? (
         <NearbyConstructionSiteList
-          nearbyConstructionSites={changedNearbyConstructionSites}
-          seenAt={seenAt}
-          label="Neue und geänderte Baustellen in Ihrer Umgebung"
+          scopedSites={surroundings.recent}
+          label="Neue Baustellen in Ihrer Umgebung"
           getSiteDetailsHref={getSiteDetailsHref}
           onShowSiteDetails={onShowSiteDetails}
           onShowSiteOnMap={onShowSiteOnMap}
@@ -205,9 +173,7 @@ export function ConstructionSiteSurroundings({
       ) : (
         <KernAlert variant="success" title="Nichts Neues in Ihrer Umgebung">
           <KernText>
-            {changes.since === null
-              ? "Für diesen Datenstand liegt noch kein Vergleich mit einem früheren Abruf vor."
-              : `In den letzten ${CHANGES_RETENTION_DAYS} Tagen ist im Umkreis von ${notificationArea.radiusKm} km keine Baustelle hinzugekommen.`}
+            {`Im Umkreis von ${homeArea.radiusKm} km ist in diesem Zeitraum keine neue Baustelle dazugekommen.`}
           </KernText>
         </KernAlert>
       )}
@@ -229,7 +195,7 @@ export function ConstructionSiteSurroundings({
                   ? locationController.locationState.point
                   : undefined
               }
-              notificationArea={notificationArea}
+              homeArea={homeArea}
               onSiteSelect={setMapSelectedSiteId}
               getSiteDetailsHref={getSiteDetailsHref}
               onSiteDetailsRequest={onShowSiteDetails}
@@ -242,14 +208,13 @@ export function ConstructionSiteSurroundings({
       <details className="kern-accordion surroundings__section">
         <summary className="kern-accordion__header">
           <span className="kern-title">
-            Alle {nearbyConstructionSites.length} Baustellen im Gebiet
+            Alle {surroundings.all.length} Baustellen im Gebiet
           </span>
         </summary>
         <section className="kern-accordion__body">
-          {nearbyConstructionSites.length > 0 ? (
+          {surroundings.all.length > 0 ? (
             <NearbyConstructionSiteList
-              nearbyConstructionSites={nearbyConstructionSites}
-              seenAt={seenAt}
+              scopedSites={surroundings.all}
               label="Alle Baustellen in Ihrer Umgebung"
               getSiteDetailsHref={getSiteDetailsHref}
               onShowSiteDetails={onShowSiteDetails}
@@ -269,15 +234,7 @@ export function ConstructionSiteSurroundings({
           <span className="kern-title">Gebiet und Benachrichtigungen</span>
         </summary>
         <section className="kern-accordion__body">
-          <NotificationAreaSetup
-            constructionSites={constructionSites}
-            notificationArea={notificationArea}
-            onNotificationAreaChange={onNotificationAreaChange}
-            onNotificationAreaClear={onNotificationAreaClear}
-            locationController={locationController}
-            pushController={pushController}
-            isInstalled={isInstalled}
-          />
+          <HomeAreaSetup />
         </section>
       </details>
 

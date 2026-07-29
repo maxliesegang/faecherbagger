@@ -46,11 +46,9 @@ async function refreshConstructionSiteData() {
     ? ((await cachedMetadata.clone().json()) as { fetchedAt?: string }).fetchedAt
     : undefined;
 
-  const urls = [
-    metadataURL,
-    getDataURL("baustellen.json"),
-    getDataURL("changes.json"),
-  ];
+  // changes.json is deliberately absent: it exists for the push pipeline, and
+  // the app derives its own time window from baustellen.json.
+  const urls = [metadataURL, getDataURL("baustellen.json")];
   const responses = await Promise.all(
     urls.map((url) => fetch(url, { cache: "no-store" })),
   );

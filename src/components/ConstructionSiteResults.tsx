@@ -1,44 +1,24 @@
 import { useMemo } from "react";
 import { KernAlert, KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
-import type {
-  ConstructionSite,
-  ConstructionSiteChanges,
-  LngLat,
-  NotificationArea,
-} from "../types/index.ts";
-import {
-  filterConstructionSites,
-  type ConstructionSiteFilters,
-} from "../lib/construction-site-filter.ts";
+import { usePersonal } from "../context/PersonalContext.tsx";
+import { useView } from "../context/ViewContext.tsx";
+import type { SiteSelection } from "../lib/select-sites.ts";
 import {
   CONSTRUCTION_SITE_SORT_PRESETS,
   serializeConstructionSiteSort,
   parseConstructionSiteSort,
   sortConstructionSitesBy,
   sortConstructionSitesByDefaultOrder,
-  type ConstructionSiteSort,
 } from "../lib/construction-site-sort.ts";
-import type { ConstructionSiteResultView } from "../lib/url-state.ts";
-import { CHANGES_RETENTION_DAYS } from "../lib/construction-site-changes.ts";
+import { getRecentWindowLabel } from "../shared/construction-site-labels.ts";
 import { ConstructionSiteTable } from "./ConstructionSiteTable.tsx";
 import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
 
 interface ConstructionSiteResultsProps {
-  constructionSites: readonly ConstructionSite[];
-  changes: Readonly<ConstructionSiteChanges>;
-  changedSiteIds: ReadonlySet<string>;
-  filters: Readonly<ConstructionSiteFilters>;
-  showOnlyChanged: boolean;
-  view: ConstructionSiteResultView;
-  onViewChange: (view: ConstructionSiteResultView) => void;
-  sort: ConstructionSiteSort | null;
-  onSortChange: (sort: ConstructionSiteSort | null) => void;
-  selectedSiteId?: string;
-  onSelectedSiteIdChange: (siteId: string | undefined) => void;
-  getDetailHref: (siteId: string) => string;
-  onDetailOpen: (siteId: string) => void;
-  currentLocation?: LngLat;
-  notificationArea?: NotificationArea;
+  /** Already scoped and filtered upstream; this component only orders it. */
+  selection: SiteSelection;
+  /** Size of the unscoped dataset, for the "N von M" count. */
+  totalCount: number;
 }
 
 /**
@@ -47,32 +27,28 @@ interface ConstructionSiteResultsProps {
  * and the map-to-list handoff share the same order.
  */
 export function ConstructionSiteResults({
-  constructionSites,
-  changes,
-  changedSiteIds,
-  filters,
-  showOnlyChanged,
-  view,
-  onViewChange,
-  sort,
-  onSortChange,
-  selectedSiteId,
-  onSelectedSiteIdChange,
-  getDetailHref,
-  onDetailOpen,
-  currentLocation,
-  notificationArea,
+  selection,
+  totalCount,
 }: ConstructionSiteResultsProps) {
-  const filteredConstructionSites = useMemo(
-    () => filterConstructionSites(constructionSites, filters),
-    [constructionSites, filters],
-  );
+  const { currentLocation, area } = usePersonal();
+  const {
+    recentWindow,
+    query,
+    view,
+    setView: onViewChange,
+    sort,
+    setSort: onSortChange,
+    mapSelectedSiteId: selectedSiteId,
+    setMapSelectedSiteId: onSelectedSiteIdChange,
+    getDetailHref,
+    openSiteDetails: onDetailOpen,
+  } = useView();
+  const { since, days: recentWindowDays } = recentWindow;
+  const showOnlyNew = query.onlyRecent;
+  const homeArea = area ?? undefined;
   const displayedConstructionSites = useMemo(
-    () =>
-      showOnlyChanged
-        ? filteredConstructionSites.filter((site) => changedSiteIds.has(site.id))
-        : filteredConstructionSites,
-    [changedSiteIds, filteredConstructionSites, showOnlyChanged],
+    () => selection.visible.map((entry) => entry.site),
+    [selection.visible],
   );
 
   // A distance sort is meaningless without a location, so fall back silently
@@ -109,10 +85,10 @@ export function ConstructionSiteResults({
         </KernHeading>
         <p className="results__count" aria-live="polite" aria-atomic="true">
           <strong>{displayedConstructionSites.length}</strong>
-          {displayedConstructionSites.length === constructionSites.length
+          {displayedConstructionSites.length === totalCount
             ? " Baustellen"
-            : ` von ${constructionSites.length} Baustellen`}
-          {showOnlyChanged && " · neu oder geändert"}
+            : ` von ${totalCount} Baustellen`}
+          {showOnlyNew && " · neu"}
         </p>
 
         <div className="results__controls">
@@ -169,14 +145,10 @@ export function ConstructionSiteResults({
         </div>
       </div>
 
-      {showOnlyChanged && changes.since !== null && (
+      {showOnlyNew && (
         <KernText muted className="results__change-summary">
-          Letzte {CHANGES_RETENTION_DAYS} Tage (seit{" "}
-          {new Date(changes.since).toLocaleString("de-DE")})
-          : {changes.added.length} neu, {changes.modified.length} geändert
-          {changes.removed.length > 0 &&
-            `, ${changes.removed.length} nicht mehr gelistet`}
-          .
+          Baustellen, die seit {new Date(since).toLocaleString("de-DE")} neu
+          hinzugekommen sind.
         </KernText>
       )}
 
@@ -188,7 +160,7 @@ export function ConstructionSiteResults({
             constructionSites={displayedConstructionSites}
             selectedSiteId={selectedSiteId}
             currentLocation={currentLocation}
-            notificationArea={notificationArea}
+            homeArea={homeArea}
             onSiteSelect={onSelectedSiteIdChange}
             getSiteDetailsHref={getDetailHref}
             onSiteDetailsRequest={onDetailOpen}
@@ -212,17 +184,15 @@ export function ConstructionSiteResults({
         <KernAlert
           variant="info"
           title={
-            showOnlyChanged
-              ? "Keine neuen oder geänderten Baustellen"
+            showOnlyNew
+              ? "Keine neuen Baustellen"
               : "Keine passenden Baustellen"
           }
         >
           <KernText>
-            {showOnlyChanged && changes.since === null
-              ? "Für diesen Datenstand liegt noch kein vorheriger Vergleich vor."
-              : showOnlyChanged
-                ? `In den letzten ${CHANGES_RETENTION_DAYS} Tagen gibt es für die gewählten Filter keine Änderungen.`
-                : "Ändern Sie Ihre Suche oder löschen Sie die gewählten Filter."}
+            {showOnlyNew
+              ? `In den letzten ${getRecentWindowLabel(recentWindowDays)} ist für die gewählten Filter keine Baustelle dazugekommen.`
+              : "Ändern Sie Ihre Suche oder löschen Sie die gewählten Filter."}
           </KernText>
         </KernAlert>
       )}

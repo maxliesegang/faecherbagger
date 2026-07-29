@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import type { NotificationArea } from "../types/index.ts";
+import { useCallback, useEffect, useRef, useState, useMemo } from "react";
+import type { HomeArea } from "../types/index.ts";
 import { readStoredText, writeStoredText } from "../lib/browser-storage.ts";
 import {
   getPushSubscription,
@@ -61,7 +61,7 @@ export function usePushNotifications() {
 
   // The mount-time re-subscription must use the area that is current when the
   // service worker becomes ready, without re-running this effect on every edit.
-  const notificationAreaRef = useRef<NotificationArea | null>(null);
+  const homeAreaRef = useRef<HomeArea | null>(null);
 
   const rememberEnabled = (enabled: boolean) => {
     writeStoredText(NOTIFICATIONS_STORAGE_KEY, String(enabled));
@@ -78,7 +78,7 @@ export function usePushNotifications() {
         // Re-sending the subscription refreshes the stored area after a data
         // reset on the service, and keeps the expiry-based cleanup accurate.
         if (subscription && isPushConfigured) {
-          await subscribeToPush(notificationAreaRef.current ?? undefined);
+          await subscribeToPush(homeAreaRef.current ?? undefined);
         }
         if (isMounted) rememberEnabled(Boolean(subscription));
       } catch {
@@ -92,12 +92,12 @@ export function usePushNotifications() {
   }, []);
 
   /** Keeps the ref in step; called by the owner of the area state. */
-  const trackNotificationArea = useCallback((area: NotificationArea | null) => {
-    notificationAreaRef.current = area;
+  const trackHomeArea = useCallback((area: HomeArea | null) => {
+    homeAreaRef.current = area;
   }, []);
 
   const enableNotifications = useCallback(
-    async (area: NotificationArea): Promise<boolean> => {
+    async (area: HomeArea): Promise<boolean> => {
       if (!("Notification" in window)) return false;
       setIsBusy(true);
       try {
@@ -156,8 +156,8 @@ export function usePushNotifications() {
    * Pushes a changed area to the service. Does nothing when notifications are
    * off — the area is stored locally and sent along when they are switched on.
    */
-  const syncNotificationArea = useCallback(
-    async (area: NotificationArea) => {
+  const syncHomeArea = useCallback(
+    async (area: HomeArea) => {
       if (!isEnabled) return;
       await updatePushPreferences(area);
     },
@@ -174,17 +174,29 @@ export function usePushNotifications() {
           ? "enabled"
           : "disabled";
 
-  return {
-    status,
-    isEnabled,
-    isBusy,
-    feedbackMessage,
-    setFeedbackMessage,
-    trackNotificationArea,
-    enableNotifications,
-    disableNotifications,
-    syncNotificationArea,
-  };
+  return useMemo(
+    () => ({
+      status,
+      isEnabled,
+      isBusy,
+      feedbackMessage,
+      setFeedbackMessage,
+      trackHomeArea,
+      enableNotifications,
+      disableNotifications,
+      syncHomeArea,
+    }),
+    [
+      disableNotifications,
+      enableNotifications,
+      feedbackMessage,
+      isBusy,
+      isEnabled,
+      status,
+      syncHomeArea,
+      trackHomeArea,
+    ],
+  );
 }
 
 export type PushNotificationController = ReturnType<

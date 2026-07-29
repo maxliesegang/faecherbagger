@@ -5,6 +5,13 @@ import {
   serializeAppURLState,
   type AppURLState,
 } from "../src/lib/url-state.ts";
+import type { SiteQuery } from "../src/lib/site-scope.ts";
+
+/** A state at its defaults apart from the query fields named here. */
+const withQuery = (query: Partial<SiteQuery>): AppURLState => ({
+  ...DEFAULT_APP_URL_STATE,
+  query: { ...DEFAULT_APP_URL_STATE.query, ...query },
+});
 
 describe("parseAppURLState", () => {
   it("returns the defaults for an empty query", () => {
@@ -17,20 +24,23 @@ describe("parseAppURLState", () => {
   it("reads every supported parameter", () => {
     const state = parseAppURLState(
       "?bereich=alle&q=Hauptstra%C3%9Fe&ort=Karlsruhe&status=upcoming&art=sewer" +
-        "&sperrung=full&neu=1&ansicht=liste&sortierung=period%3Adescending" +
-        "&baustelle=2026V1",
+        "&sperrung=full&neu=1&seit=30t&ansicht=liste" +
+        "&sortierung=period%3Adescending&baustelle=2026V1",
     );
 
     expect(state).toEqual({
       section: "explorer",
-      filters: {
-        search: "Hauptstraße",
-        municipality: "Karlsruhe",
-        phase: "upcoming",
-        category: "sewer",
-        closure: "full",
+      query: {
+        filters: {
+          search: "Hauptstraße",
+          municipality: "Karlsruhe",
+          phase: "upcoming",
+          category: "sewer",
+          closure: "full",
+        },
+        onlyRecent: true,
+        windowDays: 30,
       },
-      showOnlyChanged: true,
       view: "list",
       sort: { key: "period", direction: "descending" },
       detailSiteId: "2026V1",
@@ -43,11 +53,12 @@ describe("parseAppURLState", () => {
         "&ansicht=galerie&sortierung=lage%3Aseitwaerts",
     );
 
-    expect(state.filters.phase).toBe("");
-    expect(state.filters.category).toBe("");
-    expect(state.filters.closure).toBe("");
+    expect(state.query.filters.phase).toBe("");
+    expect(state.query.filters.category).toBe("");
+    expect(state.query.filters.closure).toBe("");
     expect(state.section).toBe("surroundings");
     expect(state.view).toBe("map");
+    expect(state.query.windowDays).toBe(7);
     expect(state.sort).toBeNull();
   });
 
@@ -68,19 +79,21 @@ describe("serializeAppURLState", () => {
 
   it("keeps the map view and the default sort out of the query", () => {
     expect(
-      serializeAppURLState({
-        ...DEFAULT_APP_URL_STATE,
-        filters: { ...DEFAULT_APP_URL_STATE.filters, phase: "active" },
-      }),
+      serializeAppURLState(
+        withQuery({
+          filters: { ...DEFAULT_APP_URL_STATE.query.filters, phase: "active" },
+        }),
+      ),
     ).toBe("?status=active");
   });
 
   it("drops whitespace-only searches", () => {
     expect(
-      serializeAppURLState({
-        ...DEFAULT_APP_URL_STATE,
-        filters: { ...DEFAULT_APP_URL_STATE.filters, search: "   " },
-      }),
+      serializeAppURLState(
+        withQuery({
+          filters: { ...DEFAULT_APP_URL_STATE.query.filters, search: "   " },
+        }),
+      ),
     ).toBe("");
   });
 
@@ -96,19 +109,28 @@ describe("serializeAppURLState", () => {
   it("round-trips a fully populated state", () => {
     const state: AppURLState = {
       section: "explorer",
-      filters: {
-        search: "Hauptstraße",
-        municipality: "Bruchsal",
-        phase: "active",
-        category: "bridge",
-        closure: "one-direction",
+      query: {
+        filters: {
+          search: "Hauptstraße",
+          municipality: "Bruchsal",
+          phase: "active",
+          category: "bridge",
+          closure: "one-direction",
+        },
+        onlyRecent: true,
+        windowDays: 1,
       },
-      showOnlyChanged: true,
       view: "list",
       sort: { key: "distance", direction: "ascending" },
       detailSiteId: "2026V42",
     };
 
     expect(parseAppURLState(serializeAppURLState(state))).toEqual(state);
+  });
+
+  it("omits the default time window and rejects an unknown one", () => {
+    expect(serializeAppURLState(withQuery({ windowDays: 7 }))).toBe("");
+    expect(serializeAppURLState(withQuery({ windowDays: 1 }))).toBe("?seit=24h");
+    expect(parseAppURLState("?seit=17t").query.windowDays).toBe(7);
   });
 });

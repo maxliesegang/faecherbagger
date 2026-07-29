@@ -4,20 +4,16 @@ import {
   KernHeading,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
-
-interface CurrentLocationControlProps {
-  locationController: CurrentLocationController;
-}
+import { usePersonal } from "../context/PersonalContext.tsx";
 
 /**
  * Compact rail card. Sharing a location unlocks distances and the "nearest
  * first" sort, so it stays one click away instead of behind a disclosure.
  */
-export function CurrentLocationControl({
-  locationController,
-}: CurrentLocationControlProps) {
-  const { locationState, requestLocation, clearLocation } = locationController;
+export function CurrentLocationControl() {
+  const {
+    location: { locationState, requestLocation, clearLocation },
+  } = usePersonal();
   const isReady = locationState.status === "ready";
 
   return (

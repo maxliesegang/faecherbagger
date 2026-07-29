@@ -18,11 +18,14 @@ The primary job is one question: **"Gibt es neue Baustellen in meiner
 Umgebung?"** Everything else supports that answer.
 
 - **Meine Umgebung** (default screen, [`ConstructionSiteSurroundings.tsx`](src/components/ConstructionSiteSurroundings.tsx)) —
-  the visitor defines a *notification area* once (a center from the device
+  the visitor defines a *home area* once (a center from the device
   location or, as a fallback, from a municipality in the data, plus a radius).
-  The screen then lists the construction sites inside that area that are new or
-  updated within the change-retention window, nearest and newest first, and
-  marks the ones that arrived since the last visit. The same area powers Web
+  The screen then lists the construction sites inside that area that appeared
+  within the visitor's time window, newest and nearest first, and marks the ones
+  that arrived since the last visit. "Neu" means one thing everywhere in the
+  app — the pipeline had not seen this construction site before — so the badge,
+  the list and the push notification always agree; a source edit to a record
+  someone already knows about does not resurface it. The same area powers Web
   Push, so an alert can arrive without opening the app. Secondary detail (all
   sites in the area, an area map, the area/notification settings) sits in
   disclosures below the answer.
@@ -30,9 +33,9 @@ Umgebung?"** Everything else supports that answer.
   the full region: search, filters, sorting, map and list.
 
 The active screen is part of the shareable URL state (`?bereich=umgebung|alle`,
-default `umgebung`), so a link opens where its author intended. The notification
-area and the "seen" acknowledgement are personal state and stay in
-`localStorage` — they are never put in the URL.
+default `umgebung`), so a link opens where its author intended. The home area
+and the "seen" acknowledgement are personal state and stay in `localStorage` —
+they are never put in the URL.
 
 ## How it works
 
@@ -73,9 +76,14 @@ For each of the two source layers (`baustellen_aktuell` = active,
 3. **Normalizes**: maps the free-form `art` to a fixed category set, `sperrung`
    to an ordinal closure severity, sanitizes the HTML/CRLF `zusatzinfo` to plain
    text, and converts timestamps to Europe/Berlin calendar dates.
-4. **Diffs** against the previous run (`stand` timestamp + `vorgangsnummer`) to
-   produce `changes.json` — the basis for later notifications.
-5. **Generates feeds** from one shared `feed` model in RSS 2.0 and Atom 1.0
+4. **Stamps `firstSeenAt`** by carrying the value forward from the previous
+   `baustellen.json`; ids that were not there before get this run's timestamp.
+   The source publishes no creation date, so this is the only thing that
+   distinguishes a new construction site from an edited one.
+5. **Derives the recent window** from each record's `firstSeenAt` to produce
+   `changes.json`. This is a window over additions, not a diff of the whole
+   dataset and not a window over `stand`: edits stay out of it.
+6. **Generates feeds** from one shared `feed` model in RSS 2.0 and Atom 1.0
    formats.
 
 Outputs (committed to the repo, served by Vite from `public/`):
@@ -84,12 +92,29 @@ Outputs (committed to the repo, served by Vite from `public/`):
 | --- | --- |
 | `public/data/baustellen.json` | Normalized, deduplicated records |
 | `public/data/meta.json` | Fetch timestamp, counts, source attribution |
-| `public/data/changes.json` | Records added / modified / removed since last run |
+| `public/data/changes.json` | Records first seen in the last 7 days, newest first, with both timestamps |
 | `public/baustellen.xml` | RSS 2.0 feed of current records, newest revisions first |
 | `public/baustellen.atom` | Atom 1.0 feed generated from the same feed model |
 
 The shared domain model lives in [`src/types/`](src/types/) and is imported by
 both the Node pipeline and the React app — one source of truth.
+
+### Code layout
+
+`src/` is split by lifecycle, so what runs where is visible from the import
+path and a browser bundle can never pull in build-time code:
+
+| Directory | Runs in | Contents |
+| --- | --- | --- |
+| [`src/shared/`](src/shared/) | app, pipeline, worker | Recency, home-area geometry and validation, distance, labels. Depends only on `src/types/`. |
+| [`src/lib/`](src/lib/) | browser | Selection, filtering, sorting, URL state, storage, map layers, data loading. |
+| [`src/pipeline/`](src/pipeline/) | Node, build time | WFS client, normalization, `firstSeenAt`, feeds, the additions artifact. |
+| [`src/context/`](src/context/) | browser | `DatasetProvider`, `PersonalProvider`, `ViewProvider` — the three things a screen reads instead of taking props. |
+
+The single selector [`selectSites`](src/lib/select-sites.ts) turns the dataset
+plus a `SiteScope` into everything a screen renders, annotating each record once
+with distance, recency and unseen. Both screens go through it, so the tab badge,
+the surroundings list and the explorer's counts cannot disagree.
 
 ## Running locally
 
@@ -119,7 +144,7 @@ network-first runtime cache, and refreshes them:
 - through one-off Background Sync where available;
 - whenever the installed app starts, returns online, or becomes visible.
 
-Notifications are opted into where the notification area is defined, on the
+Notifications are opted into where the home area is defined, on the
 "Meine Umgebung" screen: the area is the subject of the notification, so both
 are one decision. A successful opt-in sends a local test notification. The
 optional Cloudflare Worker in
@@ -133,12 +158,16 @@ first be added to the Home Screen before notification permission is available.
 
 Three GitHub Actions (`.github/workflows/`):
 
-- **`update-data.yml`** — cron (04:00 & 16:00 UTC) + manual dispatch. Runs the
-  pipeline and commits any changed data.
+- **`update-data.yml`** — cron (06:00 & 18:00 UTC, i.e. 08:00 & 20:00 Berlin in
+  summer) + manual dispatch. Runs the pipeline and commits any changed data.
 - **`deploy.yml`** — builds and deploys to GitHub Pages on pushes to `main`, on
   manual dispatch, and after a successful data update (via `workflow_run`, since
   commits made with `GITHUB_TOKEN` do not trigger `push`). After data-triggered
-  deployments it broadcasts the idempotent Web Push update.
+  deployments it broadcasts the idempotent Web Push update: only construction
+  sites whose `firstSeenAt` is newer than the last *completed* broadcast, which
+  the push worker reports via `GET /broadcasts/last`. Editing an existing record
+  never notifies anyone, and a fan-out that dies is caught up by the next run
+  rather than skipped.
 - **`deploy-push-worker.yml`** — manually deploys the subscription API and
   applies its D1 schema after the one-time Cloudflare setup.
 

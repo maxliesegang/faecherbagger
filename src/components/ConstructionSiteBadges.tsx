@@ -1,12 +1,12 @@
 import { KernBadge } from "@kern-ux-annex/kern-react-kit";
 import type { ClosureSeverity, ConstructionPhase } from "../types/index.ts";
-import type { ConstructionSiteChangeStatus } from "../lib/construction-site-changes.ts";
+import type { ConstructionSiteRecency } from "../shared/recency.ts";
 import {
   getClosureBadgeVariant,
   getClosureLabel,
   getConstructionPhaseBadgeVariant,
   getConstructionPhaseLabel,
-} from "../lib/construction-site-labels.ts";
+} from "../shared/construction-site-labels.ts";
 
 /** Whether a record is current or planned. */
 export function ConstructionPhaseBadge({ phase }: { phase: ConstructionPhase }) {
@@ -28,31 +28,21 @@ export function ClosureBadge({ closure }: { closure: ClosureSeverity }) {
   );
 }
 
-const CHANGE_STATUS_LABELS: Record<ConstructionSiteChangeStatus, string> = {
-  added: "Neu",
-  modified: "Aktualisiert",
-};
-
-/** How the record entered the change window; nothing when it did not. */
-export function ConstructionSiteChangeBadge({
-  changeStatus,
+/** Marks a record the pipeline first saw within the visitor's time window. */
+export function ConstructionSiteRecencyBadge({
+  recency,
 }: {
-  changeStatus: ConstructionSiteChangeStatus | null;
+  recency: ConstructionSiteRecency;
 }) {
-  if (changeStatus === null) return null;
-  return (
-    <KernBadge
-      variant={changeStatus === "added" ? "danger" : "warning"}
-      label={CHANGE_STATUS_LABELS[changeStatus]}
-    />
-  );
+  if (recency === null) return null;
+  return <KernBadge variant="danger" label="Neu" />;
 }
 
 interface ConstructionSiteBadgesProps {
   phase: ConstructionPhase;
   closure: ClosureSeverity;
-  /** Leads the row when the record is new or updated. */
-  changeStatus?: ConstructionSiteChangeStatus | null;
+  /** Leads the row when the record is new in the visitor's window. */
+  recency?: ConstructionSiteRecency;
   className?: string;
 }
 
@@ -63,12 +53,12 @@ interface ConstructionSiteBadgesProps {
 export function ConstructionSiteBadges({
   phase,
   closure,
-  changeStatus = null,
+  recency = null,
   className,
 }: ConstructionSiteBadgesProps) {
   return (
     <div className={className}>
-      <ConstructionSiteChangeBadge changeStatus={changeStatus} />
+      <ConstructionSiteRecencyBadge recency={recency} />
       <ConstructionPhaseBadge phase={phase} />
       <ClosureBadge closure={closure} />
     </div>

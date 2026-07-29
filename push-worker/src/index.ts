@@ -1,7 +1,7 @@
 import {
-  isNotificationArea,
-  roundNotificationCenter,
-} from "../../src/lib/notification-area-validation.ts";
+  isHomeArea,
+  roundHomeAreaCenter,
+} from "../../src/shared/home-area-validation.ts";
 
 interface PushSubscriptionRequest {
   endpoint?: string;
@@ -136,8 +136,8 @@ function isValidPushSubscription(value: PushSubscriptionRequest) {
 function parseNotificationPreferences(
   preferences: PushSubscriptionRequest["preferences"],
 ) {
-  if (!isNotificationArea(preferences)) return null;
-  const [longitude, latitude] = roundNotificationCenter(preferences.center);
+  if (!isHomeArea(preferences)) return null;
+  const [longitude, latitude] = roundHomeAreaCenter(preferences.center);
   return {
     longitude,
     latitude,
@@ -364,6 +364,21 @@ const claimBroadcast: BroadcastOperation = async (env, fetchedAt) => {
   return createJSONResponse({ claimed: (result.meta.changes ?? 0) > 0 });
 };
 
+/**
+ * The most recent data run whose fan-out completed, or `null` when none ever
+ * has. This is the cutoff the sender selects on: notification delivery is this
+ * service's state, not the data repository's, so a run whose fan-out died must
+ * not advance it. The next sender then picks up everything the failed one owed.
+ */
+async function readLastCompletedBroadcast(env: Env): Promise<Response> {
+  const row = await env.DB.prepare(
+    `SELECT fetched_at FROM broadcasts
+     WHERE completed_at IS NOT NULL
+     ORDER BY fetched_at DESC LIMIT 1`,
+  ).first<{ fetched_at: string }>();
+  return createJSONResponse({ fetchedAt: row?.fetched_at ?? null });
+}
+
 /** Marks a claimed fan-out as finished, so it is never reclaimed. */
 const completeBroadcast: BroadcastOperation = async (env, fetchedAt) => {
   const result = await env.DB.prepare(
@@ -408,6 +423,12 @@ const ROUTES: Record<string, Partial<Record<string, RouteHandler>>> = {
     POST: upsertSubscription,
     DELETE: deleteSubscription,
     GET: listSubscriptions,
+  },
+  "/broadcasts/last": {
+    GET: async (request, { env }) =>
+      (await hasAdminAccess(request, env))
+        ? readLastCompletedBroadcast(env)
+        : createJSONResponse({ error: "Unauthorized" }, 401),
   },
   "/broadcasts/claim": {
     POST: createBroadcastHandler(claimBroadcast),

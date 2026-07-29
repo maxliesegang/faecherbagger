@@ -20,11 +20,18 @@
 - `src/hooks/`: browser lifecycle and asynchronous React state.
   `useAppURLState` owns the shareable view state and the History API; every
   in-app navigation goes through it rather than touching `window.history`.
-- `src/App.tsx`: page shell. It owns the personal state (notification area,
-  push, acknowledged changes), derives what is new around the visitor once for
-  every screen, and picks the screen.
-- `src/lib/`: framework-independent domain, filtering, mapping, data-loading,
-  notification, and push helpers.
+- `src/App.tsx`: page shell. It mounts the three providers, renders the load
+  states, and picks the screen.
+- `src/context/`: `DatasetProvider` (the published data), `PersonalProvider`
+  (home area, acknowledgement, location, push — device-local, never shareable)
+  and `ViewProvider` (the address-bar state plus the derived time window).
+  Screens read these instead of receiving them as props.
+- `src/shared/`: pure domain used by all three runtimes — recency, home-area
+  geometry and validation, distance, labels. Depends on nothing but `src/types`.
+- `src/lib/`: browser-only. Selection, filtering, sorting, URL state, storage,
+  map layers, data loading.
+- `src/pipeline/`: build-time only. WFS client, normalization, `firstSeenAt`,
+  feeds, the additions artifact. Never imported by the app.
 - `src/types/`: shared domain and WFS types used by the app and data pipeline.
 - `src/sw.ts`: inject-manifest service worker and offline refresh behavior.
 - `scripts/fetch-construction-sites.ts`: WFS fetch, normalization,
@@ -42,9 +49,11 @@
   own surroundings**. `ConstructionSiteSurroundings` is the default screen and
   must stay the shortest path to that answer; the region-wide explorer, filters,
   sorting and full map are secondary and stay one step away.
-- The notification area (center plus radius) is one shared concept: it scopes
-  the surroundings screen, the map overlay and the Web Push subscription. Do not
-  introduce a second, view-only radius.
+- The home area (center plus radius) is one shared concept: it scopes the
+  surroundings screen, the map overlay and the Web Push subscription. Do not
+  introduce a second, view-only radius. It is called `HomeArea` throughout the
+  app; only `push-worker/` keeps the `notification_*` vocabulary, because there
+  the name is accurate and it is the deployed wire format and D1 schema.
 - Keep the surroundings screen usable without notifications and without a device
   location: the municipality center is the fallback, and a blocked, unsupported
   or unconfigured push service must degrade to an explanatory hint.
@@ -68,8 +77,15 @@
   Keep established third-party domain names such as MapLibre's `LngLat`.
 - Keep German TRK field names only in WFS and serialized-data boundary code;
   use normalized English names everywhere else.
-- Prefer pure helpers in `src/lib/` for behavior that can be tested without the
-  DOM. Keep components focused on rendering and interaction wiring.
+- Prefer pure helpers for behavior that can be tested without the DOM, in
+  `src/shared/` when the pipeline or worker could want them too. Keep components
+  focused on rendering and interaction wiring.
+- "Neu" means one thing everywhere: the pipeline had not seen this construction
+  site before (`firstSeenAt`). Badge, list, filter and push notification all
+  derive from `getConstructionSiteRecency`. A source edit to a known record is
+  not new — do not reintroduce a `lastModified`-based window.
+- Both screens go through `selectSites`, which annotates each record once with
+  distance, recency and unseen. Read those fields; never recompute them.
 - Reuse the shared building blocks instead of repeating their markup:
   `ClientNavigationLink` for every in-app link (it keeps new-tab and modified
   clicks working), `ConstructionSiteBadges` for describing a record,
@@ -112,17 +128,19 @@
   `public/baustellen.xml`, and `public/baustellen.atom` are generated and
   committed artifacts. Do not hand-edit them.
 - Regenerate them only with `npm run data`; this requires network access to
-  `mobil.trk.de` and intentionally diffs against the previous committed data.
+  `mobil.trk.de`. It reads the committed `baustellen.json` to carry `firstSeenAt`
+  forward — that field is what the push pipeline notifies on, so regenerating
+  from an empty `public/data/` would mark every record new.
 - A normal UI or domain-logic change should not refresh generated data.
-- If pipeline behavior changes, test the normalization/diff logic with fixtures
-  before regenerating data, and review all three generated files.
+- If pipeline behavior changes, test the normalization and window logic with
+  fixtures before regenerating data, and review all three generated files.
 
 ## Map, PWA, and Push Guidance
 
 - Create the MapLibre instance once, remove it during effect cleanup, and update
   existing GeoJSON sources or layer filters when props change. Avoid rebuilding
   the map for React state updates.
-- Preserve intentional map layer ordering: notification area, detailed
+- Preserve intentional map layer ordering: home area, detailed
   geometries, clusters/points, selection, and user location. Batch each logical
   source update with one `GeoJSONSource.setData` call where practical.
 - Keep the map dynamically imported so the initial UI bundle stays small.

@@ -1,5 +1,5 @@
 import type { ConstructionSite, ISOTimestamp } from "../types/index.ts";
-import { formatISODate } from "./construction-site-labels.ts";
+import { formatISODate } from "../shared/construction-site-labels.ts";
 
 /** What the service worker receives and turns into a device notification. */
 export interface PushNotificationPayload {

@@ -1,24 +1,24 @@
-import type { LngLat, NotificationArea } from "../types/index.ts";
+import type { LngLat, HomeArea } from "../types/index.ts";
 
-export const DEFAULT_NOTIFICATION_RADIUS_KM = 5;
-export const MIN_NOTIFICATION_RADIUS_KM = 1;
-export const MAX_NOTIFICATION_RADIUS_KM = 50;
+export const DEFAULT_HOME_AREA_RADIUS_KM = 5;
+export const MIN_HOME_AREA_RADIUS_KM = 1;
+export const MAX_HOME_AREA_RADIUS_KM = 50;
 
 /**
- * Decimal places kept on a notification-area center: three, roughly 100 m.
+ * Decimal places kept on a home-area center: three, roughly 100 m.
  * The smallest radius is 1 km, so this costs the matching nothing while it
  * keeps a device position out of the stored and transmitted data. The rounding
  * is applied where an area is created and again when one is received, so the
  * value the app shows, the value in local storage and the value the push
  * service holds are always the same coarse coordinate.
  */
-export const NOTIFICATION_CENTER_DECIMALS = 3;
+export const HOME_AREA_CENTER_DECIMALS = 3;
 
-/** Reduces a center to {@link NOTIFICATION_CENTER_DECIMALS} precision. */
-export function roundNotificationCenter(center: LngLat): LngLat {
+/** Reduces a center to {@link HOME_AREA_CENTER_DECIMALS} precision. */
+export function roundHomeAreaCenter(center: LngLat): LngLat {
   return [
-    Number(center[0].toFixed(NOTIFICATION_CENTER_DECIMALS)),
-    Number(center[1].toFixed(NOTIFICATION_CENTER_DECIMALS)),
+    Number(center[0].toFixed(HOME_AREA_CENTER_DECIMALS)),
+    Number(center[1].toFixed(HOME_AREA_CENTER_DECIMALS)),
   ];
 }
 
@@ -39,17 +39,17 @@ export function isLngLat(value: unknown): value is LngLat {
 }
 
 /**
- * Validates the notification-area shape at browser-storage and API boundaries.
+ * Validates the home-area shape at browser-storage and API boundaries.
  * Kept free of browser and Worker globals so every runtime uses the same rules.
  */
-export function isNotificationArea(value: unknown): value is NotificationArea {
+export function isHomeArea(value: unknown): value is HomeArea {
   if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<NotificationArea>;
+  const candidate = value as Partial<HomeArea>;
   return (
     isLngLat(candidate.center) &&
     typeof candidate.radiusKm === "number" &&
     Number.isFinite(candidate.radiusKm) &&
-    candidate.radiusKm >= MIN_NOTIFICATION_RADIUS_KM &&
-    candidate.radiusKm <= MAX_NOTIFICATION_RADIUS_KM
+    candidate.radiusKm >= MIN_HOME_AREA_RADIUS_KM &&
+    candidate.radiusKm <= MAX_HOME_AREA_RADIUS_KM
   );
 }

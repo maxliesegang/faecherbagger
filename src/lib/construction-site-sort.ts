@@ -1,10 +1,10 @@
 import type { ConstructionSite, LngLat } from "../types/index.ts";
 import { CLOSURE_SEVERITY_SORT_RANK } from "../types/index.ts";
-import { distanceInMeters } from "./distance.ts";
+import { distanceInMeters } from "../shared/distance.ts";
 import {
   getConstructionCategoryLabel,
   getConstructionPhaseLabel,
-} from "./construction-site-labels.ts";
+} from "../shared/construction-site-labels.ts";
 
 export type ConstructionSiteSortKey =
   | "municipality"

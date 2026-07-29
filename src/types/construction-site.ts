@@ -9,8 +9,12 @@ export type ISOTimestamp = string;
 /** WGS84 position in GeoJSON order: `[longitude, latitude]`. */
 export type LngLat = [number, number];
 
-/** Anonymous notification area centered on a user-selected WGS84 point. */
-export interface NotificationArea {
+/**
+ * The visitor's surroundings: an anonymous area centred on a WGS84 point they
+ * chose. It scopes the primary screen and, when notifications are on, is what
+ * the push service matches new construction sites against.
+ */
+export interface HomeArea {
   center: LngLat;
   radiusKm: number;
 }
@@ -111,9 +115,30 @@ export interface ConstructionSite {
 
   /** Attribution: the source authority (`datenquelle`, e.g. `"Stadt Karlsruhe"`). */
   source: string;
-  /** Source last-modified timestamp (`stand`); change-detection key with `id`. */
+  /**
+   * Source last-modified timestamp (`stand`), canonicalized to exact ISO
+   * precision by the normalizer so plain string comparison is chronological.
+   */
   lastModified: ISOTimestamp;
+  /**
+   * When this pipeline first saw the record, stamped once and carried forward
+   * across runs.
+   *
+   * The source publishes no creation date, so this is the only way to tell a
+   * genuinely new construction site from an edited old one. It is what the push
+   * pipeline notifies on — an edit to a record someone already knows about is
+   * not worth interrupting them for.
+   */
+  firstSeenAt: ISOTimestamp;
 }
+
+/**
+ * A record as it comes out of normalization, before the pipeline stamps
+ * {@link ConstructionSite.firstSeenAt} onto it. Normalization sees one WFS
+ * response and cannot know whether a record is new, so the type makes that
+ * missing step explicit instead of leaving a placeholder value behind.
+ */
+export type NormalizedConstructionSite = Omit<ConstructionSite, "firstSeenAt">;
 
 /** Contents of `data/meta.json`. */
 export interface ConstructionSiteMetadata {
@@ -134,31 +159,35 @@ export interface ConstructionSiteMetadata {
   attribution: string[];
 }
 
-/** A single change entry with its first detection timestamp. */
-export interface ConstructionSiteChangeEntry {
-  /** `vorgangsnummer` of the affected construction site. */
+/** One newly appeared construction site, as published in `data/changes.json`. */
+export interface ConstructionSiteAdditionEntry {
+  /** `vorgangsnummer` of the construction site. */
   id: string;
-  /** When this change was first detected (`fetchedAt` of the pipeline run). */
-  detectedAt: ISOTimestamp;
+  /** The site's `lastModified` (`stand`), repeated so consumers need one file. */
+  lastModified: ISOTimestamp;
+  /** The site's `firstSeenAt`; equal to `lastModified` is not implied. */
+  firstSeenAt: ISOTimestamp;
 }
 
 /**
- * Contents of `data/changes.json`: what changed, accumulated within a
- * retention window. The pipeline merges the per-run diff with carry-forward
- * entries from the previous `changes.json` as long as their `detectedAt`
- * falls within the retention period.
+ * Contents of `data/changes.json`: the construction sites the pipeline first
+ * saw inside the published window, newest first.
+ *
+ * A window over `firstSeenAt`, not over `stand` and not a diff of the whole
+ * dataset. It carries additions only, because that is the app's single
+ * definition of "neu" and the only thing the push pipeline is willing to
+ * interrupt someone for; a source edit to a known record is not in here.
+ *
+ * The app does not read this file; it reads `baustellen.json` and applies the
+ * visitor's own window (see `selectRecentConstructionSites`).
  */
-export interface ConstructionSiteChanges {
-  /**
-   * Start of the retention window, or `null` on the first run when no
-   * comparison base exists.
-   */
-  since: ISOTimestamp | null;
-  /** Sites first seen within the retention window. */
-  added: ConstructionSiteChangeEntry[];
-  /** Sites whose `lastModified` changed within the retention window, but
-   *  that were already present before the window began. */
-  modified: ConstructionSiteChangeEntry[];
-  /** Sites removed since the *previous run* (not accumulated). */
-  removed: string[];
+export interface ConstructionSiteAdditions {
+  /** When the pipeline produced this file; matches `meta.json`. */
+  fetchedAt: ISOTimestamp;
+  /** Length of the published window in days. */
+  windowDays: number;
+  /** Start of the published window: `fetchedAt` minus `windowDays`. */
+  since: ISOTimestamp;
+  /** Sites with `firstSeenAt >= since`, newest first. */
+  added: ConstructionSiteAdditionEntry[];
 }

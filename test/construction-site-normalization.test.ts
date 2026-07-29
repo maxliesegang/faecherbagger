@@ -5,7 +5,7 @@ import {
   normalizeConstructionSites,
   sanitizeText,
   toBerlinDate,
-} from "../src/lib/construction-site-normalization.ts";
+} from "../src/pipeline/construction-site-normalization.ts";
 
 /**
  * The fixture is real WFS output (EPSG:4326) from `baustellen_aktuell`, with

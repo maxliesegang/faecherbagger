@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import type {
   ConstructionSite,
-  ConstructionSiteChanges,
   ConstructionSiteMetadata,
 } from "../types/index.ts";
 import {
-  loadConstructionSiteChanges,
   loadConstructionSiteMetadata,
   loadConstructionSites,
 } from "../lib/construction-site-data.ts";
@@ -16,7 +14,6 @@ export type ConstructionSiteDataState =
       status: "ready";
       metadata: ConstructionSiteMetadata;
       constructionSites: ConstructionSite[];
-      changes: ConstructionSiteChanges;
     }
   | { status: "error"; message: string };
 
@@ -39,17 +36,15 @@ export function useConstructionSiteData(): ConstructionSiteDataState {
     const refreshConstructionSiteData = async () => {
       const request = ++latestRequest;
       try {
-        const [metadata, constructionSites, changes] = await Promise.all([
+        const [metadata, constructionSites] = await Promise.all([
           loadConstructionSiteMetadata(controller.signal),
           loadConstructionSites(controller.signal),
-          loadConstructionSiteChanges(controller.signal),
         ]);
         if (!controller.signal.aborted && request === latestRequest) {
           setDataState({
             status: "ready",
             metadata,
             constructionSites,
-            changes,
           });
         }
       } catch (error) {

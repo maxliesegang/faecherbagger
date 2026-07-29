@@ -5,7 +5,7 @@ import {
   formatISOTimestamp,
   getClosureLabel,
   getConstructionCategoryLabel,
-} from "../lib/construction-site-labels.ts";
+} from "../shared/construction-site-labels.ts";
 import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
 import { ConstructionSiteBadges } from "./ConstructionSiteBadges.tsx";
 import "./ConstructionSiteDetail.css";

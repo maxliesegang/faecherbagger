@@ -1,20 +1,21 @@
-import type { ISOTimestamp } from "../types/index.ts";
-import type { NearbyConstructionSite } from "../lib/nearby-construction-sites.ts";
-import { isUnseenConstructionSiteChange } from "../lib/nearby-construction-sites.ts";
-import { formatDistance } from "../lib/distance.ts";
+import type { ScopedSite } from "../lib/select-sites.ts";
+import { formatDistance } from "../shared/distance.ts";
 import {
   formatConstructionPeriod,
   formatRelativeDay,
   getConstructionCategoryLabel,
-} from "../lib/construction-site-labels.ts";
+} from "../shared/construction-site-labels.ts";
 import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
 import { ConstructionSiteBadges } from "./ConstructionSiteBadges.tsx";
 import "./NearbyConstructionSiteList.css";
 
 interface NearbyConstructionSiteListProps {
-  nearbyConstructionSites: readonly NearbyConstructionSite[];
-  /** Marks changes newer than the visitor's last acknowledgement. */
-  seenAt: ISOTimestamp | null;
+  /**
+   * Already annotated by `selectSites`: this component renders `recency` and
+   * `isUnseen` rather than working them out again, so it cannot disagree with
+   * the counts above it.
+   */
+  scopedSites: readonly ScopedSite[];
   getSiteDetailsHref: (siteId: string) => string;
   onShowSiteDetails: (siteId: string) => void;
   onShowSiteOnMap: (siteId: string) => void;
@@ -24,12 +25,11 @@ interface NearbyConstructionSiteListProps {
 
 /**
  * The app's primary content: construction sites around the visitor as cards,
- * distance first. New and updated records carry a change badge; the caller
+ * distance first. Records new in the visitor's window carry a badge; the caller
  * decides which subset to pass in and in which order.
  */
 export function NearbyConstructionSiteList({
-  nearbyConstructionSites,
-  seenAt,
+  scopedSites,
   getSiteDetailsHref,
   onShowSiteDetails,
   onShowSiteOnMap,
@@ -37,29 +37,29 @@ export function NearbyConstructionSiteList({
 }: NearbyConstructionSiteListProps) {
   return (
     <ul className="nearby-list" aria-label={label}>
-      {nearbyConstructionSites.map((entry) => {
-        const { site } = entry;
-        const isUnseen = isUnseenConstructionSiteChange(
-          entry.detectedAt,
-          seenAt,
-        );
+      {scopedSites.map(({ site, distanceMeters, recency, isUnseen }) => {
+        const isUnseenAndNew = recency !== null && isUnseen;
 
         return (
           <li key={site.id}>
             <article
-              className={`nearby-card${isUnseen ? " nearby-card--unseen" : ""}`}
+              className={`nearby-card${isUnseenAndNew ? " nearby-card--unseen" : ""}`}
             >
-              <p className="nearby-card__distance">
-                <strong>{formatDistance(entry.distanceMeters)}</strong>
-                <span className="nearby-card__distance-label">entfernt</span>
-              </p>
+              {/* Only area-scoped selections carry a distance; `?? 0` here
+                  would render a confident "0 m" for a missing one. */}
+              {distanceMeters !== null && (
+                <p className="nearby-card__distance">
+                  <strong>{formatDistance(distanceMeters)}</strong>
+                  <span className="nearby-card__distance-label">entfernt</span>
+                </p>
+              )}
 
               <div className="nearby-card__main">
                 <ConstructionSiteBadges
                   className="nearby-card__badges"
                   phase={site.phase}
                   closure={site.closure}
-                  changeStatus={entry.changeStatus}
+                  recency={recency}
                 />
 
                 <h3 className="nearby-card__title">
@@ -72,14 +72,11 @@ export function NearbyConstructionSiteList({
                 </h3>
                 <p className="nearby-card__municipality">
                   {site.municipality}
-                  {entry.detectedAt && (
+                  {recency !== null && (
                     <>
                       {" · "}
                       <span className="nearby-card__detected">
-                        {entry.changeStatus === "added"
-                          ? "neu "
-                          : "aktualisiert "}
-                        {formatRelativeDay(entry.detectedAt)}
+                        neu {formatRelativeDay(site.firstSeenAt)}
                       </span>
                     </>
                   )}

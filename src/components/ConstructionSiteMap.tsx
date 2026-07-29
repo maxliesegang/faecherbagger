@@ -12,19 +12,19 @@ import mapLibreWorkerURL from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&ur
 import type {
   ConstructionSite,
   LngLat,
-  NotificationArea,
+  HomeArea,
 } from "../types/index.ts";
 import {
   getConstructionCategoryLabel,
   getClosureLabel,
   formatConstructionPeriod,
   getConstructionPhaseLabel,
-} from "../lib/construction-site-labels.ts";
+} from "../shared/construction-site-labels.ts";
 import {
   createConstructionSiteGeometryFeatureCollection,
   createConstructionSitePointFeatureCollection,
-  createNotificationAreaFeatureCollection,
-  createNotificationAreaPolygon,
+  createHomeAreaFeatureCollection,
+  createHomeAreaPolygon,
   createUserLocationFeatureCollection,
 } from "../lib/map-geojson.ts";
 import {
@@ -43,7 +43,7 @@ export interface ConstructionSiteMapProps {
   constructionSites: readonly ConstructionSite[];
   selectedSiteId?: string;
   currentLocation?: LngLat;
-  notificationArea?: NotificationArea;
+  homeArea?: HomeArea;
   onSiteSelect: (siteId: string | undefined) => void;
   getSiteDetailsHref: (siteId: string) => string;
   onSiteDetailsRequest: (siteId: string) => void;
@@ -105,9 +105,9 @@ function fitConstructionSites(
   fitBounds(map, bounds);
 }
 
-function fitNotificationArea(map: MapLibreMap, area: NotificationArea) {
+function fitHomeArea(map: MapLibreMap, area: HomeArea) {
   const bounds = new LngLatBounds();
-  createNotificationAreaPolygon(area).coordinates[0].forEach((point) =>
+  createHomeAreaPolygon(area).coordinates[0].forEach((point) =>
     bounds.extend(point as LngLat),
   );
   fitBounds(map, bounds);
@@ -117,7 +117,7 @@ export function ConstructionSiteMap({
   constructionSites,
   selectedSiteId,
   currentLocation,
-  notificationArea,
+  homeArea,
   onSiteSelect,
   getSiteDetailsHref,
   onSiteDetailsRequest,
@@ -133,14 +133,14 @@ export function ConstructionSiteMap({
     constructionSites,
     selectedSiteId,
     currentLocation,
-    notificationArea,
+    homeArea,
     onSiteSelect,
   });
   latestPropsRef.current = {
     constructionSites,
     selectedSiteId,
     currentLocation,
-    notificationArea,
+    homeArea,
     onSiteSelect,
   };
 
@@ -175,7 +175,7 @@ export function ConstructionSiteMap({
       addConstructionSiteMapLayers(map, {
         constructionSites: initial.constructionSites,
         currentLocation: initial.currentLocation,
-        notificationArea: initial.notificationArea,
+        homeArea: initial.homeArea,
       });
 
       const interactiveGeometryLayers = [
@@ -201,7 +201,7 @@ export function ConstructionSiteMap({
         constructionSites,
         selectedSiteId,
         currentLocation,
-        notificationArea,
+        homeArea,
       } = latestPropsRef.current;
       setSelectedSiteFilter(map, selectedSiteId);
       fitConstructionSites(map, constructionSites);
@@ -212,8 +212,8 @@ export function ConstructionSiteMap({
         focusPoint(map, initiallySelected.point, 0);
       } else if (currentLocation) {
         focusPoint(map, currentLocation, FOCUS_DURATION_MS);
-      } else if (notificationArea) {
-        fitNotificationArea(map, notificationArea);
+      } else if (homeArea) {
+        fitHomeArea(map, homeArea);
       }
     });
 
@@ -250,10 +250,10 @@ export function ConstructionSiteMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !isMapReadyRef.current) return;
-    getGeoJSONSource(map, MAP_SOURCE_IDS.notificationArea).setData(
-      createNotificationAreaFeatureCollection(notificationArea),
+    getGeoJSONSource(map, MAP_SOURCE_IDS.homeArea).setData(
+      createHomeAreaFeatureCollection(homeArea),
     );
-  }, [notificationArea]);
+  }, [homeArea]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -291,10 +291,10 @@ export function ConstructionSiteMap({
               Mein Standort
             </span>
           )}
-          {notificationArea && (
+          {homeArea && (
             <span>
               <i className="map-legend__radius" />
-              Benachrichtigungsradius ({notificationArea.radiusKm} km)
+              Benachrichtigungsradius ({homeArea.radiusKm} km)
             </span>
           )}
         </div>

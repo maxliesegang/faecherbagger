@@ -1,6 +1,5 @@
 import type {
   ConstructionSite,
-  ConstructionSiteChanges,
   ConstructionSiteMetadata,
 } from "../types/index.ts";
 
@@ -30,8 +29,3 @@ export const loadConstructionSites = (
   signal?: AbortSignal,
 ): Promise<ConstructionSite[]> =>
   loadJSON<ConstructionSite[]>("baustellen.json", signal);
-
-export const loadConstructionSiteChanges = (
-  signal?: AbortSignal,
-): Promise<ConstructionSiteChanges> =>
-  loadJSON<ConstructionSiteChanges>("changes.json", signal);

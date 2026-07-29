@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   createWFSRequestURL,
   WFS_ENDPOINT_URL,
-} from "../src/lib/wfs-client.ts";
+} from "../src/pipeline/wfs-client.ts";
 
 describe("createWFSRequestURL", () => {
   it("uses the GeoServer parameter names required for geometry and filtering", () => {

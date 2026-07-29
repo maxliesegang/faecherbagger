@@ -2,12 +2,13 @@ import webpush from "web-push";
 import { readFile } from "node:fs/promises";
 import type {
   ConstructionSite,
-  ConstructionSiteChanges,
+  ConstructionSiteAdditions,
   ConstructionSiteMetadata,
-  NotificationArea,
+  HomeArea,
 } from "../src/types/index.ts";
-import { selectNotifiableConstructionSites } from "../src/lib/notification-area.ts";
-import { createPushNotificationPayload } from "../src/lib/push-notification.ts";
+import { selectConstructionSitesInArea } from "../src/shared/home-area.ts";
+import { selectConstructionSitesToNotify } from "../src/pipeline/construction-site-additions.ts";
+import { createPushNotificationPayload } from "../src/pipeline/push-notification.ts";
 
 interface StoredSubscription {
   endpoint: string;
@@ -44,21 +45,26 @@ const headers = {
   "content-type": "application/json",
 };
 
-const [changes, metadata, constructionSites] = await Promise.all([
-  readJSON<ConstructionSiteChanges>("public/data/changes.json"),
+const [additions, metadata, constructionSites] = await Promise.all([
+  readJSON<ConstructionSiteAdditions>("public/data/changes.json"),
   readJSON<ConstructionSiteMetadata>("public/data/meta.json"),
   readJSON<ConstructionSite[]>("public/data/baustellen.json"),
 ]);
 
-const freshlyAddedIds = changes.added
-  .filter((entry) => entry.detectedAt === metadata.fetchedAt)
-  .map((entry) => entry.id);
+// The service, not this repository, knows what has actually been delivered.
+const broadcastCutoff = await readLastCompletedBroadcast();
+const notifiableIds = new Set(
+  selectConstructionSitesToNotify(additions, broadcastCutoff).map(
+    (entry) => entry.id,
+  ),
+);
+const notifiableSites = constructionSites.filter((site) =>
+  notifiableIds.has(site.id),
+);
 
-if (freshlyAddedIds.length === 0) {
-  console.log("No new construction sites to broadcast.");
-  process.exit(0);
-}
-
+// Claimed even when there is nothing to send: completing an empty run is what
+// moves the cutoff forward, and it is also how the very first run records a
+// baseline instead of announcing the whole backlog to everyone.
 const claimResponse = await fetch(`${apiURL}/broadcasts/claim`, {
   method: "POST",
   headers,
@@ -75,13 +81,21 @@ if (!claim.claimed) {
   process.exit(0);
 }
 
+if (notifiableSites.length === 0) {
+  await completeBroadcast(metadata.fetchedAt);
+  console.log(
+    broadcastCutoff === null
+      ? `No delivery history yet; recorded ${metadata.fetchedAt} as the baseline.`
+      : `No new construction sites since ${broadcastCutoff}; nothing to broadcast.`,
+  );
+  process.exit(0);
+}
+
 webpush.setVapidDetails(
   process.env.VAPID_SUBJECT!,
   process.env.VAPID_PUBLIC_KEY!,
   process.env.VAPID_PRIVATE_KEY!,
 );
-
-const addedIds = new Set(freshlyAddedIds);
 
 let cursor: string | null = "";
 let sent = 0;
@@ -100,11 +114,7 @@ while (cursor !== null) {
       outsideArea += 1;
       return;
     }
-    const matchingSites = selectNotifiableConstructionSites(
-      constructionSites,
-      addedIds,
-      area,
-    );
+    const matchingSites = selectConstructionSitesInArea(notifiableSites, area);
     if (matchingSites.length === 0) {
       outsideArea += 1;
       return;
@@ -152,13 +162,24 @@ while (cursor !== null) {
 await completeBroadcast(metadata.fetchedAt);
 
 console.log(
-  `Push broadcast complete: ${sent} sent, ${outsideArea} without an area or matches, ` +
+  `Push broadcast complete: ${notifiableSites.length} new construction sites, ` +
+    `${sent} sent, ${outsideArea} without an area or matches, ` +
     `${removed} expired removed, ${failed} failed.`,
 );
 if (failed > 0 && sent === 0) process.exitCode = 1;
 
 async function readJSON<T>(path: string): Promise<T> {
   return JSON.parse(await readFile(path, "utf8")) as T;
+}
+
+async function readLastCompletedBroadcast(): Promise<string | null> {
+  const response = await fetch(`${apiURL}/broadcasts/last`, { headers });
+  if (!response.ok) {
+    throw new Error(
+      `Could not read the last completed broadcast: ${response.status}`,
+    );
+  }
+  return ((await response.json()) as { fetchedAt: string | null }).fetchedAt;
 }
 
 async function getPage(pageCursor: string): Promise<SubscriptionPage> {
@@ -201,7 +222,7 @@ async function deleteSubscription(endpoint: string) {
 
 function subscriptionArea(
   subscription: StoredSubscription,
-): NotificationArea | undefined {
+): HomeArea | undefined {
   const longitude = subscription.notificationLongitude;
   const latitude = subscription.notificationLatitude;
   const radiusMeters = subscription.notificationRadiusMeters;

@@ -3,10 +3,16 @@ name: Update data
 # Fetches the TRK WFS twice daily, normalizes it, and commits the static JSON
 # and feeds under public/. A successful run triggers the Deploy workflow (see
 # deploy.yml, which listens via workflow_run).
+#
+# GitHub's cron is UTC and does not follow DST, so these fire at 08:00/20:00
+# Europe/Berlin in summer and 07:00/19:00 in winter. The hour of drift is
+# accepted deliberately: nothing downstream depends on the wall-clock time, and
+# the push pipeline broadcasts against the previous run's timestamp rather than
+# a fixed interval.
 on:
   schedule:
-    - cron: "0 4 * * *" # 04:00 UTC
-    - cron: "0 16 * * *" # 16:00 UTC
+    - cron: "0 6 * * *" # 06:00 UTC — 08:00 Berlin (CEST)
+    - cron: "0 18 * * *" # 18:00 UTC — 20:00 Berlin (CEST)
   workflow_dispatch:
 
 # Allow the job to push the regenerated data back to the branch.

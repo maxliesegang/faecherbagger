@@ -36,13 +36,19 @@ export const hasNoConstructionSiteFilters = (
   filters.category === "" &&
   filters.closure === "";
 
-/** Returns the records matching every active filter. Pure; input untouched. */
-export function filterConstructionSites(
-  constructionSites: readonly ConstructionSite[],
+/**
+ * Builds the "does this record match?" test for one set of filters.
+ *
+ * A factory rather than a plain predicate so the search term is normalized once
+ * per query instead of once per record, and so callers holding something richer
+ * than a bare `ConstructionSite` can test it without first copying their array
+ * into one.
+ */
+export function createConstructionSiteFilterPredicate(
   filters: Readonly<ConstructionSiteFilters>,
-): ConstructionSite[] {
+): (site: ConstructionSite) => boolean {
   const query = filters.search.trim().toLocaleLowerCase("de");
-  return constructionSites.filter((site) => {
+  return (site) => {
     if (filters.municipality && site.municipality !== filters.municipality) {
       return false;
     }
@@ -57,7 +63,22 @@ export function filterConstructionSites(
       if (!searchableText.includes(query)) return false;
     }
     return true;
-  });
+  };
+}
+
+/** Returns the records matching every active filter. Pure; input untouched. */
+export function filterConstructionSites(
+  constructionSites: readonly ConstructionSite[],
+  filters: Readonly<ConstructionSiteFilters>,
+): ConstructionSite[] {
+  return constructionSites.filter(createConstructionSiteFilterPredicate(filters));
+}
+
+/** What the status switch shows on each of its options. */
+export interface ConstructionSitePhaseCounts {
+  total: number;
+  active: number;
+  upcoming: number;
 }
 
 /**
@@ -67,7 +88,7 @@ export function filterConstructionSites(
 export function countConstructionSitesByPhase(
   constructionSites: readonly ConstructionSite[],
   filters: Readonly<ConstructionSiteFilters>,
-): { total: number; active: number; upcoming: number } {
+): ConstructionSitePhaseCounts {
   const matching = filterConstructionSites(constructionSites, {
     ...filters,
     phase: "",

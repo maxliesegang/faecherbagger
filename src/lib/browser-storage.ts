@@ -1,7 +1,7 @@
 /**
  * Access to `localStorage` that cannot break the app. Private browsing modes,
  * a full quota and blocked third-party storage all make the API throw, and none
- * of the personal state kept here — the notification area, the acknowledgement,
+ * of the personal state kept here — the home area, the acknowledgement,
  * the notification flag — is worth a blank page. A failed read is treated as
  * "nothing stored", a failed write as "not remembered".
  */

@@ -3,11 +3,12 @@ import type {
   ConstructionPhase,
   ClosureSeverity,
 } from "../types/index.ts";
+import type { RecentWindowDays } from "../shared/recency.ts";
 
 /**
  * German construction-site labels and badge variants for normalized enums.
  * UI-only: the pipeline works with the stable machine values in
- * `src/lib/construction-site-mappings.ts`; this module turns them into what the table shows.
+ * `src/shared/construction-site-mappings.ts`; this module turns them into what the table shows.
  */
 
 type BadgeVariant = "success" | "danger" | "warning" | "info";
@@ -150,6 +151,17 @@ export function formatRelativeDay(
   if (days === 0) return "heute";
   if (days === 1) return "gestern";
   return `vor ${days} Tagen`;
+}
+
+const RECENT_WINDOW_LABELS: Record<RecentWindowDays, string> = {
+  1: "24 Stunden",
+  7: "7 Tage",
+  30: "30 Tage",
+};
+
+/** The visitor-facing name of a time window, e.g. `"7 Tage"`. */
+export function getRecentWindowLabel(windowDays: RecentWindowDays): string {
+  return RECENT_WINDOW_LABELS[windowDays];
 }
 
 /** Renders a start/end range; open-ended (`null` end) shows as `"ab <start>"`. */

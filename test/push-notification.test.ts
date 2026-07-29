@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createPushNotificationPayload } from "../src/lib/push-notification.ts";
+import { createPushNotificationPayload } from "../src/pipeline/push-notification.ts";
 import type { ConstructionSite, LngLat } from "../src/types/index.ts";
 
 const APP_URL = "https://example.test/faecherbagger/";
@@ -27,6 +27,7 @@ function createConstructionSite(
     geometry: { type: "Point", coordinates: point },
     source: "Test",
     lastModified: "2026-07-24T00:00:00Z",
+    firstSeenAt: "2026-07-24T00:00:00Z",
     ...overrides,
   };
 }
