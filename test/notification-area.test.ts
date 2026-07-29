@@ -4,7 +4,10 @@ import {
   findNewConstructionSitesInArea,
   isPointInNotificationArea,
 } from "../src/lib/notification-area.ts";
-import { isLngLat } from "../src/lib/notification-area-validation.ts";
+import {
+  isLngLat,
+  roundNotificationCenter,
+} from "../src/lib/notification-area-validation.ts";
 import type {
   ConstructionSite,
   NotificationArea,
@@ -50,12 +53,26 @@ describe("notification area", () => {
     expect(isNotificationArea({ ...area, center: [181, 49] })).toBe(false);
   });
 
+  it("coarsens a center to about 100 m before it is stored or sent", () => {
+    expect(roundNotificationCenter([8.4044123, 49.0069987])).toEqual([
+      8.404, 49.007,
+    ]);
+    // A coarsened center must stay a valid area, otherwise storing it would
+    // reject the very value the app produces.
+    expect(
+      isNotificationArea({
+        center: roundNotificationCenter([8.4044123, 49.0069987]),
+        radiusKm: 5,
+      }),
+    ).toBe(true);
+  });
+
   it("matches points inside the configured radius", () => {
     expect(isPointInNotificationArea(area, [8.45, 49.0069])).toBe(true);
     expect(isPointInNotificationArea(area, [8.5, 49.0069])).toBe(false);
   });
 
-  it("returns only added construction sites inside the radius", () => {
+  it("notifies only about added construction sites inside the radius", () => {
     const nearby = createConstructionSite("nearby", [8.41, 49.01]);
     const farAway = createConstructionSite("far", [8.6, 49.01]);
     const unchanged = createConstructionSite("unchanged", [8.42, 49.01]);

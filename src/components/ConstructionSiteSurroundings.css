@@ -1,0 +1,139 @@
+/*
+ * The primary screen. It is a single readable column rather than the explorer's
+ * two-column app layout: there is one question here ("was ist neu bei mir?"),
+ * and everything secondary sits in disclosures below the answer.
+ */
+.surroundings {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 62rem;
+  align-content: start;
+}
+
+.surroundings__header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.surroundings__header h2 {
+  margin: 0;
+  padding-block: 0;
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
+  line-height: 1.2;
+}
+
+.surroundings__intro {
+  margin: 0;
+  max-width: 44rem;
+  color: var(--app-muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Scope chips: the settings that decide what this screen shows. */
+.surroundings__scope {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.surroundings__chip {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--app-border);
+  background: var(--app-card);
+  color: var(--app-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.surroundings__chip--on {
+  border-color: var(--kern-color-feedback-success, #2f8132);
+  color: var(--kern-color-feedback-success, #2f8132);
+  font-weight: 600;
+}
+
+.surroundings__chip--off {
+  border-color: var(--phase-upcoming);
+  color: var(--phase-upcoming);
+}
+
+.surroundings__result {
+  display: flex;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.surroundings__count {
+  margin: 0;
+  color: var(--app-muted);
+  font-size: 0.95rem;
+}
+
+.surroundings__count strong {
+  color: var(--kern-color-layout-text-default, #1d1d1b);
+  font-size: 1.35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.surroundings__unseen {
+  display: inline-block;
+  margin-inline-start: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--phase-active);
+  font-size: 0.78rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.surroundings__panel--onboarding {
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--app-border);
+  border-top: 0.2rem solid var(--app-accent);
+  background: var(--app-card);
+}
+
+.surroundings__section {
+  border-bottom: 1px solid var(--app-border);
+}
+
+.surroundings__section > .kern-accordion__header {
+  min-height: 2.75rem;
+  padding-block: 0.55rem;
+  background: var(--app-card);
+  transition: background-color 0.15s ease;
+}
+
+.surroundings__section > .kern-accordion__header:hover {
+  background: var(--accent-tint);
+}
+
+.surroundings__explore {
+  display: flex;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0.25rem 0 0;
+}
+
+.surroundings__updated {
+  color: var(--app-muted);
+  font-size: 0.8rem;
+}
+
+.surroundings .kern-alert .kern-button {
+  margin-top: 0.6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .surroundings__section > .kern-accordion__header {
+    transition: none;
+  }
+}

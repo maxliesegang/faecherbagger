@@ -6,6 +6,7 @@ import type {
 import {
   getChangedConstructionSiteIds,
   computeConstructionSiteChanges,
+  indexConstructionSiteChanges,
 } from "../src/lib/construction-site-changes.ts";
 
 function createConstructionSite(
@@ -237,5 +238,48 @@ describe("getChangedConstructionSiteIds", () => {
         removed: [],
       }),
     ).toEqual(new Set());
+  });
+});
+
+describe("indexConstructionSiteChanges", () => {
+  it("keys added and modified entries by construction-site id", () => {
+    const index = indexConstructionSiteChanges({
+      since: "2026-07-13T12:00:00Z",
+      added: [{ id: "A", detectedAt: "2026-07-19T00:00:00Z" }],
+      modified: [{ id: "B", detectedAt: "2026-07-18T00:00:00Z" }],
+      removed: ["C"],
+    });
+
+    expect(index.get("A")).toEqual({
+      status: "added",
+      detectedAt: "2026-07-19T00:00:00Z",
+    });
+    expect(index.get("B")).toEqual({
+      status: "modified",
+      detectedAt: "2026-07-18T00:00:00Z",
+    });
+    expect(index.has("C")).toBe(false);
+  });
+
+  it("prefers 'added' when an id appears in both lists", () => {
+    const index = indexConstructionSiteChanges({
+      since: "2026-07-13T12:00:00Z",
+      added: [{ id: "A", detectedAt: "2026-07-19T00:00:00Z" }],
+      modified: [{ id: "A", detectedAt: "2026-07-18T00:00:00Z" }],
+      removed: [],
+    });
+
+    expect(index.get("A")?.status).toBe("added");
+  });
+
+  it("stays empty for a first run without a comparison base", () => {
+    expect(
+      indexConstructionSiteChanges({
+        since: null,
+        added: [{ id: "A", detectedAt: "2026-07-19T00:00:00Z" }],
+        modified: [],
+        removed: [],
+      }).size,
+    ).toBe(0);
   });
 });

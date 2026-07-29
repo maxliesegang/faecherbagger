@@ -143,6 +143,61 @@ select {
 }
 
 /*
+ * Top-level navigation. The surroundings tab comes first and carries the
+ * unread count, so the app's purpose is the default and stays visible while
+ * the visitor is searching the whole region.
+ */
+.section-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.section-tabs__tab {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.4rem 1rem;
+  border: 0;
+  border-bottom: 0.2rem solid transparent;
+  color: var(--app-muted);
+  font-weight: 700;
+  background: none;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.section-tabs__tab:hover {
+  color: var(--app-accent);
+}
+
+.section-tabs__tab[aria-current="page"] {
+  border-bottom-color: var(--app-accent);
+  color: var(--app-accent);
+}
+
+.section-tabs__tab:focus-visible {
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: -4px;
+}
+
+.section-tabs__badge {
+  min-width: 1.5rem;
+  padding-inline: 0.35rem;
+  border-radius: 1rem;
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--phase-active);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/*
  * Desktop is a two-column app: a narrow control rail that stacks everything
  * vertically (search, status, detail filters, personal tools) beside a results
  * column that gets the full remaining height. The DOM order is mobile-first —
@@ -637,12 +692,15 @@ select {
 }
 
 .app-footer {
+  display: grid;
+  gap: 0.25rem;
   margin-block: 1.25rem 0;
   padding-top: 0.75rem;
   border-top: 1px solid var(--app-border);
 }
 
-.app-footer__details {
+.app-footer__details,
+.app-footer .pwa-panel {
   max-width: 50rem;
 }
 
@@ -707,6 +765,7 @@ select {
   .phase-switch__item,
   .filter-panel__scope,
   .filter-chips__chip,
+  .section-tabs__tab,
   .view-switcher__button,
   .pwa-panel > .kern-accordion__header {
     transition: none;

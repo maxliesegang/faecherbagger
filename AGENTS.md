@@ -18,6 +18,8 @@
 
 - `src/components/`: React UI and component-specific CSS.
 - `src/hooks/`: browser lifecycle and asynchronous React state.
+- `src/App.tsx`: page shell. It owns the shareable URL state and the personal
+  state (notification area, push, acknowledged changes) and picks the screen.
 - `src/lib/`: framework-independent domain, filtering, mapping, data-loading,
   notification, and push helpers.
 - `src/types/`: shared domain and WFS types used by the app and data pipeline.
@@ -30,6 +32,22 @@
 - `test/`: Vitest tests; WFS samples belong in `test/fixtures/`.
 - `.github/workflows/`: scheduled data refresh, Pages deployment, and Worker
   deployment.
+
+## Product Focus
+
+- The app's purpose is telling a visitor about **new construction sites in their
+  own surroundings**. `ConstructionSiteSurroundings` is the default screen and
+  must stay the shortest path to that answer; the region-wide explorer, filters,
+  sorting and full map are secondary and stay one step away.
+- The notification area (center plus radius) is one shared concept: it scopes
+  the surroundings screen, the map overlay and the Web Push subscription. Do not
+  introduce a second, view-only radius.
+- Keep the surroundings screen usable without notifications and without a device
+  location: the municipality center is the fallback, and a blocked, unsupported
+  or unconfigured push service must degrade to an explanatory hint.
+- New nearby records are ranked by detection time and then distance, and changes
+  newer than the stored acknowledgement are highlighted. Personal state
+  (area, acknowledgement) stays in `localStorage` and out of the URL.
 
 ## Development Practices
 

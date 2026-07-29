@@ -22,11 +22,19 @@ import {
 export type ConstructionSiteResultView = "map" | "list";
 
 /**
+ * The two top-level areas of the app. `"surroundings"` is the default and the
+ * app's purpose: what is new around the visitor. `"explorer"` is the secondary
+ * search over the whole region.
+ */
+export type AppSection = "surroundings" | "explorer";
+
+/**
  * The part of the UI state that belongs in the address bar, so a filtered view
  * can be bookmarked, shared or reloaded. Query keys are German because the URL
  * is user-facing; everything else in the codebase stays English.
  */
 export interface AppURLState {
+  section: AppSection;
   filters: ConstructionSiteFilters;
   showOnlyChanged: boolean;
   view: ConstructionSiteResultView;
@@ -35,6 +43,7 @@ export interface AppURLState {
 }
 
 export const DEFAULT_APP_URL_STATE: Readonly<AppURLState> = {
+  section: "surroundings",
   filters: EMPTY_CONSTRUCTION_SITE_FILTERS,
   showOnlyChanged: false,
   view: "map",
@@ -42,6 +51,7 @@ export const DEFAULT_APP_URL_STATE: Readonly<AppURLState> = {
 };
 
 const URL_SEARCH_PARAMETER_NAMES = {
+  section: "bereich",
   search: "q",
   municipality: "ort",
   phase: "status",
@@ -61,6 +71,16 @@ const RESULT_VIEW_BY_URL_VALUE: Record<string, ConstructionSiteResultView> = {
 const URL_VALUE_BY_RESULT_VIEW: Record<ConstructionSiteResultView, string> = {
   map: "karte",
   list: "liste",
+};
+
+const SECTION_BY_URL_VALUE: Record<string, AppSection> = {
+  umgebung: "surroundings",
+  alle: "explorer",
+};
+
+const URL_VALUE_BY_SECTION: Record<AppSection, string> = {
+  surroundings: "umgebung",
+  explorer: "alle",
 };
 
 /** Returns the parameter value when it is one of `allowed`, else `""`. */
@@ -86,7 +106,10 @@ export function parseAppURLState(search: string): AppURLState {
     RESULT_VIEW_BY_URL_VALUE[
       params.get(URL_SEARCH_PARAMETER_NAMES.view) ?? ""
     ];
+  const section =
+    SECTION_BY_URL_VALUE[params.get(URL_SEARCH_PARAMETER_NAMES.section) ?? ""];
   return {
+    section: section ?? DEFAULT_APP_URL_STATE.section,
     filters: {
       search:
         params.get(URL_SEARCH_PARAMETER_NAMES.search)?.slice(0, 200) ?? "",
@@ -130,6 +153,12 @@ export function serializeAppURLState(state: AppURLState): string {
   const { filters } = state;
   const search = filters.search.trim();
 
+  if (state.section !== DEFAULT_APP_URL_STATE.section) {
+    params.set(
+      URL_SEARCH_PARAMETER_NAMES.section,
+      URL_VALUE_BY_SECTION[state.section],
+    );
+  }
   if (search) params.set(URL_SEARCH_PARAMETER_NAMES.search, search);
   if (filters.phase) {
     params.set(URL_SEARCH_PARAMETER_NAMES.phase, filters.phase);

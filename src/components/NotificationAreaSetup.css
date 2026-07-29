@@ -1,0 +1,72 @@
+.area-setup {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.area-setup__field {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.area-setup__field > legend {
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.area-setup__hint {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.area-setup__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.area-setup__actions--footer {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--app-border);
+}
+
+.area-setup__municipality {
+  display: flex;
+  gap: 0.5rem;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+.area-setup__municipality .kern-form-input {
+  flex: 1 1 12rem;
+  margin: 0;
+}
+
+.area-setup__radius-label {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.area-setup__radius {
+  width: 100%;
+  max-width: 26rem;
+  margin-top: 0.25rem;
+}
+
+.area-setup__radius:focus-visible {
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+.area-setup__feedback {
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border-inline-start: 0.2rem solid var(--app-accent);
+  background: var(--accent-tint);
+  font-size: 0.9rem;
+}

@@ -94,9 +94,17 @@ export async function unsubscribeFromPush() {
   const subscription = await getPushSubscription();
   if (!subscription) return;
   try {
+    // The `auth` key proves to the service that this caller owns the
+    // subscription; knowing the endpoint URL alone must not be enough to
+    // remove someone else's. If the request fails, the browser-side
+    // unsubscribe below still runs and the now-dead endpoint is pruned by the
+    // fan-out on its next attempt.
     await requestPushAPI("/subscriptions", {
       method: "DELETE",
-      body: JSON.stringify({ endpoint: subscription.endpoint }),
+      body: JSON.stringify({
+        endpoint: subscription.endpoint,
+        auth: subscription.toJSON().keys?.auth,
+      }),
     });
   } finally {
     await subscription.unsubscribe();

@@ -125,6 +125,33 @@ export function formatISOTimestamp(isoTimestamp: string): string {
     : TIMESTAMP_FORMAT.format(date);
 }
 
+const startOfLocalDay = (date: Date): number =>
+  new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
+
+const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
+
+/**
+ * Calendar-day distance in German ("heute", "gestern", "vor 3 Tagen"), used for
+ * change timestamps where the exact time of day is noise. `now` is a parameter
+ * so the output is testable; falls back to the absolute timestamp when the
+ * input cannot be parsed or lies in the future.
+ */
+export function formatRelativeDay(
+  isoTimestamp: string,
+  now: Date = new Date(),
+): string {
+  const date = new Date(isoTimestamp);
+  if (Number.isNaN(date.getTime())) return isoTimestamp;
+
+  const days = Math.round(
+    (startOfLocalDay(now) - startOfLocalDay(date)) / MILLISECONDS_PER_DAY,
+  );
+  if (days < 0) return formatISOTimestamp(isoTimestamp);
+  if (days === 0) return "heute";
+  if (days === 1) return "gestern";
+  return `vor ${days} Tagen`;
+}
+
 /** Renders a start/end range; open-ended (`null` end) shows as `"ab <start>"`. */
 export function formatConstructionPeriod(startDate: string, endDate: string | null): string {
   const start = formatISODate(startDate);

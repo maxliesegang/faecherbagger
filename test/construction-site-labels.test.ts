@@ -3,6 +3,7 @@ import {
   formatISODate,
   formatConstructionPeriod,
   formatISOTimestamp,
+  formatRelativeDay,
 } from "../src/lib/construction-site-labels.ts";
 
 describe("formatISODate", () => {
@@ -28,5 +29,28 @@ describe("formatConstructionPeriod", () => {
 describe("formatISOTimestamp", () => {
   it("passes invalid timestamps through unchanged", () => {
     expect(formatISOTimestamp("not-a-date")).toBe("not-a-date");
+  });
+});
+
+describe("formatRelativeDay", () => {
+  const now = new Date(2026, 6, 28, 10, 0, 0);
+
+  it("names today and yesterday", () => {
+    expect(formatRelativeDay(new Date(2026, 6, 28, 6, 0, 0).toISOString(), now)).toBe(
+      "heute",
+    );
+    expect(
+      formatRelativeDay(new Date(2026, 6, 27, 23, 0, 0).toISOString(), now),
+    ).toBe("gestern");
+  });
+
+  it("counts whole calendar days further back", () => {
+    expect(
+      formatRelativeDay(new Date(2026, 6, 25, 8, 0, 0).toISOString(), now),
+    ).toBe("vor 3 Tagen");
+  });
+
+  it("passes unparseable values through", () => {
+    expect(formatRelativeDay("not-a-date", now)).toBe("not-a-date");
   });
 });

@@ -26,10 +26,16 @@ function isValidChangeEntry(
   );
 }
 
-interface AccumulatorEntry {
-  status: "added" | "modified";
+/** How a construction site entered the change window. */
+export type ConstructionSiteChangeStatus = "added" | "modified";
+
+/** A change looked up by construction-site id. */
+export interface ConstructionSiteChange {
+  status: ConstructionSiteChangeStatus;
   detectedAt: ISOTimestamp;
 }
+
+type AccumulatorEntry = ConstructionSiteChange;
 
 /**
  * Computes what changed between previous and current construction sites, keyed
@@ -150,4 +156,30 @@ export function getChangedConstructionSiteIds(
         ...changes.added.map((entry) => entry.id),
         ...changes.modified.map((entry) => entry.id),
       ]);
+}
+
+/**
+ * Changes keyed by construction-site id, so a view can label a single record
+ * without scanning the lists. `"added"` wins over `"modified"` for the same id,
+ * matching how {@link computeConstructionSiteChanges} accumulates entries. A
+ * first-run diff (`since === null`) yields an empty index for the same reason
+ * as {@link getChangedConstructionSiteIds}.
+ */
+export function indexConstructionSiteChanges(
+  changes: Readonly<ConstructionSiteChanges>,
+): Map<string, ConstructionSiteChange> {
+  const index = new Map<string, ConstructionSiteChange>();
+  if (changes.since === null) return index;
+
+  for (const entry of changes.modified) {
+    if (isValidChangeEntry(entry)) {
+      index.set(entry.id, { status: "modified", detectedAt: entry.detectedAt });
+    }
+  }
+  for (const entry of changes.added) {
+    if (isValidChangeEntry(entry)) {
+      index.set(entry.id, { status: "added", detectedAt: entry.detectedAt });
+    }
+  }
+  return index;
 }

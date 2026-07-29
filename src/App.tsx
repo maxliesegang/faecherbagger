@@ -7,38 +7,45 @@ import {
   KernLink,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import type { LngLat, NotificationArea } from "./types/index.ts";
-import {
-  countConstructionSitesByPhase,
-  type ConstructionSiteFilters,
-} from "./lib/construction-site-filter.ts";
+import type { ConstructionSite, NotificationArea } from "./types/index.ts";
+import type { ConstructionSiteFilters } from "./lib/construction-site-filter.ts";
 import type { ConstructionSiteSort } from "./lib/construction-site-sort.ts";
 import {
   DEFAULT_APP_URL_STATE,
   parseAppURLState,
   serializeAppURLState,
+  type AppSection,
+  type AppURLState,
   type ConstructionSiteResultView,
 } from "./lib/url-state.ts";
-import { ConstructionSiteFilter } from "./components/ConstructionSiteFilter.tsx";
-import { ConstructionSiteDetail } from "./components/ConstructionSiteDetail.tsx";
-import { ConstructionSiteResults } from "./components/ConstructionSiteResults.tsx";
-import { CurrentLocationControl } from "./components/CurrentLocationControl.tsx";
-import { ProgressiveWebAppSettings } from "./components/ProgressiveWebAppSettings.tsx";
-import {
-  useCurrentLocation,
-  type CurrentLocationController,
-} from "./hooks/useCurrentLocation.ts";
-import { useConstructionSiteData } from "./hooks/useConstructionSiteData.ts";
 import { getChangedConstructionSiteIds } from "./lib/construction-site-changes.ts";
 import {
-  loadNotificationArea,
-  saveNotificationArea,
-} from "./lib/notification-area.ts";
+  countUnseenConstructionSiteChanges,
+  selectChangedNearbyConstructionSites,
+  selectNearbyConstructionSites,
+  type NearbyConstructionSite,
+} from "./lib/nearby-construction-sites.ts";
+import { AppSectionTabs } from "./components/AppSectionTabs.tsx";
+import { ConstructionSiteDetail } from "./components/ConstructionSiteDetail.tsx";
+import { ConstructionSiteExplorer } from "./components/ConstructionSiteExplorer.tsx";
+import { ConstructionSiteSurroundings } from "./components/ConstructionSiteSurroundings.tsx";
+import { ProgressiveWebAppSettings } from "./components/ProgressiveWebAppSettings.tsx";
+import { useConstructionSiteData } from "./hooks/useConstructionSiteData.ts";
+import { useCurrentLocation } from "./hooks/useCurrentLocation.ts";
+import { useNotificationArea } from "./hooks/useNotificationArea.ts";
+import { useProgressiveWebApp } from "./hooks/useProgressiveWebApp.ts";
+import { usePushNotifications } from "./hooks/usePushNotifications.ts";
+import { useSeenConstructionSiteChanges } from "./hooks/useSeenConstructionSiteChanges.ts";
 import "./App.css";
 
+/** Stable empty results while the data is loading or no area is defined. */
+const NO_CONSTRUCTION_SITES: readonly ConstructionSite[] = [];
+const NO_NEARBY_CONSTRUCTION_SITES: readonly NearbyConstructionSite[] = [];
+
 /**
- * Page shell: owns the shareable view state (filters, scope, presentation,
- * sort, detail) and arranges the control rail beside the results.
+ * Page shell. Owns the shareable view state (section, filters, scope,
+ * presentation, sort, detail) plus the personal state the surroundings view is
+ * built on (area, notifications, acknowledgement), and picks the screen.
  */
 export function App() {
   const constructionSiteData = useConstructionSiteData();
@@ -47,6 +54,7 @@ export function App() {
     [],
   );
 
+  const [section, setSection] = useState<AppSection>(initialURLState.section);
   const [filters, setFilters] = useState<ConstructionSiteFilters>(
     initialURLState.filters,
   );
@@ -62,22 +70,33 @@ export function App() {
   const [detailSiteId, setDetailSiteId] = useState<string | undefined>(
     initialURLState.detailSiteId,
   );
-  const [notificationArea, setNotificationArea] =
-    useState<NotificationArea | null>(loadNotificationArea);
+  const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
+
   const locationController = useCurrentLocation();
+  const progressiveWebApp = useProgressiveWebApp();
+  const pushController = usePushNotifications();
+  const {
+    trackNotificationArea,
+    syncNotificationArea,
+    setFeedbackMessage,
+    disableNotifications,
+    isEnabled: areNotificationsEnabled,
+  } = pushController;
+  const { notificationArea, saveNotificationArea, clearNotificationArea } =
+    useNotificationArea();
+  const { seenAt, markChangesSeen } = useSeenConstructionSiteChanges();
+
+  const urlState: AppURLState = useMemo(
+    () => ({ section, filters, showOnlyChanged, view, sort, detailSiteId }),
+    [detailSiteId, filters, section, showOnlyChanged, sort, view],
+  );
 
   // Keep the address bar in step with the view so it can be shared or reloaded.
   // `replaceState` keeps typing out of the history stack; the delay keeps a
   // fast typist under the browsers' rate limit for history updates.
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      const query = serializeAppURLState({
-        filters,
-        showOnlyChanged,
-        view,
-        sort,
-        detailSiteId,
-      });
+      const query = serializeAppURLState(urlState);
       window.history.replaceState(
         window.history.state,
         "",
@@ -85,13 +104,14 @@ export function App() {
       );
     }, 300);
     return () => window.clearTimeout(timer);
-  }, [detailSiteId, filters, showOnlyChanged, sort, view]);
+  }, [urlState]);
 
   // Detail links use the History API so Back/Forward restores the complete
   // overview state without a full application reload.
   useEffect(() => {
     const restoreURLState = () => {
       const state = parseAppURLState(window.location.search);
+      setSection(state.section);
       setFilters(state.filters);
       setShowOnlyChanged(state.showOnlyChanged);
       setView(state.view);
@@ -102,18 +122,24 @@ export function App() {
     return () => window.removeEventListener("popstate", restoreURLState);
   }, []);
 
+  // The push subscription stores the area, so the hook needs the current one
+  // when the service worker becomes ready after a reload.
+  useEffect(() => {
+    trackNotificationArea(notificationArea);
+  }, [notificationArea, trackNotificationArea]);
+
+  const buildHref = useCallback(
+    (overrides: Partial<AppURLState>) =>
+      `${window.location.pathname}${serializeAppURLState({
+        ...urlState,
+        ...overrides,
+      })}${window.location.hash}`,
+    [urlState],
+  );
+
   const getDetailHref = useCallback(
-    (siteId: string | undefined) => {
-      const query = serializeAppURLState({
-        filters,
-        showOnlyChanged,
-        view,
-        sort,
-        detailSiteId: siteId,
-      });
-      return `${window.location.pathname}${query}${window.location.hash}`;
-    },
-    [filters, showOnlyChanged, sort, view],
+    (siteId: string | undefined) => buildHref({ detailSiteId: siteId }),
+    [buildHref],
   );
 
   const openSiteDetails = useCallback(
@@ -137,22 +163,33 @@ export function App() {
     setDetailSiteId(undefined);
   }, [getDetailHref, detailSiteId]);
 
-  const showSelectedSiteOnMap = useCallback(() => {
-    const query = serializeAppURLState({
-      filters,
-      showOnlyChanged,
-      view: "map",
-      sort,
-      detailSiteId: undefined,
-    });
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${query}${window.location.hash}`,
-    );
-    setView("map");
-    setDetailSiteId(undefined);
-  }, [filters, showOnlyChanged, sort]);
+  /** Opens the explorer's map on one site, from anywhere in the app. */
+  const showSiteOnMap = useCallback(
+    (siteId: string | undefined) => {
+      window.history.replaceState(
+        null,
+        "",
+        buildHref({
+          section: "explorer",
+          view: "map",
+          detailSiteId: undefined,
+        }),
+      );
+      setSection("explorer");
+      setView("map");
+      setDetailSiteId(undefined);
+      setMapSelectedSiteId(siteId);
+    },
+    [buildHref],
+  );
+
+  const showExplorer = useCallback(
+    (nextView?: ConstructionSiteResultView) => {
+      setSection("explorer");
+      if (nextView) setView(nextView);
+    },
+    [],
+  );
 
   useEffect(() => {
     const focusSearch = (event: KeyboardEvent) => {
@@ -167,8 +204,11 @@ export function App() {
       ) {
         return;
       }
+      const searchInput =
+        document.querySelector<HTMLInputElement>("#filter-search");
+      if (!searchInput) return;
       event.preventDefault();
-      document.querySelector<HTMLInputElement>("#filter-search")?.focus();
+      searchInput.focus();
     };
     window.addEventListener("keydown", focusSearch);
     return () => window.removeEventListener("keydown", focusSearch);
@@ -179,28 +219,100 @@ export function App() {
     setShowOnlyChanged(false);
   }, []);
 
+  /** Persists the area and keeps an existing push subscription in step. */
+  const updateNotificationArea = useCallback(
+    (area: NotificationArea) => {
+      saveNotificationArea(area);
+      trackNotificationArea(area);
+      void syncNotificationArea(area).catch((error: unknown) => {
+        setFeedbackMessage(
+          error instanceof Error
+            ? error.message
+            : "Das Gebiet konnte nicht an den Benachrichtigungsdienst übertragen werden.",
+        );
+      });
+    },
+    [
+      saveNotificationArea,
+      setFeedbackMessage,
+      syncNotificationArea,
+      trackNotificationArea,
+    ],
+  );
+
+  // Removing the area also ends the subscription: without an area the service
+  // has nothing to match new construction sites against.
+  const removeNotificationArea = useCallback(() => {
+    clearNotificationArea();
+    trackNotificationArea(null);
+    if (areNotificationsEnabled) void disableNotifications();
+  }, [
+    areNotificationsEnabled,
+    clearNotificationArea,
+    disableNotifications,
+    trackNotificationArea,
+  ]);
+
   const currentLocation =
     locationController.locationState.status === "ready"
       ? locationController.locationState.point
       : undefined;
+
+  const isReady = constructionSiteData.status === "ready";
+  const constructionSites = isReady
+    ? constructionSiteData.constructionSites
+    : NO_CONSTRUCTION_SITES;
+  const changes = isReady ? constructionSiteData.changes : undefined;
+
+  const changedSiteIds = useMemo(
+    () => (changes ? getChangedConstructionSiteIds(changes) : new Set<string>()),
+    [changes],
+  );
+  // Computed once here: the tab badge and the surroundings screen must never
+  // disagree about what is new around the visitor.
+  const nearbyConstructionSites = useMemo(
+    () =>
+      changes && notificationArea
+        ? selectNearbyConstructionSites(
+            constructionSites,
+            notificationArea,
+            changes,
+          )
+        : NO_NEARBY_CONSTRUCTION_SITES,
+    [changes, constructionSites, notificationArea],
+  );
+  const changedNearbyConstructionSites = useMemo(
+    () => selectChangedNearbyConstructionSites(nearbyConstructionSites),
+    [nearbyConstructionSites],
+  );
+  const unseenNearbyCount = countUnseenConstructionSiteChanges(
+    changedNearbyConstructionSites,
+    seenAt,
+  );
+
+  const detailSite = detailSiteId
+    ? constructionSites.find((site) => site.id === detailSiteId)
+    : undefined;
 
   return (
     <>
       <a className="skip-link" href="#main-content">
         Zum Inhalt
       </a>
-      <KernKopfzeile label="Fächerbagger · Baustellenportal" />
+      <KernKopfzeile label="Fächerbagger · Baustellen in Ihrer Umgebung" />
       <main id="main-content">
         <KernContainer>
           <header className="app-bar">
             <div className="app-bar__titles">
-              <KernHeading level={1}>Baustellen in der Region Karlsruhe</KernHeading>
+              <KernHeading level={1}>
+                Baustellen in der Region Karlsruhe
+              </KernHeading>
               <KernText className="app-bar__intro">
-                Aktuelle und geplante Straßenbaustellen finden, vergleichen und
-                im Blick behalten.
+                Neue Baustellen im eigenen Umkreis erfahren — und bei Bedarf die
+                ganze Region durchsuchen.
               </KernText>
             </div>
-            {constructionSiteData.status === "ready" && (
+            {isReady && (
               <p className="app-bar__updated">
                 <span className="app-bar__dot" aria-hidden="true" />
                 Stand{" "}
@@ -230,222 +342,129 @@ export function App() {
             </KernAlert>
           )}
 
-          {constructionSiteData.status === "ready" && (
-            <ConstructionSiteExplorer
-              constructionSites={constructionSiteData.constructionSites}
-              changes={constructionSiteData.changes}
-              metadata={constructionSiteData.metadata}
-              filters={filters}
-              onFiltersChange={setFilters}
-              onFiltersReset={resetFilters}
-              showOnlyChanged={showOnlyChanged}
-              onShowOnlyChangedChange={setShowOnlyChanged}
-              view={view}
-              onViewChange={setView}
-              sort={sort}
-              onSortChange={setSort}
-              detailSiteId={detailSiteId}
-              getDetailHref={(siteId) => getDetailHref(siteId)}
-              onDetailOpen={openSiteDetails}
-              onDetailClose={closeSiteDetails}
-              onDetailShowOnMap={showSelectedSiteOnMap}
-              currentLocation={currentLocation}
-              locationController={locationController}
-              notificationArea={notificationArea}
-              onNotificationAreaChange={(area) => {
-                saveNotificationArea(area);
-                setNotificationArea(area);
-              }}
-            />
+          {isReady && detailSiteId ? (
+            detailSite ? (
+              <ConstructionSiteDetail
+                site={detailSite}
+                overviewHref={getDetailHref(undefined)}
+                onBack={closeSiteDetails}
+                onShowOnMap={() => showSiteOnMap(detailSite.id)}
+              />
+            ) : (
+              <KernAlert variant="warning" title="Baustelle nicht gefunden">
+                <KernText>
+                  Die verlinkte Baustelle ist im aktuellen Datenstand nicht
+                  enthalten.
+                </KernText>
+                <a
+                  href={getDetailHref(undefined)}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    closeSiteDetails();
+                  }}
+                >
+                  Zur Übersicht
+                </a>
+              </KernAlert>
+            )
+          ) : (
+            isReady && (
+              <>
+                <AppSectionTabs
+                  section={section}
+                  onSectionChange={setSection}
+                  unseenCount={unseenNearbyCount}
+                />
+
+                {section === "surroundings" ? (
+                  <ConstructionSiteSurroundings
+                    constructionSites={constructionSites}
+                    nearbyConstructionSites={nearbyConstructionSites}
+                    changedNearbyConstructionSites={
+                      changedNearbyConstructionSites
+                    }
+                    unseenCount={unseenNearbyCount}
+                    changes={constructionSiteData.changes}
+                    metadata={constructionSiteData.metadata}
+                    notificationArea={notificationArea}
+                    onNotificationAreaChange={updateNotificationArea}
+                    onNotificationAreaClear={removeNotificationArea}
+                    locationController={locationController}
+                    pushController={pushController}
+                    isInstalled={progressiveWebApp.isInstalled}
+                    seenAt={seenAt}
+                    onMarkChangesSeen={() =>
+                      markChangesSeen(constructionSiteData.metadata.fetchedAt)
+                    }
+                    getSiteDetailsHref={getDetailHref}
+                    onShowSiteDetails={openSiteDetails}
+                    onShowSiteOnMap={showSiteOnMap}
+                    onExploreAllConstructionSites={() => showExplorer()}
+                  />
+                ) : (
+                  <ConstructionSiteExplorer
+                    constructionSites={constructionSites}
+                    changes={constructionSiteData.changes}
+                    changedSiteIds={changedSiteIds}
+                    filters={filters}
+                    onFiltersChange={setFilters}
+                    onFiltersReset={resetFilters}
+                    showOnlyChanged={showOnlyChanged}
+                    onShowOnlyChangedChange={setShowOnlyChanged}
+                    view={view}
+                    onViewChange={setView}
+                    sort={sort}
+                    onSortChange={setSort}
+                    selectedSiteId={mapSelectedSiteId}
+                    onSelectedSiteIdChange={setMapSelectedSiteId}
+                    getDetailHref={getDetailHref}
+                    onDetailOpen={openSiteDetails}
+                    locationController={locationController}
+                    currentLocation={currentLocation}
+                    notificationArea={notificationArea ?? undefined}
+                  />
+                )}
+              </>
+            )
+          )}
+
+          {isReady && (
+            <footer className="app-footer">
+              <ProgressiveWebAppSettings progressiveWebApp={progressiveWebApp} />
+              <details className="kern-accordion app-footer__details">
+                <summary className="kern-accordion__header">
+                  <span className="kern-title">Datenquelle und Hinweise</span>
+                </summary>
+                <section className="kern-accordion__body">
+                  <KernText>
+                    Daten: {constructionSiteData.metadata.source.name}. Quellen:{" "}
+                    {constructionSiteData.metadata.attribution.join(", ")}.
+                    Letzte Aktualisierung:{" "}
+                    {new Date(
+                      constructionSiteData.metadata.fetchedAt,
+                    ).toLocaleString("de-DE")}
+                    .
+                  </KernText>
+                  <KernLink
+                    href="https://mobil.trk.de/"
+                    label="Zum Mobilitätsportal der TRK"
+                  />
+                  {" · "}
+                  <KernLink
+                    href={`${import.meta.env.BASE_URL}baustellen.xml`}
+                    label="RSS-Feed abonnieren"
+                  />
+                  {" · "}
+                  <KernLink
+                    href={`${import.meta.env.BASE_URL}baustellen.atom`}
+                    label="Atom-Feed abonnieren"
+                  />
+                </section>
+              </details>
+            </footer>
           )}
         </KernContainer>
       </main>
-    </>
-  );
-}
-
-type LoadedConstructionSiteData = Extract<
-  ReturnType<typeof useConstructionSiteData>,
-  { status: "ready" }
->;
-
-interface ConstructionSiteExplorerProps
-  extends Pick<
-    LoadedConstructionSiteData,
-    "constructionSites" | "changes" | "metadata"
-  > {
-  filters: ConstructionSiteFilters;
-  onFiltersChange: (filters: ConstructionSiteFilters) => void;
-  onFiltersReset: () => void;
-  showOnlyChanged: boolean;
-  onShowOnlyChangedChange: (showOnlyChanged: boolean) => void;
-  view: ConstructionSiteResultView;
-  onViewChange: (view: ConstructionSiteResultView) => void;
-  sort: ConstructionSiteSort | null;
-  onSortChange: (sort: ConstructionSiteSort | null) => void;
-  detailSiteId?: string;
-  getDetailHref: (siteId: string | undefined) => string;
-  onDetailOpen: (siteId: string) => void;
-  onDetailClose: () => void;
-  onDetailShowOnMap: () => void;
-  currentLocation?: LngLat;
-  locationController: CurrentLocationController;
-  notificationArea: NotificationArea | null;
-  onNotificationAreaChange: (area: NotificationArea) => void;
-}
-
-/**
- * The loaded page: a persistent control rail beside the results. Split out so
- * the derived counts are only computed once data is available.
- */
-function ConstructionSiteExplorer({
-  constructionSites,
-  changes,
-  metadata,
-  filters,
-  onFiltersChange,
-  onFiltersReset,
-  showOnlyChanged,
-  onShowOnlyChangedChange,
-  view,
-  onViewChange,
-  sort,
-  onSortChange,
-  detailSiteId,
-  getDetailHref,
-  onDetailOpen,
-  onDetailClose,
-  onDetailShowOnMap,
-  currentLocation,
-  locationController,
-  notificationArea,
-  onNotificationAreaChange,
-}: ConstructionSiteExplorerProps) {
-  const [mapSelectedSiteId, setMapSelectedSiteId] = useState<
-    string | undefined
-  >();
-  const changedSiteIds = useMemo(
-    () => getChangedConstructionSiteIds(changes),
-    [changes],
-  );
-  // The status counts have to respect the change scope, otherwise the tiles
-  // would advertise more matches than the result list can show.
-  const scopedConstructionSites = useMemo(
-    () =>
-      showOnlyChanged
-        ? constructionSites.filter((site) => changedSiteIds.has(site.id))
-        : constructionSites,
-    [changedSiteIds, constructionSites, showOnlyChanged],
-  );
-  const phaseCounts = useMemo(
-    () => countConstructionSitesByPhase(scopedConstructionSites, filters),
-    [filters, scopedConstructionSites],
-  );
-  const detailSite = detailSiteId
-    ? constructionSites.find((site) => site.id === detailSiteId)
-    : undefined;
-
-  if (detailSiteId) {
-    return detailSite ? (
-      <ConstructionSiteDetail
-        site={detailSite}
-        overviewHref={getDetailHref(undefined)}
-        onBack={onDetailClose}
-        onShowOnMap={() => {
-          setMapSelectedSiteId(detailSite.id);
-          onDetailShowOnMap();
-        }}
-      />
-    ) : (
-      <KernAlert variant="warning" title="Baustelle nicht gefunden">
-        <KernText>
-          Die verlinkte Baustelle ist im aktuellen Datenstand nicht enthalten.
-        </KernText>
-        <a
-          href={getDetailHref(undefined)}
-          onClick={(event) => {
-            event.preventDefault();
-            onDetailClose();
-          }}
-        >
-          Zur Baustellenübersicht
-        </a>
-      </KernAlert>
-    );
-  }
-
-  return (
-    <>
-      <div className="app-shell">
-        <div className="app-rail">
-          <ConstructionSiteFilter
-            constructionSites={constructionSites}
-            filters={filters}
-            phaseCounts={phaseCounts}
-            showOnlyChanged={showOnlyChanged}
-            changedCount={changedSiteIds.size}
-            onFiltersChange={onFiltersChange}
-            onShowOnlyChangedChange={onShowOnlyChangedChange}
-            onFiltersReset={onFiltersReset}
-          />
-
-          <div className="app-rail__tools" aria-label="Persönliche Werkzeuge">
-            <CurrentLocationControl locationController={locationController} />
-            <ProgressiveWebAppSettings
-              locationController={locationController}
-              notificationArea={notificationArea}
-              onNotificationAreaChange={onNotificationAreaChange}
-            />
-          </div>
-        </div>
-
-        <ConstructionSiteResults
-          constructionSites={constructionSites}
-          changes={changes}
-          changedSiteIds={changedSiteIds}
-          filters={filters}
-          showOnlyChanged={showOnlyChanged}
-          view={view}
-          onViewChange={onViewChange}
-          sort={sort}
-          onSortChange={onSortChange}
-          selectedSiteId={mapSelectedSiteId}
-          onSelectedSiteIdChange={setMapSelectedSiteId}
-          getDetailHref={getDetailHref}
-          onDetailOpen={onDetailOpen}
-          currentLocation={currentLocation}
-          notificationArea={notificationArea ?? undefined}
-        />
-      </div>
-
-      <footer className="app-footer">
-        <details className="kern-accordion app-footer__details">
-          <summary className="kern-accordion__header">
-            <span className="kern-title">Datenquelle und Hinweise</span>
-          </summary>
-          <section className="kern-accordion__body">
-            <KernText>
-              Daten: {metadata.source.name}. Quellen:{" "}
-              {metadata.attribution.join(", ")}. Letzte Aktualisierung:{" "}
-              {new Date(metadata.fetchedAt).toLocaleString("de-DE")}.
-            </KernText>
-            <KernLink
-              href="https://mobil.trk.de/"
-              label="Zum Mobilitätsportal der TRK"
-            />
-            {" · "}
-            <KernLink
-              href={`${import.meta.env.BASE_URL}baustellen.xml`}
-              label="RSS-Feed abonnieren"
-            />
-            {" · "}
-            <KernLink
-              href={`${import.meta.env.BASE_URL}baustellen.atom`}
-              label="Atom-Feed abonnieren"
-            />
-          </section>
-        </details>
-      </footer>
     </>
   );
 }

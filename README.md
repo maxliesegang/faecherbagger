@@ -8,8 +8,31 @@ The name is a pun on Karlsruhe's nickname *Fächerstadt* (fan-shaped city) and
 *Bagger* (excavator). UI language is German; code, comments and commits are
 English.
 
-> **Status:** The app includes the data pipeline, filterable map and list views,
-> distance sorting, and responsive construction-site details.
+> **Status:** The app includes the data pipeline, a personal "what is new around
+> me" view with optional Web Push, filterable map and list views, distance
+> sorting, and responsive construction-site details.
+
+## What the app is for
+
+The primary job is one question: **"Gibt es neue Baustellen in meiner
+Umgebung?"** Everything else supports that answer.
+
+- **Meine Umgebung** (default screen, [`ConstructionSiteSurroundings.tsx`](src/components/ConstructionSiteSurroundings.tsx)) —
+  the visitor defines a *notification area* once (a center from the device
+  location or, as a fallback, from a municipality in the data, plus a radius).
+  The screen then lists the construction sites inside that area that are new or
+  updated within the change-retention window, nearest and newest first, and
+  marks the ones that arrived since the last visit. The same area powers Web
+  Push, so an alert can arrive without opening the app. Secondary detail (all
+  sites in the area, an area map, the area/notification settings) sits in
+  disclosures below the answer.
+- **Alle Baustellen** (secondary screen, [`ConstructionSiteExplorer.tsx`](src/components/ConstructionSiteExplorer.tsx)) —
+  the full region: search, filters, sorting, map and list.
+
+The active screen is part of the shareable URL state (`?bereich=umgebung|alle`,
+default `umgebung`), so a link opens where its author intended. The notification
+area and the "seen" acknowledgement are personal state and stay in
+`localStorage` — they are never put in the URL.
 
 ## How it works
 
@@ -96,9 +119,10 @@ network-first runtime cache, and refreshes them:
 - through one-off Background Sync where available;
 - whenever the installed app starts, returns online, or becomes visible.
 
-Users opt in to notifications from the app. A successful opt-in sends a local
-test notification. Later background refreshes compare `meta.fetchedAt` and show
-a local summary based on `changes.json`. The optional Cloudflare Worker in
+Notifications are opted into where the notification area is defined, on the
+"Meine Umgebung" screen: the area is the subject of the notification, so both
+are one decision. A successful opt-in sends a local test notification. The
+optional Cloudflare Worker in
 [`push-worker/`](push-worker/) stores Web Push subscriptions in D1; after Pages
 deployment, GitHub Actions sends VAPID-authenticated pushes and removes expired
 subscriptions. This wakes the service worker and refreshes cached data on iOS,
