@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-07-28T17:15:49.256Z</updated>
+    <updated>2026-07-29T06:25:44.398Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -32,6 +32,18 @@ Zeitraum: 10.07.2026 – 07.08.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Franz-Sigel-Straße gegenüber Nr. 13 – Bruchsal]]></title>
+        <id>faecherbagger:30171:2026-07-28T09:03:38Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30171"/>
+        <updated>2026-07-28T09:03:38.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 29.07.2026 – 31.07.2026
+Hinweis: Fahrbahn eingeengt
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee – Karlsruhe]]></title>
@@ -114,11 +126,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: An der Bahn zw. Hagdornstraße und Gerhardtstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: An der Bahn zw. Hagdornstraße und Gerhardtstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4675:2026-07-27T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4675"/>
         <updated>2026-07-27T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kanalbau · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
 Zeitraum: 29.07.2026 – 12.08.2026
 Hinweis: Höhe Haus Nr 18
 Verantwortlich: Privat
@@ -505,11 +517,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Baugrunduntersuchung" term="soil-survey"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Hirschstraße zw. Amalienstraße und Kaiserstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Amalienstraße und Kaiserstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4615:2026-07-23T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4615"/>
         <updated>2026-07-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
 Zeitraum: 29.07.2026 – 22.08.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
@@ -1158,20 +1170,6 @@ Zeitraum: 20.07.2026 – 01.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Württemberger Straße im Bereich zw. Ortseingang und Schlachthof – Bruchsal]]></title>
-        <id>faecherbagger:30167:2026-07-17T06:11:02Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30167"/>
-        <updated>2026-07-17T06:11:02.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
-Zeitraum: 22.07.2026 – 28.07.2026
-Hinweis: Kurzzeitige Arbeiten an der Fahrbahndecke.
-Dauer: 1 Tag an mehreen Stellen. Voraussichtlich am 23.07.2026.
-Die Fahrbahn wird im Baubereich halbseitig gesperrt.
-Verantwortlich: Fachgebiet Tiefbau
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Hildebrandstr./Oberwaldstr./Reichenbachstr. – Karlsruhe]]></title>
@@ -2409,11 +2407,11 @@ Quelle: Stadt Bruchsal]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Sophienstraße Kreuzung Reinhold-Frank-Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Sophienstraße Kreuzung Reinhold-Frank-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3807:2026-06-22T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3807"/>
         <updated>2026-06-22T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
 Zeitraum: 29.07.2026 – 04.07.2027
 Hinweis: Wegen Sperrung Reinhold-Frank-Straße in südlicher Fahrtrichtung, Zusammenlegung der Linksabbiegerstreifen auf den Geradeaus-Rechts-Fahrstreifen
 Verantwortlich: Stadtwerke Karlsruhe
@@ -4475,6 +4473,18 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Michaelstunnel – Baden-Baden]]></title>
+        <id>faecherbagger:40146:2026-04-15T13:28:21Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40146"/>
+        <updated>2026-04-15T13:28:21.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Tunnel · Vollsperrung
+Zeitraum: 29.07.2026 – 30.07.2026
+Hinweis: Nachtsperrung Zwischenreinigung: nachts von Mittwoch Abend (29.07.) bis Donnerstag Morgen (30.07.) zwischen 20:00 Uhr und 05:30 Uhr
+Verantwortlich: Tiefbau
+Quelle: Stadt Baden-Baden]]></summary>
+        <category label="Tunnel" term="tunnel"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76437 Rastatt, Werderstr – Rastatt]]></title>

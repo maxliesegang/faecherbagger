@@ -66620,33 +66620,6 @@
           "coordinates": [
             [
               [
-                8.3559738,
-                49.0243165
-              ],
-              [
-                8.35594574,
-                49.02429514
-              ],
-              [
-                8.35661057,
-                49.0239583
-              ],
-              [
-                8.35662386,
-                49.02398858
-              ],
-              [
-                8.3559738,
-                49.0243165
-              ]
-            ]
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
                 8.35664643,
                 49.02297217
               ],
@@ -66709,6 +66682,33 @@
               [
                 8.35664643,
                 49.02297217
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8.3559738,
+                49.0243165
+              ],
+              [
+                8.35594574,
+                49.02429514
+              ],
+              [
+                8.35661057,
+                49.0239583
+              ],
+              [
+                8.35662386,
+                49.02398858
+              ],
+              [
+                8.3559738,
+                49.0243165
               ]
             ]
           ]
@@ -88949,7 +88949,7 @@
   },
   {
     "id": "2026V3807",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -98709,7 +98709,7 @@
   },
   {
     "id": "2026V4615",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -99311,7 +99311,7 @@
   },
   {
     "id": "2026V4675",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "full",
@@ -103060,129 +103060,6 @@
     "lastModified": "2026-06-29T05:35:18Z"
   },
   {
-    "id": "30167",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Württemberger Straße im Bereich zw. Ortseingang und Schlachthof",
-    "notes": "Kurzzeitige Arbeiten an der Fahrbahndecke.\nDauer: 1 Tag an mehreen Stellen. Voraussichtlich am 23.07.2026.\nDie Fahrbahn wird im Baubereich halbseitig gesperrt.",
-    "cause": "Fachgebiet Tiefbau",
-    "startDate": "2026-07-22",
-    "endDate": "2026-07-28",
-    "point": [
-      8.6150667,
-      49.11782012
-    ],
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [
-            8.61719078,
-            49.11765886
-          ],
-          [
-            8.61718784,
-            49.11756009
-          ],
-          [
-            8.6171281,
-            49.11747003
-          ],
-          [
-            8.61697535,
-            49.11744686
-          ],
-          [
-            8.61647709,
-            49.11760711
-          ],
-          [
-            8.61555404,
-            49.11783638
-          ],
-          [
-            8.61423045,
-            49.11802787
-          ],
-          [
-            8.61328087,
-            49.11817608
-          ],
-          [
-            8.61252734,
-            49.11833061
-          ],
-          [
-            8.61167334,
-            49.11855846
-          ],
-          [
-            8.61109832,
-            49.11875243
-          ],
-          [
-            8.61104453,
-            49.11869153
-          ],
-          [
-            8.61223503,
-            49.11833286
-          ],
-          [
-            8.61317658,
-            49.11812316
-          ],
-          [
-            8.6140371,
-            49.1179908
-          ],
-          [
-            8.61484172,
-            49.11785325
-          ],
-          [
-            8.61571665,
-            49.11770173
-          ],
-          [
-            8.61668306,
-            49.1174467
-          ],
-          [
-            8.61773955,
-            49.11702438
-          ],
-          [
-            8.61782541,
-            49.11708457
-          ],
-          [
-            8.61738345,
-            49.1173025
-          ],
-          [
-            8.6173364,
-            49.11748691
-          ],
-          [
-            8.61727822,
-            49.11767453
-          ],
-          [
-            8.61719078,
-            49.11765886
-          ]
-        ]
-      ]
-    },
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-07-17T06:11:02Z"
-  },
-  {
     "id": "30168",
     "phase": "active",
     "category": "power-telecom",
@@ -103260,6 +103137,53 @@
     },
     "source": "Stadt Bruchsal",
     "lastModified": "2026-07-22T06:46:21Z"
+  },
+  {
+    "id": "30171",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Franz-Sigel-Straße gegenüber Nr. 13",
+    "notes": "Fahrbahn eingeengt",
+    "cause": "Stadtwerke",
+    "startDate": "2026-07-29",
+    "endDate": "2026-07-31",
+    "point": [
+      8.57565438,
+      49.11687075
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.57559093,
+            49.11689338
+          ],
+          [
+            8.57558637,
+            49.11685481
+          ],
+          [
+            8.57571782,
+            49.11684811
+          ],
+          [
+            8.57572239,
+            49.11688668
+          ],
+          [
+            8.57559093,
+            49.11689338
+          ]
+        ]
+      ]
+    },
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-28T09:03:38Z"
   },
   {
     "id": "40000",
@@ -105458,70 +105382,38 @@
     "startDate": "2025-06-30",
     "endDate": "2026-11-30",
     "point": [
-      8.637303764999999,
-      49.105919705000005
+      8.63081785,
+      49.11261007
     ],
     "geometry": {
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                8.63015743,
-                49.1130684
-              ],
-              [
-                8.6300336,
-                49.11287268
-              ],
-              [
-                8.63132314,
-                49.11214688
-              ],
-              [
-                8.63165094,
-                49.11229186
-              ],
-              [
-                8.63065978,
-                49.11290552
-              ],
-              [
-                8.63015743,
-                49.1130684
-              ]
-            ]
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8.63015743,
+            49.1130684
+          ],
+          [
+            8.6300336,
+            49.11287268
+          ],
+          [
+            8.63132314,
+            49.11214688
+          ],
+          [
+            8.63165094,
+            49.11229186
+          ],
+          [
+            8.63065978,
+            49.11290552
+          ],
+          [
+            8.63015743,
+            49.1130684
           ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                8.64379462,
-                49.09918748
-              ],
-              [
-                8.64380674,
-                49.09927104
-              ],
-              [
-                8.64378715,
-                49.0992742
-              ],
-              [
-                8.64377112,
-                49.09918933
-              ],
-              [
-                8.64379462,
-                49.09918748
-              ]
-            ]
-          ]
-        }
+        ]
       ]
     },
     "source": "Stadt Bruchsal",
@@ -106912,6 +106804,87 @@
     },
     "source": "Stadt Bruchsal",
     "lastModified": "2026-07-25T08:41:54Z"
+  },
+  {
+    "id": "40146",
+    "phase": "active",
+    "category": "tunnel",
+    "artRaw": "Tunnelbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Baden-Baden",
+    "location": "Michaelstunnel",
+    "notes": "Nachtsperrung Zwischenreinigung: nachts von Mittwoch Abend (29.07.) bis Donnerstag Morgen (30.07.) zwischen 20:00 Uhr und 05:30 Uhr",
+    "cause": "Tiefbau",
+    "startDate": "2026-07-29",
+    "endDate": "2026-07-30",
+    "point": [
+      8.23205048,
+      48.75758754
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          8.22941321,
+          48.76889708
+        ],
+        [
+          8.23037972,
+          48.76789267
+        ],
+        [
+          8.23066073,
+          48.76721239
+        ],
+        [
+          8.2312848,
+          48.76043276
+        ],
+        [
+          8.23175085,
+          48.75813719
+        ],
+        [
+          8.23249026,
+          48.75678075
+        ],
+        [
+          8.23386383,
+          48.75542008
+        ],
+        [
+          8.23596184,
+          48.7542292
+        ],
+        [
+          8.23814767,
+          48.7535684
+        ],
+        [
+          8.24094866,
+          48.75325018
+        ],
+        [
+          8.24471875,
+          48.75319899
+        ],
+        [
+          8.2461865,
+          48.75314359
+        ],
+        [
+          8.24740638,
+          48.75276791
+        ],
+        [
+          8.24851606,
+          48.75211113
+        ]
+      ]
+    },
+    "source": "Stadt Baden-Baden",
+    "lastModified": "2026-04-15T13:28:21Z"
   },
   {
     "id": "40172",

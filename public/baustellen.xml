@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Tue, 28 Jul 2026 17:15:49 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 29 Jul 2026 06:25:44 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -30,6 +30,18 @@ Zeitraum: 10.07.2026 – 07.08.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></description>
             <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Franz-Sigel-Straße gegenüber Nr. 13 – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30171</link>
+            <guid isPermaLink="false">faecherbagger:30171:2026-07-28T09:03:38Z</guid>
+            <pubDate>Tue, 28 Jul 2026 09:03:38 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 29.07.2026 – 31.07.2026
+Hinweis: Fahrbahn eingeengt
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></description>
+            <category>Gas/Wasser</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Reinhold-Frank-Straße zwischen Belfortstraße und Kaiserallee – Karlsruhe]]></title>
@@ -112,11 +124,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: An der Bahn zw. Hagdornstraße und Gerhardtstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: An der Bahn zw. Hagdornstraße und Gerhardtstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4675</link>
             <guid isPermaLink="false">faecherbagger:2026V4675:2026-07-27T22:00:00Z</guid>
             <pubDate>Mon, 27 Jul 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Kanalbau · Vollsperrung
+            <description><![CDATA[Aktuell · Kanalbau · Vollsperrung
 Zeitraum: 29.07.2026 – 12.08.2026
 Hinweis: Höhe Haus Nr 18
 Verantwortlich: Privat
@@ -503,11 +515,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Baugrunduntersuchung</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Hirschstraße zw. Amalienstraße und Kaiserstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Hirschstraße zw. Amalienstraße und Kaiserstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4615</link>
             <guid isPermaLink="false">faecherbagger:2026V4615:2026-07-23T22:00:00Z</guid>
             <pubDate>Thu, 23 Jul 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Fernwärme · Mit Behinderung
+            <description><![CDATA[Aktuell · Fernwärme · Mit Behinderung
 Zeitraum: 29.07.2026 – 22.08.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
@@ -1156,20 +1168,6 @@ Zeitraum: 20.07.2026 – 01.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></description>
             <category>Bauliche Sondernutzung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Württemberger Straße im Bereich zw. Ortseingang und Schlachthof – Bruchsal]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30167</link>
-            <guid isPermaLink="false">faecherbagger:30167:2026-07-17T06:11:02Z</guid>
-            <pubDate>Fri, 17 Jul 2026 06:11:02 GMT</pubDate>
-            <description><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
-Zeitraum: 22.07.2026 – 28.07.2026
-Hinweis: Kurzzeitige Arbeiten an der Fahrbahndecke.
-Dauer: 1 Tag an mehreen Stellen. Voraussichtlich am 23.07.2026.
-Die Fahrbahn wird im Baubereich halbseitig gesperrt.
-Verantwortlich: Fachgebiet Tiefbau
-Quelle: Stadt Bruchsal]]></description>
-            <category>Straßenunterhaltung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Hildebrandstr./Oberwaldstr./Reichenbachstr. – Karlsruhe]]></title>
@@ -2407,11 +2405,11 @@ Quelle: Stadt Bruchsal]]></description>
             <category>Strom/TK-Versorgung</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Sophienstraße Kreuzung Reinhold-Frank-Straße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Sophienstraße Kreuzung Reinhold-Frank-Straße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3807</link>
             <guid isPermaLink="false">faecherbagger:2026V3807:2026-06-22T22:00:00Z</guid>
             <pubDate>Mon, 22 Jun 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
 Zeitraum: 29.07.2026 – 04.07.2027
 Hinweis: Wegen Sperrung Reinhold-Frank-Straße in südlicher Fahrtrichtung, Zusammenlegung der Linksabbiegerstreifen auf den Geradeaus-Rechts-Fahrstreifen
 Verantwortlich: Stadtwerke Karlsruhe
@@ -4473,6 +4471,18 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Michaelstunnel – Baden-Baden]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40146</link>
+            <guid isPermaLink="false">faecherbagger:40146:2026-04-15T13:28:21Z</guid>
+            <pubDate>Wed, 15 Apr 2026 13:28:21 GMT</pubDate>
+            <description><![CDATA[Aktuell · Tunnel · Vollsperrung
+Zeitraum: 29.07.2026 – 30.07.2026
+Hinweis: Nachtsperrung Zwischenreinigung: nachts von Mittwoch Abend (29.07.) bis Donnerstag Morgen (30.07.) zwischen 20:00 Uhr und 05:30 Uhr
+Verantwortlich: Tiefbau
+Quelle: Stadt Baden-Baden]]></description>
+            <category>Tunnel</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: 76437 Rastatt, Werderstr – Rastatt]]></title>
