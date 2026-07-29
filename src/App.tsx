@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import {
   KernAlert,
   KernContainer,
@@ -8,16 +8,6 @@ import {
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import type { ConstructionSite, NotificationArea } from "./types/index.ts";
-import type { ConstructionSiteFilters } from "./lib/construction-site-filter.ts";
-import type { ConstructionSiteSort } from "./lib/construction-site-sort.ts";
-import {
-  DEFAULT_APP_URL_STATE,
-  parseAppURLState,
-  serializeAppURLState,
-  type AppSection,
-  type AppURLState,
-  type ConstructionSiteResultView,
-} from "./lib/url-state.ts";
 import { getChangedConstructionSiteIds } from "./lib/construction-site-changes.ts";
 import {
   countUnseenConstructionSiteChanges,
@@ -26,10 +16,13 @@ import {
   type NearbyConstructionSite,
 } from "./lib/nearby-construction-sites.ts";
 import { AppSectionTabs } from "./components/AppSectionTabs.tsx";
+import { ClientNavigationLink } from "./components/ClientNavigationLink.tsx";
 import { ConstructionSiteDetail } from "./components/ConstructionSiteDetail.tsx";
 import { ConstructionSiteExplorer } from "./components/ConstructionSiteExplorer.tsx";
 import { ConstructionSiteSurroundings } from "./components/ConstructionSiteSurroundings.tsx";
+import { LoadingStatus } from "./components/LoadingStatus.tsx";
 import { ProgressiveWebAppSettings } from "./components/ProgressiveWebAppSettings.tsx";
+import { useAppURLState } from "./hooks/useAppURLState.ts";
 import { useConstructionSiteData } from "./hooks/useConstructionSiteData.ts";
 import { useCurrentLocation } from "./hooks/useCurrentLocation.ts";
 import { useNotificationArea } from "./hooks/useNotificationArea.ts";
@@ -42,35 +35,23 @@ import "./App.css";
 const NO_CONSTRUCTION_SITES: readonly ConstructionSite[] = [];
 const NO_NEARBY_CONSTRUCTION_SITES: readonly NearbyConstructionSite[] = [];
 
+const formatDataTimestamp = (timestamp: string): string =>
+  new Date(timestamp).toLocaleString("de-DE", {
+    dateStyle: "short",
+    timeStyle: "short",
+  });
+
 /**
- * Page shell. Owns the shareable view state (section, filters, scope,
- * presentation, sort, detail) plus the personal state the surroundings view is
- * built on (area, notifications, acknowledgement), and picks the screen.
+ * Page shell. Owns the personal state the surroundings view is built on (area,
+ * notifications, acknowledgement), derives what is new around the visitor once
+ * for every screen, and picks the screen. The shareable view state lives in
+ * {@link useAppURLState}.
  */
 export function App() {
   const constructionSiteData = useConstructionSiteData();
-  const initialURLState = useMemo(
-    () => parseAppURLState(window.location.search),
-    [],
-  );
-
-  const [section, setSection] = useState<AppSection>(initialURLState.section);
-  const [filters, setFilters] = useState<ConstructionSiteFilters>(
-    initialURLState.filters,
-  );
-  const [showOnlyChanged, setShowOnlyChanged] = useState(
-    initialURLState.showOnlyChanged,
-  );
-  const [view, setView] = useState<ConstructionSiteResultView>(
-    initialURLState.view,
-  );
-  const [sort, setSort] = useState<ConstructionSiteSort | null>(
-    initialURLState.sort,
-  );
-  const [detailSiteId, setDetailSiteId] = useState<string | undefined>(
-    initialURLState.detailSiteId,
-  );
-  const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
+  const urlState = useAppURLState();
+  const { getDetailHref, openSiteDetails, closeSiteDetails, showSiteOnMap } =
+    urlState;
 
   const locationController = useCurrentLocation();
   const progressiveWebApp = useProgressiveWebApp();
@@ -86,138 +67,11 @@ export function App() {
     useNotificationArea();
   const { seenAt, markChangesSeen } = useSeenConstructionSiteChanges();
 
-  const urlState: AppURLState = useMemo(
-    () => ({ section, filters, showOnlyChanged, view, sort, detailSiteId }),
-    [detailSiteId, filters, section, showOnlyChanged, sort, view],
-  );
-
-  // Keep the address bar in step with the view so it can be shared or reloaded.
-  // `replaceState` keeps typing out of the history stack; the delay keeps a
-  // fast typist under the browsers' rate limit for history updates.
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const query = serializeAppURLState(urlState);
-      window.history.replaceState(
-        window.history.state,
-        "",
-        `${window.location.pathname}${query}${window.location.hash}`,
-      );
-    }, 300);
-    return () => window.clearTimeout(timer);
-  }, [urlState]);
-
-  // Detail links use the History API so Back/Forward restores the complete
-  // overview state without a full application reload.
-  useEffect(() => {
-    const restoreURLState = () => {
-      const state = parseAppURLState(window.location.search);
-      setSection(state.section);
-      setFilters(state.filters);
-      setShowOnlyChanged(state.showOnlyChanged);
-      setView(state.view);
-      setSort(state.sort);
-      setDetailSiteId(state.detailSiteId);
-    };
-    window.addEventListener("popstate", restoreURLState);
-    return () => window.removeEventListener("popstate", restoreURLState);
-  }, []);
-
   // The push subscription stores the area, so the hook needs the current one
   // when the service worker becomes ready after a reload.
   useEffect(() => {
     trackNotificationArea(notificationArea);
   }, [notificationArea, trackNotificationArea]);
-
-  const buildHref = useCallback(
-    (overrides: Partial<AppURLState>) =>
-      `${window.location.pathname}${serializeAppURLState({
-        ...urlState,
-        ...overrides,
-      })}${window.location.hash}`,
-    [urlState],
-  );
-
-  const getDetailHref = useCallback(
-    (siteId: string | undefined) => buildHref({ detailSiteId: siteId }),
-    [buildHref],
-  );
-
-  const openSiteDetails = useCallback(
-    (siteId: string) => {
-      window.history.pushState(
-        { faecherbaggerDetail: siteId },
-        "",
-        getDetailHref(siteId),
-      );
-      setDetailSiteId(siteId);
-    },
-    [getDetailHref],
-  );
-
-  const closeSiteDetails = useCallback(() => {
-    if (window.history.state?.faecherbaggerDetail === detailSiteId) {
-      window.history.back();
-      return;
-    }
-    window.history.replaceState(null, "", getDetailHref(undefined));
-    setDetailSiteId(undefined);
-  }, [getDetailHref, detailSiteId]);
-
-  /** Opens the explorer's map on one site, from anywhere in the app. */
-  const showSiteOnMap = useCallback(
-    (siteId: string | undefined) => {
-      window.history.replaceState(
-        null,
-        "",
-        buildHref({
-          section: "explorer",
-          view: "map",
-          detailSiteId: undefined,
-        }),
-      );
-      setSection("explorer");
-      setView("map");
-      setDetailSiteId(undefined);
-      setMapSelectedSiteId(siteId);
-    },
-    [buildHref],
-  );
-
-  const showExplorer = useCallback(
-    (nextView?: ConstructionSiteResultView) => {
-      setSection("explorer");
-      if (nextView) setView(nextView);
-    },
-    [],
-  );
-
-  useEffect(() => {
-    const focusSearch = (event: KeyboardEvent) => {
-      if (
-        event.key !== "/" ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.altKey ||
-        event.target instanceof HTMLInputElement ||
-        event.target instanceof HTMLTextAreaElement ||
-        event.target instanceof HTMLSelectElement
-      ) {
-        return;
-      }
-      const searchInput =
-        document.querySelector<HTMLInputElement>("#filter-search");
-      if (!searchInput) return;
-      event.preventDefault();
-      searchInput.focus();
-    };
-    window.addEventListener("keydown", focusSearch);
-    return () => window.removeEventListener("keydown", focusSearch);
-  }, []);
-
-  const resetFilters = useCallback(() => {
-    setFilters(DEFAULT_APP_URL_STATE.filters);
-    setShowOnlyChanged(false);
-  }, []);
 
   /** Persists the area and keeps an existing push subscription in step. */
   const updateNotificationArea = useCallback(
@@ -290,8 +144,8 @@ export function App() {
     seenAt,
   );
 
-  const detailSite = detailSiteId
-    ? constructionSites.find((site) => site.id === detailSiteId)
+  const detailSite = urlState.detailSiteId
+    ? constructionSites.find((site) => site.id === urlState.detailSiteId)
     : undefined;
 
   return (
@@ -315,22 +169,13 @@ export function App() {
             {isReady && (
               <p className="app-bar__updated">
                 <span className="app-bar__dot" aria-hidden="true" />
-                Stand{" "}
-                {new Date(
-                  constructionSiteData.metadata.fetchedAt,
-                ).toLocaleString("de-DE", {
-                  dateStyle: "short",
-                  timeStyle: "short",
-                })}
+                Stand {formatDataTimestamp(constructionSiteData.metadata.fetchedAt)}
               </p>
             )}
           </header>
 
           {constructionSiteData.status === "loading" && (
-            <div className="app-status" role="status" aria-live="polite">
-              <span className="app-status__spinner" aria-hidden="true" />
-              <KernText>Daten werden geladen …</KernText>
-            </div>
+            <LoadingStatus message="Daten werden geladen …" />
           )}
 
           {constructionSiteData.status === "error" && (
@@ -342,7 +187,7 @@ export function App() {
             </KernAlert>
           )}
 
-          {isReady && detailSiteId ? (
+          {isReady && urlState.detailSiteId ? (
             detailSite ? (
               <ConstructionSiteDetail
                 site={detailSite}
@@ -356,27 +201,24 @@ export function App() {
                   Die verlinkte Baustelle ist im aktuellen Datenstand nicht
                   enthalten.
                 </KernText>
-                <a
+                <ClientNavigationLink
                   href={getDetailHref(undefined)}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    closeSiteDetails();
-                  }}
+                  onNavigate={closeSiteDetails}
                 >
                   Zur Übersicht
-                </a>
+                </ClientNavigationLink>
               </KernAlert>
             )
           ) : (
             isReady && (
               <>
                 <AppSectionTabs
-                  section={section}
-                  onSectionChange={setSection}
+                  section={urlState.section}
+                  onSectionChange={urlState.setSection}
                   unseenCount={unseenNearbyCount}
                 />
 
-                {section === "surroundings" ? (
+                {urlState.section === "surroundings" ? (
                   <ConstructionSiteSurroundings
                     constructionSites={constructionSites}
                     nearbyConstructionSites={nearbyConstructionSites}
@@ -399,24 +241,24 @@ export function App() {
                     getSiteDetailsHref={getDetailHref}
                     onShowSiteDetails={openSiteDetails}
                     onShowSiteOnMap={showSiteOnMap}
-                    onExploreAllConstructionSites={() => showExplorer()}
+                    onExploreAllConstructionSites={urlState.showExplorer}
                   />
                 ) : (
                   <ConstructionSiteExplorer
                     constructionSites={constructionSites}
                     changes={constructionSiteData.changes}
                     changedSiteIds={changedSiteIds}
-                    filters={filters}
-                    onFiltersChange={setFilters}
-                    onFiltersReset={resetFilters}
-                    showOnlyChanged={showOnlyChanged}
-                    onShowOnlyChangedChange={setShowOnlyChanged}
-                    view={view}
-                    onViewChange={setView}
-                    sort={sort}
-                    onSortChange={setSort}
-                    selectedSiteId={mapSelectedSiteId}
-                    onSelectedSiteIdChange={setMapSelectedSiteId}
+                    filters={urlState.filters}
+                    onFiltersChange={urlState.setFilters}
+                    onFiltersReset={urlState.resetFilters}
+                    showOnlyChanged={urlState.showOnlyChanged}
+                    onShowOnlyChangedChange={urlState.setShowOnlyChanged}
+                    view={urlState.view}
+                    onViewChange={urlState.setView}
+                    sort={urlState.sort}
+                    onSortChange={urlState.setSort}
+                    selectedSiteId={urlState.mapSelectedSiteId}
+                    onSelectedSiteIdChange={urlState.setMapSelectedSiteId}
                     getDetailHref={getDetailHref}
                     onDetailOpen={openSiteDetails}
                     locationController={locationController}

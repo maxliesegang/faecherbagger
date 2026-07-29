@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { NotificationArea } from "../types/index.ts";
+import { readStoredText, writeStoredText } from "../lib/browser-storage.ts";
 import {
   getPushSubscription,
   isPushConfigured,
@@ -53,7 +54,7 @@ export function usePushNotifications() {
     NotificationPermission | "unsupported"
   >(() => ("Notification" in window ? Notification.permission : "unsupported"));
   const [isEnabled, setIsEnabled] = useState(
-    () => localStorage.getItem(NOTIFICATIONS_STORAGE_KEY) === "true",
+    () => readStoredText(NOTIFICATIONS_STORAGE_KEY) === "true",
   );
   const [isBusy, setIsBusy] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState<string>();
@@ -63,7 +64,7 @@ export function usePushNotifications() {
   const notificationAreaRef = useRef<NotificationArea | null>(null);
 
   const rememberEnabled = (enabled: boolean) => {
-    localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, String(enabled));
+    writeStoredText(NOTIFICATIONS_STORAGE_KEY, String(enabled));
     setIsEnabled(enabled);
   };
 

@@ -4,7 +4,6 @@ import {
   isUnseenConstructionSiteChange,
   selectChangedNearbyConstructionSites,
   selectNearbyConstructionSites,
-  summarizeNearbyConstructionSites,
 } from "../src/lib/nearby-construction-sites.ts";
 import type {
   ConstructionSite,
@@ -160,25 +159,5 @@ describe("unseen changes", () => {
 
   it("treats an unchanged site as seen", () => {
     expect(isUnseenConstructionSiteChange(null, null)).toBe(false);
-  });
-});
-
-describe("summarizeNearbyConstructionSites", () => {
-  it("counts phases and change kinds in one pass", () => {
-    expect(
-      summarizeNearbyConstructionSites(
-        selectNearbyConstructionSites(
-          [nearestSite, middleSite, farSite],
-          area,
-          changes,
-        ),
-      ),
-    ).toEqual({
-      total: 2,
-      active: 1,
-      upcoming: 1,
-      added: 1,
-      modified: 1,
-    });
   });
 });

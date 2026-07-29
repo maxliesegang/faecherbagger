@@ -1,15 +1,13 @@
 import { useEffect } from "react";
-import { KernBadge } from "@kern-ux-annex/kern-react-kit";
 import type { ConstructionSite } from "../types/index.ts";
 import {
   formatConstructionPeriod,
   formatISOTimestamp,
-  getClosureBadgeVariant,
   getClosureLabel,
   getConstructionCategoryLabel,
-  getConstructionPhaseBadgeVariant,
-  getConstructionPhaseLabel,
 } from "../lib/construction-site-labels.ts";
+import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
+import { ConstructionSiteBadges } from "./ConstructionSiteBadges.tsx";
 import "./ConstructionSiteDetail.css";
 
 interface ConstructionSiteDetailProps {
@@ -35,37 +33,20 @@ export function ConstructionSiteDetail({
 
   return (
     <article className="construction-site-detail" aria-labelledby="detail-title">
-      <a
+      <ClientNavigationLink
         className="construction-site-detail__back"
         href={overviewHref}
-        onClick={(event) => {
-          if (
-            event.button !== 0 ||
-            event.metaKey ||
-            event.ctrlKey ||
-            event.shiftKey ||
-            event.altKey
-          ) {
-            return;
-          }
-          event.preventDefault();
-          onBack();
-        }}
+        onNavigate={onBack}
       >
         ← Zur Baustellenübersicht
-      </a>
+      </ClientNavigationLink>
 
       <header className="construction-site-detail__header">
-        <div className="construction-site-detail__badges">
-          <KernBadge
-            variant={getConstructionPhaseBadgeVariant(site.phase)}
-            label={getConstructionPhaseLabel(site.phase)}
-          />
-          <KernBadge
-            variant={getClosureBadgeVariant(site.closure)}
-            label={getClosureLabel(site.closure)}
-          />
-        </div>
+        <ConstructionSiteBadges
+          className="construction-site-detail__badges"
+          phase={site.phase}
+          closure={site.closure}
+        />
         <h2 id="detail-title">{site.location}</h2>
         <p>{site.municipality}</p>
       </header>

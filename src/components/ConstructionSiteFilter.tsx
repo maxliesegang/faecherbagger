@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   KernButton,
   KernHeading,
@@ -42,6 +42,39 @@ const PHASE_OPTIONS: readonly {
 
 const DESKTOP_RAIL_QUERY = "(min-width: 64rem)";
 
+const SEARCH_INPUT_ID = "filter-search";
+
+/**
+ * The "/" shortcut, next to the field it focuses and the hint that advertises
+ * it. Typing in another field must stay unaffected, and a modified "/" belongs
+ * to the browser.
+ */
+function useSearchShortcut() {
+  useEffect(() => {
+    const focusSearch = (event: KeyboardEvent) => {
+      if (
+        event.key !== "/" ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        event.target instanceof HTMLInputElement ||
+        event.target instanceof HTMLTextAreaElement ||
+        event.target instanceof HTMLSelectElement
+      ) {
+        return;
+      }
+      const searchInput = document.querySelector<HTMLInputElement>(
+        `#${SEARCH_INPUT_ID}`,
+      );
+      if (!searchInput) return;
+      event.preventDefault();
+      searchInput.focus();
+    };
+    window.addEventListener("keydown", focusSearch);
+    return () => window.removeEventListener("keydown", focusSearch);
+  }, []);
+}
+
 /** A one-click-removable summary of a narrowing filter that is in effect. */
 interface FilterChip {
   key: "search" | "municipality" | "category" | "closure";
@@ -64,6 +97,8 @@ export function ConstructionSiteFilter({
   onShowOnlyChangedChange,
   onFiltersReset,
 }: ConstructionSiteFilterProps) {
+  useSearchShortcut();
+
   // Detail filters stay open on the rail (there is vertical room and power
   // users want them at hand) and start collapsed on narrow screens.
   const [advancedOpen, setAdvancedOpen] = useState(
@@ -141,7 +176,7 @@ export function ConstructionSiteFilter({
 
       <div className="filter-panel__search">
         <KernInput
-          id="filter-search"
+          id={SEARCH_INPUT_ID}
           type="search"
           label="Suche"
           hint="Straße, Ort oder Stichwort — Taste /"

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   KernAlert,
   KernButton,
@@ -19,15 +19,10 @@ import {
   canOfferPushNotifications,
   type PushNotificationController,
 } from "../hooks/usePushNotifications.ts";
+import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
 import { NearbyConstructionSiteList } from "./NearbyConstructionSiteList.tsx";
 import { NotificationAreaSetup } from "./NotificationAreaSetup.tsx";
 import "./ConstructionSiteSurroundings.css";
-
-const ConstructionSiteMap = lazy(() =>
-  import("./ConstructionSiteMap.tsx").then((module) => ({
-    default: module.ConstructionSiteMap,
-  })),
-);
 
 interface ConstructionSiteSurroundingsProps {
   /** Complete dataset; only needed for the municipality fallback in the setup. */
@@ -226,29 +221,20 @@ export function ConstructionSiteSurroundings({
         </summary>
         <section className="kern-accordion__body">
           {isAreaMapOpen && (
-            <Suspense
-              fallback={
-                <div className="app-status" role="status" aria-live="polite">
-                  <span className="app-status__spinner" aria-hidden="true" />
-                  <KernText>Karte wird geladen …</KernText>
-                </div>
+            <LazyConstructionSiteMap
+              constructionSites={nearbySites}
+              selectedSiteId={mapSelectedSiteId}
+              currentLocation={
+                locationController.locationState.status === "ready"
+                  ? locationController.locationState.point
+                  : undefined
               }
-            >
-              <ConstructionSiteMap
-                constructionSites={nearbySites}
-                selectedSiteId={mapSelectedSiteId}
-                currentLocation={
-                  locationController.locationState.status === "ready"
-                    ? locationController.locationState.point
-                    : undefined
-                }
-                notificationArea={notificationArea}
-                onSiteSelect={setMapSelectedSiteId}
-                getSiteDetailsHref={getSiteDetailsHref}
-                onSiteDetailsRequest={onShowSiteDetails}
-                onListViewRequest={onExploreAllConstructionSites}
-              />
-            </Suspense>
+              notificationArea={notificationArea}
+              onSiteSelect={setMapSelectedSiteId}
+              getSiteDetailsHref={getSiteDetailsHref}
+              onSiteDetailsRequest={onShowSiteDetails}
+              onListViewRequest={onExploreAllConstructionSites}
+            />
           )}
         </section>
       </details>

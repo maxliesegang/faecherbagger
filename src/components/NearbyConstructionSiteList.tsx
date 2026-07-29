@@ -1,5 +1,3 @@
-import type { MouseEvent } from "react";
-import { KernBadge } from "@kern-ux-annex/kern-react-kit";
 import type { ISOTimestamp } from "../types/index.ts";
 import type { NearbyConstructionSite } from "../lib/nearby-construction-sites.ts";
 import { isUnseenConstructionSiteChange } from "../lib/nearby-construction-sites.ts";
@@ -7,12 +5,10 @@ import { formatDistance } from "../lib/distance.ts";
 import {
   formatConstructionPeriod,
   formatRelativeDay,
-  getClosureBadgeVariant,
-  getClosureLabel,
   getConstructionCategoryLabel,
-  getConstructionPhaseBadgeVariant,
-  getConstructionPhaseLabel,
 } from "../lib/construction-site-labels.ts";
+import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
+import { ConstructionSiteBadges } from "./ConstructionSiteBadges.tsx";
 import "./NearbyConstructionSiteList.css";
 
 interface NearbyConstructionSiteListProps {
@@ -25,13 +21,6 @@ interface NearbyConstructionSiteListProps {
   /** Accessible name of the list. */
   label: string;
 }
-
-const isPlainLeftClick = (event: MouseEvent): boolean =>
-  event.button === 0 &&
-  !event.metaKey &&
-  !event.ctrlKey &&
-  !event.shiftKey &&
-  !event.altKey;
 
 /**
  * The app's primary content: construction sites around the visitor as cards,
@@ -66,34 +55,20 @@ export function NearbyConstructionSiteList({
               </p>
 
               <div className="nearby-card__main">
-                <div className="nearby-card__badges">
-                  {entry.changeStatus === "added" && (
-                    <KernBadge variant="danger" label="Neu" />
-                  )}
-                  {entry.changeStatus === "modified" && (
-                    <KernBadge variant="warning" label="Aktualisiert" />
-                  )}
-                  <KernBadge
-                    variant={getConstructionPhaseBadgeVariant(site.phase)}
-                    label={getConstructionPhaseLabel(site.phase)}
-                  />
-                  <KernBadge
-                    variant={getClosureBadgeVariant(site.closure)}
-                    label={getClosureLabel(site.closure)}
-                  />
-                </div>
+                <ConstructionSiteBadges
+                  className="nearby-card__badges"
+                  phase={site.phase}
+                  closure={site.closure}
+                  changeStatus={entry.changeStatus}
+                />
 
                 <h3 className="nearby-card__title">
-                  <a
+                  <ClientNavigationLink
                     href={getSiteDetailsHref(site.id)}
-                    onClick={(event) => {
-                      if (!isPlainLeftClick(event)) return;
-                      event.preventDefault();
-                      onShowSiteDetails(site.id);
-                    }}
+                    onNavigate={() => onShowSiteDetails(site.id)}
                   >
                     {site.location}
-                  </a>
+                  </ClientNavigationLink>
                 </h3>
                 <p className="nearby-card__municipality">
                   {site.municipality}

@@ -32,13 +32,14 @@ import {
   MAP_LAYER_IDS,
   MAP_SOURCE_IDS,
 } from "../lib/construction-site-map-layers.ts";
+import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./ConstructionSiteMap.css";
 
 // Bundle the worker and its shared module dependency into one deployable asset.
 setWorkerUrl(mapLibreWorkerURL);
 
-interface ConstructionSiteMapProps {
+export interface ConstructionSiteMapProps {
   constructionSites: readonly ConstructionSite[];
   selectedSiteId?: string;
   currentLocation?: LngLat;
@@ -50,10 +51,40 @@ interface ConstructionSiteMapProps {
 }
 
 const FIT_PADDING = { top: 54, right: 54, bottom: 54, left: 54 };
-const CURRENT_LOCATION_ZOOM = 15;
+const FIT_MAX_ZOOM = 14;
+/** Close enough to read street names around a single point of interest. */
+const DETAIL_ZOOM = 15;
+const FIT_DURATION_MS = 500;
+const FOCUS_DURATION_MS = 650;
 
 const getGeoJSONSource = (map: MapLibreMap, id: string): GeoJSONSource =>
   map.getSource(id) as GeoJSONSource;
+
+/** Highlights one construction site, or none when the id is undefined. */
+function setSelectedSiteFilter(map: MapLibreMap, selectedSiteId?: string) {
+  map.setFilter(MAP_LAYER_IDS.selected, [
+    "==",
+    ["get", "id"],
+    selectedSiteId ?? "",
+  ]);
+}
+
+/** Moves to one point without ever zooming further out than the viewer is. */
+function focusPoint(map: MapLibreMap, point: LngLat, durationMs: number) {
+  map.easeTo({
+    center: point,
+    zoom: Math.max(map.getZoom(), DETAIL_ZOOM),
+    duration: durationMs,
+  });
+}
+
+function fitBounds(map: MapLibreMap, bounds: LngLatBounds) {
+  map.fitBounds(bounds, {
+    padding: FIT_PADDING,
+    maxZoom: FIT_MAX_ZOOM,
+    duration: FIT_DURATION_MS,
+  });
+}
 
 function fitConstructionSites(
   map: MapLibreMap,
@@ -61,17 +92,17 @@ function fitConstructionSites(
 ) {
   if (constructionSites.length === 0) return;
   if (constructionSites.length === 1) {
-    map.easeTo({ center: constructionSites[0].point, zoom: 15, duration: 500 });
+    map.easeTo({
+      center: constructionSites[0].point,
+      zoom: DETAIL_ZOOM,
+      duration: FIT_DURATION_MS,
+    });
     return;
   }
 
   const bounds = new LngLatBounds();
   constructionSites.forEach((site) => bounds.extend(site.point));
-  map.fitBounds(bounds, {
-    padding: FIT_PADDING,
-    maxZoom: 14,
-    duration: 500,
-  });
+  fitBounds(map, bounds);
 }
 
 function fitNotificationArea(map: MapLibreMap, area: NotificationArea) {
@@ -79,19 +110,7 @@ function fitNotificationArea(map: MapLibreMap, area: NotificationArea) {
   createNotificationAreaPolygon(area).coordinates[0].forEach((point) =>
     bounds.extend(point as LngLat),
   );
-  map.fitBounds(bounds, {
-    padding: FIT_PADDING,
-    maxZoom: 14,
-    duration: 500,
-  });
-}
-
-function focusCurrentLocation(map: MapLibreMap, location: LngLat) {
-  map.easeTo({
-    center: location,
-    zoom: Math.max(map.getZoom(), CURRENT_LOCATION_ZOOM),
-    duration: 650,
-  });
+  fitBounds(map, bounds);
 }
 
 export function ConstructionSiteMap({
@@ -184,19 +203,15 @@ export function ConstructionSiteMap({
         currentLocation,
         notificationArea,
       } = latestPropsRef.current;
-      map.setFilter(MAP_LAYER_IDS.selected, [
-        "==",
-        ["get", "id"],
-        selectedSiteId ?? "",
-      ]);
+      setSelectedSiteFilter(map, selectedSiteId);
       fitConstructionSites(map, constructionSites);
       const initiallySelected = constructionSites.find(
         (site) => site.id === selectedSiteId,
       );
       if (initiallySelected) {
-        map.easeTo({ center: initiallySelected.point, zoom: 15, duration: 0 });
+        focusPoint(map, initiallySelected.point, 0);
       } else if (currentLocation) {
-        focusCurrentLocation(map, currentLocation);
+        focusPoint(map, currentLocation, FOCUS_DURATION_MS);
       } else if (notificationArea) {
         fitNotificationArea(map, notificationArea);
       }
@@ -228,7 +243,7 @@ export function ConstructionSiteMap({
       createUserLocationFeatureCollection(currentLocation),
     );
     if (currentLocation && !selectedSiteId) {
-      focusCurrentLocation(map, currentLocation);
+      focusPoint(map, currentLocation, FOCUS_DURATION_MS);
     }
   }, [currentLocation, selectedSiteId]);
 
@@ -243,17 +258,9 @@ export function ConstructionSiteMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !isMapReadyRef.current) return;
-    map.setFilter(MAP_LAYER_IDS.selected, [
-      "==",
-      ["get", "id"],
-      selectedSiteId ?? "",
-    ]);
+    setSelectedSiteFilter(map, selectedSiteId);
     if (selectedSite) {
-      map.easeTo({
-        center: selectedSite.point,
-        zoom: Math.max(map.getZoom(), 15),
-        duration: 650,
-      });
+      focusPoint(map, selectedSite.point, FOCUS_DURATION_MS);
     }
   }, [selectedSite, selectedSiteId]);
 
@@ -340,25 +347,13 @@ export function ConstructionSiteMap({
           >
             In der Liste ansehen
           </button>
-          <a
+          <ClientNavigationLink
             className="map-selection__details-link"
             href={getSiteDetailsHref(selectedSite.id)}
-            onClick={(event) => {
-              if (
-                event.button !== 0 ||
-                event.metaKey ||
-                event.ctrlKey ||
-                event.shiftKey ||
-                event.altKey
-              ) {
-                return;
-              }
-              event.preventDefault();
-              onSiteDetailsRequest(selectedSite.id);
-            }}
+            onNavigate={() => onSiteDetailsRequest(selectedSite.id)}
           >
             Detailansicht
-          </a>
+          </ClientNavigationLink>
           <button
             type="button"
             className="map-selection__close"

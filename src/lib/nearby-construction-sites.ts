@@ -26,15 +26,6 @@ export interface NearbyConstructionSite {
   detectedAt: ISOTimestamp | null;
 }
 
-/** How many nearby sites fall into each bucket the surroundings view shows. */
-export interface NearbyConstructionSiteSummary {
-  total: number;
-  active: number;
-  upcoming: number;
-  added: number;
-  modified: number;
-}
-
 const compareByDistance = (
   left: NearbyConstructionSite,
   right: NearbyConstructionSite,
@@ -110,24 +101,4 @@ export function countUnseenConstructionSiteChanges(
   return nearbyConstructionSites.filter((entry) =>
     isUnseenConstructionSiteChange(entry.detectedAt, seenAt),
   ).length;
-}
-
-/** Counts for the surroundings header; one pass over the nearby records. */
-export function summarizeNearbyConstructionSites(
-  nearbyConstructionSites: readonly NearbyConstructionSite[],
-): NearbyConstructionSiteSummary {
-  const summary: NearbyConstructionSiteSummary = {
-    total: nearbyConstructionSites.length,
-    active: 0,
-    upcoming: 0,
-    added: 0,
-    modified: 0,
-  };
-  for (const entry of nearbyConstructionSites) {
-    if (entry.site.phase === "active") summary.active += 1;
-    else summary.upcoming += 1;
-    if (entry.changeStatus === "added") summary.added += 1;
-    else if (entry.changeStatus === "modified") summary.modified += 1;
-  }
-  return summary;
 }

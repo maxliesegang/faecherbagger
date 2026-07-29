@@ -3,6 +3,11 @@ import type {
   LngLat,
   NotificationArea,
 } from "../types/index.ts";
+import {
+  readStoredJSON,
+  removeStoredText,
+  writeStoredJSON,
+} from "./browser-storage.ts";
 import { distanceInMeters } from "./distance.ts";
 import { isNotificationArea } from "./notification-area-validation.ts";
 export {
@@ -18,22 +23,15 @@ export const NOTIFICATION_AREA_STORAGE_KEY =
   "faecherbagger-notification-area";
 
 export function loadNotificationArea(): NotificationArea | null {
-  try {
-    const stored = localStorage.getItem(NOTIFICATION_AREA_STORAGE_KEY);
-    if (!stored) return null;
-    const parsed: unknown = JSON.parse(stored);
-    return isNotificationArea(parsed) ? parsed : null;
-  } catch {
-    return null;
-  }
+  return readStoredJSON(NOTIFICATION_AREA_STORAGE_KEY, isNotificationArea);
 }
 
 export function saveNotificationArea(area: NotificationArea): void {
-  localStorage.setItem(NOTIFICATION_AREA_STORAGE_KEY, JSON.stringify(area));
+  writeStoredJSON(NOTIFICATION_AREA_STORAGE_KEY, area);
 }
 
 export function clearNotificationArea(): void {
-  localStorage.removeItem(NOTIFICATION_AREA_STORAGE_KEY);
+  removeStoredText(NOTIFICATION_AREA_STORAGE_KEY);
 }
 
 export function isPointInNotificationArea(

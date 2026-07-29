@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo } from "react";
+import { useMemo } from "react";
 import { KernAlert, KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
 import type {
   ConstructionSite,
@@ -19,13 +19,9 @@ import {
   type ConstructionSiteSort,
 } from "../lib/construction-site-sort.ts";
 import type { ConstructionSiteResultView } from "../lib/url-state.ts";
+import { CHANGES_RETENTION_DAYS } from "../lib/construction-site-changes.ts";
 import { ConstructionSiteTable } from "./ConstructionSiteTable.tsx";
-
-const ConstructionSiteMap = lazy(() =>
-  import("./ConstructionSiteMap.tsx").then((module) => ({
-    default: module.ConstructionSiteMap,
-  })),
-);
+import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
 
 interface ConstructionSiteResultsProps {
   constructionSites: readonly ConstructionSite[];
@@ -175,7 +171,7 @@ export function ConstructionSiteResults({
 
       {showOnlyChanged && changes.since !== null && (
         <KernText muted className="results__change-summary">
-          Letzte 7 Tage (seit{" "}
+          Letzte {CHANGES_RETENTION_DAYS} Tage (seit{" "}
           {new Date(changes.since).toLocaleString("de-DE")})
           : {changes.added.length} neu, {changes.modified.length} geändert
           {changes.removed.length > 0 &&
@@ -186,27 +182,18 @@ export function ConstructionSiteResults({
 
       {sortedConstructionSites.length > 0 ? (
         view === "map" ? (
-          <Suspense
-            fallback={
-              <div className="app-status" role="status" aria-live="polite">
-                <span className="app-status__spinner" aria-hidden="true" />
-                <KernText>Karte wird geladen …</KernText>
-              </div>
-            }
-          >
-            {/* The map is order-independent; passing the unsorted set keeps
-                a sort change from rebuilding its sources and refitting. */}
-            <ConstructionSiteMap
-              constructionSites={displayedConstructionSites}
-              selectedSiteId={selectedSiteId}
-              currentLocation={currentLocation}
-              notificationArea={notificationArea}
-              onSiteSelect={onSelectedSiteIdChange}
-              getSiteDetailsHref={getDetailHref}
-              onSiteDetailsRequest={onDetailOpen}
-              onListViewRequest={() => onViewChange("list")}
-            />
-          </Suspense>
+          /* The map is order-independent; passing the unsorted set keeps a
+             sort change from rebuilding its sources and refitting. */
+          <LazyConstructionSiteMap
+            constructionSites={displayedConstructionSites}
+            selectedSiteId={selectedSiteId}
+            currentLocation={currentLocation}
+            notificationArea={notificationArea}
+            onSiteSelect={onSelectedSiteIdChange}
+            getSiteDetailsHref={getDetailHref}
+            onSiteDetailsRequest={onDetailOpen}
+            onListViewRequest={() => onViewChange("list")}
+          />
         ) : (
           <ConstructionSiteTable
             constructionSites={sortedConstructionSites}
@@ -234,7 +221,7 @@ export function ConstructionSiteResults({
             {showOnlyChanged && changes.since === null
               ? "Für diesen Datenstand liegt noch kein vorheriger Vergleich vor."
               : showOnlyChanged
-                ? "In den letzten 7 Tagen gibt es für die gewählten Filter keine Änderungen."
+                ? `In den letzten ${CHANGES_RETENTION_DAYS} Tagen gibt es für die gewählten Filter keine Änderungen.`
                 : "Ändern Sie Ihre Suche oder löschen Sie die gewählten Filter."}
           </KernText>
         </KernAlert>

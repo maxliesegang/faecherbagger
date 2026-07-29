@@ -7,7 +7,7 @@ import type {
   NotificationArea,
 } from "../src/types/index.ts";
 import { selectNotifiableConstructionSites } from "../src/lib/notification-area.ts";
-import { formatISODate } from "../src/lib/construction-site-labels.ts";
+import { createPushNotificationPayload } from "../src/lib/push-notification.ts";
 
 interface StoredSubscription {
   endpoint: string;
@@ -109,24 +109,13 @@ while (cursor !== null) {
       outsideArea += 1;
       return;
     }
-    const firstSite = matchingSites[0];
-    const target = new URL(process.env.APP_URL!);
-    if (matchingSites.length === 1) {
-      target.searchParams.set("baustelle", firstSite.id);
-    }
-    const payload = JSON.stringify({
-      title:
-        matchingSites.length === 1
-          ? `Neue Baustelle in ${firstSite.municipality}`
-          : `${matchingSites.length} neue Baustellen in Ihrem Umkreis`,
-      body:
-        matchingSites.length === 1
-          ? `${firstSite.location} · ab ${formatISODate(firstSite.startDate)}`
-          : `Unter anderem: ${firstSite.location}, ${firstSite.municipality}`,
-      url: target.href,
-      count: matchingSites.length,
-      fetchedAt: metadata.fetchedAt,
-    });
+    const payload = JSON.stringify(
+      createPushNotificationPayload(
+        matchingSites,
+        process.env.APP_URL!,
+        metadata.fetchedAt,
+      ),
+    );
     try {
       await webpush.sendNotification(
         {

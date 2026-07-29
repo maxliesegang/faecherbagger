@@ -18,8 +18,11 @@
 
 - `src/components/`: React UI and component-specific CSS.
 - `src/hooks/`: browser lifecycle and asynchronous React state.
-- `src/App.tsx`: page shell. It owns the shareable URL state and the personal
-  state (notification area, push, acknowledged changes) and picks the screen.
+  `useAppURLState` owns the shareable view state and the History API; every
+  in-app navigation goes through it rather than touching `window.history`.
+- `src/App.tsx`: page shell. It owns the personal state (notification area,
+  push, acknowledged changes), derives what is new around the visitor once for
+  every screen, and picks the screen.
 - `src/lib/`: framework-independent domain, filtering, mapping, data-loading,
   notification, and push helpers.
 - `src/types/`: shared domain and WFS types used by the app and data pipeline.
@@ -67,6 +70,13 @@
   use normalized English names everywhere else.
 - Prefer pure helpers in `src/lib/` for behavior that can be tested without the
   DOM. Keep components focused on rendering and interaction wiring.
+- Reuse the shared building blocks instead of repeating their markup:
+  `ClientNavigationLink` for every in-app link (it keeps new-tab and modified
+  clicks working), `ConstructionSiteBadges` for describing a record,
+  `LoadingStatus` for waiting, and `LazyConstructionSiteMap` for the map.
+- Reach `localStorage` only through `src/lib/browser-storage.ts`. Private
+  browsing and a full quota make the API throw, and no personal state is worth
+  a blank page.
 - Preserve the established formatting: two spaces, double quotes, semicolons,
   and trailing commas where valid. There is no repository-wide formatter or
   linter command, so do not introduce broad formatting-only changes.

@@ -1,5 +1,4 @@
 import { useMemo, type ReactNode } from "react";
-import { KernBadge } from "@kern-ux-annex/kern-react-kit";
 import type { ConstructionSite, LngLat } from "../types/index.ts";
 import { distanceInMeters, formatDistance } from "../lib/distance.ts";
 import type {
@@ -8,12 +7,14 @@ import type {
 } from "../lib/construction-site-sort.ts";
 import {
   getConstructionCategoryLabel,
-  getClosureLabel,
-  getClosureBadgeVariant,
   formatConstructionPeriod,
-  getConstructionPhaseLabel,
-  getConstructionPhaseBadgeVariant,
 } from "../lib/construction-site-labels.ts";
+import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
+import {
+  ClosureBadge,
+  ConstructionPhaseBadge,
+  ConstructionSiteBadges,
+} from "./ConstructionSiteBadges.tsx";
 import "./ConstructionSiteTable.css";
 
 interface ConstructionSiteTableProps {
@@ -48,12 +49,7 @@ const BASE_COLUMNS: readonly ConstructionSiteTableColumn[] = [
   {
     key: "phase",
     label: "Status",
-    render: (site) => (
-      <KernBadge
-        variant={getConstructionPhaseBadgeVariant(site.phase)}
-        label={getConstructionPhaseLabel(site.phase)}
-      />
-    ),
+    render: (site) => <ConstructionPhaseBadge phase={site.phase} />,
   },
   {
     key: "period",
@@ -68,12 +64,7 @@ const BASE_COLUMNS: readonly ConstructionSiteTableColumn[] = [
   {
     key: "closure",
     label: "Sperrung",
-    render: (site) => (
-      <KernBadge
-        variant={getClosureBadgeVariant(site.closure)}
-        label={getClosureLabel(site.closure)}
-      />
-    ),
+    render: (site) => <ClosureBadge closure={site.closure} />,
   },
 ];
 
@@ -191,25 +182,13 @@ export function ConstructionSiteTable({
                         Auf Karte
                       </button>
                     )}
-                    <a
+                    <ClientNavigationLink
                       className="construction-site-table__details-button"
                       href={getSiteDetailsHref(site.id)}
-                      onClick={(event) => {
-                        if (
-                          event.button !== 0 ||
-                          event.metaKey ||
-                          event.ctrlKey ||
-                          event.shiftKey ||
-                          event.altKey
-                        ) {
-                          return;
-                        }
-                        event.preventDefault();
-                        onShowSiteDetails(site.id);
-                      }}
+                      onNavigate={() => onShowSiteDetails(site.id)}
                     >
                       Details
-                    </a>
+                    </ClientNavigationLink>
                   </div>
                 </td>
               </tr>
@@ -221,16 +200,11 @@ export function ConstructionSiteTable({
       <div className="construction-site-cards" aria-label="Baustellenliste">
         {constructionSites.map((site) => (
           <article className="construction-site-card" key={site.id}>
-            <div className="construction-site-card__topline">
-              <KernBadge
-                variant={getConstructionPhaseBadgeVariant(site.phase)}
-                label={getConstructionPhaseLabel(site.phase)}
-              />
-              <KernBadge
-                variant={getClosureBadgeVariant(site.closure)}
-                label={getClosureLabel(site.closure)}
-              />
-            </div>
+            <ConstructionSiteBadges
+              className="construction-site-card__topline"
+              phase={site.phase}
+              closure={site.closure}
+            />
             <h3 className="construction-site-card__title">{site.location}</h3>
             <p className="construction-site-card__municipality">{site.municipality}</p>
             <dl className="construction-site-card__facts">
@@ -253,25 +227,13 @@ export function ConstructionSiteTable({
                 </div>
               )}
             </dl>
-            <a
+            <ClientNavigationLink
               className="construction-site-card__details-link"
               href={getSiteDetailsHref(site.id)}
-              onClick={(event) => {
-                if (
-                  event.button !== 0 ||
-                  event.metaKey ||
-                  event.ctrlKey ||
-                  event.shiftKey ||
-                  event.altKey
-                ) {
-                  return;
-                }
-                event.preventDefault();
-                onShowSiteDetails(site.id);
-              }}
+              onNavigate={() => onShowSiteDetails(site.id)}
             >
               Details ansehen
-            </a>
+            </ClientNavigationLink>
             {onShowSiteOnMap && (
               <button
                 type="button"
