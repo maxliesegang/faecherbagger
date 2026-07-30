@@ -9,10 +9,10 @@ import { useDataset } from "../context/DatasetContext.tsx";
 import { usePersonal } from "../context/PersonalContext.tsx";
 import type { SiteSelection } from "../lib/select-sites.ts";
 import { useView } from "../context/ViewContext.tsx";
-import { canOfferPushNotifications } from "../hooks/usePushNotifications.ts";
 import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
 import { NearbyConstructionSiteList } from "./NearbyConstructionSiteList.tsx";
 import { HomeAreaSetup } from "./HomeAreaSetup.tsx";
+import { NotificationStatusCard } from "./NotificationStatusCard.tsx";
 import { RecentWindowSelect } from "./RecentWindowSelect.tsx";
 import "./ConstructionSiteSurroundings.css";
 
@@ -39,24 +39,15 @@ export function ConstructionSiteSurroundings({
     openSiteDetails: onShowSiteDetails,
     showSiteOnMap: onShowSiteOnMap,
     showExplorer: onExploreAllConstructionSites,
+    showNotificationSettings: onShowNotificationSettings,
   } = useView();
-  const {
-    area: homeArea,
-    hasAcknowledged,
-    location: locationController,
-    push: pushController,
-    isInstalled,
-  } = usePersonal();
+  const { area: homeArea, hasAcknowledged, currentLocation } = usePersonal();
   const [isAreaMapOpen, setIsAreaMapOpen] = useState(false);
   const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
 
   const nearbySites = useMemo(
     () => surroundings.all.map((entry) => entry.site),
     [surroundings],
-  );
-  const canOfferNotifications = canOfferPushNotifications(
-    pushController.status,
-    isInstalled,
   );
 
   if (!homeArea) {
@@ -77,14 +68,14 @@ export function ConstructionSiteSurroundings({
           <HomeAreaSetup />
         </div>
 
-        <p className="surroundings__explore">
+        <div className="surroundings__explore">
           <KernButton
             type="button"
             variant="tertiary"
             label="Ohne Gebiet: alle Baustellen der Region durchsuchen"
             onClick={onExploreAllConstructionSites}
           />
-        </p>
+        </div>
       </section>
     );
   }
@@ -99,36 +90,13 @@ export function ConstructionSiteSurroundings({
           <span className="surroundings__chip">
             Umkreis {homeArea.radiusKm} km
           </span>
-          <span
-            className={`surroundings__chip surroundings__chip--${
-              pushController.isEnabled ? "on" : "off"
-            }`}
-          >
-            Benachrichtigungen{" "}
-            {pushController.isEnabled ? "eingeschaltet" : "aus"}
-          </span>
           <span className="surroundings__chip">
             {surroundings.all.length} Baustellen im Gebiet
           </span>
         </p>
       </header>
 
-      {canOfferNotifications && !pushController.isEnabled && (
-        <KernAlert variant="info" title="Nichts mehr verpassen">
-          <KernText>
-            Mit eingeschalteten Benachrichtigungen melden wir Ihnen neue
-            Baustellen in Ihrem Gebiet, auch wenn die App geschlossen ist.
-          </KernText>
-          <KernButton
-            type="button"
-            label="Benachrichtigungen einschalten"
-            disabled={pushController.isBusy}
-            onClick={() =>
-              void pushController.enableNotifications(homeArea)
-            }
-          />
-        </KernAlert>
-      )}
+      <NotificationStatusCard variant="compact" />
 
       <div className="surroundings__result">
         <RecentWindowSelect
@@ -190,11 +158,7 @@ export function ConstructionSiteSurroundings({
             <LazyConstructionSiteMap
               constructionSites={nearbySites}
               selectedSiteId={mapSelectedSiteId}
-              currentLocation={
-                locationController.locationState.status === "ready"
-                  ? locationController.locationState.point
-                  : undefined
-              }
+              currentLocation={currentLocation}
               homeArea={homeArea}
               onSiteSelect={setMapSelectedSiteId}
               getSiteDetailsHref={getSiteDetailsHref}
@@ -229,30 +193,29 @@ export function ConstructionSiteSurroundings({
         </section>
       </details>
 
-      <details className="kern-accordion surroundings__section">
-        <summary className="kern-accordion__header">
-          <span className="kern-title">Gebiet und Benachrichtigungen</span>
-        </summary>
-        <section className="kern-accordion__body">
-          <HomeAreaSetup />
-        </section>
-      </details>
-
-      <p className="surroundings__explore">
-        <KernButton
-          type="button"
-          variant="tertiary"
-          label="Alle Baustellen der Region durchsuchen"
-          onClick={onExploreAllConstructionSites}
-        />
-        <span className="surroundings__updated">
+      <div className="surroundings__explore">
+        <div className="surroundings__explore-actions">
+          <KernButton
+            type="button"
+            variant="tertiary"
+            label="Gebiet und Benachrichtigungen ändern"
+            onClick={onShowNotificationSettings}
+          />
+          <KernButton
+            type="button"
+            variant="tertiary"
+            label="Alle Baustellen der Region durchsuchen"
+            onClick={onExploreAllConstructionSites}
+          />
+        </div>
+        <p className="surroundings__updated">
           Stand{" "}
           {new Date(metadata.fetchedAt).toLocaleString("de-DE", {
             dateStyle: "short",
             timeStyle: "short",
           })}
-        </span>
-      </p>
+        </p>
+      </div>
     </section>
   );
 }

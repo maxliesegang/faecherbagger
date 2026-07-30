@@ -15,15 +15,18 @@ import {
 import { roundHomeAreaCenter } from "../shared/home-area.ts";
 import { getConstructionSiteMunicipalityOptions } from "../lib/construction-site-filter.ts";
 import { getMunicipalityCenter } from "../lib/municipality-center.ts";
-import { canOfferPushNotifications } from "../hooks/usePushNotifications.ts";
-import { isIosDevice } from "../hooks/useProgressiveWebApp.ts";
 import "./HomeAreaSetup.css";
 
 /**
  * Defines the area the app watches: a center — from the device location or,
- * as a fallback, from a municipality in the data — and a radius. The same panel
- * switches the notifications for that area on and off, because for the visitor
- * these are one decision ("melde mir Baustellen hier").
+ * as a fallback, from a municipality in the data — and a radius.
+ *
+ * The switch for notifications about this area lives next to this panel in
+ * {@link NotificationSettings} rather than inside it: it is the same decision
+ * for the visitor, but it needs an area to exist first, and this panel is also
+ * shown during onboarding, where there is none yet. This panel reports what
+ * happened to the *area*; what happened to the subscription is reported by the
+ * card that owns the switch.
  */
 export function HomeAreaSetup() {
   const { constructionSites } = useDataset();
@@ -32,20 +35,18 @@ export function HomeAreaSetup() {
     setArea: onHomeAreaChange,
     clearArea: onHomeAreaClear,
     location: locationController,
-    push: pushController,
-    isInstalled,
   } = usePersonal();
 
   const [radiusKm, setRadiusKm] = useState(
     homeArea?.radiusKm ?? DEFAULT_HOME_AREA_RADIUS_KM,
   );
   const [municipality, setMunicipality] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState<string>();
   const municipalities = useMemo(
     () => getConstructionSiteMunicipalityOptions(constructionSites),
     [constructionSites],
   );
 
-  const { setFeedbackMessage } = pushController;
   const isRequestingLocation =
     locationController.locationState.status === "requesting";
   const hasUnsavedRadius =
@@ -92,23 +93,6 @@ export function HomeAreaSetup() {
     onHomeAreaClear();
     setFeedbackMessage("Das Gebiet wurde entfernt.");
   };
-
-  const toggleNotifications = () => {
-    if (pushController.isEnabled) {
-      void pushController.disableNotifications();
-      return;
-    }
-    if (!homeArea) {
-      setFeedbackMessage("Legen Sie zuerst Mittelpunkt und Radius fest.");
-      return;
-    }
-    void pushController.enableNotifications(homeArea);
-  };
-
-  const canOfferNotifications = canOfferPushNotifications(
-    pushController.status,
-    isInstalled,
-  );
 
   return (
     <div className="area-setup">
@@ -186,42 +170,6 @@ export function HomeAreaSetup() {
         )}
       </fieldset>
 
-      <fieldset className="area-setup__field">
-        <legend>Benachrichtigungen</legend>
-        {canOfferNotifications ? (
-          <>
-            <KernText muted className="area-setup__hint">
-              {pushController.isEnabled
-                ? "Dieses Gerät erhält eine Meldung, sobald eine neue Baustelle in Ihrem Gebiet auftaucht."
-                : "Lassen Sie sich melden, sobald eine neue Baustelle in Ihrem Gebiet auftaucht."}
-            </KernText>
-            <div className="area-setup__actions">
-              <KernButton
-                type="button"
-                variant={pushController.isEnabled ? "tertiary" : "primary"}
-                label={
-                  pushController.isEnabled
-                    ? "Benachrichtigungen ausschalten"
-                    : "Benachrichtigungen einschalten"
-                }
-                disabled={pushController.isBusy}
-                onClick={toggleNotifications}
-              />
-            </div>
-          </>
-        ) : (
-          <KernText muted className="area-setup__hint">
-            {pushController.status === "blocked"
-              ? "Benachrichtigungen sind für diese Seite blockiert. Geben Sie sie in den Einstellungen Ihres Geräts frei."
-              : pushController.status === "unconfigured"
-                ? "Der Benachrichtigungsdienst ist für diese Bereitstellung noch nicht konfiguriert. Die Übersicht funktioniert trotzdem."
-                : isIosDevice
-                  ? "Auf iPhone und iPad: in Safari „Teilen“ und dann „Zum Home-Bildschirm“ wählen. Danach sind Benachrichtigungen verfügbar."
-                  : "Dieser Browser unterstützt keine Benachrichtigungen. Die Übersicht funktioniert trotzdem."}
-          </KernText>
-        )}
-      </fieldset>
-
       {homeArea && (
         <div className="area-setup__actions area-setup__actions--footer">
           <KernButton
@@ -239,9 +187,9 @@ export function HomeAreaSetup() {
         </KernAlert>
       )}
 
-      {pushController.feedbackMessage && (
+      {feedbackMessage && (
         <KernText className="area-setup__feedback" aria-live="polite">
-          {pushController.feedbackMessage}
+          {feedbackMessage}
         </KernText>
       )}
     </div>

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import type { HomeArea } from "../types/index.ts";
 import { readStoredText, writeStoredText } from "../lib/browser-storage.ts";
+import type { PushNotificationStatus } from "../lib/notification-state.ts";
 import {
   getPushSubscription,
   isPushConfigured,
@@ -9,35 +10,8 @@ import {
   unsubscribeFromPush,
   updatePushPreferences,
 } from "../lib/push.ts";
-import { isIosDevice } from "./useProgressiveWebApp.ts";
 
 const NOTIFICATIONS_STORAGE_KEY = "faecherbagger-notifications";
-
-/**
- * Why the visitor can or cannot receive notifications right now. The panel maps
- * this to one message and one action instead of re-deriving the combination of
- * browser support, deployment configuration and permission.
- */
-export type PushNotificationStatus =
-  | "unsupported"
-  | "unconfigured"
-  | "blocked"
-  | "disabled"
-  | "enabled";
-
-/**
- * Whether asking this visitor to switch notifications on can succeed: the
- * browser and deployment must support it, permission must not be blocked, and
- * on iOS the app has to be installed first. Shared by every place that offers
- * the action, so the offer and the actual attempt cannot disagree.
- */
-export function canOfferPushNotifications(
-  status: PushNotificationStatus,
-  isInstalled: boolean,
-): boolean {
-  if (status !== "disabled" && status !== "enabled") return false;
-  return !isIosDevice || isInstalled;
-}
 
 /** Message from a caught error, falling back to a localized default. */
 const getErrorMessage = (error: unknown, fallback: string): string =>
@@ -48,6 +22,11 @@ const getErrorMessage = (error: unknown, fallback: string): string =>
  * enabled flag, and keeping the subscribed area in step with the app's state.
  * Every operation reports its outcome through `feedbackMessage` so callers do
  * not have to translate errors themselves.
+ *
+ * `status` says why the visitor can or cannot receive notifications right now.
+ * The UI never reads it directly: `describeNotificationState` maps it to one
+ * message and one action, so the combination of browser support, deployment
+ * configuration, permission and area is interpreted in exactly one place.
  */
 export function usePushNotifications() {
   const [permission, setPermission] = useState<

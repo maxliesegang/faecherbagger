@@ -38,8 +38,8 @@ export interface Personal {
   currentLocation: LngLat | undefined;
   location: CurrentLocationController;
   push: PushNotificationController;
+  /** Installation and the on-demand data refresh; `isInstalled` lives here. */
   progressiveWebApp: ProgressiveWebAppController;
-  isInstalled: boolean;
 }
 
 const PersonalContext = createContext<Personal | null>(null);
@@ -116,7 +116,6 @@ export function PersonalProvider({ children }: { children: ReactNode }) {
       location,
       push,
       progressiveWebApp,
-      isInstalled: progressiveWebApp.isInstalled,
     }),
     [
       clearArea,

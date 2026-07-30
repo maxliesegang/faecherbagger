@@ -1,0 +1,155 @@
+/*
+ * Top-level navigation. Two shapes, one markup: a tab row under the page bar
+ * from tablet up, and a fixed bottom bar on phones. The mobile-first block is
+ * the bar, so a narrow viewport never has to undo desktop layout.
+ */
+.section-tabs {
+  position: fixed;
+  z-index: 900;
+  inset-inline: 0;
+  bottom: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  border-top: 1px solid var(--app-border);
+  background: var(--app-card);
+  box-shadow: 0 -0.125rem 0.5rem rgb(0 0 0 / 8%);
+  /* Clears the iOS home indicator in the installed app. */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.section-tabs__tab {
+  position: relative;
+  display: flex;
+  gap: 0.15rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding: 0.4rem 0.25rem;
+  border: 0;
+  border-top: 0.2rem solid transparent;
+  color: var(--app-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: none;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.section-tabs__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.section-tabs__label {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.section-tabs__tab:hover {
+  color: var(--app-accent);
+}
+
+.section-tabs__tab[aria-current="page"] {
+  border-top-color: var(--app-accent);
+  color: var(--app-accent);
+}
+
+.section-tabs__tab:focus-visible {
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: -4px;
+}
+
+/* Count of unseen changes, pinned to the icon while the tabs are stacked. */
+.section-tabs__badge {
+  position: absolute;
+  top: 0.2rem;
+  left: 50%;
+  min-width: 1.25rem;
+  margin-inline-start: 0.4rem;
+  padding-inline: 0.3rem;
+  border-radius: 1rem;
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--phase-active);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Whether this device would actually receive a notification right now. */
+.section-tabs__state {
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-inline-start: 0.4rem;
+  border: 1px solid var(--app-card);
+  border-radius: 50%;
+  background: var(--notification-tone, var(--app-muted));
+}
+
+@media (min-width: 48rem) {
+  .section-tabs {
+    position: static;
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--app-border);
+    background: none;
+    box-shadow: none;
+  }
+
+  .section-tabs__tab {
+    flex-direction: row;
+    gap: 0.45rem;
+    min-height: 2.75rem;
+    padding: 0.4rem 1rem;
+    border-top: 0;
+    border-bottom: 0.2rem solid transparent;
+    font-size: 1rem;
+  }
+
+  .section-tabs__tab[aria-current="page"] {
+    border-bottom-color: var(--app-accent);
+  }
+
+  .section-tabs__icon {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  /* With room for the label, both markers sit beside it instead of over it. */
+  .section-tabs__badge,
+  .section-tabs__state {
+    position: static;
+    margin-inline-start: 0;
+  }
+
+  .section-tabs__badge {
+    min-width: 1.5rem;
+    padding-inline: 0.35rem;
+    font-size: 0.75rem;
+    line-height: 1.55;
+  }
+
+  .section-tabs__state {
+    width: 0.6rem;
+    height: 0.6rem;
+    border: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-tabs__tab {
+    transition: none;
+  }
+}

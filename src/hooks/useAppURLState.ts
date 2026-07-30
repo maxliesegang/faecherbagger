@@ -34,6 +34,8 @@ export interface AppURLStateController extends AppURLState {
   /** Opens the explorer's map on one site, from anywhere in the app. */
   showSiteOnMap: (siteId: string | undefined) => void;
   showExplorer: () => void;
+  /** Opens the notification settings from anywhere in the app. */
+  showNotificationSettings: () => void;
   /** Selection inside the explorer map; deliberately not part of the URL. */
   mapSelectedSiteId: string | undefined;
   setMapSelectedSiteId: (siteId: string | undefined) => void;
@@ -149,9 +151,15 @@ export function useAppURLState(): AppURLStateController {
   // once. Everything below then hangs off `urlState` alone, which is what makes
   // the controller stable between renders that did not change the view — the
   // providers built on it memoize against this identity.
-  const setters = useMemo(
-    () => ({
-      setSection: (section: AppSection) => updateURLState({ section }),
+  const setters = useMemo(() => {
+    // Every way into a section goes through here, so none of them can forget to
+    // close an open detail: the tabs stay reachable from a detail page, and
+    // tapping one has to lead somewhere.
+    const setSection = (section: AppSection) =>
+      updateURLState({ section, detailSiteId: undefined });
+
+    return {
+      setSection,
       setFilters: (filters: ConstructionSiteFilters) =>
         updateQuery({ filters }),
       setOnlyRecent: (onlyRecent: boolean) => updateQuery({ onlyRecent }),
@@ -160,10 +168,10 @@ export function useAppURLState(): AppURLStateController {
       setView: (view: ConstructionSiteResultView) => updateURLState({ view }),
       setSort: (sort: ConstructionSiteSort | null) => updateURLState({ sort }),
       resetQuery: () => updateURLState({ query: DEFAULT_APP_URL_STATE.query }),
-      showExplorer: () => updateURLState({ section: "explorer" }),
-    }),
-    [updateQuery, updateURLState],
-  );
+      showExplorer: () => setSection("explorer"),
+      showNotificationSettings: () => setSection("notifications"),
+    };
+  }, [updateQuery, updateURLState]);
 
   return useMemo(
     () => ({

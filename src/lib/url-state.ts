@@ -25,13 +25,18 @@ export type ConstructionSiteResultView = "map" | "list";
 export const CONSTRUCTION_SITE_RESULT_VIEWS = ["map", "list"] as const;
 
 /**
- * The two top-level areas of the app. `"surroundings"` is the default and the
+ * The three top-level areas of the app. `"surroundings"` is the default and the
  * app's purpose: what is new around the visitor. `"explorer"` is the secondary
- * search over the whole region.
+ * search over the whole region, and `"notifications"` owns the watched area
+ * together with the Web Push switch for it.
  */
-export type AppSection = "surroundings" | "explorer";
+export type AppSection = "surroundings" | "explorer" | "notifications";
 
-export const APP_SECTIONS = ["surroundings", "explorer"] as const;
+export const APP_SECTIONS = [
+  "surroundings",
+  "explorer",
+  "notifications",
+] as const;
 
 /**
  * The part of the UI state that belongs in the address bar, so a filtered view
@@ -93,6 +98,7 @@ function createURLValueCodec<T extends string | number>(
 const SECTION_CODEC = createURLValueCodec<AppSection>(APP_SECTIONS, {
   surroundings: "umgebung",
   explorer: "alle",
+  notifications: "melden",
 });
 
 const RESULT_VIEW_CODEC = createURLValueCodec<ConstructionSiteResultView>(

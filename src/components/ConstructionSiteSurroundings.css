@@ -47,17 +47,6 @@
   white-space: nowrap;
 }
 
-.surroundings__chip--on {
-  border-color: var(--kern-color-feedback-success, #2f8132);
-  color: var(--kern-color-feedback-success, #2f8132);
-  font-weight: 600;
-}
-
-.surroundings__chip--off {
-  border-color: var(--phase-upcoming);
-  color: var(--phase-upcoming);
-}
-
 .surroundings__result {
   display: flex;
   gap: 0.5rem 1rem;
@@ -123,7 +112,15 @@
   margin: 0.25rem 0 0;
 }
 
+.surroundings__explore-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .surroundings__updated {
+  margin: 0;
   color: var(--app-muted);
   font-size: 0.8rem;
 }

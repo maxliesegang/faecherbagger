@@ -65,6 +65,7 @@ describe("parseAppURLState", () => {
   it("opens the surroundings by default so a shared link starts there", () => {
     expect(parseAppURLState("").section).toBe("surroundings");
     expect(parseAppURLState("?bereich=alle").section).toBe("explorer");
+    expect(parseAppURLState("?bereich=melden").section).toBe("notifications");
   });
 
   it("treats an empty site id as no selection", () => {
@@ -104,6 +105,12 @@ describe("serializeAppURLState", () => {
         section: "explorer",
       }),
     ).toBe("?bereich=alle");
+    expect(
+      serializeAppURLState({
+        ...DEFAULT_APP_URL_STATE,
+        section: "notifications",
+      }),
+    ).toBe("?bereich=melden");
   });
 
   it("round-trips a fully populated state", () => {

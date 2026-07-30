@@ -1,0 +1,76 @@
+/*
+ * The notification state, as a card. The tone colours the leading edge and the
+ * dot only — the text stays at full contrast, because this is a state the
+ * visitor has to be able to read at a glance in daylight on a phone.
+ */
+.notification-state {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: start;
+  padding: 0.7rem 0.85rem 0.8rem;
+  border: 1px solid var(--app-border);
+  border-inline-start: 0.25rem solid var(--notification-tone, var(--app-muted));
+  background: var(--app-card);
+}
+
+.notification-state__headline {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.notification-state__dot {
+  flex: 0 0 auto;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--notification-tone, var(--app-muted));
+}
+
+.notification-state__description {
+  margin: 0;
+  max-width: 46rem;
+  color: var(--app-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.notification-state__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.notification-state__actions:empty {
+  display: none;
+}
+
+/* The outcome of the last attempt, next to the switch that attempted it. */
+.notification-state__feedback {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/*
+ * The compact card sits above the answer on the surroundings screen, so it
+ * stays one line wherever the width allows and never pushes the list down.
+ */
+@media (min-width: 34rem) {
+  .notification-state--compact {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.5rem 1rem;
+    align-items: center;
+    justify-items: stretch;
+  }
+
+  .notification-state--compact .notification-state__actions {
+    justify-content: end;
+  }
+}

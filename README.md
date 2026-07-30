@@ -26,16 +26,25 @@ Umgebung?"** Everything else supports that answer.
   app — the pipeline had not seen this construction site before — so the badge,
   the list and the push notification always agree; a source edit to a record
   someone already knows about does not resurface it. The same area powers Web
-  Push, so an alert can arrive without opening the app. Secondary detail (all
-  sites in the area, an area map, the area/notification settings) sits in
-  disclosures below the answer.
+  Push, so an alert can arrive without opening the app. A status card states
+  whether this device would actually be told; secondary detail (all sites in the
+  area, an area map) sits in disclosures below the answer.
 - **Alle Baustellen** (secondary screen, [`ConstructionSiteExplorer.tsx`](src/components/ConstructionSiteExplorer.tsx)) —
   the full region: search, filters, sorting, map and list.
+- **Melden** ([`NotificationSettings.tsx`](src/components/NotificationSettings.tsx)) —
+  the notification switch together with the home area it applies to, plus what
+  to do when the browser, the deployment or a denied permission gets in the way.
+  Its own section because on a phone — where notifications matter most — a
+  setting buried in an accordion is a setting nobody finds.
 
-The active screen is part of the shareable URL state (`?bereich=umgebung|alle`,
-default `umgebung`), so a link opens where its author intended. The home area
-and the "seen" acknowledgement are personal state and stay in `localStorage` —
-they are never put in the URL.
+The active screen is part of the shareable URL state
+(`?bereich=umgebung|alle|melden`, default `umgebung`), so a link opens where its
+author intended. The home area and the "seen" acknowledgement are personal state
+and stay in `localStorage` — they are never put in the URL.
+
+The three sections are a tab row from 48rem up and a fixed bottom bar below it,
+where they stay in thumb reach; the surroundings tab carries the count of
+unacknowledged changes and the notification tab a dot for the current state.
 
 ## How it works
 
@@ -144,9 +153,13 @@ network-first runtime cache, and refreshes them:
 - through one-off Background Sync where available;
 - whenever the installed app starts, returns online, or becomes visible.
 
-Notifications are opted into where the home area is defined, on the
-"Meine Umgebung" screen: the area is the subject of the notification, so both
-are one decision. A successful opt-in sends a local test notification. The
+Notifications are opted into in the "Melden" section, next to the home area
+they apply to: the area is the subject of the notification, so both are one
+decision. Every surface that mentions notifications renders the single
+description from
+[`describeNotificationState`](src/lib/notification-state.ts), so a switch is
+never offered where it cannot succeed. A successful opt-in sends a local test
+notification. The
 optional Cloudflare Worker in
 [`push-worker/`](push-worker/) stores Web Push subscriptions in D1; after Pages
 deployment, GitHub Actions sends VAPID-authenticated pushes and removes expired

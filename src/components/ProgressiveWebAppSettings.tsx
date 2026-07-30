@@ -12,8 +12,9 @@ interface ProgressiveWebAppSettingsProps {
 
 /**
  * Secondary app-level actions: install the PWA and refresh the committed data
- * on demand. The notification settings live with the home area in
- * {@link HomeAreaSetup}, where the visitor decides about them.
+ * on demand. This is the only place that offers the installation — the
+ * notification section explains what installing unlocks and links no further,
+ * so there is one button for it rather than two that can drift apart.
  */
 export function ProgressiveWebAppSettings({
   progressiveWebApp,

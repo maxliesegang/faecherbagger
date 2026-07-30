@@ -17,6 +17,30 @@
   --accent-tint: rgb(69 75 107 / 6%);
 }
 
+/*
+ * Notification tones, from `describeNotificationState`. The tab dot, the status
+ * card and anything else that shows the state set the class and read
+ * `--notification-tone`, so a tone gets its colour in exactly one place — and a
+ * new tone is one rule here rather than an edit in every stylesheet.
+ */
+.notification-tone--on {
+  --notification-tone: var(--kern-color-feedback-success, #2f8132);
+}
+
+.notification-tone--off,
+.notification-tone--needs-area,
+.notification-tone--needs-app {
+  --notification-tone: var(--phase-upcoming);
+}
+
+.notification-tone--blocked {
+  --notification-tone: var(--kern-color-feedback-error, #c1121c);
+}
+
+.notification-tone--unavailable {
+  --notification-tone: var(--app-border);
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--app-page);
@@ -29,11 +53,22 @@ body {
   background: var(--app-page);
 }
 
+/*
+ * The page column. Below the tab-row breakpoint the navigation is a fixed
+ * bottom bar, so the content has to end above it — including the iOS home
+ * indicator — instead of scrolling underneath.
+ */
 main > .kern-container {
   width: min(100% - 2rem, var(--app-content-width));
   max-width: var(--app-content-width);
   margin-inline: auto;
-  padding-bottom: 1.5rem;
+  padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 48rem) {
+  main > .kern-container {
+    padding-bottom: 1.5rem;
+  }
 }
 
 button,
@@ -140,61 +175,6 @@ select {
   to {
     transform: rotate(360deg);
   }
-}
-
-/*
- * Top-level navigation. The surroundings tab comes first and carries the
- * unread count, so the app's purpose is the default and stays visible while
- * the visitor is searching the whole region.
- */
-.section-tabs {
-  display: flex;
-  gap: 0.25rem;
-  margin-bottom: 0.9rem;
-  border-bottom: 1px solid var(--app-border);
-}
-
-.section-tabs__tab {
-  display: inline-flex;
-  gap: 0.45rem;
-  align-items: center;
-  min-height: 2.75rem;
-  padding: 0.4rem 1rem;
-  border: 0;
-  border-bottom: 0.2rem solid transparent;
-  color: var(--app-muted);
-  font-weight: 700;
-  background: none;
-  cursor: pointer;
-  transition:
-    color 0.15s ease,
-    border-color 0.15s ease;
-}
-
-.section-tabs__tab:hover {
-  color: var(--app-accent);
-}
-
-.section-tabs__tab[aria-current="page"] {
-  border-bottom-color: var(--app-accent);
-  color: var(--app-accent);
-}
-
-.section-tabs__tab:focus-visible {
-  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
-  outline-offset: -4px;
-}
-
-.section-tabs__badge {
-  min-width: 1.5rem;
-  padding-inline: 0.35rem;
-  border-radius: 1rem;
-  color: var(--kern-color-action-on-default, #fff);
-  background: var(--phase-active);
-  font-size: 0.75rem;
-  line-height: 1.55;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
 }
 
 /*
@@ -750,6 +730,45 @@ select {
 
   .view-switcher__button {
     padding-inline: 0.6rem;
+  }
+}
+
+/*
+ * Touch pass. The inline text buttons in the table, the cards and the map read
+ * as links and are sized like text, which is fine for a mouse and too small
+ * for a thumb. On a coarse pointer they get the 44 px target without becoming
+ * buttons visually.
+ */
+@media (pointer: coarse) {
+  .construction-site-table__details-button,
+  .construction-site-table__map-button,
+  .construction-site-card__map-button,
+  .construction-site-card__details-link,
+  .construction-site-card__details summary,
+  .map-explorer__fit,
+  .map-selection__list-button,
+  .map-selection__details-link,
+  .construction-site-detail__back {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+
+  .nearby-card__map-button,
+  .construction-site-detail__map-button {
+    min-height: 2.75rem;
+    padding-inline: 1rem;
+  }
+
+  .map-selection {
+    padding-right: 3rem;
+  }
+
+  .map-selection__close {
+    top: 0;
+    right: 0;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }
 

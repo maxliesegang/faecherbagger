@@ -14,7 +14,9 @@ import { ClientNavigationLink } from "./components/ClientNavigationLink.tsx";
 import { ConstructionSiteDetail } from "./components/ConstructionSiteDetail.tsx";
 import { ConstructionSiteExplorer } from "./components/ConstructionSiteExplorer.tsx";
 import { ConstructionSiteSurroundings } from "./components/ConstructionSiteSurroundings.tsx";
+import { FeedLinks } from "./components/FeedLinks.tsx";
 import { LoadingStatus } from "./components/LoadingStatus.tsx";
+import { NotificationSettings } from "./components/NotificationSettings.tsx";
 import { ProgressiveWebAppSettings } from "./components/ProgressiveWebAppSettings.tsx";
 import {
   DatasetProvider,
@@ -30,6 +32,44 @@ const formatDataTimestamp = (timestamp: string): string =>
     dateStyle: "short",
     timeStyle: "short",
   });
+
+/**
+ * One construction site, or an explanation why the link no longer resolves —
+ * a shared link outlives the record it points at, because the dataset only
+ * carries what the source currently publishes.
+ */
+function ConstructionSiteDetailScreen({ siteId }: { siteId: string }) {
+  const { constructionSites } = useDataset();
+  const { getDetailHref, closeSiteDetails, showSiteOnMap } = useView();
+  const site = constructionSites.find(
+    (constructionSite) => constructionSite.id === siteId,
+  );
+
+  if (!site) {
+    return (
+      <KernAlert variant="warning" title="Baustelle nicht gefunden">
+        <KernText>
+          Die verlinkte Baustelle ist im aktuellen Datenstand nicht enthalten.
+        </KernText>
+        <ClientNavigationLink
+          href={getDetailHref(undefined)}
+          onNavigate={closeSiteDetails}
+        >
+          Zur Übersicht
+        </ClientNavigationLink>
+      </KernAlert>
+    );
+  }
+
+  return (
+    <ConstructionSiteDetail
+      site={site}
+      overviewHref={getDetailHref(undefined)}
+      onBack={closeSiteDetails}
+      onShowOnMap={() => showSiteOnMap(site.id)}
+    />
+  );
+}
 
 /**
  * Picks the screen once the data is there.
@@ -60,33 +100,10 @@ function AppScreens() {
     [area, constructionSites, recentWindow, seenAt],
   );
 
-  const detailSite = urlState.detailSiteId
-    ? constructionSites.find((site) => site.id === urlState.detailSiteId)
-    : undefined;
-
-  if (urlState.detailSiteId) {
-    return detailSite ? (
-      <ConstructionSiteDetail
-        site={detailSite}
-        overviewHref={urlState.getDetailHref(undefined)}
-        onBack={urlState.closeSiteDetails}
-        onShowOnMap={() => urlState.showSiteOnMap(detailSite.id)}
-      />
-    ) : (
-      <KernAlert variant="warning" title="Baustelle nicht gefunden">
-        <KernText>
-          Die verlinkte Baustelle ist im aktuellen Datenstand nicht enthalten.
-        </KernText>
-        <ClientNavigationLink
-          href={urlState.getDetailHref(undefined)}
-          onNavigate={urlState.closeSiteDetails}
-        >
-          Zur Übersicht
-        </ClientNavigationLink>
-      </KernAlert>
-    );
-  }
-
+  // The tabs stay above a detail page too: on a phone they are the bottom bar,
+  // and losing the way to the notifications while reading about one
+  // construction site would be a dead end. A detail overrides the section
+  // rather than replacing it, so closing it returns to where the visitor was.
   return (
     <>
       <AppSectionTabs
@@ -95,13 +112,19 @@ function AppScreens() {
         unseenCount={surroundings.unseenCount}
       />
 
-      {urlState.section === "surroundings" ? (
-        <ConstructionSiteSurroundings
-          surroundings={surroundings}
-          onMarkSitesSeen={() => markSitesSeen(metadata.fetchedAt)}
-        />
+      {urlState.detailSiteId ? (
+        <ConstructionSiteDetailScreen siteId={urlState.detailSiteId} />
       ) : (
-        <ConstructionSiteExplorer />
+        <>
+          {urlState.section === "surroundings" && (
+            <ConstructionSiteSurroundings
+              surroundings={surroundings}
+              onMarkSitesSeen={() => markSitesSeen(metadata.fetchedAt)}
+            />
+          )}
+          {urlState.section === "explorer" && <ConstructionSiteExplorer />}
+          {urlState.section === "notifications" && <NotificationSettings />}
+        </>
       )}
     </>
   );
@@ -130,15 +153,7 @@ function AppFooter() {
             label="Zum Mobilitätsportal der TRK"
           />
           {" · "}
-          <KernLink
-            href={`${import.meta.env.BASE_URL}baustellen.xml`}
-            label="RSS-Feed abonnieren"
-          />
-          {" · "}
-          <KernLink
-            href={`${import.meta.env.BASE_URL}baustellen.atom`}
-            label="Atom-Feed abonnieren"
-          />
+          <FeedLinks />
         </section>
       </details>
     </footer>

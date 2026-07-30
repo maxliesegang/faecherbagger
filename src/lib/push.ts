@@ -19,13 +19,22 @@ async function requestPushAPI(path: string, init?: RequestInit) {
   if (!PUSH_API_URL) {
     throw new Error("Der Benachrichtigungsdienst ist noch nicht konfiguriert.");
   }
-  const response = await fetch(`${PUSH_API_URL}${path}`, {
-    ...init,
-    headers: {
-      "content-type": "application/json",
-      ...init?.headers,
-    },
-  });
+  // A rejected fetch carries the platform's untranslated "Failed to fetch",
+  // and every caller shows what it catches to the visitor. This is the boundary
+  // that knows the request was aimed at the notification service, so it is the
+  // one that can name it.
+  let response: Response;
+  try {
+    response = await fetch(`${PUSH_API_URL}${path}`, {
+      ...init,
+      headers: {
+        "content-type": "application/json",
+        ...init?.headers,
+      },
+    });
+  } catch {
+    throw new Error("Der Benachrichtigungsdienst ist nicht erreichbar.");
+  }
   if (!response.ok) {
     throw new Error(
       `Der Benachrichtigungsdienst antwortet mit Status ${response.status}.`,

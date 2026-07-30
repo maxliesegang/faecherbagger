@@ -21,7 +21,8 @@
   `useAppURLState` owns the shareable view state and the History API; every
   in-app navigation goes through it rather than touching `window.history`.
 - `src/App.tsx`: page shell. It mounts the three providers, renders the load
-  states, and picks the screen.
+  states, and picks the screen. The section tabs stay mounted above a detail
+  page, so the bottom bar is never lost on a phone.
 - `src/context/`: `DatasetProvider` (the published data), `PersonalProvider`
   (home area, acknowledgement, location, push — device-local, never shareable)
   and `ViewProvider` (the address-bar state plus the derived time window).
@@ -49,6 +50,17 @@
   own surroundings**. `ConstructionSiteSurroundings` is the default screen and
   must stay the shortest path to that answer; the region-wide explorer, filters,
   sorting and full map are secondary and stay one step away.
+- There are three top-level sections: surroundings, explorer and
+  `NotificationSettings`. They render as a tab row from 48rem up and as a fixed
+  bottom bar below it; keep both shapes working and keep the section in the URL.
+- Notifications get a section of their own because the phone is where they
+  matter. Anything that states the notification state — the tab dot, the card on
+  the surroundings screen, the settings screen — renders
+  `describeNotificationState` rather than re-deriving the combination of browser
+  support, deployment configuration, permission and area. Its tone becomes a
+  `notification-tone--*` class, and `src/App.css` is the only place that turns a
+  tone into a colour. `unavailable` is the one tone a surface may drop, because
+  it is the only one without a next step for the visitor.
 - The home area (center plus radius) is one shared concept: it scopes the
   surroundings screen, the map overlay and the Web Push subscription. Do not
   introduce a second, view-only radius. It is called `HomeArea` throughout the
@@ -90,6 +102,10 @@
   `ClientNavigationLink` for every in-app link (it keeps new-tab and modified
   clicks working), `ConstructionSiteBadges` for describing a record,
   `LoadingStatus` for waiting, and `LazyConstructionSiteMap` for the map.
+- Report the outcome of an action next to the control that triggered it:
+  `HomeAreaSetup` owns the message about the area, and `NotificationStatusCard`
+  renders the push controller's. Do not borrow another controller's message
+  channel to say something about your own concern.
 - Reach `localStorage` only through `src/lib/browser-storage.ts`. Private
   browsing and a full quota make the API throw, and no personal state is worth
   a blank page.
@@ -100,6 +116,9 @@
   public behavior and use small fixtures rather than live network requests.
 - Maintain accessible HTML: keyboard operation, visible focus, useful labels,
   semantic landmarks, and appropriate live regions are required.
+- Design mobile-first and verify at 320 px: no horizontal page scroll, touch
+  targets of at least 2.75rem under `@media (pointer: coarse)`, and content that
+  clears the fixed bottom navigation including `env(safe-area-inset-bottom)`.
 - Reuse KERN UX components and tokens where they fit; use native KERN classes or
   local CSS for gaps rather than introducing another design system.
 - Do not modify unrelated files in a dirty worktree.
