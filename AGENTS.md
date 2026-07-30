@@ -50,22 +50,38 @@
   own surroundings**. `ConstructionSiteSurroundings` is the default screen and
   must stay the shortest path to that answer; the region-wide explorer, filters,
   sorting and full map are secondary and stay one step away.
-- There are three top-level sections: surroundings, explorer and
-  `NotificationSettings`. They render as a tab row from 48rem up and as a fixed
-  bottom bar below it; keep both shapes working and keep the section in the URL.
-- Notifications get a section of their own because the phone is where they
-  matter. Anything that states the notification state — the tab dot, the card on
-  the surroundings screen, the settings screen — renders
-  `describeNotificationState` rather than re-deriving the combination of browser
-  support, deployment configuration, permission and area. Its tone becomes a
-  `notification-tone--*` class, and `src/App.css` is the only place that turns a
-  tone into a colour. `unavailable` is the one tone a surface may drop, because
-  it is the only one without a next step for the visitor.
+- There are three top-level sections: `NotificationSettings`, surroundings and
+  explorer, in that tab order — notifications first because that switch is the
+  one setting that keeps working after the app is closed, and on a phone the
+  first slot is the easiest to reach. The default section stays `surroundings`,
+  so a bare URL opens the answer. They render as a tab row from 48rem up and as
+  a fixed bottom bar below it; keep both shapes working and keep the section in
+  the URL.
+- Say a thing once. Each surface owns one concern, and a second copy of it is a
+  bug: the radius is edited on the surroundings screen only, the notification
+  state is spelled out in `NotificationStatusCard` only (the tab dot is the one
+  abbreviation of it elsewhere), the data timestamp lives in the page bar, and
+  the feeds live with the notification section they are the alternative to.
+- Anything that states the notification state — the tab dot, the status card —
+  renders `describeNotificationState` rather than re-deriving the combination of
+  browser support, deployment configuration, permission and area. Its tone
+  becomes a `notification-tone--*` class, and `src/App.css` is the only place
+  that turns a tone into a colour. `unavailable` is the one tone a surface may
+  drop, because it is the only one without a next step for the visitor.
 - The home area (center plus radius) is one shared concept: it scopes the
-  surroundings screen, the map overlay and the Web Push subscription. Do not
-  introduce a second, view-only radius. It is called `HomeArea` throughout the
-  app; only `push-worker/` keeps the `notification_*` vocabulary, because there
-  the name is accurate and it is the deployed wire format and D1 schema.
+  surroundings screen, the map overlay and the Web Push subscription. It is
+  edited in `HomeAreaSetup` on the surroundings screen — the screen named after
+  it — and the notification section states it and links there instead of
+  rendering a second editor. Do not introduce a second, view-only radius. It is
+  called `HomeArea` throughout the app and `Umkreis` throughout the German UI;
+  only `push-worker/` keeps the `notification_*` vocabulary, because there the
+  name is accurate and it is the deployed wire format and D1 schema.
+- The compact map on the surroundings screen is what makes a radius legible, so
+  it stays visible rather than moving into a disclosure, and it uses
+  `fitMode="homeArea"`: the circle stays framed, and neither a device location
+  nor a selected record may zoom away from it. A radius the visitor is still
+  dragging reaches that map through `onDraftRadiusChange` and must be labelled
+  as a preview — the list keeps answering for the saved radius.
 - Keep the surroundings screen usable without notifications and without a device
   location: the municipality center is the fallback, and a blocked, unsupported
   or unconfigured push service must degrade to an explanatory hint.

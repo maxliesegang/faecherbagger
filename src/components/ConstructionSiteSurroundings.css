@@ -30,10 +30,11 @@
   line-height: 1.4;
 }
 
-/* Scope chips: the settings that decide what this screen shows. */
+/* Scope chips: what this screen is currently answering for. */
 .surroundings__scope {
   display: flex;
   gap: 0.4rem;
+  align-items: center;
   flex-wrap: wrap;
   margin: 0;
 }
@@ -45,6 +46,23 @@
   color: var(--app-muted);
   font-size: 0.8rem;
   white-space: nowrap;
+}
+
+/* The radius is the defining one, so it reads as a value, not as metadata. */
+.surroundings__chip:first-child {
+  border-color: var(--app-accent);
+  color: var(--app-accent);
+  font-weight: 700;
+}
+
+/* The circle on the map is a radius being tried out, not the saved one. */
+.surroundings__preview {
+  margin: 0;
+  padding: 0.4rem 0.65rem;
+  border-inline-start: 0.2rem solid var(--phase-upcoming);
+  background: var(--phase-upcoming-tint);
+  font-size: 0.85rem;
+  line-height: 1.35;
 }
 
 .surroundings__result {
@@ -81,7 +99,8 @@
   vertical-align: middle;
 }
 
-.surroundings__panel--onboarding {
+/* Onboarding: the one thing to do on a first visit, as the page's only card. */
+.surroundings__panel {
   padding: 0.9rem 1rem 1rem;
   border: 1px solid var(--app-border);
   border-top: 0.2rem solid var(--app-accent);
@@ -103,26 +122,10 @@
   background: var(--accent-tint);
 }
 
-.surroundings__explore {
+/* The way out for a visitor who does not want an area at all. */
+.surroundings__aside {
   display: flex;
-  gap: 0.5rem 1rem;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0.25rem 0 0;
-}
-
-.surroundings__explore-actions {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.surroundings__updated {
   margin: 0;
-  color: var(--app-muted);
-  font-size: 0.8rem;
 }
 
 .surroundings .kern-alert .kern-button {

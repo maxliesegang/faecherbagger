@@ -83,6 +83,42 @@
   height: clamp(24rem, calc(100dvh - 13rem), 48rem);
 }
 
+/*
+ * The inline area map is a picture of the radius, not a workspace: it takes the
+ * height of a few list rows, and a selected record shows its heading rather than
+ * a full card, so the map never pushes the answer below the fold.
+ */
+.map-explorer--compact .map-explorer__map {
+  height: clamp(11rem, 30dvh, 17rem);
+}
+
+.map-explorer--compact .map-explorer__toolbar {
+  min-height: 2.25rem;
+  padding: 0.3rem 0.55rem;
+}
+
+.map-explorer--compact .map-legend {
+  gap: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+/* Attribution stays, but it must not eat a fifth of a map this short. */
+.map-explorer--compact .maplibregl-ctrl-attrib {
+  padding-block: 0;
+  font-size: 0.65rem;
+}
+
+.map-explorer--compact .map-selection {
+  right: 0.5rem;
+  bottom: 1.5rem;
+  left: 0.5rem;
+  padding: 0.5rem 2.2rem 0.55rem 0.7rem;
+}
+
+.map-explorer--compact .map-selection__notes {
+  display: none;
+}
+
 .map-explorer__map:focus-visible,
 .map-explorer__fit:focus-visible,
 .map-selection__list-button:focus-visible,
@@ -174,7 +210,8 @@
     gap: 0.45rem 0.85rem;
   }
 
-  .map-explorer__map {
+  /* Scoped to the primary map: the compact one keeps its own smaller height. */
+  .map-explorer--primary .map-explorer__map {
     height: min(62vh, 34rem);
     min-height: 23rem;
   }

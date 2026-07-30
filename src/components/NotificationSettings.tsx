@@ -3,9 +3,9 @@ import {
   KernHeading,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
+import { usePersonal } from "../context/PersonalContext.tsx";
 import { useView } from "../context/ViewContext.tsx";
 import { FeedLinks } from "./FeedLinks.tsx";
-import { HomeAreaSetup } from "./HomeAreaSetup.tsx";
 import { NotificationStatusCard } from "./NotificationStatusCard.tsx";
 import "./NotificationSettings.css";
 
@@ -13,13 +13,14 @@ import "./NotificationSettings.css";
  * The notification section: one screen that answers "bekomme ich etwas mit?"
  * and lets the visitor change the answer.
  *
- * Notifications used to live in an accordion at the bottom of the surroundings
- * screen. They are the reason this app is installed on a phone, so they get a
- * place of their own — together with the area they are about, because for the
- * visitor those are one decision ("melde mir Baustellen hier").
+ * It states the radius it would report on but does not edit it — that is the
+ * surroundings screen, which is named after it and shows it on a map. Here the
+ * radius is one line and a link, so this screen stays about the single decision
+ * it owns.
  */
 export function NotificationSettings() {
-  const { showExplorer } = useView();
+  const { showSurroundings } = useView();
+  const { area: homeArea } = usePersonal();
 
   return (
     <section className="notifications" aria-labelledby="notifications-heading">
@@ -28,22 +29,30 @@ export function NotificationSettings() {
           Benachrichtigungen
         </KernHeading>
         <KernText className="notifications__intro">
-          Fächerbagger meldet Ihnen neue Baustellen in Ihrem Gebiet — ohne dass
+          Fächerbagger meldet Ihnen neue Baustellen in Ihrem Umkreis — ohne dass
           Sie nachsehen müssen.
         </KernText>
       </header>
 
-      <NotificationStatusCard variant="detailed" />
+      <NotificationStatusCard />
 
       <div className="notifications__panel">
         <KernHeading level={3} className="notifications__panel-heading">
-          Mein Gebiet
+          Gemeldeter Umkreis
         </KernHeading>
         <KernText muted className="notifications__panel-intro">
-          Gemeldet wird, was in diesem Umkreis neu dazukommt. Dasselbe Gebiet
-          bestimmt auch, was die Umgebungsseite zeigt.
+          {homeArea
+            ? `Gemeldet wird jede neue Baustelle im Umkreis von ${homeArea.radiusKm} km um Ihren Mittelpunkt. Derselbe Umkreis bestimmt, was der Bereich „Mein Umkreis“ zeigt.`
+            : "Noch kein Umkreis festgelegt. Er bestimmt sowohl die Meldungen als auch den Bereich „Mein Umkreis“."}
         </KernText>
-        <HomeAreaSetup />
+        <span className="notifications__panel-actions">
+          <KernButton
+            type="button"
+            variant={homeArea ? "tertiary" : "secondary"}
+            label={homeArea ? "Umkreis ändern" : "Umkreis festlegen"}
+            onClick={showSurroundings}
+          />
+        </span>
       </div>
 
       <div className="notifications__panel notifications__panel--quiet">
@@ -51,20 +60,12 @@ export function NotificationSettings() {
           Lieber ohne Push?
         </KernHeading>
         <KernText className="notifications__panel-intro">
-          Neue Baustellen der ganzen Region gibt es auch als Feed, und die
-          Umgebungsseite zeigt sie ohne jede Freigabe.
+          Neue Baustellen der ganzen Region gibt es auch als Feed — ohne
+          Freigabe, ohne Konto und in jedem Feedreader.
         </KernText>
         <p className="notifications__alternatives">
           <FeedLinks />
         </p>
-        <span className="notifications__panel-actions">
-          <KernButton
-            type="button"
-            variant="tertiary"
-            label="Alle Baustellen der Region durchsuchen"
-            onClick={showExplorer}
-          />
-        </span>
       </div>
     </section>
   );

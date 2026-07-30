@@ -44,6 +44,15 @@ export interface ConstructionSiteMapProps {
   selectedSiteId?: string;
   currentLocation?: LngLat;
   homeArea?: HomeArea;
+  /**
+   * `"sites"` frames the records — the explorer's job, where the result set is
+   * the subject. `"homeArea"` frames the circle and keeps it framed, because
+   * there the map exists to show how far the radius reaches; a record outside it
+   * must be allowed to sit outside the picture.
+   */
+  fitMode?: "sites" | "homeArea";
+  /** `"compact"` is the inline map above a list, at a fraction of the height. */
+  variant?: "primary" | "compact";
   onSiteSelect: (siteId: string | undefined) => void;
   getSiteDetailsHref: (siteId: string) => string;
   onSiteDetailsRequest: (siteId: string) => void;
@@ -56,6 +65,8 @@ const FIT_MAX_ZOOM = 14;
 const DETAIL_ZOOM = 15;
 const FIT_DURATION_MS = 500;
 const FOCUS_DURATION_MS = 650;
+/** Keeping up with a dragged radius slider, not travelling to a new place. */
+const RADIUS_TRACK_DURATION_MS = 250;
 
 const getGeoJSONSource = (map: MapLibreMap, id: string): GeoJSONSource =>
   map.getSource(id) as GeoJSONSource;
@@ -78,11 +89,15 @@ function focusPoint(map: MapLibreMap, point: LngLat, durationMs: number) {
   });
 }
 
-function fitBounds(map: MapLibreMap, bounds: LngLatBounds) {
+function fitBounds(
+  map: MapLibreMap,
+  bounds: LngLatBounds,
+  durationMs = FIT_DURATION_MS,
+) {
   map.fitBounds(bounds, {
     padding: FIT_PADDING,
     maxZoom: FIT_MAX_ZOOM,
-    duration: FIT_DURATION_MS,
+    duration: durationMs,
   });
 }
 
@@ -105,12 +120,16 @@ function fitConstructionSites(
   fitBounds(map, bounds);
 }
 
-function fitHomeArea(map: MapLibreMap, area: HomeArea) {
+function fitHomeArea(
+  map: MapLibreMap,
+  area: HomeArea,
+  durationMs = FIT_DURATION_MS,
+) {
   const bounds = new LngLatBounds();
   createHomeAreaPolygon(area).coordinates[0].forEach((point) =>
     bounds.extend(point as LngLat),
   );
-  fitBounds(map, bounds);
+  fitBounds(map, bounds, durationMs);
 }
 
 export function ConstructionSiteMap({
@@ -118,6 +137,8 @@ export function ConstructionSiteMap({
   selectedSiteId,
   currentLocation,
   homeArea,
+  fitMode = "sites",
+  variant = "primary",
   onSiteSelect,
   getSiteDetailsHref,
   onSiteDetailsRequest,
@@ -134,6 +155,7 @@ export function ConstructionSiteMap({
     selectedSiteId,
     currentLocation,
     homeArea,
+    fitMode,
     onSiteSelect,
   });
   latestPropsRef.current = {
@@ -141,6 +163,7 @@ export function ConstructionSiteMap({
     selectedSiteId,
     currentLocation,
     homeArea,
+    fitMode,
     onSiteSelect,
   };
 
@@ -202,12 +225,17 @@ export function ConstructionSiteMap({
         selectedSiteId,
         currentLocation,
         homeArea,
+        fitMode,
       } = latestPropsRef.current;
       setSelectedSiteFilter(map, selectedSiteId);
-      fitConstructionSites(map, constructionSites);
       const initiallySelected = constructionSites.find(
         (site) => site.id === selectedSiteId,
       );
+      if (fitMode === "homeArea" && homeArea) {
+        fitHomeArea(map, homeArea, 0);
+        return;
+      }
+      fitConstructionSites(map, constructionSites);
       if (initiallySelected) {
         focusPoint(map, initiallySelected.point, 0);
       } else if (currentLocation) {
@@ -233,8 +261,8 @@ export function ConstructionSiteMap({
     getGeoJSONSource(map, MAP_SOURCE_IDS.geometries).setData(
       createConstructionSiteGeometryFeatureCollection(constructionSites),
     );
-    fitConstructionSites(map, constructionSites);
-  }, [constructionSites]);
+    if (fitMode === "sites") fitConstructionSites(map, constructionSites);
+  }, [constructionSites, fitMode]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -242,10 +270,12 @@ export function ConstructionSiteMap({
     getGeoJSONSource(map, MAP_SOURCE_IDS.userLocation).setData(
       createUserLocationFeatureCollection(currentLocation),
     );
-    if (currentLocation && !selectedSiteId) {
+    // Zooming to the device location would throw the radius out of the picture,
+    // which is the one thing the area map is there to show.
+    if (currentLocation && !selectedSiteId && fitMode === "sites") {
       focusPoint(map, currentLocation, FOCUS_DURATION_MS);
     }
-  }, [currentLocation, selectedSiteId]);
+  }, [currentLocation, fitMode, selectedSiteId]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -253,16 +283,21 @@ export function ConstructionSiteMap({
     getGeoJSONSource(map, MAP_SOURCE_IDS.homeArea).setData(
       createHomeAreaFeatureCollection(homeArea),
     );
-  }, [homeArea]);
+    // Follows a radius the visitor is dragging, so the circle stays framed
+    // while it grows. Short enough to read as one continuous movement.
+    if (fitMode === "homeArea" && homeArea) {
+      fitHomeArea(map, homeArea, RADIUS_TRACK_DURATION_MS);
+    }
+  }, [fitMode, homeArea]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !isMapReadyRef.current) return;
     setSelectedSiteFilter(map, selectedSiteId);
-    if (selectedSite) {
+    if (selectedSite && fitMode === "sites") {
       focusPoint(map, selectedSite.point, FOCUS_DURATION_MS);
     }
-  }, [selectedSite, selectedSiteId]);
+  }, [fitMode, selectedSite, selectedSiteId]);
 
   useEffect(() => {
     if (!selectedSiteId) return;
@@ -273,8 +308,10 @@ export function ConstructionSiteMap({
     return () => window.removeEventListener("keydown", closeSelection);
   }, [selectedSiteId]);
 
+  const isAreaMap = fitMode === "homeArea";
+
   return (
-    <div className="map-explorer">
+    <div className={`map-explorer map-explorer--${variant}`}>
       <div className="map-explorer__toolbar">
         <div className="map-legend" aria-label="Legende">
           <span>
@@ -294,7 +331,7 @@ export function ConstructionSiteMap({
           {homeArea && (
             <span>
               <i className="map-legend__radius" />
-              Benachrichtigungsradius ({homeArea.radiusKm} km)
+              Umkreis ({homeArea.radiusKm} km)
             </span>
           )}
         </div>
@@ -302,12 +339,16 @@ export function ConstructionSiteMap({
           type="button"
           className="map-explorer__fit"
           onClick={() => {
-            if (mapRef.current) {
-              fitConstructionSites(mapRef.current, constructionSites);
+            const map = mapRef.current;
+            if (!map) return;
+            if (isAreaMap && homeArea) {
+              fitHomeArea(map, homeArea);
+              return;
             }
+            fitConstructionSites(map, constructionSites);
           }}
         >
-          Alle zeigen
+          {isAreaMap ? "Umkreis zeigen" : "Alle zeigen"}
         </button>
       </div>
 

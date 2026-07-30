@@ -58,6 +58,16 @@
   margin-top: 0.25rem;
 }
 
+/* The ends of the slider's range, so the track has a scale to read against. */
+.area-setup__radius-scale {
+  display: flex;
+  justify-content: space-between;
+  max-width: 26rem;
+  margin: 0.1rem 0 0;
+  color: var(--app-muted);
+  font-size: 0.75rem;
+}
+
 .area-setup__radius:focus-visible {
   outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: 2px;

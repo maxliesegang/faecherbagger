@@ -57,20 +57,3 @@
   font-size: 0.9rem;
   line-height: 1.4;
 }
-
-/*
- * The compact card sits above the answer on the surroundings screen, so it
- * stays one line wherever the width allows and never pushes the list down.
- */
-@media (min-width: 34rem) {
-  .notification-state--compact {
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 0.5rem 1rem;
-    align-items: center;
-    justify-items: stretch;
-  }
-
-  .notification-state--compact .notification-state__actions {
-    justify-content: end;
-  }
-}

@@ -17,18 +17,29 @@ import { getConstructionSiteMunicipalityOptions } from "../lib/construction-site
 import { getMunicipalityCenter } from "../lib/municipality-center.ts";
 import "./HomeAreaSetup.css";
 
+interface HomeAreaSetupProps {
+  /**
+   * The radius the visitor is currently dragging, before they commit it. The
+   * surroundings screen draws it on the map, so the circle grows under the
+   * thumb — that preview is what makes "5 km" mean something. Committing is
+   * still explicit, because saving an area re-syncs the push subscription.
+   */
+  onDraftRadiusChange?: (radiusKm: number) => void;
+}
+
 /**
- * Defines the area the app watches: a center — from the device location or,
- * as a fallback, from a municipality in the data — and a radius.
+ * Defines the radius the app watches: a center — from the device location or,
+ * as a fallback, from a municipality in the data — and how far around it to
+ * look.
  *
- * The switch for notifications about this area lives next to this panel in
- * {@link NotificationSettings} rather than inside it: it is the same decision
- * for the visitor, but it needs an area to exist first, and this panel is also
- * shown during onboarding, where there is none yet. This panel reports what
- * happened to the *area*; what happened to the subscription is reported by the
- * card that owns the switch.
+ * Rendered on the surroundings screen only, which is the screen the radius
+ * describes. The notification section states the same radius and links here
+ * instead of carrying a second copy of these controls: two editors for one
+ * value is how the two screens came to disagree about it. This panel reports
+ * what happened to the *area*; what happened to the subscription is reported by
+ * the card that owns the switch.
  */
-export function HomeAreaSetup() {
+export function HomeAreaSetup({ onDraftRadiusChange }: HomeAreaSetupProps) {
   const { constructionSites } = useDataset();
   const {
     area: homeArea,
@@ -52,6 +63,11 @@ export function HomeAreaSetup() {
   const hasUnsavedRadius =
     homeArea !== null && homeArea.radiusKm !== radiusKm;
 
+  const changeRadius = (nextRadiusKm: number) => {
+    setRadiusKm(nextRadiusKm);
+    onDraftRadiusChange?.(nextRadiusKm);
+  };
+
   const useCurrentLocationAsCenter = async () => {
     try {
       const point = await locationController.requestLocation();
@@ -60,7 +76,7 @@ export function HomeAreaSetup() {
         radiusKm,
       });
       setFeedbackMessage(
-        `Gebiet gespeichert: ${radiusKm} km um Ihren Standort.`,
+        `Gespeichert: ${radiusKm} km um Ihren Standort.`,
       );
     } catch (error) {
       setFeedbackMessage(
@@ -80,18 +96,18 @@ export function HomeAreaSetup() {
       return;
     }
     onHomeAreaChange({ center, radiusKm });
-    setFeedbackMessage(`Gebiet gespeichert: ${radiusKm} km um ${municipality}.`);
+    setFeedbackMessage(`Gespeichert: ${radiusKm} km um ${municipality}.`);
   };
 
   const saveRadius = () => {
     if (!homeArea) return;
     onHomeAreaChange({ ...homeArea, radiusKm });
-    setFeedbackMessage(`Radius auf ${radiusKm} km geändert.`);
+    setFeedbackMessage(`Umkreis auf ${radiusKm} km geändert.`);
   };
 
   const removeArea = () => {
     onHomeAreaClear();
-    setFeedbackMessage("Das Gebiet wurde entfernt.");
+    setFeedbackMessage("Der Umkreis wurde entfernt.");
   };
 
   return (
@@ -99,9 +115,9 @@ export function HomeAreaSetup() {
       <fieldset className="area-setup__field">
         <legend>Mittelpunkt</legend>
         <KernText muted className="area-setup__hint">
-          Ihr genauer Standort bleibt auf diesem Gerät: Der Mittelpunkt wird auf
-          etwa 100 m gerundet. Für Benachrichtigungen werden nur dieser
-          gerundete Mittelpunkt und der Radius übertragen.
+          Ihr genauer Standort bleibt auf diesem Gerät: gespeichert und — nur für
+          Benachrichtigungen — übertragen wird ein auf etwa 100 m gerundeter
+          Mittelpunkt.
         </KernText>
         <div className="area-setup__actions">
           <KernButton
@@ -144,9 +160,9 @@ export function HomeAreaSetup() {
       </fieldset>
 
       <fieldset className="area-setup__field">
-        <legend>Radius</legend>
+        <legend>Umkreis</legend>
         <label htmlFor="area-radius" className="area-setup__radius-label">
-          Umkreis: <strong>{radiusKm} km</strong>
+          Baustellen bis <strong>{radiusKm} km</strong> um den Mittelpunkt
         </label>
         <input
           id="area-radius"
@@ -156,14 +172,18 @@ export function HomeAreaSetup() {
           max={MAX_HOME_AREA_RADIUS_KM}
           step="1"
           value={radiusKm}
-          onChange={(event) => setRadiusKm(Number(event.currentTarget.value))}
+          onChange={(event) => changeRadius(Number(event.currentTarget.value))}
         />
+        <p className="area-setup__radius-scale" aria-hidden="true">
+          <span>{MIN_HOME_AREA_RADIUS_KM} km</span>
+          <span>{MAX_HOME_AREA_RADIUS_KM} km</span>
+        </p>
         {hasUnsavedRadius && (
           <div className="area-setup__actions">
             <KernButton
               type="button"
               variant="secondary"
-              label={`Radius auf ${radiusKm} km übernehmen`}
+              label={`${radiusKm} km übernehmen`}
               onClick={saveRadius}
             />
           </div>
@@ -175,7 +195,7 @@ export function HomeAreaSetup() {
           <KernButton
             type="button"
             variant="tertiary"
-            label="Gebiet entfernen"
+            label="Umkreis entfernen"
             onClick={removeArea}
           />
         </div>

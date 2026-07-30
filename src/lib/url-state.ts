@@ -25,17 +25,24 @@ export type ConstructionSiteResultView = "map" | "list";
 export const CONSTRUCTION_SITE_RESULT_VIEWS = ["map", "list"] as const;
 
 /**
- * The three top-level areas of the app. `"surroundings"` is the default and the
- * app's purpose: what is new around the visitor. `"explorer"` is the secondary
- * search over the whole region, and `"notifications"` owns the watched area
- * together with the Web Push switch for it.
+ * The three top-level areas of the app. `"surroundings"` is the default screen
+ * and the app's purpose: what is new inside the visitor's radius, which it also
+ * owns and lets them change. `"notifications"` carries the Web Push switch for
+ * that same radius, and `"explorer"` is the secondary search over the whole
+ * region.
  */
 export type AppSection = "surroundings" | "explorer" | "notifications";
 
+/**
+ * Tab order, not precedence: notifications come first because switching them on
+ * is the one thing a visitor does that keeps paying off after they close the
+ * app, and on a phone the first slot is the easiest to reach. The default
+ * section stays `"surroundings"`, so a bare URL still opens the answer.
+ */
 export const APP_SECTIONS = [
+  "notifications",
   "surroundings",
   "explorer",
-  "notifications",
 ] as const;
 
 /**
@@ -96,9 +103,9 @@ function createURLValueCodec<T extends string | number>(
 }
 
 const SECTION_CODEC = createURLValueCodec<AppSection>(APP_SECTIONS, {
-  surroundings: "umgebung",
+  surroundings: "umkreis",
   explorer: "alle",
-  notifications: "melden",
+  notifications: "benachrichtigungen",
 });
 
 const RESULT_VIEW_CODEC = createURLValueCodec<ConstructionSiteResultView>(

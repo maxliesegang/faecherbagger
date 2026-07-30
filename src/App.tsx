@@ -14,7 +14,6 @@ import { ClientNavigationLink } from "./components/ClientNavigationLink.tsx";
 import { ConstructionSiteDetail } from "./components/ConstructionSiteDetail.tsx";
 import { ConstructionSiteExplorer } from "./components/ConstructionSiteExplorer.tsx";
 import { ConstructionSiteSurroundings } from "./components/ConstructionSiteSurroundings.tsx";
-import { FeedLinks } from "./components/FeedLinks.tsx";
 import { LoadingStatus } from "./components/LoadingStatus.tsx";
 import { NotificationSettings } from "./components/NotificationSettings.tsx";
 import { ProgressiveWebAppSettings } from "./components/ProgressiveWebAppSettings.tsx";
@@ -130,7 +129,13 @@ function AppScreens() {
   );
 }
 
-/** Attribution and the feeds, shown once the source metadata is known. */
+/**
+ * Attribution, shown once the source metadata is known.
+ *
+ * Deliberately not the freshness timestamp — the page bar carries that above
+ * the fold — and not the feeds, which belong with the notification section they
+ * are the alternative to.
+ */
 function AppFooter() {
   const { metadata } = useDataset();
   const { progressiveWebApp } = usePersonal();
@@ -145,15 +150,12 @@ function AppFooter() {
         <section className="kern-accordion__body">
           <KernText>
             Daten: {metadata.source.name}. Quellen:{" "}
-            {metadata.attribution.join(", ")}. Letzte Aktualisierung:{" "}
-            {new Date(metadata.fetchedAt).toLocaleString("de-DE")}.
+            {metadata.attribution.join(", ")}.
           </KernText>
           <KernLink
             href="https://mobil.trk.de/"
             label="Zum Mobilitätsportal der TRK"
           />
-          {" · "}
-          <FeedLinks />
         </section>
       </details>
     </footer>
@@ -170,18 +172,18 @@ function AppShell() {
       <a className="skip-link" href="#main-content">
         Zum Inhalt
       </a>
-      <KernKopfzeile label="Fächerbagger · Baustellen in Ihrer Umgebung" />
+      {/* The brand only: the page bar below states what the app shows, and the
+          two lines said nearly the same thing on top of each other. */}
+      <KernKopfzeile label="Fächerbagger" />
       <main id="main-content">
         <KernContainer>
           <header className="app-bar">
+            {/* The title alone: each section states its own purpose below,
+                and a standing slogan only pushed the answer off the phone. */}
             <div className="app-bar__titles">
               <KernHeading level={1}>
                 Baustellen in der Region Karlsruhe
               </KernHeading>
-              <KernText className="app-bar__intro">
-                Neue Baustellen im eigenen Umkreis erfahren — und bei Bedarf die
-                ganze Region durchsuchen.
-              </KernText>
             </div>
             {isReady && (
               <p className="app-bar__updated">

@@ -11,9 +11,9 @@ interface AppSectionTabsProps {
 }
 
 const SECTION_LABELS: Record<AppSection, string> = {
-  surroundings: "Umgebung",
+  notifications: "Benachrichtigungen",
+  surroundings: "Mein Umkreis",
   explorer: "Alle Baustellen",
-  notifications: "Melden",
 };
 
 /**
@@ -22,10 +22,12 @@ const SECTION_LABELS: Record<AppSection, string> = {
  * is three shapes, and they must be there on the very first paint.
  */
 const SECTION_ICONS: Record<AppSection, ReactNode> = {
+  // A radius around a point, the same shape the map draws — the icon says what
+  // the section is about rather than repeating the explorer's pin.
   surroundings: (
     <>
-      <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
-      <circle cx="12" cy="10" r="2.5" />
+      <circle cx="12" cy="12" r="8" strokeDasharray="2.6 2.2" />
+      <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" />
     </>
   ),
   explorer: (
@@ -47,9 +49,10 @@ const SECTION_ICONS: Record<AppSection, ReactNode> = {
  * a fixed bottom bar on phones, where notifications are the reason the app is
  * installed and the switch has to stay within thumb reach.
  *
- * Both are the same list of links in the same order, so the surroundings — the
- * app's purpose — stay first and keep the count of changes the visitor has not
- * seen yet.
+ * Both are the same list in the same order: notifications first, because that
+ * switch is the one setting that keeps working after the app is closed, then the
+ * visitor's radius with the count of changes they have not seen yet, then the
+ * region-wide search.
  */
 export function AppSectionTabs({
   section,

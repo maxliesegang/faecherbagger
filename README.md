@@ -14,37 +14,40 @@ English.
 
 ## What the app is for
 
-The primary job is one question: **"Gibt es neue Baustellen in meiner
-Umgebung?"** Everything else supports that answer.
+The primary job is one question: **"Gibt es neue Baustellen in meinem
+Umkreis?"** Everything else supports that answer.
 
-- **Meine Umgebung** (default screen, [`ConstructionSiteSurroundings.tsx`](src/components/ConstructionSiteSurroundings.tsx)) —
-  the visitor defines a *home area* once (a center from the device
-  location or, as a fallback, from a municipality in the data, plus a radius).
-  The screen then lists the construction sites inside that area that appeared
-  within the visitor's time window, newest and nearest first, and marks the ones
-  that arrived since the last visit. "Neu" means one thing everywhere in the
-  app — the pipeline had not seen this construction site before — so the badge,
-  the list and the push notification always agree; a source edit to a record
-  someone already knows about does not resurface it. The same area powers Web
-  Push, so an alert can arrive without opening the app. A status card states
-  whether this device would actually be told; secondary detail (all sites in the
-  area, an area map) sits in disclosures below the answer.
+- **Mein Umkreis** (default screen, [`ConstructionSiteSurroundings.tsx`](src/components/ConstructionSiteSurroundings.tsx)) —
+  the visitor defines a *home area* once (a center from the device location or,
+  as a fallback, from a municipality in the data, plus a radius) and this screen
+  owns it. A compact map right under the heading draws the circle, so "5 km" is
+  a distance you can see rather than a number; dragging the radius slider in the
+  "Umkreis ändern" disclosure previews the new circle on that map before it is
+  saved. Below the map the screen lists the construction sites inside the area
+  that appeared within the visitor's time window, newest and nearest first, and
+  marks the ones that arrived since the last visit. "Neu" means one thing
+  everywhere in the app — the pipeline had not seen this construction site
+  before — so the badge, the list and the push notification always agree; a
+  source edit to a record someone already knows about does not resurface it.
+- **Benachrichtigungen** ([`NotificationSettings.tsx`](src/components/NotificationSettings.tsx)) —
+  the first tab, because switching notifications on is the one thing a visitor
+  does that keeps working after they close the app. It carries the switch and
+  what to do when the browser, the deployment or a denied permission gets in the
+  way. It *states* the radius it would report on and links to "Mein Umkreis" to
+  change it; the controls live in one place only.
 - **Alle Baustellen** (secondary screen, [`ConstructionSiteExplorer.tsx`](src/components/ConstructionSiteExplorer.tsx)) —
   the full region: search, filters, sorting, map and list.
-- **Melden** ([`NotificationSettings.tsx`](src/components/NotificationSettings.tsx)) —
-  the notification switch together with the home area it applies to, plus what
-  to do when the browser, the deployment or a denied permission gets in the way.
-  Its own section because on a phone — where notifications matter most — a
-  setting buried in an accordion is a setting nobody finds.
 
 The active screen is part of the shareable URL state
-(`?bereich=umgebung|alle|melden`, default `umgebung`), so a link opens where its
-author intended. The home area and the "seen" acknowledgement are personal state
-and stay in `localStorage` — they are never put in the URL.
+(`?bereich=benachrichtigungen|umkreis|alle`, default `umkreis`), so a link opens
+where its author intended. The home area and the "seen" acknowledgement are
+personal state and stay in `localStorage` — they are never put in the URL.
 
 The three sections are a tab row from 48rem up and a fixed bottom bar below it,
-where they stay in thumb reach; the surroundings tab carries the count of
-unacknowledged changes and the notification tab a dot for the current state.
+where they stay in thumb reach; notifications come first, the Umkreis tab
+carries the count of unacknowledged changes, and the notification tab a dot for
+the current state — that dot is the only place outside the notification section
+that states it.
 
 ## How it works
 
@@ -153,10 +156,9 @@ network-first runtime cache, and refreshes them:
 - through one-off Background Sync where available;
 - whenever the installed app starts, returns online, or becomes visible.
 
-Notifications are opted into in the "Melden" section, next to the home area
-they apply to: the area is the subject of the notification, so both are one
-decision. Every surface that mentions notifications renders the single
-description from
+Notifications are opted into in the "Benachrichtigungen" section, which states
+the home area they apply to and links to "Mein Umkreis" for changing it. Every
+surface that mentions notifications renders the single description from
 [`describeNotificationState`](src/lib/notification-state.ts), so a switch is
 never offered where it cannot succeed. A successful opt-in sends a local test
 notification. The

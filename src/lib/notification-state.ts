@@ -129,7 +129,7 @@ export function describeNotificationState({
       shortLabel: "Eingeschaltet",
       headline: "Benachrichtigungen sind eingeschaltet",
       description:
-        "Dieses Gerät erhält eine Meldung, sobald in Ihrem Gebiet eine neue Baustelle auftaucht — auch wenn die App geschlossen ist.",
+        "Dieses Gerät erhält eine Meldung, sobald in Ihrem Umkreis eine neue Baustelle auftaucht — auch wenn die App geschlossen ist.",
       toggleLabel: "Benachrichtigungen ausschalten",
     };
   }
@@ -137,10 +137,10 @@ export function describeNotificationState({
   if (!hasHomeArea) {
     return {
       tone: "needs-area",
-      shortLabel: "Gebiet fehlt",
-      headline: "Legen Sie zuerst Ihr Gebiet fest",
+      shortLabel: "Umkreis fehlt",
+      headline: "Legen Sie zuerst Ihren Umkreis fest",
       description:
-        "Benachrichtigungen brauchen einen Mittelpunkt und einen Radius. Danach lassen sie sich mit einem Klick einschalten.",
+        "Benachrichtigungen brauchen einen Mittelpunkt und einen Umkreis. Beides legen Sie im Bereich „Mein Umkreis“ fest; danach lassen sie sich mit einem Klick einschalten.",
       toggleLabel: null,
     };
   }
@@ -150,7 +150,7 @@ export function describeNotificationState({
     shortLabel: "Ausgeschaltet",
     headline: "Benachrichtigungen sind ausgeschaltet",
     description:
-      "Lassen Sie sich melden, sobald in Ihrem Gebiet eine neue Baustelle auftaucht — auch wenn die App geschlossen ist.",
+      "Lassen Sie sich melden, sobald in Ihrem Umkreis eine neue Baustelle auftaucht — auch wenn die App geschlossen ist.",
     toggleLabel: "Benachrichtigungen einschalten",
   };
 }

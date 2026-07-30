@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  APP_SECTIONS,
   DEFAULT_APP_URL_STATE,
   parseAppURLState,
   serializeAppURLState,
@@ -11,6 +12,16 @@ import type { SiteQuery } from "../src/lib/site-scope.ts";
 const withQuery = (query: Partial<SiteQuery>): AppURLState => ({
   ...DEFAULT_APP_URL_STATE,
   query: { ...DEFAULT_APP_URL_STATE.query, ...query },
+});
+
+describe("APP_SECTIONS", () => {
+  it("puts the notifications first and still opens the surroundings", () => {
+    // The tab order is a product decision, not an implementation detail: the
+    // notification switch is the first thing within thumb reach, while a bare
+    // URL still lands on the answer.
+    expect(APP_SECTIONS[0]).toBe("notifications");
+    expect(DEFAULT_APP_URL_STATE.section).toBe("surroundings");
+  });
 });
 
 describe("parseAppURLState", () => {
@@ -65,7 +76,9 @@ describe("parseAppURLState", () => {
   it("opens the surroundings by default so a shared link starts there", () => {
     expect(parseAppURLState("").section).toBe("surroundings");
     expect(parseAppURLState("?bereich=alle").section).toBe("explorer");
-    expect(parseAppURLState("?bereich=melden").section).toBe("notifications");
+    expect(parseAppURLState("?bereich=benachrichtigungen").section).toBe(
+      "notifications",
+    );
   });
 
   it("treats an empty site id as no selection", () => {
@@ -110,7 +123,7 @@ describe("serializeAppURLState", () => {
         ...DEFAULT_APP_URL_STATE,
         section: "notifications",
       }),
-    ).toBe("?bereich=melden");
+    ).toBe("?bereich=benachrichtigungen");
   });
 
   it("round-trips a fully populated state", () => {

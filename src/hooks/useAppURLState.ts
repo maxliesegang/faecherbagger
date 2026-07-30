@@ -36,6 +36,8 @@ export interface AppURLStateController extends AppURLState {
   showExplorer: () => void;
   /** Opens the notification settings from anywhere in the app. */
   showNotificationSettings: () => void;
+  /** Opens the surroundings, which own the radius, from anywhere in the app. */
+  showSurroundings: () => void;
   /** Selection inside the explorer map; deliberately not part of the URL. */
   mapSelectedSiteId: string | undefined;
   setMapSelectedSiteId: (siteId: string | undefined) => void;
@@ -170,6 +172,7 @@ export function useAppURLState(): AppURLStateController {
       resetQuery: () => updateURLState({ query: DEFAULT_APP_URL_STATE.query }),
       showExplorer: () => setSection("explorer"),
       showNotificationSettings: () => setSection("notifications"),
+      showSurroundings: () => setSection("surroundings"),
     };
   }, [updateQuery, updateURLState]);
 

@@ -7,6 +7,8 @@
   --app-card: var(--kern-color-layout-background-default, #fff);
   --app-accent: var(--kern-color-action-default, #454b6b);
   --app-muted: var(--kern-color-layout-text-muted, #595959);
+  /* Height of the fixed bottom bar; the page column keeps this much clear. */
+  --section-tabs-height: 4rem;
 
   /* Status hues shared with the map markers/legend (single source of truth). */
   --phase-active: #1d5e9e;
@@ -62,7 +64,9 @@ main > .kern-container {
   width: min(100% - 2rem, var(--app-content-width));
   max-width: var(--app-content-width);
   margin-inline: auto;
-  padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
+  padding-bottom: calc(
+    var(--section-tabs-height) + 1.25rem + env(safe-area-inset-bottom)
+  );
 }
 
 @media (min-width: 48rem) {
@@ -123,14 +127,6 @@ select {
   font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
   line-height: 1.2;
   text-wrap: balance;
-}
-
-.app-bar__intro {
-  margin: 0;
-  max-width: 46rem;
-  color: var(--app-muted);
-  font-size: 0.9rem;
-  line-height: 1.35;
 }
 
 /* Freshness chip with a live dot. */
@@ -755,9 +751,15 @@ select {
   }
 
   .nearby-card__map-button,
-  .construction-site-detail__map-button {
+  .construction-site-detail__map-button,
+  .recent-window__button {
     min-height: 2.75rem;
     padding-inline: 1rem;
+  }
+
+  /* The native thumb stays centred, so the taller box is pure hit area. */
+  .area-setup__radius {
+    height: 2.75rem;
   }
 
   .map-selection {

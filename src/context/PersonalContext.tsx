@@ -81,7 +81,7 @@ export function PersonalProvider({ children }: { children: ReactNode }) {
         setFeedbackMessage(
           error instanceof Error
             ? error.message
-            : "Das Gebiet konnte nicht an den Benachrichtigungsdienst übertragen werden.",
+            : "Der Umkreis konnte nicht an den Benachrichtigungsdienst übertragen werden.",
         );
       });
     },
