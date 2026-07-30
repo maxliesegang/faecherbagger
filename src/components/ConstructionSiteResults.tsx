@@ -13,6 +13,7 @@ import {
 import { getRecentWindowLabel } from "../shared/construction-site-labels.ts";
 import { ConstructionSiteTable } from "./ConstructionSiteTable.tsx";
 import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
+import "./ConstructionSiteResults.css";
 
 interface ConstructionSiteResultsProps {
   /** Already scoped and filtered upstream; this component only orders it. */

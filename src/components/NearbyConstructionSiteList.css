@@ -130,3 +130,10 @@
     align-items: baseline;
   }
 }
+
+@media (pointer: coarse) {
+  .nearby-card__map-button {
+    min-height: 2.75rem;
+    padding-inline: 1rem;
+  }
+}

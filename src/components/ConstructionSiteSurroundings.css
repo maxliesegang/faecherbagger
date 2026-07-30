@@ -1,33 +1,11 @@
 /*
  * The primary screen. It is a single readable column rather than the explorer's
  * two-column app layout: there is one question here ("was ist neu bei mir?"),
- * and everything secondary sits in disclosures below the answer.
+ * and everything secondary sits in disclosures below the answer. The column and
+ * its heading block come from `.app-screen` in App.css.
  */
 .surroundings {
-  display: grid;
-  gap: 0.85rem;
   max-width: 62rem;
-  align-content: start;
-}
-
-.surroundings__header {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.surroundings__header h2 {
-  margin: 0;
-  padding-block: 0;
-  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
-  line-height: 1.2;
-}
-
-.surroundings__intro {
-  margin: 0;
-  max-width: 44rem;
-  color: var(--app-muted);
-  font-size: 0.95rem;
-  line-height: 1.4;
 }
 
 /* Scope chips: what this screen is currently answering for. */

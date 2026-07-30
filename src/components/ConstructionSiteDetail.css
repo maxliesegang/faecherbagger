@@ -106,3 +106,16 @@
     padding-right: 0;
   }
 }
+
+@media (pointer: coarse) {
+  .construction-site-detail__back {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+
+  .construction-site-detail__map-button {
+    min-height: 2.75rem;
+    padding-inline: 1rem;
+  }
+}

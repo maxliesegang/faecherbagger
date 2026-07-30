@@ -8,23 +8,23 @@ import {
 import { useDataset } from "../context/DatasetContext.tsx";
 import { usePersonal } from "../context/PersonalContext.tsx";
 import {
-  DEFAULT_HOME_AREA_RADIUS_KM,
   MAX_HOME_AREA_RADIUS_KM,
   MIN_HOME_AREA_RADIUS_KM,
+  roundHomeAreaCenter,
 } from "../shared/home-area.ts";
-import { roundHomeAreaCenter } from "../shared/home-area.ts";
 import { getConstructionSiteMunicipalityOptions } from "../lib/construction-site-filter.ts";
 import { getMunicipalityCenter } from "../lib/municipality-center.ts";
 import "./HomeAreaSetup.css";
 
 interface HomeAreaSetupProps {
   /**
-   * The radius the visitor is currently dragging, before they commit it. The
-   * surroundings screen draws it on the map, so the circle grows under the
-   * thumb — that preview is what makes "5 km" mean something. Committing is
-   * still explicit, because saving an area re-syncs the push subscription.
+   * The radius in the slider, owned by the caller: the surroundings screen
+   * draws it on the map while the visitor drags, so the circle grows under the
+   * thumb — that preview is what makes "5 km" mean something. Saving stays
+   * explicit, because it re-syncs the push subscription.
    */
-  onDraftRadiusChange?: (radiusKm: number) => void;
+  radiusKm: number;
+  onRadiusKmChange: (radiusKm: number) => void;
 }
 
 /**
@@ -39,7 +39,10 @@ interface HomeAreaSetupProps {
  * what happened to the *area*; what happened to the subscription is reported by
  * the card that owns the switch.
  */
-export function HomeAreaSetup({ onDraftRadiusChange }: HomeAreaSetupProps) {
+export function HomeAreaSetup({
+  radiusKm,
+  onRadiusKmChange,
+}: HomeAreaSetupProps) {
   const { constructionSites } = useDataset();
   const {
     area: homeArea,
@@ -48,9 +51,6 @@ export function HomeAreaSetup({ onDraftRadiusChange }: HomeAreaSetupProps) {
     location: locationController,
   } = usePersonal();
 
-  const [radiusKm, setRadiusKm] = useState(
-    homeArea?.radiusKm ?? DEFAULT_HOME_AREA_RADIUS_KM,
-  );
   const [municipality, setMunicipality] = useState("");
   const [feedbackMessage, setFeedbackMessage] = useState<string>();
   const municipalities = useMemo(
@@ -62,11 +62,6 @@ export function HomeAreaSetup({ onDraftRadiusChange }: HomeAreaSetupProps) {
     locationController.locationState.status === "requesting";
   const hasUnsavedRadius =
     homeArea !== null && homeArea.radiusKm !== radiusKm;
-
-  const changeRadius = (nextRadiusKm: number) => {
-    setRadiusKm(nextRadiusKm);
-    onDraftRadiusChange?.(nextRadiusKm);
-  };
 
   const useCurrentLocationAsCenter = async () => {
     try {
@@ -172,7 +167,9 @@ export function HomeAreaSetup({ onDraftRadiusChange }: HomeAreaSetupProps) {
           max={MAX_HOME_AREA_RADIUS_KM}
           step="1"
           value={radiusKm}
-          onChange={(event) => changeRadius(Number(event.currentTarget.value))}
+          onChange={(event) =>
+            onRadiusKmChange(Number(event.currentTarget.value))
+          }
         />
         <p className="area-setup__radius-scale" aria-hidden="true">
           <span>{MIN_HOME_AREA_RADIUS_KM} km</span>

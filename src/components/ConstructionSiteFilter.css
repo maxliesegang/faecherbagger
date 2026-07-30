@@ -1,0 +1,263 @@
+/* The control rail's filter card: search, status tiles, chips and selects. */
+/* Cards share a flat white surface + hairline border on the tinted page. */
+.filter-panel {
+  padding: 0.75rem 0.85rem 0.85rem;
+  border: 1px solid var(--app-border);
+  border-top: 0.2rem solid var(--app-accent);
+  background: var(--app-card);
+}
+
+.filter-panel__heading {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2rem;
+}
+
+.filter-panel__heading h2 {
+  margin: 0;
+  padding-block: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.filter-panel__search .kern-form-input {
+  margin-top: 0.15rem;
+}
+
+/* Status switch: counts double as the label, so it reads as a summary too. */
+.phase-switch {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.35rem;
+  margin-top: 0.7rem;
+}
+
+.phase-switch__item {
+  --tile-accent: var(--app-accent);
+  --tile-tint: var(--phase-total-tint);
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--app-border);
+  border-block-start: 3px solid var(--tile-accent);
+  background: var(--app-card);
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.phase-switch__item--active {
+  --tile-accent: var(--phase-active);
+  --tile-tint: var(--phase-active-tint);
+}
+
+.phase-switch__item--upcoming {
+  --tile-accent: var(--phase-upcoming);
+  --tile-tint: var(--phase-upcoming-tint);
+}
+
+.phase-switch__item:hover:not([aria-pressed="true"]) {
+  background: var(--tile-tint);
+}
+
+.phase-switch__item[aria-pressed="true"] {
+  background: var(--tile-accent);
+  border-color: var(--tile-accent);
+}
+
+.phase-switch__value {
+  color: var(--kern-color-layout-text-default, #1d1d1b);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.phase-switch__item--active .phase-switch__value {
+  color: var(--phase-active);
+}
+
+.phase-switch__item--upcoming .phase-switch__value {
+  color: var(--phase-upcoming);
+}
+
+.phase-switch__label {
+  color: var(--app-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.phase-switch__item[aria-pressed="true"] .phase-switch__value,
+.phase-switch__item[aria-pressed="true"] .phase-switch__label {
+  color: var(--kern-color-action-on-default, #fff);
+}
+
+/* Scope toggle for the "what changed since the last refresh" view. */
+.filter-panel__scope {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 2.5rem;
+  margin-top: 0.35rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--app-border);
+  color: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: start;
+  background: var(--app-card);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.filter-panel__scope:hover:not([aria-pressed="true"]):not(:disabled) {
+  background: var(--accent-tint);
+}
+
+.filter-panel__scope[aria-pressed="true"] {
+  border-color: var(--app-accent);
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+}
+
+.filter-panel__scope:disabled {
+  color: var(--app-muted);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.filter-panel__scope-count {
+  min-width: 1.5rem;
+  padding-inline: 0.35rem;
+  border-radius: 1rem;
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.filter-panel__scope[aria-pressed="true"] .filter-panel__scope-count {
+  color: var(--app-accent);
+  background: var(--kern-color-action-on-default, #fff);
+}
+
+/* Active narrowing filters, each removable in one click. */
+.filter-chips {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filter-chips__chip {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.15rem 0.4rem 0.15rem 0.55rem;
+  border: 1px solid var(--app-accent);
+  color: var(--app-accent);
+  font-size: 0.8rem;
+  background: var(--accent-tint);
+  cursor: pointer;
+}
+
+.filter-chips__chip:hover {
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+}
+
+.filter-chips__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-chips__remove {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.filter-panel__advanced {
+  margin-top: 0.7rem;
+  border-top: 1px solid var(--app-border);
+  border-bottom: 0;
+  padding-top: 0.15rem;
+}
+
+.filter-panel__advanced > .kern-accordion__header {
+  padding-block: 0.6rem;
+}
+
+.filter-panel__active-count {
+  display: inline-block;
+  margin-inline-start: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 1rem;
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+/* One column in the rail; three-up when the panel is wide (tablet, mobile). */
+.filter-panel__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
+  align-items: end;
+  padding-block: 0.2rem 0.4rem;
+}
+
+@media (min-width: 40rem) and (max-width: 63.999rem) {
+  .filter-panel__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem 1rem;
+  }
+}
+
+.phase-switch__item:focus-visible,
+.filter-panel__scope:focus-visible,
+.filter-chips__chip:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+@media (max-width: 32rem) {
+  .phase-switch__item {
+    min-height: 2.75rem;
+    padding-inline: 0.4rem;
+  }
+
+  .phase-switch__value {
+    font-size: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phase-switch__item,
+  .filter-panel__scope,
+  .filter-chips__chip {
+    transition: none;
+  }
+}

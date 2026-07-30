@@ -16,7 +16,12 @@
 
 ## Repository Layout
 
-- `src/components/`: React UI and component-specific CSS.
+- `src/components/`: React UI and component-specific CSS. A component's rules
+  live in its own stylesheet — including its media queries, its `pointer: coarse`
+  targets and its reduced-motion overrides — so one component is one file to
+  read. `src/App.css` holds only what is app-wide: the design tokens, the
+  notification tones, the page shell and bar, and the `.app-screen` column that
+  every top-level screen shares.
 - `src/hooks/`: browser lifecycle and asynchronous React state.
   `useAppURLState` owns the shareable view state and the History API; every
   in-app navigation goes through it rather than touching `window.history`.

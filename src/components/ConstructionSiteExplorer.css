@@ -1,0 +1,76 @@
+/*
+ * The explorer is a two-column app: a narrow control rail that stacks
+ * everything vertically (search, status, detail filters, personal tools) beside
+ * a results column that gets the full remaining height. The DOM order is
+ * mobile-first — controls, then results — and the rail simply moves beside them
+ * when there is room, so no source reordering is needed.
+ */
+.app-shell {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.app-rail {
+  display: grid;
+  gap: 0.65rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.app-rail__tools {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+/*
+ * Without the rail there is no reason to keep the personal tools above the
+ * results, so the rail dissolves into the shell grid and only the filters stay
+ * on top. `order` never applies on desktop, where the rail is a real column.
+ */
+@media (max-width: 63.999rem) {
+  .app-rail {
+    display: contents;
+  }
+
+  .filter-panel {
+    order: 1;
+  }
+
+  .results {
+    order: 2;
+  }
+
+  .app-rail__tools {
+    order: 3;
+  }
+}
+
+@media (min-width: 64rem) {
+  .app-shell {
+    gap: 1rem 1.25rem;
+    grid-template-columns: var(--app-rail-width) minmax(0, 1fr);
+  }
+
+  /*
+     * The rail follows the map instead of scrolling away, and scrolls inside
+     * itself when the tools make it taller than the viewport.
+     */
+  .app-rail {
+    position: sticky;
+    top: 0.5rem;
+    max-height: calc(100dvh - 1rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+
+@media (min-width: 40rem) and (max-width: 63.999rem) {
+  .app-rail__tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}

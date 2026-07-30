@@ -37,12 +37,28 @@ interface InitialConstructionSiteMapData {
   homeArea?: HomeArea;
 }
 
+/**
+ * The map palette. MapLibre paint properties cannot read CSS custom properties,
+ * so these are the one place the WebGL side spells the colours out — the same
+ * values as the `--phase-*` and `--map-home-area` tokens in `src/App.css`, which
+ * the legend and the rest of the UI use. Change a colour in both or the legend
+ * stops describing the map.
+ */
+const MAP_COLORS = {
+  phaseActive: "#1d5e9e",
+  phaseUpcoming: "#ad6800",
+  /** The home-area circle and the device location, which are both "you". */
+  homeArea: "#2459a9",
+  surface: "#fff",
+  selectedOutline: "#1d1d1b",
+} as const;
+
 const CONSTRUCTION_PHASE_COLOR: ExpressionSpecification = [
   "match",
   ["get", "phase"],
   "active",
-  "#1d5e9e",
-  "#ad6800",
+  MAP_COLORS.phaseActive,
+  MAP_COLORS.phaseUpcoming,
 ];
 
 /**
@@ -81,7 +97,7 @@ export function addConstructionSiteMapLayers(
     type: "fill",
     source: MAP_SOURCE_IDS.homeArea,
     paint: {
-      "fill-color": "#2459a9",
+      "fill-color": MAP_COLORS.homeArea,
       "fill-opacity": 0.035,
     },
   });
@@ -90,7 +106,7 @@ export function addConstructionSiteMapLayers(
     type: "line",
     source: MAP_SOURCE_IDS.homeArea,
     paint: {
-      "line-color": "#2459a9",
+      "line-color": MAP_COLORS.homeArea,
       "line-width": 1,
       "line-opacity": 0.55,
       "line-dasharray": [2, 2],
@@ -122,7 +138,7 @@ export function addConstructionSiteMapLayers(
     paint: {
       "circle-color": CONSTRUCTION_PHASE_COLOR,
       "circle-radius": 7,
-      "circle-stroke-color": "#fff",
+      "circle-stroke-color": MAP_COLORS.surface,
       "circle-stroke-width": 2,
     },
   });
@@ -132,9 +148,9 @@ export function addConstructionSiteMapLayers(
     source: MAP_SOURCE_IDS.points,
     filter: ["==", ["get", "id"], ""],
     paint: {
-      "circle-color": "#fff",
+      "circle-color": MAP_COLORS.surface,
       "circle-radius": 12,
-      "circle-stroke-color": "#1d1d1b",
+      "circle-stroke-color": MAP_COLORS.selectedOutline,
       "circle-stroke-width": 4,
     },
   });
@@ -143,9 +159,9 @@ export function addConstructionSiteMapLayers(
     type: "circle",
     source: MAP_SOURCE_IDS.userLocation,
     paint: {
-      "circle-color": "#fff",
+      "circle-color": MAP_COLORS.surface,
       "circle-radius": 7,
-      "circle-stroke-color": "#2459a9",
+      "circle-stroke-color": MAP_COLORS.homeArea,
       "circle-stroke-width": 4,
     },
   });

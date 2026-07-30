@@ -23,12 +23,15 @@ export function NotificationSettings() {
   const { area: homeArea } = usePersonal();
 
   return (
-    <section className="notifications" aria-labelledby="notifications-heading">
-      <header className="notifications__header">
+    <section
+      className="notifications app-screen"
+      aria-labelledby="notifications-heading"
+    >
+      <header className="app-screen__header">
         <KernHeading level={2} id="notifications-heading">
           Benachrichtigungen
         </KernHeading>
-        <KernText className="notifications__intro">
+        <KernText className="app-screen__intro">
           Fächerbagger meldet Ihnen neue Baustellen in Ihrem Umkreis — ohne dass
           Sie nachsehen müssen.
         </KernText>

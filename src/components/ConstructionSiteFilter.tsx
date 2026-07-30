@@ -19,6 +19,7 @@ import {
 } from "../lib/construction-site-filter.ts";
 import type { RecentWindowDays } from "../shared/recency.ts";
 import { RecentWindowSelect } from "./RecentWindowSelect.tsx";
+import "./ConstructionSiteFilter.css";
 
 interface ConstructionSiteFilterProps {
   constructionSites: readonly ConstructionSite[];

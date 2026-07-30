@@ -5,6 +5,7 @@ import {
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import { usePersonal } from "../context/PersonalContext.tsx";
+import "./CurrentLocationControl.css";
 
 /**
  * Compact rail card. Sharing a location unlocks distances and the "nearest

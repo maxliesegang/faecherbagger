@@ -80,3 +80,10 @@
   background: var(--accent-tint);
   font-size: 0.9rem;
 }
+
+@media (pointer: coarse) {
+  /* The native thumb stays centred, so the taller box is pure hit area. */
+  .area-setup__radius {
+    height: 2.75rem;
+  }
+}

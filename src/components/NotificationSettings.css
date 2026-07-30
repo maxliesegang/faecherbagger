@@ -1,32 +1,10 @@
 /*
  * A single readable column, like the surroundings screen: this section is one
- * decision followed by the settings that decision depends on.
+ * decision followed by the settings that decision depends on. The column and
+ * its heading block come from `.app-screen` in App.css.
  */
 .notifications {
-  display: grid;
-  gap: 0.85rem;
   max-width: 52rem;
-  align-content: start;
-}
-
-.notifications__header {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.notifications__header h2 {
-  margin: 0;
-  padding-block: 0;
-  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
-  line-height: 1.2;
-}
-
-.notifications__intro {
-  margin: 0;
-  max-width: 44rem;
-  color: var(--app-muted);
-  font-size: 0.95rem;
-  line-height: 1.4;
 }
 
 .notifications__panel {

@@ -38,3 +38,20 @@
 .pwa-panel__feedback {
   font-weight: 700;
 }
+
+.pwa-panel > .kern-accordion__header {
+  min-height: 2.75rem;
+  padding-block: 0.55rem;
+  background: var(--app-card);
+  transition: background-color 0.15s ease;
+}
+
+.pwa-panel > .kern-accordion__header:hover {
+  background: var(--accent-tint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pwa-panel > .kern-accordion__header {
+    transition: none;
+  }
+}

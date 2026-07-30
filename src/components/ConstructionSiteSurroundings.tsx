@@ -6,6 +6,7 @@ import {
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import { usePersonal } from "../context/PersonalContext.tsx";
+import { DEFAULT_HOME_AREA_RADIUS_KM } from "../shared/home-area.ts";
 import type { SiteSelection } from "../lib/select-sites.ts";
 import { useView } from "../context/ViewContext.tsx";
 import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
@@ -43,9 +44,12 @@ export function ConstructionSiteSurroundings({
   } = useView();
   const { area: homeArea, hasAcknowledged, currentLocation } = usePersonal();
   const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
-  const [draftRadiusKm, setDraftRadiusKm] = useState<number>();
-  /** Bumped to remount the editor, which resets its uncommitted radius. */
-  const [areaEditorGeneration, setAreaEditorGeneration] = useState(0);
+  // The radius in the slider, which is not yet the saved one: this screen owns
+  // it because it is the screen that draws it. `HomeAreaSetup` renders it and
+  // reports moves; nobody keeps a second copy that could disagree.
+  const [draftRadiusKm, setDraftRadiusKm] = useState(
+    () => homeArea?.radiusKm ?? DEFAULT_HOME_AREA_RADIUS_KM,
+  );
 
   const nearbySites = useMemo(
     () => surroundings.all.map((entry) => entry.site),
@@ -64,19 +68,22 @@ export function ConstructionSiteSurroundings({
    */
   const mapArea = useMemo(() => {
     if (!homeArea) return undefined;
-    return draftRadiusKm === undefined || draftRadiusKm === homeArea.radiusKm
+    return draftRadiusKm === homeArea.radiusKm
       ? homeArea
       : { ...homeArea, radiusKm: draftRadiusKm };
   }, [draftRadiusKm, homeArea]);
 
   if (!homeArea) {
     return (
-      <section className="surroundings" aria-labelledby="surroundings-heading">
-        <header className="surroundings__header">
+      <section
+        className="surroundings app-screen"
+        aria-labelledby="surroundings-heading"
+      >
+        <header className="app-screen__header">
           <KernHeading level={2} id="surroundings-heading">
             Welche Baustellen sind bei Ihnen neu?
           </KernHeading>
-          <KernText className="surroundings__intro">
+          <KernText className="app-screen__intro">
             Legen Sie einmalig einen Mittelpunkt und einen Umkreis fest.
             Fächerbagger zeigt Ihnen dann, welche Baustellen dort neu sind — auf
             Wunsch auch als Benachrichtigung auf dieses Gerät.
@@ -84,7 +91,10 @@ export function ConstructionSiteSurroundings({
         </header>
 
         <div className="surroundings__panel">
-          <HomeAreaSetup />
+          <HomeAreaSetup
+            radiusKm={draftRadiusKm}
+            onRadiusKmChange={setDraftRadiusKm}
+          />
         </div>
 
         <p className="surroundings__aside">
@@ -102,8 +112,11 @@ export function ConstructionSiteSurroundings({
   const newCount = surroundings.recent.length;
 
   return (
-    <section className="surroundings" aria-labelledby="surroundings-heading">
-      <header className="surroundings__header">
+    <section
+      className="surroundings app-screen"
+      aria-labelledby="surroundings-heading"
+    >
+      <header className="app-screen__header">
         <KernHeading level={2} id="surroundings-heading">
           Neu in Ihrem Umkreis
         </KernHeading>
@@ -154,13 +167,10 @@ export function ConstructionSiteSurroundings({
        */}
       <details
         className="kern-accordion surroundings__section"
-        // Closing the editor discards an uncommitted radius, on the map and in
-        // the panel alike: a preview circle with no slider in sight is just a
-        // wrong map, and a reopened panel must show what is actually saved.
+        // Closing the editor discards an uncommitted radius: a preview circle
+        // with no slider in sight is just a wrong map.
         onToggle={(event) => {
-          if (event.currentTarget.open) return;
-          setDraftRadiusKm(undefined);
-          setAreaEditorGeneration((generation) => generation + 1);
+          if (!event.currentTarget.open) setDraftRadiusKm(homeArea.radiusKm);
         }}
       >
         <summary className="kern-accordion__header">
@@ -168,8 +178,8 @@ export function ConstructionSiteSurroundings({
         </summary>
         <section className="kern-accordion__body">
           <HomeAreaSetup
-            key={areaEditorGeneration}
-            onDraftRadiusChange={setDraftRadiusKm}
+            radiusKm={draftRadiusKm}
+            onRadiusKmChange={setDraftRadiusKm}
           />
         </section>
       </details>

@@ -10,12 +10,15 @@
   /* Height of the fixed bottom bar; the page column keeps this much clear. */
   --section-tabs-height: 4rem;
 
-  /* Status hues shared with the map markers/legend (single source of truth). */
+  /* Status hues for badges, tiles and the map legend. The WebGL layers cannot
+     read custom properties and mirror them in MAP_COLORS; change both. */
   --phase-active: #1d5e9e;
   --phase-upcoming: #ad6800;
   --phase-active-tint: rgb(29 94 158 / 8%);
   --phase-upcoming-tint: rgb(173 104 0 / 9%);
   --phase-total-tint: rgb(69 75 107 / 7%);
+  /* The home-area circle and the device location; mirrored in MAP_COLORS. */
+  --map-home-area: #2459a9;
   --accent-tint: rgb(69 75 107 / 6%);
 }
 
@@ -151,6 +154,38 @@ select {
   background: var(--kern-color-feedback-success, #2f8132);
 }
 
+/*
+ * A top-level screen: one readable column with a heading block on top. The
+ * surroundings and the notifications had a private copy of these four rules
+ * each, which is how their headings drifted apart in size. Only the column
+ * width stays per screen, because that follows the content.
+ */
+.app-screen {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+.app-screen__header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.app-screen__header h2 {
+  margin: 0;
+  padding-block: 0;
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
+  line-height: 1.2;
+}
+
+.app-screen__intro {
+  margin: 0;
+  max-width: 44rem;
+  color: var(--app-muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
 .app-status {
   display: flex;
   gap: 0.75rem;
@@ -171,500 +206,6 @@ select {
   to {
     transform: rotate(360deg);
   }
-}
-
-/*
- * Desktop is a two-column app: a narrow control rail that stacks everything
- * vertically (search, status, detail filters, personal tools) beside a results
- * column that gets the full remaining height. The DOM order is mobile-first —
- * controls, then results — and the rail simply moves beside them when there is
- * room, so no source reordering is needed.
- */
-.app-shell {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-  align-items: start;
-}
-
-.app-rail {
-  display: grid;
-  gap: 0.65rem;
-  align-content: start;
-  min-width: 0;
-}
-
-.app-rail__tools {
-  display: grid;
-  gap: 0.65rem;
-  min-width: 0;
-}
-
-/*
- * Without the rail there is no reason to keep the personal tools above the
- * results, so the rail dissolves into the shell grid and only the filters stay
- * on top. `order` never applies on desktop, where the rail is a real column.
- */
-@media (max-width: 63.999rem) {
-  .app-rail {
-    display: contents;
-  }
-
-  .filter-panel {
-    order: 1;
-  }
-
-  .results {
-    order: 2;
-  }
-
-  .app-rail__tools {
-    order: 3;
-  }
-}
-
-@media (min-width: 64rem) {
-  .app-shell {
-    gap: 1rem 1.25rem;
-    grid-template-columns: var(--app-rail-width) minmax(0, 1fr);
-  }
-
-  /*
-   * The rail follows the map instead of scrolling away, and scrolls inside
-   * itself when the tools make it taller than the viewport.
-   */
-  .app-rail {
-    position: sticky;
-    top: 0.5rem;
-    max-height: calc(100dvh - 1rem);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-gutter: stable;
-  }
-}
-
-/* Two-up tools on tablets, where the rail is still stacked above the results. */
-@media (min-width: 40rem) and (max-width: 63.999rem) {
-  .app-rail__tools {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
-  }
-}
-
-/* Cards share a flat white surface + hairline border on the tinted page. */
-.filter-panel {
-  padding: 0.75rem 0.85rem 0.85rem;
-  border: 1px solid var(--app-border);
-  border-top: 0.2rem solid var(--app-accent);
-  background: var(--app-card);
-}
-
-.filter-panel__heading {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 2rem;
-}
-
-.filter-panel__heading h2 {
-  margin: 0;
-  padding-block: 0;
-  font-size: 1.1rem;
-  line-height: 1.25;
-}
-
-.filter-panel__search .kern-form-input {
-  margin-top: 0.15rem;
-}
-
-/* Status switch: counts double as the label, so it reads as a summary too. */
-.phase-switch {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.35rem;
-  margin-top: 0.7rem;
-}
-
-.phase-switch__item {
-  --tile-accent: var(--app-accent);
-  --tile-tint: var(--phase-total-tint);
-  display: flex;
-  flex-direction: column;
-  gap: 0.05rem;
-  justify-content: center;
-  min-height: 3rem;
-  padding: 0.35rem 0.5rem;
-  border: 1px solid var(--app-border);
-  border-block-start: 3px solid var(--tile-accent);
-  background: var(--app-card);
-  color: inherit;
-  text-align: start;
-  cursor: pointer;
-  transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease;
-}
-
-.phase-switch__item--active {
-  --tile-accent: var(--phase-active);
-  --tile-tint: var(--phase-active-tint);
-}
-
-.phase-switch__item--upcoming {
-  --tile-accent: var(--phase-upcoming);
-  --tile-tint: var(--phase-upcoming-tint);
-}
-
-.phase-switch__item:hover:not([aria-pressed="true"]) {
-  background: var(--tile-tint);
-}
-
-.phase-switch__item[aria-pressed="true"] {
-  background: var(--tile-accent);
-  border-color: var(--tile-accent);
-}
-
-.phase-switch__value {
-  color: var(--kern-color-layout-text-default, #1d1d1b);
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.1;
-  font-variant-numeric: tabular-nums;
-}
-
-.phase-switch__item--active .phase-switch__value {
-  color: var(--phase-active);
-}
-
-.phase-switch__item--upcoming .phase-switch__value {
-  color: var(--phase-upcoming);
-}
-
-.phase-switch__label {
-  color: var(--app-muted);
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.phase-switch__item[aria-pressed="true"] .phase-switch__value,
-.phase-switch__item[aria-pressed="true"] .phase-switch__label {
-  color: var(--kern-color-action-on-default, #fff);
-}
-
-/* Scope toggle for the "what changed since the last refresh" view. */
-.filter-panel__scope {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 2.5rem;
-  margin-top: 0.35rem;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid var(--app-border);
-  color: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: start;
-  background: var(--app-card);
-  cursor: pointer;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
-}
-
-.filter-panel__scope:hover:not([aria-pressed="true"]):not(:disabled) {
-  background: var(--accent-tint);
-}
-
-.filter-panel__scope[aria-pressed="true"] {
-  border-color: var(--app-accent);
-  color: var(--kern-color-action-on-default, #fff);
-  background: var(--app-accent);
-}
-
-.filter-panel__scope:disabled {
-  color: var(--app-muted);
-  cursor: not-allowed;
-  opacity: 0.55;
-}
-
-.filter-panel__scope-count {
-  min-width: 1.5rem;
-  padding-inline: 0.35rem;
-  border-radius: 1rem;
-  color: var(--kern-color-action-on-default, #fff);
-  background: var(--app-accent);
-  font-size: 0.75rem;
-  line-height: 1.55;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-
-.filter-panel__scope[aria-pressed="true"] .filter-panel__scope-count {
-  color: var(--app-accent);
-  background: var(--kern-color-action-on-default, #fff);
-}
-
-/* Active narrowing filters, each removable in one click. */
-.filter-chips {
-  display: flex;
-  gap: 0.3rem;
-  flex-wrap: wrap;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.filter-chips__chip {
-  display: inline-flex;
-  gap: 0.35rem;
-  align-items: center;
-  max-width: 100%;
-  padding: 0.15rem 0.4rem 0.15rem 0.55rem;
-  border: 1px solid var(--app-accent);
-  color: var(--app-accent);
-  font-size: 0.8rem;
-  background: var(--accent-tint);
-  cursor: pointer;
-}
-
-.filter-chips__chip:hover {
-  color: var(--kern-color-action-on-default, #fff);
-  background: var(--app-accent);
-}
-
-.filter-chips__label {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.filter-chips__remove {
-  font-size: 1rem;
-  line-height: 1;
-}
-
-.filter-panel__advanced {
-  margin-top: 0.7rem;
-  border-top: 1px solid var(--app-border);
-  border-bottom: 0;
-  padding-top: 0.15rem;
-}
-
-.filter-panel__advanced > .kern-accordion__header {
-  padding-block: 0.6rem;
-}
-
-.filter-panel__active-count {
-  display: inline-block;
-  margin-inline-start: 0.5rem;
-  padding: 0.1rem 0.45rem;
-  border-radius: 1rem;
-  color: var(--kern-color-action-on-default, #fff);
-  background: var(--app-accent);
-  font-size: 0.75rem;
-  line-height: 1.4;
-  vertical-align: middle;
-}
-
-/* One column in the rail; three-up when the panel is wide (tablet, mobile). */
-.filter-panel__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.55rem;
-  align-items: end;
-  padding-block: 0.2rem 0.4rem;
-}
-
-@media (min-width: 40rem) and (max-width: 63.999rem) {
-  .filter-panel__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.65rem 1rem;
-  }
-}
-
-/* Location card: compact, because it directly changes what the results show. */
-.location-control {
-  display: grid;
-  gap: 0.4rem;
-  justify-items: start;
-  max-width: none;
-  margin: 0;
-  padding: 0.65rem 0.85rem 0.75rem;
-  border: 1px solid var(--app-border);
-  background: var(--app-card);
-}
-
-.location-control__heading {
-  display: flex;
-  gap: 0.6rem;
-  align-items: baseline;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.location-control__heading h2 {
-  margin: 0;
-  padding-block: 0;
-  flex: 0 1 auto;
-  font-size: 1rem;
-  line-height: 1.3;
-}
-
-.location-control__state {
-  display: inline-flex;
-  gap: 0.35rem;
-  align-items: center;
-  flex: 0 0 auto;
-  color: var(--app-muted);
-  font-size: 0.8rem;
-}
-
-.location-control__dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--kern-color-feedback-success, #2f8132);
-}
-
-.location-control__intro {
-  margin: 0;
-  font-size: 0.85rem;
-  line-height: 1.35;
-}
-
-.location-control .kern-alert {
-  width: 100%;
-}
-
-.pwa-panel > .kern-accordion__header {
-  min-height: 2.75rem;
-  padding-block: 0.55rem;
-  background: var(--app-card);
-  transition: background-color 0.15s ease;
-}
-
-.pwa-panel > .kern-accordion__header:hover {
-  background: var(--accent-tint);
-}
-
-/*
- * Results column. It is a query container so the table can switch to cards
- * based on the space it actually has, not the viewport: with the rail beside
- * it a 70rem window leaves the table barely 48rem.
- */
-.results {
-  min-width: 0;
-  container: results / inline-size;
-}
-
-.results__toolbar {
-  display: flex;
-  gap: 0.5rem 1rem;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--app-border);
-}
-
-.results__count {
-  margin: 0;
-  min-width: 0;
-  color: var(--app-muted);
-  font-size: 0.95rem;
-}
-
-.results__count strong {
-  color: var(--kern-color-layout-text-default, #1d1d1b);
-  font-size: 1.1rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.results__controls {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.results__sort {
-  display: flex;
-  gap: 0.45rem;
-  align-items: center;
-}
-
-.results__sort .kern-label {
-  padding: 0;
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-
-.results__sort .kern-form-input__select-wrapper {
-  width: clamp(11rem, 22vw, 18rem);
-  height: 2.75rem;
-}
-
-.results__sort .kern-form-input__select-wrapper::after {
-  top: 1.375rem;
-}
-
-.results__sort .kern-form-input__select {
-  padding-block: 0.2rem;
-  font-size: 0.9rem;
-}
-
-.view-switcher {
-  display: inline-grid;
-  grid-template-columns: repeat(2, minmax(5rem, 1fr));
-  flex: 0 0 auto;
-}
-
-.view-switcher__button {
-  min-height: 2.75rem;
-  padding: 0.35rem 1rem;
-  border: 1px solid var(--app-accent);
-  color: var(--app-accent);
-  font-weight: 700;
-  background: var(--app-card);
-  cursor: pointer;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
-}
-
-.view-switcher__button + .view-switcher__button {
-  border-inline-start: 0;
-}
-
-.view-switcher__button:hover:not([aria-pressed="true"]) {
-  background: var(--accent-tint);
-}
-
-.view-switcher__button[aria-pressed="true"] {
-  color: var(--kern-color-action-on-default, #fff);
-  background: var(--app-accent);
-}
-
-.results__change-summary {
-  margin-block: 0 0.5rem;
-  font-size: 0.9rem;
-}
-
-/* One consistent focus ring for every control this file styles. */
-.phase-switch__item:focus-visible,
-.filter-panel__scope:focus-visible,
-.filter-chips__chip:focus-visible,
-.view-switcher__button:focus-visible,
-.results__sort select:focus-visible {
-  position: relative;
-  z-index: 1;
-  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
-  outline-offset: 2px;
 }
 
 .app-footer {
@@ -692,88 +233,6 @@ select {
   }
 }
 
-@media (max-width: 32rem) {
-  .phase-switch__item {
-    min-height: 2.75rem;
-    padding-inline: 0.4rem;
-  }
-
-  .phase-switch__value {
-    font-size: 1.15rem;
-  }
-
-  .results__toolbar {
-    align-items: end;
-  }
-
-  .results__controls {
-    gap: 0.5rem;
-    justify-content: end;
-  }
-
-  .results__sort {
-    flex: 1 1 100%;
-  }
-
-  .results__sort .kern-form-input__select-wrapper {
-    width: auto;
-    flex: 1 1 auto;
-  }
-
-  .view-switcher {
-    grid-template-columns: repeat(2, minmax(4.5rem, 1fr));
-  }
-
-  .view-switcher__button {
-    padding-inline: 0.6rem;
-  }
-}
-
-/*
- * Touch pass. The inline text buttons in the table, the cards and the map read
- * as links and are sized like text, which is fine for a mouse and too small
- * for a thumb. On a coarse pointer they get the 44 px target without becoming
- * buttons visually.
- */
-@media (pointer: coarse) {
-  .construction-site-table__details-button,
-  .construction-site-table__map-button,
-  .construction-site-card__map-button,
-  .construction-site-card__details-link,
-  .construction-site-card__details summary,
-  .map-explorer__fit,
-  .map-selection__list-button,
-  .map-selection__details-link,
-  .construction-site-detail__back {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.75rem;
-  }
-
-  .nearby-card__map-button,
-  .construction-site-detail__map-button,
-  .recent-window__button {
-    min-height: 2.75rem;
-    padding-inline: 1rem;
-  }
-
-  /* The native thumb stays centred, so the taller box is pure hit area. */
-  .area-setup__radius {
-    height: 2.75rem;
-  }
-
-  .map-selection {
-    padding-right: 3rem;
-  }
-
-  .map-selection__close {
-    top: 0;
-    right: 0;
-    width: 2.75rem;
-    height: 2.75rem;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -781,14 +240,5 @@ select {
 
   .app-status__spinner {
     animation-duration: 1.6s;
-  }
-
-  .phase-switch__item,
-  .filter-panel__scope,
-  .filter-chips__chip,
-  .section-tabs__tab,
-  .view-switcher__button,
-  .pwa-panel > .kern-accordion__header {
-    transition: none;
   }
 }

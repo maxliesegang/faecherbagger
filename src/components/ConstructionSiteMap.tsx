@@ -1,4 +1,10 @@
-import { useEffect, useMemo, useRef } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  type DependencyList,
+} from "react";
 import {
   AttributionControl,
   LngLatBounds,
@@ -70,6 +76,27 @@ const RADIUS_TRACK_DURATION_MS = 250;
 
 const getGeoJSONSource = (map: MapLibreMap, id: string): GeoJSONSource =>
   map.getSource(id) as GeoJSONSource;
+
+/**
+ * Runs `effect` against the map, but only once it exists and its style has
+ * loaded — before that there are no sources to write to.
+ *
+ * Every prop-sync effect below needs that guard, and each one that forgot it
+ * would throw on the first render rather than on the render that changed the
+ * prop. One hook keeps the guard in a single place; `deps` is the effect's own,
+ * because what each of them watches differs.
+ */
+function useLoadedMapEffect(
+  getLoadedMap: () => MapLibreMap | null,
+  effect: (map: MapLibreMap) => void,
+  deps: DependencyList,
+): void {
+  useEffect(() => {
+    const map = getLoadedMap();
+    if (map) effect(map);
+    // The closure is rebuilt every render; `deps` states what it actually reads.
+  }, deps);
+}
 
 /** Highlights one construction site, or none when the id is undefined. */
 function setSelectedSiteFilter(map: MapLibreMap, selectedSiteId?: string) {
@@ -172,6 +199,11 @@ export function ConstructionSiteMap({
     [constructionSites, selectedSiteId],
   );
 
+  const getLoadedMap = useCallback(
+    () => (isMapReadyRef.current ? mapRef.current : null),
+    [],
+  );
+
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
@@ -252,52 +284,60 @@ export function ConstructionSiteMap({
     };
   }, []);
 
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !isMapReadyRef.current) return;
-    getGeoJSONSource(map, MAP_SOURCE_IDS.points).setData(
-      createConstructionSitePointFeatureCollection(constructionSites),
-    );
-    getGeoJSONSource(map, MAP_SOURCE_IDS.geometries).setData(
-      createConstructionSiteGeometryFeatureCollection(constructionSites),
-    );
-    if (fitMode === "sites") fitConstructionSites(map, constructionSites);
-  }, [constructionSites, fitMode]);
+  useLoadedMapEffect(
+    getLoadedMap,
+    (map) => {
+      getGeoJSONSource(map, MAP_SOURCE_IDS.points).setData(
+        createConstructionSitePointFeatureCollection(constructionSites),
+      );
+      getGeoJSONSource(map, MAP_SOURCE_IDS.geometries).setData(
+        createConstructionSiteGeometryFeatureCollection(constructionSites),
+      );
+      if (fitMode === "sites") fitConstructionSites(map, constructionSites);
+    },
+    [constructionSites, fitMode],
+  );
 
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !isMapReadyRef.current) return;
-    getGeoJSONSource(map, MAP_SOURCE_IDS.userLocation).setData(
-      createUserLocationFeatureCollection(currentLocation),
-    );
-    // Zooming to the device location would throw the radius out of the picture,
-    // which is the one thing the area map is there to show.
-    if (currentLocation && !selectedSiteId && fitMode === "sites") {
-      focusPoint(map, currentLocation, FOCUS_DURATION_MS);
-    }
-  }, [currentLocation, fitMode, selectedSiteId]);
+  useLoadedMapEffect(
+    getLoadedMap,
+    (map) => {
+      getGeoJSONSource(map, MAP_SOURCE_IDS.userLocation).setData(
+        createUserLocationFeatureCollection(currentLocation),
+      );
+      // Zooming to the device location would throw the radius out of the
+      // picture, which is the one thing the area map is there to show.
+      if (currentLocation && !selectedSiteId && fitMode === "sites") {
+        focusPoint(map, currentLocation, FOCUS_DURATION_MS);
+      }
+    },
+    [currentLocation, fitMode, selectedSiteId],
+  );
 
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !isMapReadyRef.current) return;
-    getGeoJSONSource(map, MAP_SOURCE_IDS.homeArea).setData(
-      createHomeAreaFeatureCollection(homeArea),
-    );
-    // Follows a radius the visitor is dragging, so the circle stays framed
-    // while it grows. Short enough to read as one continuous movement.
-    if (fitMode === "homeArea" && homeArea) {
-      fitHomeArea(map, homeArea, RADIUS_TRACK_DURATION_MS);
-    }
-  }, [fitMode, homeArea]);
+  useLoadedMapEffect(
+    getLoadedMap,
+    (map) => {
+      getGeoJSONSource(map, MAP_SOURCE_IDS.homeArea).setData(
+        createHomeAreaFeatureCollection(homeArea),
+      );
+      // Follows a radius the visitor is dragging, so the circle stays framed
+      // while it grows. Short enough to read as one continuous movement.
+      if (fitMode === "homeArea" && homeArea) {
+        fitHomeArea(map, homeArea, RADIUS_TRACK_DURATION_MS);
+      }
+    },
+    [fitMode, homeArea],
+  );
 
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !isMapReadyRef.current) return;
-    setSelectedSiteFilter(map, selectedSiteId);
-    if (selectedSite && fitMode === "sites") {
-      focusPoint(map, selectedSite.point, FOCUS_DURATION_MS);
-    }
-  }, [fitMode, selectedSite, selectedSiteId]);
+  useLoadedMapEffect(
+    getLoadedMap,
+    (map) => {
+      setSelectedSiteFilter(map, selectedSiteId);
+      if (selectedSite && fitMode === "sites") {
+        focusPoint(map, selectedSite.point, FOCUS_DURATION_MS);
+      }
+    },
+    [fitMode, selectedSite, selectedSiteId],
+  );
 
   useEffect(() => {
     if (!selectedSiteId) return;

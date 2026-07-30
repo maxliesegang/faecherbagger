@@ -1,0 +1,146 @@
+/*
+ * The result column: the toolbar above the map or the table. It is a query
+ * container so the table can switch to cards based on the space it actually
+ * has, not the viewport: with the rail beside it a 70rem window leaves the
+ * table barely 48rem.
+ */
+.results {
+  min-width: 0;
+  container: results / inline-size;
+}
+
+.results__toolbar {
+  display: flex;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.results__count {
+  margin: 0;
+  min-width: 0;
+  color: var(--app-muted);
+  font-size: 0.95rem;
+}
+
+.results__count strong {
+  color: var(--kern-color-layout-text-default, #1d1d1b);
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.results__controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.results__sort {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.results__sort .kern-label {
+  padding: 0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.results__sort .kern-form-input__select-wrapper {
+  width: clamp(11rem, 22vw, 18rem);
+  height: 2.75rem;
+}
+
+.results__sort .kern-form-input__select-wrapper::after {
+  top: 1.375rem;
+}
+
+.results__sort .kern-form-input__select {
+  padding-block: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.view-switcher {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(5rem, 1fr));
+  flex: 0 0 auto;
+}
+
+.view-switcher__button {
+  min-height: 2.75rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--app-accent);
+  color: var(--app-accent);
+  font-weight: 700;
+  background: var(--app-card);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.view-switcher__button + .view-switcher__button {
+  border-inline-start: 0;
+}
+
+.view-switcher__button:hover:not([aria-pressed="true"]) {
+  background: var(--accent-tint);
+}
+
+.view-switcher__button[aria-pressed="true"] {
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+}
+
+.results__change-summary {
+  margin-block: 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.view-switcher__button:focus-visible,
+.results__sort select:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+@media (max-width: 32rem) {
+  .results__toolbar {
+    align-items: end;
+  }
+
+  .results__controls {
+    gap: 0.5rem;
+    justify-content: end;
+  }
+
+  .results__sort {
+    flex: 1 1 100%;
+  }
+
+  .results__sort .kern-form-input__select-wrapper {
+    width: auto;
+    flex: 1 1 auto;
+  }
+
+  .view-switcher {
+    grid-template-columns: repeat(2, minmax(4.5rem, 1fr));
+  }
+
+  .view-switcher__button {
+    padding-inline: 0.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view-switcher__button {
+    transition: none;
+  }
+}
