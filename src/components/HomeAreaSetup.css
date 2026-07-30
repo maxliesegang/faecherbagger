@@ -46,10 +46,23 @@
   margin: 0;
 }
 
+/*
+ * The distance reads as a value with a caption, not as a sentence: it is the
+ * number the notification is about, and it changes under the visitor's thumb.
+ */
 .area-setup__radius-label {
-  display: block;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
   margin-top: 0.35rem;
   font-size: 0.9rem;
+}
+
+.area-setup__radius-value {
+  color: var(--app-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .area-setup__radius {

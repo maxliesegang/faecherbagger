@@ -7,6 +7,7 @@ import {
   type ReactNode,
 } from "react";
 import type { HomeArea, ISOTimestamp, LngLat } from "../types/index.ts";
+import { FALLBACK_HOME_AREA } from "../shared/home-area.ts";
 import { useCurrentLocation } from "../hooks/useCurrentLocation.ts";
 import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
 import { useHomeArea } from "../hooks/useHomeArea.ts";
@@ -25,6 +26,21 @@ import { useSeenConstructionSites } from "../hooks/useSeenConstructionSites.ts";
 export interface Personal {
   /** The visitor's surroundings; `null` until they define one. */
   area: HomeArea | null;
+  /**
+   * The area the surroundings screen actually looks at: the visitor's, or
+   * {@link FALLBACK_HOME_AREA} while they have not chosen one.
+   *
+   * Two fields rather than one defaulted `area` on purpose. Everything that
+   * *reports* on surroundings reads this and therefore always has something to
+   * show; everything that *acts* on them — the push subscription, the
+   * notification state, the area editor — reads `area`, because a guess must
+   * never become something a device gets notified about. `hasChosenArea`
+   * distinguishes the two states for the surfaces that have to say which one
+   * they are in.
+   */
+  effectiveArea: HomeArea;
+  /** Whether `effectiveArea` is the visitor's own choice rather than the guess. */
+  hasChosenArea: boolean;
   /** Persists the area and keeps an existing push subscription in step. */
   setArea: (area: HomeArea) => void;
   /** Forgets the area and ends the subscription that depended on it. */
@@ -107,6 +123,8 @@ export function PersonalProvider({ children }: { children: ReactNode }) {
   const personal = useMemo<Personal>(
     () => ({
       area: homeArea,
+      effectiveArea: homeArea ?? FALLBACK_HOME_AREA,
+      hasChosenArea: homeArea !== null,
       setArea,
       clearArea,
       seenAt,

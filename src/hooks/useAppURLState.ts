@@ -142,7 +142,12 @@ export function useAppURLState(): AppURLStateController {
         view: "map",
         detailSiteId: undefined,
       };
-      window.history.replaceState(null, "", buildHref(target));
+      // A new entry, not a replacement. This is the one navigation in the app
+      // that changes section, view and selection at once, and replacing the
+      // entry meant Back could not undo it: a visitor who tapped it from their
+      // surroundings list landed among all 515 records of the region with no
+      // way back to where they were.
+      window.history.pushState(null, "", buildHref(target));
       updateURLState(target);
       setMapSelectedSiteId(siteId);
     },

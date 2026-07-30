@@ -28,21 +28,35 @@ export function ClosureBadge({ closure }: { closure: ClosureSeverity }) {
   );
 }
 
-/** Marks a record the pipeline first saw within the visitor's time window. */
+/**
+ * Marks a record the pipeline first saw within the visitor's time window.
+ *
+ * Not a `danger` badge any more, and not a KERN badge at all: red is what the
+ * app says when a street is closed, and spending it on "we learned about this
+ * recently" made bookkeeping look like an emergency. A solid accent chip stands
+ * out from the outlined badges beside it without claiming severity.
+ */
 export function ConstructionSiteRecencyBadge({
   recency,
 }: {
   recency: ConstructionSiteRecency;
 }) {
   if (recency === null) return null;
-  return <KernBadge variant="danger" label="Neu" />;
+  return <span className="site-badge-new">Neu</span>;
 }
 
 interface ConstructionSiteBadgesProps {
   phase: ConstructionPhase;
   closure: ClosureSeverity;
-  /** Leads the row when the record is new in the visitor's window. */
+  /** Closes the row when the record is new in the visitor's window. */
   recency?: ConstructionSiteRecency;
+  /**
+   * Whether to state the phase. The surroundings cards turn it off: they carry
+   * a timing sentence that says "Läuft seit gestern" or "Beginnt in 4 Tagen",
+   * which is the same fact at a resolution a two-value badge cannot reach, and
+   * saying it twice cost a line on every card.
+   */
+  showPhase?: boolean;
   className?: string;
 }
 
@@ -54,13 +68,16 @@ export function ConstructionSiteBadges({
   phase,
   closure,
   recency = null,
+  showPhase = true,
   className,
 }: ConstructionSiteBadgesProps) {
   return (
     <div className={className}>
-      <ConstructionSiteRecencyBadge recency={recency} />
-      <ConstructionPhaseBadge phase={phase} />
+      {/* Severity leads: it is the only one of the three that can change what
+          a visitor does in the next hour. */}
       <ClosureBadge closure={closure} />
+      {showPhase && <ConstructionPhaseBadge phase={phase} />}
+      <ConstructionSiteRecencyBadge recency={recency} />
     </div>
   );
 }

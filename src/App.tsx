@@ -7,7 +7,7 @@ import {
   KernLink,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import { EMPTY_SITE_SELECTION, selectSites } from "./lib/select-sites.ts";
+import { selectSites } from "./lib/select-sites.ts";
 import { createAreaScope } from "./lib/site-scope.ts";
 import { AppSectionTabs } from "./components/AppSectionTabs.tsx";
 import { ClientNavigationLink } from "./components/ClientNavigationLink.tsx";
@@ -39,7 +39,8 @@ const formatDataTimestamp = (timestamp: string): string =>
  */
 function ConstructionSiteDetailScreen({ siteId }: { siteId: string }) {
   const { constructionSites } = useDataset();
-  const { getDetailHref, closeSiteDetails, showSiteOnMap } = useView();
+  const { getDetailHref, closeSiteDetails, showSiteOnMap, recentWindow } =
+    useView();
   const site = constructionSites.find(
     (constructionSite) => constructionSite.id === siteId,
   );
@@ -63,6 +64,7 @@ function ConstructionSiteDetailScreen({ siteId }: { siteId: string }) {
   return (
     <ConstructionSiteDetail
       site={site}
+      today={recentWindow.today}
       overviewHref={getDetailHref(undefined)}
       onBack={closeSiteDetails}
       onShowOnMap={() => showSiteOnMap(site.id)}
@@ -79,24 +81,22 @@ function ConstructionSiteDetailScreen({ siteId }: { siteId: string }) {
  */
 function AppScreens() {
   const { constructionSites, metadata } = useDataset();
-  const { area, seenAt, markSitesSeen } = usePersonal();
+  const { effectiveArea, seenAt, markSitesSeen } = usePersonal();
   const urlState = useView();
   const { recentWindow } = urlState;
 
   // Derived once here: the tab badge and the surroundings screen must never
-  // disagree about what is new around the visitor. Without an area there is no
-  // surroundings to speak of, so the selection stays empty rather than
-  // widening to the whole region.
+  // disagree about what is new around the visitor. Selected over the *effective*
+  // area, so a first visit lands on a populated screen instead of a form —
+  // the guess is labelled on the screen it fills, not hidden.
   const surroundings = useMemo(
     () =>
-      area
-        ? selectSites(
-            constructionSites,
-            createAreaScope(area, recentWindow),
-            seenAt,
-          )
-        : EMPTY_SITE_SELECTION,
-    [area, constructionSites, recentWindow, seenAt],
+      selectSites(
+        constructionSites,
+        createAreaScope(effectiveArea, recentWindow),
+        seenAt,
+      ),
+    [constructionSites, effectiveArea, recentWindow, seenAt],
   );
 
   // The tabs stay above a detail page too: on a phone they are the bottom bar,

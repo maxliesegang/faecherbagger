@@ -38,10 +38,10 @@
   font-size: 0.9rem;
 }
 
-/* KERN buttons fill their block, so a lone one needs a row to sit in. */
-.notifications__panel-actions {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  align-items: center;
+/*
+ * The area editor is the body of its panel, so it keeps the panel's rhythm
+ * instead of starting a second one right under the intro.
+ */
+.notifications__panel .area-setup {
+  margin-top: 0.25rem;
 }

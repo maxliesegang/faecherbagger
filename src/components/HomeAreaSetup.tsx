@@ -8,6 +8,7 @@ import {
 import { useDataset } from "../context/DatasetContext.tsx";
 import { usePersonal } from "../context/PersonalContext.tsx";
 import {
+  DEFAULT_HOME_AREA_RADIUS_KM,
   MAX_HOME_AREA_RADIUS_KM,
   MIN_HOME_AREA_RADIUS_KM,
   roundHomeAreaCenter,
@@ -16,33 +17,22 @@ import { getConstructionSiteMunicipalityOptions } from "../lib/construction-site
 import { getMunicipalityCenter } from "../lib/municipality-center.ts";
 import "./HomeAreaSetup.css";
 
-interface HomeAreaSetupProps {
-  /**
-   * The radius in the slider, owned by the caller: the surroundings screen
-   * draws it on the map while the visitor drags, so the circle grows under the
-   * thumb — that preview is what makes "5 km" mean something. Saving stays
-   * explicit, because it re-syncs the push subscription.
-   */
-  radiusKm: number;
-  onRadiusKmChange: (radiusKm: number) => void;
-}
-
 /**
- * Defines the radius the app watches: a center — from the device location or,
- * as a fallback, from a municipality in the data — and how far around it to
- * look.
+ * Defines what gets reported: a center — from the device location or, as a
+ * fallback, from a municipality in the data — and how far around it to watch.
  *
- * Rendered on the surroundings screen only, which is the screen the radius
- * describes. The notification section states the same radius and links here
- * instead of carrying a second copy of these controls: two editors for one
- * value is how the two screens came to disagree about it. This panel reports
- * what happened to the *area*; what happened to the subscription is reported by
- * the card that owns the switch.
+ * Rendered in the notification section only, because the distance is what a
+ * notification is about: "melde mir neue Baustellen bis 5 km" is one sentence
+ * and belongs in one panel. The surroundings screen reads the same area to
+ * scope its lists and links here instead of carrying a second copy of these
+ * controls; two editors for one value is how the two screens came to disagree
+ * about it. This panel reports what happened to the *area*; what happened to
+ * the subscription is reported by the card that owns the switch.
+ *
+ * The slider is a draft until it is saved, because saving re-syncs the push
+ * subscription — a value that leaves the device should not move under a thumb.
  */
-export function HomeAreaSetup({
-  radiusKm,
-  onRadiusKmChange,
-}: HomeAreaSetupProps) {
+export function HomeAreaSetup() {
   const { constructionSites } = useDataset();
   const {
     area: homeArea,
@@ -58,10 +48,20 @@ export function HomeAreaSetup({
     [constructionSites],
   );
 
+  // The draft radius, and the saved value it was taken from. Comparing the two
+  // during render is what lets the slider follow an area that was saved or
+  // cleared elsewhere without an effect that would first paint a stale number.
+  const savedRadiusKm = homeArea?.radiusKm ?? DEFAULT_HOME_AREA_RADIUS_KM;
+  const [radiusKm, setRadiusKm] = useState(savedRadiusKm);
+  const [lastSavedRadiusKm, setLastSavedRadiusKm] = useState(savedRadiusKm);
+  if (lastSavedRadiusKm !== savedRadiusKm) {
+    setLastSavedRadiusKm(savedRadiusKm);
+    setRadiusKm(savedRadiusKm);
+  }
+
   const isRequestingLocation =
     locationController.locationState.status === "requesting";
-  const hasUnsavedRadius =
-    homeArea !== null && homeArea.radiusKm !== radiusKm;
+  const hasUnsavedRadius = homeArea !== null && homeArea.radiusKm !== radiusKm;
 
   const useCurrentLocationAsCenter = async () => {
     try {
@@ -70,9 +70,7 @@ export function HomeAreaSetup({
         center: roundHomeAreaCenter(point),
         radiusKm,
       });
-      setFeedbackMessage(
-        `Gespeichert: ${radiusKm} km um Ihren Standort.`,
-      );
+      setFeedbackMessage(`Gespeichert: ${radiusKm} km um Ihren Standort.`);
     } catch (error) {
       setFeedbackMessage(
         error instanceof Error
@@ -155,9 +153,12 @@ export function HomeAreaSetup({
       </fieldset>
 
       <fieldset className="area-setup__field">
-        <legend>Umkreis</legend>
+        <legend>Entfernung</legend>
         <label htmlFor="area-radius" className="area-setup__radius-label">
-          Baustellen bis <strong>{radiusKm} km</strong> um den Mittelpunkt
+          Melden bis
+          <output htmlFor="area-radius" className="area-setup__radius-value">
+            {radiusKm} km
+          </output>
         </label>
         <input
           id="area-radius"
@@ -167,9 +168,7 @@ export function HomeAreaSetup({
           max={MAX_HOME_AREA_RADIUS_KM}
           step="1"
           value={radiusKm}
-          onChange={(event) =>
-            onRadiusKmChange(Number(event.currentTarget.value))
-          }
+          onChange={(event) => setRadiusKm(Number(event.currentTarget.value))}
         />
         <p className="area-setup__radius-scale" aria-hidden="true">
           <span>{MIN_HOME_AREA_RADIUS_KM} km</span>

@@ -140,7 +140,7 @@ export function describeNotificationState({
       shortLabel: "Umkreis fehlt",
       headline: "Legen Sie zuerst Ihren Umkreis fest",
       description:
-        "Benachrichtigungen brauchen einen Mittelpunkt und einen Umkreis. Beides legen Sie im Bereich „Mein Umkreis“ fest; danach lassen sie sich mit einem Klick einschalten.",
+        "Benachrichtigungen brauchen einen Mittelpunkt und eine Entfernung. Beides stellen Sie direkt darunter ein; danach lassen sie sich mit einem Klick einschalten.",
       toggleLabel: null,
     };
   }

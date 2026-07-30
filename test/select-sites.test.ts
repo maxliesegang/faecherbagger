@@ -237,3 +237,73 @@ describe("EMPTY_SITE_SELECTION", () => {
     expect(EMPTY_SITE_SELECTION).toBe(EMPTY_SITE_SELECTION);
   });
 });
+
+/**
+ * The timing buckets the surroundings screen renders. `FETCHED_AT` is
+ * 25.07.2026, so "kurzfristig" here means a start between 18.07. and 01.08.
+ */
+describe("selectSites timing buckets", () => {
+  const startsTomorrow = createConstructionSite("morgen", {
+    point: [8.405, 49.007],
+    startDate: "2026-07-26",
+    endDate: "2026-07-26",
+    phase: "upcoming",
+  });
+  const startsInWeeks = createConstructionSite("spaeter", {
+    point: [8.405, 49.007],
+    startDate: "2026-10-01",
+    endDate: "2026-11-01",
+    phase: "upcoming",
+  });
+  const longRunning = createConstructionSite("laeuft", {
+    point: [8.405, 49.007],
+    startDate: "2026-02-01",
+    endDate: "2026-12-01",
+  });
+  const alreadyOver = createConstructionSite("vorbei", {
+    point: [8.405, 49.007],
+    startDate: "2026-06-01",
+    endDate: "2026-07-20",
+  });
+  /** Sorts last by id, second by date: only a date sort puts it in the middle. */
+  const startsInTwoDays = createConstructionSite("zuletzt", {
+    point: [8.405, 49.007],
+    startDate: "2026-07-27",
+    endDate: "2026-08-10",
+    phase: "upcoming",
+  });
+  const sites = [
+    startsInWeeks,
+    longRunning,
+    alreadyOver,
+    startsTomorrow,
+    startsInTwoDays,
+  ];
+
+  const selection = selectSites(
+    sites,
+    createAreaScope(area, sevenDayWindow),
+    null,
+  );
+
+  it("puts only what happens this week under short notice, soonest first", () => {
+    expect(ids(selection.shortNotice)).toEqual(["morgen", "zuletzt"]);
+  });
+
+  it("separates what is being built from what is announced", () => {
+    expect(ids(selection.running)).toEqual(["laeuft"]);
+    // Soonest start first, whatever order the records arrived in.
+    expect(ids(selection.planned)).toEqual(["morgen", "zuletzt", "spaeter"]);
+  });
+
+  it("keeps a site whose end date has passed out of both", () => {
+    expect(ids(selection.running)).not.toContain("vorbei");
+    expect(ids(selection.planned)).not.toContain("vorbei");
+    // Still counted and still findable — omitted only from the actionable views.
+    expect(ids(selection.all)).toContain("vorbei");
+  });
+
+  it("carries the day it measured against, so lists cannot disagree", () => {
+    expect(selection.today).toBe("2026-07-25");
+  });
+});

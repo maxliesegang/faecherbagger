@@ -1,18 +1,11 @@
-import { useMemo, useState } from "react";
-import {
-  KernAlert,
-  KernButton,
-  KernHeading,
-  KernText,
-} from "@kern-ux-annex/kern-react-kit";
+import { useState } from "react";
+import { KernAlert, KernText } from "@kern-ux-annex/kern-react-kit";
 import { usePersonal } from "../context/PersonalContext.tsx";
-import { DEFAULT_HOME_AREA_RADIUS_KM } from "../shared/home-area.ts";
-import type { SiteSelection } from "../lib/select-sites.ts";
 import { useView } from "../context/ViewContext.tsx";
-import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
+import type { ScopedSite, SiteSelection } from "../lib/select-sites.ts";
+import { FALLBACK_HOME_AREA_LABEL } from "../shared/home-area.ts";
+import { SHORT_NOTICE_LEAD_DAYS } from "../shared/construction-site-timing.ts";
 import { NearbyConstructionSiteList } from "./NearbyConstructionSiteList.tsx";
-import { HomeAreaSetup } from "./HomeAreaSetup.tsx";
-import { RecentWindowSelect } from "./RecentWindowSelect.tsx";
 import "./ConstructionSiteSurroundings.css";
 
 interface ConstructionSiteSurroundingsProps {
@@ -22,237 +15,235 @@ interface ConstructionSiteSurroundingsProps {
 }
 
 /**
- * The app's primary screen: what is new inside the visitor's radius.
+ * Which part of the surroundings the list shows.
  *
- * It owns the radius as well as the answer, because the two are read together —
- * "drei neue Baustellen" only means something once you can see how far the
- * circle reaches. The map right under the heading is that picture, and the
- * editor below it moves the same circle. Everything region-wide stays in the
- * explorer, one tab away.
+ * Ordered by how soon the visitor has to do something about it. The old order
+ * led with "Neu", which meant "the pipeline had not seen this record before" —
+ * true, invisible to a visitor, and unhelpfully independent of whether the work
+ * starts tomorrow or next March. What someone can act on is the week around
+ * today, so that is what the screen opens on; "neu" survives as the marker on a
+ * card that says they could not have known earlier.
+ */
+type SurroundingsView = "short-notice" | "running" | "planned" | "all";
+
+const SURROUNDINGS_VIEWS: SurroundingsView[] = [
+  "short-notice",
+  "running",
+  "planned",
+  "all",
+];
+
+const VIEW_LABELS: Record<SurroundingsView, string> = {
+  "short-notice": "Kurzfristig",
+  running: "Läuft",
+  planned: "Geplant",
+  all: "Alle",
+};
+
+/** The accessible name of the list, which changes with the view. */
+const VIEW_LIST_LABELS: Record<SurroundingsView, string> = {
+  "short-notice": "Kurzfristige Baustellen in Ihrem Umkreis",
+  running: "Laufende Baustellen in Ihrem Umkreis",
+  planned: "Geplante Baustellen in Ihrem Umkreis",
+  all: "Alle Baustellen in Ihrem Umkreis",
+};
+
+/** What the visible list is, in one sentence under the control. */
+const VIEW_DESCRIPTIONS: Record<SurroundingsView, string> = {
+  "short-notice": `Beginnt in den nächsten ${SHORT_NOTICE_LEAD_DAYS} Tagen oder hat gerade erst begonnen — das, wofür sich Umplanen lohnt.`,
+  running: "Wird gerade gebaut.",
+  planned: "Angekündigt, aber noch nicht begonnen.",
+  all: "Alles, was für diesen Umkreis erfasst ist, einschließlich abgeschlossener Baustellen.",
+};
+
+/**
+ * What the number above the list counts. Spelled out per view rather than
+ * assembled from fragments: German plural and adjective agreement do not
+ * survive concatenation, and this is the sentence the screen is judged on.
+ */
+function describeCount(view: SurroundingsView, count: number): string {
+  const isSingular = count === 1;
+  switch (view) {
+    case "short-notice":
+      return isSingular ? "kurzfristige Baustelle" : "kurzfristige Baustellen";
+    case "running":
+      return isSingular ? "Baustelle im Bau" : "Baustellen im Bau";
+    case "planned":
+      return isSingular ? "geplante Baustelle" : "geplante Baustellen";
+    case "all":
+      return isSingular ? "Baustelle im Umkreis" : "Baustellen im Umkreis";
+  }
+}
+
+/** The empty state per view — each one names the way on rather than stopping. */
+function describeEmptyView(view: SurroundingsView, radiusKm: number): string {
+  switch (view) {
+    case "short-notice":
+      return `Im Umkreis von ${radiusKm} km beginnt in den nächsten ${SHORT_NOTICE_LEAD_DAYS} Tagen keine neue Baustelle.`;
+    case "running":
+      return `Im Umkreis von ${radiusKm} km wird derzeit nicht gebaut.`;
+    case "planned":
+      return `Für den Umkreis von ${radiusKm} km ist derzeit nichts angekündigt.`;
+    case "all":
+      return `Im Umkreis von ${radiusKm} km ist keine Baustelle erfasst. Vergrößern Sie den Umkreis oder wählen Sie einen anderen Mittelpunkt.`;
+  }
+}
+
+/**
+ * The app's primary screen: what is about to happen around the visitor, soon
+ * enough that they can still plan around it.
+ *
+ * It shows the area but no longer edits it: the radius is a notification
+ * setting and lives with the switch it drives. There is no map here either. A
+ * radius is a number the list already sorts by, and the map that used to sit
+ * above the answer pushed it below the fold on a phone while adding nothing the
+ * distance on each card does not say. The explorer has the map, one tab away,
+ * for the questions that are actually spatial.
  */
 export function ConstructionSiteSurroundings({
   surroundings,
   onMarkSitesSeen,
 }: ConstructionSiteSurroundingsProps) {
   const {
-    recentWindow,
-    setWindowDays,
     getDetailHref: getSiteDetailsHref,
     openSiteDetails: onShowSiteDetails,
-    showSiteOnMap: onShowSiteOnMap,
-    showExplorer,
+    showNotificationSettings,
   } = useView();
-  const { area: homeArea, hasAcknowledged, currentLocation } = usePersonal();
-  const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
-  // The radius in the slider, which is not yet the saved one: this screen owns
-  // it because it is the screen that draws it. `HomeAreaSetup` renders it and
-  // reports moves; nobody keeps a second copy that could disagree.
-  const [draftRadiusKm, setDraftRadiusKm] = useState(
-    () => homeArea?.radiusKm ?? DEFAULT_HOME_AREA_RADIUS_KM,
-  );
+  const { effectiveArea, hasChosenArea, hasAcknowledged } = usePersonal();
+  const [view, setView] = useState<SurroundingsView>("short-notice");
 
-  const nearbySites = useMemo(
-    () => surroundings.all.map((entry) => entry.site),
-    [surroundings],
-  );
-
-  /**
-   * The circle the map draws: the saved radius, or the one under the visitor's
-   * thumb while they drag the slider. Memoized because the map refits whenever
-   * this object changes identity — a fresh object per render would keep the
-   * camera moving forever.
-   *
-   * Only the map follows the draft. The list keeps answering for the saved
-   * radius until the visitor commits, so the count below never describes an area
-   * they have not chosen yet.
-   */
-  const mapArea = useMemo(() => {
-    if (!homeArea) return undefined;
-    return draftRadiusKm === homeArea.radiusKm
-      ? homeArea
-      : { ...homeArea, radiusKm: draftRadiusKm };
-  }, [draftRadiusKm, homeArea]);
-
-  if (!homeArea) {
-    return (
-      <section
-        className="surroundings app-screen"
-        aria-labelledby="surroundings-heading"
-      >
-        <header className="app-screen__header">
-          <KernHeading level={2} id="surroundings-heading">
-            Welche Baustellen sind bei Ihnen neu?
-          </KernHeading>
-          <KernText className="app-screen__intro">
-            Legen Sie einmalig einen Mittelpunkt und einen Umkreis fest.
-            Fächerbagger zeigt Ihnen dann, welche Baustellen dort neu sind — auf
-            Wunsch auch als Benachrichtigung auf dieses Gerät.
-          </KernText>
-        </header>
-
-        <div className="surroundings__panel">
-          <HomeAreaSetup
-            radiusKm={draftRadiusKm}
-            onRadiusKmChange={setDraftRadiusKm}
-          />
-        </div>
-
-        <p className="surroundings__aside">
-          <KernButton
-            type="button"
-            variant="tertiary"
-            label="Ohne Umkreis: alle Baustellen der Region durchsuchen"
-            onClick={showExplorer}
-          />
-        </p>
-      </section>
-    );
-  }
-
-  const newCount = surroundings.recent.length;
+  const viewLists: Record<SurroundingsView, readonly ScopedSite[]> = {
+    "short-notice": surroundings.shortNotice,
+    running: surroundings.running,
+    planned: surroundings.planned,
+    all: surroundings.all,
+  };
+  const visibleSites = viewLists[view];
+  const countLabel = describeCount(view, visibleSites.length);
 
   return (
     <section
       className="surroundings app-screen"
       aria-labelledby="surroundings-heading"
     >
-      <header className="app-screen__header">
-        <KernHeading level={2} id="surroundings-heading">
-          Neu in Ihrem Umkreis
-        </KernHeading>
-        <p className="surroundings__scope">
-          <span className="surroundings__chip">{homeArea.radiusKm} km</span>
-          <span className="surroundings__chip">
-            {surroundings.all.length}{" "}
-            {surroundings.all.length === 1 ? "Baustelle" : "Baustellen"} darin
-          </span>
-        </p>
-      </header>
+      <h2 id="surroundings-heading" className="kern-sr-only">
+        Baustellen in Ihrem Umkreis
+      </h2>
+
+      {/* What this screen is answering for, and the one way to change it. The
+          tab above already says "Mein Umkreis", so this states the value
+          rather than repeating the title. */}
+      <p className="surroundings__scope">
+        <span className="surroundings__chip">
+          {effectiveArea.radiusKm} km
+          {hasChosenArea ? "" : ` um ${FALLBACK_HOME_AREA_LABEL}`}
+        </span>
+        <button
+          type="button"
+          className="surroundings__scope-edit"
+          onClick={showNotificationSettings}
+        >
+          Umkreis ändern
+        </button>
+      </p>
 
       {/*
-       * Says which circle is on the map whenever it is not the saved one. The
-       * map cannot say it itself — it only ever gets one radius — and a preview
-       * that looks like the real setting is worse than no preview.
+       * The guess, stated plainly and small. It replaces the setup form that
+       * used to stand in front of this screen: a visitor now arrives at an
+       * answer and can correct where it is centred, instead of configuring one
+       * before seeing anything. Deliberately not an alert — nothing has gone
+       * wrong, and a full alert box cost as much of the first screen as the
+       * empty state it replaced.
        */}
-      {mapArea !== homeArea && (
-        <p className="surroundings__preview" role="status">
-          Vorschau: {mapArea?.radiusKm} km. Die Liste unten gilt weiter für{" "}
-          {homeArea.radiusKm} km, bis Sie den neuen Umkreis übernehmen.
+      {!hasChosenArea && (
+        <p className="surroundings__fallback">
+          Voreinstellung, bis Sie einen eigenen Mittelpunkt festlegen — der auch
+          Benachrichtigungen möglich macht.{" "}
+          <button
+            type="button"
+            className="surroundings__fallback-action"
+            onClick={showNotificationSettings}
+          >
+            Jetzt festlegen
+          </button>
         </p>
       )}
 
       {/*
-       * The picture of the radius, and the only place in the app where "5 km"
-       * becomes a distance you can see. Not a disclosure: it is the answer's
-       * context, and a visitor who has to open it never learns what the number
-       * means.
+       * The one control that picks what the list answers, ordered by urgency.
+       * The counts sit in the control so the visitor can see what a tab holds
+       * before taking it.
        */}
-      <LazyConstructionSiteMap
-        constructionSites={nearbySites}
-        selectedSiteId={mapSelectedSiteId}
-        currentLocation={currentLocation}
-        homeArea={mapArea}
-        fitMode="homeArea"
-        variant="compact"
-        onSiteSelect={setMapSelectedSiteId}
-        getSiteDetailsHref={getSiteDetailsHref}
-        onSiteDetailsRequest={onShowSiteDetails}
-        onListViewRequest={showExplorer}
-      />
-
-      {/*
-       * Directly under the map, and closed by default: the radius is set once,
-       * but when it is being changed the circle has to be in view — the slider
-       * previews into the map above it.
-       */}
-      <details
-        className="kern-accordion surroundings__section"
-        // Closing the editor discards an uncommitted radius: a preview circle
-        // with no slider in sight is just a wrong map.
-        onToggle={(event) => {
-          if (!event.currentTarget.open) setDraftRadiusKm(homeArea.radiusKm);
-        }}
+      <div
+        className="surroundings__views"
+        role="group"
+        aria-label="Baustellen im Umkreis eingrenzen"
       >
-        <summary className="kern-accordion__header">
-          <span className="kern-title">Umkreis ändern</span>
-        </summary>
-        <section className="kern-accordion__body">
-          <HomeAreaSetup
-            radiusKm={draftRadiusKm}
-            onRadiusKmChange={setDraftRadiusKm}
-          />
-        </section>
-      </details>
-
-      <div className="surroundings__result">
-        <RecentWindowSelect
-          recentWindowDays={recentWindow.days}
-          onWindowDaysChange={setWindowDays}
-          label="Zeitraum für neue Baustellen in Ihrem Umkreis"
-        />
-        <p
-          className="surroundings__count"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <strong>{newCount}</strong>{" "}
-          {newCount === 1 ? "neue Baustelle" : "neue Baustellen"}
-          {surroundings.unseenCount > 0 && (
-            <span className="surroundings__unseen">
-              {surroundings.unseenCount}{" "}
-              {hasAcknowledged ? "seit Ihrem letzten Besuch" : "davon ungelesen"}
-            </span>
-          )}
-        </p>
-        {surroundings.unseenCount > 0 && (
-          <KernButton
+        {SURROUNDINGS_VIEWS.map((value) => (
+          <button
+            key={value}
             type="button"
-            variant="tertiary"
-            label="Als gelesen markieren"
-            onClick={onMarkSitesSeen}
-          />
-        )}
+            className="surroundings__view"
+            aria-pressed={view === value}
+            onClick={() => setView(value)}
+          >
+            {VIEW_LABELS[value]}
+            <span className="surroundings__view-count">
+              {viewLists[value].length}
+            </span>
+          </button>
+        ))}
       </div>
 
-      {newCount > 0 ? (
-        <NearbyConstructionSiteList
-          scopedSites={surroundings.recent}
-          label="Neue Baustellen in Ihrem Umkreis"
-          getSiteDetailsHref={getSiteDetailsHref}
-          onShowSiteDetails={onShowSiteDetails}
-          onShowSiteOnMap={onShowSiteOnMap}
-        />
-      ) : (
-        <KernAlert variant="success" title="Nichts Neues in Ihrem Umkreis">
-          <KernText>
-            {`Im Umkreis von ${homeArea.radiusKm} km ist in diesem Zeitraum keine neue Baustelle dazugekommen.`}
-          </KernText>
-        </KernAlert>
-      )}
-
-      <details className="kern-accordion surroundings__section">
-        <summary className="kern-accordion__header">
-          <span className="kern-title">
-            Alle {surroundings.all.length} Baustellen im Umkreis
-          </span>
-        </summary>
-        <section className="kern-accordion__body">
-          {surroundings.all.length > 0 ? (
-            <NearbyConstructionSiteList
-              scopedSites={surroundings.all}
-              label="Alle Baustellen in Ihrem Umkreis"
-              getSiteDetailsHref={getSiteDetailsHref}
-              onShowSiteDetails={onShowSiteDetails}
-              onShowSiteOnMap={onShowSiteOnMap}
-            />
-          ) : (
-            <KernText>
-              In diesem Umkreis ist derzeit keine Baustelle erfasst. Vergrößern
-              Sie den Umkreis oder wählen Sie einen anderen Mittelpunkt.
-            </KernText>
+      <div className="surroundings__block">
+        <div className="surroundings__tally">
+          <p className="surroundings__description">
+            {VIEW_DESCRIPTIONS[view]}
+            {surroundings.unseenCount > 0 && (
+              <span className="surroundings__unseen">
+                {surroundings.unseenCount}{" "}
+                {hasAcknowledged ? "seit Ihrem letzten Besuch" : "ungelesen"}
+              </span>
+            )}
+          </p>
+          {/* Only offered when there is something to acknowledge. */}
+          {surroundings.unseenCount > 0 && (
+            <button
+              type="button"
+              className="surroundings__mark-seen"
+              onClick={onMarkSitesSeen}
+            >
+              Als gelesen markieren
+            </button>
           )}
-        </section>
-      </details>
+        </div>
+
+        {/* The count itself is on the control; this exists so a screen reader
+            hears the result change when the view does. */}
+        <p className="kern-sr-only" aria-live="polite" aria-atomic="true">
+          {visibleSites.length} {countLabel}
+        </p>
+
+        {visibleSites.length > 0 ? (
+          <NearbyConstructionSiteList
+            scopedSites={visibleSites}
+            label={VIEW_LIST_LABELS[view]}
+            today={surroundings.today}
+            getSiteDetailsHref={getSiteDetailsHref}
+            onShowSiteDetails={onShowSiteDetails}
+          />
+        ) : view === "short-notice" ? (
+          /* The good news, and the way on: what is already there is one tap
+             away, and the counts on the control say how much. */
+          <KernAlert variant="success" title="Nichts Kurzfristiges bei Ihnen">
+            <KernText>{describeEmptyView(view, effectiveArea.radiusKm)}</KernText>
+          </KernAlert>
+        ) : (
+          <KernText className="surroundings__nothing">
+            {describeEmptyView(view, effectiveArea.radiusKm)}
+          </KernText>
+        )}
+      </div>
     </section>
   );
 }

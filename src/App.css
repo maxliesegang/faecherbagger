@@ -46,6 +46,27 @@
   --notification-tone: var(--app-border);
 }
 
+/*
+ * The "Neu" marker, wherever a record is summarized. App-wide for the same
+ * reason the notification tones are: it is one meaning shown on three surfaces,
+ * and it gets its colour in exactly one place. Solid where the KERN badges
+ * beside it are outlined, so it reads as a different kind of statement — the
+ * outlined ones describe the construction site, this one describes what the
+ * visitor has and has not been told.
+ */
+.site-badge-new {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--phase-active);
+  border-radius: 1rem;
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--phase-active);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--app-page);

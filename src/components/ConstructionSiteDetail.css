@@ -42,6 +42,50 @@
   font-size: 1.1rem;
 }
 
+/* The lead fact: when, relative to today. Sized between the street and the
+   municipality, because it is read second and decides most visits. */
+.construction-site-detail__timing {
+  margin-top: 0.5rem !important;
+  color: var(--kern-color-layout-text-default, #1d1d1b) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700;
+}
+
+.construction-site-detail__map {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+  margin-block: 1.25rem;
+}
+
+/*
+ * The map fills the column. Targeted by its own class rather than by position:
+ * `justify-items: start` shrinks a grid child to its content, and the section
+ * leads with a screen-reader-only heading, so a positional rule collapsed the
+ * map to zero width.
+ */
+.construction-site-detail__map .map-explorer {
+  width: 100%;
+}
+
+/*
+ * The explorer's map chrome has nothing to do here: a legend for two phases and
+ * a "show everything" button belong to a map of many records, and this one
+ * shows exactly one.
+ */
+.construction-site-detail__map .map-explorer__toolbar {
+  display: none;
+}
+
+/* Provenance, kept and demoted: one quiet line rather than three table rows
+   with the same weight as the closure. */
+.construction-site-detail__provenance {
+  margin: 0;
+  color: var(--app-muted);
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
 .construction-site-detail__notice {
   margin-block: 1.25rem;
   padding: 1rem;

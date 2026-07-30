@@ -51,10 +51,23 @@
 
 ## Product Focus
 
-- The app's purpose is telling a visitor about **new construction sites in their
-  own surroundings**. `ConstructionSiteSurroundings` is the default screen and
-  must stay the shortest path to that answer; the region-wide explorer, filters,
-  sorting and full map are secondary and stay one step away.
+- The app's purpose is giving a visitor **lead time on construction sites in
+  their own surroundings**: something starts near them in the next few days and
+  they get to hear about it early enough to plan around it. The notification is
+  the product, and `NotificationSettings` carries everything it depends on.
+  `ConstructionSiteSurroundings` is the default screen and answers the same
+  question in the app. The region-wide explorer with its filters, sorting, table
+  and map is the power-user surface and stays one step away.
+- "Kurzfristig" is the app's central idea and has one definition, in
+  `src/shared/construction-site-timing.ts`: a site starts within
+  `SHORT_NOTICE_LEAD_DAYS` days or started within that many days and is still
+  running. The default list, the ranking and the push message all derive from
+  it, so the notification and the screen it opens cannot disagree.
+- Timing (`running`, `starting-soon`, `later`, `ended`) is derived from the
+  dates against the dataset's own day and is a *display* classification. It
+  never replaces `phase`, which stays exactly as the source layer set it; a
+  record whose `endDate` has passed reads as `ended` without its `phase` being
+  rewritten.
 - There are three top-level sections: `NotificationSettings`, surroundings and
   explorer, in that tab order — notifications first because that switch is the
   one setting that keeps working after the app is closed, and on a phone the
@@ -63,10 +76,14 @@
   a fixed bottom bar below it; keep both shapes working and keep the section in
   the URL.
 - Say a thing once. Each surface owns one concern, and a second copy of it is a
-  bug: the radius is edited on the surroundings screen only, the notification
+  bug: the area is edited in the notification section only, the notification
   state is spelled out in `NotificationStatusCard` only (the tab dot is the one
   abbreviation of it elsewhere), the data timestamp lives in the page bar, and
-  the feeds live with the notification section they are the alternative to.
+  the feeds live with the notification section they are the alternative to. The
+  surroundings screen shows one list at a time, picked by one segmented control
+  ("Kurzfristig", "Läuft", "Geplant", "Alle") in that order, most urgent first —
+  a second list stacked above the first renders the same record twice on one
+  screen. The control carries the counts; do not restate a count beside it.
 - Anything that states the notification state — the tab dot, the status card —
   renders `describeNotificationState` rather than re-deriving the combination of
   browser support, deployment configuration, permission and area. Its tone
@@ -75,24 +92,39 @@
   drop, because it is the only one without a next step for the visitor.
 - The home area (center plus radius) is one shared concept: it scopes the
   surroundings screen, the map overlay and the Web Push subscription. It is
-  edited in `HomeAreaSetup` on the surroundings screen — the screen named after
-  it — and the notification section states it and links there instead of
-  rendering a second editor. Do not introduce a second, view-only radius. It is
-  called `HomeArea` throughout the app and `Umkreis` throughout the German UI;
-  only `push-worker/` keeps the `notification_*` vocabulary, because there the
-  name is accurate and it is the deployed wire format and D1 schema.
-- The compact map on the surroundings screen is what makes a radius legible, so
-  it stays visible rather than moving into a disclosure, and it uses
-  `fitMode="homeArea"`: the circle stays framed, and neither a device location
-  nor a selected record may zoom away from it. A radius the visitor is still
-  dragging reaches that map through `onDraftRadiusChange` and must be labelled
-  as a preview — the list keeps answering for the saved radius.
+  edited in `HomeAreaSetup`, which is rendered by `NotificationSettings` and
+  nowhere else — the distance is what a notification is about, so the switch and
+  the radius are one decision on one screen. The surroundings screen states the
+  radius and links to that section instead of rendering a second editor; do not
+  introduce a second, view-only radius. `HomeAreaSetup` owns the draft radius
+  and saving stays explicit, because saving re-syncs the push subscription. It
+  is called `HomeArea` throughout the app and `Umkreis` throughout the German
+  UI; only `push-worker/` keeps the `notification_*` vocabulary, because there
+  the name is accurate and it is the deployed wire format and D1 schema.
+- Use a map only where the question is spatial. The explorer has one, and a
+  detail page has one. The surroundings screen does not: it answers "was ist bei
+  mir neu?" with a distance-sorted list, and the map that used to sit above that
+  list pushed the answer off a phone screen without adding to it.
 - Keep the surroundings screen usable without notifications and without a device
-  location: the municipality center is the fallback, and a blocked, unsupported
-  or unconfigured push service must degrade to an explanatory hint.
-- New nearby records are ranked by detection time and then distance, and changes
-  newer than the stored acknowledgement are highlighted. Personal state
-  (area, acknowledgement) stays in `localStorage` and out of the URL.
+  location, and never gate it behind setup: with no stored area it selects over
+  `FALLBACK_HOME_AREA` (Karlsruhe, `effectiveArea` in `PersonalContext`) and says
+  so in one quiet line. Everything that *acts* on an area — the push
+  subscription, the notification state, the editor — reads `area` and must never
+  see the fallback. A blocked, unsupported or unconfigured push service must
+  degrade to an explanatory hint.
+- Ranking follows the question the list answers: short notice by urgency then
+  distance, "Läuft" by distance, "Geplant" by start date. Records newer than the
+  stored acknowledgement are highlighted. Personal state (area, acknowledgement)
+  stays in `localStorage` and out of the URL.
+- Colour on a card means traffic impact and nothing else: `danger` and `warning`
+  belong to closure severity. "Neu" is a neutral accent chip, and the phase
+  badges are neutral too — a card states when it happens in words
+  (`describeConstructionTiming`), which is more than a two-value badge can say.
+- A card leads with the street, then the timing sentence, then the source's own
+  `notes`. Distance is metadata: inside a radius the visitor chose, it decides
+  far less than either of the first two.
+- Lists render a first screenful and an explicit "weitere N anzeigen". A radius
+  can hold hundreds of records and none of them are worth an unbounded page.
 
 ## Development Practices
 
@@ -116,9 +148,14 @@
 - "Neu" means one thing everywhere: the pipeline had not seen this construction
   site before (`firstSeenAt`). Badge, list, filter and push notification all
   derive from `getConstructionSiteRecency`. A source edit to a known record is
-  not new — do not reintroduce a `lastModified`-based window.
+  not new — do not reintroduce a `lastModified`-based window. "Neu" marks a
+  record; it does not rank one, because when the work happens is what a visitor
+  acts on and `firstSeenAt` says nothing about that.
 - Both screens go through `selectSites`, which annotates each record once with
-  distance, recency and unseen. Read those fields; never recompute them.
+  distance, recency, timing, short notice and unseen, and hands back the lists
+  and the day it measured against. Read those fields; never recompute them, and
+  never reach for the browser clock — "heute" comes from the data's `fetchedAt`
+  in the Europe/Berlin calendar.
 - Reuse the shared building blocks instead of repeating their markup:
   `ClientNavigationLink` for every in-app link (it keeps new-tab and modified
   clicks working), `ConstructionSiteBadges` for describing a record,

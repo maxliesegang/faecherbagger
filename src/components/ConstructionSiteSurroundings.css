@@ -1,8 +1,8 @@
 /*
  * The primary screen. It is a single readable column rather than the explorer's
- * two-column app layout: there is one question here ("was ist neu bei mir?"),
- * and everything secondary sits in disclosures below the answer. The column and
- * its heading block come from `.app-screen` in App.css.
+ * two-column app layout: there are two questions here ("was ist neu bei mir?"
+ * and "was ist bei mir los?"), and both are lists. The column and its heading
+ * block come from `.app-screen` in App.css.
  */
 .surroundings {
   max-width: 62rem;
@@ -33,36 +33,78 @@
   font-weight: 700;
 }
 
-/* The circle on the map is a radius being tried out, not the saved one. */
-.surroundings__preview {
-  margin: 0;
-  padding: 0.4rem 0.65rem;
-  border-inline-start: 0.2rem solid var(--phase-upcoming);
-  background: var(--phase-upcoming-tint);
-  font-size: 0.85rem;
-  line-height: 1.35;
+/*
+ * The way to the one editor. A link and not a button: it navigates to the
+ * notification section rather than changing anything here.
+ */
+.surroundings__scope-edit {
+  padding: 0.2rem 0.1rem;
+  border: 0;
+  background: none;
+  color: var(--app-accent);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.surroundings__result {
+.surroundings__scope-edit:hover {
+  text-decoration: none;
+}
+
+/*
+ * The standing note under the scope line while the area is only a guess. Quiet
+ * on purpose: it explains a working screen rather than interrupting it.
+ */
+.surroundings__fallback {
+  margin: 0;
+  color: var(--app-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  max-width: 44rem;
+}
+
+.surroundings__fallback-action {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--app-accent);
+  font-size: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.surroundings__fallback-action:hover {
+  text-decoration: none;
+}
+
+/* One question with its answer: heading, controls, then the list. */
+.surroundings__block {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.surroundings__tally {
   display: flex;
   gap: 0.5rem 1rem;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--app-border);
 }
 
-.surroundings__count {
+/*
+ * What the visible list is, rather than how long it is. The count sits on the
+ * segmented control above, and stating it a second time here — under a tab that
+ * already carried it, next to a tab dot that carried it too — was the screen's
+ * third copy of one number.
+ */
+.surroundings__description {
   margin: 0;
   color: var(--app-muted);
-  font-size: 0.95rem;
-}
-
-.surroundings__count strong {
-  color: var(--kern-color-layout-text-default, #1d1d1b);
-  font-size: 1.35rem;
-  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 44rem;
 }
 
 .surroundings__unseen {
@@ -77,41 +119,108 @@
   vertical-align: middle;
 }
 
-/* Onboarding: the one thing to do on a first visit, as the page's only card. */
-.surroundings__panel {
-  padding: 0.9rem 1rem 1rem;
-  border: 1px solid var(--app-border);
-  border-top: 0.2rem solid var(--app-accent);
-  background: var(--app-card);
+.surroundings__mark-seen {
+  padding: 0.2rem 0.1rem;
+  border: 0;
+  background: none;
+  color: var(--app-accent);
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.surroundings__section {
-  border-bottom: 1px solid var(--app-border);
+.surroundings__mark-seen:hover {
+  text-decoration: none;
 }
 
-.surroundings__section > .kern-accordion__header {
-  min-height: 2.75rem;
-  padding-block: 0.55rem;
-  background: var(--app-card);
-  transition: background-color 0.15s ease;
-}
-
-.surroundings__section > .kern-accordion__header:hover {
-  background: var(--accent-tint);
-}
-
-/* The way out for a visitor who does not want an area at all. */
-.surroundings__aside {
+/*
+ * The one control that picks what the list answers. Segmented like
+ * `RecentWindowSelect` so the two controls on this screen read as the same kind
+ * of choice, and it carries its counts: a tab that would land on an empty list
+ * says so before the tap.
+ */
+.surroundings__views {
   display: flex;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border: 1px solid var(--app-border);
+  background: var(--app-card);
+}
+
+/*
+ * Four in one row at every width. They used to wrap, which put "Alle" alone on
+ * a second line and read as a layout fault; a shared basis of zero lets them
+ * shrink together instead.
+ */
+.surroundings__view {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  padding: 0.4rem 0.5rem;
+  white-space: nowrap;
+  border: 0;
+  background: none;
+  color: var(--app-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.surroundings__view[aria-pressed="true"] {
+  background: var(--app-accent);
+  color: var(--kern-color-action-on-default, #fff);
+  font-weight: 600;
+}
+
+.surroundings__view-count {
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+.surroundings__view:focus-visible {
+  outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 1px;
+}
+
+/*
+ * The buttons share the width on a phone, where the control is the screen's
+ * main navigation and each tab has to be a thumb target. On a wide screen that
+ * would stretch four words across 60rem, so there they take their own width.
+ */
+@media (min-width: 48rem) {
+  .surroundings__views {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .surroundings__view {
+    flex: 0 0 auto;
+  }
+}
+
+.surroundings__nothing {
   margin: 0;
+  color: var(--app-muted);
+  font-size: 0.9rem;
 }
 
 .surroundings .kern-alert .kern-button {
   margin-top: 0.6rem;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .surroundings__section > .kern-accordion__header {
-    transition: none;
+/* The scope line is metadata, so it sits tight under the page bar. */
+.surroundings {
+  gap: 0.7rem;
+}
+
+@media (pointer: coarse) {
+  .surroundings__view,
+  .surroundings__mark-seen,
+  .surroundings__scope-edit,
+  .surroundings__fallback-action {
+    min-height: 2.75rem;
   }
 }

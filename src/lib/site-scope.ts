@@ -1,4 +1,5 @@
-import type { ISOTimestamp, HomeArea } from "../types/index.ts";
+import type { ISODate, ISOTimestamp, HomeArea } from "../types/index.ts";
+import { toBerlinCalendarDate } from "../shared/construction-site-timing.ts";
 import {
   EMPTY_CONSTRUCTION_SITE_FILTERS,
   type ConstructionSiteFilters,
@@ -15,6 +16,9 @@ import {
  */
 export const MATCHES_NOTHING: ISOTimestamp = "9999-12-31T00:00:00.000Z";
 
+/** The same guard as a calendar date: every record reads as long over. */
+export const MATCHES_NO_DAY: ISODate = "9999-12-31";
+
 /**
  * The two window starts a screen needs, derived together so they cannot drift.
  *
@@ -30,6 +34,13 @@ export interface RecentWindow {
   since: ISOTimestamp;
   /** Start of the fixed window the unread badge counts over. */
   badgeSince: ISOTimestamp;
+  /**
+   * The day the dataset describes, in the Europe/Berlin calendar — what
+   * "heute", "beginnt morgen" and "kurzfristig" are measured against. It rides
+   * on the window because it comes from the same `fetchedAt` and must not be
+   * taken from the browser clock either.
+   */
+  today: ISODate;
 }
 
 /**
@@ -45,12 +56,18 @@ export function createRecentWindow(
   days: RecentWindowDays,
 ): RecentWindow {
   if (fetchedAt === null) {
-    return { days, since: MATCHES_NOTHING, badgeSince: MATCHES_NOTHING };
+    return {
+      days,
+      since: MATCHES_NOTHING,
+      badgeSince: MATCHES_NOTHING,
+      today: MATCHES_NO_DAY,
+    };
   }
   return {
     days,
     since: recentWindowSince(fetchedAt, days),
     badgeSince: recentWindowSince(fetchedAt, DEFAULT_RECENT_WINDOW_DAYS),
+    today: toBerlinCalendarDate(fetchedAt),
   };
 }
 

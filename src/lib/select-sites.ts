@@ -1,4 +1,4 @@
-import type { ConstructionSite, ISOTimestamp } from "../types/index.ts";
+import type { ConstructionSite, ISODate, ISOTimestamp } from "../types/index.ts";
 import {
   createConstructionSiteFilterPredicate,
   type ConstructionSitePhaseCounts,
@@ -10,7 +10,13 @@ import {
   isUnseenConstructionSite,
   type ConstructionSiteRecency,
 } from "../shared/recency.ts";
-import type { SiteScope } from "./site-scope.ts";
+import {
+  compareByShortNoticeUrgency,
+  getConstructionSiteTiming,
+  isShortNoticeConstructionSite,
+  type ConstructionSiteTiming,
+} from "../shared/construction-site-timing.ts";
+import { MATCHES_NO_DAY, type SiteScope } from "./site-scope.ts";
 
 /**
  * A construction site with the three facts a screen needs but the record does
@@ -26,6 +32,10 @@ export interface ScopedSite {
   distanceMeters: number | null;
   /** Whether the site is new within `scope.window.since`. */
   recency: ConstructionSiteRecency;
+  /** What the dates mean on `scope.window.today`. */
+  timing: ConstructionSiteTiming;
+  /** Whether it starts, or has just started, within the short-notice lead. */
+  isShortNotice: boolean;
   /**
    * Whether the site arrived after the visitor's last acknowledgement.
    * Independent of any window — the caller decides which window to combine it
@@ -41,6 +51,15 @@ export interface SiteSelection {
   all: readonly ScopedSite[];
   /** The subset new within `window.since`, in the same order. */
   recent: readonly ScopedSite[];
+  /**
+   * What is happening in the next few days: the short-notice subset, soonest
+   * start first. The app's primary answer, and the same set the push
+   * notification is composed from.
+   */
+  shortNotice: readonly ScopedSite[];
+  /** Sites under way on `window.today`, and sites still to start. */
+  running: readonly ScopedSite[];
+  planned: readonly ScopedSite[];
   /** What the scope asks to show: `recent` when `onlyRecent`, otherwise `all`. */
   visible: readonly ScopedSite[];
   /**
@@ -56,6 +75,12 @@ export interface SiteSelection {
    * `window.since`: see {@link RecentWindow}.
    */
   unseenCount: number;
+  /**
+   * The day the selection describes, carried along so a list can render a
+   * timing sentence without reaching for the browser clock and disagreeing with
+   * the buckets above it.
+   */
+  today: ISODate;
 }
 
 /**
@@ -66,10 +91,14 @@ export interface SiteSelection {
 export const EMPTY_SITE_SELECTION: SiteSelection = {
   all: [],
   recent: [],
+  shortNotice: [],
+  running: [],
+  planned: [],
   visible: [],
   recentTotal: 0,
   phaseCounts: { total: 0, active: 0, upcoming: 0 },
   unseenCount: 0,
+  today: MATCHES_NO_DAY,
 };
 
 /**
@@ -121,6 +150,8 @@ export function selectSites(
       site,
       distanceMeters: area ? distanceInMeters(area.center, site.point) : null,
       recency: getConstructionSiteRecency(site, window.since),
+      timing: getConstructionSiteTiming(site, window.today),
+      isShortNotice: isShortNoticeConstructionSite(site, window.today),
       isUnseen: isUnseenConstructionSite(site.firstSeenAt, seenAt),
     });
   }
@@ -133,6 +164,41 @@ export function selectSites(
   const matches = createConstructionSiteFilterPredicate(filters);
   const all = candidates.filter((entry) => matches(entry.site));
   const recent = recentCandidates.filter((entry) => matches(entry.site));
+
+  // Urgency first, then distance: within a radius the difference between 1,8 km
+  // and 3,0 km changes nothing about a visitor's plans, while the difference
+  // between "beginnt morgen" and "beginnt in sieben Tagen" changes everything.
+  const shortNotice = all
+    .filter((entry) => entry.isShortNotice)
+    .sort(
+      (left, right) =>
+        compareByShortNoticeUrgency(left, right, window.today) ||
+        (left.distanceMeters ?? 0) - (right.distanceMeters ?? 0) ||
+        left.site.id.localeCompare(right.site.id),
+    );
+  // Nearest first: everything here is already under way, so the only open
+  // question is which of it the visitor will actually run into.
+  const running = all
+    .filter((entry) => entry.timing === "running")
+    .sort(
+      (left, right) =>
+        (left.distanceMeters ?? 0) - (right.distanceMeters ?? 0) ||
+        left.site.id.localeCompare(right.site.id),
+    );
+
+  // Soonest first: a list of announcements is read forwards in time, and
+  // leaving it in detection order put "beginnt in 5 Tagen" above "beginnt
+  // morgen".
+  const planned = all
+    .filter(
+      (entry) => entry.timing === "starting-soon" || entry.timing === "later",
+    )
+    .sort(
+      (left, right) =>
+        left.site.startDate.localeCompare(right.site.startDate) ||
+        (left.distanceMeters ?? 0) - (right.distanceMeters ?? 0) ||
+        left.site.id.localeCompare(right.site.id),
+    );
 
   // The phase switch has to advertise what the result list can actually show,
   // so it counts the recency scope but not the filters the switch itself sets.
@@ -158,9 +224,13 @@ export function selectSites(
   return {
     all,
     recent,
+    shortNotice,
+    running,
+    planned,
     visible: onlyRecent ? recent : all,
     recentTotal: recentCandidates.length,
     phaseCounts: { total: active + upcoming, active, upcoming },
     unseenCount,
+    today: window.today,
   };
 }

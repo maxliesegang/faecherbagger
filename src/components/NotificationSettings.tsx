@@ -1,25 +1,21 @@
-import {
-  KernButton,
-  KernHeading,
-  KernText,
-} from "@kern-ux-annex/kern-react-kit";
+import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
 import { usePersonal } from "../context/PersonalContext.tsx";
-import { useView } from "../context/ViewContext.tsx";
 import { FeedLinks } from "./FeedLinks.tsx";
+import { HomeAreaSetup } from "./HomeAreaSetup.tsx";
 import { NotificationStatusCard } from "./NotificationStatusCard.tsx";
 import "./NotificationSettings.css";
 
 /**
  * The notification section: one screen that answers "bekomme ich etwas mit?"
- * and lets the visitor change the answer.
+ * and carries everything that decides the answer.
  *
- * It states the radius it would report on but does not edit it — that is the
- * surroundings screen, which is named after it and shows it on a map. Here the
- * radius is one line and a link, so this screen stays about the single decision
- * it owns.
+ * The area lives here rather than on the surroundings screen because the
+ * distance *is* the notification setting — "melde mir neue Baustellen bis 5 km"
+ * is one decision, and splitting it across two screens meant the switch on this
+ * one promised something the visitor had configured somewhere else. The
+ * surroundings screen reads the same area to scope its lists.
  */
 export function NotificationSettings() {
-  const { showSurroundings } = useView();
   const { area: homeArea } = usePersonal();
 
   return (
@@ -32,7 +28,7 @@ export function NotificationSettings() {
           Benachrichtigungen
         </KernHeading>
         <KernText className="app-screen__intro">
-          Fächerbagger meldet Ihnen neue Baustellen in Ihrem Umkreis — ohne dass
+          Fächerbagger meldet Ihnen neue Baustellen in Ihrer Nähe — ohne dass
           Sie nachsehen müssen.
         </KernText>
       </header>
@@ -41,21 +37,14 @@ export function NotificationSettings() {
 
       <div className="notifications__panel">
         <KernHeading level={3} className="notifications__panel-heading">
-          Gemeldeter Umkreis
+          Wo und wie weit?
         </KernHeading>
         <KernText muted className="notifications__panel-intro">
           {homeArea
-            ? `Gemeldet wird jede neue Baustelle im Umkreis von ${homeArea.radiusKm} km um Ihren Mittelpunkt. Derselbe Umkreis bestimmt, was der Bereich „Mein Umkreis“ zeigt.`
-            : "Noch kein Umkreis festgelegt. Er bestimmt sowohl die Meldungen als auch den Bereich „Mein Umkreis“."}
+            ? `Gemeldet wird jede neue Baustelle bis ${homeArea.radiusKm} km um Ihren Mittelpunkt. Derselbe Umkreis füllt den Bereich „Mein Umkreis“.`
+            : "Ohne Mittelpunkt und Entfernung gibt es nichts zu melden. Beides legen Sie hier fest — es füllt auch den Bereich „Mein Umkreis“."}
         </KernText>
-        <span className="notifications__panel-actions">
-          <KernButton
-            type="button"
-            variant={homeArea ? "tertiary" : "secondary"}
-            label={homeArea ? "Umkreis ändern" : "Umkreis festlegen"}
-            onClick={showSurroundings}
-          />
-        </span>
+        <HomeAreaSetup />
       </div>
 
       <div className="notifications__panel notifications__panel--quiet">

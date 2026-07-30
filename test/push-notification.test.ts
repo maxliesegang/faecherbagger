@@ -41,7 +41,9 @@ describe("createPushNotificationPayload", () => {
     );
 
     expect(payload.title).toBe("Neue Baustelle in Ettlingen");
-    expect(payload.body).toBe("Teststraße 42 · ab 01.08.2026");
+    // The lead time, not the raw date: the notification exists to let someone
+    // plan, and "in 3 Tagen" is what they plan against.
+    expect(payload.body).toBe("Teststraße 42 · Beginnt in 3 Tagen");
     expect(payload.url).toBe(`${APP_URL}?baustelle=42`);
     expect(payload.count).toBe(1);
     expect(payload.fetchedAt).toBe(FETCHED_AT);
@@ -59,9 +61,39 @@ describe("createPushNotificationPayload", () => {
     );
 
     expect(payload.title).toBe("3 neue Baustellen in Ihrem Umkreis");
-    expect(payload.body).toBe("Unter anderem: Teststraße 1, Karlsruhe");
+    expect(payload.body).toBe(
+      "3 davon in den nächsten 7 Tagen. Zuerst: Teststraße 1 · Beginnt in 3 Tagen",
+    );
     expect(payload.url).toBe(APP_URL);
     expect(payload.count).toBe(3);
+  });
+
+  it("names the most urgent site first, whatever order it was given in", () => {
+    const payload = createPushNotificationPayload(
+      [
+        createConstructionSite("spaet", { startDate: "2026-09-05" }),
+        createConstructionSite("morgen", { startDate: "2026-07-30" }),
+      ],
+      APP_URL,
+      FETCHED_AT,
+    );
+
+    expect(payload.body).toBe(
+      "1 davon in den nächsten 7 Tagen. Zuerst: Teststraße morgen · Beginnt morgen",
+    );
+  });
+
+  it("falls back to a plain summary when nothing is imminent", () => {
+    const payload = createPushNotificationPayload(
+      [
+        createConstructionSite("1", { startDate: "2026-11-02" }),
+        createConstructionSite("2", { startDate: "2026-12-01" }),
+      ],
+      APP_URL,
+      FETCHED_AT,
+    );
+
+    expect(payload.body).toBe("Unter anderem: Teststraße 1, Karlsruhe");
   });
 
   it("keeps an existing query string in the app URL", () => {

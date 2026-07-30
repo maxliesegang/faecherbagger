@@ -1,10 +1,8 @@
+import { useState } from "react";
+import type { ISODate } from "../types/index.ts";
 import type { ScopedSite } from "../lib/select-sites.ts";
 import { formatDistance } from "../shared/distance.ts";
-import {
-  formatConstructionPeriod,
-  formatRelativeDay,
-  getConstructionCategoryLabel,
-} from "../shared/construction-site-labels.ts";
+import { describeConstructionTiming } from "../shared/construction-site-labels.ts";
 import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
 import { ConstructionSiteBadges } from "./ConstructionSiteBadges.tsx";
 import "./NearbyConstructionSiteList.css";
@@ -16,48 +14,70 @@ interface NearbyConstructionSiteListProps {
    * the counts above it.
    */
   scopedSites: readonly ScopedSite[];
+  /** The day the selection describes, for the timing sentence on each card. */
+  today: ISODate;
   getSiteDetailsHref: (siteId: string) => string;
   onShowSiteDetails: (siteId: string) => void;
-  onShowSiteOnMap: (siteId: string) => void;
   /** Accessible name of the list. */
   label: string;
 }
 
 /**
- * The app's primary content: construction sites around the visitor as cards,
- * distance first. Records new in the visitor's window carry a badge; the caller
- * decides which subset to pass in and in which order.
+ * How many cards a list shows before asking.
+ *
+ * "Alle" in a five-kilometre radius is 355 records, and rendering them produced
+ * a page tens of thousands of pixels tall that no visitor ever reached the end
+ * of. A first screenful plus an explicit request is both faster and more honest
+ * about how much there is.
+ */
+const INITIAL_CARD_LIMIT = 25;
+
+/**
+ * The app's primary content: construction sites around the visitor as cards.
+ *
+ * The card leads with the street, because that is what a visitor recognizes,
+ * and follows it with when the work happens, because that is what they decide
+ * on. Distance used to be the largest thing on the card; inside a radius the
+ * visitor chose, the difference between 1,8 km and 3,0 km decides nothing, so
+ * it now sits with the other metadata.
  */
 export function NearbyConstructionSiteList({
   scopedSites,
+  today,
   getSiteDetailsHref,
   onShowSiteDetails,
-  onShowSiteOnMap,
   label,
 }: NearbyConstructionSiteListProps) {
+  const [limit, setLimit] = useState(INITIAL_CARD_LIMIT);
+  // Switching the view has to start the list over; comparing during render
+  // avoids first painting the previous view's expansion.
+  const [lastSites, setLastSites] = useState(scopedSites);
+  if (lastSites !== scopedSites) {
+    setLastSites(scopedSites);
+    setLimit(INITIAL_CARD_LIMIT);
+  }
+
+  const visibleSites = scopedSites.slice(0, limit);
+  const hiddenCount = scopedSites.length - visibleSites.length;
+
   return (
-    <ul className="nearby-list" aria-label={label}>
-      {scopedSites.map(({ site, distanceMeters, recency, isUnseen }) => {
-        const isUnseenAndNew = recency !== null && isUnseen;
+    <>
+      <ul className="nearby-list" aria-label={label}>
+        {visibleSites.map(({ site, distanceMeters, recency, isUnseen }) => {
+          const isUnseenAndNew = recency !== null && isUnseen;
 
-        return (
-          <li key={site.id}>
-            <article
-              className={`nearby-card${isUnseenAndNew ? " nearby-card--unseen" : ""}`}
-            >
-              {/* Only area-scoped selections carry a distance; `?? 0` here
-                  would render a confident "0 m" for a missing one. */}
-              {distanceMeters !== null && (
-                <p className="nearby-card__distance">
-                  <strong>{formatDistance(distanceMeters)}</strong>
-                  <span className="nearby-card__distance-label">entfernt</span>
-                </p>
-              )}
-
-              <div className="nearby-card__main">
+          return (
+            <li key={site.id}>
+              <article
+                className={`nearby-card${isUnseenAndNew ? " nearby-card--unseen" : ""}`}
+              >
+                {/* Traffic impact first: it is the one fact that can stop
+                    someone getting through. The phase is left out here — the
+                    timing line below says when far more precisely. */}
                 <ConstructionSiteBadges
                   className="nearby-card__badges"
                   phase={site.phase}
+                  showPhase={false}
                   closure={site.closure}
                   recency={recency}
                 />
@@ -70,43 +90,48 @@ export function NearbyConstructionSiteList({
                     {site.location}
                   </ClientNavigationLink>
                 </h3>
-                <p className="nearby-card__municipality">
+
+                <p className="nearby-card__timing">
+                  {describeConstructionTiming(site, today)}
+                </p>
+
+                {/*
+                 * The source's own sentence about the site — "nur Fußweg frei",
+                 * "Rad- und Fußweg wird umgeleitet". Two thirds of the records
+                 * carry one, and it was reachable only from the detail page
+                 * while the card spent its last line on the construction
+                 * category, which changes nobody's route.
+                 */}
+                {site.notes && (
+                  <p className="nearby-card__notes">{site.notes}</p>
+                )}
+
+                <p className="nearby-card__meta">
                   {site.municipality}
-                  {recency !== null && (
+                  {/* Only area-scoped selections carry a distance; `?? 0` here
+                      would render a confident "0 m" for a missing one. */}
+                  {distanceMeters !== null && (
                     <>
                       {" · "}
-                      <span className="nearby-card__detected">
-                        neu {formatRelativeDay(site.firstSeenAt)}
-                      </span>
+                      {formatDistance(distanceMeters)} entfernt
                     </>
                   )}
                 </p>
+              </article>
+            </li>
+          );
+        })}
+      </ul>
 
-                <dl className="nearby-card__facts">
-                  <div>
-                    <dt>Zeitraum</dt>
-                    <dd>
-                      {formatConstructionPeriod(site.startDate, site.endDate)}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>Art</dt>
-                    <dd>{getConstructionCategoryLabel(site.category)}</dd>
-                  </div>
-                </dl>
-
-                <button
-                  type="button"
-                  className="nearby-card__map-button"
-                  onClick={() => onShowSiteOnMap(site.id)}
-                >
-                  Auf Karte zeigen
-                </button>
-              </div>
-            </article>
-          </li>
-        );
-      })}
-    </ul>
+      {hiddenCount > 0 && (
+        <button
+          type="button"
+          className="nearby-list__more"
+          onClick={() => setLimit(scopedSites.length)}
+        >
+          Weitere {hiddenCount} anzeigen
+        </button>
+      )}
+    </>
   );
 }

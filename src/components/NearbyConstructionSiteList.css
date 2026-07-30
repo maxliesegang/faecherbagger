@@ -7,16 +7,15 @@
 }
 
 /*
- * Distance leads the card: it is the one fact that decides whether a new
- * construction site matters to this visitor. On narrow screens it moves above
- * the text instead of shrinking the readable column.
+ * The street leads the card, then when the work happens. Both are single-column
+ * at every width: the old two-column layout gave a fifth of the card to the
+ * distance, which inside a radius the visitor chose is the least decisive fact
+ * on it, and squeezed the street name into what was left.
  */
 .nearby-card {
   display: grid;
-  gap: 0.25rem 0.9rem;
-  grid-template-columns: 5.5rem minmax(0, 1fr);
-  align-items: start;
-  padding: 0.7rem 0.85rem 0.8rem;
+  gap: 0.3rem;
+  padding: 0.75rem 0.85rem 0.85rem;
   border: 1px solid var(--app-border);
   border-inline-start: 0.25rem solid var(--app-border);
   background: var(--app-card);
@@ -27,40 +26,16 @@
   background: var(--phase-active-tint);
 }
 
-.nearby-card__distance {
-  display: flex;
-  gap: 0.15rem;
-  flex-direction: column;
-  margin: 0;
-  padding-top: 0.1rem;
-}
-
-.nearby-card__distance strong {
-  font-size: 1.1rem;
-  line-height: 1.15;
-  font-variant-numeric: tabular-nums;
-}
-
-.nearby-card__distance-label {
-  color: var(--app-muted);
-  font-size: 0.75rem;
-}
-
-.nearby-card__main {
-  display: grid;
-  gap: 0.3rem;
-  min-width: 0;
-}
-
 .nearby-card__badges {
   display: flex;
   gap: 0.3rem;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .nearby-card__title {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1.25;
 }
 
@@ -68,72 +43,68 @@
   color: inherit;
 }
 
-.nearby-card__municipality {
+/* The decisive line: when, relative to today. */
+.nearby-card__timing {
   margin: 0;
-  color: var(--app-muted);
-  font-size: 0.85rem;
-}
-
-.nearby-card__detected {
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
-.nearby-card__facts {
-  display: flex;
-  gap: 0.25rem 1.25rem;
-  flex-wrap: wrap;
-  margin: 0.1rem 0 0;
-}
-
-.nearby-card__facts dt {
-  color: var(--app-muted);
-  font-size: 0.75rem;
-}
-
-.nearby-card__facts dd {
+/*
+ * The source's own note. Clamped rather than cut with an ellipsis suffix: the
+ * full text is on the detail page, and a note is a sentence, so stopping it at
+ * two lines keeps the card scannable without breaking a word.
+ */
+.nearby-card__notes {
+  display: -webkit-box;
+  overflow: hidden;
   margin: 0;
+  color: var(--kern-color-layout-text-default, #1d1d1b);
   font-size: 0.9rem;
+  line-height: 1.35;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
-.nearby-card__map-button {
-  justify-self: start;
-  margin-top: 0.15rem;
-  padding: 0.3rem 0.7rem;
-  border: 1px solid var(--app-accent);
-  color: var(--app-accent);
+.nearby-card__meta {
+  margin: 0;
+  color: var(--app-muted);
   font-size: 0.85rem;
-  font-weight: 600;
-  background: transparent;
-  cursor: pointer;
 }
 
-.nearby-card__map-button:hover {
-  color: var(--kern-color-action-on-default, #fff);
-  background: var(--app-accent);
-}
-
-.nearby-card__map-button:focus-visible,
 .nearby-card__title a:focus-visible {
   outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: 2px;
 }
 
-@media (max-width: 32rem) {
-  .nearby-card {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.35rem;
-  }
+/*
+ * The way past the first screenful. Full width and quiet: it continues the list
+ * rather than acting on it.
+ */
+.nearby-list__more {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--app-accent);
+  color: var(--app-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--app-card);
+  cursor: pointer;
+}
 
-  .nearby-card__distance {
-    flex-direction: row;
-    gap: 0.35rem;
-    align-items: baseline;
-  }
+.nearby-list__more:hover {
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+}
+
+.nearby-list__more:focus-visible {
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
 }
 
 @media (pointer: coarse) {
-  .nearby-card__map-button {
+  .nearby-list__more {
     min-height: 2.75rem;
-    padding-inline: 1rem;
   }
 }

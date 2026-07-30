@@ -1,9 +1,15 @@
 import type {
   ConstructionCategory,
   ConstructionPhase,
+  ConstructionSite,
   ClosureSeverity,
+  ISODate,
 } from "../types/index.ts";
 import type { RecentWindowDays } from "../shared/recency.ts";
+import {
+  getConstructionSiteTiming,
+  getStartLeadDays,
+} from "./construction-site-timing.ts";
 
 /**
  * German construction-site labels and badge variants for normalized enums.
@@ -55,9 +61,16 @@ const PHASE_LABELS: Record<ConstructionPhase, string> = {
   upcoming: "Geplant",
 };
 
+/**
+ * Both neutral. Colour on this screen means one thing — how badly traffic is
+ * affected — and "Geplant" in the same yellow as "Mit Behinderung" spent the
+ * warning colour on a fact that warns about nothing. Whether a record is current
+ * or announced is now carried by {@link describeConstructionTiming}, which says
+ * it far more precisely than a two-value badge could.
+ */
 const PHASE_VARIANTS: Record<ConstructionPhase, BadgeVariant> = {
   active: "info",
-  upcoming: "warning",
+  upcoming: "info",
 };
 
 /** Every known category (for validating filter values from the URL). */
@@ -168,4 +181,64 @@ export function getRecentWindowLabel(windowDays: RecentWindowDays): string {
 export function formatConstructionPeriod(startDate: string, endDate: string | null): string {
   const start = formatISODate(startDate);
   return endDate ? `${start} – ${formatISODate(endDate)}` : `ab ${start}`;
+}
+
+/** How the period ends, as the tail of a timing sentence. */
+function describePeriodEnd(
+  site: ConstructionSite,
+  today: ISODate,
+  isRunning: boolean,
+): string {
+  if (site.endDate === null) return "";
+  if (site.endDate === site.startDate) return ", nur an diesem Tag";
+  if (site.endDate === today) return ", endet heute";
+  return isRunning
+    ? `, noch bis ${formatISODate(site.endDate)}`
+    : `, bis ${formatISODate(site.endDate)}`;
+}
+
+/**
+ * The one sentence a card leads with: when this construction site happens,
+ * measured from the day the visitor is looking rather than stated as two dates.
+ *
+ * "03.08.2026 – 03.08.2026" is data; "Beginnt in 4 Tagen, nur an diesem Tag" is
+ * the same fact in the form the decision needs. The absolute dates stay on the
+ * detail page and in the table, where the record is being read rather than
+ * triaged.
+ *
+ * Spelled out per case rather than assembled from fragments, for the same
+ * reason the surroundings counts are: German does not survive concatenation.
+ */
+export function describeConstructionTiming(
+  site: ConstructionSite,
+  today: ISODate,
+): string {
+  const timing = getConstructionSiteTiming(site, today);
+  const leadDays = getStartLeadDays(site, today);
+
+  if (Number.isNaN(leadDays)) {
+    return formatConstructionPeriod(site.startDate, site.endDate);
+  }
+
+  if (timing === "ended") {
+    return site.endDate
+      ? `Abgeschlossen am ${formatISODate(site.endDate)}`
+      : "Abgeschlossen";
+  }
+
+  if (timing === "running") {
+    const start =
+      leadDays === 0
+        ? "Läuft seit heute"
+        : leadDays === -1
+          ? "Läuft seit gestern"
+          : `Läuft seit ${-leadDays} Tagen`;
+    return `${start}${describePeriodEnd(site, today, true)}`;
+  }
+
+  const start =
+    leadDays === 1 ? "Beginnt morgen" : `Beginnt in ${leadDays} Tagen`;
+  const named =
+    timing === "later" ? `Beginnt am ${formatISODate(site.startDate)}` : start;
+  return `${named}${describePeriodEnd(site, today, false)}`;
 }
