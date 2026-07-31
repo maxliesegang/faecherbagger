@@ -28,6 +28,21 @@ function parseFeedDate(timestamp: string): Date {
   return date;
 }
 
+/**
+ * The timestamp an entry is dated and versioned by.
+ *
+ * `lastModified` mirrors the source's `stand`, which some records simply do not
+ * carry (normalization turns those into `""`). Feed entries still need a date,
+ * so fall back to when we first saw the record, and finally to this run — never
+ * fail the whole feed over one undated record.
+ */
+function getFeedItemTimestamp(
+  site: ConstructionSite,
+  fetchedAt: string,
+): string {
+  return site.lastModified || site.firstSeenAt || fetchedAt;
+}
+
 const normalizeBaseURL = (url: string): string =>
   `${url.replace(/\/+$/, "")}/`;
 
@@ -74,22 +89,26 @@ export function createConstructionSiteFeeds(
   });
 
   [...constructionSites]
+    .map((site) => ({
+      site,
+      timestamp: getFeedItemTimestamp(site, metadata.fetchedAt),
+    }))
     .sort((left, right) => {
-      const byModified = right.lastModified.localeCompare(left.lastModified);
-      return byModified || left.id.localeCompare(right.id);
+      const byModified = right.timestamp.localeCompare(left.timestamp);
+      return byModified || left.site.id.localeCompare(right.site.id);
     })
-    .forEach((site) => {
+    .forEach(({ site, timestamp }) => {
       const link = new URL(baseURL);
       link.searchParams.set("baustelle", site.id);
       const title = `${getConstructionPhaseLabel(site.phase)}: ${site.location} – ${site.municipality}`;
-      const revisionId = `faecherbagger:${site.id}:${site.lastModified}`;
+      const revisionId = `faecherbagger:${site.id}:${timestamp}`;
 
       feed.addItem({
         title,
         id: revisionId,
         guid: revisionId,
         link: link.href,
-        date: parseFeedDate(site.lastModified),
+        date: parseFeedDate(timestamp),
         description: createFeedItemDescription(site),
         category: [
           {
