@@ -49,7 +49,7 @@ export interface Personal {
   seenAt: ISOTimestamp | null;
   /** Whether they ever have; only the wording of the unread hint depends on it. */
   hasAcknowledged: boolean;
-  markSitesSeen: (acknowledgedAt: ISOTimestamp) => void;
+  markConstructionSitesSeen: (acknowledgedAt: ISOTimestamp) => void;
   /** The device location, when the visitor has granted and requested it. */
   currentLocation: LngLat | undefined;
   location: CurrentLocationController;
@@ -73,7 +73,7 @@ export function PersonalProvider({ children }: { children: ReactNode }) {
   const progressiveWebApp = useProgressiveWebApp();
   const push = usePushNotifications();
   const { homeArea, saveHomeArea, clearHomeArea } = useHomeArea();
-  const { seenAt, markSitesSeen } = useSeenConstructionSites();
+  const { seenAt, markConstructionSitesSeen } = useSeenConstructionSites();
 
   const {
     trackHomeArea,
@@ -129,7 +129,7 @@ export function PersonalProvider({ children }: { children: ReactNode }) {
       clearArea,
       seenAt,
       hasAcknowledged: seenAt !== null,
-      markSitesSeen,
+      markConstructionSitesSeen,
       currentLocation,
       location,
       push,
@@ -139,7 +139,7 @@ export function PersonalProvider({ children }: { children: ReactNode }) {
       clearArea,
       currentLocation,
       location,
-      markSitesSeen,
+      markConstructionSitesSeen,
       homeArea,
       progressiveWebApp,
       push,

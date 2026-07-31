@@ -13,28 +13,28 @@ import { LazyConstructionSiteMap } from "./LazyConstructionSiteMap.tsx";
 import "./ConstructionSiteDetail.css";
 
 interface ConstructionSiteDetailProps {
-  site: ConstructionSite;
+  constructionSite: ConstructionSite;
   /** The day the dataset describes, for the timing sentence. */
   today: ISODate;
   overviewHref: string;
   onBack: () => void;
-  onShowOnMap: () => void;
+  onShowConstructionSiteOnMap: () => void;
 }
 
 export function ConstructionSiteDetail({
-  site,
+  constructionSite,
   today,
   overviewHref,
   onBack,
-  onShowOnMap,
+  onShowConstructionSiteOnMap,
 }: ConstructionSiteDetailProps) {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = `${site.location} – Fächerbagger`;
+    document.title = `${constructionSite.location} – Fächerbagger`;
     return () => {
       document.title = previousTitle;
     };
-  }, [site.location]);
+  }, [constructionSite.location]);
 
   return (
     <article className="construction-site-detail" aria-labelledby="detail-title">
@@ -49,22 +49,22 @@ export function ConstructionSiteDetail({
       <header className="construction-site-detail__header">
         <ConstructionSiteBadges
           className="construction-site-detail__badges"
-          phase={site.phase}
-          closure={site.closure}
+          phase={constructionSite.phase}
+          closure={constructionSite.closure}
         />
-        <h2 id="detail-title">{site.location}</h2>
-        <p>{site.municipality}</p>
+        <h2 id="detail-title">{constructionSite.location}</h2>
+        <p>{constructionSite.municipality}</p>
         {/* The same sentence the card leads with, so opening a record does not
             change what it says about itself. */}
         <p className="construction-site-detail__timing">
-          {describeConstructionTiming(site, today)}
+          {describeConstructionTiming(constructionSite, today)}
         </p>
       </header>
 
-      {site.notes && (
+      {constructionSite.notes && (
         <section className="construction-site-detail__notice">
           <h3>Hinweis</h3>
-          <p>{site.notes}</p>
+          <p>{constructionSite.notes}</p>
         </section>
       )}
 
@@ -76,20 +76,21 @@ export function ConstructionSiteDetail({
        */}
       <section className="construction-site-detail__map">
         <h3 className="kern-sr-only">Lage</h3>
-        {/* No `selectedSiteId`: the selection panel repeats the page it is
+        {/* No `selectedConstructionSiteId`: the selection panel repeats the
+            page it is
             on, and on a compact map it covered the map entirely. */}
         <LazyConstructionSiteMap
-          constructionSites={[site]}
+          constructionSites={[constructionSite]}
           variant="compact"
-          onSiteSelect={() => undefined}
-          getSiteDetailsHref={() => overviewHref}
-          onSiteDetailsRequest={() => undefined}
-          onListViewRequest={onBack}
+          onSelectedConstructionSiteIdChange={() => undefined}
+          getConstructionSiteDetailHref={() => overviewHref}
+          onOpenConstructionSiteDetail={() => undefined}
+          onShowList={onBack}
         />
         <button
           type="button"
           className="construction-site-detail__map-button"
-          onClick={onShowOnMap}
+          onClick={onShowConstructionSiteOnMap}
         >
           Im Umgebungsplan öffnen
         </button>
@@ -98,19 +99,24 @@ export function ConstructionSiteDetail({
       <dl className="construction-site-detail__facts">
         <div>
           <dt>Zeitraum</dt>
-          <dd>{formatConstructionPeriod(site.startDate, site.endDate)}</dd>
+          <dd>
+            {formatConstructionPeriod(
+              constructionSite.startDate,
+              constructionSite.endDate,
+            )}
+          </dd>
         </div>
         <div>
           <dt>Verkehrseinschränkung</dt>
-          <dd>{getClosureLabel(site.closure)}</dd>
+          <dd>{getClosureLabel(constructionSite.closure)}</dd>
         </div>
         <div>
           <dt>Art der Baustelle</dt>
-          <dd>{getConstructionCategoryLabel(site.category)}</dd>
+          <dd>{getConstructionCategoryLabel(constructionSite.category)}</dd>
         </div>
         <div>
           <dt>Verantwortlich</dt>
-          <dd>{site.cause ?? "Keine Angabe"}</dd>
+          <dd>{constructionSite.cause ?? "Keine Angabe"}</dd>
         </div>
       </dl>
 
@@ -121,8 +127,9 @@ export function ConstructionSiteDetail({
        * Vorgangsnummer look as decisive as a Vollsperrung.
        */}
       <p className="construction-site-detail__provenance">
-        Vorgangsnummer {site.id} · Quelle {site.source} · aktualisiert{" "}
-        {formatISOTimestamp(site.lastModified)}
+        Vorgangsnummer {constructionSite.id} · Quelle {constructionSite.source}{" "}
+        · aktualisiert{" "}
+        {formatISOTimestamp(constructionSite.lastModified)}
       </p>
     </article>
   );

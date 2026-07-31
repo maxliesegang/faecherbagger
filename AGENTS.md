@@ -101,6 +101,12 @@
   is called `HomeArea` throughout the app and `Umkreis` throughout the German
   UI; only `push-worker/` keeps the `notification_*` vocabulary, because there
   the name is accurate and it is the deployed wire format and D1 schema.
+- The closure level (`NotificationClosureLevelSetup`) is the second half of that
+  same decision and lives in the same section: the area says where to look, the
+  level says what is worth saying. Unlike the radius it saves on change — one
+  click is the whole choice — and it reports through the push controller's
+  message channel rather than growing one of its own. Both travel to the service
+  as one `NotificationPreferences` object.
 - Use a map only where the question is spatial. The explorer has one, and a
   detail page has one. The surroundings screen does not: it answers "was ist bei
   mir neu?" with a distance-sorted list, and the map that used to sit above that
@@ -137,7 +143,20 @@
 - Use full domain nouns for exported symbols and component props. Prefer
   `constructionSite`/`constructionSites` over generic `item`/`data`, predicate
   prefixes such as `is`, `has`, or `show` for booleans, and `on...` for event
-  callbacks.
+  callbacks. The record is a `ConstructionSite` everywhere it is named in an
+  export or a prop — never a bare `Site`, which was how `ScopedSite` and
+  `SiteScope` drifted away from the `ConstructionSite*` types beside them. A
+  short local (`scoped`, `candidate`, `left`/`right` in a comparator) is fine.
+- One concept, one name, spelled the same from the context that owns it to the
+  prop that receives it: `getConstructionSiteDetailHref`,
+  `openConstructionSiteDetail`, `showConstructionSiteOnMap`. If a screen has to
+  rename a value while destructuring it — `openSiteDetails: onDetailOpen` — the
+  two names are the bug, not the aliasing.
+- Callbacks take one of two shapes and nothing else: `on<Noun>Change` when a
+  value is being replaced (`onFiltersChange`,
+  `onSelectedConstructionSiteIdChange`) and `on<Verb><Noun>` when an action is
+  being requested (`onOpenConstructionSiteDetail`, `onShowList`). A `Request`
+  suffix is neither; it was a third spelling of the second shape.
 - Capitalize standard acronyms in identifiers (`URL`, `JSON`, `WFS`, `ISO`).
   Keep established third-party domain names such as MapLibre's `LngLat`.
 - Keep German TRK field names only in WFS and serialized-data boundary code;
@@ -151,7 +170,8 @@
   not new — do not reintroduce a `lastModified`-based window. "Neu" marks a
   record; it does not rank one, because when the work happens is what a visitor
   acts on and `firstSeenAt` says nothing about that.
-- Both screens go through `selectSites`, which annotates each record once with
+- Both screens go through `selectConstructionSites`, which annotates each record
+  once with
   distance, recency, timing, short notice and unseen, and hands back the lists
   and the day it measured against. Read those fields; never recompute them, and
   never reach for the browser clock — "heute" comes from the data's `fetchedAt`
@@ -191,6 +211,12 @@
   omits geometry when that property is absent.
 - Deduplicate source features by `vorgangsnummer`, retaining both a
   representative point for lists/distance and merged geometry for the map.
+- The two are published apart: `ConstructionSite` carries the point,
+  `geometrien.json` carries the geometry by id, and
+  `splitConstructionSiteGeometries` is the one place they separate. Geometry is
+  most of the payload and only the map reads it, so nothing outside
+  `src/pipeline/` and the map may expect it on a record — reach for
+  `loadConstructionSiteGeometries` instead of widening the type back.
 - Convert WFS timestamps to Europe/Berlin calendar dates and keep `endDate`
   nullable. Do not let the machine's local timezone change normalized output.
 - Treat free-form source fields as untrusted. Normalize categories and closure
@@ -201,7 +227,7 @@
 
 ## Generated Data
 
-- `public/data/baustellen.json`, `meta.json`, `changes.json`,
+- `public/data/baustellen.json`, `geometrien.json`, `meta.json`, `changes.json`,
   `public/baustellen.xml`, and `public/baustellen.atom` are generated and
   committed artifacts. Do not hand-edit them.
 - Regenerate them only with `npm run data`; this requires network access to
@@ -210,7 +236,7 @@
   from an empty `public/data/` would mark every record new.
 - A normal UI or domain-logic change should not refresh generated data.
 - If pipeline behavior changes, test the normalization and window logic with
-  fixtures before regenerating data, and review all three generated files.
+  fixtures before regenerating data, and review every generated file.
 
 ## Map, PWA, and Push Guidance
 
@@ -220,10 +246,20 @@
 - Preserve intentional map layer ordering: home area, detailed
   geometries, clusters/points, selection, and user location. Batch each logical
   source update with one `GeoJSONSource.setData` call where practical.
-- Keep the map dynamically imported so the initial UI bundle stays small.
-- The service worker uses network-first caching for the three data files.
-  Changes to cache names, update messages, sync tags, or notification handling
-  must preserve offline startup and refresh behavior.
+- Keep the map dynamically imported so the initial UI bundle stays small, and
+  keep `geometrien.json` behind it: the map component fetches it on mount
+  through the shared, memoized `loadConstructionSiteGeometries`, and draws every
+  record as a point until it arrives. A missing geometry is a normal first
+  paint, never an error state.
+- The service worker uses network-first caching for the data files but refreshes
+  only `baustellen.json` and `meta.json` in the background. Changes to cache
+  names, update messages, sync tags, or notification handling must preserve
+  offline startup and refresh behavior.
+- A notification needs two reasons, not one: `isNotifiableConstructionSite` in
+  `src/shared/notification-relevance.ts` requires that the record is short
+  notice *and* that its closure reaches the subscription's level. Do not push on
+  `firstSeenAt` alone — it is when the pipeline learned about a record, not when
+  the work happens, and the source backfills.
 - Web Push subscription data and location-radius preferences are sensitive.
   Validate request bodies and origins, keep administrator endpoints
   authenticated, use parameterized D1 queries, and never log or commit

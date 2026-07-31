@@ -9,6 +9,7 @@ import {
 } from "../src/lib/map-geojson.ts";
 import type {
   ConstructionSite,
+  ConstructionSiteGeometries,
   HomeArea,
 } from "../src/types/index.ts";
 
@@ -26,16 +27,19 @@ const constructionSite: ConstructionSite = {
   startDate: "2026-07-24",
   endDate: null,
   point: [8.4037, 49.0094],
-  geometry: {
+  source: "Test",
+  lastModified: "2026-07-24T10:00:00Z",
+  firstSeenAt: "2026-07-24T10:00:00Z",
+};
+
+const geometries: ConstructionSiteGeometries = {
+  [constructionSite.id]: {
     type: "LineString",
     coordinates: [
       [8.4037, 49.0094],
       [8.404, 49.01],
     ],
   },
-  source: "Test",
-  lastModified: "2026-07-24T10:00:00Z",
-  firstSeenAt: "2026-07-24T10:00:00Z",
 };
 
 describe("map data", () => {
@@ -43,9 +47,10 @@ describe("map data", () => {
     const pointFeature = createConstructionSitePointFeatureCollection([
       constructionSite,
     ]).features[0];
-    const geometryFeature = createConstructionSiteGeometryFeatureCollection([
-      constructionSite,
-    ]).features[0];
+    const geometryFeature = createConstructionSiteGeometryFeatureCollection(
+      [constructionSite],
+      geometries,
+    ).features[0];
 
     expect(pointFeature).toMatchObject({
       id: constructionSite.id,
@@ -55,7 +60,16 @@ describe("map data", () => {
         phase: constructionSite.phase,
       },
     });
-    expect(geometryFeature?.geometry).toEqual(constructionSite.geometry);
+    expect(geometryFeature?.geometry).toEqual(geometries[constructionSite.id]);
+  });
+
+  it("omits records whose geometry has not been loaded yet", () => {
+    // The normal state of the first paint: the geometry file is fetched when a
+    // map appears, and until it lands every record is drawn as a point.
+    expect(
+      createConstructionSiteGeometryFeatureCollection([constructionSite], {})
+        .features,
+    ).toEqual([]);
   });
 
   it("represents an absent or present user location consistently", () => {

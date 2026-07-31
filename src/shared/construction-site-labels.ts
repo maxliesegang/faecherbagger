@@ -4,6 +4,7 @@ import type {
   ConstructionSite,
   ClosureSeverity,
   ISODate,
+  NotificationClosureLevel,
 } from "../types/index.ts";
 import type { RecentWindowDays } from "../shared/recency.ts";
 import {
@@ -72,6 +73,52 @@ const PHASE_VARIANTS: Record<ConstructionPhase, BadgeVariant> = {
   active: "info",
   upcoming: "info",
 };
+
+/**
+ * What each notification level reports, as the option's own label — and, in
+ * {@link describeNotificationClosureLevel}, as the subject of a sentence, so
+ * the settings control and the confirmation notification say the same thing.
+ */
+const NOTIFICATION_CLOSURE_LEVEL_LABELS: Record<
+  NotificationClosureLevel,
+  string
+> = {
+  all: "Alle neuen Baustellen",
+  obstruction: "Nur mit Behinderung oder Sperrung",
+  full: "Nur Vollsperrungen",
+};
+
+const NOTIFICATION_CLOSURE_LEVEL_HINTS: Record<
+  NotificationClosureLevel,
+  string
+> = {
+  all: "Auch Baustellen ohne Verkehrseinschränkung — etwa ein Gerüst vor einem Haus. Das sind die meisten Meldungen.",
+  obstruction:
+    "Alles, was Sie unterwegs merken: von der Behinderung bis zur Vollsperrung.",
+  full: "Nur, wenn eine Straße komplett gesperrt wird.",
+};
+
+export const getNotificationClosureLevelLabel = (
+  level: NotificationClosureLevel,
+): string => NOTIFICATION_CLOSURE_LEVEL_LABELS[level];
+
+export const getNotificationClosureLevelHint = (
+  level: NotificationClosureLevel,
+): string => NOTIFICATION_CLOSURE_LEVEL_HINTS[level];
+
+/** The same choice as the subject of a sentence, for the notification text. */
+export function describeNotificationClosureLevel(
+  level: NotificationClosureLevel,
+): string {
+  switch (level) {
+    case "all":
+      return "Sie hören von jeder neuen Baustelle";
+    case "obstruction":
+      return "Sie hören von neuen Baustellen mit Behinderung oder Sperrung";
+    case "full":
+      return "Sie hören von neuen Vollsperrungen";
+  }
+}
 
 /** Every known category (for validating filter values from the URL). */
 export const CONSTRUCTION_CATEGORIES = Object.keys(

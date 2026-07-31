@@ -1,5 +1,6 @@
 import type {
   ConstructionSite,
+  ConstructionSiteGeometries,
   ConstructionSiteMetadata,
 } from "../types/index.ts";
 
@@ -29,3 +30,24 @@ export const loadConstructionSites = (
   signal?: AbortSignal,
 ): Promise<ConstructionSite[]> =>
   loadJSON<ConstructionSite[]>("baustellen.json", signal);
+
+/**
+ * The map geometry, in flight at most once per session.
+ *
+ * It is the largest file the app serves and every map wants the same copy of
+ * it, so the promise is shared rather than the request repeated: opening the
+ * explorer, a detail page and the explorer again costs one download. A failed
+ * attempt is forgotten, so the next map may try again instead of inheriting the
+ * rejection.
+ */
+let geometriesRequest: Promise<ConstructionSiteGeometries> | null = null;
+
+export function loadConstructionSiteGeometries(): Promise<ConstructionSiteGeometries> {
+  geometriesRequest ??= loadJSON<ConstructionSiteGeometries>(
+    "geometrien.json",
+  ).catch((error: unknown) => {
+    geometriesRequest = null;
+    throw error;
+  });
+  return geometriesRequest;
+}

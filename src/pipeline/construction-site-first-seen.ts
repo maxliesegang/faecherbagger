@@ -1,5 +1,6 @@
 import type {
   ConstructionSite,
+  ConstructionSiteWithGeometry,
   ISOTimestamp,
   NormalizedConstructionSite,
 } from "../types/index.ts";
@@ -41,7 +42,7 @@ export function assignFirstSeenAt(
   constructionSites: readonly NormalizedConstructionSite[],
   previousSites: readonly ConstructionSite[],
   fetchedAt: ISOTimestamp,
-): ConstructionSite[] {
+): ConstructionSiteWithGeometry[] {
   const firstSeenAtById = new Map<string, ISOTimestamp>(
     previousSites.map((site): [string, ISOTimestamp] => [
       site.id,

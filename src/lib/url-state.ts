@@ -17,7 +17,10 @@ import {
   RECENT_WINDOW_DAYS,
   type RecentWindowDays,
 } from "../shared/recency.ts";
-import { DEFAULT_SITE_QUERY, type SiteQuery } from "./site-scope.ts";
+import {
+  DEFAULT_CONSTRUCTION_SITE_QUERY,
+  type ConstructionSiteQuery,
+} from "./construction-site-scope.ts";
 
 /** How the result set is presented. */
 export type ConstructionSiteResultView = "map" | "list";
@@ -26,10 +29,10 @@ export const CONSTRUCTION_SITE_RESULT_VIEWS = ["map", "list"] as const;
 
 /**
  * The three top-level areas of the app. `"surroundings"` is the default screen
- * and the app's purpose: what is new inside the visitor's radius, which it also
- * owns and lets them change. `"notifications"` carries the Web Push switch for
- * that same radius, and `"explorer"` is the secondary search over the whole
- * region.
+ * and the app's purpose: what starts soon inside the visitor's radius.
+ * `"notifications"` carries the Web Push switch and owns the two settings it
+ * acts on — that same radius and the closure level — and `"explorer"` is the
+ * secondary search over the whole region.
  */
 export type AppSection = "surroundings" | "explorer" | "notifications";
 
@@ -53,15 +56,15 @@ export const APP_SECTIONS = [
 export interface AppURLState {
   section: AppSection;
   /** The shareable part of what the explorer is asking to see. */
-  query: SiteQuery;
+  query: ConstructionSiteQuery;
   view: ConstructionSiteResultView;
   sort: ConstructionSiteSort | null;
-  detailSiteId?: string;
+  detailConstructionSiteId?: string;
 }
 
 export const DEFAULT_APP_URL_STATE: Readonly<AppURLState> = {
   section: "surroundings",
-  query: DEFAULT_SITE_QUERY,
+  query: DEFAULT_CONSTRUCTION_SITE_QUERY,
   view: "map",
   sort: null,
 };
@@ -77,7 +80,7 @@ const URL_SEARCH_PARAMETER_NAMES = {
   windowDays: "seit",
   view: "ansicht",
   sort: "sortierung",
-  detailSiteId: "baustelle",
+  detailConstructionSiteId: "baustelle",
 } as const;
 
 /**
@@ -168,7 +171,7 @@ export function parseAppURLState(search: string): AppURLState {
       windowDays:
         WINDOW_DAYS_CODEC.fromURL(
           params.get(URL_SEARCH_PARAMETER_NAMES.windowDays),
-        ) ?? DEFAULT_SITE_QUERY.windowDays,
+        ) ?? DEFAULT_CONSTRUCTION_SITE_QUERY.windowDays,
     },
     view:
       RESULT_VIEW_CODEC.fromURL(params.get(URL_SEARCH_PARAMETER_NAMES.view)) ??
@@ -176,8 +179,10 @@ export function parseAppURLState(search: string): AppURLState {
     sort: parseConstructionSiteSort(
       params.get(URL_SEARCH_PARAMETER_NAMES.sort),
     ),
-    detailSiteId:
-      params.get(URL_SEARCH_PARAMETER_NAMES.detailSiteId)?.slice(0, 200) ||
+    detailConstructionSiteId:
+      params
+        .get(URL_SEARCH_PARAMETER_NAMES.detailConstructionSiteId)
+        ?.slice(0, 200) ||
       undefined,
   };
 }
@@ -213,7 +218,7 @@ export function serializeAppURLState(state: AppURLState): string {
   if (onlyRecent) {
     params.set(URL_SEARCH_PARAMETER_NAMES.onlyRecent, "1");
   }
-  if (windowDays !== DEFAULT_SITE_QUERY.windowDays) {
+  if (windowDays !== DEFAULT_CONSTRUCTION_SITE_QUERY.windowDays) {
     params.set(
       URL_SEARCH_PARAMETER_NAMES.windowDays,
       WINDOW_DAYS_CODEC.toURL(windowDays),
@@ -231,8 +236,11 @@ export function serializeAppURLState(state: AppURLState): string {
       serializeConstructionSiteSort(state.sort),
     );
   }
-  if (state.detailSiteId) {
-    params.set(URL_SEARCH_PARAMETER_NAMES.detailSiteId, state.detailSiteId);
+  if (state.detailConstructionSiteId) {
+    params.set(
+      URL_SEARCH_PARAMETER_NAMES.detailConstructionSiteId,
+      state.detailConstructionSiteId,
+    );
   }
 
   const query = params.toString();

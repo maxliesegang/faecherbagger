@@ -72,22 +72,23 @@ export function createRecentWindow(
 }
 
 /**
- * The part of a {@link SiteScope} the address bar owns, and therefore the part
- * that is shareable.
+ * The part of a {@link ConstructionSiteScope} the address bar owns, and
+ * therefore the part that is shareable.
  *
  * A scope also needs an area and a window, and the URL can supply neither: the
  * area is personal and lives on the device, and the window has to be measured
  * from the dataset's own `fetchedAt`. Naming the shareable subset separately is
  * what keeps that boundary visible — see {@link createRegionScope}.
  */
-export interface SiteQuery {
+export interface ConstructionSiteQuery {
   filters: Readonly<ConstructionSiteFilters>;
   /** Narrows to sites new within the window. */
   onlyRecent: boolean;
   windowDays: RecentWindowDays;
 }
 
-export const DEFAULT_SITE_QUERY: Readonly<SiteQuery> = {
+export const DEFAULT_CONSTRUCTION_SITE_QUERY: Readonly<ConstructionSiteQuery> =
+  {
   filters: EMPTY_CONSTRUCTION_SITE_FILTERS,
   onlyRecent: false,
   windowDays: DEFAULT_RECENT_WINDOW_DAYS,
@@ -101,7 +102,7 @@ export const DEFAULT_SITE_QUERY: Readonly<SiteQuery> = {
  * fills in filters and leaves `area` null. That is what lets one selector serve
  * both, so "was ist neu?" cannot be answered differently in two places.
  */
-export interface SiteScope {
+export interface ConstructionSiteScope {
   /** Restricts to a radius around a point; `null` means the whole region. */
   area: HomeArea | null;
   window: RecentWindow;
@@ -113,14 +114,15 @@ export interface SiteScope {
 /**
  * The scope of the surroundings screen: one area, no filters, both lists.
  *
- * It deliberately ignores the {@link SiteQuery}. The explorer's search and
- * status filters belong to the explorer; carrying them over would mean a link
+ * It deliberately ignores the {@link ConstructionSiteQuery}. The explorer's
+ * search and status filters belong to the explorer; carrying them over would
+ * mean a link
  * shared from one screen quietly narrows the other.
  */
-export function createAreaScope(
+export function createHomeAreaScope(
   area: HomeArea | null,
   window: RecentWindow,
-): SiteScope {
+): ConstructionSiteScope {
   return {
     area,
     window,
@@ -131,9 +133,9 @@ export function createAreaScope(
 
 /** The scope of the explorer: the whole region, narrowed by the shared query. */
 export function createRegionScope(
-  query: Readonly<SiteQuery>,
+  query: Readonly<ConstructionSiteQuery>,
   window: RecentWindow,
-): SiteScope {
+): ConstructionSiteScope {
   return {
     area: null,
     window,

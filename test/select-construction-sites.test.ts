@@ -1,15 +1,15 @@
 import { describe, expect, it } from "vitest";
 import {
-  EMPTY_SITE_SELECTION,
-  selectSites,
-} from "../src/lib/select-sites.ts";
+  EMPTY_CONSTRUCTION_SITE_SELECTION,
+  selectConstructionSites,
+} from "../src/lib/select-construction-sites.ts";
 import { isUnseenConstructionSite } from "../src/shared/recency.ts";
 import {
   MATCHES_NOTHING,
-  createAreaScope,
+  createHomeAreaScope,
   createRecentWindow,
-  type SiteScope,
-} from "../src/lib/site-scope.ts";
+  type ConstructionSiteScope,
+} from "../src/lib/construction-site-scope.ts";
 import { EMPTY_CONSTRUCTION_SITE_FILTERS } from "../src/lib/construction-site-filter.ts";
 import type { ConstructionSite, HomeArea } from "../src/types/index.ts";
 import { createConstructionSite } from "./fixtures.ts";
@@ -25,7 +25,10 @@ const thirtyDayWindow = createRecentWindow(FETCHED_AT, 30);
 
 /** Both introduced by the same run, so only distance separates them. */
 const nearSite = createConstructionSite("near", { point: [8.405, 49.007] });
-const midSite = createConstructionSite("mid", { point: [8.42, 49.01], phase: "upcoming" });
+const midSite = createConstructionSite("mid", {
+  point: [8.42, 49.01],
+  phase: "upcoming",
+});
 /** Inside the area, but first seen 24 days ago: new in 30 d, not in 7 d. */
 const olderSite = createConstructionSite("older", {
   point: [8.406, 49.008],
@@ -40,8 +43,10 @@ const farSite = createConstructionSite("far", { point: [8.7, 49.1] });
 
 const allSites = [farSite, midSite, ancientSite, nearSite, olderSite];
 
-const ids = (entries: readonly { site: ConstructionSite }[]): string[] =>
-  entries.map((entry) => entry.site.id);
+const ids = (
+  entries: readonly { constructionSite: ConstructionSite }[],
+): string[] =>
+  entries.map((entry) => entry.constructionSite.id);
 
 describe("createRecentWindow", () => {
   it("anchors both starts to the data timestamp, not the wall clock", () => {
@@ -64,9 +69,9 @@ describe("createRecentWindow", () => {
   });
 });
 
-describe("selectSites with an area", () => {
-  const scope = createAreaScope(area, sevenDayWindow);
-  const selection = selectSites(allSites, scope, null);
+describe("selectConstructionSites with an area", () => {
+  const scope = createHomeAreaScope(area, sevenDayWindow);
+  const selection = selectConstructionSites(allSites, scope, null);
 
   it("keeps only sites inside the area", () => {
     expect(ids(selection.all)).not.toContain("far");
@@ -91,22 +96,30 @@ describe("selectSites with an area", () => {
 
   it("widens with the window", () => {
     expect(
-      ids(selectSites(allSites, createAreaScope(area, thirtyDayWindow), null).recent),
+      ids(
+        selectConstructionSites(
+          allSites,
+          createHomeAreaScope(area, thirtyDayWindow),
+          null,
+        ).recent,
+      ),
     ).toEqual(["near", "mid", "older"]);
   });
 
   it("leaves the input untouched", () => {
     const constructionSites = [...allSites];
-    selectSites(constructionSites, scope, null);
+    selectConstructionSites(constructionSites, scope, null);
 
-    expect(constructionSites.map((site) => site.id)).toEqual(
-      allSites.map((site) => site.id),
+    expect(
+      constructionSites.map((constructionSite) => constructionSite.id),
+    ).toEqual(
+      allSites.map((constructionSite) => constructionSite.id),
     );
   });
 });
 
-describe("selectSites without an area", () => {
-  const scope: SiteScope = {
+describe("selectConstructionSites without an area", () => {
+  const scope: ConstructionSiteScope = {
     area: null,
     window: sevenDayWindow,
     filters: EMPTY_CONSTRUCTION_SITE_FILTERS,
@@ -114,7 +127,7 @@ describe("selectSites without an area", () => {
   };
 
   it("covers the whole region and leaves distance unset", () => {
-    const selection = selectSites(allSites, scope, null);
+    const selection = selectConstructionSites(allSites, scope, null);
 
     expect(ids(selection.all)).toContain("far");
     expect(selection.all.every((entry) => entry.distanceMeters === null)).toBe(
@@ -123,14 +136,18 @@ describe("selectSites without an area", () => {
   });
 
   it("narrows the visible set when the scope asks for new sites only", () => {
-    const selection = selectSites(allSites, { ...scope, onlyRecent: true }, null);
+    const selection = selectConstructionSites(
+      allSites,
+      { ...scope, onlyRecent: true },
+      null,
+    );
 
     expect(selection.visible).toBe(selection.recent);
     expect(ids(selection.visible)).toEqual(["far", "mid", "near"]);
   });
 
   it("applies the filters to every projection", () => {
-    const selection = selectSites(
+    const selection = selectConstructionSites(
       allSites,
       {
         ...scope,
@@ -144,7 +161,7 @@ describe("selectSites without an area", () => {
   });
 
   it("counts the toggle's total before the filters, so typing does not move it", () => {
-    const selection = selectSites(
+    const selection = selectConstructionSites(
       allSites,
       {
         ...scope,
@@ -158,8 +175,8 @@ describe("selectSites without an area", () => {
   });
 });
 
-describe("selectSites phase counts", () => {
-  const scope: SiteScope = {
+describe("selectConstructionSites phase counts", () => {
+  const scope: ConstructionSiteScope = {
     area: null,
     window: sevenDayWindow,
     filters: EMPTY_CONSTRUCTION_SITE_FILTERS,
@@ -167,7 +184,7 @@ describe("selectSites phase counts", () => {
   };
 
   it("lifts the phase filter, so each option shows what it would yield", () => {
-    const selection = selectSites(
+    const selection = selectConstructionSites(
       allSites,
       {
         ...scope,
@@ -184,34 +201,40 @@ describe("selectSites phase counts", () => {
   });
 
   it("respects the recency scope, so the tiles cannot overpromise", () => {
-    const selection = selectSites(allSites, { ...scope, onlyRecent: true }, null);
+    const selection = selectConstructionSites(
+      allSites,
+      { ...scope, onlyRecent: true },
+      null,
+    );
 
     expect(selection.phaseCounts).toEqual({ total: 3, active: 2, upcoming: 1 });
   });
 });
 
-describe("selectSites unseen count", () => {
-  const scope = createAreaScope(area, sevenDayWindow);
+describe("selectConstructionSites unseen count", () => {
+  const scope = createHomeAreaScope(area, sevenDayWindow);
 
   it("counts everything in the badge window without an acknowledgement", () => {
-    expect(selectSites(allSites, scope, null).unseenCount).toBe(2);
+    expect(selectConstructionSites(allSites, scope, null).unseenCount).toBe(2);
   });
 
   it("drops the sites the visitor has already seen", () => {
     expect(
-      selectSites(allSites, scope, "2026-07-24T06:00:00.000Z").unseenCount,
+      selectConstructionSites(allSites, scope, "2026-07-24T06:00:00.000Z")
+        .unseenCount,
     ).toBe(0);
     expect(
-      selectSites(allSites, scope, "2026-07-20T00:00:00.000Z").unseenCount,
+      selectConstructionSites(allSites, scope, "2026-07-20T00:00:00.000Z")
+        .unseenCount,
     ).toBe(2);
   });
 
   it("does not follow the visitor's time filter", () => {
     // Widening to 30 days pulls `older` into the list, but the badge answers a
     // different question and must stay on the default window.
-    const widened = selectSites(
+    const widened = selectConstructionSites(
       allSites,
-      createAreaScope(area, thirtyDayWindow),
+      createHomeAreaScope(area, thirtyDayWindow),
       null,
     );
 
@@ -229,12 +252,14 @@ describe("isUnseenConstructionSite", () => {
   });
 });
 
-describe("EMPTY_SITE_SELECTION", () => {
+describe("EMPTY_CONSTRUCTION_SITE_SELECTION", () => {
   it("stands in for the states with no scope to select over", () => {
-    expect(EMPTY_SITE_SELECTION.all).toEqual([]);
-    expect(EMPTY_SITE_SELECTION.unseenCount).toBe(0);
+    expect(EMPTY_CONSTRUCTION_SITE_SELECTION.all).toEqual([]);
+    expect(EMPTY_CONSTRUCTION_SITE_SELECTION.unseenCount).toBe(0);
     // Shared identity, so a render without an area does not churn.
-    expect(EMPTY_SITE_SELECTION).toBe(EMPTY_SITE_SELECTION);
+    expect(EMPTY_CONSTRUCTION_SITE_SELECTION).toBe(
+      EMPTY_CONSTRUCTION_SITE_SELECTION,
+    );
   });
 });
 
@@ -242,7 +267,7 @@ describe("EMPTY_SITE_SELECTION", () => {
  * The timing buckets the surroundings screen renders. `FETCHED_AT` is
  * 25.07.2026, so "kurzfristig" here means a start between 18.07. and 01.08.
  */
-describe("selectSites timing buckets", () => {
+describe("selectConstructionSites timing buckets", () => {
   const startsTomorrow = createConstructionSite("morgen", {
     point: [8.405, 49.007],
     startDate: "2026-07-26",
@@ -280,9 +305,9 @@ describe("selectSites timing buckets", () => {
     startsInTwoDays,
   ];
 
-  const selection = selectSites(
+  const selection = selectConstructionSites(
     sites,
-    createAreaScope(area, sevenDayWindow),
+    createHomeAreaScope(area, sevenDayWindow),
     null,
   );
 
@@ -296,7 +321,7 @@ describe("selectSites timing buckets", () => {
     expect(ids(selection.planned)).toEqual(["morgen", "zuletzt", "spaeter"]);
   });
 
-  it("keeps a site whose end date has passed out of both", () => {
+  it("keeps a constructionSite whose end date has passed out of both", () => {
     expect(ids(selection.running)).not.toContain("vorbei");
     expect(ids(selection.planned)).not.toContain("vorbei");
     // Still counted and still findable — omitted only from the actionable views.

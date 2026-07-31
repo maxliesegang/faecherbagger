@@ -3,6 +3,7 @@ import {
   useEffect,
   useMemo,
   useRef,
+  useState,
   type DependencyList,
 } from "react";
 import {
@@ -17,9 +18,11 @@ import {
 import mapLibreWorkerURL from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import type {
   ConstructionSite,
+  ConstructionSiteGeometries,
   LngLat,
   HomeArea,
 } from "../types/index.ts";
+import { loadConstructionSiteGeometries } from "../lib/construction-site-data.ts";
 import {
   getConstructionCategoryLabel,
   getClosureLabel,
@@ -47,7 +50,7 @@ setWorkerUrl(mapLibreWorkerURL);
 
 export interface ConstructionSiteMapProps {
   constructionSites: readonly ConstructionSite[];
-  selectedSiteId?: string;
+  selectedConstructionSiteId?: string;
   currentLocation?: LngLat;
   homeArea?: HomeArea;
   /**
@@ -59,10 +62,12 @@ export interface ConstructionSiteMapProps {
   fitMode?: "sites" | "homeArea";
   /** `"compact"` is the inline map above a list, at a fraction of the height. */
   variant?: "primary" | "compact";
-  onSiteSelect: (siteId: string | undefined) => void;
-  getSiteDetailsHref: (siteId: string) => string;
-  onSiteDetailsRequest: (siteId: string) => void;
-  onListViewRequest: () => void;
+  onSelectedConstructionSiteIdChange: (
+    constructionSiteId: string | undefined,
+  ) => void;
+  getConstructionSiteDetailHref: (constructionSiteId: string) => string;
+  onOpenConstructionSiteDetail: (constructionSiteId: string) => void;
+  onShowList: () => void;
 }
 
 const FIT_PADDING = { top: 54, right: 54, bottom: 54, left: 54 };
@@ -73,6 +78,9 @@ const FIT_DURATION_MS = 500;
 const FOCUS_DURATION_MS = 650;
 /** Keeping up with a dragged radius slider, not travelling to a new place. */
 const RADIUS_TRACK_DURATION_MS = 250;
+
+/** One shared empty object, so "not loaded yet" is a stable dependency. */
+const NO_GEOMETRIES: ConstructionSiteGeometries = {};
 
 const getGeoJSONSource = (map: MapLibreMap, id: string): GeoJSONSource =>
   map.getSource(id) as GeoJSONSource;
@@ -99,11 +107,14 @@ function useLoadedMapEffect(
 }
 
 /** Highlights one construction site, or none when the id is undefined. */
-function setSelectedSiteFilter(map: MapLibreMap, selectedSiteId?: string) {
+function setSelectedConstructionSiteFilter(
+  map: MapLibreMap,
+  selectedConstructionSiteId?: string,
+) {
   map.setFilter(MAP_LAYER_IDS.selected, [
     "==",
     ["get", "id"],
-    selectedSiteId ?? "",
+    selectedConstructionSiteId ?? "",
   ]);
 }
 
@@ -161,42 +172,74 @@ function fitHomeArea(
 
 export function ConstructionSiteMap({
   constructionSites,
-  selectedSiteId,
+  selectedConstructionSiteId,
   currentLocation,
   homeArea,
   fitMode = "sites",
   variant = "primary",
-  onSiteSelect,
-  getSiteDetailsHref,
-  onSiteDetailsRequest,
-  onListViewRequest,
+  onSelectedConstructionSiteIdChange,
+  getConstructionSiteDetailHref,
+  onOpenConstructionSiteDetail,
+  onShowList,
 }: ConstructionSiteMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const isMapReadyRef = useRef(false);
 
+  /**
+   * The detailed lines and areas, fetched the first time a map is mounted.
+   *
+   * They live in their own published file because they are the bulk of the data
+   * and only a map ever reads them. Until they arrive — and if they never do —
+   * every record is still on the map as a point, which is what carries the
+   * clustering, the selection and the fit; the geometry is the detail on top.
+   */
+  const [geometries, setGeometries] =
+    useState<ConstructionSiteGeometries>(NO_GEOMETRIES);
+
+  useEffect(() => {
+    let isMounted = true;
+    void loadConstructionSiteGeometries().then(
+      (loadedGeometries) => {
+        if (isMounted) setGeometries(loadedGeometries);
+      },
+      () => {
+        // Nothing to report: the map is complete without them, and a second
+        // map later in the session is free to try again.
+      },
+    );
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   // Latest props, read by the one-shot init effect and event handlers below,
   // which must not re-run when these change. Adding a value is a one-line edit.
   const latestPropsRef = useRef({
     constructionSites,
-    selectedSiteId,
+    geometries,
+    selectedConstructionSiteId,
     currentLocation,
     homeArea,
     fitMode,
-    onSiteSelect,
+    onSelectedConstructionSiteIdChange,
   });
   latestPropsRef.current = {
     constructionSites,
-    selectedSiteId,
+    geometries,
+    selectedConstructionSiteId,
     currentLocation,
     homeArea,
     fitMode,
-    onSiteSelect,
+    onSelectedConstructionSiteIdChange,
   };
 
   const selectedSite = useMemo(
-    () => constructionSites.find((site) => site.id === selectedSiteId),
-    [constructionSites, selectedSiteId],
+    () =>
+      constructionSites.find(
+        (candidate) => candidate.id === selectedConstructionSiteId,
+      ),
+    [constructionSites, selectedConstructionSiteId],
   );
 
   const getLoadedMap = useCallback(
@@ -229,6 +272,7 @@ export function ConstructionSiteMap({
       const initial = latestPropsRef.current;
       addConstructionSiteMapLayers(map, {
         constructionSites: initial.constructionSites,
+        geometries: initial.geometries,
         currentLocation: initial.currentLocation,
         homeArea: initial.homeArea,
       });
@@ -241,7 +285,7 @@ export function ConstructionSiteMap({
       for (const layer of interactiveGeometryLayers) {
         map.on("click", layer, (event) => {
           const id = event.features?.[0]?.properties?.id as string | undefined;
-          if (id) latestPropsRef.current.onSiteSelect(id);
+          if (id) latestPropsRef.current.onSelectedConstructionSiteIdChange(id);
         });
         map.on("mouseenter", layer, () => {
           map.getCanvas().style.cursor = "pointer";
@@ -254,14 +298,14 @@ export function ConstructionSiteMap({
       isMapReadyRef.current = true;
       const {
         constructionSites,
-        selectedSiteId,
+        selectedConstructionSiteId,
         currentLocation,
         homeArea,
         fitMode,
       } = latestPropsRef.current;
-      setSelectedSiteFilter(map, selectedSiteId);
+      setSelectedConstructionSiteFilter(map, selectedConstructionSiteId);
       const initiallySelected = constructionSites.find(
-        (site) => site.id === selectedSiteId,
+        (site) => site.id === selectedConstructionSiteId,
       );
       if (fitMode === "homeArea" && homeArea) {
         fitHomeArea(map, homeArea, 0);
@@ -290,12 +334,25 @@ export function ConstructionSiteMap({
       getGeoJSONSource(map, MAP_SOURCE_IDS.points).setData(
         createConstructionSitePointFeatureCollection(constructionSites),
       );
-      getGeoJSONSource(map, MAP_SOURCE_IDS.geometries).setData(
-        createConstructionSiteGeometryFeatureCollection(constructionSites),
-      );
       if (fitMode === "sites") fitConstructionSites(map, constructionSites);
     },
     [constructionSites, fitMode],
+  );
+
+  // Its own effect, and deliberately without the fit above: the geometry file
+  // lands some time after the first paint, and re-framing the map at that
+  // moment would move it under a visitor who has already started panning.
+  useLoadedMapEffect(
+    getLoadedMap,
+    (map) => {
+      getGeoJSONSource(map, MAP_SOURCE_IDS.geometries).setData(
+        createConstructionSiteGeometryFeatureCollection(
+          constructionSites,
+          geometries,
+        ),
+      );
+    },
+    [constructionSites, geometries],
   );
 
   useLoadedMapEffect(
@@ -306,11 +363,11 @@ export function ConstructionSiteMap({
       );
       // Zooming to the device location would throw the radius out of the
       // picture, which is the one thing the area map is there to show.
-      if (currentLocation && !selectedSiteId && fitMode === "sites") {
+      if (currentLocation && !selectedConstructionSiteId && fitMode === "sites") {
         focusPoint(map, currentLocation, FOCUS_DURATION_MS);
       }
     },
-    [currentLocation, fitMode, selectedSiteId],
+    [currentLocation, fitMode, selectedConstructionSiteId],
   );
 
   useLoadedMapEffect(
@@ -331,22 +388,24 @@ export function ConstructionSiteMap({
   useLoadedMapEffect(
     getLoadedMap,
     (map) => {
-      setSelectedSiteFilter(map, selectedSiteId);
+      setSelectedConstructionSiteFilter(map, selectedConstructionSiteId);
       if (selectedSite && fitMode === "sites") {
         focusPoint(map, selectedSite.point, FOCUS_DURATION_MS);
       }
     },
-    [fitMode, selectedSite, selectedSiteId],
+    [fitMode, selectedSite, selectedConstructionSiteId],
   );
 
   useEffect(() => {
-    if (!selectedSiteId) return;
+    if (!selectedConstructionSiteId) return;
     const closeSelection = (event: KeyboardEvent) => {
-      if (event.key === "Escape") latestPropsRef.current.onSiteSelect(undefined);
+      if (event.key === "Escape") {
+        latestPropsRef.current.onSelectedConstructionSiteIdChange(undefined);
+      }
     };
     window.addEventListener("keydown", closeSelection);
     return () => window.removeEventListener("keydown", closeSelection);
-  }, [selectedSiteId]);
+  }, [selectedConstructionSiteId]);
 
   const isAreaMap = fitMode === "homeArea";
 
@@ -424,14 +483,14 @@ export function ConstructionSiteMap({
           <button
             type="button"
             className="map-selection__list-button"
-            onClick={onListViewRequest}
+            onClick={onShowList}
           >
             In der Liste ansehen
           </button>
           <ClientNavigationLink
             className="map-selection__details-link"
-            href={getSiteDetailsHref(selectedSite.id)}
-            onNavigate={() => onSiteDetailsRequest(selectedSite.id)}
+            href={getConstructionSiteDetailHref(selectedSite.id)}
+            onNavigate={() => onOpenConstructionSiteDetail(selectedSite.id)}
           >
             Detailansicht
           </ClientNavigationLink>
@@ -439,7 +498,7 @@ export function ConstructionSiteMap({
             type="button"
             className="map-selection__close"
             aria-label="Auswahl schließen"
-            onClick={() => onSiteSelect(undefined)}
+            onClick={() => onSelectedConstructionSiteIdChange(undefined)}
           >
             <span aria-hidden="true">×</span>
           </button>

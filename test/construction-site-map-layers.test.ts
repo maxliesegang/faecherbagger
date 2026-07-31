@@ -19,7 +19,10 @@ describe("addConstructionSiteMapLayers", () => {
       },
     } as unknown as MapLibreMap;
 
-    addConstructionSiteMapLayers(map, { constructionSites: [] });
+    addConstructionSiteMapLayers(map, {
+      constructionSites: [],
+      geometries: {},
+    });
 
     expect(sourceIds).toEqual([
       MAP_SOURCE_IDS.points,

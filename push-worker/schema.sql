@@ -6,6 +6,10 @@ CREATE TABLE IF NOT EXISTS subscriptions (
   notification_longitude REAL,
   notification_latitude REAL,
   notification_radius_m INTEGER,
+  -- How disruptive a construction site has to be before this device hears
+  -- about it. NULL means the subscription never said, and the sender applies
+  -- its default.
+  notification_closure_level TEXT,
   created_at INTEGER NOT NULL,
   updated_at INTEGER NOT NULL,
   CHECK (
@@ -19,6 +23,10 @@ CREATE TABLE IF NOT EXISTS subscriptions (
   CHECK (
     notification_radius_m IS NULL OR
     notification_radius_m BETWEEN 1000 AND 50000
+  ),
+  CHECK (
+    notification_closure_level IS NULL OR
+    notification_closure_level IN ('all', 'obstruction', 'full')
   )
 );
 

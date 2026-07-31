@@ -46,22 +46,22 @@ export function createPushNotificationPayload(
   const today = toBerlinCalendarDate(fetchedAt);
   const ordered = [...constructionSites].sort(
     (left, right) =>
-      compareByShortNoticeUrgency({ site: left }, { site: right }, today) ||
+      compareByShortNoticeUrgency(left, right, today) ||
       left.id.localeCompare(right.id),
   );
-  const [firstSite] = ordered as [ConstructionSite, ...ConstructionSite[]];
-  const shortNoticeCount = ordered.filter((site) =>
-    isShortNoticeConstructionSite(site, today),
+  const [first] = ordered as [ConstructionSite, ...ConstructionSite[]];
+  const shortNoticeCount = ordered.filter((constructionSite) =>
+    isShortNoticeConstructionSite(constructionSite, today),
   ).length;
 
   const isSingle = ordered.length === 1;
   const target = new URL(appURL);
-  if (isSingle) target.searchParams.set("baustelle", firstSite.id);
+  if (isSingle) target.searchParams.set("baustelle", first.id);
 
   if (isSingle) {
     return {
-      title: `Neue Baustelle in ${firstSite.municipality}`,
-      body: `${firstSite.location} · ${describeConstructionTiming(firstSite, today)}`,
+      title: `Neue Baustelle in ${first.municipality}`,
+      body: `${first.location} · ${describeConstructionTiming(first, today)}`,
       url: target.href,
       count: 1,
       fetchedAt,
@@ -72,8 +72,8 @@ export function createPushNotificationPayload(
     title: `${ordered.length} neue Baustellen in Ihrem Umkreis`,
     body:
       shortNoticeCount > 0
-        ? `${shortNoticeCount} davon in den nächsten ${SHORT_NOTICE_LEAD_DAYS} Tagen. Zuerst: ${firstSite.location} · ${describeConstructionTiming(firstSite, today)}`
-        : `Unter anderem: ${firstSite.location}, ${firstSite.municipality}`,
+        ? `${shortNoticeCount} davon in den nächsten ${SHORT_NOTICE_LEAD_DAYS} Tagen. Zuerst: ${first.location} · ${describeConstructionTiming(first, today)}`
+        : `Unter anderem: ${first.location}, ${first.municipality}`,
     url: target.href,
     count: ordered.length,
     fetchedAt,

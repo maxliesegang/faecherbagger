@@ -8,35 +8,56 @@ The name is a pun on Karlsruhe's nickname *Fächerstadt* (fan-shaped city) and
 *Bagger* (excavator). UI language is German; code, comments and commits are
 English.
 
-> **Status:** The app includes the data pipeline, a personal "what is new around
-> me" view with optional Web Push, filterable map and list views, distance
-> sorting, and responsive construction-site details.
+> **Status:** The app includes the data pipeline, a personal "was fängt bei mir
+> demnächst an" view with optional Web Push filtered by radius and closure level,
+> filterable map and list views, distance sorting, and responsive
+> construction-site details.
 
 ## What the app is for
 
-The primary job is one question: **"Gibt es neue Baustellen in meinem
-Umkreis?"** Everything else supports that answer.
+The primary job is **lead time**: something is about to be dug up near the
+visitor, and they hear about it early enough to plan around it. Everything else
+supports that answer.
+
+"Kurzfristig" is the app's central idea and has exactly one definition, in
+[`construction-site-timing.ts`](src/shared/construction-site-timing.ts): a
+construction site starts within `SHORT_NOTICE_LEAD_DAYS` days, or started within
+that many days and is still running. The default list, the ranking and the push
+message all derive from it, so the notification and the screen it opens cannot
+disagree. "Heute" is the dataset's own `fetchedAt` day in the Europe/Berlin
+calendar, never the browser clock.
 
 - **Mein Umkreis** (default screen, [`ConstructionSiteSurroundings.tsx`](src/components/ConstructionSiteSurroundings.tsx)) —
-  the visitor defines a *home area* once (a center from the device location or,
-  as a fallback, from a municipality in the data, plus a radius) and this screen
-  owns it. A compact map right under the heading draws the circle, so "5 km" is
-  a distance you can see rather than a number; dragging the radius slider in the
-  "Umkreis ändern" disclosure previews the new circle on that map before it is
-  saved. Below the map the screen lists the construction sites inside the area
-  that appeared within the visitor's time window, newest and nearest first, and
-  marks the ones that arrived since the last visit. "Neu" means one thing
-  everywhere in the app — the pipeline had not seen this construction site
-  before — so the badge, the list and the push notification always agree; a
-  source edit to a record someone already knows about does not resurface it.
+  the answer, with no setup in front of it. It selects over the visitor's *home
+  area* (a center plus a radius) and shows one list at a time, picked by a single
+  segmented control — "Kurzfristig", "Läuft", "Geplant", "Alle", most urgent
+  first — which also carries the counts. Ranking follows the question each list
+  answers: short notice by urgency then distance, "Läuft" by distance, "Geplant"
+  by start date. Records that arrived since the last visit are marked. With no
+  stored area the screen falls back to Karlsruhe and says so in one quiet line;
+  it is never gated behind configuration. It *states* the radius and links to
+  "Benachrichtigungen" to change it — there is no second, view-only editor here,
+  and no map: a distance-sorted list already answers "was ist bei mir neu?", and
+  the map that used to sit above it pushed the answer off a phone screen.
+  "Neu" means one thing everywhere in the app — the pipeline had not seen this
+  construction site before — so the badge, the list and the push notification
+  always agree; a source edit to a record someone already knows about does not
+  resurface it.
 - **Benachrichtigungen** ([`NotificationSettings.tsx`](src/components/NotificationSettings.tsx)) —
   the first tab, because switching notifications on is the one thing a visitor
   does that keeps working after they close the app. It carries the switch and
   what to do when the browser, the deployment or a denied permission gets in the
-  way. It *states* the radius it would report on and links to "Mein Umkreis" to
-  change it; the controls live in one place only.
+  way, and it owns both halves of what a notification is about: the home area
+  ([`HomeAreaSetup.tsx`](src/components/HomeAreaSetup.tsx), *where* to look — the
+  center comes from the device location or, as a fallback, a municipality in the
+  data, and saving is explicit because it re-syncs the push subscription) and the
+  closure level ([`NotificationClosureLevelSetup.tsx`](src/components/NotificationClosureLevelSetup.tsx),
+  *what* is worth saying — one click, saved on change). The distance is what a
+  notification is about, so the switch and the radius are one decision on one
+  screen; the controls live in one place only.
 - **Alle Baustellen** (secondary screen, [`ConstructionSiteExplorer.tsx`](src/components/ConstructionSiteExplorer.tsx)) —
-  the full region: search, filters, sorting, map and list.
+  the full region: search, filters, sorting, map and list. The power-user
+  surface, one step away.
 
 The active screen is part of the shareable URL state
 (`?bereich=benachrichtigungen|umkreis|alle`, default `umkreis`), so a link opens
@@ -61,7 +82,7 @@ TRK GeoServer WFS ──(GitHub Action, twice daily)──▶ scripts/fetch-cons
                                        fetch + reproject + dedupe + normalize
                                                           │
                                                           ▼
-                     public/data/baustellen.json · meta.json · changes.json
+        public/data/baustellen.json · geometrien.json · meta.json · changes.json
                                                           │
                                           (committed, shipped by Vite)
                                                           ▼
@@ -95,14 +116,19 @@ For each of the two source layers (`baustellen_aktuell` = active,
 5. **Derives the recent window** from each record's `firstSeenAt` to produce
    `changes.json`. This is a window over additions, not a diff of the whole
    dataset and not a window over `stand`: edits stay out of it.
-6. **Generates feeds** from one shared `feed` model in RSS 2.0 and Atom 1.0
+6. **Splits the geometry off** into `geometrien.json`, keyed by record id. It is
+   roughly seven eighths of the bytes and has exactly one reader — the map,
+   which is loaded on demand and absent from the default screen altogether. The
+   list every visitor downloads is ~36 kB gzipped instead of ~232 kB.
+7. **Generates feeds** from one shared `feed` model in RSS 2.0 and Atom 1.0
    formats.
 
 Outputs (committed to the repo, served by Vite from `public/`):
 
 | File | Contents |
 | --- | --- |
-| `public/data/baustellen.json` | Normalized, deduplicated records |
+| `public/data/baustellen.json` | Normalized, deduplicated records, without geometry |
+| `public/data/geometrien.json` | Map geometry of those records, by id; fetched only when a map opens |
 | `public/data/meta.json` | Fetch timestamp, counts, source attribution |
 | `public/data/changes.json` | Records first seen in the last 7 days, newest first, with both timestamps |
 | `public/baustellen.xml` | RSS 2.0 feed of current records, newest revisions first |
@@ -118,14 +144,17 @@ path and a browser bundle can never pull in build-time code:
 
 | Directory | Runs in | Contents |
 | --- | --- | --- |
-| [`src/shared/`](src/shared/) | app, pipeline, worker | Recency, home-area geometry and validation, distance, labels. Depends only on `src/types/`. |
+| [`src/shared/`](src/shared/) | app, pipeline, worker | Recency, timing and the short-notice window, notification relevance, home-area geometry and validation, distance, labels. Depends only on `src/types/`. |
 | [`src/lib/`](src/lib/) | browser | Selection, filtering, sorting, URL state, storage, map layers, data loading. |
 | [`src/pipeline/`](src/pipeline/) | Node, build time | WFS client, normalization, `firstSeenAt`, feeds, the additions artifact. |
 | [`src/context/`](src/context/) | browser | `DatasetProvider`, `PersonalProvider`, `ViewProvider` — the three things a screen reads instead of taking props. |
 
-The single selector [`selectSites`](src/lib/select-sites.ts) turns the dataset
-plus a `SiteScope` into everything a screen renders, annotating each record once
-with distance, recency and unseen. Both screens go through it, so the tab badge,
+The single selector [`selectConstructionSites`](src/lib/select-construction-sites.ts)
+turns the dataset plus a `ConstructionSiteScope`
+([construction-site-scope.ts](src/lib/construction-site-scope.ts)) into
+everything a screen renders, annotating each record once
+with distance, recency, timing, short notice and unseen, and handing back the
+day it measured against. Both screens go through it, so the tab badge,
 the surroundings list and the explorer's counts cannot disagree.
 
 ## Running locally
@@ -149,15 +178,37 @@ committed to the repo, so `dev`/`build` work offline once it exists.
 ## PWA, offline data and notifications
 
 The production build is installable as a PWA. Its service worker precaches the
-application shell and fonts, keeps the three Baustellen JSON files in a
-network-first runtime cache, and refreshes them:
+application shell and fonts, keeps the Baustellen JSON files in a network-first
+runtime cache, and refreshes the record list and its metadata:
 
 - through Periodic Background Sync where the browser permits it;
 - through one-off Background Sync where available;
 - whenever the installed app starts, returns online, or becomes visible.
 
-Notifications are opted into in the "Benachrichtigungen" section, which states
-the home area they apply to and links to "Mein Umkreis" for changing it. Every
+`geometrien.json` is deliberately left out of that background refresh: it is the
+largest file, only a map reads it, and the same network-first route already
+picks it up when one is opened.
+
+### What is worth a notification
+
+A record being new to the pipeline is not on its own a reason to interrupt
+someone. The fan-out sends a construction site only when both hold:
+
+- it is **kurzfristig** — `isShortNoticeConstructionSite`, the same definition
+  the surroundings screen opens on. `firstSeenAt` says when *we* learned about a
+  record, not when the work happens, and the source does backfill records whose
+  work began months ago;
+- its closure reaches the subscription's own **level**
+  ([`notification-relevance.ts`](src/shared/notification-relevance.ts)): `all`,
+  `obstruction` (the default — everything a visitor notices on the way) or
+  `full`. The level is stored per subscription in D1, so a device keeps being
+  filtered the way its owner asked even if the app is never opened again. An
+  unstated `sperrung` is reported at every level except `full`: not knowing is
+  not the same as knowing it is harmless.
+
+Notifications are opted into in the "Benachrichtigungen" section, which also
+owns the home area and the closure level they apply to; both travel to the
+worker as one `NotificationPreferences` object. Every
 surface that mentions notifications renders the single description from
 [`describeNotificationState`](src/lib/notification-state.ts), so a switch is
 never offered where it cannot succeed. A successful opt-in sends a local test
@@ -178,11 +229,13 @@ Three GitHub Actions (`.github/workflows/`):
 - **`deploy.yml`** — builds and deploys to GitHub Pages on pushes to `main`, on
   manual dispatch, and after a successful data update (via `workflow_run`, since
   commits made with `GITHUB_TOKEN` do not trigger `push`). After data-triggered
-  deployments it broadcasts the idempotent Web Push update: only construction
-  sites whose `firstSeenAt` is newer than the last *completed* broadcast, which
-  the push worker reports via `GET /broadcasts/last`. Editing an existing record
-  never notifies anyone, and a fan-out that dies is caught up by the next run
-  rather than skipped.
+  deployments it broadcasts the idempotent Web Push update: of the construction
+  sites whose `firstSeenAt` is newer than the last *completed* broadcast — which
+  the push worker reports via `GET /broadcasts/last` — only the ones that are
+  also kurzfristig, and then per device only those reaching that subscription's
+  closure level. Editing an existing record never notifies anyone, a backfilled
+  record whose work is months old notifies nobody either, and a fan-out that dies
+  is caught up by the next run rather than skipped.
 - **`deploy-push-worker.yml`** — manually deploys the subscription API and
   applies its D1 schema after the one-time Cloudflare setup.
 
@@ -217,7 +270,8 @@ normalizations:
 - `closure` = ordinal severity from `sperrung`
   (`none` < `obstruction` < `one-direction` < `full`, `unknown` for null).
 - `endDate` is nullable (open-ended construction).
-- `point` (representative) and `geometry` (full, for the map) are both kept.
+- `point` (representative) rides on the record; the full geometry is published
+  separately in `geometrien.json` and joined by id when a map needs it.
 
 ## Data source & licensing
 

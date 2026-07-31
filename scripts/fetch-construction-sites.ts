@@ -4,6 +4,7 @@
  *
  * Outputs (in public/data/, so Vite ships them verbatim to the build output):
  *   public/data/baustellen.json – normalized, deduplicated, Karlsruhe-region records
+ *   public/data/geometrien.json – the map geometry of those records, by id
  *   public/data/meta.json       – fetch timestamp, counts, source attribution
  *   public/data/changes.json    – records first seen inside the recent window
  *   public/baustellen.xml       – RSS 2.0 feed of current records and revisions
@@ -21,6 +22,7 @@ import type {
 } from "../src/types/index.ts";
 import { assignFirstSeenAt } from "../src/pipeline/construction-site-first-seen.ts";
 import { buildConstructionSiteAdditions } from "../src/pipeline/construction-site-additions.ts";
+import { splitConstructionSiteGeometries } from "../src/pipeline/construction-site-geometries.ts";
 import { normalizeConstructionSites } from "../src/pipeline/construction-site-normalization.ts";
 import {
   CONSTRUCTION_SITE_FEED_FILENAMES,
@@ -92,12 +94,16 @@ async function main(): Promise<void> {
     (await readJSONIfExists<ConstructionSite[]>(
       join(DATA_DIR, "baustellen.json"),
     )) ?? [];
-  const constructionSites = assignFirstSeenAt(
+  const sitesWithGeometry = assignFirstSeenAt(
     normalizedSites,
     previousSites,
     fetchedAt,
   );
-  constructionSites.sort((left, right) => left.id.localeCompare(right.id));
+  sitesWithGeometry.sort((left, right) => left.id.localeCompare(right.id));
+  // From here on the record and its geometry are two artifacts: only the map
+  // reads the second one, and it is the larger of the two by far.
+  const { constructionSites, geometries } =
+    splitConstructionSiteGeometries(sitesWithGeometry);
 
   const additions = buildConstructionSiteAdditions(constructionSites, fetchedAt);
   const attribution = [
@@ -122,6 +128,7 @@ async function main(): Promise<void> {
   };
 
   await writeJSON(join(DATA_DIR, "baustellen.json"), constructionSites);
+  await writeJSON(join(DATA_DIR, "geometrien.json"), geometries);
   await writeJSON(join(DATA_DIR, "meta.json"), metadata);
   await writeJSON(join(DATA_DIR, "changes.json"), additions);
   const feeds = createConstructionSiteFeeds(

@@ -7,8 +7,8 @@ import {
   KernLink,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import { selectSites } from "./lib/select-sites.ts";
-import { createAreaScope } from "./lib/site-scope.ts";
+import { selectConstructionSites } from "./lib/select-construction-sites.ts";
+import { createHomeAreaScope } from "./lib/construction-site-scope.ts";
 import { AppSectionTabs } from "./components/AppSectionTabs.tsx";
 import { ClientNavigationLink } from "./components/ClientNavigationLink.tsx";
 import { ConstructionSiteDetail } from "./components/ConstructionSiteDetail.tsx";
@@ -37,23 +37,31 @@ const formatDataTimestamp = (timestamp: string): string =>
  * a shared link outlives the record it points at, because the dataset only
  * carries what the source currently publishes.
  */
-function ConstructionSiteDetailScreen({ siteId }: { siteId: string }) {
+function ConstructionSiteDetailScreen({
+  constructionSiteId,
+}: {
+  constructionSiteId: string;
+}) {
   const { constructionSites } = useDataset();
-  const { getDetailHref, closeSiteDetails, showSiteOnMap, recentWindow } =
-    useView();
-  const site = constructionSites.find(
-    (constructionSite) => constructionSite.id === siteId,
+  const {
+    getConstructionSiteDetailHref,
+    closeConstructionSiteDetail,
+    showConstructionSiteOnMap,
+    recentWindow,
+  } = useView();
+  const constructionSite = constructionSites.find(
+    (candidate) => candidate.id === constructionSiteId,
   );
 
-  if (!site) {
+  if (!constructionSite) {
     return (
       <KernAlert variant="warning" title="Baustelle nicht gefunden">
         <KernText>
           Die verlinkte Baustelle ist im aktuellen Datenstand nicht enthalten.
         </KernText>
         <ClientNavigationLink
-          href={getDetailHref(undefined)}
-          onNavigate={closeSiteDetails}
+          href={getConstructionSiteDetailHref(undefined)}
+          onNavigate={closeConstructionSiteDetail}
         >
           Zur Übersicht
         </ClientNavigationLink>
@@ -63,11 +71,13 @@ function ConstructionSiteDetailScreen({ siteId }: { siteId: string }) {
 
   return (
     <ConstructionSiteDetail
-      site={site}
+      constructionSite={constructionSite}
       today={recentWindow.today}
-      overviewHref={getDetailHref(undefined)}
-      onBack={closeSiteDetails}
-      onShowOnMap={() => showSiteOnMap(site.id)}
+      overviewHref={getConstructionSiteDetailHref(undefined)}
+      onBack={closeConstructionSiteDetail}
+      onShowConstructionSiteOnMap={() =>
+        showConstructionSiteOnMap(constructionSite.id)
+      }
     />
   );
 }
@@ -81,7 +91,7 @@ function ConstructionSiteDetailScreen({ siteId }: { siteId: string }) {
  */
 function AppScreens() {
   const { constructionSites, metadata } = useDataset();
-  const { effectiveArea, seenAt, markSitesSeen } = usePersonal();
+  const { effectiveArea, seenAt, markConstructionSitesSeen } = usePersonal();
   const urlState = useView();
   const { recentWindow } = urlState;
 
@@ -91,9 +101,9 @@ function AppScreens() {
   // the guess is labelled on the screen it fills, not hidden.
   const surroundings = useMemo(
     () =>
-      selectSites(
+      selectConstructionSites(
         constructionSites,
-        createAreaScope(effectiveArea, recentWindow),
+        createHomeAreaScope(effectiveArea, recentWindow),
         seenAt,
       ),
     [constructionSites, effectiveArea, recentWindow, seenAt],
@@ -111,14 +121,18 @@ function AppScreens() {
         unseenCount={surroundings.unseenCount}
       />
 
-      {urlState.detailSiteId ? (
-        <ConstructionSiteDetailScreen siteId={urlState.detailSiteId} />
+      {urlState.detailConstructionSiteId ? (
+        <ConstructionSiteDetailScreen
+          constructionSiteId={urlState.detailConstructionSiteId}
+        />
       ) : (
         <>
           {urlState.section === "surroundings" && (
             <ConstructionSiteSurroundings
               surroundings={surroundings}
-              onMarkSitesSeen={() => markSitesSeen(metadata.fetchedAt)}
+              onMarkConstructionSitesSeen={() =>
+                markConstructionSitesSeen(metadata.fetchedAt)
+              }
             />
           )}
           {urlState.section === "explorer" && <ConstructionSiteExplorer />}

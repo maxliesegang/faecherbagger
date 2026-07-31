@@ -33,7 +33,6 @@ function createConstructionSite(id: string, point: [number, number]): Constructi
     cause: null,
     startDate: "2026-08-01",
     endDate: null,
-    geometry: { type: "Point", coordinates: point },
     source: "Test",
     lastModified: "2026-07-24T00:00:00Z",
     firstSeenAt: "2026-07-24T00:00:00Z",

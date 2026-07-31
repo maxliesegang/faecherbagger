@@ -4,6 +4,7 @@ import type {
 } from "maplibre-gl";
 import type {
   ConstructionSite,
+  ConstructionSiteGeometries,
   LngLat,
   HomeArea,
 } from "../types/index.ts";
@@ -33,6 +34,8 @@ export const MAP_LAYER_IDS = {
 
 interface InitialConstructionSiteMapData {
   constructionSites: readonly ConstructionSite[];
+  /** Usually empty on the first paint: geometry arrives in its own file. */
+  geometries: ConstructionSiteGeometries;
   currentLocation?: LngLat;
   homeArea?: HomeArea;
 }
@@ -79,6 +82,7 @@ export function addConstructionSiteMapLayers(
     type: "geojson",
     data: createConstructionSiteGeometryFeatureCollection(
       initialData.constructionSites,
+      initialData.geometries,
     ),
   });
   map.addSource(MAP_SOURCE_IDS.userLocation, {

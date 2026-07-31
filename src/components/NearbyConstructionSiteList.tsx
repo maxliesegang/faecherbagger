@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { ISODate } from "../types/index.ts";
-import type { ScopedSite } from "../lib/select-sites.ts";
+import type { ScopedConstructionSite } from "../lib/select-construction-sites.ts";
 import { formatDistance } from "../shared/distance.ts";
 import { describeConstructionTiming } from "../shared/construction-site-labels.ts";
 import { ClientNavigationLink } from "./ClientNavigationLink.tsx";
@@ -9,15 +9,16 @@ import "./NearbyConstructionSiteList.css";
 
 interface NearbyConstructionSiteListProps {
   /**
-   * Already annotated by `selectSites`: this component renders `recency` and
+   * Already annotated by `selectConstructionSites`: this component renders
+   * `recency` and
    * `isUnseen` rather than working them out again, so it cannot disagree with
    * the counts above it.
    */
-  scopedSites: readonly ScopedSite[];
+  scopedConstructionSites: readonly ScopedConstructionSite[];
   /** The day the selection describes, for the timing sentence on each card. */
   today: ISODate;
-  getSiteDetailsHref: (siteId: string) => string;
-  onShowSiteDetails: (siteId: string) => void;
+  getConstructionSiteDetailHref: (constructionSiteId: string) => string;
+  onOpenConstructionSiteDetail: (constructionSiteId: string) => void;
   /** Accessible name of the list. */
   label: string;
 }
@@ -42,32 +43,33 @@ const INITIAL_CARD_LIMIT = 25;
  * it now sits with the other metadata.
  */
 export function NearbyConstructionSiteList({
-  scopedSites,
+  scopedConstructionSites,
   today,
-  getSiteDetailsHref,
-  onShowSiteDetails,
+  getConstructionSiteDetailHref,
+  onOpenConstructionSiteDetail,
   label,
 }: NearbyConstructionSiteListProps) {
   const [limit, setLimit] = useState(INITIAL_CARD_LIMIT);
   // Switching the view has to start the list over; comparing during render
   // avoids first painting the previous view's expansion.
-  const [lastSites, setLastSites] = useState(scopedSites);
-  if (lastSites !== scopedSites) {
-    setLastSites(scopedSites);
+  const [lastSites, setLastSites] = useState(scopedConstructionSites);
+  if (lastSites !== scopedConstructionSites) {
+    setLastSites(scopedConstructionSites);
     setLimit(INITIAL_CARD_LIMIT);
   }
 
-  const visibleSites = scopedSites.slice(0, limit);
-  const hiddenCount = scopedSites.length - visibleSites.length;
+  const visibleSites = scopedConstructionSites.slice(0, limit);
+  const hiddenCount = scopedConstructionSites.length - visibleSites.length;
 
   return (
     <>
       <ul className="nearby-list" aria-label={label}>
-        {visibleSites.map(({ site, distanceMeters, recency, isUnseen }) => {
+        {visibleSites.map((scoped) => {
+          const { constructionSite, distanceMeters, recency, isUnseen } = scoped;
           const isUnseenAndNew = recency !== null && isUnseen;
 
           return (
-            <li key={site.id}>
+            <li key={constructionSite.id}>
               <article
                 className={`nearby-card${isUnseenAndNew ? " nearby-card--unseen" : ""}`}
               >
@@ -76,23 +78,25 @@ export function NearbyConstructionSiteList({
                     timing line below says when far more precisely. */}
                 <ConstructionSiteBadges
                   className="nearby-card__badges"
-                  phase={site.phase}
+                  phase={constructionSite.phase}
                   showPhase={false}
-                  closure={site.closure}
+                  closure={constructionSite.closure}
                   recency={recency}
                 />
 
                 <h3 className="nearby-card__title">
                   <ClientNavigationLink
-                    href={getSiteDetailsHref(site.id)}
-                    onNavigate={() => onShowSiteDetails(site.id)}
+                    href={getConstructionSiteDetailHref(constructionSite.id)}
+                    onNavigate={() =>
+                      onOpenConstructionSiteDetail(constructionSite.id)
+                    }
                   >
-                    {site.location}
+                    {constructionSite.location}
                   </ClientNavigationLink>
                 </h3>
 
                 <p className="nearby-card__timing">
-                  {describeConstructionTiming(site, today)}
+                  {describeConstructionTiming(constructionSite, today)}
                 </p>
 
                 {/*
@@ -102,12 +106,12 @@ export function NearbyConstructionSiteList({
                  * while the card spent its last line on the construction
                  * category, which changes nobody's route.
                  */}
-                {site.notes && (
-                  <p className="nearby-card__notes">{site.notes}</p>
+                {constructionSite.notes && (
+                  <p className="nearby-card__notes">{constructionSite.notes}</p>
                 )}
 
                 <p className="nearby-card__meta">
-                  {site.municipality}
+                  {constructionSite.municipality}
                   {/* Only area-scoped selections carry a distance; `?? 0` here
                       would render a confident "0 m" for a missing one. */}
                   {distanceMeters !== null && (
@@ -127,7 +131,7 @@ export function NearbyConstructionSiteList({
         <button
           type="button"
           className="nearby-list__more"
-          onClick={() => setLimit(scopedSites.length)}
+          onClick={() => setLimit(scopedConstructionSites.length)}
         >
           Weitere {hiddenCount} anzeigen
         </button>

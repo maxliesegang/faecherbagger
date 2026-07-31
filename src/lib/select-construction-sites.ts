@@ -16,7 +16,10 @@ import {
   isShortNoticeConstructionSite,
   type ConstructionSiteTiming,
 } from "../shared/construction-site-timing.ts";
-import { MATCHES_NO_DAY, type SiteScope } from "./site-scope.ts";
+import {
+  MATCHES_NO_DAY,
+  type ConstructionSiteScope,
+} from "./construction-site-scope.ts";
 
 /**
  * A construction site with the three facts a screen needs but the record does
@@ -26,8 +29,8 @@ import { MATCHES_NO_DAY, type SiteScope } from "./site-scope.ts";
  * downstream reads these fields, so none of them can disagree about whether a
  * site is new or how far away it is.
  */
-export interface ScopedSite {
-  site: ConstructionSite;
+export interface ScopedConstructionSite {
+  constructionSite: ConstructionSite;
   /** Distance from the scope's area center; `null` when the scope has no area. */
   distanceMeters: number | null;
   /** Whether the site is new within `scope.window.since`. */
@@ -45,23 +48,26 @@ export interface ScopedSite {
   isUnseen: boolean;
 }
 
-/** Everything the two screens derive from a dataset and a {@link SiteScope}. */
-export interface SiteSelection {
+/**
+ * Everything the two screens derive from a dataset and a
+ * {@link ConstructionSiteScope}.
+ */
+export interface ConstructionSiteSelection {
   /** Sites in the scope's area matching its filters. */
-  all: readonly ScopedSite[];
+  all: readonly ScopedConstructionSite[];
   /** The subset new within `window.since`, in the same order. */
-  recent: readonly ScopedSite[];
+  recent: readonly ScopedConstructionSite[];
   /**
    * What is happening in the next few days: the short-notice subset, soonest
    * start first. The app's primary answer, and the same set the push
    * notification is composed from.
    */
-  shortNotice: readonly ScopedSite[];
+  shortNotice: readonly ScopedConstructionSite[];
   /** Sites under way on `window.today`, and sites still to start. */
-  running: readonly ScopedSite[];
-  planned: readonly ScopedSite[];
+  running: readonly ScopedConstructionSite[];
+  planned: readonly ScopedConstructionSite[];
   /** What the scope asks to show: `recent` when `onlyRecent`, otherwise `all`. */
-  visible: readonly ScopedSite[];
+  visible: readonly ScopedConstructionSite[];
   /**
    * How many sites are new in the window before the scope's filters apply —
    * what the "Nur neue Baustellen" toggle counts, so the number does not move
@@ -88,7 +94,7 @@ export interface SiteSelection {
  * over: the data has not loaded, or the visitor has not defined an area yet.
  * A shared constant so those renders do not change identity every time.
  */
-export const EMPTY_SITE_SELECTION: SiteSelection = {
+export const EMPTY_CONSTRUCTION_SITE_SELECTION: ConstructionSiteSelection = {
   all: [],
   recent: [],
   shortNotice: [],
@@ -107,83 +113,104 @@ export const EMPTY_SITE_SELECTION: SiteSelection = {
  * Everything introduced by one pipeline run shares a `firstSeenAt`, so the
  * tiebreak below is the common case, not the exception.
  */
-const compareByFirstSeen = (left: ScopedSite, right: ScopedSite): number =>
-  right.site.firstSeenAt.localeCompare(left.site.firstSeenAt);
+const compareByFirstSeen = (
+  left: ScopedConstructionSite,
+  right: ScopedConstructionSite,
+): number =>
+  right.constructionSite.firstSeenAt.localeCompare(
+    left.constructionSite.firstSeenAt,
+  );
 
 /** …then nearest, which is the leading fact on a surroundings card. */
 const compareByFirstSeenThenDistance = (
-  left: ScopedSite,
-  right: ScopedSite,
+  left: ScopedConstructionSite,
+  right: ScopedConstructionSite,
 ): number =>
   compareByFirstSeen(left, right) ||
   left.distanceMeters! - right.distanceMeters! ||
-  left.site.id.localeCompare(right.site.id);
+  left.constructionSite.id.localeCompare(right.constructionSite.id);
 
 /** …then by `stand`, which at least orders within a single run. */
 const compareByFirstSeenThenModified = (
-  left: ScopedSite,
-  right: ScopedSite,
+  left: ScopedConstructionSite,
+  right: ScopedConstructionSite,
 ): number =>
   compareByFirstSeen(left, right) ||
-  right.site.lastModified.localeCompare(left.site.lastModified) ||
-  left.site.id.localeCompare(right.site.id);
+  right.constructionSite.lastModified.localeCompare(
+    left.constructionSite.lastModified,
+  ) ||
+  left.constructionSite.id.localeCompare(right.constructionSite.id);
 
 /**
- * The single place that turns a dataset and a {@link SiteScope} into everything
- * a screen renders. Pure: neither the input array nor its records are modified.
+ * The single place that turns a dataset and a {@link ConstructionSiteScope}
+ * into everything a screen renders. Pure: neither the input array nor its
+ * records are modified.
  *
  * Both screens go through here, so the surroundings tab badge, the surroundings
  * list, the explorer's "Nur neue" count and the explorer's results are by
  * construction answering the same question about the same records.
  */
-export function selectSites(
+export function selectConstructionSites(
   constructionSites: readonly ConstructionSite[],
-  scope: SiteScope,
+  scope: ConstructionSiteScope,
   seenAt: ISOTimestamp | null,
-): SiteSelection {
+): ConstructionSiteSelection {
   const { area, window, filters, onlyRecent } = scope;
 
-  const candidates: ScopedSite[] = [];
-  for (const site of constructionSites) {
-    if (area && !isPointInHomeArea(area, site.point)) continue;
+  const candidates: ScopedConstructionSite[] = [];
+  for (const constructionSite of constructionSites) {
+    if (area && !isPointInHomeArea(area, constructionSite.point)) continue;
     candidates.push({
-      site,
-      distanceMeters: area ? distanceInMeters(area.center, site.point) : null,
-      recency: getConstructionSiteRecency(site, window.since),
-      timing: getConstructionSiteTiming(site, window.today),
-      isShortNotice: isShortNoticeConstructionSite(site, window.today),
-      isUnseen: isUnseenConstructionSite(site.firstSeenAt, seenAt),
+      constructionSite,
+      distanceMeters: area
+        ? distanceInMeters(area.center, constructionSite.point)
+        : null,
+      recency: getConstructionSiteRecency(constructionSite, window.since),
+      timing: getConstructionSiteTiming(constructionSite, window.today),
+      isShortNotice: isShortNoticeConstructionSite(
+        constructionSite,
+        window.today,
+      ),
+      isUnseen: isUnseenConstructionSite(constructionSite.firstSeenAt, seenAt),
     });
   }
   candidates.sort(
     area ? compareByFirstSeenThenDistance : compareByFirstSeenThenModified,
   );
 
-  const recentCandidates = candidates.filter((entry) => entry.recency !== null);
+  const recentCandidates = candidates.filter(
+    (scoped) => scoped.recency !== null,
+  );
 
   const matches = createConstructionSiteFilterPredicate(filters);
-  const all = candidates.filter((entry) => matches(entry.site));
-  const recent = recentCandidates.filter((entry) => matches(entry.site));
+  const all = candidates.filter((scoped) => matches(scoped.constructionSite));
+  const recent = recentCandidates.filter((scoped) =>
+    matches(scoped.constructionSite),
+  );
 
   // Urgency first, then distance: within a radius the difference between 1,8 km
   // and 3,0 km changes nothing about a visitor's plans, while the difference
   // between "beginnt morgen" and "beginnt in sieben Tagen" changes everything.
   const shortNotice = all
-    .filter((entry) => entry.isShortNotice)
+    .filter((scoped) => scoped.isShortNotice)
     .sort(
       (left, right) =>
-        compareByShortNoticeUrgency(left, right, window.today) ||
+        compareByShortNoticeUrgency(
+          left.constructionSite,
+          right.constructionSite,
+          window.today,
+        ) ||
         (left.distanceMeters ?? 0) - (right.distanceMeters ?? 0) ||
-        left.site.id.localeCompare(right.site.id),
+        left.constructionSite.id.localeCompare(right.constructionSite.id),
     );
   // Nearest first: everything here is already under way, so the only open
   // question is which of it the visitor will actually run into.
   const running = all
-    .filter((entry) => entry.timing === "running")
+    .filter((scoped) => scoped.timing === "running")
     .sort(
       (left, right) =>
         (left.distanceMeters ?? 0) - (right.distanceMeters ?? 0) ||
-        left.site.id.localeCompare(right.site.id),
+        left.constructionSite.id.localeCompare(right.constructionSite.id),
     );
 
   // Soonest first: a list of announcements is read forwards in time, and
@@ -191,13 +218,16 @@ export function selectSites(
   // morgen".
   const planned = all
     .filter(
-      (entry) => entry.timing === "starting-soon" || entry.timing === "later",
+      (scoped) =>
+        scoped.timing === "starting-soon" || scoped.timing === "later",
     )
     .sort(
       (left, right) =>
-        left.site.startDate.localeCompare(right.site.startDate) ||
+        left.constructionSite.startDate.localeCompare(
+          right.constructionSite.startDate,
+        ) ||
         (left.distanceMeters ?? 0) - (right.distanceMeters ?? 0) ||
-        left.site.id.localeCompare(right.site.id),
+        left.constructionSite.id.localeCompare(right.constructionSite.id),
     );
 
   // The phase switch has to advertise what the result list can actually show,
@@ -208,15 +238,18 @@ export function selectSites(
   });
   let active = 0;
   let upcoming = 0;
-  for (const entry of onlyRecent ? recentCandidates : candidates) {
-    if (!matchesWithoutPhase(entry.site)) continue;
-    if (entry.site.phase === "active") active += 1;
+  for (const scoped of onlyRecent ? recentCandidates : candidates) {
+    if (!matchesWithoutPhase(scoped.constructionSite)) continue;
+    if (scoped.constructionSite.phase === "active") active += 1;
     else upcoming += 1;
   }
 
   let unseenCount = 0;
-  for (const entry of candidates) {
-    if (entry.isUnseen && entry.site.firstSeenAt >= window.badgeSince) {
+  for (const scoped of candidates) {
+    if (
+      scoped.isUnseen &&
+      scoped.constructionSite.firstSeenAt >= window.badgeSince
+    ) {
       unseenCount += 1;
     }
   }

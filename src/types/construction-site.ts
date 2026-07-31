@@ -20,6 +20,27 @@ export interface HomeArea {
 }
 
 /**
+ * How much traffic disruption a subscription is willing to be interrupted for.
+ * The vocabulary lives here with the rest of the domain; which closures each
+ * level covers, and the default, are policy and live in
+ * `src/shared/notification-relevance.ts`.
+ */
+export type NotificationClosureLevel = "all" | "obstruction" | "full";
+
+/**
+ * What a device asks the notification service to report: where to look, how far
+ * around it, and how disruptive a construction site has to be.
+ *
+ * One object because it is one request, and it is sent as a whole whenever any
+ * part of it changes. It extends {@link HomeArea} rather than nesting it: that
+ * is the wire format the deployed service already stores, and the level is
+ * additive to it — a client that sends no level keeps the stored one.
+ */
+export interface NotificationPreferences extends HomeArea {
+  closureLevel: NotificationClosureLevel;
+}
+
+/**
  * Lifecycle phase of a construction site.
  *
  * Derived from the source WFS layer (`baustellen_aktuell` -> `"active"`,
@@ -110,8 +131,6 @@ export interface ConstructionSite {
 
   /** Representative point for lists and distance (mean of member points). */
   point: LngLat;
-  /** Full geometry for the map: all non-point parts (GeometryCollection if many). */
-  geometry: Geometry;
 
   /** Attribution: the source authority (`datenquelle`, e.g. `"Stadt Karlsruhe"`). */
   source: string;
@@ -133,12 +152,42 @@ export interface ConstructionSite {
 }
 
 /**
+ * A record with its map geometry still attached — the shape the pipeline works
+ * with internally, and the only place the two ever travel together.
+ *
+ * {@link ConstructionSite} deliberately has no geometry. The full geometry is
+ * roughly seven eighths of the published bytes and is read by exactly one
+ * surface, the map, which is loaded on demand and is absent from the default
+ * screen entirely. Keeping it out of the record is what lets the app fetch the
+ * list without it; the pipeline splits the two apart in one place
+ * (`splitConstructionSiteGeometries`) so nothing can leak it back into the list
+ * file by accident.
+ */
+export interface ConstructionSiteWithGeometry extends ConstructionSite {
+  /** Full geometry for the map: all non-point parts (GeometryCollection if many). */
+  geometry: Geometry;
+}
+
+/**
+ * Contents of `data/geometrien.json`: the map geometry of every published
+ * record, keyed by {@link ConstructionSite.id}.
+ *
+ * Its own file because its only consumer is the map. A visitor who never opens
+ * one never pays for it, and the service worker picks it up through the same
+ * network-first data route when they do.
+ */
+export type ConstructionSiteGeometries = Record<string, Geometry>;
+
+/**
  * A record as it comes out of normalization, before the pipeline stamps
  * {@link ConstructionSite.firstSeenAt} onto it. Normalization sees one WFS
  * response and cannot know whether a record is new, so the type makes that
  * missing step explicit instead of leaving a placeholder value behind.
  */
-export type NormalizedConstructionSite = Omit<ConstructionSite, "firstSeenAt">;
+export type NormalizedConstructionSite = Omit<
+  ConstructionSiteWithGeometry,
+  "firstSeenAt"
+>;
 
 /** Contents of `data/meta.json`. */
 export interface ConstructionSiteMetadata {

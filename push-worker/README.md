@@ -1,7 +1,8 @@
 # Fächerbagger Web Push Worker
 
 This Cloudflare Worker stores standards-based Web Push subscriptions and their
-anonymous radius preferences in D1.
+anonymous notification preferences — a radius around a center, and the closure
+level a device wants to be interrupted for — in D1.
 It deliberately does not fan out pushes itself: after a successful Pages
 deployment, the existing GitHub Actions runner reads subscriptions in paginated
 batches and sends the encrypted notifications. This avoids Worker subrequest
@@ -43,7 +44,17 @@ npx wrangler d1 execute faecherbagger-push --remote \
 npx wrangler d1 execute faecherbagger-push --remote \
   --file=push-worker/migrations/0002_broadcast_completion.sql \
   --config=push-worker/wrangler.jsonc
+
+# Required for the per-subscription closure level:
+npx wrangler d1 execute faecherbagger-push --remote \
+  --file=push-worker/migrations/0003_notification_closure_level.sql \
+  --config=push-worker/wrangler.jsonc
 ```
+
+`notification_closure_level` is nullable and deliberately not backfilled: a row
+that predates the column never expressed a preference, and the sender reads
+`NULL` as its default (`obstruction`) rather than as a choice. Devices write
+their own value the next time they re-send their subscription.
 
 `push:secrets:setup` refuses to overwrite an existing local secret set because
 rotating VAPID keys invalidates every current browser subscription. The ignored
@@ -79,8 +90,11 @@ allows the Vite origin.
 - `GET /health` — unauthenticated health check.
 - `GET /config` — returns the public VAPID key.
 - `POST /subscriptions` — creates or refreshes a browser subscription and
-  optionally stores `{ preferences: { center: [longitude, latitude],
-  radiusKm } }`.
+  optionally stores `{ preferences: { center: [longitude, latitude], radiusKm,
+  closureLevel } }`, where `closureLevel` is `all`, `obstruction` or `full`. The
+  center is rounded server-side too, so the service never holds a more precise
+  location than it needs. A re-subscription that sends no `preferences` keeps the
+  stored ones.
 - `DELETE /subscriptions` — removes a browser subscription. A browser must
   prove possession by sending the subscription's `auth` key alongside the
   endpoint, so knowing an endpoint URL alone cannot unsubscribe someone else's

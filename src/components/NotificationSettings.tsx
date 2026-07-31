@@ -1,7 +1,9 @@
 import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
 import { usePersonal } from "../context/PersonalContext.tsx";
+import { SHORT_NOTICE_LEAD_DAYS } from "../shared/construction-site-timing.ts";
 import { FeedLinks } from "./FeedLinks.tsx";
 import { HomeAreaSetup } from "./HomeAreaSetup.tsx";
+import { NotificationClosureLevelSetup } from "./NotificationClosureLevelSetup.tsx";
 import { NotificationStatusCard } from "./NotificationStatusCard.tsx";
 import "./NotificationSettings.css";
 
@@ -45,6 +47,18 @@ export function NotificationSettings() {
             : "Ohne Mittelpunkt und Entfernung gibt es nichts zu melden. Beides legen Sie hier fest — es füllt auch den Bereich „Mein Umkreis“."}
         </KernText>
         <HomeAreaSetup />
+      </div>
+
+      <div className="notifications__panel">
+        <KernHeading level={3} className="notifications__panel-heading">
+          Was ist Ihnen eine Meldung wert?
+        </KernHeading>
+        <KernText muted className="notifications__panel-intro">
+          Gemeldet wird, was in den nächsten {SHORT_NOTICE_LEAD_DAYS} Tagen
+          beginnt oder gerade erst begonnen hat — früh genug, um die Strecke
+          noch zu ändern. Wie viel davon Sie hören, entscheiden Sie hier.
+        </KernText>
+        <NotificationClosureLevelSetup />
       </div>
 
       <div className="notifications__panel notifications__panel--quiet">

@@ -7,6 +7,11 @@ import type {
   HomeArea,
 } from "../src/types/index.ts";
 import { selectConstructionSitesInArea } from "../src/shared/home-area.ts";
+import { toBerlinCalendarDate } from "../src/shared/construction-site-timing.ts";
+import {
+  selectNotifiableConstructionSites,
+  toNotificationClosureLevel,
+} from "../src/shared/notification-relevance.ts";
 import { selectConstructionSitesToNotify } from "../src/pipeline/construction-site-additions.ts";
 import { createPushNotificationPayload } from "../src/pipeline/push-notification.ts";
 
@@ -18,6 +23,8 @@ interface StoredSubscription {
   notificationLongitude: number | null;
   notificationLatitude: number | null;
   notificationRadiusMeters: number | null;
+  /** `null` for a subscription stored before the setting existed. */
+  notificationClosureLevel: string | null;
 }
 
 interface SubscriptionPage {
@@ -58,8 +65,28 @@ const notifiableIds = new Set(
     (entry) => entry.id,
   ),
 );
-const notifiableSites = constructionSites.filter((site) =>
+const addedSites = constructionSites.filter((site) =>
   notifiableIds.has(site.id),
+);
+
+/**
+ * The day the dataset describes, which is what "kurzfristig" is measured
+ * against here exactly as it is on the screen the notification opens.
+ */
+const today = toBerlinCalendarDate(metadata.fetchedAt);
+
+/**
+ * Candidates before the per-subscription closure level is applied.
+ *
+ * Being new to the pipeline is not on its own a reason to interrupt anyone:
+ * `firstSeenAt` is when we learned about a record, and the source backfills
+ * records whose work started months ago. Only the week around today survives —
+ * the rest is history, and the app's own lists are where history belongs.
+ */
+const notifiableSites = selectNotifiableConstructionSites(
+  addedSites,
+  today,
+  "all",
 );
 
 // Claimed even when there is nothing to send: completing an empty run is what
@@ -86,7 +113,8 @@ if (notifiableSites.length === 0) {
   console.log(
     broadcastCutoff === null
       ? `No delivery history yet; recorded ${metadata.fetchedAt} as the baseline.`
-      : `No new construction sites since ${broadcastCutoff}; nothing to broadcast.`,
+      : `Nothing worth broadcasting since ${broadcastCutoff}: ${addedSites.length} ` +
+          "new records, none of them within the short-notice window.",
   );
   process.exit(0);
 }
@@ -99,7 +127,7 @@ webpush.setVapidDetails(
 
 let cursor: string | null = "";
 let sent = 0;
-let outsideArea = 0;
+let withoutMatches = 0;
 let removed = 0;
 let failed = 0;
 
@@ -111,12 +139,18 @@ while (cursor !== null) {
   await mapWithConcurrency(page.subscriptions, 20, async (subscription) => {
     const area = subscriptionArea(subscription);
     if (!area) {
-      outsideArea += 1;
+      withoutMatches += 1;
       return;
     }
-    const matchingSites = selectConstructionSitesInArea(notifiableSites, area);
+    // Area first, then the device's own threshold: the geometric test is the
+    // cheaper of the two and usually the one that empties the list.
+    const matchingSites = selectNotifiableConstructionSites(
+      selectConstructionSitesInArea(notifiableSites, area),
+      today,
+      toNotificationClosureLevel(subscription.notificationClosureLevel),
+    );
     if (matchingSites.length === 0) {
-      outsideArea += 1;
+      withoutMatches += 1;
       return;
     }
     const payload = JSON.stringify(
@@ -162,8 +196,9 @@ while (cursor !== null) {
 await completeBroadcast(metadata.fetchedAt);
 
 console.log(
-  `Push broadcast complete: ${notifiableSites.length} new construction sites, ` +
-    `${sent} sent, ${outsideArea} without an area or matches, ` +
+  `Push broadcast complete: ${addedSites.length} new construction sites, ` +
+    `${notifiableSites.length} of them short notice, ${sent} sent, ` +
+    `${withoutMatches} without an area or matches, ` +
     `${removed} expired removed, ${failed} failed.`,
 );
 if (failed > 0 && sent === 0) process.exitCode = 1;

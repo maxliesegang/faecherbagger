@@ -14,19 +14,23 @@ export function useSeenConstructionSites() {
     loadSeenConstructionSitesAt,
   );
 
-  const markSitesSeen = useCallback((acknowledgedAt: ISOTimestamp) => {
-    saveSeenConstructionSitesAt(acknowledgedAt);
-    setSeenAt(acknowledgedAt);
-    // A push sets an app badge with the number of new sites. Acknowledging them
-    // in the app has to clear it too, not only opening the notification itself.
-    if ("clearAppBadge" in navigator) {
-      void navigator.clearAppBadge().catch(() => undefined);
-    }
-  }, []);
+  const markConstructionSitesSeen = useCallback(
+    (acknowledgedAt: ISOTimestamp) => {
+      saveSeenConstructionSitesAt(acknowledgedAt);
+      setSeenAt(acknowledgedAt);
+      // A push sets an app badge with the number of new sites. Acknowledging
+      // them in the app has to clear it too, not only opening the notification
+      // itself.
+      if ("clearAppBadge" in navigator) {
+        void navigator.clearAppBadge().catch(() => undefined);
+      }
+    },
+    [],
+  );
 
   return useMemo(
-    () => ({ seenAt, markSitesSeen }),
-    [markSitesSeen, seenAt],
+    () => ({ seenAt, markConstructionSitesSeen }),
+    [markConstructionSitesSeen, seenAt],
   );
 }
 

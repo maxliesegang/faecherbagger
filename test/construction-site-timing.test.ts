@@ -99,8 +99,8 @@ describe("isShortNoticeConstructionSite", () => {
 
 describe("compareByShortNoticeUrgency", () => {
   it("puts what can still be planned around ahead of what has begun", () => {
-    const startsTomorrow = { site: on("2026-07-30") };
-    const startedYesterday = { site: on("2026-07-28", "2026-09-01") };
+    const startsTomorrow = on("2026-07-30");
+    const startedYesterday = on("2026-07-28", "2026-09-01");
     expect(
       compareByShortNoticeUrgency(startsTomorrow, startedYesterday, TODAY),
     ).toBeLessThan(0);
@@ -109,8 +109,8 @@ describe("compareByShortNoticeUrgency", () => {
   it("orders upcoming starts by how soon they are", () => {
     expect(
       compareByShortNoticeUrgency(
-        { site: on("2026-07-31") },
-        { site: on("2026-08-03") },
+        on("2026-07-31"),
+        on("2026-08-03"),
         TODAY,
       ),
     ).toBeLessThan(0);

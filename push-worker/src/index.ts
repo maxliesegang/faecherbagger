@@ -2,6 +2,7 @@ import {
   isHomeArea,
   roundHomeAreaCenter,
 } from "../../src/shared/home-area-validation.ts";
+import { isNotificationClosureLevel } from "../../src/shared/notification-relevance.ts";
 
 interface PushSubscriptionRequest {
   endpoint?: string;
@@ -13,6 +14,8 @@ interface PushSubscriptionRequest {
   preferences?: {
     center?: unknown;
     radiusKm?: unknown;
+    /** Optional: a client from before this setting existed sends none. */
+    closureLevel?: unknown;
   };
 }
 
@@ -132,16 +135,22 @@ function isValidPushSubscription(value: PushSubscriptionRequest) {
 /**
  * The center is rounded again here, not only in the app: the service must never
  * store a more precise position than it needs, whatever a client sends.
+ *
+ * An absent or unrecognised `closureLevel` becomes `null` rather than the
+ * default: the upsert keeps whatever is stored for a null, so a client that
+ * predates the setting cannot silently reset a choice the visitor made.
  */
 function parseNotificationPreferences(
   preferences: PushSubscriptionRequest["preferences"],
 ) {
   if (!isHomeArea(preferences)) return null;
   const [longitude, latitude] = roundHomeAreaCenter(preferences.center);
+  const closureLevel = (preferences as { closureLevel?: unknown }).closureLevel;
   return {
     longitude,
     latitude,
     radiusMeters: Math.round(preferences.radiusKm * 1_000),
+    closureLevel: isNotificationClosureLevel(closureLevel) ? closureLevel : null,
   };
 }
 
@@ -191,8 +200,9 @@ async function upsertSubscription(request: Request, { env, origin }: RequestCont
   await env.DB.prepare(
     `INSERT INTO subscriptions
       (endpoint, p256dh, auth, expiration_time, notification_longitude,
-       notification_latitude, notification_radius_m, created_at, updated_at)
-     VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, unixepoch(), unixepoch())
+       notification_latitude, notification_radius_m,
+       notification_closure_level, created_at, updated_at)
+     VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, unixepoch(), unixepoch())
      ON CONFLICT(endpoint) DO UPDATE SET
       p256dh = excluded.p256dh,
       auth = excluded.auth,
@@ -209,6 +219,10 @@ async function upsertSubscription(request: Request, { env, origin }: RequestCont
         excluded.notification_radius_m,
         subscriptions.notification_radius_m
       ),
+      notification_closure_level = COALESCE(
+        excluded.notification_closure_level,
+        subscriptions.notification_closure_level
+      ),
       updated_at = unixepoch()`,
   )
     .bind(
@@ -219,6 +233,7 @@ async function upsertSubscription(request: Request, { env, origin }: RequestCont
       preferences?.longitude ?? null,
       preferences?.latitude ?? null,
       preferences?.radiusMeters ?? null,
+      preferences?.closureLevel ?? null,
     )
     .run();
   return createJSONResponse({ ok: true }, 201, createCorsHeaders(origin));
@@ -283,7 +298,8 @@ async function listSubscriptions(request: Request, { env }: RequestContext) {
     `SELECT endpoint, p256dh, auth, expiration_time AS expirationTime,
         notification_longitude AS notificationLongitude,
         notification_latitude AS notificationLatitude,
-        notification_radius_m AS notificationRadiusMeters
+        notification_radius_m AS notificationRadiusMeters,
+        notification_closure_level AS notificationClosureLevel
      FROM subscriptions
      WHERE endpoint > ?2
      ORDER BY endpoint

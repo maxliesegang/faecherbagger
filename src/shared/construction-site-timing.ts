@@ -74,10 +74,10 @@ export function differenceInCalendarDays(from: ISODate, to: ISODate): number {
  * confident "beginnt heute".
  */
 export function getStartLeadDays(
-  site: ConstructionSite,
+  constructionSite: ConstructionSite,
   today: ISODate,
 ): number {
-  return differenceInCalendarDays(today, site.startDate);
+  return differenceInCalendarDays(today, constructionSite.startDate);
 }
 
 /**
@@ -90,11 +90,13 @@ export function getStartLeadDays(
  * something to plan around is worse than omitting them.
  */
 export function getConstructionSiteTiming(
-  site: ConstructionSite,
+  constructionSite: ConstructionSite,
   today: ISODate,
 ): ConstructionSiteTiming {
-  if (site.endDate !== null && site.endDate < today) return "ended";
-  const leadDays = getStartLeadDays(site, today);
+  if (constructionSite.endDate !== null && constructionSite.endDate < today) {
+    return "ended";
+  }
+  const leadDays = getStartLeadDays(constructionSite, today);
   if (Number.isNaN(leadDays)) return "running";
   if (leadDays <= 0) return "running";
   return leadDays <= SHORT_NOTICE_LEAD_DAYS ? "starting-soon" : "later";
@@ -110,12 +112,12 @@ export function getConstructionSiteTiming(
  * in place since spring — what they need is the week around today.
  */
 export function isShortNoticeConstructionSite(
-  site: ConstructionSite,
+  constructionSite: ConstructionSite,
   today: ISODate,
 ): boolean {
-  const timing = getConstructionSiteTiming(site, today);
+  const timing = getConstructionSiteTiming(constructionSite, today);
   if (timing === "ended" || timing === "later") return false;
-  const leadDays = getStartLeadDays(site, today);
+  const leadDays = getStartLeadDays(constructionSite, today);
   if (Number.isNaN(leadDays)) return false;
   return Math.abs(leadDays) <= SHORT_NOTICE_LEAD_DAYS;
 }
@@ -127,15 +129,15 @@ export function isShortNoticeConstructionSite(
  * already driven into.
  */
 export function compareByShortNoticeUrgency(
-  left: { site: ConstructionSite },
-  right: { site: ConstructionSite },
+  left: ConstructionSite,
+  right: ConstructionSite,
   today: ISODate,
 ): number {
-  const rank = (site: ConstructionSite): number => {
-    const leadDays = getStartLeadDays(site, today);
+  const rank = (constructionSite: ConstructionSite): number => {
+    const leadDays = getStartLeadDays(constructionSite, today);
     if (Number.isNaN(leadDays)) return Number.MAX_SAFE_INTEGER;
     // Upcoming starts (0…7) sort ahead of starts already past (-1…-7).
     return leadDays >= 0 ? leadDays : SHORT_NOTICE_LEAD_DAYS - leadDays;
   };
-  return rank(left.site) - rank(right.site);
+  return rank(left) - rank(right);
 }

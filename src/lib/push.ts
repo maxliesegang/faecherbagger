@@ -1,4 +1,4 @@
-import type { HomeArea } from "../types/index.ts";
+import type { NotificationPreferences } from "../types/index.ts";
 
 const PUSH_API_URL = import.meta.env.VITE_PUSH_API_URL?.replace(/\/+$/, "");
 
@@ -49,7 +49,7 @@ export async function getPushSubscription() {
   return registration.pushManager.getSubscription();
 }
 
-export async function subscribeToPush(preferences?: HomeArea) {
+export async function subscribeToPush(preferences?: NotificationPreferences) {
   if (!isPushSupported) {
     throw new Error("Web Push wird von diesem Browser nicht unterstützt.");
   }
@@ -80,7 +80,7 @@ export async function subscribeToPush(preferences?: HomeArea) {
 
 async function storeSubscription(
   subscription: PushSubscription,
-  preferences?: HomeArea,
+  preferences?: NotificationPreferences,
 ) {
   await requestPushAPI("/subscriptions", {
     method: "POST",
@@ -91,7 +91,9 @@ async function storeSubscription(
   });
 }
 
-export async function updatePushPreferences(preferences: HomeArea) {
+export async function updatePushPreferences(
+  preferences: NotificationPreferences,
+) {
   const subscription = await getPushSubscription();
   if (!subscription) {
     throw new Error("Benachrichtigungen sind auf diesem Gerät nicht aktiviert.");

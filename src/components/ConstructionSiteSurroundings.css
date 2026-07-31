@@ -145,19 +145,25 @@
   padding: 0.2rem;
   border: 1px solid var(--app-border);
   background: var(--app-card);
+  /* The last resort at the narrowest widths: four labels and their counts do
+     not fit across 320 px, and the row used to solve that by widening the whole
+     screen, which scrolled the page sideways. It scrolls itself instead. */
+  overflow-x: auto;
+  scrollbar-width: thin;
 }
 
 /*
  * Four in one row at every width. They used to wrap, which put "Alle" alone on
- * a second line and read as a layout fault; a shared basis of zero lets them
- * shrink together instead.
+ * a second line and read as a layout fault; sharing the spare space keeps them
+ * on one line instead. They shrink no further than their own label: a button
+ * narrower than the word on it was how "Alle" ended up cut off mid-count.
  */
 .surroundings__view {
   display: inline-flex;
   gap: 0.35rem;
   align-items: center;
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 1 1 auto;
+  min-width: max-content;
   justify-content: center;
   padding: 0.4rem 0.5rem;
   white-space: nowrap;

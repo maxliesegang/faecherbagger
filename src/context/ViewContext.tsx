@@ -3,7 +3,10 @@ import {
   useAppURLState,
   type AppURLStateController,
 } from "../hooks/useAppURLState.ts";
-import { createRecentWindow, type RecentWindow } from "../lib/site-scope.ts";
+import {
+  createRecentWindow,
+  type RecentWindow,
+} from "../lib/construction-site-scope.ts";
 import { useDatasetState } from "./DatasetContext.tsx";
 
 /**

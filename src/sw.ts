@@ -47,7 +47,11 @@ async function refreshConstructionSiteData() {
     : undefined;
 
   // changes.json is deliberately absent: it exists for the push pipeline, and
-  // the app derives its own time window from baustellen.json.
+  // the app derives its own time window from baustellen.json. geometrien.json
+  // is absent for a different reason: it is by far the largest file, only a map
+  // reads it, and the network-first route above already refreshes it whenever
+  // one is opened. Pulling it twice a day in the background would spend a
+  // visitor's mobile data on a screen they may never open.
   const urls = [metadataURL, getDataURL("baustellen.json")];
   const responses = await Promise.all(
     urls.map((url) => fetch(url, { cache: "no-store" })),

@@ -10,7 +10,7 @@ import {
   type ConstructionSiteResultView,
 } from "../lib/url-state.ts";
 import type { RecentWindowDays } from "../shared/recency.ts";
-import type { SiteQuery } from "../lib/site-scope.ts";
+import type { ConstructionSiteQuery } from "../lib/construction-site-scope.ts";
 
 /** Keeps a fast typist under the browsers' rate limit for history updates. */
 const URL_SYNC_DELAY_MS = 300;
@@ -28,19 +28,23 @@ export interface AppURLStateController extends AppURLState {
   /** Clears every narrowing filter, including the recency scope. */
   resetQuery: () => void;
   /** The shareable link to one construction site, or back to the overview. */
-  getDetailHref: (siteId: string | undefined) => string;
-  openSiteDetails: (siteId: string) => void;
-  closeSiteDetails: () => void;
+  getConstructionSiteDetailHref: (
+    constructionSiteId: string | undefined,
+  ) => string;
+  openConstructionSiteDetail: (constructionSiteId: string) => void;
+  closeConstructionSiteDetail: () => void;
   /** Opens the explorer's map on one site, from anywhere in the app. */
-  showSiteOnMap: (siteId: string | undefined) => void;
+  showConstructionSiteOnMap: (constructionSiteId: string | undefined) => void;
   showExplorer: () => void;
   /** Opens the notification settings from anywhere in the app. */
   showNotificationSettings: () => void;
-  /** Opens the surroundings, which own the radius, from anywhere in the app. */
+  /** Opens the surroundings, the app's default answer, from anywhere. */
   showSurroundings: () => void;
   /** Selection inside the explorer map; deliberately not part of the URL. */
-  mapSelectedSiteId: string | undefined;
-  setMapSelectedSiteId: (siteId: string | undefined) => void;
+  mapSelectedConstructionSiteId: string | undefined;
+  setMapSelectedConstructionSiteId: (
+    constructionSiteId: string | undefined,
+  ) => void;
 }
 
 /**
@@ -58,7 +62,8 @@ export function useAppURLState(): AppURLStateController {
   const [urlState, setURLState] = useState<AppURLState>(() =>
     parseAppURLState(window.location.search),
   );
-  const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
+  const [mapSelectedConstructionSiteId, setMapSelectedConstructionSiteId] =
+    useState<string>();
 
   const updateURLState = useCallback(
     (changes: Partial<AppURLState>) =>
@@ -67,7 +72,7 @@ export function useAppURLState(): AppURLStateController {
   );
 
   const updateQuery = useCallback(
-    (changes: Partial<SiteQuery>) =>
+    (changes: Partial<ConstructionSiteQuery>) =>
       setURLState((current) => ({
         ...current,
         query: { ...current.query, ...changes },
@@ -107,40 +112,52 @@ export function useAppURLState(): AppURLStateController {
     [urlState],
   );
 
-  const getDetailHref = useCallback(
-    (siteId: string | undefined) => buildHref({ detailSiteId: siteId }),
+  const getConstructionSiteDetailHref = useCallback(
+    (constructionSiteId: string | undefined) =>
+      buildHref({ detailConstructionSiteId: constructionSiteId }),
     [buildHref],
   );
 
-  const openSiteDetails = useCallback(
-    (siteId: string) => {
+  const openConstructionSiteDetail = useCallback(
+    (constructionSiteId: string) => {
       window.history.pushState(
-        { [DETAIL_HISTORY_MARKER]: siteId },
+        { [DETAIL_HISTORY_MARKER]: constructionSiteId },
         "",
-        getDetailHref(siteId),
+        getConstructionSiteDetailHref(constructionSiteId),
       );
-      updateURLState({ detailSiteId: siteId });
+      updateURLState({ detailConstructionSiteId: constructionSiteId });
     },
-    [getDetailHref, updateURLState],
+    [getConstructionSiteDetailHref, updateURLState],
   );
 
-  const closeSiteDetails = useCallback(() => {
+  const closeConstructionSiteDetail = useCallback(() => {
     // Prefer Back when this app pushed the detail entry, so leaving a detail
     // page does not grow the history stack with every visit.
-    if (window.history.state?.[DETAIL_HISTORY_MARKER] === urlState.detailSiteId) {
+    if (
+      window.history.state?.[DETAIL_HISTORY_MARKER] ===
+      urlState.detailConstructionSiteId
+    ) {
       window.history.back();
       return;
     }
-    window.history.replaceState(null, "", getDetailHref(undefined));
-    updateURLState({ detailSiteId: undefined });
-  }, [getDetailHref, updateURLState, urlState.detailSiteId]);
+    window.history.replaceState(
+      null,
+      "",
+      getConstructionSiteDetailHref(undefined),
+    );
+    updateURLState({ detailConstructionSiteId: undefined });
+  }, [
+    getConstructionSiteDetailHref,
+    updateURLState,
+    urlState.detailConstructionSiteId,
+  ]);
 
-  const showSiteOnMap = useCallback(
-    (siteId: string | undefined) => {
+  const showConstructionSiteOnMap = useCallback(
+    (constructionSiteId: string | undefined) => {
       const target: Partial<AppURLState> = {
         section: "explorer",
         view: "map",
-        detailSiteId: undefined,
+        detailConstructionSiteId: undefined,
       };
       // A new entry, not a replacement. This is the one navigation in the app
       // that changes section, view and selection at once, and replacing the
@@ -149,7 +166,7 @@ export function useAppURLState(): AppURLStateController {
       // way back to where they were.
       window.history.pushState(null, "", buildHref(target));
       updateURLState(target);
-      setMapSelectedSiteId(siteId);
+      setMapSelectedConstructionSiteId(constructionSiteId);
     },
     [buildHref, updateURLState],
   );
@@ -163,7 +180,7 @@ export function useAppURLState(): AppURLStateController {
     // close an open detail: the tabs stay reachable from a detail page, and
     // tapping one has to lead somewhere.
     const setSection = (section: AppSection) =>
-      updateURLState({ section, detailSiteId: undefined });
+      updateURLState({ section, detailConstructionSiteId: undefined });
 
     return {
       setSection,
@@ -185,20 +202,20 @@ export function useAppURLState(): AppURLStateController {
     () => ({
       ...urlState,
       ...setters,
-      getDetailHref,
-      openSiteDetails,
-      closeSiteDetails,
-      showSiteOnMap,
-      mapSelectedSiteId,
-      setMapSelectedSiteId,
+      getConstructionSiteDetailHref,
+      openConstructionSiteDetail,
+      closeConstructionSiteDetail,
+      showConstructionSiteOnMap,
+      mapSelectedConstructionSiteId,
+      setMapSelectedConstructionSiteId,
     }),
     [
-      closeSiteDetails,
-      getDetailHref,
-      mapSelectedSiteId,
-      openSiteDetails,
+      closeConstructionSiteDetail,
+      getConstructionSiteDetailHref,
+      mapSelectedConstructionSiteId,
+      openConstructionSiteDetail,
       setters,
-      showSiteOnMap,
+      showConstructionSiteOnMap,
       urlState,
     ],
   );

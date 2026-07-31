@@ -6,6 +6,7 @@ import type {
 } from "geojson";
 import type {
   ConstructionSite,
+  ConstructionSiteGeometries,
   LngLat,
   HomeArea,
 } from "../types/index.ts";
@@ -24,16 +25,23 @@ const NOTIFICATION_AREA_STEPS = 64;
  */
 function createConstructionSiteFeatureCollection(
   constructionSites: readonly ConstructionSite[],
-  getGeometry: (site: ConstructionSite) => Geometry,
+  getGeometry: (site: ConstructionSite) => Geometry | undefined,
 ): FeatureCollection<Geometry, ConstructionSiteFeatureProperties> {
   return {
     type: "FeatureCollection",
-    features: constructionSites.map((site) => ({
-      type: "Feature",
-      id: site.id,
-      geometry: getGeometry(site),
-      properties: { id: site.id, phase: site.phase },
-    })),
+    features: constructionSites.flatMap((site) => {
+      const geometry = getGeometry(site);
+      return geometry
+        ? [
+            {
+              type: "Feature" as const,
+              id: site.id,
+              geometry,
+              properties: { id: site.id, phase: site.phase },
+            },
+          ]
+        : [];
+    }),
   };
 }
 
@@ -46,12 +54,21 @@ export function createConstructionSitePointFeatureCollection(
   }));
 }
 
+/**
+ * The detailed lines and areas, for the records whose geometry has arrived.
+ *
+ * Geometry is published in its own file and fetched when a map first appears,
+ * so a record without an entry is the normal state of the first paint rather
+ * than an error: it is drawn by the point layer until the file lands, and this
+ * collection grows to the full set on the render after that.
+ */
 export function createConstructionSiteGeometryFeatureCollection(
   constructionSites: readonly ConstructionSite[],
+  geometries: ConstructionSiteGeometries,
 ): FeatureCollection<Geometry, ConstructionSiteFeatureProperties> {
   return createConstructionSiteFeatureCollection(
     constructionSites,
-    (site) => site.geometry,
+    (site) => geometries[site.id],
   );
 }
 

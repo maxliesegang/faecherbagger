@@ -129,7 +129,7 @@ export function describeNotificationState({
       shortLabel: "Eingeschaltet",
       headline: "Benachrichtigungen sind eingeschaltet",
       description:
-        "Dieses Gerät erhält eine Meldung, sobald in Ihrem Umkreis eine neue Baustelle auftaucht — auch wenn die App geschlossen ist.",
+        "Dieses Gerät erhält eine Meldung, wenn in Ihrem Umkreis demnächst eine neue Baustelle beginnt — auch wenn die App geschlossen ist.",
       toggleLabel: "Benachrichtigungen ausschalten",
     };
   }
@@ -150,7 +150,7 @@ export function describeNotificationState({
     shortLabel: "Ausgeschaltet",
     headline: "Benachrichtigungen sind ausgeschaltet",
     description:
-      "Lassen Sie sich melden, sobald in Ihrem Umkreis eine neue Baustelle auftaucht — auch wenn die App geschlossen ist.",
+      "Lassen Sie sich melden, wenn in Ihrem Umkreis demnächst eine neue Baustelle beginnt — auch wenn die App geschlossen ist.",
     toggleLabel: "Benachrichtigungen einschalten",
   };
 }

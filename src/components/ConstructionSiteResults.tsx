@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { KernAlert, KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
 import { usePersonal } from "../context/PersonalContext.tsx";
 import { useView } from "../context/ViewContext.tsx";
-import type { SiteSelection } from "../lib/select-sites.ts";
+import type { ConstructionSiteSelection } from "../lib/select-construction-sites.ts";
 import {
   CONSTRUCTION_SITE_SORT_PRESETS,
   serializeConstructionSiteSort,
@@ -17,7 +17,7 @@ import "./ConstructionSiteResults.css";
 
 interface ConstructionSiteResultsProps {
   /** Already scoped and filtered upstream; this component only orders it. */
-  selection: SiteSelection;
+  selection: ConstructionSiteSelection;
   /** Size of the unscoped dataset, for the "N von M" count. */
   totalCount: number;
 }
@@ -36,19 +36,19 @@ export function ConstructionSiteResults({
     recentWindow,
     query,
     view,
-    setView: onViewChange,
+    setView,
     sort,
-    setSort: onSortChange,
-    mapSelectedSiteId: selectedSiteId,
-    setMapSelectedSiteId: onSelectedSiteIdChange,
-    getDetailHref,
-    openSiteDetails: onDetailOpen,
+    setSort,
+    mapSelectedConstructionSiteId,
+    setMapSelectedConstructionSiteId,
+    getConstructionSiteDetailHref,
+    openConstructionSiteDetail,
   } = useView();
   const { since, days: recentWindowDays } = recentWindow;
   const showOnlyNew = query.onlyRecent;
   const homeArea = area ?? undefined;
   const displayedConstructionSites = useMemo(
-    () => selection.visible.map((entry) => entry.site),
+    () => selection.visible.map((entry) => entry.constructionSite),
     [selection.visible],
   );
 
@@ -103,7 +103,7 @@ export function ConstructionSiteResults({
                 className="kern-form-input__select"
                 value={sortValue}
                 onChange={(event) =>
-                  onSortChange(parseConstructionSiteSort(event.target.value))
+                  setSort(parseConstructionSiteSort(event.target.value))
                 }
               >
                 {isCustomSort && (
@@ -130,7 +130,7 @@ export function ConstructionSiteResults({
               type="button"
               className="view-switcher__button"
               aria-pressed={view === "map"}
-              onClick={() => onViewChange("map")}
+              onClick={() => setView("map")}
             >
               Karte
             </button>
@@ -138,7 +138,7 @@ export function ConstructionSiteResults({
               type="button"
               className="view-switcher__button"
               aria-pressed={view === "list"}
-              onClick={() => onViewChange("list")}
+              onClick={() => setView("list")}
             >
               Liste
             </button>
@@ -159,25 +159,25 @@ export function ConstructionSiteResults({
              sort change from rebuilding its sources and refitting. */
           <LazyConstructionSiteMap
             constructionSites={displayedConstructionSites}
-            selectedSiteId={selectedSiteId}
+            selectedConstructionSiteId={mapSelectedConstructionSiteId}
             currentLocation={currentLocation}
             homeArea={homeArea}
-            onSiteSelect={onSelectedSiteIdChange}
-            getSiteDetailsHref={getDetailHref}
-            onSiteDetailsRequest={onDetailOpen}
-            onListViewRequest={() => onViewChange("list")}
+            onSelectedConstructionSiteIdChange={setMapSelectedConstructionSiteId}
+            getConstructionSiteDetailHref={getConstructionSiteDetailHref}
+            onOpenConstructionSiteDetail={openConstructionSiteDetail}
+            onShowList={() => setView("list")}
           />
         ) : (
           <ConstructionSiteTable
             constructionSites={sortedConstructionSites}
             sort={effectiveSort}
-            onSortChange={onSortChange}
+            onSortChange={setSort}
             currentLocation={currentLocation}
-            getSiteDetailsHref={getDetailHref}
-            onShowSiteDetails={onDetailOpen}
-            onShowSiteOnMap={(siteId) => {
-              onSelectedSiteIdChange(siteId);
-              onViewChange("map");
+            getConstructionSiteDetailHref={getConstructionSiteDetailHref}
+            onOpenConstructionSiteDetail={openConstructionSiteDetail}
+            onShowConstructionSiteOnMap={(constructionSiteId) => {
+              setMapSelectedConstructionSiteId(constructionSiteId);
+              setView("map");
             }}
           />
         )

@@ -183,6 +183,12 @@ select {
  */
 .app-screen {
   display: grid;
+  /* `minmax(0, 1fr)` rather than the implicit `auto`: a grid item's automatic
+     minimum size is its content, so one row that cannot wrap — a segmented
+     control, a wide table — widens this column past the viewport and scrolls
+     the whole page sideways. Every screen shares this column, so the floor
+     belongs here rather than in each of them. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.85rem;
   align-content: start;
 }

@@ -2,7 +2,10 @@ import { useState } from "react";
 import { KernAlert, KernText } from "@kern-ux-annex/kern-react-kit";
 import { usePersonal } from "../context/PersonalContext.tsx";
 import { useView } from "../context/ViewContext.tsx";
-import type { ScopedSite, SiteSelection } from "../lib/select-sites.ts";
+import type {
+  ConstructionSiteSelection,
+  ScopedConstructionSite,
+} from "../lib/select-construction-sites.ts";
 import { FALLBACK_HOME_AREA_LABEL } from "../shared/home-area.ts";
 import { SHORT_NOTICE_LEAD_DAYS } from "../shared/construction-site-timing.ts";
 import { NearbyConstructionSiteList } from "./NearbyConstructionSiteList.tsx";
@@ -10,8 +13,8 @@ import "./ConstructionSiteSurroundings.css";
 
 interface ConstructionSiteSurroundingsProps {
   /** Everything inside the visitor's radius, derived once by the caller. */
-  surroundings: SiteSelection;
-  onMarkSitesSeen: () => void;
+  surroundings: ConstructionSiteSelection;
+  onMarkConstructionSitesSeen: () => void;
 }
 
 /**
@@ -102,17 +105,20 @@ function describeEmptyView(view: SurroundingsView, radiusKm: number): string {
  */
 export function ConstructionSiteSurroundings({
   surroundings,
-  onMarkSitesSeen,
+  onMarkConstructionSitesSeen,
 }: ConstructionSiteSurroundingsProps) {
   const {
-    getDetailHref: getSiteDetailsHref,
-    openSiteDetails: onShowSiteDetails,
+    getConstructionSiteDetailHref,
+    openConstructionSiteDetail,
     showNotificationSettings,
   } = useView();
   const { effectiveArea, hasChosenArea, hasAcknowledged } = usePersonal();
   const [view, setView] = useState<SurroundingsView>("short-notice");
 
-  const viewLists: Record<SurroundingsView, readonly ScopedSite[]> = {
+  const viewLists: Record<
+    SurroundingsView,
+    readonly ScopedConstructionSite[]
+  > = {
     "short-notice": surroundings.shortNotice,
     running: surroundings.running,
     planned: surroundings.planned,
@@ -211,7 +217,7 @@ export function ConstructionSiteSurroundings({
             <button
               type="button"
               className="surroundings__mark-seen"
-              onClick={onMarkSitesSeen}
+              onClick={onMarkConstructionSitesSeen}
             >
               Als gelesen markieren
             </button>
@@ -226,11 +232,11 @@ export function ConstructionSiteSurroundings({
 
         {visibleSites.length > 0 ? (
           <NearbyConstructionSiteList
-            scopedSites={visibleSites}
+            scopedConstructionSites={visibleSites}
             label={VIEW_LIST_LABELS[view]}
             today={surroundings.today}
-            getSiteDetailsHref={getSiteDetailsHref}
-            onShowSiteDetails={onShowSiteDetails}
+            getConstructionSiteDetailHref={getConstructionSiteDetailHref}
+            onOpenConstructionSiteDetail={openConstructionSiteDetail}
           />
         ) : view === "short-notice" ? (
           /* The good news, and the way on: what is already there is one tap

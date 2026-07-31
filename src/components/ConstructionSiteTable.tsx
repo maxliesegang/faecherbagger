@@ -23,9 +23,9 @@ interface ConstructionSiteTableProps {
   sort: ConstructionSiteSort | null;
   onSortChange: (sort: ConstructionSiteSort | null) => void;
   currentLocation?: LngLat;
-  onShowSiteOnMap?: (siteId: string) => void;
-  getSiteDetailsHref: (siteId: string) => string;
-  onShowSiteDetails: (siteId: string) => void;
+  onShowConstructionSiteOnMap?: (constructionSiteId: string) => void;
+  getConstructionSiteDetailHref: (constructionSiteId: string) => string;
+  onOpenConstructionSiteDetail: (constructionSiteId: string) => void;
 }
 
 interface ConstructionSiteTableColumn {
@@ -86,9 +86,9 @@ export function ConstructionSiteTable({
   sort,
   onSortChange,
   currentLocation,
-  onShowSiteOnMap,
-  getSiteDetailsHref,
-  onShowSiteDetails,
+  onShowConstructionSiteOnMap,
+  getConstructionSiteDetailHref,
+  onOpenConstructionSiteDetail,
 }: ConstructionSiteTableProps) {
   const columns = useMemo<readonly ConstructionSiteTableColumn[]>(
     () =>
@@ -173,19 +173,19 @@ export function ConstructionSiteTable({
                 ))}
                 <td className="kern-table__cell">
                   <div className="construction-site-table__actions">
-                    {onShowSiteOnMap && (
+                    {onShowConstructionSiteOnMap && (
                       <button
                         type="button"
                         className="construction-site-table__map-button"
-                        onClick={() => onShowSiteOnMap(site.id)}
+                        onClick={() => onShowConstructionSiteOnMap(site.id)}
                       >
                         Auf Karte
                       </button>
                     )}
                     <ClientNavigationLink
                       className="construction-site-table__details-button"
-                      href={getSiteDetailsHref(site.id)}
-                      onNavigate={() => onShowSiteDetails(site.id)}
+                      href={getConstructionSiteDetailHref(site.id)}
+                      onNavigate={() => onOpenConstructionSiteDetail(site.id)}
                     >
                       Details
                     </ClientNavigationLink>
@@ -229,16 +229,16 @@ export function ConstructionSiteTable({
             </dl>
             <ClientNavigationLink
               className="construction-site-card__details-link"
-              href={getSiteDetailsHref(site.id)}
-              onNavigate={() => onShowSiteDetails(site.id)}
+              href={getConstructionSiteDetailHref(site.id)}
+              onNavigate={() => onOpenConstructionSiteDetail(site.id)}
             >
               Details ansehen
             </ClientNavigationLink>
-            {onShowSiteOnMap && (
+            {onShowConstructionSiteOnMap && (
               <button
                 type="button"
                 className="construction-site-card__map-button"
-                onClick={() => onShowSiteOnMap(site.id)}
+                onClick={() => onShowConstructionSiteOnMap(site.id)}
               >
                 Auf Karte zeigen
               </button>

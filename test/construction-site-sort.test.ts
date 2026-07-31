@@ -24,7 +24,6 @@ function createConstructionSite(overrides: Partial<ConstructionSite>): Construct
     startDate: "2026-01-01",
     endDate: null,
     point: [8.4, 49],
-    geometry: { type: "Point", coordinates: [8.4, 49] },
     source: "Stadt Karlsruhe",
     lastModified: "2026-01-01T00:00:00Z",
     firstSeenAt: "2026-01-01T00:00:00Z",

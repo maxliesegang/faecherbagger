@@ -2,8 +2,8 @@ import { useMemo } from "react";
 import { useDataset } from "../context/DatasetContext.tsx";
 import { usePersonal } from "../context/PersonalContext.tsx";
 import { useView } from "../context/ViewContext.tsx";
-import { selectSites } from "../lib/select-sites.ts";
-import { createRegionScope } from "../lib/site-scope.ts";
+import { selectConstructionSites } from "../lib/select-construction-sites.ts";
+import { createRegionScope } from "../lib/construction-site-scope.ts";
 import { ConstructionSiteFilter } from "./ConstructionSiteFilter.tsx";
 import { ConstructionSiteResults } from "./ConstructionSiteResults.tsx";
 import { CurrentLocationControl } from "./CurrentLocationControl.tsx";
@@ -13,7 +13,8 @@ import "./ConstructionSiteExplorer.css";
  * The secondary screen: search across the whole region. A persistent control
  * rail (search, status, detail filters, location) beside the map or list.
  *
- * Everything the rail and the results need comes from one {@link selectSites}
+ * Everything the rail and the results need comes from one
+ * {@link selectConstructionSites}
  * call, so the counts on the filter panel and the rows in the list cannot
  * describe different sets.
  */
@@ -31,7 +32,7 @@ export function ConstructionSiteExplorer() {
 
   const selection = useMemo(
     () =>
-      selectSites(
+      selectConstructionSites(
         constructionSites,
         createRegionScope(query, recentWindow),
         seenAt,

@@ -1,0 +1,15 @@
+.closure-level {
+  display: grid;
+  gap: 0.5rem;
+}
+
+/*
+ * What the current choice means, under the choice. A live region because it is
+ * the only thing that changes when a radio is picked — without it a screen
+ * reader hears the new label and nothing about what it does.
+ */
+.closure-level__hint {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}

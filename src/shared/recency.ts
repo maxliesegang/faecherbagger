@@ -55,18 +55,18 @@ export type ConstructionSiteRecency = "new" | null;
  * and count derives from this, so they cannot drift apart.
  */
 export function getConstructionSiteRecency(
-  site: ConstructionSite,
+  constructionSite: ConstructionSite,
   since: ISOTimestamp,
 ): ConstructionSiteRecency {
-  return site.firstSeenAt >= since ? "new" : null;
+  return constructionSite.firstSeenAt >= since ? "new" : null;
 }
 
 /** True when the pipeline first saw the site within the window. */
 export function isRecentConstructionSite(
-  site: ConstructionSite,
+  constructionSite: ConstructionSite,
   since: ISOTimestamp,
 ): boolean {
-  return getConstructionSiteRecency(site, since) !== null;
+  return getConstructionSiteRecency(constructionSite, since) !== null;
 }
 
 /**
@@ -96,7 +96,9 @@ export function selectRecentConstructionSites(
   since: ISOTimestamp,
 ): ConstructionSite[] {
   return constructionSites
-    .filter((site) => isRecentConstructionSite(site, since))
+    .filter((constructionSite) =>
+      isRecentConstructionSite(constructionSite, since),
+    )
     .sort(compareByFirstSeenDescending);
 }
 

@@ -58,7 +58,7 @@ export function selectConstructionSitesInArea(
   constructionSites: readonly ConstructionSite[],
   area: HomeArea,
 ): ConstructionSite[] {
-  return constructionSites.filter((site) =>
-    isPointInHomeArea(area, site.point),
+  return constructionSites.filter((constructionSite) =>
+    isPointInHomeArea(area, constructionSite.point),
   );
 }

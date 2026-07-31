@@ -6,10 +6,10 @@ import {
   serializeAppURLState,
   type AppURLState,
 } from "../src/lib/url-state.ts";
-import type { SiteQuery } from "../src/lib/site-scope.ts";
+import type { ConstructionSiteQuery } from "../src/lib/construction-site-scope.ts";
 
 /** A state at its defaults apart from the query fields named here. */
-const withQuery = (query: Partial<SiteQuery>): AppURLState => ({
+const withQuery = (query: Partial<ConstructionSiteQuery>): AppURLState => ({
   ...DEFAULT_APP_URL_STATE,
   query: { ...DEFAULT_APP_URL_STATE.query, ...query },
 });
@@ -28,7 +28,7 @@ describe("parseAppURLState", () => {
   it("returns the defaults for an empty query", () => {
     expect(parseAppURLState("")).toEqual({
       ...DEFAULT_APP_URL_STATE,
-      detailSiteId: undefined,
+      detailConstructionSiteId: undefined,
     });
   });
 
@@ -54,7 +54,7 @@ describe("parseAppURLState", () => {
       },
       view: "list",
       sort: { key: "period", direction: "descending" },
-      detailSiteId: "2026V1",
+      detailConstructionSiteId: "2026V1",
     });
   });
 
@@ -82,7 +82,9 @@ describe("parseAppURLState", () => {
   });
 
   it("treats an empty site id as no selection", () => {
-    expect(parseAppURLState("?baustelle=").detailSiteId).toBeUndefined();
+    expect(
+      parseAppURLState("?baustelle=").detailConstructionSiteId,
+    ).toBeUndefined();
   });
 });
 
@@ -142,7 +144,7 @@ describe("serializeAppURLState", () => {
       },
       view: "list",
       sort: { key: "distance", direction: "ascending" },
-      detailSiteId: "2026V42",
+      detailConstructionSiteId: "2026V42",
     };
 
     expect(parseAppURLState(serializeAppURLState(state))).toEqual(state);
