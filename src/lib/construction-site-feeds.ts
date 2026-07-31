@@ -29,18 +29,17 @@ function parseFeedDate(timestamp: string): Date {
 }
 
 /**
- * The timestamp an entry is dated and versioned by.
+ * The timestamp an entry is dated, sorted and versioned by.
  *
  * `lastModified` mirrors the source's `stand`, which some records simply do not
  * carry (normalization turns those into `""`). Feed entries still need a date,
- * so fall back to when we first saw the record, and finally to this run — never
- * fail the whole feed over one undated record.
+ * so fall back to the record's start date — normalization guarantees one, and
+ * unlike the run's `fetchedAt` it does not change between runs, so an undated
+ * record keeps a stable revision ID instead of resurfacing in readers every
+ * time the pipeline runs.
  */
-function getFeedItemTimestamp(
-  site: ConstructionSite,
-  fetchedAt: string,
-): string {
-  return site.lastModified || site.firstSeenAt || fetchedAt;
+function getFeedItemTimestamp(site: ConstructionSite): string {
+  return site.lastModified || site.startDate;
 }
 
 const normalizeBaseURL = (url: string): string =>
@@ -91,7 +90,7 @@ export function createConstructionSiteFeeds(
   [...constructionSites]
     .map((site) => ({
       site,
-      timestamp: getFeedItemTimestamp(site, metadata.fetchedAt),
+      timestamp: getFeedItemTimestamp(site),
     }))
     .sort((left, right) => {
       const byModified = right.timestamp.localeCompare(left.timestamp);

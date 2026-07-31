@@ -82,31 +82,33 @@ describe("createConstructionSiteFeeds", () => {
     );
   });
 
-  it("falls back to firstSeenAt when the source carries no 'stand'", () => {
-    const undated = createConstructionSite("undated", "", "Ohne Stand");
-    undated.firstSeenAt = "2026-07-22T08:00:00.000Z";
-
+  it("falls back to the start date when the source carries no 'stand'", () => {
     const feeds = createConstructionSiteFeeds(
-      [undated],
+      [createConstructionSite("undated", "", "Ohne Stand")],
       metadata,
       "https://example.test/faecherbagger",
     );
 
-    expect(feeds.atom).toContain(
-      "<id>faecherbagger:undated:2026-07-22T08:00:00.000Z</id>",
-    );
-    expect(feeds.rss).toContain("<pubDate>Wed, 22 Jul 2026 08:00:00 GMT</pubDate>");
+    expect(feeds.atom).toContain("<id>faecherbagger:undated:2026-07-25</id>");
+    expect(feeds.rss).toContain("<pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>");
   });
 
-  it("falls back to the fetch timestamp when nothing else is dated", () => {
-    const feeds = createConstructionSiteFeeds(
-      [{ ...createConstructionSite("undated", "", "Ohne Stand"), firstSeenAt: "" }],
+  it("keeps an undated entry's revision ID stable across runs", () => {
+    const sites = [createConstructionSite("undated", "", "Ohne Stand")];
+    const laterRun = { ...metadata, fetchedAt: "2026-07-31T06:00:00.000Z" };
+
+    const first = createConstructionSiteFeeds(
+      sites,
       metadata,
       "https://example.test/faecherbagger",
     );
-
-    expect(feeds.atom).toContain(
-      `<id>faecherbagger:undated:${metadata.fetchedAt}</id>`,
+    const second = createConstructionSiteFeeds(
+      sites,
+      laterRun,
+      "https://example.test/faecherbagger",
     );
+
+    expect(second.atom).toContain("<id>faecherbagger:undated:2026-07-25</id>");
+    expect(first.atom).toContain("<id>faecherbagger:undated:2026-07-25</id>");
   });
 });
