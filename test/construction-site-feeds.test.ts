@@ -81,4 +81,32 @@ describe("createConstructionSiteFeeds", () => {
       feeds.atom.indexOf("baustelle=older"),
     );
   });
+
+  it("falls back to firstSeenAt when the source carries no 'stand'", () => {
+    const undated = createConstructionSite("undated", "", "Ohne Stand");
+    undated.firstSeenAt = "2026-07-22T08:00:00.000Z";
+
+    const feeds = createConstructionSiteFeeds(
+      [undated],
+      metadata,
+      "https://example.test/faecherbagger",
+    );
+
+    expect(feeds.atom).toContain(
+      "<id>faecherbagger:undated:2026-07-22T08:00:00.000Z</id>",
+    );
+    expect(feeds.rss).toContain("<pubDate>Wed, 22 Jul 2026 08:00:00 GMT</pubDate>");
+  });
+
+  it("falls back to the fetch timestamp when nothing else is dated", () => {
+    const feeds = createConstructionSiteFeeds(
+      [{ ...createConstructionSite("undated", "", "Ohne Stand"), firstSeenAt: "" }],
+      metadata,
+      "https://example.test/faecherbagger",
+    );
+
+    expect(feeds.atom).toContain(
+      `<id>faecherbagger:undated:${metadata.fetchedAt}</id>`,
+    );
+  });
 });
