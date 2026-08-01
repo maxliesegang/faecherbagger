@@ -30,6 +30,12 @@ jobs:
           secrets: |
             ADMIN_TOKEN
             VAPID_PUBLIC_KEY
+            VAPID_PRIVATE_KEY
+            VAPID_SUBJECT
         env:
           ADMIN_TOKEN: ${{ secrets.PUSH_ADMIN_TOKEN }}
           VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+          # The Worker needs the signing key for the "Zustellung testen" push;
+          # the bulk fan-out still runs in the data workflow.
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT }}

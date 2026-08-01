@@ -17,8 +17,8 @@ describe("parseAppURLState", () => {
   it("reads every supported parameter", () => {
     const state = parseAppURLState(
       "?q=Hauptstra%C3%9Fe&ort=Karlsruhe&status=upcoming&art=sewer" +
-        "&sperrung=full&neu=1&ansicht=liste&sortierung=period%3Adescending" +
-        "&baustelle=2026V1",
+        "&sperrung=full&zeitraum=today&neu=1&ansicht=liste" +
+        "&sortierung=period%3Adescending&baustelle=2026V1",
     );
 
     expect(state).toEqual({
@@ -28,6 +28,7 @@ describe("parseAppURLState", () => {
         phase: "upcoming",
         category: "sewer",
         closure: "full",
+        timeframe: "today",
       },
       showOnlyChanged: true,
       view: "list",
@@ -68,6 +69,11 @@ describe("serializeAppURLState", () => {
     ).toBe("?status=active");
   });
 
+  it("rejects an unknown timeframe rather than passing it through", () => {
+    expect(parseAppURLState("?zeitraum=irgendwann").filters.timeframe).toBe("");
+    expect(parseAppURLState("?zeitraum=week").filters.timeframe).toBe("week");
+  });
+
   it("drops whitespace-only searches", () => {
     expect(
       serializeAppURLState({
@@ -85,6 +91,7 @@ describe("serializeAppURLState", () => {
         phase: "active",
         category: "bridge",
         closure: "one-direction",
+        timeframe: "week",
       },
       showOnlyChanged: true,
       view: "list",

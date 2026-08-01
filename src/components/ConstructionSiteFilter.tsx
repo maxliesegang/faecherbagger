@@ -17,6 +17,10 @@ import {
   hasNoConstructionSiteFilters,
   type ConstructionSiteFilters,
 } from "../lib/construction-site-filter.ts";
+import {
+  CONSTRUCTION_SITE_TIMEFRAMES,
+  type ConstructionSiteTimeframe,
+} from "../lib/construction-site-timeframe.ts";
 
 interface ConstructionSiteFilterProps {
   constructionSites: readonly ConstructionSite[];
@@ -42,17 +46,22 @@ const PHASE_OPTIONS: readonly {
 
 const DESKTOP_RAIL_QUERY = "(min-width: 64rem)";
 
+const getTimeframeLabel = (timeframe: ConstructionSiteTimeframe): string =>
+  CONSTRUCTION_SITE_TIMEFRAMES.find(
+    (candidate) => candidate.value === timeframe,
+  )?.label ?? "";
+
 /** A one-click-removable summary of a narrowing filter that is in effect. */
 interface FilterChip {
-  key: "search" | "municipality" | "category" | "closure";
+  key: "search" | "municipality" | "category" | "closure" | "timeframe";
   label: string;
 }
 
 /**
- * The control rail's filter card: search and status first (what nearly every
- * visit needs), then the narrowing selects. Options for Ort/Art come from the
- * data so only values that actually occur are offered; Status and Sperrung use
- * the fixed enums.
+ * The control rail's filter card: search, timeframe and status first (what
+ * nearly every visit needs), then the narrowing selects. Options for Ort/Art
+ * come from the data so only values that actually occur are offered; Status,
+ * Zeitraum and Sperrung use the fixed enums.
  */
 export function ConstructionSiteFilter({
   constructionSites,
@@ -103,6 +112,12 @@ export function ConstructionSiteFilter({
       label: `Suche: „${filters.search.trim()}“`,
     });
   }
+  if (filters.timeframe) {
+    activeChips.push({
+      key: "timeframe",
+      label: getTimeframeLabel(filters.timeframe),
+    });
+  }
   if (filters.municipality) {
     activeChips.push({ key: "municipality", label: filters.municipality });
   }
@@ -144,31 +159,61 @@ export function ConstructionSiteFilter({
           id="filter-search"
           type="search"
           label="Suche"
-          hint="Straße, Ort oder Stichwort — Taste /"
+          hint="Straße, Ort oder Stichwort"
           value={filters.search}
           onChange={(event) => setFilter("search", event.currentTarget.value)}
         />
       </div>
 
-      <div
-        className="phase-switch"
-        role="group"
-        aria-label="Nach Status filtern"
-      >
+      {/*
+        Native radios: the three counts are mutually exclusive, so the platform
+        should say so and arrow keys should move between them. The input stays
+        in the accessibility tree and only its box is hidden; the tile is the
+        label, which is what makes the whole surface clickable.
+      */}
+      <fieldset className="phase-switch">
+        <legend className="kern-sr-only">Nach Status filtern</legend>
         {PHASE_OPTIONS.map((option) => (
-          <button
+          <label
             key={option.kind}
-            type="button"
             className={`phase-switch__item phase-switch__item--${option.kind}`}
-            aria-pressed={filters.phase === option.value}
-            onClick={() => setFilter("phase", option.value)}
           >
+            <input
+              className="phase-switch__input kern-sr-only"
+              type="radio"
+              name="filter-phase"
+              value={option.value}
+              checked={filters.phase === option.value}
+              onChange={() => setFilter("phase", option.value)}
+            />
             <span className="phase-switch__value">
               {countForPhase(option.value)}
             </span>
             <span className="phase-switch__label">{option.label}</span>
-          </button>
+          </label>
         ))}
+      </fieldset>
+
+      <div className="filter-panel__timeframe">
+        <KernSelect
+          id="filter-timeframe"
+          label="Zeitraum"
+          hint="Wann die Baustelle Sie betrifft"
+          value={filters.timeframe}
+          onChange={(event) =>
+            setFilter(
+              "timeframe",
+              event.currentTarget.value as ConstructionSiteTimeframe,
+            )
+          }
+        >
+          <option value="">Alle Zeiträume</option>
+          {CONSTRUCTION_SITE_TIMEFRAMES.map((timeframe) => (
+            <option key={timeframe.value} value={timeframe.value}>
+              {timeframe.label}
+            </option>
+          ))}
+        </KernSelect>
       </div>
 
       <button
@@ -207,15 +252,20 @@ export function ConstructionSiteFilter({
         open={advancedOpen}
         onToggle={(event) => setAdvancedOpen(event.currentTarget.open)}
       >
+        {/*
+          A real heading, so the section shows up when a screen reader lists the
+          page's structure. KERN's own accordion renders a plain span here and
+          offers no controlled open state, hence the hand-written markup.
+        */}
         <summary className="kern-accordion__header">
-          <span className="kern-title">
+          <h3 className="kern-title">
             Weitere Filter
             {advancedFilterCount > 0 && (
               <span className="filter-panel__active-count">
                 {advancedFilterCount} aktiv
               </span>
             )}
-          </span>
+          </h3>
         </summary>
         <section className="kern-accordion__body filter-panel__grid">
           <KernSelect

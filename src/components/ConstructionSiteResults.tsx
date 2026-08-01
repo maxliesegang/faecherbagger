@@ -1,5 +1,10 @@
-import { lazy, Suspense, useMemo } from "react";
-import { KernAlert, KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
+import { lazy, Suspense, useMemo, useRef } from "react";
+import {
+  KernAlert,
+  KernHeading,
+  KernLoader,
+  KernText,
+} from "@kern-ux-annex/kern-react-kit";
 import type {
   ConstructionSite,
   ConstructionSiteChanges,
@@ -18,7 +23,10 @@ import {
   sortConstructionSitesByDefaultOrder,
   type ConstructionSiteSort,
 } from "../lib/construction-site-sort.ts";
+import { getBerlinCalendarDate } from "../lib/construction-site-timeframe.ts";
 import type { ConstructionSiteResultView } from "../lib/url-state.ts";
+import { useDebouncedValue } from "../hooks/useDebouncedValue.ts";
+import { useResultLayout } from "../hooks/useResultLayout.ts";
 import { ConstructionSiteTable } from "./ConstructionSiteTable.tsx";
 
 const ConstructionSiteMap = lazy(() =>
@@ -26,6 +34,17 @@ const ConstructionSiteMap = lazy(() =>
     default: module.ConstructionSiteMap,
   })),
 );
+
+/** Long enough that typing a word produces one announcement, not eight. */
+const RESULT_COUNT_ANNOUNCEMENT_DELAY_MS = 700;
+
+const RESULT_VIEW_OPTIONS: readonly {
+  value: ConstructionSiteResultView;
+  label: string;
+}[] = [
+  { value: "map", label: "Karte" },
+  { value: "list", label: "Liste" },
+];
 
 interface ConstructionSiteResultsProps {
   constructionSites: readonly ConstructionSite[];
@@ -42,7 +61,7 @@ interface ConstructionSiteResultsProps {
   getDetailHref: (siteId: string) => string;
   onDetailOpen: (siteId: string) => void;
   currentLocation?: LngLat;
-  notificationArea?: NotificationArea;
+  notificationAreas: readonly NotificationArea[];
 }
 
 /**
@@ -65,11 +84,16 @@ export function ConstructionSiteResults({
   getDetailHref,
   onDetailOpen,
   currentLocation,
-  notificationArea,
+  notificationAreas,
 }: ConstructionSiteResultsProps) {
+  // One reference date per mount keeps the timeframe windows stable while the
+  // visitor works, and keeps them identical to the counts on the filter card.
+  const resultsRef = useRef<HTMLElement>(null);
+  const layout = useResultLayout(resultsRef);
+  const today = useMemo(() => getBerlinCalendarDate(), []);
   const filteredConstructionSites = useMemo(
-    () => filterConstructionSites(constructionSites, filters),
-    [constructionSites, filters],
+    () => filterConstructionSites(constructionSites, filters, today),
+    [constructionSites, filters, today],
   );
   const displayedConstructionSites = useMemo(
     () =>
@@ -95,6 +119,16 @@ export function ConstructionSiteResults({
     [currentLocation, displayedConstructionSites, effectiveSort],
   );
 
+  const resultCountSuffix = `${
+    displayedConstructionSites.length === constructionSites.length
+      ? " Baustellen"
+      : ` von ${constructionSites.length} Baustellen`
+  }${showOnlyChanged ? " · neu oder geändert" : ""}`;
+  const announcedResultCount = useDebouncedValue(
+    `${displayedConstructionSites.length}${resultCountSuffix}`,
+    RESULT_COUNT_ANNOUNCEMENT_DELAY_MS,
+  );
+
   const sortPresets = CONSTRUCTION_SITE_SORT_PRESETS.filter(
     (preset) => !preset.needsLocation || currentLocation,
   );
@@ -106,17 +140,25 @@ export function ConstructionSiteResults({
     );
 
   return (
-    <section className="results" aria-labelledby="results-heading">
+    <section
+      className="results"
+      aria-labelledby="results-heading"
+      ref={resultsRef}
+    >
       <div className="results__toolbar">
         <KernHeading level={2} id="results-heading" className="kern-sr-only">
           Ergebnisse
         </KernHeading>
-        <p className="results__count" aria-live="polite" aria-atomic="true">
+        <p className="results__count">
           <strong>{displayedConstructionSites.length}</strong>
-          {displayedConstructionSites.length === constructionSites.length
-            ? " Baustellen"
-            : ` von ${constructionSites.length} Baustellen`}
-          {showOnlyChanged && " · neu oder geändert"}
+          {resultCountSuffix}
+        </p>
+        {/*
+          Announced separately and only once typing stops: an `aria-live` count
+          on the element itself fires on every keystroke of the search field.
+        */}
+        <p className="kern-sr-only" aria-live="polite" aria-atomic="true">
+          {announcedResultCount}
         </p>
 
         <div className="results__controls">
@@ -148,28 +190,28 @@ export function ConstructionSiteResults({
             </div>
           </div>
 
-          <div
-            className="view-switcher"
-            role="group"
-            aria-label="Darstellung wählen"
-          >
-            <button
-              type="button"
-              className="view-switcher__button"
-              aria-pressed={view === "map"}
-              onClick={() => onViewChange("map")}
-            >
-              Karte
-            </button>
-            <button
-              type="button"
-              className="view-switcher__button"
-              aria-pressed={view === "list"}
-              onClick={() => onViewChange("list")}
-            >
-              Liste
-            </button>
-          </div>
+          {/*
+            Native radios rather than KERN's tab set: the choice has to be
+            restorable from the URL, and `KernTabs` owns its active index
+            internally and would also mount both panels, defeating the map's
+            lazy import.
+          */}
+          <fieldset className="view-switcher">
+            <legend className="kern-sr-only">Darstellung wählen</legend>
+            {RESULT_VIEW_OPTIONS.map((option) => (
+              <label key={option.value} className="view-switcher__item">
+                <input
+                  className="view-switcher__input kern-sr-only"
+                  type="radio"
+                  name="results-view"
+                  value={option.value}
+                  checked={view === option.value}
+                  onChange={() => onViewChange(option.value)}
+                />
+                {option.label}
+              </label>
+            ))}
+          </fieldset>
         </div>
       </div>
 
@@ -187,8 +229,8 @@ export function ConstructionSiteResults({
         view === "map" ? (
           <Suspense
             fallback={
-              <div className="app-status" role="status" aria-live="polite">
-                <span className="app-status__spinner" aria-hidden="true" />
+              <div className="app-status app-status--map" role="status">
+                <KernLoader />
                 <KernText>Karte wird geladen …</KernText>
               </div>
             }
@@ -199,7 +241,7 @@ export function ConstructionSiteResults({
               constructionSites={displayedConstructionSites}
               selectedSiteId={selectedSiteId}
               currentLocation={currentLocation}
-              notificationArea={notificationArea}
+              notificationAreas={notificationAreas}
               onSiteSelect={onSelectedSiteIdChange}
               getSiteDetailsHref={getDetailHref}
               onSiteDetailsRequest={onDetailOpen}
@@ -209,6 +251,7 @@ export function ConstructionSiteResults({
         ) : (
           <ConstructionSiteTable
             constructionSites={sortedConstructionSites}
+            layout={layout}
             sort={effectiveSort}
             onSortChange={onSortChange}
             currentLocation={currentLocation}

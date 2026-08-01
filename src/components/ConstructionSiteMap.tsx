@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef } from "react";
+import { KernButton, KernIcon } from "@kern-ux-annex/kern-react-kit";
 import {
   AttributionControl,
   LngLatBounds,
@@ -15,7 +16,10 @@ import type {
   NotificationArea,
 } from "../types/index.ts";
 import {
+  CLOSURE_SEVERITY_COLORS,
+  CLOSURE_SEVERITIES,
   getConstructionCategoryLabel,
+  getClosureHeadline,
   getClosureLabel,
   formatConstructionPeriod,
   getConstructionPhaseLabel,
@@ -26,9 +30,12 @@ import {
   createNotificationAreaFeatureCollection,
   createNotificationAreaPolygon,
   createUserLocationFeatureCollection,
+  type NotificationAreaShape,
 } from "../lib/map-geojson.ts";
+import { useConstructionSiteGeometries } from "../hooks/useConstructionSiteGeometries.ts";
 import {
   addConstructionSiteMapLayers,
+  MAP_CLUSTER_MAX_ZOOM,
   MAP_LAYER_IDS,
   MAP_SOURCE_IDS,
 } from "../lib/construction-site-map-layers.ts";
@@ -42,7 +49,7 @@ interface ConstructionSiteMapProps {
   constructionSites: readonly ConstructionSite[];
   selectedSiteId?: string;
   currentLocation?: LngLat;
-  notificationArea?: NotificationArea;
+  notificationAreas: readonly NotificationArea[];
   onSiteSelect: (siteId: string | undefined) => void;
   getSiteDetailsHref: (siteId: string) => string;
   onSiteDetailsRequest: (siteId: string) => void;
@@ -50,10 +57,20 @@ interface ConstructionSiteMapProps {
 }
 
 const FIT_PADDING = { top: 54, right: 54, bottom: 54, left: 54 };
-const CURRENT_LOCATION_ZOOM = 15;
+/**
+ * How much of the surroundings a shared location opens up. A walkable/short-ride
+ * radius answers "what is going on around me" far better than the region-wide
+ * fit, which renders as one indistinct mass of markers.
+ */
+const NEARBY_RADIUS_KM = 3;
 
 const getGeoJSONSource = (map: MapLibreMap, id: string): GeoJSONSource =>
   map.getSource(id) as GeoJSONSource;
+
+/** Severities the legend explains; `"unknown"` carries no useful colour cue. */
+const LEGEND_SEVERITIES = CLOSURE_SEVERITIES.filter(
+  (closure) => closure !== "unknown",
+);
 
 function fitConstructionSites(
   map: MapLibreMap,
@@ -74,36 +91,59 @@ function fitConstructionSites(
   });
 }
 
-function fitNotificationArea(map: MapLibreMap, area: NotificationArea) {
+function fitRadius(
+  map: MapLibreMap,
+  area: NotificationAreaShape,
+  duration: number,
+) {
   const bounds = new LngLatBounds();
   createNotificationAreaPolygon(area).coordinates[0].forEach((point) =>
     bounds.extend(point as LngLat),
   );
   map.fitBounds(bounds, {
     padding: FIT_PADDING,
-    maxZoom: 14,
-    duration: 500,
+    maxZoom: 15,
+    duration,
   });
 }
 
-function focusCurrentLocation(map: MapLibreMap, location: LngLat) {
-  map.easeTo({
-    center: location,
-    zoom: Math.max(map.getZoom(), CURRENT_LOCATION_ZOOM),
-    duration: 650,
-  });
+/** Opens the map on everything the visitor is watching. */
+function fitNotificationAreas(
+  map: MapLibreMap,
+  areas: readonly NotificationArea[],
+) {
+  if (areas.length === 1) {
+    fitRadius(map, areas[0], 500);
+    return;
+  }
+  const bounds = new LngLatBounds();
+  for (const area of areas) {
+    createNotificationAreaPolygon(area).coordinates[0].forEach((point) =>
+      bounds.extend(point as LngLat),
+    );
+  }
+  map.fitBounds(bounds, { padding: FIT_PADDING, maxZoom: 15, duration: 500 });
+}
+
+function focusCurrentLocation(
+  map: MapLibreMap,
+  location: LngLat,
+  duration = 650,
+) {
+  fitRadius(map, { center: location, radiusKm: NEARBY_RADIUS_KM }, duration);
 }
 
 export function ConstructionSiteMap({
   constructionSites,
   selectedSiteId,
   currentLocation,
-  notificationArea,
+  notificationAreas,
   onSiteSelect,
   getSiteDetailsHref,
   onSiteDetailsRequest,
   onListViewRequest,
 }: ConstructionSiteMapProps) {
+  const geometries = useConstructionSiteGeometries();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const isMapReadyRef = useRef(false);
@@ -112,16 +152,18 @@ export function ConstructionSiteMap({
   // which must not re-run when these change. Adding a value is a one-line edit.
   const latestPropsRef = useRef({
     constructionSites,
+    geometries,
     selectedSiteId,
     currentLocation,
-    notificationArea,
+    notificationAreas,
     onSiteSelect,
   });
   latestPropsRef.current = {
     constructionSites,
+    geometries,
     selectedSiteId,
     currentLocation,
-    notificationArea,
+    notificationAreas,
     onSiteSelect,
   };
 
@@ -155,20 +197,45 @@ export function ConstructionSiteMap({
       const initial = latestPropsRef.current;
       addConstructionSiteMapLayers(map, {
         constructionSites: initial.constructionSites,
+        geometries: initial.geometries,
         currentLocation: initial.currentLocation,
-        notificationArea: initial.notificationArea,
+        notificationAreas: initial.notificationAreas,
       });
 
-      const interactiveGeometryLayers = [
+      const interactiveSiteLayers = [
         MAP_LAYER_IDS.areaFill,
         MAP_LAYER_IDS.geometryLine,
-        MAP_LAYER_IDS.geometryPoints,
+        MAP_LAYER_IDS.points,
       ] as const;
-      for (const layer of interactiveGeometryLayers) {
+      for (const layer of interactiveSiteLayers) {
         map.on("click", layer, (event) => {
           const id = event.features?.[0]?.properties?.id as string | undefined;
           if (id) latestPropsRef.current.onSiteSelect(id);
         });
+      }
+
+      // Tapping a cluster zooms to the level where it breaks apart, which is
+      // the only useful thing it can do and saves a round of pinch-zooming.
+      map.on("click", MAP_LAYER_IDS.clusters, (event) => {
+        const feature = event.features?.[0];
+        const clusterId = feature?.properties?.cluster_id as number | undefined;
+        if (clusterId === undefined || feature?.geometry.type !== "Point") {
+          return;
+        }
+        const center = feature.geometry.coordinates as LngLat;
+        void getGeoJSONSource(map, MAP_SOURCE_IDS.points)
+          .getClusterExpansionZoom(clusterId)
+          .then((zoom) => map.easeTo({ center, zoom, duration: 500 }))
+          .catch(() =>
+            map.easeTo({
+              center,
+              zoom: MAP_CLUSTER_MAX_ZOOM + 1,
+              duration: 500,
+            }),
+          );
+      });
+
+      for (const layer of [...interactiveSiteLayers, MAP_LAYER_IDS.clusters]) {
         map.on("mouseenter", layer, () => {
           map.getCanvas().style.cursor = "pointer";
         });
@@ -182,7 +249,7 @@ export function ConstructionSiteMap({
         constructionSites,
         selectedSiteId,
         currentLocation,
-        notificationArea,
+        notificationAreas,
       } = latestPropsRef.current;
       map.setFilter(MAP_LAYER_IDS.selected, [
         "==",
@@ -196,9 +263,9 @@ export function ConstructionSiteMap({
       if (initiallySelected) {
         map.easeTo({ center: initiallySelected.point, zoom: 15, duration: 0 });
       } else if (currentLocation) {
-        focusCurrentLocation(map, currentLocation);
-      } else if (notificationArea) {
-        fitNotificationArea(map, notificationArea);
+        focusCurrentLocation(map, currentLocation, 0);
+      } else if (notificationAreas.length > 0) {
+        fitNotificationAreas(map, notificationAreas);
       }
     });
 
@@ -215,11 +282,21 @@ export function ConstructionSiteMap({
     getGeoJSONSource(map, MAP_SOURCE_IDS.points).setData(
       createConstructionSitePointFeatureCollection(constructionSites),
     );
-    getGeoJSONSource(map, MAP_SOURCE_IDS.geometries).setData(
-      createConstructionSiteGeometryFeatureCollection(constructionSites),
-    );
     fitConstructionSites(map, constructionSites);
   }, [constructionSites]);
+
+  // Separate from the point update: geometry arrives later than the records and
+  // must not drag a viewport refit along when it does.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !isMapReadyRef.current) return;
+    getGeoJSONSource(map, MAP_SOURCE_IDS.geometries).setData(
+      createConstructionSiteGeometryFeatureCollection(
+        constructionSites,
+        geometries,
+      ),
+    );
+  }, [constructionSites, geometries]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -236,9 +313,9 @@ export function ConstructionSiteMap({
     const map = mapRef.current;
     if (!map || !isMapReadyRef.current) return;
     getGeoJSONSource(map, MAP_SOURCE_IDS.notificationArea).setData(
-      createNotificationAreaFeatureCollection(notificationArea),
+      createNotificationAreaFeatureCollection(notificationAreas),
     );
-  }, [notificationArea]);
+  }, [notificationAreas]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -268,40 +345,60 @@ export function ConstructionSiteMap({
 
   return (
     <div className="map-explorer">
+      {/*
+        The markers live in a canvas and cannot be reached with the keyboard.
+        Rather than leave that as a dead end, the list view is offered as the
+        equivalent — visible on focus only, like a skip link.
+      */}
+      <button
+        type="button"
+        className="map-explorer__list-hint"
+        onClick={onListViewRequest}
+      >
+        Karte nicht mit der Tastatur bedienbar – zur Liste wechseln
+      </button>
+
       <div className="map-explorer__toolbar">
-        <div className="map-legend" aria-label="Legende">
-          <span>
-            <i className="map-legend__dot map-legend__dot--active" />
-            Aktuell
-          </span>
-          <span>
+        <ul className="map-legend" aria-label="Legende: Farbe zeigt die Sperrung">
+          {LEGEND_SEVERITIES.map((closure) => (
+            <li key={closure}>
+              <i
+                className="map-legend__dot"
+                style={{ background: CLOSURE_SEVERITY_COLORS[closure] }}
+              />
+              {getClosureLabel(closure)}
+            </li>
+          ))}
+          <li>
             <i className="map-legend__dot map-legend__dot--upcoming" />
             Geplant
-          </span>
+          </li>
           {currentLocation && (
-            <span>
+            <li>
               <i className="map-legend__dot map-legend__dot--location" />
               Mein Standort
-            </span>
+            </li>
           )}
-          {notificationArea && (
-            <span>
+          {notificationAreas.length > 0 && (
+            <li>
               <i className="map-legend__radius" />
-              Benachrichtigungsradius ({notificationArea.radiusKm} km)
-            </span>
+              {notificationAreas.length === 1
+                ? `Mein Gebiet (${notificationAreas[0].radiusKm} km)`
+                : `Meine Gebiete (${notificationAreas.length})`}
+            </li>
           )}
-        </div>
-        <button
+        </ul>
+        <KernButton
           type="button"
+          variant="tertiary"
           className="map-explorer__fit"
+          label="Alle zeigen"
           onClick={() => {
             if (mapRef.current) {
               fitConstructionSites(mapRef.current, constructionSites);
             }
           }}
-        >
-          Alle zeigen
-        </button>
+        />
       </div>
 
       <div
@@ -319,10 +416,11 @@ export function ConstructionSiteMap({
               {selectedSite.municipality}
             </div>
             <h3>{selectedSite.location}</h3>
-            <p>
-              {getConstructionCategoryLabel(selectedSite.category)} ·{" "}
-              {getClosureLabel(selectedSite.closure)}
+            {/* Same lead answer as the detail page, so the two agree. */}
+            <p className="map-selection__verdict">
+              {getClosureHeadline(selectedSite.closure)}
             </p>
+            <p>{getConstructionCategoryLabel(selectedSite.category)}</p>
             <p>
               {formatConstructionPeriod(
                 selectedSite.startDate,
@@ -333,13 +431,6 @@ export function ConstructionSiteMap({
               <p className="map-selection__notes">{selectedSite.notes}</p>
             )}
           </div>
-          <button
-            type="button"
-            className="map-selection__list-button"
-            onClick={onListViewRequest}
-          >
-            In der Liste ansehen
-          </button>
           <a
             className="map-selection__details-link"
             href={getSiteDetailsHref(selectedSite.id)}
@@ -357,7 +448,7 @@ export function ConstructionSiteMap({
               onSiteDetailsRequest(selectedSite.id);
             }}
           >
-            Detailansicht
+            Details ansehen
           </a>
           <button
             type="button"
@@ -365,7 +456,7 @@ export function ConstructionSiteMap({
             aria-label="Auswahl schließen"
             onClick={() => onSiteSelect(undefined)}
           >
-            <span aria-hidden="true">×</span>
+            <KernIcon icon="close" />
           </button>
         </article>
       )}

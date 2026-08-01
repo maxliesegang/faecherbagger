@@ -1,8 +1,10 @@
 import type {
   ConstructionSite,
   ConstructionSiteChanges,
+  ConstructionSiteGeometries,
   ConstructionSiteMetadata,
 } from "../types/index.ts";
+import { CONSTRUCTION_SITE_DATA_FILENAMES } from "./construction-site-data-files.ts";
 
 /**
  * Loads construction-site JSON produced by the pipeline. Files live in `public/data/`
@@ -24,14 +26,35 @@ async function loadJSON<T>(filename: string, signal?: AbortSignal): Promise<T> {
 export const loadConstructionSiteMetadata = (
   signal?: AbortSignal,
 ): Promise<ConstructionSiteMetadata> =>
-  loadJSON<ConstructionSiteMetadata>("meta.json", signal);
+  loadJSON<ConstructionSiteMetadata>(
+    CONSTRUCTION_SITE_DATA_FILENAMES.metadata,
+    signal,
+  );
 
 export const loadConstructionSites = (
   signal?: AbortSignal,
 ): Promise<ConstructionSite[]> =>
-  loadJSON<ConstructionSite[]>("baustellen.json", signal);
+  loadJSON<ConstructionSite[]>(
+    CONSTRUCTION_SITE_DATA_FILENAMES.constructionSites,
+    signal,
+  );
 
 export const loadConstructionSiteChanges = (
   signal?: AbortSignal,
 ): Promise<ConstructionSiteChanges> =>
-  loadJSON<ConstructionSiteChanges>("changes.json", signal);
+  loadJSON<ConstructionSiteChanges>(
+    CONSTRUCTION_SITE_DATA_FILENAMES.changes,
+    signal,
+  );
+
+/**
+ * Map geometry, keyed by site id. Deliberately not part of the initial load:
+ * only a mounted map needs it, and it is the bulk of the published data.
+ */
+export const loadConstructionSiteGeometries = (
+  signal?: AbortSignal,
+): Promise<ConstructionSiteGeometries> =>
+  loadJSON<ConstructionSiteGeometries>(
+    CONSTRUCTION_SITE_DATA_FILENAMES.geometries,
+    signal,
+  );

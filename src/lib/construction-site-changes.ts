@@ -1,6 +1,7 @@
 import type {
   ConstructionSite,
   ConstructionSiteChanges,
+  ConstructionSiteModification,
   ISOTimestamp,
 } from "../types/index.ts";
 
@@ -24,12 +25,35 @@ export function computeConstructionSiteChanges(
   const added: string[] = [];
   const modified: string[] = [];
   const removed: string[] = [];
+  const relevantModifications: ConstructionSiteModification[] = [];
 
   for (const [id, site] of currentSitesById) {
     const previousSite = previousSitesById.get(id);
-    if (!previousSite) added.push(id);
-    else if (previousSite.lastModified !== site.lastModified) {
-      modified.push(id);
+    if (!previousSite) {
+      added.push(id);
+      continue;
+    }
+    if (previousSite.lastModified === site.lastModified) continue;
+    modified.push(id);
+
+    // Which fields moved decides whether this is worth a notification: a
+    // corrected spelling bumps `stand` just like a new full closure does.
+    const changedFields: ConstructionSiteModification["changedFields"] = [];
+    if (
+      previousSite.startDate !== site.startDate ||
+      previousSite.endDate !== site.endDate
+    ) {
+      changedFields.push("period");
+    }
+    if (previousSite.closure !== site.closure) changedFields.push("closure");
+    if (changedFields.length > 0) {
+      relevantModifications.push({
+        id,
+        changedFields,
+        previousClosure: previousSite.closure,
+        previousStartDate: previousSite.startDate,
+        previousEndDate: previousSite.endDate,
+      });
     }
   }
   for (const id of previousSitesById.keys()) {
@@ -39,7 +63,8 @@ export function computeConstructionSiteChanges(
   added.sort();
   modified.sort();
   removed.sort();
-  return { since, added, modified, removed };
+  relevantModifications.sort((left, right) => left.id.localeCompare(right.id));
+  return { since, added, modified, removed, relevantModifications };
 }
 
 /**

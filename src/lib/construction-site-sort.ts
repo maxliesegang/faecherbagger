@@ -46,7 +46,7 @@ export const CONSTRUCTION_SITE_SORT_PRESETS: readonly {
   /** Only offered when the user shared a location. */
   needsLocation?: boolean;
 }[] = [
-  { sort: null, label: "Empfohlen (aktuell und einschneidend zuerst)" },
+  { sort: null, label: "Empfohlen" },
   {
     sort: { key: "distance", direction: "ascending" },
     label: "Entfernung (nächste zuerst)",
@@ -133,8 +133,14 @@ function compareByKey(
 
 /**
  * Sort order for lists: current sites before planned ones, then the most
- * disruptive closures first, then earliest start. The id is the final
- * tiebreaker so the result is deterministic regardless of input order.
+ * disruptive closures first, then the start date closest to now.
+ *
+ * The date tiebreaker runs in opposite directions per phase on purpose. Within
+ * the active sites the most recently started ones are the news; sorting them
+ * ascending instead buried the whole first screen under multi-year scaffolding
+ * permits. Within the planned sites the ones starting soonest matter most. The
+ * id is the final tiebreaker so the result is deterministic regardless of input
+ * order, without needing a reference date.
  */
 export function compareConstructionSitesByDefaultOrder(
   left: ConstructionSite,
@@ -148,9 +154,10 @@ export function compareConstructionSitesByDefaultOrder(
   if (closureDifference !== 0) return closureDifference;
 
   const startDifference = left.startDate.localeCompare(right.startDate);
-  return startDifference !== 0
-    ? startDifference
-    : left.id.localeCompare(right.id);
+  if (startDifference !== 0) {
+    return left.phase === "active" ? -startDifference : startDifference;
+  }
+  return left.id.localeCompare(right.id);
 }
 
 /** Returns a display-sorted copy without modifying the input. */

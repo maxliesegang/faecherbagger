@@ -16,39 +16,48 @@
   background: var(--kern-color-layout-background-default, #fff);
 }
 
+/*
+ * Colour stands for the closure severity, so the legend lists severities. The
+ * marker size repeats the same order (a full closure draws largest) for anyone
+ * who cannot separate the red/orange/amber steps.
+ */
 .map-legend {
   display: flex;
-  gap: 1rem;
+  gap: 0.35rem 0.9rem;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 0.875rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  list-style: none;
 }
 
-.map-legend > span {
+.map-legend > li {
   display: inline-flex;
-  gap: 0.4rem;
+  gap: 0.35rem;
   align-items: center;
 }
 
+/*
+ * Solid discs without an inner white ring: with one they read as radio buttons,
+ * and the legend sits right next to real controls.
+ */
 .map-legend__dot {
   display: inline-block;
-  width: 0.75rem;
-  height: 0.75rem;
-  border: 2px solid #fff;
+  flex: 0 0 auto;
+  width: 0.7rem;
+  height: 0.7rem;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px #777;
 }
 
-.map-legend__dot--active {
-  background: var(--phase-active, #1d5e9e);
-}
-
+/* Hollow, like the planned markers on the map itself. */
 .map-legend__dot--upcoming {
-  background: var(--phase-upcoming, #ad6800);
+  border: 2px solid var(--kern-color-layout-text-muted, #595959);
+  background: transparent;
 }
 
 .map-legend__dot--location {
-  border-color: #2459a9;
+  border: 3px solid #2459a9;
   background: #fff;
 }
 
@@ -60,17 +69,50 @@
   background: rgb(36 89 169 / 4%);
 }
 
-.map-explorer__fit,
-.map-selection__list-button,
+.map-explorer__fit {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/*
+ * Keyboard-only escape hatch out of the canvas, revealed on focus like the
+ * page's skip link so it costs no visual space.
+ */
+.map-explorer__list-hint {
+  position: absolute;
+  z-index: 4;
+  top: 0.35rem;
+  left: 0.65rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  color: var(--kern-color-action-on-default, #fff);
+  font: inherit;
+  font-size: 0.875rem;
+  background: var(--kern-color-action-default, #454b6b);
+  cursor: pointer;
+  transform: translateY(-150%);
+}
+
+.map-explorer__list-hint:focus {
+  transform: translateY(0);
+}
+
 .map-selection__details-link {
   flex: 0 0 auto;
-  padding: 0.35rem 0;
-  border: 0;
-  color: var(--kern-color-action-default, #454b6b);
+  align-self: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--kern-color-action-default, #454b6b);
+  color: var(--kern-color-action-on-default, #fff);
   font-weight: 700;
-  text-decoration: underline;
-  background: transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  background: var(--kern-color-action-default, #454b6b);
   cursor: pointer;
+}
+
+.map-selection__details-link:hover {
+  border-color: var(--kern-color-action-hover, #333a5c);
+  background: var(--kern-color-action-hover, #333a5c);
 }
 
 /*
@@ -84,8 +126,7 @@
 }
 
 .map-explorer__map:focus-visible,
-.map-explorer__fit:focus-visible,
-.map-selection__list-button:focus-visible,
+.map-explorer__list-hint:focus-visible,
 .map-selection__details-link:focus-visible,
 .map-selection__close:focus-visible {
   outline: 4px solid
@@ -130,6 +171,11 @@
   text-transform: uppercase;
 }
 
+/* The "can I get through?" answer, given the same weight as the site name. */
+.map-selection__verdict {
+  font-weight: 700;
+}
+
 .map-selection p {
   font-size: 0.9rem;
 }
@@ -146,12 +192,13 @@
 .map-selection__close {
   position: absolute;
   top: 0.1rem;
-  right: 0.25rem;
-  width: 2rem;
-  height: 2rem;
+  right: 0.1rem;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
   border: 0;
   color: var(--kern-color-layout-text-muted, #595959);
-  font-size: 1.4rem;
   line-height: 1;
   background: transparent;
   cursor: pointer;
@@ -166,12 +213,24 @@
 }
 
 @media (max-width: 40rem) {
+  /*
+   * Stacked, so the legend gets the full width and pairs its entries up instead
+   * of putting each on its own line — five stacked rows cost more vertical space
+   * than the map can spare on a phone.
+   */
   .map-explorer__toolbar {
-    align-items: start;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
   .map-legend {
-    gap: 0.45rem 0.85rem;
+    gap: 0.25rem 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .map-explorer__fit {
+    align-self: flex-end;
   }
 
   .map-explorer__map {
@@ -183,14 +242,10 @@
     display: block;
   }
 
-  .map-selection__list-button {
-    margin-top: 0.5rem;
-  }
-
   .map-selection__details-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
+    display: block;
+    margin-top: 0.65rem;
+    text-align: center;
   }
 }
 

@@ -9,8 +9,9 @@ import {
 } from "../src/lib/map-geojson.ts";
 import type {
   ConstructionSite,
-  NotificationArea,
+  ConstructionSiteGeometries,
 } from "../src/types/index.ts";
+import type { NotificationAreaShape } from "../src/lib/map-geojson.ts";
 
 const constructionSite: ConstructionSite = {
   id: "site-1",
@@ -26,15 +27,18 @@ const constructionSite: ConstructionSite = {
   startDate: "2026-07-24",
   endDate: null,
   point: [8.4037, 49.0094],
-  geometry: {
+  source: "Test",
+  lastModified: "2026-07-24T10:00:00Z",
+};
+
+const geometries: ConstructionSiteGeometries = {
+  [constructionSite.id]: {
     type: "LineString",
     coordinates: [
       [8.4037, 49.0094],
       [8.404, 49.01],
     ],
   },
-  source: "Test",
-  lastModified: "2026-07-24T10:00:00Z",
 };
 
 describe("map data", () => {
@@ -42,9 +46,10 @@ describe("map data", () => {
     const pointFeature = createConstructionSitePointFeatureCollection([
       constructionSite,
     ]).features[0];
-    const geometryFeature = createConstructionSiteGeometryFeatureCollection([
-      constructionSite,
-    ]).features[0];
+    const geometryFeature = createConstructionSiteGeometryFeatureCollection(
+      [constructionSite],
+      geometries,
+    ).features[0];
 
     expect(pointFeature).toMatchObject({
       id: constructionSite.id,
@@ -52,9 +57,39 @@ describe("map data", () => {
       properties: {
         id: constructionSite.id,
         phase: constructionSite.phase,
+        closure: constructionSite.closure,
+        isFullClosure: 0,
       },
     });
-    expect(geometryFeature?.geometry).toEqual(constructionSite.geometry);
+    expect(geometryFeature?.geometry).toEqual(geometries[constructionSite.id]);
+    expect(geometryFeature?.properties.closure).toBe(constructionSite.closure);
+  });
+
+  it("skips sites whose geometry has not been loaded yet", () => {
+    const withoutGeometry = { ...constructionSite, id: "site-without" };
+
+    expect(
+      createConstructionSiteGeometryFeatureCollection(
+        [constructionSite, withoutGeometry],
+        geometries,
+      ).features.map((feature) => feature.id),
+    ).toEqual([constructionSite.id]);
+    expect(
+      createConstructionSiteGeometryFeatureCollection(
+        [constructionSite],
+        undefined,
+      ).features,
+    ).toEqual([]);
+  });
+
+  it("marks full closures numerically so a cluster can sum them", () => {
+    const [mild, severe] = createConstructionSitePointFeatureCollection([
+      constructionSite,
+      { ...constructionSite, id: "site-2", closure: "full" },
+    ]).features;
+
+    expect(mild?.properties.isFullClosure).toBe(0);
+    expect(severe?.properties.isFullClosure).toBe(1);
   });
 
   it("represents an absent or present user location consistently", () => {
@@ -69,7 +104,7 @@ describe("map data", () => {
   });
 
   it("creates a closed geodesic notification polygon at the requested radius", () => {
-    const area: NotificationArea = {
+    const area: NotificationAreaShape = {
       center: [8.4044, 49.0069],
       radiusKm: 5,
     };
@@ -85,13 +120,13 @@ describe("map data", () => {
     }
   });
 
-  it("uses an empty feature collection when no area is configured", () => {
-    expect(createNotificationAreaFeatureCollection().features).toEqual([]);
+  it("renders one polygon per configured area, none when there are none", () => {
+    expect(createNotificationAreaFeatureCollection([]).features).toEqual([]);
     expect(
-      createNotificationAreaFeatureCollection({
-        center: [8.4044, 49.0069],
-        radiusKm: 5,
-      }).features,
-    ).toHaveLength(1);
+      createNotificationAreaFeatureCollection([
+        { center: [8.4044, 49.0069], radiusKm: 5 },
+        { center: [8.5, 49.1], radiusKm: 2 },
+      ]).features,
+    ).toHaveLength(2);
   });
 });

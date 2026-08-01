@@ -1,27 +1,27 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   KernAlert,
   KernButton,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import {
-  getPushSubscription,
+  getServerSubscriptionState,
   isPushConfigured,
   isPushSupported,
+  sendTestNotification,
   subscribeToPush,
   unsubscribeFromPush,
-  updatePushPreferences,
 } from "../lib/push.ts";
 import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
-import type { NotificationArea } from "../types/index.ts";
-import {
-  DEFAULT_NOTIFICATION_RADIUS_KM,
-  MAX_NOTIFICATION_RADIUS_KM,
-  MIN_NOTIFICATION_RADIUS_KM,
-} from "../lib/notification-area.ts";
+import type {
+  NotificationArea,
+  NotificationPreferences,
+} from "../types/index.ts";
+import { removeNotificationArea } from "../lib/notification-area.ts";
+import { MAX_NOTIFICATION_AREAS } from "../lib/notification-preferences.ts";
+import { NotificationSetupDialog } from "./NotificationSetupDialog.tsx";
 import "./ProgressiveWebAppSettings.css";
 
-const NOTIFICATIONS_STORAGE_KEY = "faecherbagger-notifications";
 const REFRESH_TAG = "refresh-baustellen";
 const REFRESH_INTERVAL_MS = 12 * 60 * 60 * 1000;
 
@@ -43,10 +43,17 @@ type ProgressiveWebAppRegistration = ServiceWorkerRegistration & {
   sync?: BackgroundSyncManager;
 };
 
+/**
+ * Whether this device receives notifications, as far as the *server* is
+ * concerned. `unknown` is the honest state before the check completes — the
+ * panel must not claim "aktiv" on the strength of a local flag.
+ */
+type SubscriptionState = "unknown" | "registered" | "inactive";
+
 interface ProgressiveWebAppSettingsProps {
   locationController: CurrentLocationController;
-  notificationArea: NotificationArea | null;
-  onNotificationAreaChange: (area: NotificationArea) => void;
+  preferences: NotificationPreferences;
+  onPreferencesChange: (preferences: NotificationPreferences) => void;
 }
 
 function postMessageToServiceWorker(message: object) {
@@ -63,8 +70,8 @@ const getErrorMessage = (error: unknown, fallback: string): string =>
 
 export function ProgressiveWebAppSettings({
   locationController,
-  notificationArea,
-  onNotificationAreaChange,
+  preferences,
+  onPreferencesChange,
 }: ProgressiveWebAppSettingsProps) {
   const [installPrompt, setInstallPrompt] =
     useState<BeforeInstallPromptEvent>();
@@ -73,17 +80,24 @@ export function ProgressiveWebAppSettings({
   );
   const [notificationPermission, setNotificationPermission] = useState<
     NotificationPermission | "unsupported"
-  >(
-    "Notification" in window ? Notification.permission : "unsupported",
-  );
-  const [areNotificationsEnabled, setAreNotificationsEnabled] = useState(
-    localStorage.getItem(NOTIFICATIONS_STORAGE_KEY) === "true",
-  );
+  >("Notification" in window ? Notification.permission : "unsupported");
+  const [subscriptionState, setSubscriptionState] =
+    useState<SubscriptionState>("unknown");
   const [feedbackMessage, setFeedbackMessage] = useState<string>();
-  const [radiusKm, setRadiusKm] = useState(
-    notificationArea?.radiusKm ?? DEFAULT_NOTIFICATION_RADIUS_KM,
-  );
-  const [isSavingArea, setIsSavingArea] = useState(false);
+  const [isBusy, setIsBusy] = useState(false);
+  const [editedArea, setEditedArea] = useState<NotificationArea>();
+  const [isSetupOpen, setIsSetupOpen] = useState(false);
+
+  const refreshSubscriptionState = useCallback(async () => {
+    try {
+      const state = await getServerSubscriptionState();
+      setSubscriptionState(state === "registered" ? "registered" : "inactive");
+    } catch {
+      // A temporary failure of the notification service is not evidence that
+      // the device is unsubscribed, so the state stays unknown.
+      setSubscriptionState("unknown");
+    }
+  }, []);
 
   useEffect(() => {
     const onInstallPrompt = (event: Event) => {
@@ -106,9 +120,7 @@ export function ProgressiveWebAppSettings({
           if (progressiveWebAppRegistration.periodicSync) {
             await progressiveWebAppRegistration.periodicSync.register(
               REFRESH_TAG,
-              {
-                minInterval: REFRESH_INTERVAL_MS,
-              },
+              { minInterval: REFRESH_INTERVAL_MS },
             );
           } else if (progressiveWebAppRegistration.sync) {
             await progressiveWebAppRegistration.sync.register(REFRESH_TAG);
@@ -117,19 +129,7 @@ export function ProgressiveWebAppSettings({
           // Browsers may reject background sync based on engagement or settings.
         }
         postMessageToServiceWorker({ type: "REFRESH_DATA" });
-        if (isPushSupported) {
-          try {
-            const subscription = await getPushSubscription();
-            const subscribed = Boolean(subscription);
-            if (subscription && isPushConfigured) {
-              await subscribeToPush(notificationArea ?? undefined);
-            }
-            setAreNotificationsEnabled(subscribed);
-            localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, String(subscribed));
-          } catch {
-            // A temporary push API failure must not prevent the PWA from loading.
-          }
-        }
+        await refreshSubscriptionState();
       });
     }
 
@@ -146,120 +146,38 @@ export function ProgressiveWebAppSettings({
       window.removeEventListener("online", refreshWhenOnline);
       document.removeEventListener("visibilitychange", refreshWhenOnline);
     };
-  }, []);
+  }, [refreshSubscriptionState]);
 
-  const saveNotificationPreferences = async (
-    area: NotificationArea,
-    message: string,
-  ) => {
-    setIsSavingArea(true);
+  const runAction = async (action: () => Promise<void>, fallback: string) => {
+    setIsBusy(true);
     try {
-      if (areNotificationsEnabled) {
-        await updatePushPreferences(area);
-      }
-      onNotificationAreaChange(area);
-      setFeedbackMessage(message);
+      await action();
     } catch (error) {
-      setFeedbackMessage(
-        getErrorMessage(
-          error,
-          "Der Benachrichtigungsradius konnte nicht gespeichert werden.",
-        ),
-      );
+      setFeedbackMessage(getErrorMessage(error, fallback));
     } finally {
-      setIsSavingArea(false);
+      setIsBusy(false);
     }
-  };
-
-  const setNotificationAreaFromCurrentLocation = async () => {
-    try {
-      const point =
-        locationController.locationState.status === "ready" &&
-        !notificationArea
-          ? locationController.locationState.point
-          : await locationController.requestLocation();
-      const center: [number, number] = [
-        Number(point[0].toFixed(5)),
-        Number(point[1].toFixed(5)),
-      ];
-      await saveNotificationPreferences(
-        { center, radiusKm },
-        areNotificationsEnabled
-          ? `Benachrichtigungsradius von ${radiusKm} km ist gespeichert.`
-          : `Standort und Radius von ${radiusKm} km sind vorgemerkt.`,
-      );
-    } catch (error) {
-      setFeedbackMessage(
-        getErrorMessage(error, "Der Standort konnte nicht bestimmt werden."),
-      );
-    }
-  };
-
-  const saveNotificationRadius = async () => {
-    if (!notificationArea) {
-      setFeedbackMessage(
-        "Legen Sie zuerst den Mittelpunkt über Ihren Standort fest.",
-      );
-      return;
-    }
-    await saveNotificationPreferences(
-      { ...notificationArea, radiusKm },
-      `Benachrichtigungsradius auf ${radiusKm} km aktualisiert.`,
-    );
   };
 
   const enableNotifications = async () => {
     if (!("Notification" in window)) return;
-    if (!notificationArea) {
-      setFeedbackMessage(
-        "Legen Sie zuerst Standort und Radius für Benachrichtigungen fest.",
-      );
+    const permission = await Notification.requestPermission();
+    setNotificationPermission(permission);
+    if (permission !== "granted") {
+      setFeedbackMessage("Benachrichtigungen wurden nicht freigegeben.");
       return;
     }
-    try {
-      const permission = await Notification.requestPermission();
-      setNotificationPermission(permission);
-      if (permission !== "granted") {
-        setFeedbackMessage("Benachrichtigungen wurden nicht freigegeben.");
-        return;
-      }
-      await subscribeToPush(notificationArea);
-      localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, "true");
-      setAreNotificationsEnabled(true);
-      const registration = await navigator.serviceWorker.ready;
-      await registration.showNotification("Benachrichtigungen aktiviert", {
-        body: `Sie erhalten Hinweise zu neuen Baustellen im Umkreis von ${notificationArea.radiusKm} km.`,
-        icon: `${import.meta.env.BASE_URL}icons/faecherbagger-192.png`,
-        badge: `${import.meta.env.BASE_URL}icons/faecherbagger-192.png`,
-        tag: "faecherbagger-test",
-      });
-      setFeedbackMessage("Testbenachrichtigung wurde gesendet.");
-    } catch (error) {
-      localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, "false");
-      setAreNotificationsEnabled(false);
-      setFeedbackMessage(
-        getErrorMessage(
-          error,
-          "Benachrichtigungen konnten nicht aktiviert werden.",
-        ),
-      );
-    }
+    await subscribeToPush();
+    await refreshSubscriptionState();
+    setFeedbackMessage(
+      "Benachrichtigungen sind aktiv. Prüfen Sie die Zustellung mit „Testbenachrichtigung senden“.",
+    );
   };
 
   const disableNotifications = async () => {
-    try {
-      await unsubscribeFromPush();
-      localStorage.setItem(NOTIFICATIONS_STORAGE_KEY, "false");
-      setAreNotificationsEnabled(false);
-      setFeedbackMessage("Baustellenbenachrichtigungen sind ausgeschaltet.");
-    } catch (error) {
-      setFeedbackMessage(
-        getErrorMessage(
-          error,
-          "Benachrichtigungen konnten nicht ausgeschaltet werden.",
-        ),
-      );
-    }
+    await unsubscribeFromPush();
+    setSubscriptionState("inactive");
+    setFeedbackMessage("Baustellenbenachrichtigungen sind ausgeschaltet.");
   };
 
   const promptAppInstallation = async () => {
@@ -270,162 +188,226 @@ export function ProgressiveWebAppSettings({
     setInstallPrompt(undefined);
   };
 
+  const openSetup = (area?: NotificationArea) => {
+    setEditedArea(area);
+    setIsSetupOpen(true);
+  };
+
+  const closeSetup = () => {
+    setIsSetupOpen(false);
+    setEditedArea(undefined);
+  };
+
   const isIosDevice = /iphone|ipad|ipod/i.test(navigator.userAgent);
   const canOfferNotifications = !isIosDevice || isInstalled;
+  const isActive = subscriptionState === "registered";
+  const canAddArea = preferences.areas.length < MAX_NOTIFICATION_AREAS;
 
   return (
-    <details className="kern-accordion pwa-panel">
-      <summary className="kern-accordion__header">
-        <span className="kern-title">
-          {areNotificationsEnabled
-            ? "Benachrichtigungen sind aktiv"
-            : "App & Benachrichtigungen"}
+    <section className="pwa-panel" aria-labelledby="pwa-panel-heading">
+      <div className="pwa-panel__heading">
+        <h2 id="pwa-panel-heading" className="kern-title">
+          Benachrichtigungen
+        </h2>
+        <span className="pwa-panel__state" data-state={subscriptionState}>
+          {subscriptionState === "unknown"
+            ? "wird geprüft …"
+            : isActive
+              ? "aktiv"
+              : "aus"}
         </span>
-      </summary>
-      <section className="kern-accordion__body pwa-panel__body">
-        <KernText className="pwa-panel__intro">
-          Neue Baustellen in Ihrem Umkreis melden lassen, App installieren oder
-          Daten manuell aktualisieren.
-        </KernText>
+      </div>
 
-        <fieldset className="pwa-panel__area">
-        <legend>Gebiet für neue Baustellen</legend>
-        <KernText>
-          Mittelpunkt ist Ihr gewählter Standort. Der Kreis wird auf der Karte
-          angezeigt.
-        </KernText>
-        <div className="pwa-panel__radius">
-          <label htmlFor="notification-radius">
-            Radius: <strong>{radiusKm} km</strong>
-          </label>
-          <input
-            id="notification-radius"
-            type="range"
-            min={MIN_NOTIFICATION_RADIUS_KM}
-            max={MAX_NOTIFICATION_RADIUS_KM}
-            step="1"
-            value={radiusKm}
-            onChange={(event) => setRadiusKm(Number(event.currentTarget.value))}
-          />
-        </div>
-        <div className="pwa-panel__area-actions">
-          <KernButton
-            type="button"
-            variant="secondary"
-            label={
-              notificationArea
-                ? "Mittelpunkt aktualisieren"
-                : "Meinen Standort als Mittelpunkt"
-            }
-            disabled={
-              isSavingArea ||
-              locationController.locationState.status === "requesting"
-            }
-            onClick={() => void setNotificationAreaFromCurrentLocation()}
-          />
-          {notificationArea && radiusKm !== notificationArea.radiusKm && (
+      <KernText muted className="pwa-panel__intro">
+        Lassen Sie sich melden, was sich an den Straßen tut, die Sie täglich
+        benutzen.
+      </KernText>
+
+      {preferences.areas.length === 0 ? (
+        <KernButton
+          type="button"
+          label="Gebiet festlegen"
+          disabled={isBusy}
+          onClick={() => openSetup()}
+        />
+      ) : (
+        <>
+          <ul className="pwa-panel__areas">
+            {preferences.areas.map((area) => (
+              <li key={area.id}>
+                <span className="pwa-panel__area-name">
+                  <strong>{area.label}</strong>
+                  <span>{area.radiusKm} km Umkreis</span>
+                </span>
+                <span className="pwa-panel__area-actions">
+                  <button type="button" onClick={() => openSetup(area)}>
+                    Ändern
+                    <span className="kern-sr-only"> — {area.label}</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      onPreferencesChange({
+                        ...preferences,
+                        areas: removeNotificationArea(
+                          preferences.areas,
+                          area.id,
+                        ),
+                      })
+                    }
+                  >
+                    Entfernen
+                    <span className="kern-sr-only"> — {area.label}</span>
+                  </button>
+                </span>
+              </li>
+            ))}
+          </ul>
+          {canAddArea && (
             <KernButton
               type="button"
               variant="tertiary"
-              label="Radius speichern"
-              disabled={isSavingArea}
-              onClick={() => void saveNotificationRadius()}
+              label="Weiteres Gebiet"
+              onClick={() => openSetup()}
             />
           )}
-        </div>
-        {notificationArea && (
-          <KernText muted>
-            Gespeichert: {notificationArea.radiusKm} km um den gewählten
-            Standort.
-          </KernText>
-        )}
-        </fieldset>
+        </>
+      )}
 
-        <div className="pwa-panel__actions">
-        {!isInstalled && installPrompt && (
-          <KernButton
-            type="button"
-            label="App installieren"
-            onClick={() => void promptAppInstallation()}
-          />
-        )}
-        {!areNotificationsEnabled &&
+      <div className="pwa-panel__actions">
+        {!isActive &&
+          preferences.areas.length > 0 &&
           notificationPermission !== "unsupported" &&
           canOfferNotifications &&
           isPushSupported &&
           isPushConfigured && (
-          <KernButton
-            type="button"
-            variant="secondary"
-            label="Benachrichtigungen aktivieren"
-            onClick={() => void enableNotifications()}
-          />
+            <KernButton
+              type="button"
+              label="Benachrichtigungen einschalten"
+              disabled={isBusy}
+              onClick={() =>
+                void runAction(
+                  enableNotifications,
+                  "Benachrichtigungen konnten nicht aktiviert werden.",
+                )
+              }
+            />
           )}
-        {areNotificationsEnabled && (
+        {isActive && (
+          <>
+            <KernButton
+              type="button"
+              variant="secondary"
+              label="Testbenachrichtigung senden"
+              disabled={isBusy}
+              onClick={() =>
+                void runAction(async () => {
+                  await sendTestNotification();
+                  setFeedbackMessage(
+                    "Testbenachrichtigung ist unterwegs. Sie sollte gleich erscheinen.",
+                  );
+                }, "Die Testbenachrichtigung konnte nicht gesendet werden.")
+              }
+            />
+            <KernButton
+              type="button"
+              variant="tertiary"
+              label="Ausschalten"
+              disabled={isBusy}
+              onClick={() =>
+                void runAction(
+                  disableNotifications,
+                  "Benachrichtigungen konnten nicht ausgeschaltet werden.",
+                )
+              }
+            />
+          </>
+        )}
+        {!isInstalled && installPrompt && (
           <KernButton
             type="button"
             variant="tertiary"
-            label="Benachrichtigungen ausschalten"
-            onClick={() => void disableNotifications()}
+            label="App installieren"
+            onClick={() => void promptAppInstallation()}
           />
         )}
-        <KernButton
-          type="button"
-          variant="tertiary"
-          label="Jetzt aktualisieren"
-          onClick={() => {
-            postMessageToServiceWorker({ type: "REFRESH_DATA" });
-            setFeedbackMessage("Aktualisierung wurde angefordert.");
-          }}
-        />
-        </div>
+      </div>
 
-        {!isInstalled && !installPrompt && isIosDevice && (
+      {!isInstalled && !installPrompt && isIosDevice && (
         <KernText muted className="pwa-panel__hint">
           Auf iPhone/iPad: In Safari „Teilen“ und danach „Zum Home-Bildschirm“
           wählen. Benachrichtigungen sind anschließend in der installierten App
           verfügbar.
         </KernText>
-        )}
-        {!isPushConfigured && (
+      )}
+      {!isPushConfigured && (
         <KernText muted className="pwa-panel__hint">
           Der Web-Push-Dienst muss für diese Bereitstellung noch konfiguriert
-          werden.
+          werden. Gebiete lassen sich bereits festlegen; sie werden auf der
+          Karte angezeigt.
         </KernText>
-        )}
-        {isPushConfigured && (
+      )}
+      {isPushConfigured && (
         <KernText muted className="pwa-panel__hint">
-          Beim Aktivieren wird eine anonyme Geräteadresse beim
-          Benachrichtigungsdienst gespeichert. Mittelpunkt und Radius werden
-          nur zur Auswahl passender neuer Baustellen verwendet. Beim
-          Ausschalten wird die Geräteadresse einschließlich Gebiet gelöscht.
+          Beim Einschalten wird eine anonyme Geräteadresse beim
+          Benachrichtigungsdienst gespeichert. Gebiete und Auswahl werden nur
+          zur Auswahl passender Meldungen verwendet. Beim Ausschalten wird alles
+          davon gelöscht.
         </KernText>
-        )}
-        {areNotificationsEnabled && !notificationArea && (
-        <KernAlert variant="warning" title="Benachrichtigungsgebiet fehlt">
-          <KernText>
-            Legen Sie einen Standort und Radius fest, damit nur passende neue
-            Baustellen gemeldet werden.
-          </KernText>
-        </KernAlert>
-        )}
-        {notificationPermission === "denied" && (
-        <KernAlert
-          variant="warning"
-          title="Benachrichtigungen sind blockiert"
-        >
-          <KernText>
-            Geben Sie Benachrichtigungen in den Website- oder App-Einstellungen
+      )}
+      {notificationPermission === "denied" && (
+        <KernAlert variant="warning" title="Benachrichtigungen sind blockiert">
+          Geben Sie Benachrichtigungen in den Website- oder App-Einstellungen
             Ihres Geräts frei.
-          </KernText>
         </KernAlert>
-        )}
-        {feedbackMessage && (
-        <KernText className="pwa-panel__feedback" aria-live="polite">
+      )}
+      {feedbackMessage && (
+        <KernText className="pwa-panel__feedback" role="status">
           {feedbackMessage}
         </KernText>
-        )}
-      </section>
-    </details>
+      )}
+
+      <KernButton
+        type="button"
+        variant="tertiary"
+        label="Daten jetzt aktualisieren"
+        onClick={() => {
+          postMessageToServiceWorker({ type: "REFRESH_DATA" });
+          setFeedbackMessage("Aktualisierung wurde angefordert.");
+        }}
+      />
+
+      {isSetupOpen && (
+        <NotificationSetupDialog
+          preferences={preferences}
+          editedArea={editedArea}
+          locationController={locationController}
+          onPreferencesChange={onPreferencesChange}
+          onClose={closeSetup}
+          onComplete={() => {
+            closeSetup();
+            // The areas are already saved on the device by the dialog. All that
+            // can be left to do is register for the wake-up push; finishing the
+            // flow is the moment the intent is unambiguous, so this is where
+            // the permission prompt belongs.
+            if (isActive) {
+              setFeedbackMessage("Ihr Gebiet wurde gespeichert.");
+              return;
+            }
+            if (
+              isPushSupported &&
+              isPushConfigured &&
+              canOfferNotifications &&
+              notificationPermission !== "denied"
+            ) {
+              void runAction(
+                enableNotifications,
+                "Benachrichtigungen konnten nicht aktiviert werden.",
+              );
+            }
+          }}
+        />
+      )}
+    </section>
   );
 }

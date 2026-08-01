@@ -1,0 +1,13 @@
+{
+  // Separate from ../tsconfig.json so the Worker sources keep their bare
+  // `types: []` build: the tests need the `cloudflare:test` module and Vitest's
+  // globals, neither of which should leak into what gets deployed.
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["@cloudflare/vitest-pool-workers/types"],
+    "resolveJsonModule": true
+  },
+  // `../src` is listed so the ambient worker-configuration.d.ts (which declares
+  // `Env` and the Workers globals) is picked up, not just the imported modules.
+  "include": [".", "../src", "../vitest.config.ts"]
+}

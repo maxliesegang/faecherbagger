@@ -9,7 +9,10 @@
 - The browser reads committed JSON from `public/data/`; it must not query the
   TRK WFS directly.
 - The optional backend in `push-worker/` is a Cloudflare Worker backed by D1.
-  It stores Web Push subscriptions; GitHub Actions perform notification fan-out.
+  It stores Web Push subscriptions — endpoints only — and GitHub Actions
+  broadcast a contentless wake-up push. Notification areas and preferences stay
+  on the device; the service worker decides locally what to show. Never add a
+  location, radius or preference column to that database.
 - Preserve compatibility with the GitHub Pages project base path. Use
   `import.meta.env.BASE_URL` or URLs resolved against the service-worker scope
   for app-owned assets rather than root-relative paths.
@@ -80,9 +83,10 @@
 
 ## Generated Data
 
-- `public/data/baustellen.json`, `meta.json`, `changes.json`,
-  `public/baustellen.xml`, and `public/baustellen.atom` are generated and
-  committed artifacts. Do not hand-edit them.
+- `public/data/baustellen.json`, `baustellen-geometrie.json`, `meta.json`,
+  `changes.json`, `ereignisse.json`, `public/baustellen.xml`, and
+  `public/baustellen.atom` are generated and committed artifacts. Do not
+  hand-edit them.
 - Regenerate them only with `npm run data`; this requires network access to
   `mobil.trk.de` and intentionally diffs against the previous committed data.
 - A normal UI or domain-logic change should not refresh generated data.
@@ -98,6 +102,21 @@
   geometries, clusters/points, selection, and user location. Batch each logical
   source update with one `GeoJSONSource.setData` call where practical.
 - Keep the map dynamically imported so the initial UI bundle stays small.
+- `baustellen.json` carries no geometry: shapes live in
+  `baustellen-geometrie.json` and are fetched only once a map mounts
+  (`useConstructionSiteGeometries`). Lists, search, sorting and distance use
+  `point` alone — do not reach for geometry outside the map.
+- Notification rules (`src/lib/notification-events.ts`,
+  `notification-message.ts`, `notification-preferences.ts`) are pure and shared
+  by the pipeline, the service worker and the tests. Put behaviour there rather
+  than in `src/sw.ts` or `scripts/send-push.ts`, both of which are untestable.
+- Notification preferences live in IndexedDB
+  (`notification-preferences-store.ts`), not `localStorage`: the service worker
+  has to read the same record and cannot reach `localStorage`.
+- The result list renders either the table or the cards, chosen from the
+  measured width of the results column (`useResultLayout`) and paged by
+  `useIncrementalList`. Do not reintroduce a CSS `display` toggle — it built
+  every record twice.
 - The service worker uses network-first caching for the three data files.
   Changes to cache names, update messages, sync tags, or notification handling
   must preserve offline startup and refresh behavior.

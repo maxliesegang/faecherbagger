@@ -13,10 +13,19 @@ import {
   type ConstructionSiteFilters,
 } from "./construction-site-filter.ts";
 import {
+  CONSTRUCTION_SITE_TIMEFRAME_VALUES,
+  type ConstructionSiteTimeframe,
+} from "./construction-site-timeframe.ts";
+import {
   serializeConstructionSiteSort,
   parseConstructionSiteSort,
   type ConstructionSiteSort,
 } from "./construction-site-sort.ts";
+import {
+  getLegalPageIdFromURLValue,
+  getLegalPageURLValue,
+  type LegalPageId,
+} from "./legal-pages.ts";
 
 /** How the result set is presented. */
 export type ConstructionSiteResultView = "map" | "list";
@@ -32,6 +41,8 @@ export interface AppURLState {
   view: ConstructionSiteResultView;
   sort: ConstructionSiteSort | null;
   detailSiteId?: string;
+  /** Standalone page (Impressum etc.); takes over the whole view when set. */
+  legalPageId?: LegalPageId;
 }
 
 export const DEFAULT_APP_URL_STATE: Readonly<AppURLState> = {
@@ -47,10 +58,12 @@ const URL_SEARCH_PARAMETER_NAMES = {
   phase: "status",
   category: "art",
   closure: "sperrung",
+  timeframe: "zeitraum",
   showOnlyChanged: "neu",
   view: "ansicht",
   sort: "sortierung",
   detailSiteId: "baustelle",
+  legalPage: "seite",
 } as const;
 
 const RESULT_VIEW_BY_URL_VALUE: Record<string, ConstructionSiteResultView> = {
@@ -108,6 +121,13 @@ export function parseAppURLState(search: string): AppURLState {
         URL_SEARCH_PARAMETER_NAMES.closure,
         CLOSURE_SEVERITIES,
       ),
+      timeframe: readAllowedParameterValue<
+        Exclude<ConstructionSiteTimeframe, "">
+      >(
+        params,
+        URL_SEARCH_PARAMETER_NAMES.timeframe,
+        CONSTRUCTION_SITE_TIMEFRAME_VALUES,
+      ),
     },
     showOnlyChanged:
       params.get(URL_SEARCH_PARAMETER_NAMES.showOnlyChanged) === "1",
@@ -118,6 +138,9 @@ export function parseAppURLState(search: string): AppURLState {
     detailSiteId:
       params.get(URL_SEARCH_PARAMETER_NAMES.detailSiteId)?.slice(0, 200) ||
       undefined,
+    legalPageId: getLegalPageIdFromURLValue(
+      params.get(URL_SEARCH_PARAMETER_NAMES.legalPage),
+    ),
   };
 }
 
@@ -143,6 +166,9 @@ export function serializeAppURLState(state: AppURLState): string {
   if (filters.closure) {
     params.set(URL_SEARCH_PARAMETER_NAMES.closure, filters.closure);
   }
+  if (filters.timeframe) {
+    params.set(URL_SEARCH_PARAMETER_NAMES.timeframe, filters.timeframe);
+  }
   if (state.showOnlyChanged) {
     params.set(URL_SEARCH_PARAMETER_NAMES.showOnlyChanged, "1");
   }
@@ -160,6 +186,12 @@ export function serializeAppURLState(state: AppURLState): string {
   }
   if (state.detailSiteId) {
     params.set(URL_SEARCH_PARAMETER_NAMES.detailSiteId, state.detailSiteId);
+  }
+  if (state.legalPageId) {
+    params.set(
+      URL_SEARCH_PARAMETER_NAMES.legalPage,
+      getLegalPageURLValue(state.legalPageId),
+    );
   }
 
   const query = params.toString();

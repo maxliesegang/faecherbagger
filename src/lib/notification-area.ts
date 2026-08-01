@@ -1,50 +1,37 @@
-import type {
-  ConstructionSite,
-  LngLat,
-  NotificationArea,
-} from "../types/index.ts";
-import { distanceInMeters } from "./distance.ts";
-import { isNotificationArea } from "./notification-area-validation.ts";
-export {
-  DEFAULT_NOTIFICATION_RADIUS_KM,
-  isNotificationArea,
-  MAX_NOTIFICATION_RADIUS_KM,
-  MIN_NOTIFICATION_RADIUS_KM,
-} from "./notification-area-validation.ts";
+import type { NotificationArea } from "../types/index.ts";
+import { MAX_NOTIFICATION_AREAS } from "./notification-preferences.ts";
 
-export const NOTIFICATION_AREA_STORAGE_KEY =
-  "faecherbagger-notification-area";
+/**
+ * Notification-area list handling.
+ *
+ * Persistence lives in `notification-preferences-store.ts` (IndexedDB, shared
+ * with the service worker); validation and limits live in
+ * `notification-preferences.ts`. This module is the list arithmetic.
+ */
 
-export function loadNotificationArea(): NotificationArea | null {
-  try {
-    const stored = localStorage.getItem(NOTIFICATION_AREA_STORAGE_KEY);
-    if (!stored) return null;
-    const parsed: unknown = JSON.parse(stored);
-    return isNotificationArea(parsed) ? parsed : null;
-  } catch {
-    return null;
-  }
-}
+/** Local identity for a new area. */
+export const createNotificationAreaId = (): string => crypto.randomUUID();
 
-export function saveNotificationArea(area: NotificationArea): void {
-  localStorage.setItem(NOTIFICATION_AREA_STORAGE_KEY, JSON.stringify(area));
-}
-
-export function isPointInNotificationArea(
+/**
+ * Adds or replaces an area by id, capped at {@link MAX_NOTIFICATION_AREAS}.
+ * Returns the list unchanged when a *new* area would exceed the cap, so the
+ * caller can say so instead of silently dropping one.
+ */
+export function upsertNotificationArea(
+  areas: readonly NotificationArea[],
   area: NotificationArea,
-  point: LngLat,
-): boolean {
-  return distanceInMeters(area.center, point) <= area.radiusKm * 1_000;
+): NotificationArea[] {
+  const index = areas.findIndex((candidate) => candidate.id === area.id);
+  if (index >= 0) {
+    return areas.map((candidate, position) =>
+      position === index ? area : candidate,
+    );
+  }
+  if (areas.length >= MAX_NOTIFICATION_AREAS) return [...areas];
+  return [...areas, area];
 }
 
-export function findNewConstructionSitesInArea(
-  constructionSites: readonly ConstructionSite[],
-  addedIds: ReadonlySet<string>,
-  area?: NotificationArea,
-): ConstructionSite[] {
-  return constructionSites.filter(
-    (site) =>
-      addedIds.has(site.id) &&
-      (!area || isPointInNotificationArea(area, site.point)),
-  );
-}
+export const removeNotificationArea = (
+  areas: readonly NotificationArea[],
+  areaId: string,
+): NotificationArea[] => areas.filter((area) => area.id !== areaId);

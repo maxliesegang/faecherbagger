@@ -29,7 +29,6 @@ function createConstructionSite(overrides: Partial<ConstructionSite> = {}): Cons
     startDate: "2026-01-01",
     endDate: null,
     point: [8.4, 49.0],
-    geometry: { type: "Point", coordinates: [8.4, 49.0] },
     source: "Stadt Karlsruhe",
     lastModified: "2026-01-01T00:00:00Z",
     ...overrides,
@@ -111,12 +110,84 @@ describe("filterConstructionSites", () => {
     filterConstructionSites(constructionSites, createFilters({ municipality: "Ettlingen" }));
     expect(constructionSites).toEqual(copy);
   });
+
+  it("filters by timeframe against the given reference date", () => {
+    const withPeriods = [
+      createConstructionSite({
+        id: "running",
+        startDate: "2026-07-01",
+        endDate: "2026-07-31",
+      }),
+      createConstructionSite({
+        id: "next-week",
+        startDate: "2026-07-20",
+        endDate: "2026-08-31",
+      }),
+      createConstructionSite({
+        id: "next-year",
+        startDate: "2027-04-01",
+        endDate: null,
+      }),
+    ];
+
+    expect(
+      getSiteIds(
+        filterConstructionSites(
+          withPeriods,
+          createFilters({ timeframe: "today" }),
+          "2026-07-15",
+        ),
+      ),
+    ).toEqual(["running"]);
+    expect(
+      getSiteIds(
+        filterConstructionSites(
+          withPeriods,
+          createFilters({ timeframe: "month" }),
+          "2026-07-15",
+        ),
+      ),
+    ).toEqual(["running", "next-week"]);
+  });
+
+  it("combines the timeframe with the other filters", () => {
+    const withPeriods = [
+      createConstructionSite({
+        id: "match",
+        municipality: "Karlsruhe",
+        startDate: "2026-07-01",
+        endDate: "2026-07-31",
+      }),
+      createConstructionSite({
+        id: "wrong-place",
+        municipality: "Ettlingen",
+        startDate: "2026-07-01",
+        endDate: "2026-07-31",
+      }),
+    ];
+
+    expect(
+      getSiteIds(
+        filterConstructionSites(
+          withPeriods,
+          createFilters({ timeframe: "today", municipality: "Karlsruhe" }),
+          "2026-07-15",
+        ),
+      ),
+    ).toEqual(["match"]);
+  });
 });
 
 describe("hasNoConstructionSiteFilters", () => {
   it("treats whitespace-only search as empty", () => {
     expect(hasNoConstructionSiteFilters(createFilters({ search: "   " }))).toBe(true);
     expect(hasNoConstructionSiteFilters(createFilters({ search: "x" }))).toBe(false);
+  });
+
+  it("counts a selected timeframe as an active filter", () => {
+    expect(hasNoConstructionSiteFilters(createFilters({ timeframe: "week" }))).toBe(
+      false,
+    );
   });
 });
 

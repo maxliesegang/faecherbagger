@@ -3,6 +3,8 @@ import { describe, expect, it, vi } from "vitest";
 import type { WFSConstructionSiteFeatureCollection } from "../src/types/index.ts";
 import {
   normalizeConstructionSites,
+  PUBLISHED_COORDINATE_DECIMALS,
+  roundGeometryCoordinates,
   sanitizeText,
   toBerlinDate,
 } from "../src/lib/construction-site-normalization.ts";
@@ -37,6 +39,34 @@ describe("normalizeConstructionSites", () => {
     // Representative point comes from the Point feature; map geometry is the Polygon.
     expect(sondernutzung!.point).toEqual([8.40304, 49.009]);
     expect(sondernutzung!.geometry.type).toBe("Polygon");
+  });
+
+  it("publishes coordinates at a fixed precision, points and geometry alike", () => {
+    const countDecimals = (value: number) =>
+      (String(value).split(".")[1] ?? "").length;
+    const records = normalizeConstructionSites(fixture.features, "active");
+
+    for (const record of records) {
+      for (const value of record.point) {
+        expect(countDecimals(value)).toBeLessThanOrEqual(
+          PUBLISHED_COORDINATE_DECIMALS,
+        );
+      }
+    }
+    const rounded = roundGeometryCoordinates({
+      type: "LineString",
+      coordinates: [
+        [8.395061291, 49.005988284],
+        [8.396434671, 49.007203341],
+      ],
+    });
+    expect(rounded).toEqual({
+      type: "LineString",
+      coordinates: [
+        [8.395061, 49.005988],
+        [8.396435, 49.007203],
+      ],
+    });
   });
 
   it("flattens nested geometry collections without losing their parts", () => {

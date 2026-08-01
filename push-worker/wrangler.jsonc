@@ -6,7 +6,9 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "vars": {
-    "ALLOWED_ORIGINS": "https://maxliesegang.github.io"
+    "ALLOWED_ORIGINS": "https://maxliesegang.github.io",
+    // Target of the "Zustellung testen" notification.
+    "APP_URL": "https://maxliesegang.github.io/faecherbagger/"
   },
   "observability": {
     "enabled": true,

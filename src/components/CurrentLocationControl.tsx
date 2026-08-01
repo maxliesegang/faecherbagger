@@ -8,16 +8,20 @@ import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
 
 interface CurrentLocationControlProps {
   locationController: CurrentLocationController;
+  /** Requests the location and switches the results to "nearest first". */
+  onUseCurrentLocation: () => Promise<void>;
 }
 
 /**
- * Compact rail card. Sharing a location unlocks distances and the "nearest
- * first" sort, so it stays one click away instead of behind a disclosure.
+ * Compact rail card. The main entry point for sharing a location is the button
+ * in the page header; this card repeats it, reports failures and is the only
+ * place that can withdraw the location again.
  */
 export function CurrentLocationControl({
   locationController,
+  onUseCurrentLocation,
 }: CurrentLocationControlProps) {
-  const { locationState, requestLocation, clearLocation } = locationController;
+  const { locationState, clearLocation } = locationController;
   const isReady = locationState.status === "ready";
 
   return (
@@ -36,8 +40,8 @@ export function CurrentLocationControl({
 
       <KernText muted className="location-control__intro">
         {isReady
-          ? "Entfernungen werden angezeigt und lassen sich sortieren. Der Standort bleibt im Browser."
-          : "Zeigt die Luftlinie zu jeder Baustelle und ermöglicht die Sortierung nach Nähe. Der Standort bleibt im Browser."}
+          ? "Die Karte zeigt Ihren Umkreis, die Liste ist nach Entfernung sortiert. Der Standort bleibt im Browser."
+          : "Zeigt Ihren Umkreis auf der Karte und sortiert die Liste nach Nähe. Der Standort bleibt im Browser."}
       </KernText>
 
       {isReady ? (
@@ -61,7 +65,7 @@ export function CurrentLocationControl({
             // The hook exposes the failure through locationState for this
             // control. Consume the rejected promise to avoid an uncaught
             // rejection in the browser console.
-            void requestLocation().catch(() => undefined);
+            void onUseCurrentLocation().catch(() => undefined);
           }}
         />
       )}

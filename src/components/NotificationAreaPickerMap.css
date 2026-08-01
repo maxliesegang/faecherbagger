@@ -1,0 +1,11 @@
+/* Live preview of the area being set up; sized so it stays visible next to the
+   dialog's controls on a phone. */
+.notification-area-picker-map {
+  height: clamp(12rem, 32dvh, 20rem);
+  margin: 0.85rem 1.1rem;
+  border: 1px solid var(--app-border);
+}
+
+.notification-area-picker-map .maplibregl-ctrl-attrib {
+  font-size: 0.7rem;
+}

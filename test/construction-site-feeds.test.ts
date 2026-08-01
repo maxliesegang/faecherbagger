@@ -32,7 +32,6 @@ function createConstructionSite(
     startDate: "2026-07-25",
     endDate: "2026-08-01",
     point: [8.4, 49],
-    geometry: { type: "Point", coordinates: [8.4, 49] },
     source: "Stadt Karlsruhe",
     lastModified,
   };

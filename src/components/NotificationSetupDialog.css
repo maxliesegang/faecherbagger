@@ -1,0 +1,174 @@
+/*
+ * Guided area setup. A native `<dialog>` opened with `showModal`, so focus
+ * trapping, Escape and the backdrop come from the platform.
+ */
+.notification-setup {
+  width: min(100% - 1.5rem, 34rem);
+  max-height: min(90dvh, 48rem);
+  padding: 0;
+  border: 1px solid var(--app-border);
+  color: inherit;
+  background: var(--app-card);
+  overflow: hidden auto;
+}
+
+.notification-setup::backdrop {
+  background: rgb(0 0 0 / 45%);
+}
+
+.notification-setup__header {
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  justify-content: space-between;
+  padding: 1rem 1.1rem 0.5rem;
+}
+
+.notification-setup__header h2 {
+  margin: 0;
+  padding-block: 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.notification-setup__step-count {
+  margin: 0 0 0.15rem;
+  color: var(--app-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.notification-setup__close {
+  flex: 0 0 auto;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--app-border);
+  color: inherit;
+  background: var(--app-card);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.notification-setup__progress {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0 1.1rem 0.75rem;
+  list-style: none;
+}
+
+.notification-setup__progress li {
+  height: 0.25rem;
+  background: var(--app-border);
+}
+
+.notification-setup__progress li[data-state="done"] {
+  background: var(--app-accent);
+}
+
+.notification-setup__body {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  padding-inline: 1.1rem;
+}
+
+.notification-setup__body p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.notification-setup__radius {
+  width: 100%;
+}
+
+.notification-setup__radius input[type="range"] {
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.notification-setup__radius-scale {
+  display: flex;
+  justify-content: space-between;
+  color: var(--app-muted);
+  font-size: 0.8rem;
+}
+
+.notification-setup__choices {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.notification-setup__choices legend {
+  padding: 0;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+.notification-setup__choice {
+  display: flex;
+  gap: 0.6rem;
+  align-items: start;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--app-border);
+  cursor: pointer;
+}
+
+.notification-setup__choice + .notification-setup__choice {
+  border-block-start: 0;
+}
+
+.notification-setup__choice:has(input:checked) {
+  border-color: var(--app-accent);
+  background: var(--accent-tint);
+}
+
+.notification-setup__choice:has(input:focus-visible) {
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+.notification-setup__choice input {
+  margin-top: 0.25rem;
+  flex: 0 0 auto;
+}
+
+.notification-setup__choice-hint {
+  display: block;
+  margin-top: 0.1rem;
+  color: var(--app-muted);
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.notification-setup__map-fallback {
+  display: grid;
+  place-items: center;
+  height: 14rem;
+  margin: 0.85rem 1.1rem;
+  border: 1px solid var(--app-border);
+}
+
+.notification-setup__actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: space-between;
+  padding: 0.75rem 1.1rem 1rem;
+  border-top: 1px solid var(--app-border);
+  background: var(--app-card);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notification-setup__choice {
+    transition: none;
+  }
+}

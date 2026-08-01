@@ -4,8 +4,11 @@
 interface __BaseEnv_Env {
 	DB: D1Database;
 	ALLOWED_ORIGINS: "https://maxliesegang.github.io";
+	APP_URL: string;
 	ADMIN_TOKEN: string;
 	VAPID_PUBLIC_KEY: string;
+	VAPID_PRIVATE_KEY: string;
+	VAPID_SUBJECT: string;
 }
 declare namespace Cloudflare {
 	interface GlobalProps {

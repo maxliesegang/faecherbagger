@@ -1,70 +1,107 @@
 /*
- * Set-up-once panel, so it sits collapsed at the bottom of the control rail.
- * The rail is narrow: everything in here is a single stacked column and only
- * widens when the panel is placed in a wider slot (tablet, mobile).
+ * The notification card. No longer collapsed behind an accordion: this is the
+ * one thing the app does that a map alone cannot, so it states its status and
+ * offers its next step without being opened first.
  */
 .pwa-panel {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: start;
   max-width: none;
   margin: 0;
-  border: 1px solid var(--kern-color-layout-border, #c9c9c9);
-  background: var(--kern-color-layout-background-default, #fff);
+  padding: 0.75rem 0.85rem 0.85rem;
+  border: 1px solid var(--app-border);
+  border-top: 0.2rem solid var(--app-accent);
+  background: var(--app-card);
 }
 
-.pwa-panel__body {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.75rem 1rem;
-  align-items: center;
-}
-
-.pwa-panel p {
-  margin-block: 0 0.35rem;
-}
-
-.pwa-panel__intro {
-  grid-column: 1 / -1;
-  max-width: 70ch;
-}
-
-.pwa-panel__actions {
+.pwa-panel__heading {
   display: flex;
   gap: 0.6rem;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: end;
-}
-
-.pwa-panel__area {
-  grid-column: 1 / -1;
-  min-width: 0;
-  margin: 0;
-  padding: 0.75rem;
-  border: 1px solid var(--kern-color-layout-border, #c9c9c9);
-  background: var(--kern-color-layout-background-default, #fff);
-}
-
-.pwa-panel__area legend {
-  padding-inline: 0.25rem;
-  font-weight: 700;
-}
-
-.pwa-panel__area p {
-  max-width: 80ch;
-}
-
-.pwa-panel__radius {
-  display: grid;
-  grid-template-columns: minmax(8rem, 12rem) minmax(12rem, 28rem);
-  gap: 0.75rem;
-  align-items: center;
-  margin-block: 0.6rem;
-}
-
-.pwa-panel__radius input {
+  align-items: baseline;
+  justify-content: space-between;
   width: 100%;
 }
 
+.pwa-panel__heading h2 {
+  margin: 0;
+  padding-block: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+/* Reflects the server-verified state, so "aktiv" is a claim we can back up. */
+.pwa-panel__state {
+  flex: 0 0 auto;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--app-border);
+  color: var(--app-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.pwa-panel__state[data-state="registered"] {
+  border-color: var(--kern-color-feedback-success, #2f8132);
+  color: var(--kern-color-feedback-success, #2f8132);
+}
+
+.pwa-panel p {
+  margin-block: 0;
+}
+
+.pwa-panel__intro {
+  max-width: 70ch;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.pwa-panel__areas {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pwa-panel__areas li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--app-border);
+  border-inline-start: 0.25rem solid var(--phase-active);
+}
+
+.pwa-panel__area-name {
+  display: grid;
+  min-width: 0;
+}
+
+.pwa-panel__area-name span {
+  color: var(--app-muted);
+  font-size: 0.8rem;
+}
+
 .pwa-panel__area-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+}
+
+.pwa-panel__area-actions button {
+  padding: 0;
+  border: 0;
+  color: var(--app-accent);
+  background: none;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pwa-panel__actions {
   display: flex;
   gap: 0.6rem;
   align-items: center;
@@ -73,24 +110,21 @@
 
 .pwa-panel__hint,
 .pwa-panel__feedback,
-.pwa-panel > .kern-alert {
-  grid-column: 1 / -1;
+.pwa-panel .kern-alert {
+  width: 100%;
+}
+
+.pwa-panel__hint {
+  font-size: 0.8rem;
+  line-height: 1.35;
 }
 
 .pwa-panel__feedback {
   font-weight: 700;
 }
 
-@media (max-width: 48rem) {
-  .pwa-panel__body {
-    grid-template-columns: 1fr;
-  }
-
-  .pwa-panel__actions {
-    justify-content: start;
-  }
-
-  .pwa-panel__radius {
-    grid-template-columns: 1fr;
-  }
+.pwa-panel__area-actions button:focus-visible,
+.pwa-panel__state:focus-visible {
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
 }

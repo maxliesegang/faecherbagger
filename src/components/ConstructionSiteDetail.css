@@ -7,8 +7,10 @@
   background: var(--app-card);
 }
 
-.construction-site-detail__back,
-.construction-site-detail__map-button {
+.construction-site-detail__back {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
   color: var(--kern-color-action-default, #454b6b);
   font-weight: 700;
   text-decoration: underline;
@@ -25,11 +27,19 @@
   margin-bottom: 0.65rem;
 }
 
-.construction-site-detail__header h2 {
+.construction-site-detail__header h1 {
   margin-block: 0 0.25rem;
+  padding-block: 0;
   font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.25rem);
   line-height: 1.2;
   text-wrap: balance;
+}
+
+/* Focus lands here on entry; the ring must be visible but not permanent. */
+.construction-site-detail__header h1:focus-visible {
+  outline: 4px solid
+    var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 4px;
 }
 
 .construction-site-detail__header p,
@@ -37,9 +47,67 @@
   margin: 0;
 }
 
-.construction-site-detail__header p {
+.construction-site-detail__municipality {
   color: var(--app-muted);
   font-size: 1.1rem;
+}
+
+/*
+ * The lead answer block: what a visitor came to find out, before any of the
+ * administrative fields. The severity drives a coloured rule, but the sentence
+ * is the message — remove the colour and nothing is lost.
+ */
+.construction-site-detail__verdict {
+  margin-block: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-inline-start: 0.35rem solid var(--verdict-color, var(--app-accent));
+  background: var(--app-card);
+}
+
+.construction-site-detail__verdict-headline {
+  margin-block: 0 0.35rem;
+  padding-block: 0;
+  max-width: 40rem;
+  color: var(--verdict-color, inherit);
+  font-size: clamp(1.15rem, 1rem + 0.8vw, 1.5rem);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.construction-site-detail__verdict-detail {
+  margin: 0;
+  max-width: 46rem;
+  line-height: 1.45;
+}
+
+.construction-site-detail__summary {
+  margin-top: 0.65rem !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* Row of equal-weight actions under the locator map. */
+.construction-site-detail__actions {
+  display: flex;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-block: 0.85rem;
+}
+
+.construction-site-detail__share-feedback {
+  color: var(--app-muted);
+  font-size: 0.875rem;
+}
+
+/* Plain-language gloss under an administrative value. */
+.construction-site-detail__gloss {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--app-muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.35;
 }
 
 .construction-site-detail__notice {
@@ -49,9 +117,30 @@
   background: var(--phase-upcoming-tint);
 }
 
-.construction-site-detail__notice h3 {
+.construction-site-detail__notice h2 {
   margin-block: 0 0.35rem;
+  padding-block: 0;
   font-size: 1rem;
+}
+
+.construction-site-detail .construction-site-location-map {
+  margin-block: 1rem 0.75rem;
+}
+
+.construction-site-detail__technical {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--app-border);
+}
+
+.construction-site-detail__technical h2 {
+  margin: 0;
+  padding-block: 0;
+  font-size: 1rem;
+}
+
+.construction-site-detail__technical .construction-site-detail__facts {
+  margin-block: 0 0.5rem;
+  border-top: 0;
 }
 
 .construction-site-detail__facts {
@@ -83,15 +172,7 @@
   overflow-wrap: anywhere;
 }
 
-.construction-site-detail__map-button {
-  padding: 0.65rem 0.9rem;
-  border: 1px solid var(--app-accent);
-  background: transparent;
-  cursor: pointer;
-}
-
-.construction-site-detail__back:focus-visible,
-.construction-site-detail__map-button:focus-visible {
+.construction-site-detail__back:focus-visible {
   outline: 4px solid
     var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: 2px;

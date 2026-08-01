@@ -1,7 +1,7 @@
 import type { Geometry, Point, Position } from "geojson";
 import type {
   ConstructionPhase,
-  ConstructionSite,
+  ConstructionSiteWithGeometry,
   ISODate,
   LngLat,
   WFSConstructionSiteFeature,
@@ -100,6 +100,61 @@ function meanPoint(points: readonly LngLat[]): LngLat {
   return [sum[0] / points.length, sum[1] / points.length];
 }
 
+/**
+ * Decimal places kept for every published coordinate.
+ *
+ * The source emits full double precision (8+ decimals, i.e. millimetres), which
+ * is meaningless for a road-works notice and made up a large share of the
+ * transferred bytes. Six decimals are ~0.11 m at this latitude — finer than the
+ * geometries themselves.
+ */
+export const PUBLISHED_COORDINATE_DECIMALS = 6;
+
+const COORDINATE_FACTOR = 10 ** PUBLISHED_COORDINATE_DECIMALS;
+
+/** Rounds one coordinate value; `Number` drops the trailing zeros again. */
+const roundCoordinate = (value: number): number =>
+  Math.round(value * COORDINATE_FACTOR) / COORDINATE_FACTOR;
+
+const roundPosition = (position: Position): Position =>
+  position.map(roundCoordinate);
+
+const roundLngLat = ([longitude, latitude]: LngLat): LngLat => [
+  roundCoordinate(longitude),
+  roundCoordinate(latitude),
+];
+
+/** Rounds every position of a geometry to {@link PUBLISHED_COORDINATE_DECIMALS}. */
+export function roundGeometryCoordinates(geometry: Geometry): Geometry {
+  switch (geometry.type) {
+    case "Point":
+      return { ...geometry, coordinates: roundPosition(geometry.coordinates) };
+    case "LineString":
+    case "MultiPoint":
+      return { ...geometry, coordinates: geometry.coordinates.map(roundPosition) };
+    case "Polygon":
+    case "MultiLineString":
+      return {
+        ...geometry,
+        coordinates: geometry.coordinates.map((ring) => ring.map(roundPosition)),
+      };
+    case "MultiPolygon":
+      return {
+        ...geometry,
+        coordinates: geometry.coordinates.map((polygon) =>
+          polygon.map((ring) => ring.map(roundPosition)),
+        ),
+      };
+    case "GeometryCollection":
+      return {
+        ...geometry,
+        geometries: geometry.geometries.map(roundGeometryCoordinates),
+      };
+    default:
+      return geometry;
+  }
+}
+
 /** Builds the map geometry from a Vorgang's non-point parts (points as fallback). */
 function buildGeometry(
   areaGeometries: readonly Geometry[],
@@ -128,7 +183,7 @@ export function normalizeConstructionSites(
   features: readonly WFSConstructionSiteFeature[],
   phase: ConstructionPhase,
   options: ConstructionSiteNormalizationOptions = {},
-): ConstructionSite[] {
+): ConstructionSiteWithGeometry[] {
   const featureGroupsBySiteId = new Map<string, WFSConstructionSiteFeature[]>();
   for (const feature of features) {
     const { vorgangsnummer, gemeinde } = feature.properties;
@@ -139,7 +194,7 @@ export function normalizeConstructionSites(
     else featureGroupsBySiteId.set(vorgangsnummer, [feature]);
   }
 
-  const constructionSites: ConstructionSite[] = [];
+  const constructionSites: ConstructionSiteWithGeometry[] = [];
   for (const [vorgangsnummer, members] of featureGroupsBySiteId) {
     const properties = members[0]!.properties;
 
@@ -177,10 +232,9 @@ export function normalizeConstructionSites(
       cause: sanitizeText(properties.verursacher),
       startDate,
       endDate: toBerlinDate(properties.vorgangszeitraum_bis),
-      point,
-      geometry: buildGeometry(
-        areaGeometries,
-        points.length > 0 ? points : [point],
+      point: roundLngLat(point),
+      geometry: roundGeometryCoordinates(
+        buildGeometry(areaGeometries, points.length > 0 ? points : [point]),
       ),
       source: properties.datenquelle ?? "",
       lastModified: properties.stand ?? "",

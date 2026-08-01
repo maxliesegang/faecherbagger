@@ -3,9 +3,34 @@
   border-bottom: 1px solid var(--kern-color-layout-border, #c9c9c9);
 }
 
+/*
+ * Narrow enough to fit beside the 20.5rem control rail on a 1440 px screen.
+ * At 56rem the last column was pushed behind a horizontal scrollbar, which is
+ * why the row's primary action now lives in the `location` cell instead.
+ */
 .construction-site-table .kern-table {
-  min-width: 56rem;
+  min-width: 46rem;
   font-size: 0.925rem;
+  /*
+   * Fixed layout so the column shares below are honoured. With automatic layout
+   * the widest unbreakable content wins, and the nowrap badges alone
+   * ("Sperrung (1 Richtung)") pushed the table past the results column.
+   */
+  table-layout: fixed;
+}
+
+/*
+ * Consequence of the fixed layout: content has to be allowed to wrap. Only the
+ * free-text location may break inside a word — the badges wrap at spaces, so
+ * that "Vollsperrung" is never split across two lines.
+ */
+.construction-site-table [data-column="location"] {
+  overflow-wrap: anywhere;
+}
+
+.construction-site-table .kern-badge {
+  overflow-wrap: normal;
+  white-space: normal;
 }
 
 .construction-site-table .kern-table__cell,
@@ -14,8 +39,25 @@
   padding-inline: 0.65rem;
 }
 
+/*
+ * Only the two columns with special needs get a share: `location` holds the
+ * long free-text strings (and would otherwise claim ~40% of the table, pushing
+ * the last column out of view), `distance` needs just enough to stay on one
+ * line. Under the fixed layout the remaining columns split what is left
+ * equally, so this holds whether or not the distance column is present.
+ */
+.construction-site-table [data-column="location"] {
+  width: 30%;
+}
+
+/* Wide enough for the "Entfernung" header plus its sort arrow, which cannot
+ * wrap and would otherwise push the table into a horizontal scroll. */
 .construction-site-table [data-column="distance"] {
-  width: 1%;
+  width: 14%;
+}
+
+/* Values stay on one line; the longer header label above them may wrap. */
+.construction-site-table td[data-column="distance"] {
   white-space: nowrap;
 }
 
@@ -43,6 +85,16 @@
   text-decoration: underline;
 }
 
+/* The direction arrow is a hint until the column actually drives the order. */
+.construction-site-table__sort-button .kern-icon {
+  opacity: 0.35;
+}
+
+.construction-site-table__sort-button:hover .kern-icon,
+.construction-site-table__sort-button--active .kern-icon {
+  opacity: 1;
+}
+
 .construction-site-table__sort-button:focus-visible {
   border-radius: var(--kern-metric-border-radius-default, 0.25rem);
   outline: 4px solid
@@ -51,171 +103,145 @@
 }
 
 .construction-site-table__sort-icon {
+  display: inline-flex;
   min-width: 1em;
-  font-size: 0.75em;
 }
 
-.construction-site-table__details-button {
-  padding: 0.25rem;
-  border: 0;
+/* The identifying cell: the link, with the map jump as a quiet second action. */
+.construction-site-table__location {
+  display: flex;
+  gap: 0.35rem;
+  align-items: baseline;
+}
+
+.construction-site-table__location .construction-site-table__details-link {
+  min-width: 0;
+}
+
+.construction-site-table__details-link,
+.construction-site-card__details-link {
   color: var(--kern-color-action-default, #454b6b);
   font-weight: 700;
   text-decoration: underline;
-  background: transparent;
-  cursor: pointer;
-}
-
-.construction-site-table__actions {
-  display: flex;
-  gap: 0.2rem;
-  align-items: start;
-  flex-direction: column;
-  white-space: nowrap;
 }
 
 .construction-site-table__map-button,
-.construction-site-card__map-button,
-.construction-site-card__details-link {
+.construction-site-card__map-button {
+  display: inline-flex;
+  gap: 0.2rem;
+  align-items: center;
+  flex: 0 0 auto;
   padding: 0.25rem;
   border: 0;
   color: var(--kern-color-action-default, #454b6b);
+  font-size: 0.8125rem;
   font-weight: 700;
-  text-decoration: underline;
   background: transparent;
   cursor: pointer;
 }
 
-.construction-site-table__details-button:focus-visible,
+.construction-site-table__map-button:hover,
+.construction-site-card__map-button:hover {
+  text-decoration: underline;
+}
+
+.construction-site-table__details-link:focus-visible,
 .construction-site-table__map-button:focus-visible,
 .construction-site-card__map-button:focus-visible,
-.construction-site-card__details-link:focus-visible,
-.construction-site-card__details summary:focus-visible {
+.construction-site-card__details-link:focus-visible {
   border-radius: var(--kern-metric-border-radius-default, 0.25rem);
   outline: 4px solid
     var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: 2px;
 }
 
-.construction-site-table__details-row > td {
-  padding: 0.75rem 1rem;
-  background: var(--kern-color-layout-background-level-1, #f5f5f5);
+/* "noch 3 Wochen" under the absolute range: the part people actually read. */
+.construction-site-table__period-relative {
+  display: block;
+  color: var(--kern-color-layout-text-muted, #595959);
+  font-size: 0.8125rem;
 }
 
-.construction-site-details {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.65rem 1rem;
-  margin: 0;
-}
-
-.construction-site-details > div {
-  min-width: 0;
-}
-
-.construction-site-details__wide {
-  grid-column: 1 / -1;
-}
-
-.construction-site-details dt,
 .construction-site-card__facts dt {
   margin-bottom: 0.2rem;
   font-size: 0.875rem;
   font-weight: 700;
 }
 
-.construction-site-details dd,
 .construction-site-card__facts dd {
   margin: 0;
   overflow-wrap: anywhere;
 }
 
+/*
+ * Cards are the narrow-column presentation of the same records. Which of the
+ * two is built is decided in React from the results column's measured width
+ * (see `useResultLayout`), so only one of them ever exists in the DOM and these
+ * rules need no visibility toggle.
+ */
 .construction-site-cards {
-  display: none;
+  display: grid;
+  gap: 0.65rem;
 }
 
-/*
- * Below the width the table needs, the same records render as cards. Measured
- * against the results column (see `.results`), so the rail's width is taken
- * into account rather than the viewport's.
- */
-@container results (max-width: 56rem) {
-  .construction-site-table {
-    display: none;
-  }
+.construction-site-card {
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--kern-color-layout-border, #c9c9c9);
+  border-inline-start: 0.3rem solid
+    var(--kern-color-decorative-brand-default, #454b6b);
+  background: var(--kern-color-layout-background-default, #fff);
+}
 
-  .construction-site-cards {
-    display: grid;
-    gap: 0.65rem;
-  }
+.construction-site-card__topline {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
 
-  .construction-site-card {
-    padding: 0.75rem 0.85rem;
-    border: 1px solid var(--kern-color-layout-border, #c9c9c9);
-    border-inline-start: 0.3rem solid
-      var(--kern-color-decorative-brand-default, #454b6b);
-    background: var(--kern-color-layout-background-default, #fff);
-  }
+.construction-site-card__title {
+  margin-block: 0 0.25rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
 
-  .construction-site-card__topline {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.35rem;
-  }
+.construction-site-card__municipality {
+  margin-block: 0 0.5rem;
+  color: var(--kern-color-layout-text-default, #444);
+}
 
-  .construction-site-card__title {
-    margin-block: 0 0.25rem;
-    font-size: 1.1rem;
-    line-height: 1.35;
-  }
+.construction-site-card__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+}
 
-  .construction-site-card__municipality {
-    margin-block: 0 0.5rem;
-    color: var(--kern-color-layout-text-default, #444);
-  }
-
-  .construction-site-card__facts {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem 0.75rem;
-    margin: 0;
-  }
-
-  .construction-site-card__details {
-    margin-top: 0.65rem;
-    padding-top: 0.5rem;
-    border-top: 1px solid var(--kern-color-layout-border, #c9c9c9);
-  }
-
-  .construction-site-card__details-link {
-    display: inline-block;
-    margin-top: 0.65rem;
-    padding-inline: 0;
-  }
-
-  .construction-site-card__details summary {
-    width: fit-content;
-    color: var(--kern-color-action-default, #454b6b);
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .construction-site-card__details .construction-site-details {
-    grid-template-columns: 1fr 1fr;
-    margin-top: 0.65rem;
-  }
-
-  .construction-site-card__map-button {
-    margin-top: 0.55rem;
-    padding-inline: 0;
-  }
+.construction-site-card__map-button {
+  margin-top: 0.55rem;
+  padding-inline: 0;
 }
 
 @container results (max-width: 34rem) {
-  .construction-site-card__facts,
-  .construction-site-card__details .construction-site-details {
+  .construction-site-card__facts {
     grid-template-columns: 1fr;
   }
+}
+
+/* Paging control below either layout. */
+.construction-site-list__more {
+  display: flex;
+  gap: 0.5rem 0.9rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.85rem;
+}
+
+.construction-site-list__more-count {
+  margin: 0;
+  color: var(--kern-color-layout-text-muted, #595959);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
 }
 
 @media print {
@@ -229,7 +255,7 @@
     min-width: 0;
   }
 
-  .construction-site-cards {
+  .construction-site-list__more {
     display: none;
   }
 }

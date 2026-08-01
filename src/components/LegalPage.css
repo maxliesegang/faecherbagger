@@ -1,0 +1,69 @@
+/*
+ * Long-form prose, so this is a single readable column rather than the app's
+ * two-column shell.
+ */
+.legal-page {
+  max-width: 46rem;
+  margin-block: 0.5rem 2rem;
+}
+
+.legal-page__back {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  font-weight: 700;
+}
+
+.legal-page__back:focus-visible {
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+.legal-page h1 {
+  margin-block: 0 1rem;
+  padding-block: 0;
+  font-size: clamp(1.4rem, 1.15rem + 1vw, 1.9rem);
+  line-height: 1.2;
+}
+
+.legal-page h1:focus-visible {
+  outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 4px;
+}
+
+.legal-page h2 {
+  margin-block: 1.5rem 0.4rem;
+  padding-block: 0;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.legal-page p,
+.legal-page li {
+  margin-block: 0 0.7rem;
+  line-height: 1.55;
+}
+
+.legal-page ul {
+  margin-block: 0 0.7rem;
+  padding-inline-start: 1.25rem;
+}
+
+.legal-page code {
+  padding-inline: 0.2rem;
+  background: var(--accent-tint);
+  font-size: 0.9em;
+}
+
+.legal-page__address {
+  display: grid;
+  gap: 0.1rem;
+  margin-block: 0 0.7rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.legal-page .kern-alert {
+  margin-bottom: 1.25rem;
+}

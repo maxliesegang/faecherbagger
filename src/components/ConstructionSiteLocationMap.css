@@ -1,0 +1,11 @@
+.construction-site-location-map {
+  width: 100%;
+  height: clamp(12rem, 32vh, 20rem);
+  border: 1px solid var(--kern-color-layout-border, #c9c9c9);
+  background: var(--kern-color-layout-background-level-1, #f5f5f5);
+}
+
+/* A static picture must not offer the grab cursor its emptiness implies. */
+.construction-site-location-map .maplibregl-canvas-container {
+  cursor: default;
+}

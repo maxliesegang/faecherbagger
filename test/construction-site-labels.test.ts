@@ -1,8 +1,13 @@
 import { describe, expect, it } from "vitest";
 import {
+  CLOSURE_SEVERITIES,
+  CONSTRUCTION_CATEGORIES,
   formatISODate,
   formatConstructionPeriod,
   formatISOTimestamp,
+  getClosureDescription,
+  getClosureHeadline,
+  getConstructionCategoryDescription,
 } from "../src/lib/construction-site-labels.ts";
 
 describe("formatISODate", () => {
@@ -28,5 +33,22 @@ describe("formatConstructionPeriod", () => {
 describe("formatISOTimestamp", () => {
   it("passes invalid timestamps through unchanged", () => {
     expect(formatISOTimestamp("not-a-date")).toBe("not-a-date");
+  });
+});
+
+describe("plain-language labels", () => {
+  it("glosses every category and answers 'can I get through?' for every severity", () => {
+    for (const category of CONSTRUCTION_CATEGORIES) {
+      expect(getConstructionCategoryDescription(category)).toBeTruthy();
+    }
+    for (const closure of CLOSURE_SEVERITIES) {
+      expect(getClosureHeadline(closure)).toBeTruthy();
+      expect(getClosureDescription(closure)).toBeTruthy();
+    }
+  });
+
+  it("states the full closure as a consequence, not as a category name", () => {
+    expect(getClosureHeadline("full")).toMatch(/nicht durch/);
+    expect(getClosureHeadline("none")).toMatch(/normal durch/);
   });
 });

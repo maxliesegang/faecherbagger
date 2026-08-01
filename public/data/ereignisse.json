@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-07-30T06:21:36.458Z",
+  "events": [
+    {
+      "kind": "new",
+      "signature": "new:2026V2595",
+      "siteId": "2026V2595",
+      "point": [
+        8.39642,
+        49.010408
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-05-11",
+      "endDate": "2026-08-10",
+      "municipality": "Karlsruhe",
+      "location": "Karlstraße, Kaiserstraße, Passagehof"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30226",
+      "siteId": "30226",
+      "point": [
+        8.237029,
+        48.765017
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-30",
+      "endDate": "2026-08-10",
+      "municipality": "Baden-Baden",
+      "location": "Hindenburgplatz"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40134",
+      "siteId": "40134",
+      "point": [
+        8.601799,
+        49.121407
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-30",
+      "endDate": "2026-08-31",
+      "municipality": "Bruchsal",
+      "location": "Peter-und Paul-Straße 68"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40144",
+      "siteId": "40144",
+      "point": [
+        8.586427,
+        49.123195
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-30",
+      "endDate": "2026-10-30",
+      "municipality": "Bruchsal",
+      "location": "Am alten Güterbahnhof/Elie-Wiesel-Weg"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3683:2026-08-02",
+      "siteId": "2026V3683",
+      "point": [
+        8.39608,
+        49.006991
+      ],
+      "closure": "full",
+      "startDate": "2026-08-02",
+      "endDate": "2026-08-02",
+      "municipality": "Karlsruhe",
+      "location": "Herrenstraße zw. Karlstraße und Amalienstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4598:2026-08-08",
+      "siteId": "2026V4598",
+      "point": [
+        8.480425,
+        49.004222
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-08",
+      "endDate": "2026-09-18",
+      "municipality": "Karlsruhe",
+      "location": "Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10"
+    }
+  ]
+}

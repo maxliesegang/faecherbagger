@@ -12,9 +12,10 @@
     "dev": "vite",
     "build": "npm run typecheck && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json && tsc -p push-worker/tsconfig.json",
-    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.app.json && tsc -p tsconfig.node.json && tsc -p push-worker/tsconfig.json && tsc -p push-worker/test/tsconfig.json",
+    "test": "vitest run && npm run test:worker",
     "test:watch": "vitest",
+    "test:worker": "vitest run --config push-worker/vitest.config.ts",
     "data": "tsx scripts/fetch-construction-sites.ts",
     "feeds": "tsx scripts/generate-feeds.ts",
     "push:keys": "tsx scripts/generate-vapid-keys.ts",
@@ -35,6 +36,7 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.20.1",
     "@types/geojson": "^7946.0.16",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.17",
@@ -49,5 +51,8 @@
     "vitest": "^4.1.10",
     "web-push": "^3.6.7",
     "wrangler": "^4.114.0"
+  },
+  "allowScripts": {
+    "workerd@1.20260730.1": true
   }
 }

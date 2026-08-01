@@ -1,11 +1,19 @@
 # Fächerbagger Web Push Worker
 
-This Cloudflare Worker stores standards-based Web Push subscriptions and their
-anonymous radius preferences in D1.
+This Cloudflare Worker stores standards-based Web Push subscriptions in D1.
+
+**It stores delivery data, not watched locations** — no coordinates, no radius,
+no notification preferences. Those stay on the subscriber's device, and the
+service worker decides locally which of a run's events to show. Subscription
+rows contain the endpoint, encryption keys, expiration and operational
+timestamps only. Keep it that way: do not add a location, radius or preference
+column.
+
 It deliberately does not fan out pushes itself: after a successful Pages
-deployment, the existing GitHub Actions runner reads subscriptions in paginated
-batches and sends the encrypted notifications. This avoids Worker subrequest
-limits and stays inside the free tier.
+deployment, the GitHub Actions runner reads subscriptions in paginated batches
+and broadcasts the wake-up push. This avoids Worker subrequest limits and stays
+inside the free tier. The Worker does send one push on its own — the on-demand
+delivery test — which is why `src/web-push.ts` exists.
 
 ## One-time production setup
 
@@ -29,14 +37,21 @@ npm run push:secrets:setup
 npm run push:github:setup
 ```
 
-For an existing database created before radius filtering, apply the migration
-once before deploying the updated Worker:
+Apply outstanding migrations once before deploying the updated Worker, oldest
+first:
 
 ```bash
 npx wrangler d1 execute faecherbagger-push --remote \
-  --file=push-worker/migrations/0001_notification_radius.sql \
+  --file=push-worker/migrations/0002_notification_preferences.sql \
   --config=push-worker/wrangler.jsonc
 ```
+
+`0002` drops the stored radius columns (superseded by device-local matching) and
+adds the event ledger. `0001_notification_radius.sql` is only needed for
+databases created before it.
+
+The Worker additionally needs `VAPID_PRIVATE_KEY` and `VAPID_SUBJECT` as
+secrets, for the delivery test; `deploy-push-worker.yml` sets them.
 
 `push:secrets:setup` refuses to overwrite an existing local secret set because
 rotating VAPID keys invalidates every current browser subscription. The ignored
@@ -71,12 +86,19 @@ allows the Vite origin.
 
 - `GET /health` — unauthenticated health check.
 - `GET /config` — returns the public VAPID key.
-- `POST /subscriptions` — creates or refreshes a browser subscription and
-  optionally stores `{ preferences: { center: [longitude, latitude],
-  radiusKm } }`.
+- `POST /subscriptions` — creates or refreshes a browser subscription.
 - `DELETE /subscriptions` — removes a browser subscription.
 - `GET /subscriptions` — administrator-only cursor-paginated export.
-- `POST /broadcasts/claim` — administrator-only idempotency claim.
+- `GET /subscriptions/status?endpoint=…` — tells an allowed browser origin
+  whether its current subscription is still registered.
+- `POST /subscriptions/rotate` — atomically replaces a browser-managed push
+  endpoint after `pushsubscriptionchange`.
+- `POST /notifications/test` — sends one real, rate-limited test delivery to a
+  registered endpoint.
+- `POST /events/claim` — administrator-only, idempotently claims notification
+  event signatures before a broadcast.
+- `POST /subscriptions/notified` — administrator-only, records successful sends
+  for the per-device delivery cap.
 
 Only endpoint URLs and their Web Push encryption keys are stored. There are no
 user accounts or analytics identifiers.

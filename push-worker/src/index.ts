@@ -1,4 +1,13 @@
-import { isNotificationArea } from "../../src/lib/notification-area-validation.ts";
+import {
+  claimNotificationEvents,
+  deleteSubscription,
+  markSubscriptionsNotified,
+  readSubscription,
+  readSubscriptionPage,
+  rotateSubscription,
+  saveSubscription,
+} from "./subscription-store.ts";
+import { sendWebPush } from "./web-push.ts";
 
 interface PushSubscriptionRequest {
   endpoint?: string;
@@ -7,15 +16,16 @@ interface PushSubscriptionRequest {
     p256dh?: string;
     auth?: string;
   };
-  preferences?: {
-    center?: unknown;
-    radiusKm?: unknown;
-  };
 }
 
 const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
 const MAX_ENDPOINT_LENGTH = 4096;
 const MAX_KEY_LENGTH = 512;
+const MAX_CLAIMED_EVENTS = 2_000;
+const DEFAULT_SUBSCRIPTION_PAGE_SIZE = 250;
+const MAX_SUBSCRIPTION_PAGE_SIZE = 500;
+/** One user-triggered test push per device per minute. */
+const TEST_NOTIFICATION_COOLDOWN_SECONDS = 60;
 
 function createJSONResponse(
   body: unknown,
@@ -55,6 +65,16 @@ function createCorsHeaders(origin: string | null): HeadersInit {
     : {};
 }
 
+/** Rejects browser requests from origins outside the configured allowlist. */
+function rejectDisallowedOrigin(
+  request: Request,
+  origin: string | null,
+): Response | null {
+  return request.headers.has("origin") && !origin
+    ? createJSONResponse({ error: "Origin not allowed" }, 403)
+    : null;
+}
+
 async function hasAdminAccess(request: Request, env: Env) {
   const authorization = request.headers.get("authorization");
   if (!authorization?.startsWith("Bearer ") || !env.ADMIN_TOKEN) return false;
@@ -72,37 +92,40 @@ async function hasAdminAccess(request: Request, env: Env) {
   );
 }
 
-function isValidPushSubscription(value: PushSubscriptionRequest) {
-  if (
-    typeof value.endpoint !== "string" ||
-    value.endpoint.length > MAX_ENDPOINT_LENGTH ||
-    !value.endpoint.startsWith("https://")
-  ) {
-    return false;
-  }
-  const p256dh = value.keys?.p256dh;
-  const auth = value.keys?.auth;
-  return (
-    typeof p256dh === "string" &&
-    p256dh.length > 0 &&
-    p256dh.length <= MAX_KEY_LENGTH &&
-    typeof auth === "string" &&
-    auth.length > 0 &&
-    auth.length <= MAX_KEY_LENGTH &&
-    (value.preferences === undefined ||
-      parseNotificationPreferences(value.preferences) !== null)
-  );
+const isValidEndpoint = (value: unknown): value is string =>
+  typeof value === "string" &&
+  value.length > 0 &&
+  value.length <= MAX_ENDPOINT_LENGTH &&
+  value.startsWith("https://");
+
+interface ParsedPushSubscription {
+  endpoint: string;
+  p256dh: string;
+  auth: string;
+  expirationTime: number | null;
 }
 
-function parseNotificationPreferences(
-  preferences: PushSubscriptionRequest["preferences"],
-) {
-  if (!isNotificationArea(preferences)) return null;
-  const [longitude, latitude] = preferences.center;
+function parsePushSubscription(
+  value: PushSubscriptionRequest | null | undefined,
+): ParsedPushSubscription | null {
+  if (!value || !isValidEndpoint(value.endpoint)) return null;
+  const p256dh = value.keys?.p256dh;
+  const auth = value.keys?.auth;
+  if (
+    typeof p256dh !== "string" ||
+    p256dh.length === 0 ||
+    p256dh.length > MAX_KEY_LENGTH ||
+    typeof auth !== "string" ||
+    auth.length === 0 ||
+    auth.length > MAX_KEY_LENGTH
+  ) {
+    return null;
+  }
   return {
-    longitude,
-    latitude,
-    radiusMeters: Math.round(preferences.radiusKm * 1_000),
+    endpoint: value.endpoint,
+    p256dh,
+    auth,
+    expirationTime: value.expirationTime ?? null,
   };
 }
 
@@ -114,78 +137,58 @@ async function parseJSONBody<T>(request: Request): Promise<T | null> {
   }
 }
 
+function parseSubscriptionPageSize(value: string | null): number {
+  if (value === null) return DEFAULT_SUBSCRIPTION_PAGE_SIZE;
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isFinite(parsed)) return DEFAULT_SUBSCRIPTION_PAGE_SIZE;
+  return Math.min(Math.max(parsed, 1), MAX_SUBSCRIPTION_PAGE_SIZE);
+}
+
+function getVapidKeys(env: Env) {
+  if (!env.VAPID_PUBLIC_KEY || !env.VAPID_PRIVATE_KEY || !env.VAPID_SUBJECT) {
+    return null;
+  }
+  return {
+    publicKey: env.VAPID_PUBLIC_KEY,
+    privateKey: env.VAPID_PRIVATE_KEY,
+    subject: env.VAPID_SUBJECT,
+  };
+}
+
 async function handleSubscriptionRequest(
   request: Request,
   env: Env,
   origin: string | null,
 ) {
   if (request.method === "POST") {
-    if (request.headers.has("origin") && !origin) {
-      return createJSONResponse({ error: "Origin not allowed" }, 403);
-    }
-    const subscription = await parseJSONBody<PushSubscriptionRequest>(request);
-    if (!subscription || !isValidPushSubscription(subscription)) {
+    const originError = rejectDisallowedOrigin(request, origin);
+    if (originError) return originError;
+    const body = await parseJSONBody<PushSubscriptionRequest>(request);
+    const subscription = parsePushSubscription(body);
+    if (!subscription) {
       return createJSONResponse(
         { error: "Invalid push subscription" },
         400,
         createCorsHeaders(origin),
       );
     }
-    const preferences = parseNotificationPreferences(subscription.preferences);
-    await env.DB.prepare(
-      `INSERT INTO subscriptions
-        (endpoint, p256dh, auth, expiration_time, notification_longitude,
-         notification_latitude, notification_radius_m, created_at, updated_at)
-       VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, unixepoch(), unixepoch())
-       ON CONFLICT(endpoint) DO UPDATE SET
-        p256dh = excluded.p256dh,
-        auth = excluded.auth,
-        expiration_time = excluded.expiration_time,
-        notification_longitude = COALESCE(
-          excluded.notification_longitude,
-          subscriptions.notification_longitude
-        ),
-        notification_latitude = COALESCE(
-          excluded.notification_latitude,
-          subscriptions.notification_latitude
-        ),
-        notification_radius_m = COALESCE(
-          excluded.notification_radius_m,
-          subscriptions.notification_radius_m
-        ),
-        updated_at = unixepoch()`,
-    )
-      .bind(
-        subscription.endpoint,
-        subscription.keys!.p256dh,
-        subscription.keys!.auth,
-        subscription.expirationTime ?? null,
-        preferences?.longitude ?? null,
-        preferences?.latitude ?? null,
-        preferences?.radiusMeters ?? null,
-      )
-      .run();
+    // Deliberately stores no preferences: the device decides what to show.
+    await saveSubscription(env.DB, subscription);
     return createJSONResponse({ ok: true }, 201, createCorsHeaders(origin));
   }
 
   if (request.method === "DELETE") {
     const body = await parseJSONBody<{ endpoint?: string }>(request);
-    if (
-      !body?.endpoint ||
-      body.endpoint.length > MAX_ENDPOINT_LENGTH ||
-      (request.headers.has("origin") &&
-        !origin &&
-        !(await hasAdminAccess(request, env)))
-    ) {
+    if (!isValidEndpoint(body?.endpoint)) {
       return createJSONResponse(
         { error: "Invalid request" },
         400,
         createCorsHeaders(origin),
       );
     }
-    await env.DB.prepare("DELETE FROM subscriptions WHERE endpoint = ?1")
-      .bind(body.endpoint)
-      .run();
+    const originError = rejectDisallowedOrigin(request, origin);
+    if (originError && !(await hasAdminAccess(request, env))) return originError;
+    await deleteSubscription(env.DB, body.endpoint);
     return createJSONResponse({ ok: true }, 200, createCorsHeaders(origin));
   }
 
@@ -194,29 +197,11 @@ async function handleSubscriptionRequest(
       return createJSONResponse({ error: "Unauthorized" }, 401);
     }
     const url = new URL(request.url);
-    const limit = Math.min(
-      Math.max(Number.parseInt(url.searchParams.get("limit") ?? "250", 10), 1),
-      500,
-    );
-    const after = url.searchParams.get("after") ?? "";
-    const result = await env.DB.prepare(
-      `SELECT endpoint, p256dh, auth, expiration_time AS expirationTime,
-          notification_longitude AS notificationLongitude,
-          notification_latitude AS notificationLatitude,
-          notification_radius_m AS notificationRadiusMeters
-       FROM subscriptions
-       WHERE endpoint > ?2
-       ORDER BY endpoint
-       LIMIT ?1`,
-    )
-      .bind(limit, after)
-      .all();
-    const last = result.results.at(-1) as { endpoint?: string } | undefined;
-    return createJSONResponse({
-      subscriptions: result.results,
-      nextCursor:
-        result.results.length === limit && last?.endpoint ? last.endpoint : null,
+    const page = await readSubscriptionPage(env.DB, {
+      limit: parseSubscriptionPageSize(url.searchParams.get("limit")),
+      after: url.searchParams.get("after") ?? "",
     });
+    return createJSONResponse(page);
   }
 
   return createJSONResponse(
@@ -226,28 +211,188 @@ async function handleSubscriptionRequest(
   );
 }
 
-async function handleBroadcastClaimRequest(request: Request, env: Env) {
+/**
+ * Lets a device ask whether the server still knows it.
+ *
+ * The endpoint itself is the capability here — anyone holding it could already
+ * push to the device — so no further authentication is required, and none is
+ * possible: the service worker has no credentials to present.
+ */
+async function handleSubscriptionStatusRequest(
+  request: Request,
+  env: Env,
+  origin: string | null,
+) {
+  if (request.method !== "GET") {
+    return createJSONResponse({ error: "Method not allowed" }, 405);
+  }
+  const originError = rejectDisallowedOrigin(request, origin);
+  if (originError) return originError;
+  const endpoint = new URL(request.url).searchParams.get("endpoint");
+  if (!isValidEndpoint(endpoint)) {
+    return createJSONResponse(
+      { error: "Invalid endpoint" },
+      400,
+      createCorsHeaders(origin),
+    );
+  }
+  const subscription = await readSubscription(env.DB, endpoint);
+  return createJSONResponse(
+    { registered: subscription !== null },
+    200,
+    createCorsHeaders(origin),
+  );
+}
+
+/**
+ * Re-registers a device whose browser replaced its push subscription.
+ *
+ * Called from the service worker's `pushsubscriptionchange` handler. Without
+ * it the stored endpoint goes stale, the next send gets a 410, the row is
+ * deleted — and the device keeps believing it is subscribed while nothing will
+ * ever arrive again.
+ */
+async function handleSubscriptionRotateRequest(
+  request: Request,
+  env: Env,
+  origin: string | null,
+) {
+  if (request.method !== "POST") {
+    return createJSONResponse({ error: "Method not allowed" }, 405);
+  }
+  const originError = rejectDisallowedOrigin(request, origin);
+  if (originError) return originError;
+  const body = await parseJSONBody<{
+    oldEndpoint?: string;
+    subscription?: PushSubscriptionRequest;
+  }>(request);
+  const subscription = parsePushSubscription(body?.subscription);
+  if (!subscription || !isValidEndpoint(body?.oldEndpoint)) {
+    return createJSONResponse(
+      { error: "Invalid request" },
+      400,
+      createCorsHeaders(origin),
+    );
+  }
+  const rotated = await rotateSubscription(
+    env.DB,
+    body.oldEndpoint,
+    subscription,
+  );
+  return createJSONResponse({ rotated }, 200, createCorsHeaders(origin));
+}
+
+/**
+ * Sends a real push to one device on request.
+ *
+ * A locally shown notification proves only that the browser can display one. A
+ * user who has just switched notifications on needs to know that the *whole*
+ * path works, and nothing short of an actual delivery establishes that.
+ */
+async function handleTestNotificationRequest(
+  request: Request,
+  env: Env,
+  origin: string | null,
+) {
+  if (request.method !== "POST") {
+    return createJSONResponse({ error: "Method not allowed" }, 405);
+  }
+  const originError = rejectDisallowedOrigin(request, origin);
+  if (originError) return originError;
+  const cors = createCorsHeaders(origin);
+  const body = await parseJSONBody<{ endpoint?: string }>(request);
+  if (!isValidEndpoint(body?.endpoint)) {
+    return createJSONResponse({ error: "Invalid endpoint" }, 400, cors);
+  }
+  const keys = getVapidKeys(env);
+  if (!keys) {
+    return createJSONResponse({ error: "Push is not configured" }, 503, cors);
+  }
+  const subscription = await readSubscription(env.DB, body.endpoint);
+  if (!subscription) {
+    return createJSONResponse({ error: "Unknown subscription" }, 404, cors);
+  }
+
+  // The cooldown is the UPDATE's own WHERE clause, so two concurrent requests
+  // cannot both pass it.
+  const cooldown = await env.DB.prepare(
+    `UPDATE subscriptions SET last_test_at = unixepoch()
+     WHERE endpoint = ?1
+       AND (last_test_at IS NULL OR last_test_at < unixepoch() - ?2)`,
+  )
+    .bind(subscription.endpoint, TEST_NOTIFICATION_COOLDOWN_SECONDS)
+    .run();
+  if ((cooldown.meta.changes ?? 0) === 0) {
+    return createJSONResponse({ error: "Too many requests" }, 429, cors);
+  }
+
+  const result = await sendWebPush(
+    subscription,
+    JSON.stringify({
+      kind: "test",
+      title: "Zustellung funktioniert",
+      body: "Benachrichtigungen kommen auf diesem Gerät an.",
+      url: env.APP_URL,
+    }),
+    keys,
+    { ttlSeconds: 60, urgency: "high" },
+  );
+
+  if (result.isExpired) {
+    await deleteSubscription(env.DB, subscription.endpoint);
+    return createJSONResponse({ error: "Subscription expired" }, 410, cors);
+  }
+  if (!result.ok) {
+    return createJSONResponse(
+      { error: `Push service responded ${result.status}` },
+      502,
+      cors,
+    );
+  }
+  return createJSONResponse({ ok: true }, 202, cors);
+}
+
+/** Admin: reserves notification events so each is announced exactly once. */
+async function handleEventClaimRequest(request: Request, env: Env) {
   if (request.method !== "POST") {
     return createJSONResponse({ error: "Method not allowed" }, 405);
   }
   if (!(await hasAdminAccess(request, env))) {
     return createJSONResponse({ error: "Unauthorized" }, 401);
   }
-  const body = await parseJSONBody<{ fetchedAt?: string }>(request);
+  const body = await parseJSONBody<{ signatures?: unknown }>(request);
+  const signatures = body?.signatures;
   if (
-    !body?.fetchedAt ||
-    body.fetchedAt.length > 64 ||
-    Number.isNaN(Date.parse(body.fetchedAt))
+    !Array.isArray(signatures) ||
+    signatures.length > MAX_CLAIMED_EVENTS ||
+    !signatures.every(
+      (signature) =>
+        typeof signature === "string" &&
+        signature.length > 0 &&
+        signature.length <= 256,
+    )
   ) {
-    return createJSONResponse({ error: "Invalid fetchedAt" }, 400);
+    return createJSONResponse({ error: "Invalid signatures" }, 400);
   }
-  const result = await env.DB.prepare(
-    `INSERT OR IGNORE INTO broadcasts (fetched_at, created_at)
-     VALUES (?1, unixepoch())`,
-  )
-    .bind(body.fetchedAt)
-    .run();
-  return createJSONResponse({ claimed: (result.meta.changes ?? 0) > 0 });
+  const claimed = await claimNotificationEvents(env.DB, signatures as string[]);
+  return createJSONResponse({ claimed });
+}
+
+/** Admin: records that these devices were just sent to, for the daily cap. */
+async function handleNotifiedRequest(request: Request, env: Env) {
+  if (request.method !== "POST") {
+    return createJSONResponse({ error: "Method not allowed" }, 405);
+  }
+  if (!(await hasAdminAccess(request, env))) {
+    return createJSONResponse({ error: "Unauthorized" }, 401);
+  }
+  const body = await parseJSONBody<{ endpoints?: unknown }>(request);
+  const endpoints = body?.endpoints;
+  if (!Array.isArray(endpoints) || !endpoints.every(isValidEndpoint)) {
+    return createJSONResponse({ error: "Invalid endpoints" }, 400);
+  }
+  await markSubscriptionsNotified(env.DB, endpoints as string[]);
+  return createJSONResponse({ ok: true });
 }
 
 export default {
@@ -266,9 +411,8 @@ export default {
       return createJSONResponse({ ok: true });
     }
     if (url.pathname === "/config" && request.method === "GET") {
-      if (request.headers.has("origin") && !origin) {
-        return createJSONResponse({ error: "Origin not allowed" }, 403);
-      }
+      const originError = rejectDisallowedOrigin(request, origin);
+      if (originError) return originError;
       return createJSONResponse(
         { vapidPublicKey: env.VAPID_PUBLIC_KEY },
         200,
@@ -278,8 +422,20 @@ export default {
     if (url.pathname === "/subscriptions") {
       return handleSubscriptionRequest(request, env, origin);
     }
-    if (url.pathname === "/broadcasts/claim") {
-      return handleBroadcastClaimRequest(request, env);
+    if (url.pathname === "/subscriptions/status") {
+      return handleSubscriptionStatusRequest(request, env, origin);
+    }
+    if (url.pathname === "/subscriptions/rotate") {
+      return handleSubscriptionRotateRequest(request, env, origin);
+    }
+    if (url.pathname === "/subscriptions/notified") {
+      return handleNotifiedRequest(request, env);
+    }
+    if (url.pathname === "/notifications/test") {
+      return handleTestNotificationRequest(request, env, origin);
+    }
+    if (url.pathname === "/events/claim") {
+      return handleEventClaimRequest(request, env);
     }
     return createJSONResponse({ error: "Not found" }, 404);
   },

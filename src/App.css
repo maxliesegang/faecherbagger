@@ -98,6 +98,25 @@ select {
   line-height: 1.35;
 }
 
+/*
+ * Right-hand side of the page bar: the location call to action sits here, above
+ * the fold on every screen size, because "what is going on around me" is the
+ * question most visitors arrive with.
+ */
+.app-bar__meta {
+  display: flex;
+  gap: 0.5rem 0.85rem;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  /* Stays on the right even on the detail view, where the titles step aside. */
+  margin-inline-start: auto;
+}
+
+.app-bar__nearby {
+  flex: 0 0 auto;
+}
+
 /* Freshness chip with a live dot. */
 .app-bar__updated {
   display: inline-flex;
@@ -120,6 +139,30 @@ select {
   background: var(--kern-color-feedback-success, #2f8132);
 }
 
+/* A failed refresh must not keep claiming the data is current. */
+.app-bar__updated[data-state="stale"] {
+  border-color: var(--phase-upcoming);
+  color: var(--phase-upcoming);
+  font-weight: 700;
+}
+
+.app-bar__updated[data-state="stale"] .app-bar__dot {
+  background: var(--phase-upcoming);
+}
+
+/*
+ * KERN is the state's design system, so this looks like a government service
+ * at a glance. It is not one, and the correction belongs above the fold rather
+ * than in the footer's small print.
+ */
+.app-unofficial {
+  margin: 0;
+  padding-block: 0.4rem;
+  color: var(--app-muted);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
 .app-status {
   display: flex;
   gap: 0.75rem;
@@ -127,19 +170,12 @@ select {
   min-height: 8rem;
 }
 
-.app-status__spinner {
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 3px solid var(--app-border);
-  border-top-color: var(--app-accent);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+/* Holds the space the map is about to take, so nothing jumps when it arrives. */
+.app-status--map {
+  justify-content: center;
+  min-height: clamp(24rem, calc(100dvh - 13rem), 48rem);
+  border: 1px solid var(--app-border);
+  background: var(--app-card);
 }
 
 /*
@@ -170,9 +206,11 @@ select {
 }
 
 /*
- * Without the rail there is no reason to keep the personal tools above the
- * results, so the rail dissolves into the shell grid and only the filters stay
- * on top. `order` never applies on desktop, where the rail is a real column.
+ * Without the rail the shell is a single column, so the rail dissolves into it
+ * and `order` decides the sequence. The notification card comes *before* the
+ * results: it is the one thing here a map cannot do, and below a list of
+ * several hundred sites nobody would ever find it. `order` never applies on
+ * desktop, where the rail is a real column.
  */
 @media (max-width: 63.999rem) {
   .app-rail {
@@ -183,11 +221,11 @@ select {
     order: 1;
   }
 
-  .results {
+  .app-rail__tools {
     order: 2;
   }
 
-  .app-rail__tools {
+  .results {
     order: 3;
   }
 }
@@ -247,17 +285,25 @@ select {
   margin-top: 0.15rem;
 }
 
-/* Status switch: counts double as the label, so it reads as a summary too. */
+/*
+ * Status switch: counts double as the label, so it reads as a summary too.
+ * Each tile is the `label` of a visually hidden radio, so the exclusive choice
+ * is native (arrow keys, one announced group) while the tile keeps its layout.
+ */
 .phase-switch {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.35rem;
-  margin-top: 0.7rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  border: 0;
 }
 
 .phase-switch__item {
   --tile-accent: var(--app-accent);
   --tile-tint: var(--phase-total-tint);
+  /* Anchors the absolutely positioned `kern-sr-only` input to its own tile. */
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.05rem;
@@ -286,11 +332,11 @@ select {
   --tile-tint: var(--phase-upcoming-tint);
 }
 
-.phase-switch__item:hover:not([aria-pressed="true"]) {
+.phase-switch__item:hover:not(:has(.phase-switch__input:checked)) {
   background: var(--tile-tint);
 }
 
-.phase-switch__item[aria-pressed="true"] {
+.phase-switch__item:has(.phase-switch__input:checked) {
   background: var(--tile-accent);
   border-color: var(--tile-accent);
 }
@@ -317,9 +363,13 @@ select {
   font-weight: 600;
 }
 
-.phase-switch__item[aria-pressed="true"] .phase-switch__value,
-.phase-switch__item[aria-pressed="true"] .phase-switch__label {
+.phase-switch__item:has(.phase-switch__input:checked) .phase-switch__value,
+.phase-switch__item:has(.phase-switch__input:checked) .phase-switch__label {
   color: var(--kern-color-action-on-default, #fff);
+}
+
+.filter-panel__timeframe {
+  margin-top: 0.6rem;
 }
 
 /* Scope toggle for the "what changed since the last refresh" view. */
@@ -509,17 +559,6 @@ select {
   width: 100%;
 }
 
-.pwa-panel > .kern-accordion__header {
-  min-height: 2.75rem;
-  padding-block: 0.55rem;
-  background: var(--app-card);
-  transition: background-color 0.15s ease;
-}
-
-.pwa-panel > .kern-accordion__header:hover {
-  background: var(--accent-tint);
-}
-
 /*
  * Results column. It is a query container so the table can switch to cards
  * based on the space it actually has, not the viewport: with the rail beside
@@ -587,13 +626,20 @@ select {
   font-size: 0.9rem;
 }
 
+/* Segmented control over native radios: an exclusive choice, announced as one. */
 .view-switcher {
   display: inline-grid;
   grid-template-columns: repeat(2, minmax(5rem, 1fr));
   flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.view-switcher__button {
+.view-switcher__item {
+  position: relative;
+  display: grid;
+  place-items: center;
   min-height: 2.75rem;
   padding: 0.35rem 1rem;
   border: 1px solid var(--app-accent);
@@ -606,15 +652,15 @@ select {
     color 0.15s ease;
 }
 
-.view-switcher__button + .view-switcher__button {
+.view-switcher__item + .view-switcher__item {
   border-inline-start: 0;
 }
 
-.view-switcher__button:hover:not([aria-pressed="true"]) {
+.view-switcher__item:hover:not(:has(.view-switcher__input:checked)) {
   background: var(--accent-tint);
 }
 
-.view-switcher__button[aria-pressed="true"] {
+.view-switcher__item:has(.view-switcher__input:checked) {
   color: var(--kern-color-action-on-default, #fff);
   background: var(--app-accent);
 }
@@ -625,10 +671,10 @@ select {
 }
 
 /* One consistent focus ring for every control this file styles. */
-.phase-switch__item:focus-visible,
+.phase-switch__item:has(.phase-switch__input:focus-visible),
+.view-switcher__item:has(.view-switcher__input:focus-visible),
 .filter-panel__scope:focus-visible,
 .filter-chips__chip:focus-visible,
-.view-switcher__button:focus-visible,
 .results__sort select:focus-visible {
   position: relative;
   z-index: 1;
@@ -637,13 +683,34 @@ select {
 }
 
 .app-footer {
+  display: grid;
+  gap: 0.4rem;
   margin-block: 1.25rem 0;
   padding-top: 0.75rem;
   border-top: 1px solid var(--app-border);
 }
 
-.app-footer__details {
-  max-width: 50rem;
+.app-footer__disclaimer {
+  max-width: 60rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.app-footer__source {
+  max-width: 60rem;
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+.app-footer__links {
+  display: flex;
+  gap: 0.35rem 1rem;
+  flex-wrap: wrap;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  font-size: 0.875rem;
+  list-style: none;
 }
 
 @media (max-width: 48rem) {
@@ -690,7 +757,7 @@ select {
     grid-template-columns: repeat(2, minmax(4.5rem, 1fr));
   }
 
-  .view-switcher__button {
+  .view-switcher__item {
     padding-inline: 0.6rem;
   }
 }
@@ -700,15 +767,10 @@ select {
     scroll-behavior: auto;
   }
 
-  .app-status__spinner {
-    animation-duration: 1.6s;
-  }
-
   .phase-switch__item,
   .filter-panel__scope,
   .filter-chips__chip,
-  .view-switcher__button,
-  .pwa-panel > .kern-accordion__header {
+  .view-switcher__item {
     transition: none;
   }
 }

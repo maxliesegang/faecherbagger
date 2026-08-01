@@ -24,7 +24,6 @@ function createConstructionSite(overrides: Partial<ConstructionSite>): Construct
     startDate: "2026-01-01",
     endDate: null,
     point: [8.4, 49],
-    geometry: { type: "Point", coordinates: [8.4, 49] },
     source: "Stadt Karlsruhe",
     lastModified: "2026-01-01T00:00:00Z",
     ...overrides,
@@ -44,9 +43,9 @@ describe("sortConstructionSitesByDefaultOrder", () => {
     expect(
       sortConstructionSitesByDefaultOrder(input).map(({ id }) => id),
     ).toEqual([
+      "later",
       "A",
       "B",
-      "later",
       "none",
       "upcoming",
     ]);
@@ -57,6 +56,50 @@ describe("sortConstructionSitesByDefaultOrder", () => {
       "none",
       "A",
     ]);
+  });
+
+  it("puts the most recently started active sites first", () => {
+    const input = [
+      createConstructionSite({ id: "old", closure: "full", startDate: "2023-01-09" }),
+      createConstructionSite({ id: "fresh", closure: "full", startDate: "2026-07-20" }),
+      createConstructionSite({ id: "middle", closure: "full", startDate: "2025-03-04" }),
+    ];
+
+    expect(
+      sortConstructionSitesByDefaultOrder(input).map(({ id }) => id),
+    ).toEqual(["fresh", "middle", "old"]);
+  });
+
+  it("puts the planned sites starting soonest first", () => {
+    const input = [
+      createConstructionSite({
+        id: "far",
+        phase: "upcoming",
+        closure: "full",
+        startDate: "2027-05-01",
+      }),
+      createConstructionSite({
+        id: "soon",
+        phase: "upcoming",
+        closure: "full",
+        startDate: "2026-08-03",
+      }),
+    ];
+
+    expect(
+      sortConstructionSitesByDefaultOrder(input).map(({ id }) => id),
+    ).toEqual(["soon", "far"]);
+  });
+
+  it("keeps severity above the start date in both phases", () => {
+    const input = [
+      createConstructionSite({ id: "fresh-mild", closure: "none", startDate: "2026-07-20" }),
+      createConstructionSite({ id: "old-severe", closure: "full", startDate: "2023-01-09" }),
+    ];
+
+    expect(
+      sortConstructionSitesByDefaultOrder(input).map(({ id }) => id),
+    ).toEqual(["old-severe", "fresh-mild"]);
   });
 });
 
@@ -154,5 +197,9 @@ describe("sort tokens", () => {
         needsLocation: true,
       },
     ]);
+  });
+
+  it("offers the display order as the first preset", () => {
+    expect(CONSTRUCTION_SITE_SORT_PRESETS[0].sort).toBeNull();
   });
 });
