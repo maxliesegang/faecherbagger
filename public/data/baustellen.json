@@ -640,26 +640,6 @@
     "lastModified": "2026-02-05T23:00:00Z"
   },
   {
-    "id": "2024V6424",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Dreisamstraße, Neckarplatz, Donaustraße, Neckarstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-06-22",
-    "endDate": "2026-08-01",
-    "point": [
-      8.393768,
-      48.987116
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-21T22:00:00Z"
-  },
-  {
     "id": "2024V6440",
     "phase": "active",
     "category": "power-telecom",
@@ -4320,26 +4300,6 @@
     "lastModified": "2026-06-09T22:00:00Z"
   },
   {
-    "id": "2026V2026",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kapellenstraße zw. Ludwig-Erhard-Allee und Durlacher Allee/Am Künstlerhaus zw. Waldhornstraße und Zähringer Straße",
-    "notes": "Lokale Arbeitsstelle im Gehwegbereich, Montage- und Einzugsgruben Bereich Kapellenstraße und Am Künstlerhaus",
-    "cause": "Telekommunikation",
-    "startDate": "2026-03-30",
-    "endDate": "2026-08-01",
-    "point": [
-      8.413872,
-      49.007265
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-16T22:00:00Z"
-  },
-  {
     "id": "2026V2154",
     "phase": "upcoming",
     "category": "sewer",
@@ -5020,26 +4980,6 @@
     "lastModified": "2026-06-23T22:00:00Z"
   },
   {
-    "id": "2026V3130",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Tulpenstraße zw. Göhrenstraße und Kleiststraße",
-    "notes": "Bauzeit vs. 2 Wochen",
-    "cause": "Privat",
-    "startDate": "2026-07-20",
-    "endDate": "2026-08-01",
-    "point": [
-      8.406826,
-      48.970358
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-19T22:00:00Z"
-  },
-  {
     "id": "2026V3181",
     "phase": "upcoming",
     "category": "road-construction",
@@ -5138,26 +5078,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-29T22:00:00Z"
-  },
-  {
-    "id": "2026V3261",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Raiherwiesenstraße zw. Schinnrainstraße und Bleichstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, signalisierte Fußgängerführung",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-28",
-    "endDate": "2026-08-01",
-    "point": [
-      8.459405,
-      48.999197
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
   },
   {
     "id": "2026V3288",
@@ -5721,7 +5641,7 @@
   },
   {
     "id": "2026V3683",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -5855,26 +5775,6 @@
     "point": [
       8.408478,
       49.009212
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-16T22:00:00Z"
-  },
-  {
-    "id": "2026V3862",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gottesauer Str.3-25 (Nord)&6-14 (Süd);Ostendstr.1-10;Lachnerstr. 2-20 (West)&13;",
-    "notes": "Arbeitsstellen im Geh- und Radwegbereich",
-    "cause": "Telekommunikation",
-    "startDate": "2026-06-22",
-    "endDate": "2026-08-01",
-    "point": [
-      8.418831,
-      49.007798
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-16T22:00:00Z"
@@ -6798,26 +6698,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-12T22:00:00Z"
-  },
-  {
-    "id": "2026V4426",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karlstraße zw.Kaiserstraße und Akademiestraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-20",
-    "endDate": "2026-08-01",
-    "point": [
-      8.395193,
-      49.010357
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-14T22:00:00Z"
   },
   {
     "id": "2026V4457",
@@ -7778,26 +7658,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-05-27T07:53:23Z"
-  },
-  {
-    "id": "30062",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Fliederstraße 20a",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-06-19",
-    "endDate": "2026-08-01",
-    "point": [
-      8.301519,
-      48.962334
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-06-11T13:04:01Z"
   },
   {
     "id": "30066",
