@@ -120,6 +120,46 @@
     "lastModified": "2026-06-17T22:00:00Z"
   },
   {
+    "id": "2023V0446",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Georg-Friedrich-Straße, Ludwig-Wilhelm-Straße, Gerwigstraße",
+    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich",
+    "cause": "Telekommunikation",
+    "startDate": "2026-07-30",
+    "endDate": "2026-08-20",
+    "point": [
+      8.423521,
+      49.010105
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-02T22:00:00Z"
+  },
+  {
+    "id": "2023V0606",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße",
+    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich",
+    "cause": "Telekommunikation",
+    "startDate": "2026-07-29",
+    "endDate": "2026-08-20",
+    "point": [
+      8.419127,
+      49.009905
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-02T22:00:00Z"
+  },
+  {
     "id": "2023V2060",
     "phase": "active",
     "category": "special-use",
@@ -444,7 +484,7 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Blechenstraße und Links der Alb",
@@ -1941,7 +1981,7 @@
   },
   {
     "id": "2025V6920",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "obstruction",
@@ -2061,7 +2101,7 @@
   },
   {
     "id": "2025V6989",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -2070,14 +2110,14 @@
     "location": "Rheinhafestraße zw. B36/ Eckenerstraße und Hopfenstraße",
     "notes": "Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-09-04",
+    "startDate": "2026-08-10",
+    "endDate": "2026-09-05",
     "point": [
       8.349398,
       48.999724
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-21T22:00:00Z"
+    "lastModified": "2026-08-02T22:00:00Z"
   },
   {
     "id": "2025V7008",
@@ -2800,6 +2840,26 @@
     "lastModified": "2026-06-01T22:00:00Z"
   },
   {
+    "id": "2026V0262",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Nordbeckenstraße 17b, Im Schlehert 38",
+    "notes": "Kabelgraben im Bankett/Gehweg und Spülbohrung",
+    "cause": "Telekommunikation",
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-28",
+    "point": [
+      8.318572,
+      49.017118
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-02T22:00:00Z"
+  },
+  {
     "id": "2026V0264",
     "phase": "upcoming",
     "category": "rail",
@@ -3238,6 +3298,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-08T22:00:00Z"
+  },
+  {
+    "id": "2026V0743",
+    "phase": "upcoming",
+    "category": "demolition",
+    "artRaw": "Abbruch/Rückbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wolfweg zw. Turmbergstraße und Blankenhornweg",
+    "notes": "temporäre Sperrung während der Arbeiten",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-08-24",
+    "endDate": "2026-10-02",
+    "point": [
+      8.482252,
+      48.997634
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-02T22:00:00Z"
   },
   {
     "id": "2026V0748",
@@ -4870,14 +4950,14 @@
     "location": "Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße",
     "notes": "Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-05",
-    "endDate": "2026-08-14",
+    "startDate": "2026-08-15",
+    "endDate": "2026-08-21",
     "point": [
       8.477328,
       48.997852
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-20T22:00:00Z"
+    "lastModified": "2026-08-02T22:00:00Z"
   },
   {
     "id": "2026V2990",
@@ -4891,13 +4971,13 @@
     "notes": "Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien, Turmbergstraße = Vollsperrung",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-21",
-    "endDate": "2026-08-04",
+    "endDate": "2026-08-14",
     "point": [
       8.477297,
       48.998193
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-20T22:00:00Z"
+    "lastModified": "2026-08-02T22:00:00Z"
   },
   {
     "id": "2026V3008",
@@ -4961,7 +5041,7 @@
   },
   {
     "id": "2026V3218",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "obstruction",
@@ -5004,20 +5084,20 @@
     "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr.",
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-06",
-    "endDate": "2027-03-13",
+    "endDate": "2027-03-12",
     "point": [
       8.367076,
       49.027432
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-29T22:00:00Z"
+    "lastModified": "2026-08-02T22:00:00Z"
   },
   {
     "id": "2026V3288",
@@ -5170,14 +5250,14 @@
     "location": "Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-05",
+    "startDate": "2026-11-14",
     "endDate": "2026-12-31",
     "point": [
       8.38442,
       48.99031
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-07T22:00:00Z"
+    "lastModified": "2026-08-02T22:00:00Z"
   },
   {
     "id": "2026V3480",
@@ -5538,26 +5618,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-19T22:00:00Z"
-  },
-  {
-    "id": "2026V3664",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Striederstraße zw. Tullastraße und Berckmüllerstraße",
-    "notes": "Gustav-Specht-Straße = Sackgasse",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-08-03",
-    "point": [
-      8.432948,
-      49.010306
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-22T22:00:00Z"
   },
   {
     "id": "2026V3678",
@@ -7000,26 +7060,6 @@
     "lastModified": ""
   },
   {
-    "id": "2026V4639",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Amalinenstraße und Sophienstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-03",
-    "endDate": "2026-08-03",
-    "point": [
-      8.391441,
-      49.00721
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
-  },
-  {
     "id": "2026V4645",
     "phase": "upcoming",
     "category": "green-maintenance",
@@ -7420,6 +7460,46 @@
     "lastModified": "2026-08-02T22:00:00Z"
   },
   {
+    "id": "2026V4826",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Babbergerstraße, Waidweg, Hermann-Schneider-Allee",
+    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
+    "cause": "Telekommunikation",
+    "startDate": "2026-07-06",
+    "endDate": "2026-09-11",
+    "point": [
+      8.320412,
+      49.004888
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-02T22:00:00Z"
+  },
+  {
+    "id": "2026V4835",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "K9653/ Karlsbader Straß ezw. Pfefferäckerstraße und abzweig L623/ Ochsenstraße",
+    "notes": "lokale Arbeitsstelle, beide Fahrtrichtungen, wechselseitig",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-08-04",
+    "endDate": "2026-08-07",
+    "point": [
+      8.511678,
+      48.95563
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-02T22:00:00Z"
+  },
+  {
     "id": "30032",
     "phase": "active",
     "category": "special-use",
@@ -7700,6 +7780,26 @@
     "lastModified": "2026-03-20T08:41:50Z"
   },
   {
+    "id": "30107",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Diverse Straßen",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-01-12",
+    "endDate": "2026-10-31",
+    "point": [
+      8.266401,
+      48.971151
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2025-12-17T08:32:50Z"
+  },
+  {
     "id": "30124",
     "phase": "active",
     "category": "road-maintenance",
@@ -7780,6 +7880,26 @@
     "lastModified": "2026-07-22T06:46:21Z"
   },
   {
+    "id": "30174",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kinzigstraße 5",
+    "notes": "Parkstreifen nicht nutzbar",
+    "cause": "Stadtwerke",
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07",
+    "point": [
+      8.59471,
+      49.135391
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-03T10:40:10Z"
+  },
+  {
     "id": "30226",
     "phase": "active",
     "category": "road-construction",
@@ -7844,20 +7964,20 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Am Gottesauer Hof / Am Maulbronner Hof",
-    "notes": "Halbseitige Straßensperrung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Bienwaldstraße 13",
+    "notes": null,
     "cause": "Privat",
-    "startDate": "2025-02-05",
-    "endDate": "2026-09-30",
+    "startDate": "2026-03-16",
+    "endDate": "2026-08-31",
     "point": [
-      8.500533,
-      49.112958
+      8.377652,
+      49.026094
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2025-02-03T07:36:39Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-02-10T10:27:44Z"
   },
   {
     "id": "40009",
@@ -9138,26 +9258,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-06-24T05:29:54Z"
-  },
-  {
-    "id": "40258",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Sternengasse HN 9 / Ecke Färbergasse",
-    "notes": "Vollsperrung im Bereich der Färbergasse wegen Aufgrabung für Tiefbauarbeiten im Vodafone Netz",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-06",
-    "endDate": "2026-08-03",
-    "point": [
-      8.409898,
-      48.941563
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-07-02T14:26:44Z"
   },
   {
     "id": "40270",

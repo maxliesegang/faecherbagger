@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-03T06:54:06.244Z</updated>
+    <updated>2026-08-04T06:22:03.107Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -23,16 +23,135 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Sonstiges" term="other"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Kinzigstraße 5 – Bruchsal]]></title>
+        <id>faecherbagger:30174:2026-08-03T10:40:10Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30174"/>
+        <updated>2026-08-03T10:40:10.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 03.08.2026 – 07.08.2026
+Hinweis: Parkstreifen nicht nutzbar
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Georg-Friedrich-Straße, Ludwig-Wilhelm-Straße, Gerwigstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2023V0446:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2023V0446"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 30.07.2026 – 20.08.2026
+Hinweis: Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2023V0606:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2023V0606"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 29.07.2026 – 20.08.2026
+Hinweis: Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Blechenstraße und Links der Alb – Karlsruhe]]></title>
         <id>faecherbagger:2024V4283:2026-08-02T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V4283"/>
         <updated>2026-08-02T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Keine Behinderung
 Zeitraum: 09.09.2024 – 05.08.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Rheinhafestraße zw. B36/ Eckenerstraße und Hopfenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V6989:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6989"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+Zeitraum: 10.08.2026 – 05.09.2026
+Hinweis: Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Nordbeckenstraße 17b, Im Schlehert 38 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0262:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0262"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 10.08.2026 – 28.08.2026
+Hinweis: Kabelgraben im Bankett/Gehweg und Spülbohrung
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Wolfweg zw. Turmbergstraße und Blankenhornweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0743:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0743"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Abbruch/Rückbau · Vollsperrung
+Zeitraum: 24.08.2026 – 02.10.2026
+Hinweis: temporäre Sperrung während der Arbeiten
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Abbruch/Rückbau" term="demolition"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2987:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2987"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Sperrung (1 Richtung)
+Zeitraum: 15.08.2026 – 21.08.2026
+Hinweis: Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2990:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2990"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Sperrung (1 Richtung)
+Zeitraum: 21.07.2026 – 14.08.2026
+Hinweis: Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien, Turmbergstraße = Vollsperrung
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr. – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3250:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3250"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 06.08.2026 – 12.03.2027
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3478:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3478"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 14.11.2026 – 31.12.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Am Rüppurrer Schloss 1 - 7 – Karlsruhe]]></title>
@@ -45,6 +164,30 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabs
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Babbergerstraße, Waidweg, Hermann-Schneider-Allee – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4826:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4826"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 06.07.2026 – 11.09.2026
+Hinweis: Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: K9653/ Karlsbader Straß ezw. Pfefferäckerstraße und abzweig L623/ Ochsenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4835:2026-08-02T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4835"/>
+        <updated>2026-08-02T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
+Zeitraum: 04.08.2026 – 07.08.2026
+Hinweis: lokale Arbeitsstelle, beide Fahrtrichtungen, wechselseitig
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Industriestraße, Hohleichweg, August-Ketterer-Straße, Waidweg, Babbergerstraße, Daxlander Straße, Hermann-Schneider-Allee – Karlsruhe]]></title>
@@ -381,18 +524,6 @@ Quelle: Stadt Karlsruhe]]></summary>
 Zeitraum: 11.05.2026 – 10.08.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten, vs. 4 Wochen
 Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr. – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3250:2026-07-29T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3250"/>
-        <updated>2026-07-29T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Keine Behinderung
-Zeitraum: 06.08.2026 – 13.03.2027
-Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
@@ -822,17 +953,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Amalinenstraße und Sophienstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4639:2026-07-26T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4639"/>
-        <updated>2026-07-26T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 03.08.2026 – 03.08.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: L 604 zw. Waldstadt/Theodor-Heuss-Allee und Eggenstein Höhe B 36 – Karlsruhe]]></title>
         <id>faecherbagger:2026V4645:2026-07-26T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4645"/>
@@ -995,18 +1115,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Striederstraße zw. Tullastraße und Berckmüllerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3664:2026-07-22T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3664"/>
-        <updated>2026-07-22T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
-Zeitraum: 03.08.2026 – 03.08.2026
-Hinweis: Gustav-Specht-Straße = Sackgasse
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Nowackanlage zw. Baumeisterstraße und Ettlinger Straße – Karlsruhe]]></title>
@@ -1309,30 +1417,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2987:2026-07-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2987"/>
-        <updated>2026-07-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Sperrung (1 Richtung)
-Zeitraum: 05.08.2026 – 14.08.2026
-Hinweis: Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2990:2026-07-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2990"/>
-        <updated>2026-07-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Sperrung (1 Richtung)
-Zeitraum: 21.07.2026 – 04.08.2026
-Hinweis: Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien, Turmbergstraße = Vollsperrung
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Südendstraße zw. Brauerstraße und Boeckhstraße – Karlsruhe]]></title>
@@ -2180,18 +2264,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Sternengasse HN 9 / Ecke Färbergasse – Ettlingen]]></title>
-        <id>faecherbagger:40258:2026-07-02T14:26:44Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40258"/>
-        <updated>2026-07-02T14:26:44.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Vollsperrung
-Zeitraum: 06.07.2026 – 03.08.2026
-Hinweis: Vollsperrung im Bereich der Färbergasse wegen Aufgrabung für Tiefbauarbeiten im Vodafone Netz
-Verantwortlich: Telekommunikation
-Quelle: Stadt Ettlingen]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutenee, Hauptstraße 72 – Stutensee]]></title>
         <id>faecherbagger:30054:2026-07-02T06:59:37Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30054"/>
@@ -2499,18 +2571,6 @@ Hinweis: Vollsperrung
 Verantwortlich: Versorgungsunternehmen
 Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Rheinhafestraße zw. B36/ Eckenerstraße und Hopfenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6989:2026-06-21T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6989"/>
-        <updated>2026-06-21T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
-Zeitraum: 03.08.2026 – 04.09.2026
-Hinweis: Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente – Karlsruhe]]></title>
@@ -3077,17 +3137,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3478:2026-06-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3478"/>
-        <updated>2026-06-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 05.10.2026 – 31.12.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Herrenstraße zw. Kaiserstraße und Zirkel – Karlsruhe]]></title>
         <id>faecherbagger:2025V0249:2026-06-04T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V0249"/>
@@ -3100,11 +3149,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: B3/ Südtangente Höhe Bahnübergang Schindweg (Haltestelle Durlach Zündhütle) – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: B3/ Südtangente Höhe Bahnübergang Schindweg (Haltestelle Durlach Zündhütle) – Karlsruhe]]></title>
         <id>faecherbagger:2025V6920:2026-06-02T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6920"/>
         <updated>2026-06-02T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenunterhaltung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
 Zeitraum: 04.08.2026 – 04.08.2026
 Hinweis: Abschaltung der Bahnübergangstechnik, Entfall von Fahrstreifen, Beseitigung Unfallschaden
 Verantwortlich: Verkehrsbetriebe Karlsruhe
@@ -3474,11 +3523,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: B3/ Südtangente zw. Fiduciastraße und B3/ K9652/ Badene Straße/ Tiefentalstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: B3/ Südtangente zw. Fiduciastraße und B3/ K9652/ Badene Straße/ Tiefentalstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3218:2026-05-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3218"/>
         <updated>2026-05-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenunterhaltung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
 Zeitraum: 04.08.2026 – 04.08.2026
 Hinweis: Höhe Schindweg, 1-streifige Verkehrsführung in beiden Fahrtrichtungen, signaltechnishce Arbeiten zur Beseitigung Unfallschaden
 Verantwortlich: Tiefbauamt
@@ -4753,6 +4802,17 @@ Quelle: Stadt Bruchsal]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Bienwaldstraße 13 – Rheinstetten]]></title>
+        <id>faecherbagger:40008:2026-02-10T10:27:44Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40008"/>
+        <updated>2026-02-10T10:27:44.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 16.03.2026 – 31.08.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Lammstraße zw. Am Schlossplatz und Zirkel – Karlsruhe]]></title>
         <id>faecherbagger:2026V0876:2026-02-09T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0876"/>
@@ -5153,6 +5213,17 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Haltestellenumbau" term="stop-rebuild"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Diverse Straßen – Rheinstetten]]></title>
+        <id>faecherbagger:30107:2025-12-17T08:32:50Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30107"/>
+        <updated>2025-12-17T08:32:50.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 12.01.2026 – 31.10.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Seminarstraße zwischen Bismarckstraße und Moltkestraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V6792:2025-11-27T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6792"/>
@@ -5403,18 +5474,6 @@ Hinweis: Straße wegen Bauarbeiten verengt.
 Durchfahrt ist möglich.
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Am Gottesauer Hof / Am Maulbronner Hof – Stutensee]]></title>
-        <id>faecherbagger:40008:2025-02-03T07:36:39Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40008"/>
-        <updated>2025-02-03T07:36:39.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 05.02.2025 – 30.09.2026
-Hinweis: Halbseitige Straßensperrung
-Verantwortlich: Privat
-Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>

@@ -1,33 +1,84 @@
 {
-  "since": "2026-08-02T06:27:57.658Z",
+  "since": "2026-08-03T06:54:06.244Z",
   "added": [
-    "2024V4283",
-    "2026V4807",
-    "40058",
-    "40059",
-    "40114",
-    "40141",
-    "40289"
+    "2023V0446",
+    "2023V0606",
+    "2026V0262",
+    "2026V0743",
+    "2026V4826",
+    "2026V4835",
+    "30107",
+    "30174"
   ],
   "modified": [
-    "40064"
+    "2025V6989",
+    "2026V2987",
+    "2026V2990",
+    "2026V3250",
+    "2026V3478",
+    "40008"
   ],
   "removed": [
-    "2024V5787",
-    "2025V6905",
-    "2025V7016",
-    "2026V2434",
-    "2026V3683"
+    "2026V3664",
+    "2026V4639",
+    "40258"
   ],
   "relevantModifications": [
     {
-      "id": "40064",
+      "id": "2025V6989",
       "changedFields": [
         "period"
       ],
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-04-22",
-      "previousEndDate": "2026-07-21"
+      "previousStartDate": "2026-08-03",
+      "previousEndDate": "2026-09-04"
+    },
+    {
+      "id": "2026V2987",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-08-05",
+      "previousEndDate": "2026-08-14"
+    },
+    {
+      "id": "2026V2990",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-07-21",
+      "previousEndDate": "2026-08-04"
+    },
+    {
+      "id": "2026V3250",
+      "changedFields": [
+        "period",
+        "closure"
+      ],
+      "previousClosure": "none",
+      "previousStartDate": "2026-08-06",
+      "previousEndDate": "2027-03-13"
+    },
+    {
+      "id": "2026V3478",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-05",
+      "previousEndDate": "2026-12-31"
+    },
+    {
+      "id": "40008",
+      "changedFields": [
+        "period",
+        "closure"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2025-02-05",
+      "previousEndDate": "2026-09-30"
     }
   ]
 }
