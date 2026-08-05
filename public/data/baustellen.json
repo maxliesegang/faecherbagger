@@ -520,24 +520,24 @@
     "lastModified": "2026-05-07T22:00:00Z"
   },
   {
-    "id": "2024V4772",
+    "id": "2024V4681",
     "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": "stationary",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Hildebrandstraße zw. Reichenbachstraße und Auer Straße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-13",
-    "endDate": "2026-08-08",
+    "location": "Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-06-29",
+    "endDate": "2026-09-04",
     "point": [
-      8.462331,
-      48.994222
+      8.454377,
+      48.994847
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-18T22:00:00Z"
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2024V5097",
@@ -2107,17 +2107,17 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Rheinhafestraße zw. B36/ Eckenerstraße und Hopfenstraße",
+    "location": "Rheinhafestraße zw. B36/Eckenerstraße und Hopfenstraße",
     "notes": "Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-10",
     "endDate": "2026-09-05",
     "point": [
-      8.349398,
-      48.999724
+      8.35147,
+      48.999001
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2025V7008",
@@ -4000,6 +4000,26 @@
     "lastModified": "2026-06-28T22:00:00Z"
   },
   {
+    "id": "2026V1791",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Brunnenhausstraße zw. Weiherstraße und Marstallstraße",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-05-05",
+    "endDate": "2026-08-17",
+    "point": [
+      8.472676,
+      48.995766
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
     "id": "2026V1794",
     "phase": "active",
     "category": "gas-water",
@@ -4400,6 +4420,26 @@
     "lastModified": "2026-07-23T22:00:00Z"
   },
   {
+    "id": "2026V2308",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg",
+    "notes": "Höhe Haus Nr. 20",
+    "cause": "Privat",
+    "startDate": "2026-04-27",
+    "endDate": "2026-08-30",
+    "point": [
+      8.379528,
+      49.043175
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
     "id": "2026V2409",
     "phase": "active",
     "category": "special-use",
@@ -4518,26 +4558,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
-    "id": "2026V2502",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hildebrandstraße zw. Reichenbachstraße und Auer Straße",
-    "notes": "Ausführung in 3 Abschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-13",
-    "endDate": "2026-08-08",
-    "point": [
-      8.461203,
-      48.994711
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-25T22:00:00Z"
   },
   {
     "id": "2026V2503",
@@ -4950,14 +4970,14 @@
     "location": "Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße",
     "notes": "Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-15",
+    "startDate": "2026-08-17",
     "endDate": "2026-08-21",
     "point": [
       8.477328,
       48.997852
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V2990",
@@ -4971,13 +4991,13 @@
     "notes": "Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien, Turmbergstraße = Vollsperrung",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-21",
-    "endDate": "2026-08-14",
+    "endDate": "2026-08-16",
     "point": [
       8.477297,
       48.998193
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V3008",
@@ -4998,6 +5018,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-23T22:00:00Z"
+  },
+  {
+    "id": "2026V3017",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Westmarkstr./Grenzstr./Brühlstr",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-07-01",
+    "endDate": "2026-09-05",
+    "point": [
+      8.462116,
+      48.991881
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V3130",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Tulpenstraße zw. Göhrenstraße und Kleiststraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-07-20",
+    "endDate": "2026-08-31",
+    "point": [
+      8.406826,
+      48.970358
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V3181",
@@ -5560,6 +5620,66 @@
     "lastModified": "2026-07-09T22:00:00Z"
   },
   {
+    "id": "2026V3597",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Sonntagstraße zw. Jollystraße und Mathystraße",
+    "notes": "Rad- und Fußweg = offen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-06",
+    "point": [
+      8.391963,
+      49.002256
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V3598",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Sonntagstraße zw. Jollystraße und Mathystraße",
+    "notes": "Rad- und Fußweg = offen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-07",
+    "endDate": "2026-10-04",
+    "point": [
+      8.391991,
+      49.002538
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V3599",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Sonntagstraße Gleisüberfahrt Mathystraße",
+    "notes": "Sonntagstraße = Anliegerfahrbahn 1-streifige Verlehrsführung",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-05",
+    "endDate": "2026-11-07",
+    "point": [
+      8.392014,
+      49.002682
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
     "id": "2026V3654",
     "phase": "upcoming",
     "category": "bridge",
@@ -5570,14 +5690,14 @@
     "location": "Verbindungsbrücke zw. B 36 von Eggenstein kommend Richtung Linkenheimer Landstraße",
     "notes": "1-streifige Verkehrsführung",
     "cause": "Land Baden - Württemberg",
-    "startDate": "2026-08-24",
+    "startDate": "2026-08-25",
     "endDate": "2026-12-15",
     "point": [
-      8.395027,
-      49.06406
+      8.395979,
+      49.064597
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-19T22:00:00Z"
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V3655",
@@ -5593,8 +5713,8 @@
     "startDate": "2026-12-16",
     "endDate": "2027-03-31",
     "point": [
-      8.395027,
-      49.06406
+      8.395483,
+      49.064309
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-19T22:00:00Z"
@@ -5678,6 +5798,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-17T22:00:00Z"
+  },
+  {
+    "id": "2026V3762",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Passagehof",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-28",
+    "point": [
+      8.395801,
+      49.010667
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V3807",
@@ -5853,8 +5993,8 @@
     "startDate": "2027-01-18",
     "endDate": "2027-04-02",
     "point": [
-      8.438348,
-      48.999944
+      8.439837,
+      49.000425
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-08T22:00:00Z"
@@ -6171,13 +6311,13 @@
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Bauzeit vs 3 Wochen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-10",
-    "endDate": "2026-09-11",
+    "endDate": "2026-09-04",
     "point": [
       8.41589,
       49.002359
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V4236",
@@ -7280,6 +7420,26 @@
     "lastModified": "2026-07-28T22:00:00Z"
   },
   {
+    "id": "2026V4775",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Edgar von Gierke Straße, Siegfried-Kühn-Straße",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, Arbeitsstelle im Gehwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-01",
+    "endDate": "2026-10-05",
+    "point": [
+      8.379292,
+      49.001167
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
     "id": "2026V4791",
     "phase": "active",
     "category": "power-telecom",
@@ -7718,6 +7878,146 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-03T22:00:00Z"
+  },
+  {
+    "id": "2026V4877",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz",
+    "notes": "Entfall eines Roichtungsfahrstreifens, Geh- und Radweg entlang der Fahrbahn gesperrt, Umleitung über Anliegerfahrbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-11",
+    "endDate": "2026-09-18",
+    "point": [
+      8.403866,
+      48.986743
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V4878",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum",
+    "notes": "Entfall eines Richtungsfahrstreifens, Geh- und Radweg als Notweg auf der Fahrbahn, Arbeitsstellen liegen im Bereich des Geh- und Radwegs",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-19",
+    "endDate": "2026-09-09",
+    "point": [
+      8.404137,
+      48.991609
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V4881",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "L604/ Theodor-Heuss-Allee zw. Gustav-Heinemann-Allee und Lachenweg",
+    "notes": "signalisierte 1-streifige Verkehrsführung, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-14",
+    "endDate": "2027-03-31",
+    "point": [
+      8.452614,
+      49.041969
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V4883",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Sonntagstraße",
+    "notes": "Baustelle wird abgeräumt, Bauferien",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-15",
+    "endDate": "2026-08-30",
+    "point": [
+      8.391153,
+      49.001417
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V4887",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Leibnitzstraße zw. Südendstraße und Kolpingplatz",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-07",
+    "point": [
+      8.39268,
+      48.997993
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V4897",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "B 36 zw. AS Eggenstein u. AS Neureut Nord sowie Zufahrt Linkenheimer Landstraße",
+    "notes": "Baustelleneinrichtung",
+    "cause": "Land Baden - Württemberg",
+    "startDate": "2026-08-14",
+    "endDate": "2026-08-16",
+    "point": [
+      8.394867,
+      49.064452
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V4898",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "B 36 zw. AS Eggenstein und AS Neureut-Nord, Überführungsbauwerk im Zuge der Linkenheimer Landstraße",
+    "notes": "Entfall von Richtungsfahrstreifen auf der B 36 in beiden Fahrtrichtungen",
+    "cause": "Land Baden - Württemberg",
+    "startDate": "2026-08-20",
+    "endDate": "2026-08-24",
+    "point": [
+      8.395027,
+      49.06406
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "30032",
@@ -8378,6 +8678,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-02-27T08:18:12Z"
+  },
+  {
+    "id": "40032",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Hinter der Kirch 26",
+    "notes": "Gehweg gesperrt, Fahrbahn verengt.",
+    "cause": "Privat",
+    "startDate": "2026-03-09",
+    "endDate": "2026-12-31",
+    "point": [
+      8.634564,
+      49.083555
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-02-27T10:17:05Z"
   },
   {
     "id": "40033",
