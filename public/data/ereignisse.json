@@ -1,257 +1,47 @@
 {
-  "generatedAt": "2026-08-04T17:27:11.639Z",
+  "generatedAt": "2026-08-05T06:22:05.353Z",
   "events": [
     {
-      "kind": "changed",
-      "signature": "changed:2026V2745:2026-08-03T22:00:00Z",
-      "siteId": "2026V2745",
-      "point": [
-        8.468582,
-        48.95682
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-11-27",
-      "municipality": "Karlsruhe",
-      "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße"
-    },
-    {
       "kind": "new",
-      "signature": "new:2025V6455",
-      "siteId": "2025V6455",
+      "signature": "new:30077",
+      "siteId": "30077",
       "point": [
-        8.400995,
-        49.004073
-      ],
-      "closure": "none",
-      "startDate": "2026-11-04",
-      "endDate": "2028-04-30",
-      "municipality": "Karlsruhe",
-      "location": "Hermann-Billing-Straße zw. Ettlinger Straße und Am Festplatz/ Badenwerkstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4232",
-      "siteId": "2026V4232",
-      "point": [
-        8.41589,
-        49.002359
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-10",
-      "endDate": "2026-09-11",
-      "municipality": "Karlsruhe",
-      "location": "Luise-Rigger-Straße zw. Clara-Immerwahr-Haber-Platz und Hedwig-Kettler-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4843",
-      "siteId": "2026V4843",
-      "point": [
-        8.447704,
-        49.051309
-      ],
-      "closure": "full",
-      "startDate": "2026-07-31",
-      "endDate": "2026-11-17",
-      "municipality": "Karlsruhe",
-      "location": "Brücke über Pfinzentlastungskanal Stusenseer Allee"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4844",
-      "siteId": "2026V4844",
-      "point": [
-        8.438717,
-        49.059828
-      ],
-      "closure": "full",
-      "startDate": "2026-07-31",
-      "endDate": "2026-11-30",
-      "municipality": "Karlsruhe",
-      "location": "Brücke über Pfinzentlastungskanal Friedrichstaler Allee"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4846",
-      "siteId": "2026V4846",
-      "point": [
-        8.402069,
-        49.003971
-      ],
-      "closure": "none",
-      "startDate": "2026-08-17",
-      "endDate": "2026-09-13",
-      "municipality": "Karlsruhe",
-      "location": "Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4847",
-      "siteId": "2026V4847",
-      "point": [
-        8.400486,
-        49.004054
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-11",
-      "municipality": "Karlsruhe",
-      "location": "Hermann-Billing-Straße zw. Beiertheimer Allee (Zufahrt Landratsamt) u. Badenwerkstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4848",
-      "siteId": "2026V4848",
-      "point": [
-        8.39976,
-        49.00405
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-10-12",
-      "endDate": "2026-11-01",
-      "municipality": "Karlsruhe",
-      "location": "Hermann-Billing-Straße zw. Badenwerkstraße u.Ritterstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4849",
-      "siteId": "2026V4849",
-      "point": [
-        8.398849,
-        49.004055
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-11-02",
-      "endDate": "2026-11-27",
-      "municipality": "Karlsruhe",
-      "location": "Hermann-Billing-Straße zw. Badenwerkstraße u.Ritterstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4852",
-      "siteId": "2026V4852",
-      "point": [
-        8.374726,
-        48.977906
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-08",
-      "endDate": "2026-08-08",
-      "municipality": "Karlsruhe",
-      "location": "L605 zw. Bulacher Kreuz und Gut Scheibenhardt"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4859",
-      "siteId": "2026V4859",
-      "point": [
-        8.340106,
-        49.033441
-      ],
-      "closure": "full",
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "Heckerstraße zw. Eggensteiner Straße und Lönnsstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4862",
-      "siteId": "2026V4862",
-      "point": [
-        8.460786,
-        49.001033
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-09-18",
-      "municipality": "Karlsruhe",
-      "location": "Hauptbahnstraße unterhalb der Brücke/Überführung im Zuge der Durlacher Allee"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4865",
-      "siteId": "2026V4865",
-      "point": [
-        8.331759,
-        49.00388
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-07-28",
-      "endDate": "2026-08-07",
-      "municipality": "Karlsruhe",
-      "location": "Holländerstraße, Hinter der Kirche, Turnerstraße, Krämerstraße, Valentinstraße, Hammweg"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4874",
-      "siteId": "2026V4874",
-      "point": [
-        8.374996,
-        49.01083
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-17",
-      "endDate": "2026-09-30",
-      "municipality": "Karlsruhe",
-      "location": "Kaiserallee zw. Yorckstraße u. Uhlandstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30081",
-      "siteId": "30081",
-      "point": [
-        8.343107,
-        48.96305
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-07-30",
-      "endDate": "2026-08-07",
-      "municipality": "Rheinstetten",
-      "location": "Buchenweg 54A"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40147",
-      "siteId": "40147",
-      "point": [
-        8.557202,
-        49.085077
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-04",
-      "endDate": "2026-09-08",
-      "municipality": "Bruchsal",
-      "location": "Mühlstraße 3"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4629:2026-08-05",
-      "siteId": "2026V4629",
-      "point": [
-        8.409236,
-        49.008409
+        8.31709,
+        48.976999
       ],
       "closure": "full",
       "startDate": "2026-08-05",
-      "endDate": "2026-08-05",
-      "municipality": "Karlsruhe",
-      "location": "Kronenstraße zw. Zähringerstraße und Fritz-Erler-Straße"
+      "endDate": "2026-09-16",
+      "municipality": "Rheinstetten",
+      "location": "Hardtstraße 25 und Theodor-Heuss-Straße 68-70"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V4796:2026-08-11",
-      "siteId": "2026V4796",
+      "signature": "starts-soon:2026V3250:2026-08-06",
+      "siteId": "2026V3250",
       "point": [
-        8.502727,
-        49.004894
+        8.367076,
+        49.027432
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-06",
+      "endDate": "2027-03-12",
+      "municipality": "Karlsruhe",
+      "location": "Kropsburgweg, Madenburgweg, Binsenschlauchweg, Landauer Str., Bienwaldstr."
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4141:2026-08-12",
+      "siteId": "2026V4141",
+      "point": [
+        8.462193,
+        49.000457
       ],
       "closure": "full",
-      "startDate": "2026-08-11",
-      "endDate": "2026-08-13",
+      "startDate": "2026-08-12",
+      "endDate": "2026-08-12",
       "municipality": "Karlsruhe",
-      "location": "Grötzinger Tunnel"
+      "location": "Karlsruher Allee"
     }
   ]
 }

@@ -2000,26 +2000,6 @@
     "lastModified": "2026-05-14T22:00:00Z"
   },
   {
-    "id": "2025V6920",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B3/ Südtangente Höhe Bahnübergang Schindweg (Haltestelle Durlach Zündhütle)",
-    "notes": "Abschaltung der Bahnübergangstechnik, Entfall von Fahrstreifen, Beseitigung Unfallschaden",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-04",
-    "endDate": "2026-08-04",
-    "point": [
-      8.459865,
-      48.983153
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-02T22:00:00Z"
-  },
-  {
     "id": "2025V6966",
     "phase": "upcoming",
     "category": "gas-water",
@@ -5060,26 +5040,6 @@
     "lastModified": "2026-07-08T22:00:00Z"
   },
   {
-    "id": "2026V3218",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "B3/ Südtangente zw. Fiduciastraße und B3/ K9652/ Badene Straße/ Tiefentalstraße",
-    "notes": "Höhe Schindweg, 1-streifige Verkehrsführung in beiden Fahrtrichtungen, signaltechnishce Arbeiten zur Beseitigung Unfallschaden",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-04",
-    "endDate": "2026-08-04",
-    "point": [
-      8.45948,
-      48.983195
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-05-20T22:00:00Z"
-  },
-  {
     "id": "2026V3234",
     "phase": "active",
     "category": "power-telecom",
@@ -7041,7 +7001,7 @@
   },
   {
     "id": "2026V4629",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -8018,6 +7978,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-07-21T08:49:52Z"
+  },
+  {
+    "id": "30077",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Hardtstraße 25 und Theodor-Heuss-Straße 68-70",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
+    "startDate": "2026-08-05",
+    "endDate": "2026-09-16",
+    "point": [
+      8.31709,
+      48.976999
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-08-04T06:40:56Z"
   },
   {
     "id": "30081",

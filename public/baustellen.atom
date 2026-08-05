@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-04T17:27:11.639Z</updated>
+    <updated>2026-08-05T06:22:05.353Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -44,6 +44,17 @@ Zeitraum: 30.07.2026 – 07.08.2026
 Verantwortlich: Telekommunikation
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Hardtstraße 25 und Theodor-Heuss-Straße 68-70 – Rheinstetten]]></title>
+        <id>faecherbagger:30077:2026-08-04T06:40:56Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30077"/>
+        <updated>2026-08-04T06:40:56.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
+Zeitraum: 05.08.2026 – 16.09.2026
+Verantwortlich: Stadtwerke Karlsruhe (Rheinstetten)
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Hermann-Billing-Straße zw. Ettlinger Straße und Am Festplatz/ Badenwerkstraße – Karlsruhe]]></title>
@@ -1243,11 +1254,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Kronenstraße zw. Zähringerstraße und Fritz-Erler-Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Kronenstraße zw. Zähringerstraße und Fritz-Erler-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4629:2026-07-23T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4629"/>
         <updated>2026-07-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
 Zeitraum: 05.08.2026 – 05.08.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
@@ -3335,18 +3346,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: B3/ Südtangente Höhe Bahnübergang Schindweg (Haltestelle Durlach Zündhütle) – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6920:2026-06-02T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6920"/>
-        <updated>2026-06-02T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
-Zeitraum: 04.08.2026 – 04.08.2026
-Hinweis: Abschaltung der Bahnübergangstechnik, Entfall von Fahrstreifen, Beseitigung Unfallschaden
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
         <id>faecherbagger:2026V3554:2026-06-02T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3554"/>
@@ -3707,18 +3706,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: B3/ Südtangente zw. Fiduciastraße und B3/ K9652/ Badene Straße/ Tiefentalstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3218:2026-05-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3218"/>
-        <updated>2026-05-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
-Zeitraum: 04.08.2026 – 04.08.2026
-Hinweis: Höhe Schindweg, 1-streifige Verkehrsführung in beiden Fahrtrichtungen, signaltechnishce Arbeiten zur Beseitigung Unfallschaden
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Merkurstraße 1 – Rheinstetten]]></title>
