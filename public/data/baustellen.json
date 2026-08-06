@@ -480,26 +480,6 @@
     "lastModified": "2026-07-19T22:00:00Z"
   },
   {
-    "id": "2024V4283",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Blechenstraße und Links der Alb",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2024-09-09",
-    "endDate": "2026-08-05",
-    "point": [
-      8.394988,
-      48.983431
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
-  },
-  {
     "id": "2024V4663",
     "phase": "active",
     "category": "power-telecom",
@@ -4540,26 +4520,6 @@
     "lastModified": "2026-07-08T22:00:00Z"
   },
   {
-    "id": "2026V2490",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Litzenhardtstraße zw. Neue-Anlage-Straße und Martinstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-05",
-    "endDate": "2026-08-05",
-    "point": [
-      8.384412,
-      48.989873
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
     "id": "2026V2503",
     "phase": "active",
     "category": "gas-water",
@@ -5121,7 +5081,7 @@
   },
   {
     "id": "2026V3250",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7140,26 +7100,6 @@
     "lastModified": "2026-07-23T22:00:00Z"
   },
   {
-    "id": "2026V4629",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Kronenstraße zw. Zähringerstraße und Fritz-Erler-Straße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-05",
-    "endDate": "2026-08-05",
-    "point": [
-      8.409236,
-      49.008409
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-23T22:00:00Z"
-  },
-  {
     "id": "2026V4632",
     "phase": "active",
     "category": "special-use",
@@ -7575,26 +7515,6 @@
     "point": [
       8.466306,
       48.999618
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
-    "id": "2026V4806",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Links der Alb zw. Enzstraße und Belchenstraße",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-03",
-    "endDate": "2026-08-05",
-    "point": [
-      8.396082,
-      48.984256
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-30T22:00:00Z"
@@ -9300,26 +9220,6 @@
     "lastModified": "2026-05-09T09:01:48Z"
   },
   {
-    "id": "40092",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "B 35 zwischen L 558 und Christian-Pähr-Straße",
-    "notes": "Halbseitige Sperrung für Arbeiten an einem Schutzgerüst und kurzzeitige Vollsperrungen am ersten Tag.\n03. bis 05.08.2026\n\nEs wird vorsorglich eine Umleitung über die Industriestraße angeboten.",
-    "cause": "Energieversorgung",
-    "startDate": "2026-05-26",
-    "endDate": "2026-08-05",
-    "point": [
-      8.577004,
-      49.128043
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-05-09T09:28:35Z"
-  },
-  {
     "id": "40096",
     "phase": "active",
     "category": "special-use",
@@ -9778,6 +9678,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-07-29T08:55:30Z"
+  },
+  {
+    "id": "40145",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kornblumenweg 12",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-08-06",
+    "endDate": "2026-08-24",
+    "point": [
+      8.524126,
+      49.102408
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-29T10:51:04Z"
   },
   {
     "id": "40147",
