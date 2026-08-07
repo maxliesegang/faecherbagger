@@ -1,215 +1,145 @@
 {
-  "generatedAt": "2026-08-07T05:29:17.906Z",
+  "generatedAt": "2026-08-07T16:38:41.176Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2024V5097:2026-08-05T22:00:00Z",
-      "siteId": "2024V5097",
+      "signature": "changed:2026V3478:2026-08-06T22:00:00Z",
+      "siteId": "2026V3478",
       "point": [
-        8.403151,
-        48.982134
+        8.38442,
+        48.99031
       ],
-      "closure": "none",
-      "startDate": "2025-04-07",
-      "endDate": "2026-09-30",
-      "municipality": "Karlsruhe",
-      "location": "Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V4584:2026-08-05T22:00:00Z",
-      "siteId": "2025V4584",
-      "point": [
-        8.423686,
-        49.005683
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-03-12",
-      "endDate": "2026-08-31",
-      "municipality": "Karlsruhe",
-      "location": "Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V3762:2026-08-05T22:00:00Z",
-      "siteId": "2026V3762",
-      "point": [
-        8.395801,
-        49.010667
-      ],
-      "closure": "none",
-      "startDate": "2026-08-10",
-      "endDate": "2026-08-28",
-      "municipality": "Karlsruhe",
-      "location": "Passagehof"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:40091:2026-06-01T11:25:45Z",
-      "siteId": "40091",
-      "point": [
-        8.483339,
-        49.101034
-      ],
-      "closure": "none",
-      "startDate": "2026-06-08",
-      "endDate": "2026-08-03",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Berliner Allee 42"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2025V6566",
-      "siteId": "2025V6566",
-      "point": [
-        8.485239,
-        48.945611
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-02-03",
+      "closure": "full",
+      "startDate": "2026-11-16",
       "endDate": "2026-12-31",
       "municipality": "Karlsruhe",
-      "location": "L6023/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße"
+      "location": "Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V4900",
-      "siteId": "2026V4900",
+      "kind": "changed",
+      "signature": "changed:2026V3514:2026-08-06T22:00:00Z",
+      "siteId": "2026V3514",
       "point": [
-        8.471498,
-        48.9755
+        8.47582,
+        48.999341
+      ],
+      "closure": "full",
+      "startDate": "2026-09-14",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4796:2026-08-06T22:00:00Z",
+      "siteId": "2026V4796",
+      "point": [
+        8.502727,
+        49.004894
+      ],
+      "closure": "full",
+      "startDate": "2026-08-11",
+      "endDate": "2026-08-12",
+      "municipality": "Karlsruhe",
+      "location": "Grötzinger Tunnel"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4804:2026-08-06T22:00:00Z",
+      "siteId": "2026V4804",
+      "point": [
+        8.466306,
+        48.999618
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-17",
-      "endDate": "2026-08-21",
+      "startDate": "2026-08-03",
+      "endDate": "2026-08-15",
       "municipality": "Karlsruhe",
-      "location": "Tiefentalstraße - Straße des Roten Kreuzes - Rehbuckel"
+      "location": "Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V4904",
-      "siteId": "2026V4904",
+      "kind": "changed",
+      "signature": "changed:2026V4807:2026-08-06T22:00:00Z",
+      "siteId": "2026V4807",
       "point": [
-        8.439351,
-        49.006607
+        8.404955,
+        48.980989
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-12",
-      "endDate": "2026-08-17",
+      "startDate": "2026-08-03",
+      "endDate": "2026-08-14",
       "municipality": "Karlsruhe",
-      "location": "Gerwigstraße zw. Ostring und Käppelestraße"
+      "location": "Am Rüppurrer Schloss 1 - 7"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V4905",
-      "siteId": "2026V4905",
-      "point": [
-        8.43926,
-        49.006582
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-18",
-      "endDate": "2026-08-24",
-      "municipality": "Karlsruhe",
-      "location": "Gerwigstraße zw. Ostring und Käppelestraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4906",
+      "kind": "changed",
+      "signature": "changed:2026V4906:2026-08-06T22:00:00Z",
       "siteId": "2026V4906",
       "point": [
         8.439205,
         49.006581
       ],
       "closure": "one-direction",
-      "startDate": "2026-08-31",
-      "endDate": "2026-09-13",
+      "startDate": "2026-08-24",
+      "endDate": "2026-08-31",
       "municipality": "Karlsruhe",
       "location": "Gerwigstraße zw. Käppelestraße und Ostring"
     },
     {
       "kind": "new",
-      "signature": "new:2026V4913",
-      "siteId": "2026V4913",
+      "signature": "new:2024V3170",
+      "siteId": "2024V3170",
       "point": [
-        8.452614,
-        49.041969
+        8.460454,
+        48.997411
       ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-11-15",
+      "closure": "none",
+      "startDate": "2025-12-02",
+      "endDate": "2026-09-04",
       "municipality": "Karlsruhe",
-      "location": "Theodor-Heuss-Allee, Brücke über die L 560 Gustav-Heinemann-Allee"
+      "location": "Killisfeldstr./Bleichstr./Schinnrainstr."
     },
     {
       "kind": "new",
-      "signature": "new:2026V4914",
-      "siteId": "2026V4914",
+      "signature": "new:2025V7154",
+      "siteId": "2025V7154",
       "point": [
-        8.45771,
-        49.040858
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-16",
-      "endDate": "2026-12-18",
-      "municipality": "Karlsruhe",
-      "location": "Theodor-Heuss-Allee, Brücke über die DB Höhe Lachenweg"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4915",
-      "siteId": "2026V4915",
-      "point": [
-        8.45264,
-        49.041957
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-11-13",
-      "municipality": "Karlsruhe",
-      "location": "L 560 Gustav-Heinemann-Allee"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4926",
-      "siteId": "2026V4926",
-      "point": [
-        8.404673,
-        48.97175
+        8.430311,
+        49.008849
       ],
       "closure": "one-direction",
-      "startDate": "2026-09-01",
-      "endDate": "2027-01-31",
+      "startDate": "2026-06-15",
+      "endDate": "2026-08-07",
       "municipality": "Karlsruhe",
-      "location": "Herrenalber Straße Anliegerfahrbahn zw. Tulpenstraße u. Diakoniossenstraße"
+      "location": "Humboldstraße zw. Gerwigstraße und Essenweinstraße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V4927",
-      "siteId": "2026V4927",
+      "signature": "new:2026V4958",
+      "siteId": "2026V4958",
       "point": [
-        8.404392,
-        48.970726
+        8.348284,
+        49.012747
       ],
       "closure": "full",
-      "startDate": "2027-02-01",
-      "endDate": "2027-03-07",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-10",
       "municipality": "Karlsruhe",
-      "location": "Herrenalber Straße = lokale Engstelle mit Lichtsignal, Tulpenstraße im Einmündungsbereich Herrenalber Straße gesperrt, Rastatter Straße im Einmündungsbereich zur Herrenalber Straße gesperrt"
+      "location": "Am Sonnenbad zw. Pfannkuchstraße und südliche Uferstraße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V4928",
-      "siteId": "2026V4928",
+      "signature": "new:2026V4962",
+      "siteId": "2026V4962",
       "point": [
-        8.404534,
-        48.97124
+        8.454425,
+        48.987886
       ],
       "closure": "obstruction",
-      "startDate": "2027-03-08",
-      "endDate": "2027-05-23",
+      "startDate": "2026-08-17",
+      "endDate": "2026-09-18",
       "municipality": "Karlsruhe",
-      "location": "Herrenalber Straße zw. Battstraße u. Diakonissenstraße"
+      "location": "Wasgaustraße, Schlesier Str., Tiroler Str,  Memelerstr"
     },
     {
       "kind": "starts-soon",
