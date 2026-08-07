@@ -200,26 +200,6 @@
     "lastModified": "2025-11-10T23:00:00Z"
   },
   {
-    "id": "2023V4019",
-    "phase": "upcoming",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herrenalber Straße zwischen Battstraße und Diakonissenstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten, vs 14 Monate",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-01",
-    "endDate": "2027-11-30",
-    "point": [
-      8.404491,
-      48.969648
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-07T22:00:00Z"
-  },
-  {
     "id": "2023V6310",
     "phase": "active",
     "category": "special-use",
@@ -524,7 +504,7 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee",
@@ -537,7 +517,7 @@
       48.982134
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
+    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2024V5284",
@@ -1291,13 +1271,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-03-12",
-    "endDate": "2026-08-10",
+    "endDate": "2026-08-31",
     "point": [
       8.423686,
       49.005683
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-14T22:00:00Z"
+    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2025V4609",
@@ -1798,6 +1778,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2025-11-17T23:00:00Z"
+  },
+  {
+    "id": "2025V6566",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "L6023/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße",
+    "notes": "1-streifige Verkehrsführung mit Lichtsignal",
+    "cause": "Privat",
+    "startDate": "2026-02-03",
+    "endDate": "2026-12-31",
+    "point": [
+      8.485239,
+      48.945611
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2025V6731",
@@ -5764,7 +5764,7 @@
     "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Passagehof",
@@ -5777,7 +5777,7 @@
       49.010667
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
+    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2026V3807",
@@ -7840,26 +7840,6 @@
     "lastModified": "2026-08-04T22:00:00Z"
   },
   {
-    "id": "2026V4881",
-    "phase": "upcoming",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "L604/ Theodor-Heuss-Allee zw. Gustav-Heinemann-Allee und Lachenweg",
-    "notes": "signalisierte 1-streifige Verkehrsführung, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-14",
-    "endDate": "2027-03-31",
-    "point": [
-      8.452614,
-      49.041969
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
-  },
-  {
     "id": "2026V4883",
     "phase": "upcoming",
     "category": "district-heating",
@@ -7938,6 +7918,206 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-04T22:00:00Z"
+  },
+  {
+    "id": "2026V4900",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Tiefentalstraße - Straße des Roten Kreuzes - Rehbuckel",
+    "notes": "Lokale Engstellen",
+    "cause": "Forstamt",
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-21",
+    "point": [
+      8.471498,
+      48.9755
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4904",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gerwigstraße zw. Ostring und Käppelestraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-08-12",
+    "endDate": "2026-08-17",
+    "point": [
+      8.439351,
+      49.006607
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4905",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gerwigstraße zw. Ostring und Käppelestraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-08-18",
+    "endDate": "2026-08-24",
+    "point": [
+      8.43926,
+      49.006582
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4906",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gerwigstraße zw. Käppelestraße und Ostring",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-13",
+    "point": [
+      8.439205,
+      49.006581
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4913",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Theodor-Heuss-Allee, Brücke über die L 560 Gustav-Heinemann-Allee",
+    "notes": "Engstelle mit Lichtsignal",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-14",
+    "endDate": "2026-11-15",
+    "point": [
+      8.452614,
+      49.041969
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4914",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Theodor-Heuss-Allee, Brücke über die DB Höhe Lachenweg",
+    "notes": "Engstelle mit Lichtsignal",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-16",
+    "endDate": "2026-12-18",
+    "point": [
+      8.45771,
+      49.040858
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4915",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "L 560 Gustav-Heinemann-Allee",
+    "notes": "Dauer der Arbeiten ca. 2 Arbeitswochen, lokale Arbeitsstellen unterhalb der Brücke, Entfall von Richtungsfahrstreifen wechselweise in beiden Fahrtrichtungen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-14",
+    "endDate": "2026-11-13",
+    "point": [
+      8.45264,
+      49.041957
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4926",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Herrenalber Straße Anliegerfahrbahn zw. Tulpenstraße u. Diakoniossenstraße",
+    "notes": "Herrenalbser Straße Hauptfahrbahn = lokale 1-streifige Verkehrsführung, Anliegerfahrbahn gesperrt",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-01",
+    "endDate": "2027-01-31",
+    "point": [
+      8.404673,
+      48.97175
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4927",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Herrenalber Straße = lokale Engstelle mit Lichtsignal, Tulpenstraße im Einmündungsbereich Herrenalber Straße gesperrt, Rastatter Straße im Einmündungsbereich zur Herrenalber Straße gesperrt",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2027-02-01",
+    "endDate": "2027-03-07",
+    "point": [
+      8.404392,
+      48.970726
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
+  },
+  {
+    "id": "2026V4928",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Herrenalber Straße zw. Battstraße u. Diakonissenstraße",
+    "notes": "1-streifige Verkehrsführung in beiden Fahrtrichtungen",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-03-08",
+    "endDate": "2027-05-23",
+    "point": [
+      8.404534,
+      48.97124
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "30032",
@@ -9202,22 +9382,22 @@
   {
     "id": "40091",
     "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
     "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Karl-Berberich-Straße 12 bis Karl-Berberich-Straße",
-    "notes": "Vollsperrung und Haltverbote für den Abbau von Strommasten",
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Berliner Allee 42",
+    "notes": "Gehwegsperrung sowie Einrichtung einer Halteverbotszone",
     "cause": "Privat",
-    "startDate": "2026-06-01",
-    "endDate": "2026-08-06",
+    "startDate": "2026-06-08",
+    "endDate": "2026-08-03",
     "point": [
-      8.532235,
-      49.113132
+      8.483339,
+      49.101034
     ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-05-09T09:01:48Z"
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-06-01T11:25:45Z"
   },
   {
     "id": "40096",
