@@ -3960,26 +3960,6 @@
     "lastModified": "2026-08-04T22:00:00Z"
   },
   {
-    "id": "2026V1794",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gänsbergstraße zw. Werrenstraße und Wiesentalstraße",
-    "notes": "vs 5 Wochen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-07",
-    "endDate": "2026-08-08",
-    "point": [
-      8.511801,
-      48.95388
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-06T22:00:00Z"
-  },
-  {
     "id": "2026V1795",
     "phase": "upcoming",
     "category": "gas-water",
@@ -4838,26 +4818,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-05-06T22:00:00Z"
-  },
-  {
-    "id": "2026V2977",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rheinhafenstraße Kreuzungsbereich Kirschstraße",
-    "notes": "Rheinhafenstraße = 1-streifige Verkehrsführung in beiden Fahrtrichtungen, Kirschstraße = Richtung B36/ Eckenerstraße offen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-30",
-    "endDate": "2026-08-08",
-    "point": [
-      8.336384,
-      49.004626
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-19T22:00:00Z"
   },
   {
     "id": "2026V2987",
@@ -5918,26 +5878,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-21T22:00:00Z"
-  },
-  {
-    "id": "2026V4008",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Vorholzstraße zw. Beiertheimer Allee und Karlstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-29",
-    "endDate": "2026-08-08",
-    "point": [
-      8.394954,
-      48.999582
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
   },
   {
     "id": "2026V4021",
@@ -7500,26 +7440,6 @@
     "lastModified": "2026-08-03T22:00:00Z"
   },
   {
-    "id": "2026V4852",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "L605 zw. Bulacher Kreuz und Gut Scheibenhardt",
-    "notes": "vs. ab 6:00 Uhr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-08",
-    "endDate": "2026-08-08",
-    "point": [
-      8.374726,
-      48.977906
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
-  },
-  {
     "id": "2026V4859",
     "phase": "upcoming",
     "category": "special-use",
@@ -8280,26 +8200,6 @@
     "lastModified": "2026-06-29T05:35:18Z"
   },
   {
-    "id": "30168",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Am Mantel 7",
-    "notes": "Kabelarbeiten mit Verengung Fahrbahn und Sperrung Gehweg",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-27",
-    "endDate": "2026-08-08",
-    "point": [
-      8.562908,
-      49.139123
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-07-22T06:46:21Z"
-  },
-  {
     "id": "30226",
     "phase": "active",
     "category": "road-construction",
@@ -8402,22 +8302,22 @@
   {
     "id": "40013",
     "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
     "siteType": "stationary",
     "municipality": "Rheinstetten",
-    "location": "Siegelgrundstraße 18",
+    "location": "Messeallee Ecke Messering",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2026-03-02",
-    "endDate": "2026-10-31",
+    "startDate": "2024-12-01",
+    "endDate": "2026-12-31",
     "point": [
       8.320098,
       48.971361
     ],
     "source": "Stadt Rheinstetten",
-    "lastModified": "2026-02-23T15:49:54Z"
+    "lastModified": "2025-03-27T14:25:12Z"
   },
   {
     "id": "40014",
@@ -8698,26 +8598,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-07-17T08:52:33Z"
-  },
-  {
-    "id": "40053",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Bismarckstraße 17A",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-07-22",
-    "endDate": "2026-08-08",
-    "point": [
-      8.292423,
-      48.958676
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-07-27T09:39:57Z"
   },
   {
     "id": "40054",

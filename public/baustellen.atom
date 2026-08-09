@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-08T16:17:11.615Z</updated>
+    <updated>2026-08-09T04:57:55.389Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -619,18 +619,6 @@ Hinweis: Arbeitsstelle weitestgehend im Parkstreifen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: L605 zw. Bulacher Kreuz und Gut Scheibenhardt – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4852:2026-08-03T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4852"/>
-        <updated>2026-08-03T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
-Zeitraum: 08.08.2026 – 08.08.2026
-Hinweis: vs. ab 6:00 Uhr
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Heckerstraße zw. Eggensteiner Straße und Lönnsstraße – Karlsruhe]]></title>
@@ -1343,17 +1331,6 @@ Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Bismarckstraße 17A – Rheinstetten]]></title>
-        <id>faecherbagger:40053:2026-07-27T09:39:57Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40053"/>
-        <updated>2026-07-27T09:39:57.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 22.07.2026 – 08.08.2026
-Verantwortlich: Privat
-Quelle: Stadt Rheinstetten]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Rüppurrer Straße 104 zw. Tivoli u. Marienstraße – Karlsruhe]]></title>
         <id>faecherbagger:2024V7522:2026-07-26T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V7522"/>
@@ -1573,18 +1550,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Inlinereinzug in Kanal, Ausführ
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Am Mantel 7 – Bruchsal]]></title>
-        <id>faecherbagger:30168:2026-07-22T06:46:21Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30168"/>
-        <updated>2026-07-22T06:46:21.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 27.07.2026 – 08.08.2026
-Hinweis: Kabelarbeiten mit Verengung Fahrbahn und Sperrung Gehweg
-Verantwortlich: Telekommunikation
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Goethestraße zw. Uhlandstraße und Yorckstraße – Karlsruhe]]></title>
@@ -1907,18 +1872,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-07-19T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
 Zeitraum: 19.06.2026 – 19.09.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Rheinhafenstraße Kreuzungsbereich Kirschstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2977:2026-07-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2977"/>
-        <updated>2026-07-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
-Zeitraum: 30.06.2026 – 08.08.2026
-Hinweis: Rheinhafenstraße = 1-streifige Verkehrsführung in beiden Fahrtrichtungen, Kirschstraße = Richtung B36/ Eckenerstraße offen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
@@ -2515,18 +2468,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Gänsbergstraße zw. Werrenstraße und Wiesentalstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1794:2026-07-06T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1794"/>
-        <updated>2026-07-06T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
-Zeitraum: 07.07.2026 – 08.08.2026
-Hinweis: vs 5 Wochen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Wiesentalstraße zw. Gänsbergstraße und Neubergstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V1803:2026-07-06T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1803"/>
@@ -2744,17 +2685,6 @@ Zeitraum: 12.10.2026 – 17.10.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Vorholzstraße zw. Beiertheimer Allee und Karlstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4008:2026-06-28T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4008"/>
-        <updated>2026-06-28T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 29.06.2026 – 08.08.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: K9659 Höhe DM – Karlsruhe]]></title>
@@ -5007,17 +4937,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Siegelgrundstraße 18 – Rheinstetten]]></title>
-        <id>faecherbagger:40013:2026-02-23T15:49:54Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40013"/>
-        <updated>2026-02-23T15:49:54.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 02.03.2026 – 31.10.2026
-Verantwortlich: Privat
-Quelle: Stadt Rheinstetten]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Kaiserstraße zw. Hirschstraße und Leopoldstraße, Hirschstraße zw. Akademiestraße und Kaiserstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V0748:2026-02-18T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0748"/>
@@ -5673,6 +5592,17 @@ Bauherr ist das Regierungspräsidium Karlsruhe
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Brückenbau" term="bridge"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Messeallee Ecke Messering – Rheinstetten]]></title>
+        <id>faecherbagger:40013:2025-03-27T14:25:12Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40013"/>
+        <updated>2025-03-27T14:25:12.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 01.12.2024 – 31.12.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Bahnhofsplatz am Bahnhof – Bruchsal]]></title>

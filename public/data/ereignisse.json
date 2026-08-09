@@ -1,19 +1,243 @@
 {
-  "generatedAt": "2026-08-08T16:17:11.615Z",
+  "generatedAt": "2026-08-09T04:57:55.389Z",
   "events": [
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V1163:2026-08-15",
-      "siteId": "2026V1163",
+      "kind": "changed",
+      "signature": "changed:40013:2025-03-27T14:25:12Z",
+      "siteId": "40013",
       "point": [
-        8.459091,
-        48.989149
+        8.320098,
+        48.971361
+      ],
+      "closure": "obstruction",
+      "startDate": "2024-12-01",
+      "endDate": "2026-12-31",
+      "municipality": "Rheinstetten",
+      "location": "Messeallee Ecke Messering"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2024V6753:2026-08-10",
+      "siteId": "2024V6753",
+      "point": [
+        8.423613,
+        49.017219
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-10",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Werthmannstraße zw. Klosterweg und Pastor-Felke-Straße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2024V7408:2026-08-10",
+      "siteId": "2024V7408",
+      "point": [
+        8.33492,
+        49.004047
+      ],
+      "closure": "none",
+      "startDate": "2026-08-10",
+      "endDate": "2026-10-16",
+      "municipality": "Karlsruhe",
+      "location": "Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße,"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2025V6989:2026-08-10",
+      "siteId": "2025V6989",
+      "point": [
+        8.35147,
+        48.999001
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-10",
+      "endDate": "2026-09-05",
+      "municipality": "Karlsruhe",
+      "location": "Rheinhafestraße zw. B36/Eckenerstraße und Hopfenstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V0051:2026-08-10",
+      "siteId": "2026V0051",
+      "point": [
+        8.32515,
+        49.004869
+      ],
+      "closure": "none",
+      "startDate": "2026-08-10",
+      "endDate": "2026-09-14",
+      "municipality": "Karlsruhe",
+      "location": "Pfarrstraße, Waidweg, Malvenstr., Goldgrundstr., Hammweg, Schattenstr"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V0262:2026-08-10",
+      "siteId": "2026V0262",
+      "point": [
+        8.318572,
+        49.017118
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-28",
+      "municipality": "Karlsruhe",
+      "location": "Nordbeckenstraße 17b, Im Schlehert 38"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V1174:2026-08-10",
+      "siteId": "2026V1174",
+      "point": [
+        8.423876,
+        49.016327
       ],
       "closure": "full",
-      "startDate": "2026-08-15",
-      "endDate": "2026-09-11",
+      "startDate": "2026-08-10",
+      "endDate": "2026-10-30",
       "municipality": "Karlsruhe",
-      "location": "Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße"
+      "location": "Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V1803:2026-08-10",
+      "siteId": "2026V1803",
+      "point": [
+        8.512006,
+        48.953356
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-30",
+      "municipality": "Karlsruhe",
+      "location": "Wiesentalstraße zw. Gänsbergstraße und Neubergstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3008:2026-08-10",
+      "siteId": "2026V3008",
+      "point": [
+        8.428022,
+        49.023151
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-10",
+      "endDate": "2026-12-18",
+      "municipality": "Karlsruhe",
+      "location": "Rintheimer Querallee und Büchiger Allee"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3689:2026-08-10",
+      "siteId": "2026V3689",
+      "point": [
+        8.455071,
+        49.001555
+      ],
+      "closure": "full",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-22",
+      "municipality": "Karlsruhe",
+      "location": "Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3762:2026-08-10",
+      "siteId": "2026V3762",
+      "point": [
+        8.395801,
+        49.010667
+      ],
+      "closure": "none",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-28",
+      "municipality": "Karlsruhe",
+      "location": "Passagehof"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4232:2026-08-10",
+      "siteId": "2026V4232",
+      "point": [
+        8.41589,
+        49.002359
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-10",
+      "endDate": "2026-09-04",
+      "municipality": "Karlsruhe",
+      "location": "Luise-Rigger-Straße zw. Clara-Immerwahr-Haber-Platz und Hedwig-Kettler-Straße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4457:2026-08-10",
+      "siteId": "2026V4457",
+      "point": [
+        8.399326,
+        48.967654
+      ],
+      "closure": "full",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-21",
+      "municipality": "Karlsruhe",
+      "location": "Lange Straße zw. Allmendstraße u. Lützowstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4551:2026-08-10",
+      "siteId": "2026V4551",
+      "point": [
+        8.48214,
+        48.998403
+      ],
+      "closure": "full",
+      "startDate": "2026-08-10",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Bergbahnstraße zw. Grötzinger Straße und Am Steinbruch"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4583:2026-08-10",
+      "siteId": "2026V4583",
+      "point": [
+        8.46523,
+        48.997575
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-12",
+      "municipality": "Karlsruhe",
+      "location": "Amalienbadstraße zw. Rommelstraße/ Auer Straße und Pfinztalstraße und Kreuzung Kanzlerstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4713:2026-08-10",
+      "siteId": "2026V4713",
+      "point": [
+        8.358059,
+        49.021689
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-10",
+      "endDate": "2026-10-02",
+      "municipality": "Karlsruhe",
+      "location": "Laubenweg zw. Siemensallee u. Kepplerstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4958:2026-08-10",
+      "siteId": "2026V4958",
+      "point": [
+        8.348284,
+        49.012747
+      ],
+      "closure": "full",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-10",
+      "municipality": "Karlsruhe",
+      "location": "Am Sonnenbad zw. Pfannkuchstraße und südliche Uferstraße"
     }
   ]
 }
