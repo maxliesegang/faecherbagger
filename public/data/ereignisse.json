@@ -1,47 +1,229 @@
 {
-  "generatedAt": "2026-08-11T05:00:21.445Z",
+  "generatedAt": "2026-08-11T16:42:59.901Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:40013:2025-03-27T14:25:12Z",
-      "siteId": "40013",
+      "signature": "changed:2026V3008:2026-08-10T22:00:00Z",
+      "siteId": "2026V3008",
       "point": [
-        8.320098,
-        48.971361
+        8.428022,
+        49.023151
       ],
       "closure": "obstruction",
-      "startDate": "2024-12-01",
-      "endDate": "2026-12-31",
-      "municipality": "Rheinstetten",
-      "location": "Messeallee Ecke Messering"
+      "startDate": "2026-08-05",
+      "endDate": "2026-10-25",
+      "municipality": "Karlsruhe",
+      "location": "Rintheimer Querallee und Büchiger Allee"
     },
     {
-      "kind": "new",
-      "signature": "new:30173",
-      "siteId": "30173",
-      "point": [
-        8.567189,
-        49.137428
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-11",
-      "endDate": "2026-09-04",
-      "municipality": "Bruchsal",
-      "location": "Kammerforststraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4141:2026-08-12",
+      "kind": "changed",
+      "signature": "changed:2026V4141:2026-08-10T22:00:00Z",
       "siteId": "2026V4141",
       "point": [
         8.462193,
         49.000457
       ],
       "closure": "full",
+      "startDate": "2026-08-24",
+      "endDate": "2026-08-27",
+      "municipality": "Karlsruhe",
+      "location": "Karlsruher Allee zw. Auer Straße und Blotter Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4720:2026-08-10T22:00:00Z",
+      "siteId": "2026V4720",
+      "point": [
+        8.402333,
+        49.010352
+      ],
+      "closure": "none",
+      "startDate": "2026-08-14",
+      "endDate": "2026-12-03",
+      "municipality": "Karlsruhe",
+      "location": "Lammstraße zw. Ritterstraße u. Lammstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2023V0127",
+      "siteId": "2023V0127",
+      "point": [
+        8.420066,
+        49.011904
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2027-02-01",
+      "municipality": "Karlsruhe",
+      "location": "Am Fasanengarten 2; Hansjakobstraße 1-14; Hölderlinstraße 1-5"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V2134",
+      "siteId": "2026V2134",
+      "point": [
+        8.372314,
+        49.003561
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4652",
+      "siteId": "2026V4652",
+      "point": [
+        8.377839,
+        48.992916
+      ],
+      "closure": "obstruction",
       "startDate": "2026-08-12",
       "endDate": "2026-08-12",
       "municipality": "Karlsruhe",
-      "location": "Karlsruher Allee"
+      "location": "B10/ K9657 Höhe AS 4"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4999",
+      "siteId": "2026V4999",
+      "point": [
+        8.494033,
+        49.015803
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-12",
+      "endDate": "2026-08-12",
+      "municipality": "Karlsruhe",
+      "location": "B3/ Beunstraße Ausfahrt Grötzinger Baggeersee"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5001",
+      "siteId": "2026V5001",
+      "point": [
+        8.429427,
+        48.99655
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-12",
+      "endDate": "2026-08-12",
+      "municipality": "Karlsruhe",
+      "location": "K9652/ Südtangente Höhe Ottostraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5002",
+      "siteId": "2026V5002",
+      "point": [
+        8.372928,
+        48.985902
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-12",
+      "endDate": "2026-08-12",
+      "municipality": "Karlsruhe",
+      "location": "L605 Höhe Ausfahrt Pulverhausstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5003",
+      "siteId": "2026V5003",
+      "point": [
+        8.472999,
+        49.013597
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-13",
+      "municipality": "Karlsruhe",
+      "location": "B10 zw. A5 und K9659"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5004",
+      "siteId": "2026V5004",
+      "point": [
+        8.316168,
+        49.037511
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-13",
+      "municipality": "Karlsruhe",
+      "location": "B10  zw. AS 11 und AS 10"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5005",
+      "siteId": "2026V5005",
+      "point": [
+        8.35929,
+        49.009711
+      ],
+      "closure": "full",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-14",
+      "municipality": "Karlsruhe",
+      "location": "AS7 von B36 Auffahrtsrampe zur B10/ Südtangente"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5013",
+      "siteId": "2026V5013",
+      "point": [
+        8.36884,
+        49.005873
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-08",
+      "municipality": "Karlsruhe",
+      "location": "Yorckstraße zw. Kühler Krug und Yorckplatz"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5017",
+      "siteId": "2026V5017",
+      "point": [
+        8.454155,
+        49.027073
+      ],
+      "closure": "full",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-15",
+      "municipality": "Karlsruhe",
+      "location": "Bruchsaler Straße zw. Karlsruher Straße und Waldeckstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30178",
+      "siteId": "30178",
+      "point": [
+        8.650644,
+        49.101358
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-11",
+      "endDate": "2026-08-14",
+      "municipality": "Bruchsal",
+      "location": "Gochsheimer Straße 11"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40152",
+      "siteId": "40152",
+      "point": [
+        8.647301,
+        49.100773
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-11",
+      "endDate": "2026-08-21",
+      "municipality": "Bruchsal",
+      "location": "Wettgasse 15"
     },
     {
       "kind": "starts-soon",
