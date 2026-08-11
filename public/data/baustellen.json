@@ -1080,26 +1080,6 @@
     "lastModified": "2026-05-20T22:00:00Z"
   },
   {
-    "id": "2025V1418",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bonner Straße zw. Siemensallee und Bonner Platz",
-    "notes": "Kreuzungsbereich Karlsruher Weg= Vollsperrung, Sackgassen bis Baufeld",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-01",
-    "endDate": "2026-08-10",
-    "point": [
-      8.359404,
-      49.023278
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-20T22:00:00Z"
-  },
-  {
     "id": "2025V1500",
     "phase": "active",
     "category": "power-telecom",
@@ -4580,26 +4560,6 @@
     "lastModified": "2026-07-12T22:00:00Z"
   },
   {
-    "id": "2026V2595",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karlstraße, Kaiserstraße, Passagehof",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten, vs. 4 Wochen",
-    "cause": "Telekommunikation",
-    "startDate": "2026-05-11",
-    "endDate": "2026-08-10",
-    "point": [
-      8.39642,
-      49.010408
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-29T22:00:00Z"
-  },
-  {
     "id": "2026V2667",
     "phase": "active",
     "category": "power-telecom",
@@ -5538,26 +5498,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-19T22:00:00Z"
-  },
-  {
-    "id": "2026V3678",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-15",
-    "endDate": "2026-08-10",
-    "point": [
-      8.455193,
-      49.001498
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-21T22:00:00Z"
   },
   {
     "id": "2026V3689",
@@ -7161,7 +7101,7 @@
   },
   {
     "id": "2026V4796",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "tunnel",
     "artRaw": "Tunnelwartung",
     "closure": "full",
@@ -7501,7 +7441,7 @@
   },
   {
     "id": "2026V4877",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -7798,26 +7738,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-09T22:00:00Z"
-  },
-  {
-    "id": "2026V4958",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Am Sonnenbad zw. Pfannkuchstraße und südliche Uferstraße",
-    "notes": "Beseitigung Sturmschaden",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-08-10",
-    "endDate": "2026-08-10",
-    "point": [
-      8.348284,
-      49.012747
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-06T22:00:00Z"
   },
   {
     "id": "2026V4962",
@@ -8300,24 +8220,24 @@
     "lastModified": "2026-06-29T05:35:18Z"
   },
   {
-    "id": "30226",
+    "id": "30173",
     "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
     "siteType": null,
-    "municipality": "Baden-Baden",
-    "location": "Hindenburgplatz",
-    "notes": "Sperrung Lange Straße zwischen Hindenburgplatz und Lange Straße 49.\n\nZufahrt in Innenstadt über Albrecht-Dürer-Straße, Ausfahrt aus Innenstadt über die Schützenstraße",
-    "cause": "Tiefbau",
-    "startDate": "2026-07-30",
-    "endDate": "2026-08-10",
+    "municipality": "Bruchsal",
+    "location": "Kammerforststraße",
+    "notes": "Gem. Geh- und Radweg abschnittsweise nur Gehweg anschließend halbseitige Fahrbahnsperrung im Wechsel",
+    "cause": "Stadtwerke",
+    "startDate": "2026-08-11",
+    "endDate": "2026-09-04",
     "point": [
-      8.237029,
-      48.765017
+      8.567189,
+      49.137428
     ],
-    "source": "Stadt Baden-Baden",
-    "lastModified": "2026-07-28T15:09:35Z"
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-28T10:50:32Z"
   },
   {
     "id": "30236",
@@ -8422,22 +8342,22 @@
   {
     "id": "40013",
     "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
     "siteType": "stationary",
     "municipality": "Rheinstetten",
-    "location": "Siegelgrundstraße 18",
+    "location": "Messeallee Ecke Messering",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2026-03-02",
-    "endDate": "2026-10-31",
+    "startDate": "2024-12-01",
+    "endDate": "2026-12-31",
     "point": [
       8.320098,
       48.971361
     ],
     "source": "Stadt Rheinstetten",
-    "lastModified": "2026-02-23T15:49:54Z"
+    "lastModified": "2025-03-27T14:25:12Z"
   },
   {
     "id": "40014",
