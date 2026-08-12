@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-12T05:26:04.725Z</updated>
+    <updated>2026-08-12T16:43:01.474Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -21,6 +21,123 @@ Zeitraum: 20.08.2026 – 20.08.2026
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Sonstiges" term="other"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Herrenstraße zw. Amalienstraße und Blumenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V7363:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7363"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
+Zeitraum: 10.06.2026 – 18.09.2026
+Hinweis: Bauzeit gesamt ca 12 Wochen (drei Bauabschnitte mit je Abschnitt 4 Wochen)
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Amalienstraße Kreuzung Herrenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V7364:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7364"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Mit Behinderung
+Zeitraum: 19.09.2026 – 16.10.2026
+Hinweis: Baustelle im Gehweg/Parkbereich, Bauzeit ca 4 Wochen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Rastatter Straße 45+62, Tulpenstraße 1-4 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4192:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4192"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 02.07.2026 – 31.08.2026
+Hinweis: Glasfaserverlegung Rastatter Straße, Herrenalber Straße, Querung Tulpenstraße
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4246:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4246"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 24.08.2026 – 09.11.2026
+Hinweis: Höhe Haus Nr 6
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4551:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4551"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Abbruch/Rückbau · Vollsperrung
+Zeitraum: 11.08.2026 – 09.10.2026
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Abbruch/Rückbau" term="demolition"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4802:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4802"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Sperrung (1 Richtung)
+Zeitraum: 08.08.2026 – 17.08.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Sonntagstraße zw. Mathystraße und Jollystraße und Mathystraße zw. Sonntagstraße und Karlstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5057:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5057"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 21.08.2026 – 22.08.2026
+Hinweis: temporäre Sperrung für alle Verkehrsteilnehmer während Montagevorgang, Sperrung wechselseitig
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Friedenstraße zw. Mathystraße und Gartenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5080:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5080"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 25.08.2026 – 25.08.2026
+Hinweis: Höhe Haus Nr 20
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Ludwig-Erhard-Allee 3 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5099:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5099"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Keine Behinderung
+Zeitraum: 17.08.2026 – 11.12.2026
+Verantwortlich: Hochbau und Gebäudewirtschaft
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Rittnertstraße zw. Fechtstraße und Nonnebühl – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5101:2026-08-11T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5101"/>
+        <updated>2026-08-11T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Grünpflege · Mit Behinderung
+Zeitraum: 20.08.2026 – 22.08.2026
+Hinweis: signalisierte 1-streifige Verkehrsführung, Beseitigung Sturmschaden
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Wettgasse 15 – Bruchsal]]></title>
@@ -260,17 +377,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4551:2026-08-09T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4551"/>
-        <updated>2026-08-09T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Abbruch/Rückbau · Vollsperrung
-Zeitraum: 10.08.2026 – 09.10.2026
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Abbruch/Rückbau" term="demolition"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz – Karlsruhe]]></title>
         <id>faecherbagger:2026V4877:2026-08-09T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4877"/>
@@ -370,7 +476,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-08-09T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 10.08.2026 – 31.12.2026
-Hinweis: Arbeitsstelle im Geh- und Radweg, Abwicklung in mehreren Bauabschnitten
+Hinweis: Arbeitsstellen in den Gehwegen, Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
@@ -1232,17 +1338,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 05.09.2026 – 25.11.2026
 Hinweis: Restarbeiten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4802:2026-07-30T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4802"/>
-        <updated>2026-07-30T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Sperrung (1 Richtung)
-Zeitraum: 08.08.2026 – 14.08.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
@@ -2953,7 +3048,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30066"/>
         <updated>2026-06-25T06:24:59.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 06.07.2026 – 14.08.2026
+Zeitraum: 06.07.2026 – 28.08.2026
 Verantwortlich: EnBW
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
@@ -3529,18 +3624,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Herrenstraße zw. Amalienstraße und Blumenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V7363:2026-06-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7363"/>
-        <updated>2026-06-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
-Zeitraum: 10.06.2026 – 27.09.2026
-Hinweis: Bauzeit gesamt ca 12 Wochen (drei Bauabschnitte mit je Abschnitt 4 Wochen)
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Westmarkstraße zw. Auer Straße und Leußlerstraße – Karlsruhe]]></title>
@@ -5521,18 +5604,6 @@ Hinweis: Jederzeit ein Fahrstreifen im Haupttunnel und in der Tiefspur (Höhe ma
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Tunnel" term="tunnel"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Amalienstraße Kreuzung Herrenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V7364:2026-01-08T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7364"/>
-        <updated>2026-01-08T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Mit Behinderung
-Zeitraum: 28.09.2026 – 16.10.2026
-Hinweis: Baustelle im Gehweg/Parkbereich, Bauzeit ca 4 Wochen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Rappenwörtstraße zw. Hammweg u. Pfalzstraße – Karlsruhe]]></title>

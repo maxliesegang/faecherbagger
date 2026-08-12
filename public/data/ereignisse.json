@@ -1,6 +1,146 @@
 {
-  "generatedAt": "2026-08-12T05:26:04.725Z",
+  "generatedAt": "2026-08-12T16:43:01.474Z",
   "events": [
+    {
+      "kind": "changed",
+      "signature": "changed:2025V7363:2026-08-11T22:00:00Z",
+      "siteId": "2025V7363",
+      "point": [
+        8.396864,
+        49.007636
+      ],
+      "closure": "full",
+      "startDate": "2026-06-10",
+      "endDate": "2026-09-18",
+      "municipality": "Karlsruhe",
+      "location": "Herrenstraße zw. Amalienstraße und Blumenstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V7364:2026-08-11T22:00:00Z",
+      "siteId": "2025V7364",
+      "point": [
+        8.396389,
+        49.007375
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-19",
+      "endDate": "2026-10-16",
+      "municipality": "Karlsruhe",
+      "location": "Amalienstraße Kreuzung Herrenstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4551:2026-08-11T22:00:00Z",
+      "siteId": "2026V4551",
+      "point": [
+        8.479498,
+        48.999712
+      ],
+      "closure": "full",
+      "startDate": "2026-08-11",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4802:2026-08-11T22:00:00Z",
+      "siteId": "2026V4802",
+      "point": [
+        8.479428,
+        48.99978
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-17",
+      "municipality": "Karlsruhe",
+      "location": "B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4192",
+      "siteId": "2026V4192",
+      "point": [
+        8.404379,
+        48.971546
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-02",
+      "endDate": "2026-08-31",
+      "municipality": "Karlsruhe",
+      "location": "Rastatter Straße 45+62, Tulpenstraße 1-4"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4246",
+      "siteId": "2026V4246",
+      "point": [
+        8.388868,
+        49.008769
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-24",
+      "endDate": "2026-11-09",
+      "municipality": "Karlsruhe",
+      "location": "Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5057",
+      "siteId": "2026V5057",
+      "point": [
+        8.39216,
+        49.002571
+      ],
+      "closure": "full",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-22",
+      "municipality": "Karlsruhe",
+      "location": "Sonntagstraße zw. Mathystraße und Jollystraße und Mathystraße zw. Sonntagstraße und Karlstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5080",
+      "siteId": "2026V5080",
+      "point": [
+        8.392006,
+        49.003409
+      ],
+      "closure": "full",
+      "startDate": "2026-08-25",
+      "endDate": "2026-08-25",
+      "municipality": "Karlsruhe",
+      "location": "Friedenstraße zw. Mathystraße und Gartenstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5099",
+      "siteId": "2026V5099",
+      "point": [
+        8.415077,
+        49.00584
+      ],
+      "closure": "none",
+      "startDate": "2026-08-17",
+      "endDate": "2026-12-11",
+      "municipality": "Karlsruhe",
+      "location": "Ludwig-Erhard-Allee 3"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5101",
+      "siteId": "2026V5101",
+      "point": [
+        8.478925,
+        48.99581
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-22",
+      "municipality": "Karlsruhe",
+      "location": "Rittnertstraße zw. Fechtstraße und Nonnebühl"
+    },
     {
       "kind": "starts-soon",
       "signature": "starts-soon:2026V4878:2026-08-19",

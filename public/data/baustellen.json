@@ -2271,13 +2271,13 @@
     "notes": "Bauzeit gesamt ca 12 Wochen (drei Bauabschnitte mit je Abschnitt 4 Wochen)",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-06-10",
-    "endDate": "2026-09-27",
+    "endDate": "2026-09-18",
     "point": [
       8.396864,
       49.007636
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-07T22:00:00Z"
+    "lastModified": "2026-08-11T22:00:00Z"
   },
   {
     "id": "2025V7364",
@@ -2290,14 +2290,14 @@
     "location": "Amalienstraße Kreuzung Herrenstraße",
     "notes": "Baustelle im Gehweg/Parkbereich, Bauzeit ca 4 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-28",
+    "startDate": "2026-09-19",
     "endDate": "2026-10-16",
     "point": [
       8.396389,
       49.007375
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-08T23:00:00Z"
+    "lastModified": "2026-08-11T22:00:00Z"
   },
   {
     "id": "2026V0051",
@@ -4833,8 +4833,8 @@
     "startDate": "2026-07-21",
     "endDate": "2026-08-16",
     "point": [
-      8.477297,
-      48.998193
+      8.476952,
+      48.998182
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-04T22:00:00Z"
@@ -5980,6 +5980,26 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
+    "id": "2026V4192",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Rastatter Straße 45+62, Tulpenstraße 1-4",
+    "notes": "Glasfaserverlegung Rastatter Straße, Herrenalber Straße, Querung Tulpenstraße",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-07-02",
+    "endDate": "2026-08-31",
+    "point": [
+      8.404379,
+      48.971546
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-11T22:00:00Z"
+  },
+  {
     "id": "2026V4193",
     "phase": "active",
     "category": "gas-water",
@@ -6118,6 +6138,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-08T22:00:00Z"
+  },
+  {
+    "id": "2026V4246",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße",
+    "notes": "Höhe Haus Nr 6",
+    "cause": "Privat",
+    "startDate": "2026-08-24",
+    "endDate": "2026-11-09",
+    "point": [
+      8.388868,
+      49.008769
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-11T22:00:00Z"
   },
   {
     "id": "2026V4250",
@@ -6730,14 +6770,14 @@
     "location": "Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-10",
+    "startDate": "2026-08-11",
     "endDate": "2026-10-09",
     "point": [
-      8.479602,
-      48.999647
+      8.479498,
+      48.999712
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
+    "lastModified": "2026-08-11T22:00:00Z"
   },
   {
     "id": "2026V4562",
@@ -7231,13 +7271,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-08",
-    "endDate": "2026-08-14",
+    "endDate": "2026-08-17",
     "point": [
       8.479428,
       48.99978
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
+    "lastModified": "2026-08-11T22:00:00Z"
   },
   {
     "id": "2026V4804",
@@ -7828,13 +7868,13 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Rastatter Straße 1 bis 103",
-    "notes": "Arbeitsstelle im Geh- und Radweg, Abwicklung in mehreren Bauabschnitten",
+    "notes": "Arbeitsstellen in den Gehwegen, Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-10",
     "endDate": "2026-12-31",
     "point": [
-      8.405203,
-      48.975781
+      8.404953,
+      48.976327
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-09T22:00:00Z"
@@ -8018,6 +8058,86 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-10T22:00:00Z"
+  },
+  {
+    "id": "2026V5057",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Sonntagstraße zw. Mathystraße und Jollystraße und Mathystraße zw. Sonntagstraße und Karlstraße",
+    "notes": "temporäre Sperrung für alle Verkehrsteilnehmer während Montagevorgang, Sperrung wechselseitig",
+    "cause": "Privat",
+    "startDate": "2026-08-21",
+    "endDate": "2026-08-22",
+    "point": [
+      8.39216,
+      49.002571
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-11T22:00:00Z"
+  },
+  {
+    "id": "2026V5080",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Friedenstraße zw. Mathystraße und Gartenstraße",
+    "notes": "Höhe Haus Nr 20",
+    "cause": "Privat",
+    "startDate": "2026-08-25",
+    "endDate": "2026-08-25",
+    "point": [
+      8.392006,
+      49.003409
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-11T22:00:00Z"
+  },
+  {
+    "id": "2026V5099",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ludwig-Erhard-Allee 3",
+    "notes": null,
+    "cause": "Hochbau und Gebäudewirtschaft",
+    "startDate": "2026-08-17",
+    "endDate": "2026-12-11",
+    "point": [
+      8.415077,
+      49.00584
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-11T22:00:00Z"
+  },
+  {
+    "id": "2026V5101",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Rittnertstraße zw. Fechtstraße und Nonnebühl",
+    "notes": "signalisierte 1-streifige Verkehrsführung, Beseitigung Sturmschaden",
+    "cause": "Privat",
+    "startDate": "2026-08-20",
+    "endDate": "2026-08-22",
+    "point": [
+      8.478925,
+      48.99581
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-11T22:00:00Z"
   },
   {
     "id": "30032",
@@ -8211,7 +8331,7 @@
     "notes": null,
     "cause": "EnBW",
     "startDate": "2026-07-06",
-    "endDate": "2026-08-14",
+    "endDate": "2026-08-28",
     "point": [
       8.334891,
       48.964738
