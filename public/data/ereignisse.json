@@ -1,135 +1,93 @@
 {
-  "generatedAt": "2026-08-12T16:43:01.474Z",
+  "generatedAt": "2026-08-13T05:29:10.193Z",
   "events": [
     {
-      "kind": "changed",
-      "signature": "changed:2025V7363:2026-08-11T22:00:00Z",
-      "siteId": "2025V7363",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4047:2026-08-20",
+      "siteId": "2026V4047",
       "point": [
-        8.396864,
-        49.007636
+        8.383929,
+        49.015324
       ],
       "closure": "full",
-      "startDate": "2026-06-10",
-      "endDate": "2026-09-18",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-20",
       "municipality": "Karlsruhe",
-      "location": "Herrenstraße zw. Amalienstraße und Blumenstraße"
+      "location": "Roggenbachstraße zw. Moltkestraße und Grenadierstraße"
     },
     {
-      "kind": "changed",
-      "signature": "changed:2025V7364:2026-08-11T22:00:00Z",
-      "siteId": "2025V7364",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4636:2026-08-20",
+      "siteId": "2026V4636",
       "point": [
-        8.396389,
-        49.007375
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-19",
-      "endDate": "2026-10-16",
-      "municipality": "Karlsruhe",
-      "location": "Amalienstraße Kreuzung Herrenstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V4551:2026-08-11T22:00:00Z",
-      "siteId": "2026V4551",
-      "point": [
-        8.479498,
-        48.999712
-      ],
-      "closure": "full",
-      "startDate": "2026-08-11",
-      "endDate": "2026-10-09",
-      "municipality": "Karlsruhe",
-      "location": "Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V4802:2026-08-11T22:00:00Z",
-      "siteId": "2026V4802",
-      "point": [
-        8.479428,
-        48.99978
+        8.319701,
+        49.037297
       ],
       "closure": "one-direction",
-      "startDate": "2026-08-08",
-      "endDate": "2026-08-17",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-20",
       "municipality": "Karlsruhe",
-      "location": "B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße"
+      "location": "Raffineriestraße, Brücke über die B 10 Südtangente"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V4192",
-      "siteId": "2026V4192",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4720:2026-08-14",
+      "siteId": "2026V4720",
       "point": [
-        8.404379,
-        48.971546
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-07-02",
-      "endDate": "2026-08-31",
-      "municipality": "Karlsruhe",
-      "location": "Rastatter Straße 45+62, Tulpenstraße 1-4"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4246",
-      "siteId": "2026V4246",
-      "point": [
-        8.388868,
-        49.008769
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2026-11-09",
-      "municipality": "Karlsruhe",
-      "location": "Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5057",
-      "siteId": "2026V5057",
-      "point": [
-        8.39216,
-        49.002571
-      ],
-      "closure": "full",
-      "startDate": "2026-08-21",
-      "endDate": "2026-08-22",
-      "municipality": "Karlsruhe",
-      "location": "Sonntagstraße zw. Mathystraße und Jollystraße und Mathystraße zw. Sonntagstraße und Karlstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5080",
-      "siteId": "2026V5080",
-      "point": [
-        8.392006,
-        49.003409
-      ],
-      "closure": "full",
-      "startDate": "2026-08-25",
-      "endDate": "2026-08-25",
-      "municipality": "Karlsruhe",
-      "location": "Friedenstraße zw. Mathystraße und Gartenstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5099",
-      "siteId": "2026V5099",
-      "point": [
-        8.415077,
-        49.00584
+        8.402333,
+        49.010352
       ],
       "closure": "none",
-      "startDate": "2026-08-17",
-      "endDate": "2026-12-11",
+      "startDate": "2026-08-14",
+      "endDate": "2026-12-03",
       "municipality": "Karlsruhe",
-      "location": "Ludwig-Erhard-Allee 3"
+      "location": "Lammstraße zw. Ritterstraße u. Lammstraße"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V5101",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4897:2026-08-14",
+      "siteId": "2026V4897",
+      "point": [
+        8.394867,
+        49.064452
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-16",
+      "municipality": "Karlsruhe",
+      "location": "B 36 zw. AS Eggenstein u. AS Neureut Nord sowie Zufahrt Linkenheimer Landstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4898:2026-08-20",
+      "siteId": "2026V4898",
+      "point": [
+        8.395027,
+        49.06406
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-24",
+      "municipality": "Karlsruhe",
+      "location": "B 36 zw. AS Eggenstein und AS Neureut-Nord, Überführungsbauwerk im Zuge der Linkenheimer Landstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5005:2026-08-14",
+      "siteId": "2026V5005",
+      "point": [
+        8.35929,
+        49.009711
+      ],
+      "closure": "full",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-14",
+      "municipality": "Karlsruhe",
+      "location": "AS7 von B36 Auffahrtsrampe zur B10/ Südtangente"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5101:2026-08-20",
       "siteId": "2026V5101",
       "point": [
         8.478925,
@@ -140,48 +98,6 @@
       "endDate": "2026-08-22",
       "municipality": "Karlsruhe",
       "location": "Rittnertstraße zw. Fechtstraße und Nonnebühl"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4878:2026-08-19",
-      "siteId": "2026V4878",
-      "point": [
-        8.404137,
-        48.991609
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-19",
-      "endDate": "2026-09-08",
-      "municipality": "Karlsruhe",
-      "location": "Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5003:2026-08-13",
-      "siteId": "2026V5003",
-      "point": [
-        8.472999,
-        49.013597
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-13",
-      "endDate": "2026-08-13",
-      "municipality": "Karlsruhe",
-      "location": "B10 zw. A5 und K9659"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5004:2026-08-13",
-      "siteId": "2026V5004",
-      "point": [
-        8.316168,
-        49.037511
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-13",
-      "endDate": "2026-08-13",
-      "municipality": "Karlsruhe",
-      "location": "B10  zw. AS 11 und AS 10"
     }
   ]
 }
