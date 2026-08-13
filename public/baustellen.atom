@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-13T05:29:10.193Z</updated>
+    <updated>2026-08-13T16:42:06.004Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -21,6 +21,52 @@ Zeitraum: 20.08.2026 – 20.08.2026
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Sonstiges" term="other"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Albert-Braun-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V4469:2026-08-12T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V4469"/>
+        <updated>2026-08-12T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 14.09.2026 – 31.12.2026
+Hinweis: Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V6989:2026-08-12T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6989"/>
+        <updated>2026-08-12T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
+Zeitraum: 13.08.2026 – 28.08.2026
+Hinweis: Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen, zw. 9:00 Uhr - 15:00 Uhr
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Pfinztalstraße zw. Badener Straße u. Eichelgasse – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0254:2026-08-12T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0254"/>
+        <updated>2026-08-12T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 07.09.2026 – 13.09.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Durlacher Allee Kreuzungsbereich Ostring – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5129:2026-08-12T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5129"/>
+        <updated>2026-08-12T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 18.08.2026 – 18.08.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Herrenstraße zw. Amalienstraße und Blumenstraße – Karlsruhe]]></title>
@@ -170,7 +216,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-08-10T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
 Zeitraum: 31.08.2026 – 09.10.2026
-Hinweis: Wender Höhe Hau Nr 39
+Hinweis: Wender Höhe Haus Nr 39
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
@@ -631,18 +677,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Rheinhafestraße zw. B36/Eckenerstraße und Hopfenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6989:2026-08-04T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6989"/>
-        <updated>2026-08-04T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
-Zeitraum: 10.08.2026 – 05.09.2026
-Hinweis: Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Brunnenhausstraße zw. Weiherstraße und Marstallstraße – Karlsruhe]]></title>
@@ -1833,30 +1867,6 @@ Zeitraum: 02.03.2026 – 28.08.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Weltzienstraße zw. Kriegstraße und Wilhelm-Baur-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1310:2026-07-21T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1310"/>
-        <updated>2026-07-21T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 02.03.2026 – 28.08.2026
-Hinweis: Wendemöglichkeit aus beiden Richtungen vor der Baustelle
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1311:2026-07-21T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1311"/>
-        <updated>2026-07-21T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 17.04.2026 – 04.09.2026
-Hinweis: Ausführung in mehreren Abschnitten, Wendemöglichkeit aus beiden Richtungen vor der Baustelle
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: AS Karlsruhe Nord Zufahrt von der Elfmorgenbruchstraße zur A 5 Fahrtrichtung Süd – Karlsruhe]]></title>
@@ -3670,17 +3680,6 @@ Zeitraum: 17.08.2026 – 13.09.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Pfinztalstraße zw. Badener Straße u. Eichelgasse – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0254:2026-06-01T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0254"/>
-        <updated>2026-06-01T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 17.08.2026 – 13.09.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Badener Straße zw. Grötzinger Straße u. Hengstplatz – Karlsruhe]]></title>

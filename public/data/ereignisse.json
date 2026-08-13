@@ -1,6 +1,62 @@
 {
-  "generatedAt": "2026-08-13T05:29:10.193Z",
+  "generatedAt": "2026-08-13T16:42:06.004Z",
   "events": [
+    {
+      "kind": "changed",
+      "signature": "changed:2025V6989:2026-08-12T22:00:00Z",
+      "siteId": "2025V6989",
+      "point": [
+        8.35147,
+        48.999001
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-28",
+      "municipality": "Karlsruhe",
+      "location": "Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0254:2026-08-12T22:00:00Z",
+      "siteId": "2026V0254",
+      "point": [
+        8.475113,
+        48.999345
+      ],
+      "closure": "full",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-13",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V4469",
+      "siteId": "2025V4469",
+      "point": [
+        8.361546,
+        48.989624
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Albert-Braun-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5129",
+      "siteId": "2026V5129",
+      "point": [
+        8.439909,
+        49.006474
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-18",
+      "endDate": "2026-08-18",
+      "municipality": "Karlsruhe",
+      "location": "Durlacher Allee Kreuzungsbereich Ostring"
+    },
     {
       "kind": "starts-soon",
       "signature": "starts-soon:2026V4047:2026-08-20",

@@ -1260,6 +1260,26 @@
     "lastModified": "2026-04-23T22:00:00Z"
   },
   {
+    "id": "2025V4469",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Albert-Braun-Straße",
+    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-14",
+    "endDate": "2026-12-31",
+    "point": [
+      8.361546,
+      48.989624
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-12T22:00:00Z"
+  },
+  {
     "id": "2025V4584",
     "phase": "active",
     "category": "power-telecom",
@@ -2065,19 +2085,19 @@
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
-    "siteType": null,
+    "siteType": "stationary",
     "municipality": "Karlsruhe",
-    "location": "Rheinhafestraße zw. B36/Eckenerstraße und Hopfenstraße",
-    "notes": "Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen",
+    "location": "Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße",
+    "notes": "Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen, zw. 9:00 Uhr - 15:00 Uhr",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-10",
-    "endDate": "2026-09-05",
+    "startDate": "2026-08-13",
+    "endDate": "2026-08-28",
     "point": [
       8.35147,
       48.999001
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
+    "lastModified": "2026-08-12T22:00:00Z"
   },
   {
     "id": "2025V7008",
@@ -2730,14 +2750,14 @@
     "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-17",
+    "startDate": "2026-09-07",
     "endDate": "2026-09-13",
     "point": [
       8.475113,
       48.999345
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-01T22:00:00Z"
+    "lastModified": "2026-08-12T22:00:00Z"
   },
   {
     "id": "2026V0255",
@@ -3660,46 +3680,6 @@
     "lastModified": "2026-07-30T22:00:00Z"
   },
   {
-    "id": "2026V1310",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Weltzienstraße zw. Kriegstraße und Wilhelm-Baur-Straße",
-    "notes": "Wendemöglichkeit aus beiden Richtungen vor der Baustelle",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-03-02",
-    "endDate": "2026-08-28",
-    "point": [
-      8.37126,
-      49.003731
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-21T22:00:00Z"
-  },
-  {
-    "id": "2026V1311",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Weltzienstraße zw. Wilhelm-Baur-Straße und Kriegstraße",
-    "notes": "Ausführung in mehreren Abschnitten, Wendemöglichkeit aus beiden Richtungen vor der Baustelle",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-04-17",
-    "endDate": "2026-09-04",
-    "point": [
-      8.371502,
-      49.004568
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-21T22:00:00Z"
-  },
-  {
     "id": "2026V1353",
     "phase": "active",
     "category": "power-telecom",
@@ -4268,7 +4248,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße",
-    "notes": "Wender Höhe Hau Nr 39",
+    "notes": "Wender Höhe Haus Nr 39",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-31",
     "endDate": "2026-10-09",
@@ -7998,6 +7978,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-11T22:00:00Z"
+  },
+  {
+    "id": "2026V5129",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Durlacher Allee Kreuzungsbereich Ostring",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-18",
+    "endDate": "2026-08-18",
+    "point": [
+      8.439909,
+      49.006474
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-12T22:00:00Z"
   },
   {
     "id": "30032",
