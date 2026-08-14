@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-14T05:26:33.304Z</updated>
+    <updated>2026-08-14T16:37:52.414Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -21,6 +21,52 @@ Zeitraum: 20.08.2026 – 20.08.2026
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Sonstiges" term="other"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 – Karlsruhe]]></title>
+        <id>faecherbagger:2025V4908:2026-08-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V4908"/>
+        <updated>2026-08-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 27.04.2026 – 30.09.2026
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Werderstraße 68 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3192:2026-08-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3192"/>
+        <updated>2026-08-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 15.07.2026 – 11.09.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Hirschstraße zw. Amalienstraße und Sophienstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5148:2026-08-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5148"/>
+        <updated>2026-08-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 17.08.2026 – 17.08.2026
+Hinweis: Höhe Haus Nr 48, Materialanlieferung
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Hauckstraße zw. Gymnasiumstraße und Karl-Weysser-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5149:2026-08-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5149"/>
+        <updated>2026-08-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gleisbau · Vollsperrung
+Zeitraum: 12.08.2026 – 22.11.2026
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Allmendstraße 3 – Bruchsal]]></title>
@@ -2665,17 +2711,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-07-08T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
 Zeitraum: 07.07.2026 – 31.08.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Werderstraße 68 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3192:2026-07-08T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3192"/>
-        <updated>2026-07-08T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 15.07.2026 – 31.08.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>

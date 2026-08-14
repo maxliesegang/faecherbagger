@@ -1320,6 +1320,26 @@
     "lastModified": "2025-08-28T22:00:00Z"
   },
   {
+    "id": "2025V4908",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Engesserstr. 2-6/8-12 und Lehmannstr. 1-3",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-04-27",
+    "endDate": "2026-09-30",
+    "point": [
+      8.409891,
+      49.011954
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-13T22:00:00Z"
+  },
+  {
     "id": "2025V4978",
     "phase": "upcoming",
     "category": "gas-water",
@@ -4911,13 +4931,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-15",
-    "endDate": "2026-08-31",
+    "endDate": "2026-09-11",
     "point": [
       8.409222,
       49.001515
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-08T22:00:00Z"
+    "lastModified": "2026-08-13T22:00:00Z"
   },
   {
     "id": "2026V3234",
@@ -7958,6 +7978,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-12T22:00:00Z"
+  },
+  {
+    "id": "2026V5148",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hirschstraße zw. Amalienstraße und Sophienstraße",
+    "notes": "Höhe Haus Nr 48, Materialanlieferung",
+    "cause": "Privat",
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-17",
+    "point": [
+      8.391416,
+      49.00722
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-13T22:00:00Z"
+  },
+  {
+    "id": "2026V5149",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hauckstraße zw. Gymnasiumstraße und Karl-Weysser-Straße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-08-12",
+    "endDate": "2026-11-22",
+    "point": [
+      8.477825,
+      48.999266
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-13T22:00:00Z"
   },
   {
     "id": "30032",

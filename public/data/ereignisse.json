@@ -1,33 +1,61 @@
 {
-  "generatedAt": "2026-08-14T05:26:33.304Z",
+  "generatedAt": "2026-08-14T16:37:52.414Z",
   "events": [
     {
-      "kind": "new",
-      "signature": "new:30181",
-      "siteId": "30181",
+      "kind": "changed",
+      "signature": "changed:2026V3192:2026-08-13T22:00:00Z",
+      "siteId": "2026V3192",
       "point": [
-        8.547513,
-        49.091732
+        8.409222,
+        49.001515
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-14",
-      "endDate": "2026-08-28",
-      "municipality": "Bruchsal",
-      "location": "Wendelinusstraße"
+      "startDate": "2026-07-15",
+      "endDate": "2026-09-11",
+      "municipality": "Karlsruhe",
+      "location": "Werderstraße 68"
     },
     {
       "kind": "new",
-      "signature": "new:40154",
-      "siteId": "40154",
+      "signature": "new:2025V4908",
+      "siteId": "2025V4908",
       "point": [
-        8.551793,
-        49.08437
+        8.409891,
+        49.011954
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-04-27",
+      "endDate": "2026-09-30",
+      "municipality": "Karlsruhe",
+      "location": "Engesserstr. 2-6/8-12 und Lehmannstr. 1-3"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5148",
+      "siteId": "2026V5148",
+      "point": [
+        8.391416,
+        49.00722
       ],
       "closure": "full",
-      "startDate": "2026-08-14",
-      "endDate": "2026-09-07",
-      "municipality": "Bruchsal",
-      "location": "Allmendstraße 3"
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-17",
+      "municipality": "Karlsruhe",
+      "location": "Hirschstraße zw. Amalienstraße und Sophienstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5149",
+      "siteId": "2026V5149",
+      "point": [
+        8.477825,
+        48.999266
+      ],
+      "closure": "full",
+      "startDate": "2026-08-12",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "Hauckstraße zw. Gymnasiumstraße und Karl-Weysser-Straße"
     },
     {
       "kind": "starts-soon",
