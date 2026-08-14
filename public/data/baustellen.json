@@ -7041,7 +7041,7 @@
   },
   {
     "id": "2026V4720",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "none",
@@ -7481,7 +7481,7 @@
   },
   {
     "id": "2026V4897",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "bridge",
     "artRaw": "Brückenbau",
     "closure": "obstruction",
@@ -7800,48 +7800,8 @@
     "lastModified": "2026-08-09T22:00:00Z"
   },
   {
-    "id": "2026V5003",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "B10 zw. A5 und K9659",
-    "notes": "Richtung Grötzingen, Reparatur Unfallschaden, Arbeitsstelle im Mittelstreifen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-13",
-    "endDate": "2026-08-13",
-    "point": [
-      8.472999,
-      49.013597
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-10T22:00:00Z"
-  },
-  {
-    "id": "2026V5004",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "B10  zw. AS 11 und AS 10",
-    "notes": "Reparatur Unfallschaden, Fahrtrichtung Karlsruhe, Arbeitsstellen am Fahrbahnrand",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-13",
-    "endDate": "2026-08-13",
-    "point": [
-      8.316168,
-      49.037511
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-10T22:00:00Z"
-  },
-  {
     "id": "2026V5005",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "full",
@@ -8438,6 +8398,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-10T10:38:21Z"
+  },
+  {
+    "id": "30181",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Wendelinusstraße",
+    "notes": "Gehweg verengt, bzw. Gehweg gesperrt mit Notweg auf der Fahrbahn",
+    "cause": "Telekommunikation",
+    "startDate": "2026-08-14",
+    "endDate": "2026-08-28",
+    "point": [
+      8.547513,
+      49.091732
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-11T06:51:02Z"
   },
   {
     "id": "30236",
@@ -9420,26 +9400,6 @@
     "lastModified": "2026-06-12T09:02:31Z"
   },
   {
-    "id": "40114",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Industriestraße im Bereich vor und nach der Einmündung Otto-Lilienthal-Weg",
-    "notes": "Abbau von Strommasten an mehreren Stellen.\nDie Fahrbahn wird jeweils auf 40 m Länge verengt und der Geh- und Radweg gesperrt",
-    "cause": "Energieversorgung",
-    "startDate": "2026-08-03",
-    "endDate": "2026-08-13",
-    "point": [
-      8.564384,
-      49.131652
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-06-15T08:07:43Z"
-  },
-  {
     "id": "40115",
     "phase": "active",
     "category": "special-use",
@@ -9758,6 +9718,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-11T09:06:53Z"
+  },
+  {
+    "id": "40154",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Allmendstraße 3",
+    "notes": "Vollsperrung der Fahrbahn, Durchgang für Fußverkehr möglich",
+    "cause": "Privat",
+    "startDate": "2026-08-14",
+    "endDate": "2026-09-07",
+    "point": [
+      8.551793,
+      49.08437
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-13T09:02:17Z"
   },
   {
     "id": "40172",

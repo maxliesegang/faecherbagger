@@ -1,159 +1,89 @@
 {
-  "generatedAt": "2026-08-13T16:42:06.004Z",
+  "generatedAt": "2026-08-14T05:26:33.304Z",
   "events": [
     {
-      "kind": "changed",
-      "signature": "changed:2025V6989:2026-08-12T22:00:00Z",
-      "siteId": "2025V6989",
+      "kind": "new",
+      "signature": "new:30181",
+      "siteId": "30181",
       "point": [
-        8.35147,
-        48.999001
+        8.547513,
+        49.091732
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-13",
+      "startDate": "2026-08-14",
       "endDate": "2026-08-28",
-      "municipality": "Karlsruhe",
-      "location": "Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V0254:2026-08-12T22:00:00Z",
-      "siteId": "2026V0254",
-      "point": [
-        8.475113,
-        48.999345
-      ],
-      "closure": "full",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-13",
-      "municipality": "Karlsruhe",
-      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse"
+      "municipality": "Bruchsal",
+      "location": "Wendelinusstraße"
     },
     {
       "kind": "new",
-      "signature": "new:2025V4469",
-      "siteId": "2025V4469",
+      "signature": "new:40154",
+      "siteId": "40154",
       "point": [
-        8.361546,
-        48.989624
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-12-31",
-      "municipality": "Karlsruhe",
-      "location": "Albert-Braun-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5129",
-      "siteId": "2026V5129",
-      "point": [
-        8.439909,
-        49.006474
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-18",
-      "endDate": "2026-08-18",
-      "municipality": "Karlsruhe",
-      "location": "Durlacher Allee Kreuzungsbereich Ostring"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4047:2026-08-20",
-      "siteId": "2026V4047",
-      "point": [
-        8.383929,
-        49.015324
-      ],
-      "closure": "full",
-      "startDate": "2026-08-20",
-      "endDate": "2026-08-20",
-      "municipality": "Karlsruhe",
-      "location": "Roggenbachstraße zw. Moltkestraße und Grenadierstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4636:2026-08-20",
-      "siteId": "2026V4636",
-      "point": [
-        8.319701,
-        49.037297
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-08-20",
-      "endDate": "2026-08-20",
-      "municipality": "Karlsruhe",
-      "location": "Raffineriestraße, Brücke über die B 10 Südtangente"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4720:2026-08-14",
-      "siteId": "2026V4720",
-      "point": [
-        8.402333,
-        49.010352
-      ],
-      "closure": "none",
-      "startDate": "2026-08-14",
-      "endDate": "2026-12-03",
-      "municipality": "Karlsruhe",
-      "location": "Lammstraße zw. Ritterstraße u. Lammstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4897:2026-08-14",
-      "siteId": "2026V4897",
-      "point": [
-        8.394867,
-        49.064452
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-14",
-      "endDate": "2026-08-16",
-      "municipality": "Karlsruhe",
-      "location": "B 36 zw. AS Eggenstein u. AS Neureut Nord sowie Zufahrt Linkenheimer Landstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4898:2026-08-20",
-      "siteId": "2026V4898",
-      "point": [
-        8.395027,
-        49.06406
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-20",
-      "endDate": "2026-08-24",
-      "municipality": "Karlsruhe",
-      "location": "B 36 zw. AS Eggenstein und AS Neureut-Nord, Überführungsbauwerk im Zuge der Linkenheimer Landstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5005:2026-08-14",
-      "siteId": "2026V5005",
-      "point": [
-        8.35929,
-        49.009711
+        8.551793,
+        49.08437
       ],
       "closure": "full",
       "startDate": "2026-08-14",
-      "endDate": "2026-08-14",
-      "municipality": "Karlsruhe",
-      "location": "AS7 von B36 Auffahrtsrampe zur B10/ Südtangente"
+      "endDate": "2026-09-07",
+      "municipality": "Bruchsal",
+      "location": "Allmendstraße 3"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V5101:2026-08-20",
-      "siteId": "2026V5101",
+      "signature": "starts-soon:2026V1163:2026-08-15",
+      "siteId": "2026V1163",
       "point": [
-        8.478925,
-        48.99581
+        8.459091,
+        48.989149
+      ],
+      "closure": "full",
+      "startDate": "2026-08-15",
+      "endDate": "2026-09-11",
+      "municipality": "Karlsruhe",
+      "location": "Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4479:2026-08-21",
+      "siteId": "2026V4479",
+      "point": [
+        8.391707,
+        49.009771
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-20",
+      "startDate": "2026-08-21",
+      "endDate": "2026-09-05",
+      "municipality": "Karlsruhe",
+      "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5017:2026-08-15",
+      "siteId": "2026V5017",
+      "point": [
+        8.454155,
+        49.027073
+      ],
+      "closure": "full",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-15",
+      "municipality": "Karlsruhe",
+      "location": "Bruchsaler Straße zw. Karlsruher Straße und Waldeckstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5057:2026-08-21",
+      "siteId": "2026V5057",
+      "point": [
+        8.39216,
+        49.002571
+      ],
+      "closure": "full",
+      "startDate": "2026-08-21",
       "endDate": "2026-08-22",
       "municipality": "Karlsruhe",
-      "location": "Rittnertstraße zw. Fechtstraße und Nonnebühl"
+      "location": "Sonntagstraße zw. Mathystraße und Jollystraße und Mathystraße zw. Sonntagstraße und Karlstraße"
     }
   ]
 }
