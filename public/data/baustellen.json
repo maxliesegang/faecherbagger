@@ -260,26 +260,6 @@
     "lastModified": "2026-05-06T22:00:00Z"
   },
   {
-    "id": "2024V1741",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Schinnrainstraße, Raiherwiesenstraße, Hauptbahnstraße, Bleichstraße",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-27",
-    "endDate": "2026-08-15",
-    "point": [
-      8.458861,
-      48.999982
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-23T22:00:00Z"
-  },
-  {
     "id": "2024V2069",
     "phase": "active",
     "category": "power-telecom",
@@ -418,26 +398,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-28T22:00:00Z"
-  },
-  {
-    "id": "2024V4279",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfaffstraße / Schinnrainstraße / Raiherwiesenstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-06-15",
-    "endDate": "2026-08-15",
-    "point": [
-      8.456698,
-      48.998478
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-08T22:00:00Z"
   },
   {
     "id": "2024V4281",
@@ -2078,26 +2038,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-12T22:00:00Z"
-  },
-  {
-    "id": "2025V7008",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Seminarstraße zw. Stephanienstraße u. Bismarckstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-18",
-    "endDate": "2026-08-15",
-    "point": [
-      8.394432,
-      49.012587
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-19T22:00:00Z"
   },
   {
     "id": "2025V7009",
@@ -3815,6 +3755,26 @@
     "point": [
       8.387924,
       48.992955
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-04-01T22:00:00Z"
+  },
+  {
+    "id": "2026V1767",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Marie-Alexandra-Straße zw. Cäciliastraße und Wartburgstraße",
+    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
+    "cause": "Stadt Karlsruhe",
+    "startDate": "2027-08-16",
+    "endDate": "2027-09-26",
+    "point": [
+      8.386943,
+      48.992992
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-04-01T22:00:00Z"
@@ -5580,26 +5540,6 @@
     "lastModified": "2026-07-22T22:00:00Z"
   },
   {
-    "id": "2026V3924",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Vorholzstraße zw. Beiertheimer Allee und Karlstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-18",
-    "endDate": "2026-08-15",
-    "point": [
-      8.396203,
-      48.999499
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-17T22:00:00Z"
-  },
-  {
     "id": "2026V3931",
     "phase": "active",
     "category": "power-telecom",
@@ -5858,26 +5798,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-11T22:00:00Z"
-  },
-  {
-    "id": "2026V4193",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-06",
-    "endDate": "2026-08-15",
-    "point": [
-      8.47791,
-      48.971815
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-02T22:00:00Z"
   },
   {
     "id": "2026V4194",
@@ -7040,26 +6960,6 @@
     "lastModified": "2026-08-11T22:00:00Z"
   },
   {
-    "id": "2026V4804",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-03",
-    "endDate": "2026-08-15",
-    "point": [
-      8.466306,
-      48.999618
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-06T22:00:00Z"
-  },
-  {
     "id": "2026V4826",
     "phase": "active",
     "category": "power-telecom",
@@ -7655,26 +7555,6 @@
     "point": [
       8.36884,
       49.005873
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-10T22:00:00Z"
-  },
-  {
-    "id": "2026V5017",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bruchsaler Straße zw. Karlsruher Straße und Waldeckstraße",
-    "notes": "Arbeiten unterhalb der Brücke",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-15",
-    "endDate": "2026-08-15",
-    "point": [
-      8.454155,
-      49.027073
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-10T22:00:00Z"
