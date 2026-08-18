@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-18T04:28:24.186Z</updated>
+    <updated>2026-08-18T16:16:06.070Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -23,11 +23,22 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Sonstiges" term="other"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: B36 zw. Sudetenstraße und L623 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5191:2026-08-18</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5191"/>
+        <updated>2026-08-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
+Zeitraum: 18.08.2026 – 18.08.2026
+Verantwortlich: Gartenbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2022V6173:2026-08-16T22:00:00Z</id>
+        <id>faecherbagger:2022V6173:2026-08-17T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2022V6173"/>
-        <updated>2026-08-16T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <updated>2026-08-17T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Keine Behinderung
 Zeitraum: 30.08.2026 – 17.10.2026
 Hinweis: Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen
 Verantwortlich: Telekommunikation
@@ -36,15 +47,62 @@ Quelle: Stadt Karlsruhe]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2022V6190:2026-08-16T22:00:00Z</id>
+        <id>faecherbagger:2022V6190:2026-08-17T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2022V6190"/>
-        <updated>2026-08-16T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+        <updated>2026-08-17T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Keine Behinderung
 Zeitraum: 18.08.2026 – 02.10.2026
 Hinweis: Arbeiten Im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Gut-Magnus-Straße, Wachhausstraße, Kieselweg, – Karlsruhe]]></title>
+        <id>faecherbagger:2025V4374:2026-08-17T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V4374"/>
+        <updated>2026-08-17T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Keine Behinderung
+Zeitraum: 01.09.2026 – 09.10.2026
+Hinweis: Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 – Karlsruhe]]></title>
+        <id>faecherbagger:2025V4908:2026-08-17T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V4908"/>
+        <updated>2026-08-17T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
+Zeitraum: 27.04.2026 – 30.09.2026
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Friedensstraße zw. Mathystraße und Gartenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3176:2026-08-17T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3176"/>
+        <updated>2026-08-17T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 25.08.2026 – 25.08.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: L623 zw. Wolfartsweier und Stupferich – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4972:2026-08-17T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4972"/>
+        <updated>2026-08-17T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Brückenbau · Mit Behinderung
+Zeitraum: 17.08.2026 – 05.09.2026
+Hinweis: 1-streifige Verkehrsführung
+Verantwortlich: Autobahn GmbH
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Gottesauer Straße, Buntestraße, Lohfeldstraße, Sommerstraße, Wolfartsweierer Straße, Hennebergstraße, Am Schloss Gottersaue – Karlsruhe]]></title>
@@ -124,18 +182,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-08-16T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 24.08.2026 – 06.09.2026
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Gut-Magnus-Straße, Wachhausstraße, Kieselweg, – Karlsruhe]]></title>
-        <id>faecherbagger:2025V4374:2026-08-16T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V4374"/>
-        <updated>2026-08-16T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 01.09.2026 – 09.10.2026
-Hinweis: Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
@@ -303,16 +349,29 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Engesserstr. 2-6/8-12 und Lehmannstr. 1-3 – Karlsruhe]]></title>
-        <id>faecherbagger:2025V4908:2026-08-13T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V4908"/>
-        <updated>2026-08-13T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 27.04.2026 – 30.09.2026
-Hinweis: Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
+        <title type="html"><![CDATA[Aktuell: Vogelhohle 2 – Bruchsal]]></title>
+        <id>faecherbagger:30186:2026-08-14T05:39:13Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30186"/>
+        <updated>2026-08-14T05:39:13.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
+Zeitraum: 12.08.2026 – 28.08.2026
+Hinweis: Fahrbahnvollsperrung, Gehwege nicht betroffen,
+Zufahrt zum Schaffnersberg über den Schwalbenweg nur möglich,
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Bergstraße 107 – Bruchsal]]></title>
+        <id>faecherbagger:30184:2026-08-14T05:26:06Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30184"/>
+        <updated>2026-08-14T05:26:06.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 18.08.2026 – 04.09.2026
+Hinweis: Gehweg gesperrt mit Notweg auf dem Seitenstreifen.
+Verantwortlich: Telekommunikation
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Werderstraße 68 – Karlsruhe]]></title>

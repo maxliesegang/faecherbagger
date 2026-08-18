@@ -1,16 +1,55 @@
 {
-  "since": "2026-08-17T16:12:42.729Z",
-  "added": [],
-  "modified": [],
-  "removed": [
-    "2026V0705",
-    "2026V0707",
-    "2026V1791",
-    "2026V2923",
-    "2026V4715",
-    "2026V4802",
-    "30036",
-    "30154"
+  "since": "2026-08-18T04:28:24.186Z",
+  "added": [
+    "2026V3176",
+    "2026V4972",
+    "2026V5191",
+    "30184",
+    "30186"
   ],
-  "relevantModifications": []
+  "modified": [
+    "2022V6173",
+    "2022V6190",
+    "2025V4374",
+    "2025V4908"
+  ],
+  "removed": [],
+  "relevantModifications": [
+    {
+      "id": "2022V6173",
+      "changedFields": [
+        "closure"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-08-30",
+      "previousEndDate": "2026-10-17"
+    },
+    {
+      "id": "2022V6190",
+      "changedFields": [
+        "closure"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-08-18",
+      "previousEndDate": "2026-10-02"
+    },
+    {
+      "id": "2025V4374",
+      "changedFields": [
+        "closure"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-01",
+      "previousEndDate": "2026-10-09"
+    },
+    {
+      "id": "2025V4908",
+      "changedFields": [
+        "closure"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-04-27",
+      "previousEndDate": "2026-09-30"
+    }
+  ]
 }
