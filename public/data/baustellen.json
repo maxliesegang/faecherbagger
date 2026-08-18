@@ -141,7 +141,7 @@
   },
   {
     "id": "2022V6190",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -721,7 +721,7 @@
   },
   {
     "id": "2024V6753",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -3240,46 +3240,6 @@
     "lastModified": "2026-07-20T22:00:00Z"
   },
   {
-    "id": "2026V0705",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karlsruher Straße zw. Haid-und-Neu-Straße und Gondelsheimer Straße/ Hofäcker Straße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-07-30",
-    "endDate": "2026-08-17",
-    "point": [
-      8.449946,
-      49.024906
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-18T22:00:00Z"
-  },
-  {
-    "id": "2026V0707",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Neubrunnenstraße Gleisüberfahrt Karlsruher Straße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-07-30",
-    "endDate": "2026-08-17",
-    "point": [
-      8.453446,
-      49.026832
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-20T22:00:00Z"
-  },
-  {
     "id": "2026V0725",
     "phase": "upcoming",
     "category": "road-maintenance",
@@ -3958,26 +3918,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-28T22:00:00Z"
-  },
-  {
-    "id": "2026V1791",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Brunnenhausstraße zw. Weiherstraße und Marstallstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-05",
-    "endDate": "2026-08-17",
-    "point": [
-      8.472676,
-      48.995766
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V1795",
@@ -4820,26 +4760,6 @@
     "lastModified": "2026-05-05T22:00:00Z"
   },
   {
-    "id": "2026V2923",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Brunnenhausstraße und Imberstraße",
-    "notes": "lokale Arbeitsstellen im Geh- und Radwegbereich",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-12",
-    "endDate": "2026-08-17",
-    "point": [
-      8.472654,
-      48.996086
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-05-06T22:00:00Z"
-  },
-  {
     "id": "2026V2987",
     "phase": "active",
     "category": "power-telecom",
@@ -4961,7 +4881,7 @@
   },
   {
     "id": "2026V3196",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -6061,7 +5981,7 @@
   },
   {
     "id": "2026V4236",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -6940,26 +6860,6 @@
     "lastModified": "2026-07-28T22:00:00Z"
   },
   {
-    "id": "2026V4715",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "one-direction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Mannheimer Straße zw. Forststraße u. Huttenstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-17",
-    "endDate": "2026-08-17",
-    "point": [
-      8.4431,
-      49.014965
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-28T22:00:00Z"
-  },
-  {
     "id": "2026V4720",
     "phase": "active",
     "category": "special-use",
@@ -7078,26 +6978,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
-    "id": "2026V4802",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B 3 Grötzinger Straße zw. Bergbahnstraße u. Rittnertstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-08",
-    "endDate": "2026-08-17",
-    "point": [
-      8.479428,
-      48.99978
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
   },
   {
     "id": "2026V4804",
@@ -7441,7 +7321,7 @@
   },
   {
     "id": "2026V4905",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -7761,7 +7641,7 @@
   },
   {
     "id": "2026V5129",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7781,7 +7661,7 @@
   },
   {
     "id": "2026V5148",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7918,26 +7798,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-04-01T07:20:07Z"
-  },
-  {
-    "id": "30036",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Schwarzwaldstraße 45a",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
-    "startDate": "2026-04-20",
-    "endDate": "2026-08-17",
-    "point": [
-      8.316879,
-      48.978178
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-04-09T08:12:35Z"
   },
   {
     "id": "30047",
@@ -8258,26 +8118,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-03-18T13:27:33Z"
-  },
-  {
-    "id": "30154",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Michaelsbergstraße 30",
-    "notes": "Fahrbahn verengt",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-17",
-    "endDate": "2026-08-17",
-    "point": [
-      8.556024,
-      49.088348
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-06-29T05:35:18Z"
   },
   {
     "id": "30173",
