@@ -7241,7 +7241,7 @@
   },
   {
     "id": "2026V4878",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -7680,46 +7680,6 @@
     "lastModified": "2026-08-11T22:00:00Z"
   },
   {
-    "id": "2026V5129",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Durlacher Allee Kreuzungsbereich Ostring",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-18",
-    "endDate": "2026-08-18",
-    "point": [
-      8.439909,
-      49.006474
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-12T22:00:00Z"
-  },
-  {
-    "id": "2026V5148",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Amalienstraße und Sophienstraße",
-    "notes": "Höhe Haus Nr 48, Materialanlieferung vs. bis 13:00 Uhr",
-    "cause": "Privat",
-    "startDate": "2026-08-18",
-    "endDate": "2026-08-18",
-    "point": [
-      8.391444,
-      49.007212
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
     "id": "2026V5149",
     "phase": "active",
     "category": "rail",
@@ -7818,26 +7778,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
-    "id": "2026V5191",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B36 zw. Sudetenstraße und L623",
-    "notes": null,
-    "cause": "Gartenbauamt",
-    "startDate": "2026-08-18",
-    "endDate": "2026-08-18",
-    "point": [
-      8.372891,
-      49.059419
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": ""
   },
   {
     "id": "30032",
@@ -8258,6 +8198,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-14T05:39:13Z"
+  },
+  {
+    "id": "30188",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Biffachstraße 13a",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-08-19",
+    "endDate": "2026-09-07",
+    "point": [
+      8.646762,
+      49.097435
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-14T06:10:01Z"
   },
   {
     "id": "30236",
@@ -9518,26 +9478,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-07-08T11:51:53Z"
-  },
-  {
-    "id": "40274",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Vollsperrung L613 zwischen Ettlingen und Spessart",
-    "notes": "Fahrbahndeckenerneuerung unter Vollsperrung\n\nWir bitten alle Verkehrsteilnehmer um Verständnis und Nutzung der ausgewiesenen Umleitungsbeschilderung.\n\nDer ÖPNV verkerht via Spessart-Schöllbronn-Ettlingenweier-Ettlingen. Bitte den gesonderten Fahrplan beachten,",
-    "cause": "Tiefbauamt Ettlingen",
-    "startDate": "2026-07-13",
-    "endDate": "2026-09-11",
-    "point": [
-      8.421666,
-      48.926201
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-07-09T07:37:50Z"
   },
   {
     "id": "40289",

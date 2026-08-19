@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-18T16:16:06.070Z</updated>
+    <updated>2026-08-19T04:30:08.820Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -21,17 +21,6 @@ Zeitraum: 20.08.2026 – 20.08.2026
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Sonstiges" term="other"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: B36 zw. Sudetenstraße und L623 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5191:2026-08-18</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5191"/>
-        <updated>2026-08-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 18.08.2026 – 18.08.2026
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße – Karlsruhe]]></title>
@@ -291,18 +280,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Amalienstraße und Sophienstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5148:2026-08-16T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5148"/>
-        <updated>2026-08-16T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 18.08.2026 – 18.08.2026
-Hinweis: Höhe Haus Nr 48, Materialanlieferung vs. bis 13:00 Uhr
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Kaiserstraße und Sophienstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5159:2026-08-16T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5159"/>
@@ -347,6 +324,17 @@ Zeitraum: 15.09.2026 – 25.09.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Biffachstraße 13a – Bruchsal]]></title>
+        <id>faecherbagger:30188:2026-08-14T06:10:01Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30188"/>
+        <updated>2026-08-14T06:10:01.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 19.08.2026 – 07.09.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Vogelhohle 2 – Bruchsal]]></title>
@@ -441,17 +429,6 @@ Zeitraum: 07.09.2026 – 13.09.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Durlacher Allee Kreuzungsbereich Ostring – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5129:2026-08-12T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5129"/>
-        <updated>2026-08-12T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 18.08.2026 – 18.08.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Herrenstraße zw. Amalienstraße und Blumenstraße – Karlsruhe]]></title>
@@ -713,11 +690,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum – Karlsruhe]]></title>
         <id>faecherbagger:2026V4878:2026-08-09T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4878"/>
         <updated>2026-08-09T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
 Zeitraum: 19.08.2026 – 08.09.2026
 Hinweis: Entfall eines Richtungsfahrstreifens, Geh- und Radweg als Notweg auf der Fahrbahn, Arbeitsstellen liegen im Bereich des Geh- und Radwegs
 Verantwortlich: Stadtwerke Karlsruhe
@@ -2634,22 +2611,6 @@ Zeitraum: 23.11.2026 – 06.12.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Vollsperrung L613 zwischen Ettlingen und Spessart – Ettlingen]]></title>
-        <id>faecherbagger:40274:2026-07-09T07:37:50Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40274"/>
-        <updated>2026-07-09T07:37:50.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Vollsperrung
-Zeitraum: 13.07.2026 – 11.09.2026
-Hinweis: Fahrbahndeckenerneuerung unter Vollsperrung
-
-Wir bitten alle Verkehrsteilnehmer um Verständnis und Nutzung der ausgewiesenen Umleitungsbeschilderung.
-
-Der ÖPNV verkerht via Spessart-Schöllbronn-Ettlingenweier-Ettlingen. Bitte den gesonderten Fahrplan beachten,
-Verantwortlich: Tiefbauamt Ettlingen
-Quelle: Stadt Ettlingen]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Kreuzstraße zw. Hebelstraße und Zähringer Straße – Karlsruhe]]></title>
