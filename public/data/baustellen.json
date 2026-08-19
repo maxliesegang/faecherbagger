@@ -600,7 +600,7 @@
     "lastModified": "2026-07-27T22:00:00Z"
   },
   {
-    "id": "2024V5525",
+    "id": "2024V5526",
     "phase": "active",
     "category": "stop-rebuild",
     "artRaw": "Haltestellenumbau mit Straßenumgestaltung",
@@ -610,34 +610,34 @@
     "location": "Rappenwörtstraße zw. Hammweg u. Pfalzstraße",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-01-12",
-    "endDate": "2026-08-21",
+    "startDate": "2026-08-17",
+    "endDate": "2027-06-22",
     "point": [
-      8.328741,
-      49.004237
+      8.33034,
+      49.004924
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-06T23:00:00Z"
+    "lastModified": "2026-08-18T22:00:00Z"
   },
   {
-    "id": "2024V5526",
+    "id": "2024V5527",
     "phase": "upcoming",
     "category": "stop-rebuild",
     "artRaw": "Haltestellenumbau mit Straßenumgestaltung",
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Rappenwörtstraße zw. Hammweg u. Pfalzstraße",
-    "notes": null,
+    "location": "Kreuzungsbereich Rappenwörtstraße / Pfalzstraße / Turnerstraße",
+    "notes": "Bauzeit noch nicht festgelegt",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-22",
-    "endDate": "2027-03-31",
+    "startDate": "2027-06-23",
+    "endDate": "2027-12-19",
     "point": [
-      8.33034,
-      49.004924
+      8.331665,
+      49.0054
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-07T23:00:00Z"
+    "lastModified": "2026-08-18T22:00:00Z"
   },
   {
     "id": "2024V5788",
@@ -4408,16 +4408,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Maximilianstraße zw. Weberstr. u. Stabelstr.",
-    "notes": "Aufteilung nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-01",
-    "endDate": "2027-02-28",
+    "startDate": "2026-10-05",
+    "endDate": "2027-03-31",
     "point": [
       8.383395,
       49.013745
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-08T22:00:00Z"
+    "lastModified": "2026-08-18T22:00:00Z"
   },
   {
     "id": "2026V2456",
@@ -4428,16 +4428,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Weberstraße zw. Moltkestraße und Haydnplatz",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung noch nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-01",
-    "endDate": "2027-02-28",
+    "startDate": "2026-10-05",
+    "endDate": "2027-03-31",
     "point": [
       8.382907,
       49.014172
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-08T22:00:00Z"
+    "lastModified": "2026-08-18T22:00:00Z"
   },
   {
     "id": "2026V2503",
@@ -5001,23 +5001,23 @@
   },
   {
     "id": "2026V3343",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße",
-    "notes": "Ausführung jeweils zwischen 6.00 und 9.00 Uhr. Danach wird die Straße jeweils freigegeben.",
+    "notes": "Ausführung jeweils Vormittags. Danach wird die Straße jeweils freigegeben.",
     "cause": "Tiefbauamt",
-    "startDate": "2026-07-31",
-    "endDate": "2026-09-01",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-08",
     "point": [
       8.40023,
       49.008398
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
+    "lastModified": "2026-08-18T22:00:00Z"
   },
   {
     "id": "2026V3414",
@@ -6020,26 +6020,6 @@
     "lastModified": "2026-07-08T22:00:00Z"
   },
   {
-    "id": "2026V4246",
-    "phase": "upcoming",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße",
-    "notes": "Höhe Haus Nr 6",
-    "cause": "Privat",
-    "startDate": "2026-08-24",
-    "endDate": "2026-11-09",
-    "point": [
-      8.388868,
-      49.008769
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
-  },
-  {
     "id": "2026V4250",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -7020,26 +7000,6 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
-    "id": "2026V4826",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Babbergerstraße, Waidweg, Hermann-Schneider-Allee",
-    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-06",
-    "endDate": "2026-09-11",
-    "point": [
-      8.320412,
-      49.004888
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
-  },
-  {
     "id": "2026V4843",
     "phase": "active",
     "category": "bridge",
@@ -7158,6 +7118,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-03T22:00:00Z"
+  },
+  {
+    "id": "2026V4853",
+    "phase": "upcoming",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach",
+    "notes": "vs. 0:00 Uhr - 5:00 Uhr",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-07",
+    "point": [
+      8.461453,
+      48.967681
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-18T22:00:00Z"
   },
   {
     "id": "2026V4859",
@@ -7780,6 +7760,126 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
+    "id": "2026V5212",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Adenauerring, Moltkestraße, Reinhold-Frank-Straße",
+    "notes": "Signaltechnische Arbeiten im Kreuzungsbereich, signalanlage deaktiviert, 1-streifige Verkehrsführung in allen Fahrtrichtungen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-08-24",
+    "endDate": "2026-08-28",
+    "point": [
+      8.404417,
+      49.013964
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-18T22:00:00Z"
+  },
+  {
+    "id": "2026V5224",
+    "phase": "upcoming",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "K9652/Tiefentalstraße von Albert-Stein-Straße und Straße des Roten Kreuzes",
+    "notes": "vs. 0:00 Uhr - 5:00 Uhr",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-05",
+    "point": [
+      8.468102,
+      48.977222
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-18T22:00:00Z"
+  },
+  {
+    "id": "2026V5225",
+    "phase": "upcoming",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof",
+    "notes": "vs. 0:00 Uhr - 5:00 Uhr",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-06",
+    "endDate": "2026-10-06",
+    "point": [
+      8.497173,
+      48.979354
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-18T22:00:00Z"
+  },
+  {
+    "id": "2026V5239",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Elfmorgenbruch zw. Am Großmarkt und B10",
+    "notes": "signalisierte 1-streifige Verkehrsführung, vs. 9:00 Uhr - 15:00 Uhr",
+    "cause": "Forstamt",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-04",
+    "point": [
+      8.451618,
+      49.011574
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-18T22:00:00Z"
+  },
+  {
+    "id": "2026V5241",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Luisenstraße zw. Rüppurrer Straße und Marienstraße",
+    "notes": "zwei lokale Baustellen im Bereich des Geh-und Radweges inkl Parkseitenstreifen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-01",
+    "endDate": "2026-12-31",
+    "point": [
+      8.409595,
+      49.00088
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-18T22:00:00Z"
+  },
+  {
+    "id": "2026V5244",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-08-27",
+    "endDate": "2026-08-27",
+    "point": [
+      8.41267,
+      49.003024
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-18T22:00:00Z"
+  },
+  {
     "id": "30032",
     "phase": "active",
     "category": "special-use",
@@ -8218,6 +8318,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-14T06:10:01Z"
+  },
+  {
+    "id": "30191",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Alter Unteröwisheimer Weg 2",
+    "notes": "Fahrbahn verengt",
+    "cause": "Stadtwerke",
+    "startDate": "2026-08-19",
+    "endDate": "2026-08-28",
+    "point": [
+      8.609844,
+      49.126679
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-19T08:26:29Z"
   },
   {
     "id": "30236",
@@ -9398,6 +9518,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-13T09:02:17Z"
+  },
+  {
+    "id": "40155",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kornblumenweg 27",
+    "notes": "Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.",
+    "cause": "Privat",
+    "startDate": "2026-08-19",
+    "endDate": "2026-08-21",
+    "point": [
+      8.52477,
+      49.101191
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-19T08:19:44Z"
   },
   {
     "id": "40172",

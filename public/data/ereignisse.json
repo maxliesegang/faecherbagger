@@ -1,19 +1,201 @@
 {
-  "generatedAt": "2026-08-19T04:30:08.820Z",
+  "generatedAt": "2026-08-19T16:16:12.378Z",
   "events": [
     {
-      "kind": "new",
-      "signature": "new:30188",
-      "siteId": "30188",
+      "kind": "changed",
+      "signature": "changed:2024V5526:2026-08-18T22:00:00Z",
+      "siteId": "2024V5526",
       "point": [
-        8.646762,
-        49.097435
+        8.33034,
+        49.004924
+      ],
+      "closure": "full",
+      "startDate": "2026-08-17",
+      "endDate": "2027-06-22",
+      "municipality": "Karlsruhe",
+      "location": "Rappenwörtstraße zw. Hammweg u. Pfalzstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V2444:2026-08-18T22:00:00Z",
+      "siteId": "2026V2444",
+      "point": [
+        8.383395,
+        49.013745
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2027-03-31",
+      "municipality": "Karlsruhe",
+      "location": "Maximilianstraße zw. Weberstr. u. Stabelstr."
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V2456:2026-08-18T22:00:00Z",
+      "siteId": "2026V2456",
+      "point": [
+        8.382907,
+        49.014172
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2027-03-31",
+      "municipality": "Karlsruhe",
+      "location": "Weberstraße zw. Moltkestraße und Haydnplatz"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V3343:2026-08-18T22:00:00Z",
+      "siteId": "2026V3343",
+      "point": [
+        8.40023,
+        49.008398
+      ],
+      "closure": "full",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-08",
+      "municipality": "Karlsruhe",
+      "location": "Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2024V5527",
+      "siteId": "2024V5527",
+      "point": [
+        8.331665,
+        49.0054
+      ],
+      "closure": "full",
+      "startDate": "2027-06-23",
+      "endDate": "2027-12-19",
+      "municipality": "Karlsruhe",
+      "location": "Kreuzungsbereich Rappenwörtstraße / Pfalzstraße / Turnerstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4853",
+      "siteId": "2026V4853",
+      "point": [
+        8.461453,
+        48.967681
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-07",
+      "municipality": "Karlsruhe",
+      "location": "L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5212",
+      "siteId": "2026V5212",
+      "point": [
+        8.404417,
+        49.013964
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-24",
+      "endDate": "2026-08-28",
+      "municipality": "Karlsruhe",
+      "location": "Adenauerring, Moltkestraße, Reinhold-Frank-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5224",
+      "siteId": "2026V5224",
+      "point": [
+        8.468102,
+        48.977222
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-05",
+      "municipality": "Karlsruhe",
+      "location": "K9652/Tiefentalstraße von Albert-Stein-Straße und Straße des Roten Kreuzes"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5225",
+      "siteId": "2026V5225",
+      "point": [
+        8.497173,
+        48.979354
+      ],
+      "closure": "full",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5239",
+      "siteId": "2026V5239",
+      "point": [
+        8.451618,
+        49.011574
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-04",
+      "municipality": "Karlsruhe",
+      "location": "Elfmorgenbruch zw. Am Großmarkt und B10"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5241",
+      "siteId": "2026V5241",
+      "point": [
+        8.409595,
+        49.00088
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-01",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Luisenstraße zw. Rüppurrer Straße und Marienstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5244",
+      "siteId": "2026V5244",
+      "point": [
+        8.41267,
+        49.003024
+      ],
+      "closure": "full",
+      "startDate": "2026-08-27",
+      "endDate": "2026-08-27",
+      "municipality": "Karlsruhe",
+      "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30191",
+      "siteId": "30191",
+      "point": [
+        8.609844,
+        49.126679
       ],
       "closure": "obstruction",
       "startDate": "2026-08-19",
-      "endDate": "2026-09-07",
+      "endDate": "2026-08-28",
       "municipality": "Bruchsal",
-      "location": "Biffachstraße 13a"
+      "location": "Alter Unteröwisheimer Weg 2"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40155",
+      "siteId": "40155",
+      "point": [
+        8.52477,
+        49.101191
+      ],
+      "closure": "full",
+      "startDate": "2026-08-19",
+      "endDate": "2026-08-21",
+      "municipality": "Bruchsal",
+      "location": "Kornblumenweg 27"
     },
     {
       "kind": "starts-soon",
