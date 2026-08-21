@@ -1,6 +1,202 @@
 {
-  "generatedAt": "2026-08-21T04:30:38.387Z",
+  "generatedAt": "2026-08-21T16:17:26.868Z",
   "events": [
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0254:2026-08-20T22:00:00Z",
+      "siteId": "2026V0254",
+      "point": [
+        8.475066,
+        48.999332
+      ],
+      "closure": "full",
+      "startDate": "2026-09-07",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V2767:2026-08-20T22:00:00Z",
+      "siteId": "2026V2767",
+      "point": [
+        8.376387,
+        49.062036
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-07",
+      "endDate": "2026-08-28",
+      "municipality": "Karlsruhe",
+      "location": "An der Sandgrube, Am Zinken"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V5720",
+      "siteId": "2025V5720",
+      "point": [
+        8.454898,
+        49.026707
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-06-04",
+      "endDate": "2026-09-07",
+      "municipality": "Karlsruhe",
+      "location": "Ruschgraben, Karlsruher Str., Hagdornstr."
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3028",
+      "siteId": "2026V3028",
+      "point": [
+        8.506198,
+        49.003911
+      ],
+      "closure": "full",
+      "startDate": "2026-08-24",
+      "endDate": "2026-10-01",
+      "municipality": "Karlsruhe",
+      "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3029",
+      "siteId": "2026V3029",
+      "point": [
+        8.505439,
+        49.003775
+      ],
+      "closure": "full",
+      "startDate": "2026-10-02",
+      "endDate": "2027-01-11",
+      "municipality": "Karlsruhe",
+      "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3030",
+      "siteId": "2026V3030",
+      "point": [
+        8.505393,
+        49.003793
+      ],
+      "closure": "full",
+      "startDate": "2027-01-12",
+      "endDate": "2027-03-27",
+      "municipality": "Karlsruhe",
+      "location": "Karl-Martin-Graff-Straße zw. Ringelberghol und Gustav-Hofmann-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3205",
+      "siteId": "2026V3205",
+      "point": [
+        8.498679,
+        48.998834
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-07",
+      "endDate": "2027-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Vogelsang"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4894",
+      "siteId": "2026V4894",
+      "point": [
+        8.436544,
+        48.99953
+      ],
+      "closure": "full",
+      "startDate": "2027-01-18",
+      "endDate": "2027-04-02",
+      "municipality": "Karlsruhe",
+      "location": "Verbindung zw. Rußweg u.Mastweidenweg (Bahnübergänge)"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5020",
+      "siteId": "2026V5020",
+      "point": [
+        8.374436,
+        49.044917
+      ],
+      "closure": "full",
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-04",
+      "municipality": "Karlsruhe",
+      "location": "Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5152",
+      "siteId": "2026V5152",
+      "point": [
+        8.448665,
+        49.011279
+      ],
+      "closure": "full",
+      "startDate": "2026-10-22",
+      "endDate": "2026-11-17",
+      "municipality": "Karlsruhe",
+      "location": "Koyweg zw. Hinterwiesenweg und Elfmorgenbruch"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5154",
+      "siteId": "2026V5154",
+      "point": [
+        8.450468,
+        49.015278
+      ],
+      "closure": "full",
+      "startDate": "2026-10-22",
+      "endDate": "2026-11-17",
+      "municipality": "Karlsruhe",
+      "location": "Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5314",
+      "siteId": "2026V5314",
+      "point": [
+        8.331811,
+        49.029637
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-25",
+      "endDate": "2026-08-25",
+      "municipality": "Karlsruhe",
+      "location": "B10 zwischen Honsellstraße und Rheinbrücke"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5315",
+      "siteId": "2026V5315",
+      "point": [
+        8.332068,
+        49.029321
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-27",
+      "endDate": "2026-08-28",
+      "municipality": "Karlsruhe",
+      "location": "B10 zwischen Honsellstraße und Rheinbrücke"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30187",
+      "siteId": "30187",
+      "point": [
+        8.595434,
+        49.116171
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-21",
+      "endDate": "2026-09-04",
+      "municipality": "Bruchsal",
+      "location": "Turmbergweg 10-12"
+    },
     {
       "kind": "starts-soon",
       "signature": "starts-soon:2026V1163:2026-08-28",

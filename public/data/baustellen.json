@@ -1620,6 +1620,26 @@
     "lastModified": "2026-06-10T22:00:00Z"
   },
   {
+    "id": "2025V5720",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ruschgraben, Karlsruher Str., Hagdornstr.",
+    "notes": "lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-06-04",
+    "endDate": "2026-09-07",
+    "point": [
+      8.454898,
+      49.026707
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-20T22:00:00Z"
+  },
+  {
     "id": "2025V6065",
     "phase": "active",
     "category": "rail",
@@ -2791,13 +2811,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-07",
-    "endDate": "2026-09-13",
+    "endDate": "2026-11-20",
     "point": [
-      8.475113,
-      48.999345
+      8.475066,
+      48.999332
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-12T22:00:00Z"
+    "lastModified": "2026-08-20T22:00:00Z"
   },
   {
     "id": "2026V0255",
@@ -4560,26 +4580,6 @@
     "lastModified": "2026-04-27T22:00:00Z"
   },
   {
-    "id": "2026V2698",
-    "phase": "upcoming",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karl-Martin-Graff-Straße zw. Winkler-Dentz-Straße und Gustav-Hofmann-Straße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-24",
-    "endDate": "2027-03-31",
-    "point": [
-      8.505476,
-      49.003805
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
     "id": "2026V2716",
     "phase": "active",
     "category": "special-use",
@@ -4624,20 +4624,20 @@
     "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "An der Sandgrube, Am Zinken",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-07",
-    "endDate": "2026-08-31",
+    "endDate": "2026-08-28",
     "point": [
       8.376387,
       49.062036
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-08T22:00:00Z"
+    "lastModified": "2026-08-20T22:00:00Z"
   },
   {
     "id": "2026V2862",
@@ -4760,6 +4760,66 @@
     "lastModified": "2026-08-04T22:00:00Z"
   },
   {
+    "id": "2026V3028",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-24",
+    "endDate": "2026-10-01",
+    "point": [
+      8.506198,
+      49.003911
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-20T22:00:00Z"
+  },
+  {
+    "id": "2026V3029",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-02",
+    "endDate": "2027-01-11",
+    "point": [
+      8.505439,
+      49.003775
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-20T22:00:00Z"
+  },
+  {
+    "id": "2026V3030",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karl-Martin-Graff-Straße zw. Ringelberghol und Gustav-Hofmann-Straße",
+    "notes": "Krezungsbereich Winkler-Dentz-Straße = Sackgasse bis Baufeld",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-12",
+    "endDate": "2027-03-27",
+    "point": [
+      8.505393,
+      49.003793
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-20T22:00:00Z"
+  },
+  {
     "id": "2026V3130",
     "phase": "active",
     "category": "sewer",
@@ -4858,6 +4918,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-16T22:00:00Z"
+  },
+  {
+    "id": "2026V3205",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Vogelsang",
+    "notes": "Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-07",
+    "endDate": "2027-12-31",
+    "point": [
+      8.498679,
+      48.998834
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-20T22:00:00Z"
   },
   {
     "id": "2026V3250",
@@ -5678,26 +5758,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-18T22:00:00Z"
-  },
-  {
-    "id": "2026V3933",
-    "phase": "upcoming",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Verbindung zw. Rußweg u.Mastweidenweg (Bahnübergänge)",
-    "notes": "Geh- und Radweg gesperrt",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-18",
-    "endDate": "2027-04-02",
-    "point": [
-      8.439837,
-      49.000425
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-08T22:00:00Z"
   },
   {
     "id": "2026V3976",
@@ -6717,7 +6777,7 @@
       49.00578
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-27T22:00:00Z"
+    "lastModified": "2026-08-20T22:00:00Z"
   },
   {
     "id": "2026V4704",
@@ -7200,6 +7260,26 @@
     "lastModified": "2026-08-04T22:00:00Z"
   },
   {
+    "id": "2026V4894",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Verbindung zw. Rußweg u.Mastweidenweg (Bahnübergänge)",
+    "notes": "Geh- und Radweg gesperrt",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-18",
+    "endDate": "2027-04-02",
+    "point": [
+      8.436544,
+      48.99953
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-20T22:00:00Z"
+  },
+  {
     "id": "2026V4898",
     "phase": "active",
     "category": "bridge",
@@ -7520,6 +7600,26 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
+    "id": "2026V5020",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-04",
+    "point": [
+      8.374436,
+      49.044917
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-20T22:00:00Z"
+  },
+  {
     "id": "2026V5057",
     "phase": "active",
     "category": "crane",
@@ -7577,7 +7677,7 @@
       49.00584
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
+    "lastModified": "2026-08-20T22:00:00Z"
   },
   {
     "id": "2026V5101",
@@ -7618,6 +7718,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-13T22:00:00Z"
+  },
+  {
+    "id": "2026V5152",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Koyweg zw. Hinterwiesenweg und Elfmorgenbruch",
+    "notes": null,
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2026-10-22",
+    "endDate": "2026-11-17",
+    "point": [
+      8.448665,
+      49.011279
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": ""
+  },
+  {
+    "id": "2026V5154",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße",
+    "notes": null,
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2026-10-22",
+    "endDate": "2026-11-17",
+    "point": [
+      8.450468,
+      49.015278
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": ""
   },
   {
     "id": "2026V5159",
@@ -7713,8 +7853,8 @@
     "startDate": "2026-08-24",
     "endDate": "2026-08-28",
     "point": [
-      8.404417,
-      49.013964
+      8.387003,
+      49.014673
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-18T22:00:00Z"
@@ -7878,6 +8018,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-19T22:00:00Z"
+  },
+  {
+    "id": "2026V5314",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "B10 zwischen Honsellstraße und Rheinbrücke",
+    "notes": "beidseitig Mäharbeiten der Seitenstreifen",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-08-25",
+    "endDate": "2026-08-25",
+    "point": [
+      8.331811,
+      49.029637
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-20T22:00:00Z"
+  },
+  {
+    "id": "2026V5315",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "B10 zwischen Honsellstraße und Rheinbrücke",
+    "notes": "beidseitig Mäharbeiten des Mittelstreifens",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-08-27",
+    "endDate": "2026-08-28",
+    "point": [
+      8.332068,
+      49.029321
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": ""
   },
   {
     "id": "30032",
@@ -8298,6 +8478,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-14T05:39:13Z"
+  },
+  {
+    "id": "30187",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Turmbergweg 10-12",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Privat",
+    "startDate": "2026-08-21",
+    "endDate": "2026-09-04",
+    "point": [
+      8.595434,
+      49.116171
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-14T05:45:31Z"
   },
   {
     "id": "30188",
