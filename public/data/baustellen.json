@@ -180,46 +180,6 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
-    "id": "2023V0446",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Georg-Friedrich-Straße, Ludwig-Wilhelm-Straße, Gerwigstraße",
-    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-30",
-    "endDate": "2026-08-20",
-    "point": [
-      8.423521,
-      49.010105
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
-  },
-  {
-    "id": "2023V0606",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße",
-    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-29",
-    "endDate": "2026-08-20",
-    "point": [
-      8.419127,
-      49.009905
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
-  },
-  {
     "id": "2023V0848",
     "phase": "active",
     "category": "power-telecom",
@@ -2021,7 +1981,7 @@
   },
   {
     "id": "2025V6907",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -3655,26 +3615,6 @@
     "point": [
       8.459091,
       48.989149
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
-  },
-  {
-    "id": "2026V1176",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Parkstraße zw. Pastor-Felke-Straße und Kornblumenstraße",
-    "notes": "1-streifige Verkehrsführung, zwei Bauabschnitte",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-18",
-    "endDate": "2026-08-20",
-    "point": [
-      8.422632,
-      49.014037
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-19T22:00:00Z"
@@ -5860,26 +5800,6 @@
     "lastModified": "2026-06-23T22:00:00Z"
   },
   {
-    "id": "2026V4047",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Roggenbachstraße zw. Moltkestraße und Grenadierstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-20",
-    "endDate": "2026-08-20",
-    "point": [
-      8.383929,
-      49.015324
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-25T22:00:00Z"
-  },
-  {
     "id": "2026V4073",
     "phase": "active",
     "category": "special-use",
@@ -6481,7 +6401,7 @@
   },
   {
     "id": "2026V4479",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -6718,26 +6638,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-23T22:00:00Z"
-  },
-  {
-    "id": "2026V4636",
-    "phase": "active",
-    "category": "other",
-    "artRaw": "Bauwerksprüfung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Raffineriestraße, Brücke über die B 10 Südtangente",
-    "notes": null,
-    "cause": "Land Baden - Württemberg",
-    "startDate": "2026-08-20",
-    "endDate": "2026-08-20",
-    "point": [
-      8.319701,
-      49.037297
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": ""
   },
   {
     "id": "2026V4645",
@@ -7621,7 +7521,7 @@
   },
   {
     "id": "2026V5057",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
