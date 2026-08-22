@@ -1980,26 +1980,6 @@
     "lastModified": "2025-11-27T23:00:00Z"
   },
   {
-    "id": "2025V6906",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße",
-    "notes": "Entfall von Richtungsfahrstreifen in beiden Fahrtrichtungen mit Überleitung auf die Gegenfahrbahn, Sperrung Reinhold-Frank-Straße in südlicher Richtung",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-08-21",
-    "point": [
-      8.386958,
-      49.005939
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
     "id": "2025V6907",
     "phase": "active",
     "category": "gas-water",
@@ -5181,7 +5161,7 @@
   },
   {
     "id": "2026V3528",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "full",
@@ -5201,7 +5181,7 @@
   },
   {
     "id": "2026V3529",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "obstruction",
@@ -6000,26 +5980,6 @@
     "lastModified": "2026-08-04T22:00:00Z"
   },
   {
-    "id": "2026V4236",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hohleichweg 35",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-18",
-    "endDate": "2026-08-21",
-    "point": [
-      8.318993,
-      49.010822
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-08T22:00:00Z"
-  },
-  {
     "id": "2026V4250",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -6438,26 +6398,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-12T22:00:00Z"
-  },
-  {
-    "id": "2026V4457",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Lange Straße zw. Allmendstraße u. Lützowstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-10",
-    "endDate": "2026-08-21",
-    "point": [
-      8.399326,
-      48.967654
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
   },
   {
     "id": "2026V4479",
@@ -6980,26 +6920,6 @@
     "lastModified": "2026-07-30T22:00:00Z"
   },
   {
-    "id": "2026V4804",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Ernst-Friedrich-Straße und Palmaienstraße",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-03",
-    "endDate": "2026-08-21",
-    "point": [
-      8.466229,
-      48.999343
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
     "id": "2026V4843",
     "phase": "active",
     "category": "bridge",
@@ -7298,26 +7218,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-04T22:00:00Z"
-  },
-  {
-    "id": "2026V4900",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Tiefentalstraße - Straße des Roten Kreuzes - Rehbuckel",
-    "notes": "Lokale Engstellen",
-    "cause": "Forstamt",
-    "startDate": "2026-08-17",
-    "endDate": "2026-08-21",
-    "point": [
-      8.471498,
-      48.9755
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2026V4904",
@@ -8300,26 +8200,6 @@
     "lastModified": "2026-08-04T06:40:56Z"
   },
   {
-    "id": "30078",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Friedrich-Ebert-Straße 6",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
-    "startDate": "2026-08-17",
-    "endDate": "2026-08-21",
-    "point": [
-      8.310716,
-      48.972061
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-08-04T07:07:40Z"
-  },
-  {
     "id": "30082",
     "phase": "active",
     "category": "district-heating",
@@ -8698,26 +8578,6 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2025-02-28T08:32:55Z"
-  },
-  {
-    "id": "40020",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Daxlander Straße/ Alter Federbach",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-03-02",
-    "endDate": "2026-08-21",
-    "point": [
-      8.308626,
-      48.980409
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-03-12T15:31:58Z"
   },
   {
     "id": "40031",
@@ -9460,26 +9320,6 @@
     "lastModified": "2026-07-06T07:36:48Z"
   },
   {
-    "id": "40117",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Hagelkreuz 19",
-    "notes": "Kranstellung. Durchfahrt für LKW nicht möglich.",
-    "cause": "Privat",
-    "startDate": "2026-07-15",
-    "endDate": "2026-08-21",
-    "point": [
-      8.592692,
-      49.117932
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-06-20T07:58:22Z"
-  },
-  {
     "id": "40126",
     "phase": "active",
     "category": "special-use",
@@ -9518,26 +9358,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-07-10T09:04:20Z"
-  },
-  {
-    "id": "40128",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Adolf-Bieringer-Straße 30 b",
-    "notes": "Fahrbahn verengt, Gehweg gesperrt mit Umleitung des Fußgängerverkehrs über Scheelkopf, Amselweg, Schwalbenweg, Holzmann, Alter Unteröwisheimer Weg aus beiden Richtungen",
-    "cause": "Privat",
-    "startDate": "2026-07-24",
-    "endDate": "2026-08-21",
-    "point": [
-      8.609163,
-      49.126459
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-07-13T05:59:16Z"
   },
   {
     "id": "40132",
@@ -9680,26 +9500,6 @@
     "lastModified": "2026-08-04T11:12:46Z"
   },
   {
-    "id": "40152",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Wettgasse 15",
-    "notes": "Fahrbahn verengt.",
-    "cause": "Privat",
-    "startDate": "2026-08-11",
-    "endDate": "2026-08-21",
-    "point": [
-      8.647301,
-      49.100773
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-11T09:06:53Z"
-  },
-  {
     "id": "40154",
     "phase": "active",
     "category": "special-use",
@@ -9718,26 +9518,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-13T09:02:17Z"
-  },
-  {
-    "id": "40155",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kornblumenweg 27",
-    "notes": "Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.",
-    "cause": "Privat",
-    "startDate": "2026-08-19",
-    "endDate": "2026-08-21",
-    "point": [
-      8.52477,
-      49.101191
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-19T08:19:44Z"
   },
   {
     "id": "40172",
@@ -9818,26 +9598,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-07-08T11:51:53Z"
-  },
-  {
-    "id": "40289",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Schillerstraße 1-17 Fahrtrichtung Lauerturmkreisel und Pforzheimer Straße 1-2",
-    "notes": "Die Schillerstraße wird von der Badener-Tor -Straße bis zur Pforzheimer Straße ( Fahrtrichtung Lauerturmkreisel) und in der Pforzheimer Straße 1-2 (Ausfahrt Kreisverkehr Dauer caa 3-4 Tage) für eine Asphaltsanierung voll gesperrt. Eine örtliche Umleitung für den Verkehr ist eingerichtet eingerichtet. Die Arbeiten finden Abschnittsweise statt. Die Zufahrt zur SparkassenTierfgarage am Erwin-Vetter -Platz ist jederzeit möglich.\nDie Fahrpläne des ÖPNV werden angepasst und die Linien entsprechend umgeleitet. Wir bitten alle Verkehrsteilnehmer um Verständnis und Beachtung der Beschilderung.",
-    "cause": "Tiefbauamt Ettlingen",
-    "startDate": "2026-08-03",
-    "endDate": "2026-08-21",
-    "point": [
-      8.4067,
-      48.94246
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-07-20T13:32:03Z"
   },
   {
     "id": "40292",
