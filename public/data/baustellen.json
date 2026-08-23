@@ -1120,26 +1120,6 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
-    "id": "2025V1500",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Raiherwiesenstraße, Blotterstraße, Auer Straße, Karlsruher Allee, Schinnrainstraße, Christofstraße",
-    "notes": "Arbeitsstellen im Geh- und Radwegbereich, Ausführung in mehreren Abschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-27",
-    "endDate": "2026-08-22",
-    "point": [
-      8.461612,
-      48.999698
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-22T22:00:00Z"
-  },
-  {
     "id": "2025V1542",
     "phase": "active",
     "category": "special-use",
@@ -5160,46 +5140,6 @@
     "lastModified": "2026-06-01T22:00:00Z"
   },
   {
-    "id": "2026V3528",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente",
-    "notes": "Fahrtrichtung Durlach = gesperrt, vs 1 Samstag in den Ferien, Termin noch nicht fest",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-22",
-    "endDate": "2026-08-22",
-    "point": [
-      8.357411,
-      49.008756
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-21T22:00:00Z"
-  },
-  {
-    "id": "2026V3529",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B10/ Südtangente zw. AS7 und AS6",
-    "notes": "Fahrtrichtung Durlach, 1-streifige Verkehrsführung auf der B10/ Südtangente und zum Kühlen Krug, vs. 1 Samstag in den Ferien",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-22",
-    "endDate": "2026-08-22",
-    "point": [
-      8.363759,
-      49.00601
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-21T22:00:00Z"
-  },
-  {
     "id": "2026V3546",
     "phase": "upcoming",
     "category": "sewer",
@@ -5518,26 +5458,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-19T22:00:00Z"
-  },
-  {
-    "id": "2026V3689",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Johann-Strauß-Straße zw. Parkplatz Lorzingstraße/ Milliöeckerstraße und Durlacher Allee",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-10",
-    "endDate": "2026-08-22",
-    "point": [
-      8.455071,
-      49.001555
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-21T22:00:00Z"
   },
   {
     "id": "2026V3707",
@@ -6600,26 +6520,6 @@
     "lastModified": "2026-07-22T22:00:00Z"
   },
   {
-    "id": "2026V4615",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-29",
-    "endDate": "2026-08-22",
-    "point": [
-      8.391674,
-      49.009604
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-23T22:00:00Z"
-  },
-  {
     "id": "2026V4632",
     "phase": "active",
     "category": "special-use",
@@ -7520,26 +7420,6 @@
     "lastModified": "2026-08-20T22:00:00Z"
   },
   {
-    "id": "2026V5057",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Sonntagstraße zw. Mathystraße und Jollystraße und Mathystraße zw. Sonntagstraße und Karlstraße",
-    "notes": "temporäre Sperrung für alle Verkehrsteilnehmer während Montagevorgang, Sperrung wechselseitig",
-    "cause": "Privat",
-    "startDate": "2026-08-21",
-    "endDate": "2026-08-22",
-    "point": [
-      8.39216,
-      49.002571
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
-  },
-  {
     "id": "2026V5080",
     "phase": "upcoming",
     "category": "special-use",
@@ -7578,26 +7458,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-20T22:00:00Z"
-  },
-  {
-    "id": "2026V5101",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rittnertstraße zw. Fechtstraße und Nonnebühl",
-    "notes": "signalisierte 1-streifige Verkehrsführung, Beseitigung Sturmschaden",
-    "cause": "Privat",
-    "startDate": "2026-08-20",
-    "endDate": "2026-08-22",
-    "point": [
-      8.478925,
-      48.99581
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
   },
   {
     "id": "2026V5149",
