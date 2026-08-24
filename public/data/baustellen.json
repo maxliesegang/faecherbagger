@@ -621,7 +621,7 @@
   },
   {
     "id": "2024V5789",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -1241,7 +1241,7 @@
   },
   {
     "id": "2025V3727",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -3221,7 +3221,7 @@
   },
   {
     "id": "2026V0743",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "demolition",
     "artRaw": "Abbruch/Rückbau",
     "closure": "full",
@@ -4721,7 +4721,7 @@
   },
   {
     "id": "2026V3028",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -5141,7 +5141,7 @@
   },
   {
     "id": "2026V3546",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -5321,7 +5321,7 @@
   },
   {
     "id": "2026V3574",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "bridge",
     "artRaw": "Brückenbau",
     "closure": "obstruction",
@@ -5801,7 +5801,7 @@
   },
   {
     "id": "2026V4141",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -6101,7 +6101,7 @@
   },
   {
     "id": "2026V4340",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "one-direction",
@@ -6218,26 +6218,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-09T22:00:00Z"
-  },
-  {
-    "id": "2026V4348",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Kösliner Straße und Lauenburger Straße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-07-30",
-    "endDate": "2026-08-23",
-    "point": [
-      8.445379,
-      49.035072
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
   },
   {
     "id": "2026V4385",
@@ -6601,7 +6581,7 @@
   },
   {
     "id": "2026V4698",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "full",
@@ -6661,7 +6641,7 @@
   },
   {
     "id": "2026V4711",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -7541,7 +7521,7 @@
   },
   {
     "id": "2026V5166",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7601,7 +7581,7 @@
   },
   {
     "id": "2026V5212",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -8258,6 +8238,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-14T06:10:01Z"
+  },
+  {
+    "id": "30189",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Im Jonas 31",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Fachgebiet Tiefbau",
+    "startDate": "2026-08-24",
+    "endDate": "2026-09-12",
+    "point": [
+      8.645184,
+      49.088478
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-14T06:46:40Z"
   },
   {
     "id": "30191",
@@ -9278,6 +9278,26 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-04-09T09:34:51Z"
+  },
+  {
+    "id": "40142",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Heidelberger Straße 4",
+    "notes": "Geh- und Radweg gesperrt, Umleitung ist ausgeschildert",
+    "cause": "Privat",
+    "startDate": "2026-08-24",
+    "endDate": "2026-09-14",
+    "point": [
+      8.602438,
+      49.132916
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-28T08:46:02Z"
   },
   {
     "id": "40143",

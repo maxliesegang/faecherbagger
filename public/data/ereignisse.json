@@ -1,187 +1,145 @@
 {
-  "generatedAt": "2026-08-23T16:10:07.101Z",
+  "generatedAt": "2026-08-24T04:37:38.838Z",
   "events": [
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2022V6173:2026-08-30",
-      "siteId": "2022V6173",
+      "kind": "new",
+      "signature": "new:30189",
+      "siteId": "30189",
       "point": [
-        8.42701,
-        49.008832
+        8.645184,
+        49.088478
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-24",
+      "endDate": "2026-09-12",
+      "municipality": "Bruchsal",
+      "location": "Im Jonas 31"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40142",
+      "siteId": "40142",
+      "point": [
+        8.602438,
+        49.132916
       ],
       "closure": "none",
-      "startDate": "2026-08-30",
-      "endDate": "2026-10-17",
-      "municipality": "Karlsruhe",
-      "location": "Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße"
+      "startDate": "2026-08-24",
+      "endDate": "2026-09-14",
+      "municipality": "Bruchsal",
+      "location": "Heidelberger Straße 4"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2024V5789:2026-08-24",
-      "siteId": "2024V5789",
+      "signature": "starts-soon:2025V5289:2026-08-31",
+      "siteId": "2025V5289",
       "point": [
-        8.386921,
-        49.004906
+        8.39056,
+        48.999133
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2026-10-11",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-25",
       "municipality": "Karlsruhe",
-      "location": "Brauerstraße zw. Putlitzstraße u. Kriegstraße"
+      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2025V3727:2026-08-24",
-      "siteId": "2025V3727",
+      "signature": "starts-soon:2026V0071:2026-08-31",
+      "siteId": "2026V0071",
       "point": [
-        8.421184,
-        49.006476
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2026-09-06",
-      "municipality": "Karlsruhe",
-      "location": "Gottesauer Straße/ Wolfartsweierer Straße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V0743:2026-08-24",
-      "siteId": "2026V0743",
-      "point": [
-        8.482252,
-        48.997634
-      ],
-      "closure": "full",
-      "startDate": "2026-08-24",
-      "endDate": "2026-10-02",
-      "municipality": "Karlsruhe",
-      "location": "Wolfweg zw. Turmbergstraße und Blankenhornweg"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V3028:2026-08-24",
-      "siteId": "2026V3028",
-      "point": [
-        8.506198,
-        49.003911
-      ],
-      "closure": "full",
-      "startDate": "2026-08-24",
-      "endDate": "2026-10-01",
-      "municipality": "Karlsruhe",
-      "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V3546:2026-08-24",
-      "siteId": "2026V3546",
-      "point": [
-        8.401566,
-        49.010148
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2026-09-04",
-      "municipality": "Karlsruhe",
-      "location": "Ritterstraße zw. Am Schlossplatz und Bankhof"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V3574:2026-08-24",
-      "siteId": "2026V3574",
-      "point": [
-        8.395027,
-        49.06406
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2027-03-31",
-      "municipality": "Karlsruhe",
-      "location": "L605 zw. Linkenheimer Landstraße und B36"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4141:2026-08-24",
-      "siteId": "2026V4141",
-      "point": [
-        8.462193,
-        49.000457
-      ],
-      "closure": "full",
-      "startDate": "2026-08-24",
-      "endDate": "2026-08-27",
-      "municipality": "Karlsruhe",
-      "location": "Karlsruher Allee zw. Auer Straße und Blotter Straße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4340:2026-08-24",
-      "siteId": "2026V4340",
-      "point": [
-        8.445017,
-        49.034845
+        8.406972,
+        49.008799
       ],
       "closure": "one-direction",
-      "startDate": "2026-08-24",
+      "startDate": "2026-08-31",
       "endDate": "2026-09-08",
       "municipality": "Karlsruhe",
-      "location": "Glogauer Straße zw. Beuthener Straße und Kösliner Straße"
+      "location": "Zähringerstraße zw. Kreuzsstraße und Adlerstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V4698:2026-08-24",
-      "siteId": "2026V4698",
+      "signature": "starts-soon:2026V2134:2026-08-31",
+      "siteId": "2026V2134",
       "point": [
-        8.341685,
-        49.00578
+        8.372314,
+        49.003561
       ],
       "closure": "full",
-      "startDate": "2026-08-24",
-      "endDate": "2026-08-24",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-12",
       "municipality": "Karlsruhe",
-      "location": "Kornweg zw. Silcher Straße und Alb"
+      "location": "Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V4711:2026-08-24",
-      "siteId": "2026V4711",
+      "signature": "starts-soon:2026V3176:2026-08-25",
+      "siteId": "2026V3176",
       "point": [
-        8.417187,
-        48.999266
+        8.392025,
+        49.003401
       ],
-      "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2026-09-09",
+      "closure": "full",
+      "startDate": "2026-08-25",
+      "endDate": "2026-08-25",
       "municipality": "Karlsruhe",
-      "location": "Stuttgarter Straße zw. Luisenstraße und Sybelstraße"
+      "location": "Friedensstraße zw. Mathystraße und Gartenstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V5166:2026-08-24",
-      "siteId": "2026V5166",
+      "signature": "starts-soon:2026V3654:2026-08-25",
+      "siteId": "2026V3654",
       "point": [
-        8.462427,
-        48.993623
+        8.395979,
+        49.064597
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2026-09-11",
+      "startDate": "2026-08-25",
+      "endDate": "2026-12-15",
       "municipality": "Karlsruhe",
-      "location": "Auer Straße zw. Grenzstraße und Blattwiesenstraße"
+      "location": "Verbindungsbrücke zw. B 36 von Eggenstein kommend Richtung Linkenheimer Landstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V5212:2026-08-24",
-      "siteId": "2026V5212",
+      "signature": "starts-soon:2026V5080:2026-08-25",
+      "siteId": "2026V5080",
       "point": [
-        8.387003,
-        49.014673
+        8.392006,
+        49.003409
+      ],
+      "closure": "full",
+      "startDate": "2026-08-25",
+      "endDate": "2026-08-25",
+      "municipality": "Karlsruhe",
+      "location": "Friedenstraße zw. Mathystraße und Gartenstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5239:2026-08-31",
+      "siteId": "2026V5239",
+      "point": [
+        8.451618,
+        49.011574
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2026-08-28",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-04",
       "municipality": "Karlsruhe",
-      "location": "Adenauerring, Moltkestraße, Reinhold-Frank-Straße"
+      "location": "Elfmorgenbruch zw. Am Großmarkt und B10"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5314:2026-08-25",
+      "siteId": "2026V5314",
+      "point": [
+        8.331811,
+        49.029637
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-25",
+      "endDate": "2026-08-25",
+      "municipality": "Karlsruhe",
+      "location": "B10 zwischen Honsellstraße und Rheinbrücke"
     }
   ]
 }
