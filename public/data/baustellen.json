@@ -1608,16 +1608,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Ruschgraben, Karlsruher Str., Hagdornstr.",
-    "notes": "lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
+    "notes": "lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Nothgehweg auf der Fahbahn",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-04",
-    "endDate": "2026-09-07",
+    "startDate": "2026-08-24",
+    "endDate": "2026-09-30",
     "point": [
       8.454898,
       49.026707
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2025V6065",
@@ -2170,14 +2170,14 @@
     "location": "Ellmendinger Straße im Einmündungsbereich zur Lissenstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-01",
+    "startDate": "2026-08-31",
     "endDate": "2027-04-18",
     "point": [
       8.454504,
       48.99531
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-25T23:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2025V7017",
@@ -3020,6 +3020,26 @@
     "lastModified": "2026-01-19T23:00:00Z"
   },
   {
+    "id": "2026V0367",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-21",
+    "point": [
+      8.448085,
+      49.025375
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
     "id": "2026V0385",
     "phase": "upcoming",
     "category": "road-construction",
@@ -3091,13 +3111,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-03-02",
-    "endDate": "2026-08-28",
+    "endDate": "2026-10-02",
     "point": [
       8.374221,
       49.009587
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-21T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V0658",
@@ -4160,26 +4180,6 @@
     "lastModified": "2026-07-08T22:00:00Z"
   },
   {
-    "id": "2026V2013",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Johann-Strauß-Straße zw. Josef-Kraus-Straße und Dornwaldstraße",
-    "notes": "Restarbeiten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-27",
-    "endDate": "2026-09-09",
-    "point": [
-      8.455063,
-      49.001538
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-09T22:00:00Z"
-  },
-  {
     "id": "2026V2134",
     "phase": "upcoming",
     "category": "district-heating",
@@ -4218,26 +4218,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-04-28T22:00:00Z"
-  },
-  {
-    "id": "2026V2184",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wickinger Straße zww. VBK Betriebshof und Honsellstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-04",
-    "endDate": "2026-12-31",
-    "point": [
-      8.342438,
-      49.019945
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-08T22:00:00Z"
   },
   {
     "id": "2026V2274",
@@ -5010,14 +4990,14 @@
     "location": "Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-08",
-    "endDate": "2026-10-10",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-30",
     "point": [
       8.397039,
       49.050575
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V3415",
@@ -5031,13 +5011,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-06",
-    "endDate": "2026-08-31",
+    "endDate": "2026-08-30",
     "point": [
       8.398291,
       49.050606
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V3416",
@@ -5050,14 +5030,14 @@
     "location": "Donauschwabenstrße zw. Föhrenweg und Kiefernweg",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-12",
+    "startDate": "2026-10-01",
     "endDate": "2026-10-17",
     "point": [
       8.396676,
       49.050553
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V3478",
@@ -5791,13 +5771,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-07-15",
-    "endDate": "2026-08-28",
+    "endDate": "2026-09-30",
     "point": [
       8.413283,
       49.011928
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-06T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V4141",
@@ -6070,14 +6050,14 @@
     "location": "Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-01",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-25",
     "point": [
       8.448186,
       49.025863
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-09T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V4339",
@@ -6090,18 +6070,18 @@
     "location": "Glogauer Straße zw. Beuthener Straße und Lauenburger Straße",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-09-26",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-20",
     "point": [
       8.445578,
       49.035207
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-29T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V4340",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "one-direction",
@@ -6110,34 +6090,34 @@
     "location": "Glogauer Straße zw. Beuthener Straße und Kösliner Straße",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-24",
-    "endDate": "2026-09-08",
+    "startDate": "2026-09-09",
+    "endDate": "2026-10-25",
     "point": [
       8.445017,
       49.034845
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V4341",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
-    "closure": "one-direction",
+    "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
-    "notes": "Bahnübergänge Lötzener Straße und Neisser Straße im Bauablauf wechselweise je eine Woche gesperrt",
+    "location": "Neisser Straße zw. Glogauer Straße und Schneidemühler Straße",
+    "notes": "Bahnübergange Neisser Straße gesperrt",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-28",
-    "endDate": "2026-10-18",
+    "startDate": "2026-08-24",
+    "endDate": "2026-09-08",
     "point": [
-      8.445087,
-      49.034905
+      8.444003,
+      49.033887
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-09T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V4344",
@@ -6150,14 +6130,14 @@
     "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-10-19",
+    "startDate": "2026-10-24",
     "endDate": "2026-11-01",
     "point": [
       8.445058,
       49.034882
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-09T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V4345",
@@ -6420,6 +6400,26 @@
     "lastModified": "2026-07-21T22:00:00Z"
   },
   {
+    "id": "2026V4548",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Moosalbstraße zw. Frauenalber Straße und Spessarter Straße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-12",
+    "point": [
+      8.399709,
+      48.96578
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
     "id": "2026V4551",
     "phase": "active",
     "category": "demolition",
@@ -6611,13 +6611,33 @@
     "notes": "Abwicklung in mehreren Abschnitten, Wohnwege parallel zum Gleis = gesperrt",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-07-30",
-    "endDate": "2026-11-15",
+    "endDate": "2026-10-31",
     "point": [
       8.44756,
       49.029746
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-27T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
+    "id": "2026V4705",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-07-30",
+    "endDate": "2026-09-27",
+    "point": [
+      8.441961,
+      49.030897
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V4706",
@@ -7588,7 +7608,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Adenauerring, Moltkestraße, Reinhold-Frank-Straße",
-    "notes": "Signaltechnische Arbeiten im Kreuzungsbereich, signalanlage deaktiviert, 1-streifige Verkehrsführung in allen Fahrtrichtungen",
+    "notes": "Signaltechnische Arbeiten im Kreuzungsbereich, Signalanlage deaktiviert, 1-streifige Verkehrsführung in allen Fahrtrichtungen",
     "cause": "Tiefbauamt",
     "startDate": "2026-08-24",
     "endDate": "2026-08-28",
@@ -7597,7 +7617,7 @@
       49.014673
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-18T22:00:00Z"
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V5224",
@@ -7638,6 +7658,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-18T22:00:00Z"
+  },
+  {
+    "id": "2026V5229",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Adenauerring zw. Engesserstraße und Am Fasanenplatz",
+    "notes": "Aufteilung nicht vorgenommen",
+    "cause": "Vermögen und Bau",
+    "startDate": "2026-11-02",
+    "endDate": "2027-04-03",
+    "point": [
+      8.418114,
+      49.012217
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V5239",
@@ -7797,7 +7837,127 @@
       49.029321
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": ""
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
+    "id": "2026V5327",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Glogauer Straße zw. Königsberger Straße und Im Eichbäumle",
+    "notes": "Erneuerung Bahnübergang, halbseitige Sperrung mit wechselnder Verkehrsführung, KfZ nur in Fahrtrichtung Süden möglich",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-11",
+    "point": [
+      8.441634,
+      49.031301
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
+    "id": "2026V5328",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Glogauer Straße zw. Königsberger Straße und Neisser Straße",
+    "notes": "Haltestellenumbau, halbseitige Sperrung, KfZ nur in Fahrtrichtung Süden möglich",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-10-24",
+    "endDate": "2026-11-21",
+    "point": [
+      8.44215,
+      49.032055
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
+    "id": "2026V5329",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Haltestellenumbau, Vollsperrung",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-12-07",
+    "endDate": "2026-12-20",
+    "point": [
+      8.442337,
+      49.03205
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
+    "id": "2026V5330",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Glogauer Straße zw. Lauenburger Straße und Kolberger Straße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-21",
+    "endDate": "2026-10-11",
+    "point": [
+      8.448,
+      49.037784
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
+    "id": "2026V5335",
+    "phase": "upcoming",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "K9657/ Südtangente Höhe Kühler Krug zw. AS 5 und AS 7",
+    "notes": "1-streifige Verkehrsführung in Fahrtrichtung Landau",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-08-25",
+    "endDate": "2026-08-25",
+    "point": [
+      8.366024,
+      49.004674
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
+  },
+  {
+    "id": "2026V5336",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Löätzener Straße zw. Glogauer Straße und Insterburger Straße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-21",
+    "endDate": "2026-10-04",
+    "point": [
+      8.446588,
+      49.036395
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "30032",
@@ -8280,6 +8440,26 @@
     "lastModified": "2026-08-19T08:26:29Z"
   },
   {
+    "id": "30195",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Liebigstraße 4",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Stadtwerke",
+    "startDate": "2026-08-24",
+    "endDate": "2026-08-31",
+    "point": [
+      8.592054,
+      49.115784
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-24T09:53:20Z"
+  },
+  {
     "id": "30236",
     "phase": "active",
     "category": "bridge",
@@ -8382,22 +8562,22 @@
   {
     "id": "40013",
     "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
     "siteType": "stationary",
     "municipality": "Rheinstetten",
-    "location": "Messeallee Ecke Messering",
+    "location": "Siegelgrundstraße 18",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2024-12-01",
-    "endDate": "2026-12-31",
+    "startDate": "2026-03-02",
+    "endDate": "2026-10-31",
     "point": [
       8.320098,
       48.971361
     ],
     "source": "Stadt Rheinstetten",
-    "lastModified": "2025-03-27T14:25:12Z"
+    "lastModified": "2026-02-23T15:49:54Z"
   },
   {
     "id": "40014",
