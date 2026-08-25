@@ -1,47 +1,145 @@
 {
-  "generatedAt": "2026-08-25T04:32:26.366Z",
+  "generatedAt": "2026-08-25T16:22:14.937Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:40013:2025-03-27T14:25:12Z",
-      "siteId": "40013",
+      "signature": "changed:2025V7303:2026-08-24T22:00:00Z",
+      "siteId": "2025V7303",
       "point": [
-        8.320098,
-        48.971361
+        8.406898,
+        49.009095
       ],
-      "closure": "obstruction",
-      "startDate": "2024-12-01",
-      "endDate": "2026-12-31",
-      "municipality": "Rheinstetten",
-      "location": "Messeallee Ecke Messering"
+      "closure": "full",
+      "startDate": "2026-01-12",
+      "endDate": "2026-10-01",
+      "municipality": "Karlsruhe",
+      "location": "Adlerstraße zw. Zähringerstraße u. Kaiserstraße"
     },
     {
-      "kind": "new",
-      "signature": "new:40129",
-      "siteId": "40129",
+      "kind": "changed",
+      "signature": "changed:2026V0071:2026-08-24T22:00:00Z",
+      "siteId": "2026V0071",
       "point": [
-        8.576211,
-        49.122683
+        8.406972,
+        49.008799
       ],
       "closure": "one-direction",
-      "startDate": "2026-08-25",
-      "endDate": "2026-08-27",
-      "municipality": "Bruchsal",
-      "location": "Kreisel Fritz-Erler-Straße vor SEW"
+      "startDate": "2027-03-15",
+      "endDate": "2027-04-17",
+      "municipality": "Karlsruhe",
+      "location": "Zähringerstraße zw. Kreuzsstraße und Adlerstraße"
     },
     {
-      "kind": "new",
-      "signature": "new:40158",
-      "siteId": "40158",
+      "kind": "changed",
+      "signature": "changed:2026V0255:2026-08-24T22:00:00Z",
+      "siteId": "2026V0255",
       "point": [
-        8.610258,
-        49.120698
+        8.474964,
+        48.9993
+      ],
+      "closure": "full",
+      "startDate": "2026-09-07",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V2134:2026-08-24T22:00:00Z",
+      "siteId": "2026V2134",
+      "point": [
+        8.372314,
+        49.003561
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-10",
+      "municipality": "Karlsruhe",
+      "location": "Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4874:2026-08-24T22:00:00Z",
+      "siteId": "2026V4874",
+      "point": [
+        8.374996,
+        49.01083
       ],
       "closure": "obstruction",
       "startDate": "2026-08-25",
-      "endDate": "2026-10-24",
-      "municipality": "Bruchsal",
-      "location": "Wiesenstraße 28"
+      "endDate": "2026-09-30",
+      "municipality": "Karlsruhe",
+      "location": "Kaiserallee zw. Yorckstraße u. Uhlandstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5099:2026-08-24T22:00:00Z",
+      "siteId": "2026V5099",
+      "point": [
+        8.415077,
+        49.00584
+      ],
+      "closure": "none",
+      "startDate": "2026-08-25",
+      "endDate": "2026-12-11",
+      "municipality": "Karlsruhe",
+      "location": "Ludwig-Erhard-Allee 3"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V1312",
+      "siteId": "2026V1312",
+      "point": [
+        8.371913,
+        49.003395
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-22",
+      "endDate": "2026-08-26",
+      "municipality": "Karlsruhe",
+      "location": "Eisenlohrstraße zw. Hübschstraße und Weltzienstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V1313",
+      "siteId": "2026V1313",
+      "point": [
+        8.371219,
+        49.003548
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-20",
+      "endDate": "2026-09-04",
+      "municipality": "Karlsruhe",
+      "location": "Weltzienstraße zw. Kriegstraße und Gustav-Heller-Platz"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4246",
+      "siteId": "2026V4246",
+      "point": [
+        8.388868,
+        49.008769
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-07",
+      "endDate": "2026-12-07",
+      "municipality": "Karlsruhe",
+      "location": "Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5363",
+      "siteId": "2026V5363",
+      "point": [
+        8.406555,
+        49.009751
+      ],
+      "closure": "full",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-11",
+      "municipality": "Karlsruhe",
+      "location": "Adlerstraße zw. Kaiserstraße und Zirkel"
     },
     {
       "kind": "starts-soon",

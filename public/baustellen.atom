@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-25T04:32:26.366Z</updated>
+    <updated>2026-08-25T16:22:14.937Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -32,6 +32,121 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Adlerstraße zw. Zähringerstraße u. Kaiserstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V7303:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7303"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
+Zeitraum: 12.01.2026 – 01.10.2026
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Zähringerstraße zw. Kreuzsstraße und Adlerstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0071:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0071"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
+Zeitraum: 15.03.2027 – 17.04.2027
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Pfinztalstraße zw. Badener Straße u. Jägerstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0255:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0255"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gleisbau · Vollsperrung
+Zeitraum: 07.09.2026 – 20.11.2026
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Eisenlohrstraße zw. Hübschstraße und Weltzienstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1312:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1312"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 22.07.2026 – 26.08.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Weltzienstraße zw. Kriegstraße und Gustav-Heller-Platz – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1313:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1313"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 20.08.2026 – 04.09.2026
+Hinweis: Einbindung Fernwärmeleitung
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2134:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2134"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
+Zeitraum: 31.08.2026 – 10.10.2026
+Hinweis: Wender Höhe Haus Nr 39
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4246:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4246"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 07.09.2026 – 07.12.2026
+Hinweis: Höhe Haus Nr 6
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Kaiserallee zw. Yorckstraße u. Uhlandstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4874:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4874"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 25.08.2026 – 30.09.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Ludwig-Erhard-Allee 3 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5099:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5099"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Keine Behinderung
+Zeitraum: 25.08.2026 – 11.12.2026
+Verantwortlich: Hochbau und Gebäudewirtschaft
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Adlerstraße zw. Kaiserstraße und Zirkel – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5363:2026-08-24T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5363"/>
+        <updated>2026-08-24T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+Zeitraum: 31.08.2026 – 11.10.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Liebigstraße 4 – Bruchsal]]></title>
@@ -433,17 +548,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Ludwig-Erhard-Allee 3 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5099:2026-08-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5099"/>
-        <updated>2026-08-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Keine Behinderung
-Zeitraum: 17.08.2026 – 11.12.2026
-Verantwortlich: Hochbau und Gebäudewirtschaft
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: B10 zwischen Honsellstraße und Rheinbrücke – Karlsruhe]]></title>
         <id>faecherbagger:2026V5314:2026-08-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5314"/>
@@ -512,18 +616,6 @@ Zeitraum: 28.08.2026 – 11.09.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2134:2026-08-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2134"/>
-        <updated>2026-08-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
-Zeitraum: 31.08.2026 – 12.10.2026
-Hinweis: Wender Höhe Haus Nr 39
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Maximilianstraße zw. Weberstr. u. Stabelstr. – Karlsruhe]]></title>
@@ -1826,17 +1918,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Sonstiges" term="other"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Kaiserallee zw. Yorckstraße u. Uhlandstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4874:2026-08-03T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4874"/>
-        <updated>2026-08-03T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 17.08.2026 – 30.09.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Wolfweg zw. Turmbergstraße und Blankenhornweg – Karlsruhe]]></title>
         <id>faecherbagger:2026V0743:2026-08-02T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0743"/>
@@ -2378,18 +2459,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Adlerstraße zw. Zähringerstraße u. Kaiserstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V5075:2026-07-22T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5075"/>
-        <updated>2026-07-22T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 08.09.2026 – 18.10.2026
-Hinweis: Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Nowackanlage zw. Baumeisterstraße und Ettlinger Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3915:2026-07-22T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3915"/>
@@ -2478,29 +2547,6 @@ Quelle: Stadt Rheinstetten]]></summary>
         <summary type="html"><![CDATA[Geplant · Fernwärme · Mit Behinderung
 Zeitraum: 30.11.2026 – 26.03.2028
 Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Adlerstraße zw. Zähringerstraße u. Kaiserstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V7303:2026-07-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7303"/>
-        <updated>2026-07-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
-Zeitraum: 12.01.2026 – 28.08.2026
-Hinweis: Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Zähringerstraße zw. Kreuzsstraße und Adlerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0071:2026-07-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0071"/>
-        <updated>2026-07-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 31.08.2026 – 08.09.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
@@ -3837,17 +3883,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Uhlandstraße zw. Gorthestraße und Sophienstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6084:2026-05-25T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6084"/>
-        <updated>2026-05-25T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 21.07.2026 – 31.08.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Uhlandstraße Kreuzungsbereich Sophienstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V6085:2026-05-25T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6085"/>
@@ -4161,17 +4196,6 @@ Quelle: Stadt Karlsruhe]]></summary>
 Zeitraum: 29.05.2026 – 31.08.2026
 Verantwortlich: Telekommunikation
 Quelle: Stadt Rheinstetten]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Blumentorstraße, Pfinzstraße, Engelbert-Strobl. Str., Neuensteinstr – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2862:2026-05-04T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2862"/>
-        <updated>2026-05-04T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 28.04.2026 – 31.12.2026
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
@@ -5359,17 +5383,6 @@ Der Gehweg ist blockiert und die Fahrbahn veregt.
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Pfinztalstraße zw. Badener Straße u. Jägerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0255:2026-01-14T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0255"/>
-        <updated>2026-01-14T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gleisbau · Vollsperrung
-Zeitraum: 01.11.2026 – 22.11.2026
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Helmholtzstraße zw. Röntgenstraße und Grashofstraße – Karlsruhe]]></title>
