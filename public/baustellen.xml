@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Mon, 24 Aug 2026 16:20:54 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Aug 2026 04:32:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -42,6 +42,18 @@ Hinweis: Fahrbahn verengt.
 Verantwortlich: Stadtwerke
 Quelle: Stadt Bruchsal]]></description>
             <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Wiesenstraße 28 – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40158</link>
+            <guid isPermaLink="false">faecherbagger:40158:2026-08-24T05:42:04Z</guid>
+            <pubDate>Mon, 24 Aug 2026 05:42:04 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 25.08.2026 – 24.10.2026
+Hinweis: Fahrbahn verengt, Gehweg gesperrt.
+Verantwortlich: Privat
+Quelle: Stadt Bruchsal]]></description>
+            <category>Bauliche Sondernutzung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Ruschgraben, Karlsruher Str., Hagdornstr. – Karlsruhe]]></title>
@@ -305,11 +317,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: K9657/ Südtangente Höhe Kühler Krug zw. AS 5 und AS 7 – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: K9657/ Südtangente Höhe Kühler Krug zw. AS 5 und AS 7 – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5335</link>
             <guid isPermaLink="false">faecherbagger:2026V5335:2026-08-23T22:00:00Z</guid>
             <pubDate>Sun, 23 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Straßenunterhaltung · Mit Behinderung
+            <description><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
 Zeitraum: 25.08.2026 – 25.08.2026
 Hinweis: 1-streifige Verkehrsführung in Fahrtrichtung Landau
 Verantwortlich: Tiefbauamt
@@ -396,17 +408,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Kornweg zw. Silcher Straße und Alb – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4698</link>
-            <guid isPermaLink="false">faecherbagger:2026V4698:2026-08-20T22:00:00Z</guid>
-            <pubDate>Thu, 20 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Vollsperrung
-Zeitraum: 24.08.2026 – 24.08.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
             <title><![CDATA[Geplant: Verbindung zw. Rußweg u.Mastweidenweg (Bahnübergänge) – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4894</link>
             <guid isPermaLink="false">faecherbagger:2026V4894:2026-08-20T22:00:00Z</guid>
@@ -441,11 +442,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: B10 zwischen Honsellstraße und Rheinbrücke – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: B10 zwischen Honsellstraße und Rheinbrücke – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5314</link>
             <guid isPermaLink="false">faecherbagger:2026V5314:2026-08-20T22:00:00Z</guid>
             <pubDate>Thu, 20 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Grünpflege · Mit Behinderung
+            <description><![CDATA[Aktuell · Grünpflege · Mit Behinderung
 Zeitraum: 25.08.2026 – 25.08.2026
 Hinweis: beidseitig Mäharbeiten der Seitenstreifen
 Verantwortlich: Gartenbauamt
@@ -783,11 +784,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Friedensstraße zw. Mathystraße und Gartenstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Friedensstraße zw. Mathystraße und Gartenstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3176</link>
             <guid isPermaLink="false">faecherbagger:2026V3176:2026-08-17T22:00:00Z</guid>
             <pubDate>Mon, 17 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+            <description><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
 Zeitraum: 25.08.2026 – 25.08.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></description>
@@ -1180,11 +1181,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Abbruch/Rückbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Friedenstraße zw. Mathystraße und Gartenstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Friedenstraße zw. Mathystraße und Gartenstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5080</link>
             <guid isPermaLink="false">faecherbagger:2026V5080:2026-08-11T22:00:00Z</guid>
             <pubDate>Tue, 11 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
 Zeitraum: 25.08.2026 – 25.08.2026
 Hinweis: Höhe Haus Nr 20
 Verantwortlich: Privat
@@ -1519,17 +1520,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Gerwigstraße zw. Ostring und Käppelestraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4905</link>
-            <guid isPermaLink="false">faecherbagger:2026V4905:2026-08-05T22:00:00Z</guid>
-            <pubDate>Wed, 05 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Kanalbau · Mit Behinderung
-Zeitraum: 18.08.2026 – 24.08.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Kanalbau</category>
-        </item>
-        <item>
             <title><![CDATA[Geplant: Theodor-Heuss-Allee, Brücke über die L 560 Gustav-Heinemann-Allee – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4913</link>
             <guid isPermaLink="false">faecherbagger:2026V4913:2026-08-05T22:00:00Z</guid>
@@ -1648,11 +1638,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Verbindungsbrücke zw. B 36 von Eggenstein kommend Richtung Linkenheimer Landstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Verbindungsbrücke zw. B 36 von Eggenstein kommend Richtung Linkenheimer Landstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3654</link>
             <guid isPermaLink="false">faecherbagger:2026V3654:2026-08-04T22:00:00Z</guid>
             <pubDate>Tue, 04 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Brückenbau · Mit Behinderung
+            <description><![CDATA[Aktuell · Brückenbau · Mit Behinderung
 Zeitraum: 25.08.2026 – 15.12.2026
 Hinweis: 1-streifige Verkehrsführung
 Verantwortlich: Land Baden - Württemberg
@@ -1693,18 +1683,6 @@ Zeitraum: 05.10.2026 – 07.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></description>
             <category>Kraneinsatz</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: B 36 zw. AS Eggenstein und AS Neureut-Nord, Überführungsbauwerk im Zuge der Linkenheimer Landstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4898</link>
-            <guid isPermaLink="false">faecherbagger:2026V4898:2026-08-04T22:00:00Z</guid>
-            <pubDate>Tue, 04 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Brückenbau · Mit Behinderung
-Zeitraum: 20.08.2026 – 24.08.2026
-Hinweis: Entfall von Richtungsfahrstreifen auf der B 36 in beiden Fahrtrichtungen
-Verantwortlich: Land Baden - Württemberg
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Brückenbau</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Mühlstraße 3 – Bruchsal]]></title>
@@ -2106,17 +2084,6 @@ Zeitraum: 26.05.2026 – 09.09.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Kornblumenweg 12 – Bruchsal]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40145</link>
-            <guid isPermaLink="false">faecherbagger:40145:2026-07-29T10:51:04Z</guid>
-            <pubDate>Wed, 29 Jul 2026 10:51:04 GMT</pubDate>
-            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 06.08.2026 – 24.08.2026
-Verantwortlich: Privat
-Quelle: Stadt Bruchsal]]></description>
-            <category>Bauliche Sondernutzung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Am alten Güterbahnhof/Elie-Wiesel-Weg – Bruchsal]]></title>
@@ -2724,6 +2691,19 @@ Hinweis: Sperrung Anliegerfahrbahn für KfZ, Verschwenk der Fahrbahn über den G
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Kreisel Fritz-Erler-Straße vor SEW – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40129</link>
+            <guid isPermaLink="false">faecherbagger:40129:2026-07-13T11:12:17Z</guid>
+            <pubDate>Mon, 13 Jul 2026 11:12:17 GMT</pubDate>
+            <description><![CDATA[Aktuell · Straßenunterhaltung · Sperrung (1 Richtung)
+Zeitraum: 25.08.2026 – 27.08.2026
+Hinweis: Sanierung der Fahrbahn. Gesperrrt ist nur die Abfahrt vom Kreisel in Ri. L 558.
+Eine Umleitung wird eingerichtet.
+Verantwortlich: Fachgebiet Baubetriebshof
+Quelle: Stadt Bruchsal]]></description>
+            <category>Straßenunterhaltung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Beim Wasserturm, Taglöhnergärten – Karlsruhe]]></title>
@@ -5054,17 +5034,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Siegelgrundstraße 18 – Rheinstetten]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40013</link>
-            <guid isPermaLink="false">faecherbagger:40013:2026-02-23T15:49:54Z</guid>
-            <pubDate>Mon, 23 Feb 2026 15:49:54 GMT</pubDate>
-            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 02.03.2026 – 31.10.2026
-Verantwortlich: Privat
-Quelle: Stadt Rheinstetten]]></description>
-            <category>Bauliche Sondernutzung</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: Kaiserstraße zw. Hirschstraße und Leopoldstraße, Hirschstraße zw. Akademiestraße und Kaiserstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0748</link>
             <guid isPermaLink="false">faecherbagger:2026V0748:2026-02-18T23:00:00Z</guid>
@@ -5663,6 +5632,17 @@ Bauherr ist das Regierungspräsidium Karlsruhe
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Bruchsal]]></description>
             <category>Brückenbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Messeallee Ecke Messering – Rheinstetten]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40013</link>
+            <guid isPermaLink="false">faecherbagger:40013:2025-03-27T14:25:12Z</guid>
+            <pubDate>Thu, 27 Mar 2025 14:25:12 GMT</pubDate>
+            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 01.12.2024 – 31.12.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></description>
+            <category>Strom/TK-Versorgung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Bahnhofsplatz am Bahnhof – Bruchsal]]></title>

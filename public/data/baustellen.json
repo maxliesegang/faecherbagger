@@ -4781,7 +4781,7 @@
   },
   {
     "id": "2026V3176",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -5381,7 +5381,7 @@
   },
   {
     "id": "2026V3654",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "bridge",
     "artRaw": "Brückenbau",
     "closure": "obstruction",
@@ -6580,26 +6580,6 @@
     "lastModified": "2026-07-27T22:00:00Z"
   },
   {
-    "id": "2026V4698",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kornweg zw. Silcher Straße und Alb",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-24",
-    "endDate": "2026-08-24",
-    "point": [
-      8.341685,
-      49.00578
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
-  },
-  {
     "id": "2026V4704",
     "phase": "active",
     "category": "rail",
@@ -7100,26 +7080,6 @@
     "lastModified": "2026-08-20T22:00:00Z"
   },
   {
-    "id": "2026V4898",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B 36 zw. AS Eggenstein und AS Neureut-Nord, Überführungsbauwerk im Zuge der Linkenheimer Landstraße",
-    "notes": "Entfall von Richtungsfahrstreifen auf der B 36 in beiden Fahrtrichtungen",
-    "cause": "Land Baden - Württemberg",
-    "startDate": "2026-08-20",
-    "endDate": "2026-08-24",
-    "point": [
-      8.395027,
-      49.06406
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
-  },
-  {
     "id": "2026V4904",
     "phase": "active",
     "category": "sewer",
@@ -7138,26 +7098,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-09T22:00:00Z"
-  },
-  {
-    "id": "2026V4905",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gerwigstraße zw. Ostring und Käppelestraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-18",
-    "endDate": "2026-08-24",
-    "point": [
-      8.43926,
-      49.006582
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2026V4906",
@@ -7421,7 +7361,7 @@
   },
   {
     "id": "2026V5080",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7801,7 +7741,7 @@
   },
   {
     "id": "2026V5314",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7921,7 +7861,7 @@
   },
   {
     "id": "2026V5335",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "obstruction",
@@ -8562,22 +8502,22 @@
   {
     "id": "40013",
     "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
     "siteType": "stationary",
     "municipality": "Rheinstetten",
-    "location": "Siegelgrundstraße 18",
+    "location": "Messeallee Ecke Messering",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2026-03-02",
-    "endDate": "2026-10-31",
+    "startDate": "2024-12-01",
+    "endDate": "2026-12-31",
     "point": [
       8.320098,
       48.971361
     ],
     "source": "Stadt Rheinstetten",
-    "lastModified": "2026-02-23T15:49:54Z"
+    "lastModified": "2025-03-27T14:25:12Z"
   },
   {
     "id": "40014",
@@ -9400,6 +9340,26 @@
     "lastModified": "2026-07-10T09:04:20Z"
   },
   {
+    "id": "40129",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kreisel Fritz-Erler-Straße vor SEW",
+    "notes": "Sanierung der Fahrbahn. Gesperrrt ist nur die Abfahrt vom Kreisel in Ri. L 558.\nEine Umleitung wird eingerichtet.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-08-25",
+    "endDate": "2026-08-27",
+    "point": [
+      8.576211,
+      49.122683
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-13T11:12:17Z"
+  },
+  {
     "id": "40132",
     "phase": "active",
     "category": "special-use",
@@ -9520,26 +9480,6 @@
     "lastModified": "2026-07-29T08:55:30Z"
   },
   {
-    "id": "40145",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kornblumenweg 12",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-06",
-    "endDate": "2026-08-24",
-    "point": [
-      8.524126,
-      49.102408
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-07-29T10:51:04Z"
-  },
-  {
     "id": "40147",
     "phase": "active",
     "category": "special-use",
@@ -9578,6 +9518,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-13T09:02:17Z"
+  },
+  {
+    "id": "40158",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Wiesenstraße 28",
+    "notes": "Fahrbahn verengt, Gehweg gesperrt.",
+    "cause": "Privat",
+    "startDate": "2026-08-25",
+    "endDate": "2026-10-24",
+    "point": [
+      8.610258,
+      49.120698
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-24T05:42:04Z"
   },
   {
     "id": "40172",
