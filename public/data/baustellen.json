@@ -1440,26 +1440,6 @@
     "lastModified": "2025-09-28T22:00:00Z"
   },
   {
-    "id": "2025V5275",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Lessingstraße Einmündungsbereich Sophienstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-25",
-    "endDate": "2026-08-25",
-    "point": [
-      8.385041,
-      49.007798
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-26T23:00:00Z"
-  },
-  {
     "id": "2025V5288",
     "phase": "active",
     "category": "district-heating",
@@ -4760,26 +4740,6 @@
     "lastModified": "2026-08-04T22:00:00Z"
   },
   {
-    "id": "2026V3176",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Friedensstraße zw. Mathystraße und Gartenstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-25",
-    "endDate": "2026-08-25",
-    "point": [
-      8.392025,
-      49.003401
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-17T22:00:00Z"
-  },
-  {
     "id": "2026V3181",
     "phase": "upcoming",
     "category": "road-construction",
@@ -7360,26 +7320,6 @@
     "lastModified": "2026-08-20T22:00:00Z"
   },
   {
-    "id": "2026V5080",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Friedenstraße zw. Mathystraße und Gartenstraße",
-    "notes": "Höhe Haus Nr 20",
-    "cause": "Privat",
-    "startDate": "2026-08-25",
-    "endDate": "2026-08-25",
-    "point": [
-      8.392006,
-      49.003409
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
-  },
-  {
     "id": "2026V5099",
     "phase": "active",
     "category": "special-use",
@@ -7740,26 +7680,6 @@
     "lastModified": "2026-08-19T22:00:00Z"
   },
   {
-    "id": "2026V5314",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B10 zwischen Honsellstraße und Rheinbrücke",
-    "notes": "beidseitig Mäharbeiten der Seitenstreifen",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-08-25",
-    "endDate": "2026-08-25",
-    "point": [
-      8.331811,
-      49.029637
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
-  },
-  {
     "id": "2026V5315",
     "phase": "upcoming",
     "category": "green-maintenance",
@@ -7855,26 +7775,6 @@
     "point": [
       8.448,
       49.037784
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
-  },
-  {
-    "id": "2026V5335",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "K9657/ Südtangente Höhe Kühler Krug zw. AS 5 und AS 7",
-    "notes": "1-streifige Verkehrsführung in Fahrtrichtung Landau",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-25",
-    "endDate": "2026-08-25",
-    "point": [
-      8.366024,
-      49.004674
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-23T22:00:00Z"
@@ -8238,6 +8138,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-03-18T13:27:33Z"
+  },
+  {
+    "id": "30170",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Hauptstraße 10",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-08-26",
+    "endDate": "2026-09-11",
+    "point": [
+      8.586375,
+      49.076989
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-28T09:03:21Z"
   },
   {
     "id": "30173",
