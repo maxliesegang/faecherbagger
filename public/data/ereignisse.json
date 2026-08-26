@@ -1,19 +1,327 @@
 {
-  "generatedAt": "2026-08-26T04:32:50.424Z",
+  "generatedAt": "2026-08-26T16:39:57.437Z",
   "events": [
     {
-      "kind": "new",
-      "signature": "new:30170",
-      "siteId": "30170",
+      "kind": "changed",
+      "signature": "changed:2021V4565:2026-08-25T22:00:00Z",
+      "siteId": "2021V4565",
       "point": [
-        8.586375,
-        49.076989
+        8.379352,
+        48.998884
+      ],
+      "closure": "none",
+      "startDate": "2026-07-13",
+      "endDate": "2026-10-02",
+      "municipality": "Karlsruhe",
+      "location": "Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V0914:2026-08-25T22:00:00Z",
+      "siteId": "2025V0914",
+      "point": [
+        8.458983,
+        48.989186
+      ],
+      "closure": "full",
+      "startDate": "2025-10-20",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0253:2026-08-25T22:00:00Z",
+      "siteId": "2026V0253",
+      "point": [
+        8.479125,
+        48.999697
+      ],
+      "closure": "full",
+      "startDate": "2026-08-17",
+      "endDate": "2026-09-13",
+      "municipality": "Karlsruhe",
+      "location": "B 3 Grötzinger Straße zw. Badener Straße u. Bergbahnstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0254:2026-08-25T22:00:00Z",
+      "siteId": "2026V0254",
+      "point": [
+        8.475071,
+        48.999333
+      ],
+      "closure": "full",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-14",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0255:2026-08-25T22:00:00Z",
+      "siteId": "2026V0255",
+      "point": [
+        8.474601,
+        48.999242
+      ],
+      "closure": "full",
+      "startDate": "2026-09-21",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V1163:2026-08-25T22:00:00Z",
+      "siteId": "2026V1163",
+      "point": [
+        8.459091,
+        48.989149
+      ],
+      "closure": "full",
+      "startDate": "2026-08-28",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V1762:2026-08-25T22:00:00Z",
+      "siteId": "2026V1762",
+      "point": [
+        8.392238,
+        48.99275
+      ],
+      "closure": "full",
+      "startDate": "2026-09-21",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V2987:2026-08-25T22:00:00Z",
+      "siteId": "2026V2987",
+      "point": [
+        8.477328,
+        48.997852
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-27",
+      "municipality": "Karlsruhe",
+      "location": "Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V3181:2026-08-25T22:00:00Z",
+      "siteId": "2026V3181",
+      "point": [
+        8.457443,
+        48.9969
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-10",
+      "municipality": "Karlsruhe",
+      "location": "Killisfeldstraße Höhe Einmündung Im Blumenwinkel und Dietrichstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V3514:2026-08-25T22:00:00Z",
+      "siteId": "2026V3514",
+      "point": [
+        8.475786,
+        48.999371
+      ],
+      "closure": "full",
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-21",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V3515:2026-08-25T22:00:00Z",
+      "siteId": "2026V3515",
+      "point": [
+        8.475669,
+        48.999394
+      ],
+      "closure": "full",
+      "startDate": "2026-09-21",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V0142",
+      "siteId": "2025V0142",
+      "point": [
+        8.406982,
+        49.009337
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-05-04",
+      "endDate": "2026-09-30",
+      "municipality": "Karlsruhe",
+      "location": "Kaiserstraße zw. Kreuzstraße und Kronenstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V3514",
+      "siteId": "2025V3514",
+      "point": [
+        8.459526,
+        49.022361
+      ],
+      "closure": "obstruction",
+      "startDate": "2025-11-17",
+      "endDate": "2026-11-30",
+      "municipality": "Karlsruhe",
+      "location": "An der Tagweide zw. Printzsraße und Am Ruschgraben"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V5275",
+      "siteId": "2025V5275",
+      "point": [
+        8.385041,
+        49.007798
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-28",
+      "endDate": "2026-09-19",
+      "municipality": "Karlsruhe",
+      "location": "Lessingstraße Einmündungsbereich Sophienstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V0441",
+      "siteId": "2026V0441",
+      "point": [
+        8.385369,
+        49.009077
+      ],
+      "closure": "full",
+      "startDate": "2026-01-23",
+      "endDate": "2026-08-27",
+      "municipality": "Karlsruhe",
+      "location": "Lessingstraße zw. Sophienstraße u. Kaiserallee"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3146",
+      "siteId": "2026V3146",
+      "point": [
+        8.391719,
+        49.008831
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-05-18",
+      "endDate": "2026-10-31",
+      "municipality": "Karlsruhe",
+      "location": "Kaiserstraße, Hirschstraße, Amalinestraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4615",
+      "siteId": "2026V4615",
+      "point": [
+        8.391674,
+        49.009604
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-29",
+      "endDate": "2026-09-05",
+      "municipality": "Karlsruhe",
+      "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5368",
+      "siteId": "2026V5368",
+      "point": [
+        8.355927,
+        49.010959
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-22",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Hardtstraße zw. Lameystraße und Am Entenfang"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5400",
+      "siteId": "2026V5400",
+      "point": [
+        8.423156,
+        49.01429
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-04-01",
+      "endDate": "2027-05-31",
+      "municipality": "Karlsruhe",
+      "location": "Kornblumenstraße zw. Frauenhoferstraße und Parkstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5404",
+      "siteId": "2026V5404",
+      "point": [
+        8.447911,
+        49.016843
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-25",
+      "municipality": "Karlsruhe",
+      "location": "Rintheimer Hauptstraße von Jadstraße bis Mosbacherstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5405",
+      "siteId": "2026V5405",
+      "point": [
+        8.447691,
+        49.017601
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-07",
+      "endDate": "2026-10-16",
+      "municipality": "Karlsruhe",
+      "location": "Rintheiemr Hauptstraße von Mosbacherstraße bis Drosselsangweg"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30193",
+      "siteId": "30193",
+      "point": [
+        8.55236,
+        49.087003
       ],
       "closure": "obstruction",
       "startDate": "2026-08-26",
-      "endDate": "2026-09-11",
+      "endDate": "2026-09-15",
       "municipality": "Bruchsal",
-      "location": "Hauptstraße 10"
+      "location": "Raiffeisenstraße 6"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30194",
+      "siteId": "30194",
+      "point": [
+        8.549109,
+        49.079252
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-26",
+      "endDate": "2026-09-15",
+      "municipality": "Bruchsal",
+      "location": "Im Jüden 71"
     },
     {
       "kind": "starts-soon",
