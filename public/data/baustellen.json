@@ -2860,6 +2860,26 @@
     "lastModified": "2026-08-09T22:00:00Z"
   },
   {
+    "id": "2026V0269",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße",
+    "notes": "Ausführung in mehreren Abschnitten mit Vollsperrung Gehweg und Notweg auf den Parkplätzen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-02-03",
+    "endDate": "2026-10-05",
+    "point": [
+      8.372291,
+      49.030292
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-26T22:00:00Z"
+  },
+  {
     "id": "2026V0274",
     "phase": "active",
     "category": "gas-water",
@@ -3660,26 +3680,6 @@
     "lastModified": "2026-07-30T22:00:00Z"
   },
   {
-    "id": "2026V1312",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Eisenlohrstraße zw. Hübschstraße und Weltzienstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-22",
-    "endDate": "2026-08-26",
-    "point": [
-      8.371913,
-      49.003395
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-24T22:00:00Z"
-  },
-  {
     "id": "2026V1313",
     "phase": "active",
     "category": "district-heating",
@@ -4240,6 +4240,26 @@
     "lastModified": "2026-07-08T22:00:00Z"
   },
   {
+    "id": "2026V2043",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Freydorfstraße zw. Moltke- u. Grenadierstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-30",
+    "point": [
+      8.379441,
+      49.015728
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-26T22:00:00Z"
+  },
+  {
     "id": "2026V2134",
     "phase": "upcoming",
     "category": "district-heating",
@@ -4540,6 +4560,26 @@
     "lastModified": "2026-07-12T22:00:00Z"
   },
   {
+    "id": "2026V2595",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karlstraße, Kaiserstraße, Passagehof",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten, vs. 4 Wochen",
+    "cause": "Telekommunikation",
+    "startDate": "2026-05-11",
+    "endDate": "2026-09-11",
+    "point": [
+      8.39642,
+      49.010408
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-26T22:00:00Z"
+  },
+  {
     "id": "2026V2667",
     "phase": "active",
     "category": "power-telecom",
@@ -4638,6 +4678,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-20T22:00:00Z"
+  },
+  {
+    "id": "2026V2864",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Zirkel zw. Kreuzstraße und Waldhornstraße",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-02",
+    "endDate": "2026-12-31",
+    "point": [
+      8.405247,
+      49.010238
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-26T22:00:00Z"
   },
   {
     "id": "2026V2874",
@@ -5761,7 +5821,7 @@
   },
   {
     "id": "2026V4033",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -5861,7 +5921,7 @@
   },
   {
     "id": "2026V4194",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -5870,14 +5930,14 @@
     "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-17",
-    "endDate": "2026-09-13",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-15",
     "point": [
       8.47753,
       48.971312
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-02T22:00:00Z"
+    "lastModified": "2026-08-26T22:00:00Z"
   },
   {
     "id": "2026V4195",
@@ -5890,14 +5950,14 @@
     "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-14",
+    "startDate": "2026-09-16",
     "endDate": "2026-10-10",
     "point": [
       8.477454,
       48.970932
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-02T22:00:00Z"
+    "lastModified": "2026-08-26T22:00:00Z"
   },
   {
     "id": "2026V4232",
@@ -6511,13 +6571,13 @@
     "notes": "Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2027-01-11",
-    "endDate": "2027-08-31",
+    "endDate": "2027-12-31",
     "point": [
       8.465338,
       48.997629
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-21T22:00:00Z"
+    "lastModified": "2026-08-26T22:00:00Z"
   },
   {
     "id": "2026V4566",
@@ -6730,14 +6790,14 @@
     "location": "Stuttgarter Straße zw. Luisenstraße und Sybelstraße",
     "notes": "signalisierte 1-streifige Verkehrsführung",
     "cause": "Privat",
-    "startDate": "2026-08-24",
-    "endDate": "2026-09-09",
+    "startDate": "2026-08-27",
+    "endDate": "2026-09-05",
     "point": [
       8.417187,
       48.999266
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
+    "lastModified": "2026-08-26T22:00:00Z"
   },
   {
     "id": "2026V4713",
@@ -7344,7 +7404,7 @@
     "phase": "active",
     "category": "bridge",
     "artRaw": "Brückenbau",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "L623 zw. Wolfartsweier und Stupferich",
@@ -7357,7 +7417,7 @@
       48.971189
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-17T22:00:00Z"
+    "lastModified": "2026-08-26T22:00:00Z"
   },
   {
     "id": "2026V4990",
@@ -7701,7 +7761,7 @@
   },
   {
     "id": "2026V5244",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7781,7 +7841,7 @@
   },
   {
     "id": "2026V5315",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7998,6 +8058,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-25T22:00:00Z"
+  },
+  {
+    "id": "2026V5421",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bahnübergang Verlängerung Elbinger Straße",
+    "notes": "Beeinträchtigung nur Radweg und Fußgänger, Umleitung Europaviertel großräumig über Ortelsburger Straße und Elbinger Straße",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-19",
+    "point": [
+      8.450595,
+      49.040722
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-26T22:00:00Z"
+  },
+  {
+    "id": "2026V5422",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bahnübergang Verlängerung Kolberger Straße",
+    "notes": "Beeinträchtigung nur Radweg und Fußgänger, Umleitung über BÜ Elbinger Straße",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-14",
+    "endDate": "2026-09-26",
+    "point": [
+      8.448107,
+      49.039267
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-26T22:00:00Z"
   },
   {
     "id": "30032",
@@ -9680,6 +9780,26 @@
     "lastModified": "2026-08-13T09:02:17Z"
   },
   {
+    "id": "40156",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Poppelfeld/Ste.-aux-Mines-Straße",
+    "notes": "Fahrbahnvollsperrung 6-15 Uhr, Fußverkehr möglich",
+    "cause": "Privat",
+    "startDate": "2026-08-27",
+    "endDate": "2026-08-27",
+    "point": [
+      8.541842,
+      49.092057
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-19T11:50:34Z"
+  },
+  {
     "id": "40158",
     "phase": "active",
     "category": "special-use",
@@ -9698,6 +9818,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-24T05:42:04Z"
+  },
+  {
+    "id": "40160",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kiefernweg 13a",
+    "notes": "Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.",
+    "cause": "Privat",
+    "startDate": "2026-08-27",
+    "endDate": "2026-08-27",
+    "point": [
+      8.568538,
+      49.113077
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-25T08:28:12Z"
   },
   {
     "id": "40172",
