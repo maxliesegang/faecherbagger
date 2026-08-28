@@ -1481,7 +1481,7 @@
   },
   {
     "id": "2025V5275",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -3080,26 +3080,6 @@
     "lastModified": "2026-03-09T23:00:00Z"
   },
   {
-    "id": "2026V0441",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Lessingstraße zw. Sophienstraße u. Kaiserallee",
-    "notes": "Vollsperrung während der Arbeitszeit, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-01-23",
-    "endDate": "2026-08-27",
-    "point": [
-      8.385369,
-      49.009077
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
-  },
-  {
     "id": "2026V0452",
     "phase": "upcoming",
     "category": "rail",
@@ -3641,7 +3621,7 @@
   },
   {
     "id": "2026V1163",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "full",
@@ -4740,26 +4720,6 @@
     "lastModified": "2026-05-05T22:00:00Z"
   },
   {
-    "id": "2026V2987",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße",
-    "notes": "Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-17",
-    "endDate": "2026-08-27",
-    "point": [
-      8.477328,
-      48.997852
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
-  },
-  {
     "id": "2026V3008",
     "phase": "active",
     "category": "power-telecom",
@@ -5820,26 +5780,6 @@
     "lastModified": "2026-08-09T22:00:00Z"
   },
   {
-    "id": "2026V4033",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Freydorfstraße zw. Moltkestraße und Damaschkestraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-27",
-    "endDate": "2026-08-27",
-    "point": [
-      8.379371,
-      49.015674
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-23T22:00:00Z"
-  },
-  {
     "id": "2026V4073",
     "phase": "active",
     "category": "special-use",
@@ -5878,26 +5818,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-23T22:00:00Z"
-  },
-  {
-    "id": "2026V4141",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karlsruher Allee zw. Auer Straße und Blotter Straße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-24",
-    "endDate": "2026-08-27",
-    "point": [
-      8.462193,
-      49.000457
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-10T22:00:00Z"
   },
   {
     "id": "2026V4192",
@@ -7755,26 +7675,6 @@
     "point": [
       8.409595,
       49.00088
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-18T22:00:00Z"
-  },
-  {
-    "id": "2026V5244",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-27",
-    "endDate": "2026-08-27",
-    "point": [
-      8.41267,
-      49.003024
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-18T22:00:00Z"

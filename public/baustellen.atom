@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-27T14:54:10.405Z</updated>
+    <updated>2026-08-28T00:39:16.149Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -209,11 +209,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Lessingstraße Einmündungsbereich Sophienstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Lessingstraße Einmündungsbereich Sophienstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V5275:2026-08-25T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5275"/>
         <updated>2026-08-25T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
 Zeitraum: 28.08.2026 – 19.09.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
@@ -254,23 +254,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Lessingstraße zw. Sophienstraße u. Kaiserallee – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0441:2026-08-25T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0441"/>
-        <updated>2026-08-25T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
-Zeitraum: 23.01.2026 – 27.08.2026
-Hinweis: Vollsperrung während der Arbeitszeit, Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V1163:2026-08-25T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1163"/>
         <updated>2026-08-25T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenunterhaltung · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Vollsperrung
 Zeitraum: 28.08.2026 – 30.10.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
@@ -287,18 +275,6 @@ Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnit
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Gymnasiumstraße zw. Rittnertstraße und Turmbergstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2987:2026-08-25T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2987"/>
-        <updated>2026-08-25T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Sperrung (1 Richtung)
-Zeitraum: 17.08.2026 – 27.08.2026
-Hinweis: Verlegung im Gehweg, Notweg auf der Fahrbahn. Hauszugänge mit Provisorien
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Kaiserstraße, Hirschstraße, Amalinestraße – Karlsruhe]]></title>
@@ -1134,17 +1110,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5244:2026-08-18T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5244"/>
-        <updated>2026-08-18T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 27.08.2026 – 27.08.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße – Karlsruhe]]></title>
         <id>faecherbagger:2022V6173:2026-08-17T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2022V6173"/>
@@ -1578,17 +1543,6 @@ Hinweis: ca. 5 Wochen Bauzeit, Arbeitsstelle im Geh-, und Radwegbereich, Abwickl
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Karlsruher Allee zw. Auer Straße und Blotter Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4141:2026-08-10T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4141"/>
-        <updated>2026-08-10T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 24.08.2026 – 27.08.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Lammstraße zw. Ritterstraße u. Lammstraße – Karlsruhe]]></title>
@@ -3455,17 +3409,6 @@ Wir bitten alle Verkehrsteilnehmer um Verständnis und Beachtung der aufgestellt
 Verantwortlich: Stadtwerke Ettlingen
 Quelle: Stadt Ettlingen]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Freydorfstraße zw. Moltkestraße und Damaschkestraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4033:2026-06-23T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4033"/>
-        <updated>2026-06-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
-Zeitraum: 27.08.2026 – 27.08.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Sophienstraße Kreuzung Reinhold-Frank-Straße – Karlsruhe]]></title>
