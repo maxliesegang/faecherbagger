@@ -240,6 +240,26 @@
     "lastModified": "2025-11-10T23:00:00Z"
   },
   {
+    "id": "2023V4962",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Mastweidenweg unterhalb der DB-AG Brücke",
+    "notes": null,
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2023-10-09",
+    "endDate": "2027-06-30",
+    "point": [
+      8.445711,
+      48.99988
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-27T22:00:00Z"
+  },
+  {
     "id": "2023V6310",
     "phase": "active",
     "category": "special-use",
@@ -720,26 +740,6 @@
     "lastModified": "2026-04-09T22:00:00Z"
   },
   {
-    "id": "2024V6942",
-    "phase": "upcoming",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Jakob-Dörr-Straße zw. Haus Nr 11 und Max-Dortu-Straße",
-    "notes": "Aufteilung nicht vorgenommen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-28",
-    "endDate": "2027-12-31",
-    "point": [
-      8.33563,
-      49.041179
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-05-18T22:00:00Z"
-  },
-  {
     "id": "2024V7070",
     "phase": "upcoming",
     "category": "district-heating",
@@ -771,13 +771,13 @@
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-02-11",
-    "endDate": "2026-08-28",
+    "endDate": "2026-09-11",
     "point": [
       8.3917,
       48.995707
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-17T22:00:00Z"
+    "lastModified": "2026-08-27T22:00:00Z"
   },
   {
     "id": "2024V7318",
@@ -804,7 +804,7 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße,",
@@ -817,7 +817,7 @@
       49.004047
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-27T22:00:00Z"
+    "lastModified": "2026-08-27T22:00:00Z"
   },
   {
     "id": "2024V7469",
@@ -978,26 +978,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-07T22:00:00Z"
-  },
-  {
-    "id": "2025V0249",
-    "phase": "upcoming",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herrenstraße zw. Kaiserstraße und Zirkel",
-    "notes": "Kaiserstraße zw. Ritterstraße und Herrenstraße",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-01",
-    "endDate": "2027-02-28",
-    "point": [
-      8.39978,
-      49.009874
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-04T22:00:00Z"
   },
   {
     "id": "2025V0250",
@@ -3768,16 +3748,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Jakob-Dörr-Straße zw. Bruchweg und Max-Dortu-Straße",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, Baubegin nvs. Frühjahr 2027",
     "cause": "Tiefbauamt",
-    "startDate": "2026-09-01",
-    "endDate": "2027-09-30",
+    "startDate": "2027-02-01",
+    "endDate": "2027-12-31",
     "point": [
       8.335507,
       49.041067
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-08T22:00:00Z"
+    "lastModified": "2026-08-27T22:00:00Z"
   },
   {
     "id": "2026V1762",
@@ -5440,6 +5420,26 @@
     "lastModified": "2026-08-04T22:00:00Z"
   },
   {
+    "id": "2026V3613",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "kaiserstraße zw. Herrnstraße und Ritterstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-08-01",
+    "endDate": "2026-10-19",
+    "point": [
+      8.399988,
+      49.009793
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-27T22:00:00Z"
+  },
+  {
     "id": "2026V3654",
     "phase": "active",
     "category": "bridge",
@@ -6710,14 +6710,14 @@
     "location": "Stuttgarter Straße zw. Luisenstraße und Sybelstraße",
     "notes": "signalisierte 1-streifige Verkehrsführung",
     "cause": "Privat",
-    "startDate": "2026-08-27",
-    "endDate": "2026-09-05",
+    "startDate": "2026-08-24",
+    "endDate": "2026-09-04",
     "point": [
       8.417187,
       48.999266
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-26T22:00:00Z"
+    "lastModified": "2026-08-27T22:00:00Z"
   },
   {
     "id": "2026V4713",
@@ -7998,6 +7998,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-26T22:00:00Z"
+  },
+  {
+    "id": "2026V5433",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-03",
+    "endDate": "2026-09-03",
+    "point": [
+      8.404617,
+      49.00702
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-27T22:00:00Z"
+  },
+  {
+    "id": "2026V5436",
+    "phase": "upcoming",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "one-direction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "B36/ Michelinstraße Abfahrt zur Carl-Metz-Straße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-01",
+    "point": [
+      8.354699,
+      49.009362
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-27T22:00:00Z"
   },
   {
     "id": "30032",
@@ -9500,26 +9540,6 @@
     "lastModified": "2026-07-10T09:04:20Z"
   },
   {
-    "id": "40129",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kreisel Fritz-Erler-Straße vor SEW",
-    "notes": "Sanierung der Fahrbahn. Gesperrrt ist nur die Abfahrt vom Kreisel in Ri. L 558.\nEine Umleitung wird eingerichtet.",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-08-25",
-    "endDate": "2026-08-27",
-    "point": [
-      8.576211,
-      49.122683
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-07-13T11:12:17Z"
-  },
-  {
     "id": "40132",
     "phase": "active",
     "category": "special-use",
@@ -9680,26 +9700,6 @@
     "lastModified": "2026-08-13T09:02:17Z"
   },
   {
-    "id": "40156",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Poppelfeld/Ste.-aux-Mines-Straße",
-    "notes": "Fahrbahnvollsperrung 6-15 Uhr, Fußverkehr möglich",
-    "cause": "Privat",
-    "startDate": "2026-08-27",
-    "endDate": "2026-08-27",
-    "point": [
-      8.541842,
-      49.092057
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-19T11:50:34Z"
-  },
-  {
     "id": "40158",
     "phase": "active",
     "category": "special-use",
@@ -9718,26 +9718,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-24T05:42:04Z"
-  },
-  {
-    "id": "40160",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kiefernweg 13a",
-    "notes": "Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.",
-    "cause": "Privat",
-    "startDate": "2026-08-27",
-    "endDate": "2026-08-27",
-    "point": [
-      8.568538,
-      49.113077
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-25T08:28:12Z"
   },
   {
     "id": "40172",

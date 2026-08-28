@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-28T00:39:16.149Z</updated>
+    <updated>2026-08-28T15:49:36.107Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -32,6 +32,97 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Mastweidenweg unterhalb der DB-AG Brücke – Karlsruhe]]></title>
+        <id>faecherbagger:2023V4962:2026-08-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2023V4962"/>
+        <updated>2026-08-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 09.10.2023 – 30.06.2027
+Verantwortlich: Deutsche Bahn AG
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Gebhardstraße zw. Barbarossaplatz und Welfenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2024V7075:2026-08-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V7075"/>
+        <updated>2026-08-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
+Zeitraum: 11.02.2026 – 11.09.2026
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße, – Karlsruhe]]></title>
+        <id>faecherbagger:2024V7408:2026-08-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V7408"/>
+        <updated>2026-08-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 10.08.2026 – 16.10.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Jakob-Dörr-Straße zw. Bruchweg und Max-Dortu-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1676:2026-08-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1676"/>
+        <updated>2026-08-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kanalbau · Vollsperrung
+Zeitraum: 01.02.2027 – 31.12.2027
+Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, Baubegin nvs. Frühjahr 2027
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: kaiserstraße zw. Herrnstraße und Ritterstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3613:2026-08-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3613"/>
+        <updated>2026-08-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
+Zeitraum: 01.08.2026 – 19.10.2026
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Stuttgarter Straße zw. Luisenstraße und Sybelstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4711:2026-08-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4711"/>
+        <updated>2026-08-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
+Zeitraum: 24.08.2026 – 04.09.2026
+Hinweis: signalisierte 1-streifige Verkehrsführung
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5433:2026-08-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5433"/>
+        <updated>2026-08-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+Zeitraum: 03.09.2026 – 03.09.2026
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: B36/ Michelinstraße Abfahrt zur Carl-Metz-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5436:2026-08-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5436"/>
+        <updated>2026-08-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenunterhaltung · Sperrung (1 Richtung)
+Zeitraum: 01.09.2026 – 01.09.2026
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße – Karlsruhe]]></title>
@@ -112,18 +203,6 @@ Hinweis: Aufteilung nicht vorgenommen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Stuttgarter Straße zw. Luisenstraße und Sybelstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4711:2026-08-26T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4711"/>
-        <updated>2026-08-26T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
-Zeitraum: 27.08.2026 – 05.09.2026
-Hinweis: signalisierte 1-streifige Verkehrsführung
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: L623 zw. Wolfartsweier und Stupferich – Karlsruhe]]></title>
@@ -379,18 +458,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Kiefernweg 13a – Bruchsal]]></title>
-        <id>faecherbagger:40160:2026-08-25T08:28:12Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40160"/>
-        <updated>2026-08-25T08:28:12.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 27.08.2026 – 27.08.2026
-Hinweis: Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.
-Verantwortlich: Privat
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Adlerstraße zw. Zähringerstraße u. Kaiserstraße – Karlsruhe]]></title>
@@ -988,18 +1055,6 @@ Quelle: Stadt Karlsruhe]]></summary>
 Zeitraum: 29.09.2026 – 29.09.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Poppelfeld/Ste.-aux-Mines-Straße – Bruchsal]]></title>
-        <id>faecherbagger:40156:2026-08-19T11:50:34Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40156"/>
-        <updated>2026-08-19T11:50:34.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 27.08.2026 – 27.08.2026
-Hinweis: Fahrbahnvollsperrung 6-15 Uhr, Fußverkehr möglich
-Verantwortlich: Privat
-Quelle: Stadt Bruchsal]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
@@ -2522,17 +2577,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße, – Karlsruhe]]></title>
-        <id>faecherbagger:2024V7408:2026-07-27T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V7408"/>
-        <updated>2026-07-27T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Keine Behinderung
-Zeitraum: 10.08.2026 – 16.10.2026
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Schopfheimer Straße zwischen Waldshuter Straße und Funkerstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V1600:2026-07-27T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V1600"/>
@@ -2926,19 +2970,6 @@ Hinweis: Sperrung Anliegerfahrbahn für KfZ, Verschwenk der Fahrbahn über den G
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Kreisel Fritz-Erler-Straße vor SEW – Bruchsal]]></title>
-        <id>faecherbagger:40129:2026-07-13T11:12:17Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40129"/>
-        <updated>2026-07-13T11:12:17.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Sperrung (1 Richtung)
-Zeitraum: 25.08.2026 – 27.08.2026
-Hinweis: Sanierung der Fahrbahn. Gesperrrt ist nur die Abfahrt vom Kreisel in Ri. L 558.
-Eine Umleitung wird eingerichtet.
-Verantwortlich: Fachgebiet Baubetriebshof
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Beim Wasserturm, Taglöhnergärten – Karlsruhe]]></title>
@@ -3519,18 +3550,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Gebhardstraße zw. Barbarossaplatz und Welfenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2024V7075:2026-06-17T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V7075"/>
-        <updated>2026-06-17T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 11.02.2026 – 28.08.2026
-Hinweis: Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: B3/Südtangente Kreuzungsbereiche Fiduciastraße und B 3 Ortsumfahrung Wolfartsweier – Karlsruhe]]></title>
         <id>faecherbagger:2026V3716:2026-06-17T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3716"/>
@@ -3709,18 +3728,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Jakob-Dörr-Straße zw. Bruchweg und Max-Dortu-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1676:2026-06-08T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1676"/>
-        <updated>2026-06-08T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kanalbau · Vollsperrung
-Zeitraum: 01.09.2026 – 30.09.2027
-Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kanalbau" term="sewer"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Kaiserstraße zw. Kronenstraße und adlerstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V0237:2026-06-07T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V0237"/>
@@ -3822,18 +3829,6 @@ Zeitraum: 11.05.2026 – 26.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Herrenstraße zw. Kaiserstraße und Zirkel – Karlsruhe]]></title>
-        <id>faecherbagger:2025V0249:2026-06-04T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V0249"/>
-        <updated>2026-06-04T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Vollsperrung
-Zeitraum: 01.09.2026 – 28.02.2027
-Hinweis: Kaiserstraße zw. Ritterstraße und Herrenstraße
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
@@ -4165,18 +4160,6 @@ Hinweis: Vollsperrung aufgrund Leitungsverlegung
 Verantwortlich: Stadtbauamt
 Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Jakob-Dörr-Straße zw. Haus Nr 11 und Max-Dortu-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2024V6942:2026-05-18T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V6942"/>
-        <updated>2026-05-18T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kanalbau · Mit Behinderung
-Zeitraum: 28.09.2026 – 31.12.2027
-Hinweis: Aufteilung nicht vorgenommen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Scheffelstraße zw. Kaiserallee u. Sophienstraße – Karlsruhe]]></title>
