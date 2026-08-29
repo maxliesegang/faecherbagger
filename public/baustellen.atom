@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-28T15:49:36.107Z</updated>
+    <updated>2026-08-29T00:11:26.661Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -744,18 +744,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Adenauerring, Moltkestraße, Reinhold-Frank-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5212:2026-08-23T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5212"/>
-        <updated>2026-08-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 24.08.2026 – 28.08.2026
-Hinweis: Signaltechnische Arbeiten im Kreuzungsbereich, Signalanlage deaktiviert, 1-streifige Verkehrsführung in allen Fahrtrichtungen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Adenauerring zw. Engesserstraße und Am Fasanenplatz – Karlsruhe]]></title>
         <id>faecherbagger:2026V5229:2026-08-23T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5229"/>
@@ -766,18 +754,6 @@ Hinweis: Aufteilung nicht vorgenommen
 Verantwortlich: Vermögen und Bau
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: B10 zwischen Honsellstraße und Rheinbrücke – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5315:2026-08-23T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5315"/>
-        <updated>2026-08-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 27.08.2026 – 28.08.2026
-Hinweis: beidseitig Mäharbeiten des Mittelstreifens
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Königsberger Straße und Im Eichbäumle – Karlsruhe]]></title>
@@ -858,17 +834,6 @@ Zeitraum: 26.08.2026 – 15.09.2026
 Hinweis: Teilsperrung wegen Wasserrohrbruch
 Verantwortlich: Stadtwerke
 Quelle: Stadt Bruchsal]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: An der Sandgrube, Am Zinken – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2767:2026-08-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2767"/>
-        <updated>2026-08-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 07.07.2026 – 28.08.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
@@ -1319,17 +1284,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1565:2026-08-16T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1565"/>
-        <updated>2026-08-16T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 10.03.2026 – 28.08.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V2874:2026-08-16T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2874"/>
@@ -1503,18 +1457,6 @@ Hinweis: Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich,
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6989:2026-08-12T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6989"/>
-        <updated>2026-08-12T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
-Zeitraum: 13.08.2026 – 28.08.2026
-Hinweis: Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen, zw. 9:00 Uhr - 15:00 Uhr
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Herrenstraße zw. Amalienstraße und Blumenstraße – Karlsruhe]]></title>
@@ -1751,18 +1693,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Karl-Friedrich-Straße zw. Kriegsstraße und Rondellplatz – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4970:2026-08-09T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4970"/>
-        <updated>2026-08-09T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
-Zeitraum: 17.08.2026 – 28.08.2026
-Hinweis: Arbeitsstelle im Gehweg, Notgehweg auf der Fahrbahn
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Rastatter Straße 1 bis 103 – Karlsruhe]]></title>
         <id>faecherbagger:2026V4990:2026-08-09T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4990"/>
@@ -1855,18 +1785,6 @@ Hinweis: 1-streifige Verkehrsführung mit Lichtsignal
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Passagehof – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3762:2026-08-05T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3762"/>
-        <updated>2026-08-05T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Keine Behinderung
-Zeitraum: 10.08.2026 – 28.08.2026
-Hinweis: Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Theodor-Heuss-Allee, Brücke über die L 560 Gustav-Heinemann-Allee – Karlsruhe]]></title>
@@ -2282,18 +2200,6 @@ Hinweis: Vollsperrung mit Abwicklung in mehreren Abschnitten
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Akademiestraße zw. Hans-Thoma-Straße und Karlstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3317:2026-07-30T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3317"/>
-        <updated>2026-07-30T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
-Zeitraum: 17.08.2026 – 28.08.2026
-Hinweis: Inlinereinzug, Abwicklung in mehreren Bauabschnitten, lokale Sperrungen im Bereich der Kanalschächte
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Karlstraße zw. Kaiserstraße und Akademiestraße – Karlsruhe]]></title>
@@ -4557,18 +4463,6 @@ Hinweis: Die Zufahrt zum Friedhof und Parkplatz ist gewährleistet
 Verantwortlich: Stadtwerke Ettlingen
 Quelle: Stadt Ettlingen]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Erzberger Straße zwischen Rhode-Island-Allee und Kanalweg – Karlsruhe]]></title>
-        <id>faecherbagger:2025V1007:2026-04-08T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V1007"/>
-        <updated>2026-04-08T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 01.06.2026 – 28.08.2026
-Hinweis: Fahrtrichtungssperrung Richtung Norden
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Karlstraße und Gebhardstraße / Karolinenstraße zw. Marie-Alexandra-Straße und Cäciliastraße – Karlsruhe]]></title>

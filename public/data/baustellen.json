@@ -1060,26 +1060,6 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
-    "id": "2025V1007",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Erzberger Straße zwischen Rhode-Island-Allee und Kanalweg",
-    "notes": "Fahrtrichtungssperrung Richtung Norden",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-01",
-    "endDate": "2026-08-28",
-    "point": [
-      8.386808,
-      49.028758
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-08T22:00:00Z"
-  },
-  {
     "id": "2025V1414",
     "phase": "upcoming",
     "category": "gas-water",
@@ -2118,26 +2098,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-02-25T23:00:00Z"
-  },
-  {
-    "id": "2025V6989",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Rheinhafenstraße zw. B36/Eckenerstraße und Hopfenstraße",
-    "notes": "Arbeitsstelle im Mittelstreifen, 1-streifige Verkehrsführung in beiden Fahrtrichtungen, zw. 9:00 Uhr - 15:00 Uhr",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-13",
-    "endDate": "2026-08-28",
-    "point": [
-      8.35147,
-      48.999001
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-12T22:00:00Z"
   },
   {
     "id": "2025V7009",
@@ -3720,26 +3680,6 @@
     "lastModified": "2026-07-14T22:00:00Z"
   },
   {
-    "id": "2026V1565",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Nancystraße zw. Zufahrt Reitinstitut und Kußmaulstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-03-10",
-    "endDate": "2026-08-28",
-    "point": [
-      8.368945,
-      49.021529
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
     "id": "2026V1676",
     "phase": "upcoming",
     "category": "sewer",
@@ -4620,26 +4560,6 @@
     "lastModified": "2026-08-03T22:00:00Z"
   },
   {
-    "id": "2026V2767",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "An der Sandgrube, Am Zinken",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-07",
-    "endDate": "2026-08-28",
-    "point": [
-      8.376387,
-      49.062036
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
-  },
-  {
     "id": "2026V2864",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -4958,26 +4878,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-29T22:00:00Z"
-  },
-  {
-    "id": "2026V3317",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Akademiestraße zw. Hans-Thoma-Straße und Karlstraße",
-    "notes": "Inlinereinzug, Abwicklung in mehreren Bauabschnitten, lokale Sperrungen im Bereich der Kanalschächte",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-17",
-    "endDate": "2026-08-28",
-    "point": [
-      8.396922,
-      49.011386
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
   },
   {
     "id": "2026V3318",
@@ -5558,26 +5458,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-19T22:00:00Z"
-  },
-  {
-    "id": "2026V3762",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Passagehof",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-10",
-    "endDate": "2026-08-28",
-    "point": [
-      8.395801,
-      49.010667
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2026V3807",
@@ -7300,26 +7180,6 @@
     "lastModified": "2026-08-09T22:00:00Z"
   },
   {
-    "id": "2026V4970",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karl-Friedrich-Straße zw. Kriegsstraße und Rondellplatz",
-    "notes": "Arbeitsstelle im Gehweg, Notgehweg auf der Fahrbahn",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-17",
-    "endDate": "2026-08-28",
-    "point": [
-      8.403663,
-      49.006122
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
-  },
-  {
     "id": "2026V4972",
     "phase": "active",
     "category": "bridge",
@@ -7560,26 +7420,6 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
-    "id": "2026V5212",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Adenauerring, Moltkestraße, Reinhold-Frank-Straße",
-    "notes": "Signaltechnische Arbeiten im Kreuzungsbereich, Signalanlage deaktiviert, 1-streifige Verkehrsführung in allen Fahrtrichtungen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-24",
-    "endDate": "2026-08-28",
-    "point": [
-      8.387003,
-      49.014673
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
-  },
-  {
     "id": "2026V5224",
     "phase": "upcoming",
     "category": "road-maintenance",
@@ -7738,26 +7578,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-19T22:00:00Z"
-  },
-  {
-    "id": "2026V5315",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B10 zwischen Honsellstraße und Rheinbrücke",
-    "notes": "beidseitig Mäharbeiten des Mittelstreifens",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-08-27",
-    "endDate": "2026-08-28",
-    "point": [
-      8.332068,
-      49.029321
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V5327",

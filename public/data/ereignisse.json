@@ -1,117 +1,61 @@
 {
-  "generatedAt": "2026-08-28T15:49:36.107Z",
+  "generatedAt": "2026-08-29T00:11:26.661Z",
   "events": [
     {
-      "kind": "changed",
-      "signature": "changed:2024V7075:2026-08-27T22:00:00Z",
-      "siteId": "2024V7075",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2022V6173:2026-08-30",
+      "siteId": "2022V6173",
       "point": [
-        8.3917,
-        48.995707
+        8.42701,
+        49.008832
       ],
-      "closure": "one-direction",
-      "startDate": "2026-02-11",
-      "endDate": "2026-09-11",
+      "closure": "none",
+      "startDate": "2026-08-30",
+      "endDate": "2026-10-17",
       "municipality": "Karlsruhe",
-      "location": "Gebhardstraße zw. Barbarossaplatz und Welfenstraße"
+      "location": "Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße"
     },
     {
-      "kind": "changed",
-      "signature": "changed:2024V7408:2026-08-27T22:00:00Z",
-      "siteId": "2024V7408",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3976:2026-09-05",
+      "siteId": "2026V3976",
       "point": [
-        8.33492,
-        49.004047
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-10",
-      "endDate": "2026-10-16",
-      "municipality": "Karlsruhe",
-      "location": "Pfalzstraße, Kirschstraße, Hördtstraße, Krämerstraße, Langenackerstraße, Turnerstraße,"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V1676:2026-08-27T22:00:00Z",
-      "siteId": "2026V1676",
-      "point": [
-        8.335507,
-        49.041067
+        8.357411,
+        49.008756
       ],
       "closure": "full",
-      "startDate": "2027-02-01",
-      "endDate": "2027-12-31",
+      "startDate": "2026-09-05",
+      "endDate": "2026-09-05",
       "municipality": "Karlsruhe",
-      "location": "Jakob-Dörr-Straße zw. Bruchweg und Max-Dortu-Straße"
+      "location": "B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente"
     },
     {
-      "kind": "changed",
-      "signature": "changed:2026V4711:2026-08-27T22:00:00Z",
-      "siteId": "2026V4711",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3977:2026-09-05",
+      "siteId": "2026V3977",
       "point": [
-        8.417187,
-        48.999266
+        8.363759,
+        49.00601
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-24",
-      "endDate": "2026-09-04",
+      "startDate": "2026-09-05",
+      "endDate": "2026-09-05",
       "municipality": "Karlsruhe",
-      "location": "Stuttgarter Straße zw. Luisenstraße und Sybelstraße"
+      "location": "B10/ Südtangente zw. AS7 und AS6"
     },
     {
-      "kind": "new",
-      "signature": "new:2023V4962",
-      "siteId": "2023V4962",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4800:2026-09-05",
+      "siteId": "2026V4800",
       "point": [
-        8.445711,
-        48.99988
+        8.475309,
+        48.994386
       ],
       "closure": "obstruction",
-      "startDate": "2023-10-09",
-      "endDate": "2027-06-30",
+      "startDate": "2026-09-05",
+      "endDate": "2026-11-25",
       "municipality": "Karlsruhe",
-      "location": "Mastweidenweg unterhalb der DB-AG Brücke"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V3613",
-      "siteId": "2026V3613",
-      "point": [
-        8.399988,
-        49.009793
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-01",
-      "endDate": "2026-10-19",
-      "municipality": "Karlsruhe",
-      "location": "kaiserstraße zw. Herrnstraße und Ritterstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5433",
-      "siteId": "2026V5433",
-      "point": [
-        8.404617,
-        49.00702
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-03",
-      "endDate": "2026-09-03",
-      "municipality": "Karlsruhe",
-      "location": "Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5436",
-      "siteId": "2026V5436",
-      "point": [
-        8.354699,
-        49.009362
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-09-01",
-      "endDate": "2026-09-01",
-      "municipality": "Karlsruhe",
-      "location": "B36/ Michelinstraße Abfahrt zur Carl-Metz-Straße"
+      "location": "Schlössleweg, Badener Straße, Lußstraße"
     }
   ]
 }
