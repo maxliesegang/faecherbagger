@@ -8020,26 +8020,6 @@
     "lastModified": "2026-05-27T07:53:23Z"
   },
   {
-    "id": "30066",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Rheinstetten",
-    "location": "Kutschenweg 10 bis Herrenalber Straße 4",
-    "notes": null,
-    "cause": "EnBW",
-    "startDate": "2026-07-06",
-    "endDate": "2026-08-28",
-    "point": [
-      8.334891,
-      48.964738
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-06-25T06:24:59Z"
-  },
-  {
     "id": "30075",
     "phase": "active",
     "category": "gas-water",
@@ -8220,26 +8200,6 @@
     "lastModified": "2026-07-28T10:50:32Z"
   },
   {
-    "id": "30181",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Wendelinusstraße",
-    "notes": "Gehweg verengt, bzw. Gehweg gesperrt mit Notweg auf der Fahrbahn",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-14",
-    "endDate": "2026-08-28",
-    "point": [
-      8.547513,
-      49.091732
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-11T06:51:02Z"
-  },
-  {
     "id": "30184",
     "phase": "active",
     "category": "power-telecom",
@@ -8258,26 +8218,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-14T05:26:06Z"
-  },
-  {
-    "id": "30186",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Vogelhohle 2",
-    "notes": "Fahrbahnvollsperrung, Gehwege nicht betroffen,\nZufahrt zum Schaffnersberg über den Schwalbenweg nur möglich,",
-    "cause": "Stadtwerke",
-    "startDate": "2026-08-12",
-    "endDate": "2026-08-28",
-    "point": [
-      8.609023,
-      49.123548
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-14T05:39:13Z"
   },
   {
     "id": "30187",
@@ -8338,26 +8278,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-14T06:46:40Z"
-  },
-  {
-    "id": "30191",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Alter Unteröwisheimer Weg 2",
-    "notes": "Fahrbahn verengt",
-    "cause": "Stadtwerke",
-    "startDate": "2026-08-19",
-    "endDate": "2026-08-28",
-    "point": [
-      8.609844,
-      49.126679
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-19T08:26:29Z"
   },
   {
     "id": "30193",
