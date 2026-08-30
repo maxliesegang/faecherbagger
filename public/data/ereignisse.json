@@ -1,34 +1,6 @@
 {
-  "generatedAt": "2026-08-30T09:38:01.204Z",
+  "generatedAt": "2026-08-30T18:52:35.450Z",
   "events": [
-    {
-      "kind": "new",
-      "signature": "new:2026V0386",
-      "siteId": "2026V0386",
-      "point": [
-        8.385036,
-        49.005494
-      ],
-      "closure": "obstruction",
-      "startDate": "2027-08-30",
-      "endDate": "2027-09-19",
-      "municipality": "Karlsruhe",
-      "location": "Kriegstraße zw. Reinhold-Frank-Straße u. Moningerstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V0419",
-      "siteId": "2026V0419",
-      "point": [
-        8.384775,
-        49.005798
-      ],
-      "closure": "full",
-      "startDate": "2027-08-30",
-      "endDate": "2027-09-19",
-      "municipality": "Karlsruhe",
-      "location": "Lessingstraße zw. Sophienstraße und Kriegstraße"
-    },
     {
       "kind": "starts-soon",
       "signature": "starts-soon:2025V5289:2026-08-31",
