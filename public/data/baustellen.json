@@ -121,7 +121,7 @@
   },
   {
     "id": "2022V6173",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "none",
@@ -455,26 +455,6 @@
     "point": [
       8.461138,
       48.993816
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
-    "id": "2024V4281",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-20",
-    "endDate": "2026-08-29",
-    "point": [
-      8.466222,
-      48.999374
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-16T22:00:00Z"
@@ -3020,6 +3000,46 @@
     "lastModified": "2026-03-09T23:00:00Z"
   },
   {
+    "id": "2026V0386",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kriegstraße zw. Reinhold-Frank-Straße u. Moningerstraße",
+    "notes": "Entfall von Richtungsfahrstreifen mitÜberleitung auf die Gegenfahrbahn, Keine Ein- und Ausfahrt in/aus Lessingstraße Richtung Norden",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-08-30",
+    "endDate": "2027-09-19",
+    "point": [
+      8.385036,
+      49.005494
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-03-09T23:00:00Z"
+  },
+  {
+    "id": "2026V0419",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Lessingstraße zw. Sophienstraße und Kriegstraße",
+    "notes": "Ein- und Ausfahrt von/zu Kriegstraße gesperrt",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-08-30",
+    "endDate": "2027-09-19",
+    "point": [
+      8.384775,
+      49.005798
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-03-09T23:00:00Z"
+  },
+  {
     "id": "2026V0452",
     "phase": "upcoming",
     "category": "rail",
@@ -3298,46 +3318,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-19T22:00:00Z"
-  },
-  {
-    "id": "2026V0840",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße",
-    "notes": "Kabelzuggrube und Kabelzugarbeiten, Fahrtrichtungssperrung einschließlich Gehweg vor Raiherwiesenstraße 11, Notgehweg auf der Fahrbahn",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-28",
-    "endDate": "2026-08-29",
-    "point": [
-      8.459492,
-      48.999277
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-30T22:00:00Z"
-  },
-  {
-    "id": "2026V0841",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "K9659 zw. Durlacher Allee und Bahnhof Durlach",
-    "notes": "Kabelzuggrube und Kabelzugarbeiten im Grünstreifen zwischen den Richtungsfahrbahnen, Fahrstreifensperrung in Richtung Grötzingen/B10",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-02-09",
-    "endDate": "2026-08-29",
-    "point": [
-      8.458957,
-      49.001715
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
   },
   {
     "id": "2026V0858",
@@ -5618,26 +5598,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-21T22:00:00Z"
-  },
-  {
-    "id": "2026V4021",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "K9659 Höhe DM",
-    "notes": "Arbeitsstelle in der Sperrfläche",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2023-08-14",
-    "endDate": "2026-08-29",
-    "point": [
-      8.458032,
-      49.001917
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
   },
   {
     "id": "2026V4027",

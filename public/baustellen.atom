@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-08-29T18:56:55.439Z</updated>
+    <updated>2026-08-30T09:38:01.204Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -1118,11 +1118,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße – Karlsruhe]]></title>
         <id>faecherbagger:2022V6173:2026-08-17T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2022V6173"/>
         <updated>2026-08-17T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Keine Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Keine Behinderung
 Zeitraum: 30.08.2026 – 17.10.2026
 Hinweis: Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen
 Verantwortlich: Telekommunikation
@@ -1185,17 +1185,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 12.01.2026 – 11.09.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Straßenquerungen = lokale Engstelle wechselseitig
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Pfinztalstraße, Kanzlerstraße, Amalienbadstraße, Gritznerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2024V4281:2026-08-16T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V4281"/>
-        <updated>2026-08-16T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 20.07.2026 – 29.08.2026
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
@@ -3199,18 +3188,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Raiherwiesenstraße zw. Pfaffstraße und Bleichstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0840:2026-06-30T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0840"/>
-        <updated>2026-06-30T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Sperrung (1 Richtung)
-Zeitraum: 28.05.2026 – 29.08.2026
-Hinweis: Kabelzuggrube und Kabelzugarbeiten, Fahrtrichtungssperrung einschließlich Gehweg vor Raiherwiesenstraße 11, Notgehweg auf der Fahrbahn
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Zirkel zw. Ritterstraße und Lammstraße – Karlsruhe]]></title>
         <id>faecherbagger:2024V4193:2026-06-28T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V4193"/>
@@ -3223,18 +3200,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: K9659 zw. Durlacher Allee und Bahnhof Durlach – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0841:2026-06-28T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0841"/>
-        <updated>2026-06-28T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 09.02.2026 – 29.08.2026
-Hinweis: Kabelzuggrube und Kabelzugarbeiten im Grünstreifen zwischen den Richtungsfahrbahnen, Fahrstreifensperrung in Richtung Grötzingen/B10
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V1775:2026-06-28T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1775"/>
@@ -3245,18 +3210,6 @@ Hinweis: Höhe Haus Nr. 36, 1-streifige Verkehrsführung mit Lichtsignal
 Verantwortlich: Gartenbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: K9659 Höhe DM – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4021:2026-06-28T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4021"/>
-        <updated>2026-06-28T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Keine Behinderung
-Zeitraum: 14.08.2023 – 29.08.2026
-Hinweis: Arbeitsstelle in der Sperrfläche
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Schlesier Straße zw. Westmarkstraße und Memeler Straße – Karlsruhe]]></title>
@@ -4778,6 +4731,30 @@ Quelle: Stadt Karlsruhe]]></summary>
         <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
 Zeitraum: 19.07.2027 – 29.08.2027
 Hinweis: Brauerstraße Entfall von Richtungsfahrstreifen in südlicher Richtung/Kriegstraße Entfall von Richtungsfahrstreifen in östlicher Richtung
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Kriegstraße zw. Reinhold-Frank-Straße u. Moningerstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0386:2026-03-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0386"/>
+        <updated>2026-03-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+Zeitraum: 30.08.2027 – 19.09.2027
+Hinweis: Entfall von Richtungsfahrstreifen mitÜberleitung auf die Gegenfahrbahn, Keine Ein- und Ausfahrt in/aus Lessingstraße Richtung Norden
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Lessingstraße zw. Sophienstraße und Kriegstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0419:2026-03-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0419"/>
+        <updated>2026-03-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Vollsperrung
+Zeitraum: 30.08.2027 – 19.09.2027
+Hinweis: Ein- und Ausfahrt von/zu Kriegstraße gesperrt
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>

@@ -1,61 +1,173 @@
 {
-  "generatedAt": "2026-08-29T18:56:55.439Z",
+  "generatedAt": "2026-08-30T09:38:01.204Z",
   "events": [
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2022V6173:2026-08-30",
-      "siteId": "2022V6173",
+      "kind": "new",
+      "signature": "new:2026V0386",
+      "siteId": "2026V0386",
       "point": [
-        8.42701,
-        49.008832
+        8.385036,
+        49.005494
       ],
-      "closure": "none",
-      "startDate": "2026-08-30",
-      "endDate": "2026-10-17",
+      "closure": "obstruction",
+      "startDate": "2027-08-30",
+      "endDate": "2027-09-19",
       "municipality": "Karlsruhe",
-      "location": "Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße"
+      "location": "Kriegstraße zw. Reinhold-Frank-Straße u. Moningerstraße"
     },
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V3976:2026-09-05",
-      "siteId": "2026V3976",
+      "kind": "new",
+      "signature": "new:2026V0419",
+      "siteId": "2026V0419",
       "point": [
-        8.357411,
-        49.008756
+        8.384775,
+        49.005798
       ],
       "closure": "full",
-      "startDate": "2026-09-05",
-      "endDate": "2026-09-05",
+      "startDate": "2027-08-30",
+      "endDate": "2027-09-19",
       "municipality": "Karlsruhe",
-      "location": "B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente"
+      "location": "Lessingstraße zw. Sophienstraße und Kriegstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V3977:2026-09-05",
-      "siteId": "2026V3977",
+      "signature": "starts-soon:2025V5289:2026-08-31",
+      "siteId": "2025V5289",
       "point": [
-        8.363759,
-        49.00601
+        8.39056,
+        48.999133
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-05",
-      "endDate": "2026-09-05",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-25",
       "municipality": "Karlsruhe",
-      "location": "B10/ Südtangente zw. AS7 und AS6"
+      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V4800:2026-09-05",
-      "siteId": "2026V4800",
+      "signature": "starts-soon:2025V7009:2026-08-31",
+      "siteId": "2025V7009",
       "point": [
-        8.475309,
-        48.994386
+        8.454504,
+        48.99531
+      ],
+      "closure": "full",
+      "startDate": "2026-08-31",
+      "endDate": "2027-04-18",
+      "municipality": "Karlsruhe",
+      "location": "Ellmendinger Straße im Einmündungsbereich zur Lissenstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V2134:2026-08-31",
+      "siteId": "2026V2134",
+      "point": [
+        8.372314,
+        49.003561
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-10",
+      "municipality": "Karlsruhe",
+      "location": "Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3414:2026-08-31",
+      "siteId": "2026V3414",
+      "point": [
+        8.397039,
+        49.050575
+      ],
+      "closure": "full",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-30",
+      "municipality": "Karlsruhe",
+      "location": "Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4194:2026-08-31",
+      "siteId": "2026V4194",
+      "point": [
+        8.47753,
+        48.971312
+      ],
+      "closure": "full",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-15",
+      "municipality": "Karlsruhe",
+      "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4548:2026-08-31",
+      "siteId": "2026V4548",
+      "point": [
+        8.399709,
+        48.96578
+      ],
+      "closure": "full",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-12",
+      "municipality": "Karlsruhe",
+      "location": "Moosalbstraße zw. Frauenalber Straße und Spessarter Straße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5239:2026-08-31",
+      "siteId": "2026V5239",
+      "point": [
+        8.451618,
+        49.011574
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-05",
-      "endDate": "2026-11-25",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-04",
       "municipality": "Karlsruhe",
-      "location": "Schlössleweg, Badener Straße, Lußstraße"
+      "location": "Elfmorgenbruch zw. Am Großmarkt und B10"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5363:2026-08-31",
+      "siteId": "2026V5363",
+      "point": [
+        8.406555,
+        49.009751
+      ],
+      "closure": "full",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-11",
+      "municipality": "Karlsruhe",
+      "location": "Adlerstraße zw. Kaiserstraße und Zirkel"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5404:2026-08-31",
+      "siteId": "2026V5404",
+      "point": [
+        8.447911,
+        49.016843
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-25",
+      "municipality": "Karlsruhe",
+      "location": "Rintheimer Hauptstraße von Jadstraße bis Mosbacherstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5421:2026-08-31",
+      "siteId": "2026V5421",
+      "point": [
+        8.450595,
+        49.040722
+      ],
+      "closure": "none",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-19",
+      "municipality": "Karlsruhe",
+      "location": "Bahnübergang Verlängerung Elbinger Straße"
     }
   ]
 }
