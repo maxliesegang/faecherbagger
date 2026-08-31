@@ -1,313 +1,173 @@
 {
-  "generatedAt": "2026-08-31T10:20:11.018Z",
+  "generatedAt": "2026-08-31T21:09:05.983Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V1163:2026-08-30T22:00:00Z",
-      "siteId": "2026V1163",
+      "signature": "changed:2025V6971:2026-08-30T22:00:00Z",
+      "siteId": "2025V6971",
       "point": [
-        8.459091,
-        48.989149
+        8.454338,
+        48.996221
       ],
       "closure": "full",
-      "startDate": "2026-08-31",
-      "endDate": "2026-10-30",
+      "startDate": "2027-01-25",
+      "endDate": "2027-04-18",
       "municipality": "Karlsruhe",
-      "location": "Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße"
+      "location": "Lissenstraße zw. Einmündung Killifeldstraße Anliegerfahrbahn u. Killifeldstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5239:2026-08-30T22:00:00Z",
-      "siteId": "2026V5239",
+      "signature": "changed:2025V6973:2026-08-30T22:00:00Z",
+      "siteId": "2025V6973",
       "point": [
-        8.451618,
-        49.011574
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-01",
-      "endDate": "2026-09-03",
-      "municipality": "Karlsruhe",
-      "location": "Elfmorgenbruch zw. Am Großmarkt und B10"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V1697",
-      "siteId": "2026V1697",
-      "point": [
-        8.395433,
-        48.994454
+        8.4545,
+        48.995857
       ],
       "closure": "full",
-      "startDate": "2026-09-21",
-      "endDate": "2026-10-31",
+      "startDate": "2026-10-10",
+      "endDate": "2027-04-18",
       "municipality": "Karlsruhe",
-      "location": "Ebertstraße zw. Kurfürstrenstraße und Ebertstraße"
+      "location": "Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V2140",
-      "siteId": "2026V2140",
+      "kind": "changed",
+      "signature": "changed:2025V7009:2026-08-30T22:00:00Z",
+      "siteId": "2025V7009",
       "point": [
-        8.392439,
-        49.012933
+        8.454504,
+        48.99531
+      ],
+      "closure": "full",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Ellmendinger Straße im Einmündungsbereich zur Lissenstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0051:2026-08-30T22:00:00Z",
+      "siteId": "2026V0051",
+      "point": [
+        8.32515,
+        49.004869
       ],
       "closure": "obstruction",
-      "startDate": "2026-11-09",
+      "startDate": "2026-08-10",
+      "endDate": "2026-09-14",
+      "municipality": "Karlsruhe",
+      "location": "Pfarrstraße, Waidweg, Malvenstr., Goldgrundstr., Hammweg, Schattenstr"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0662:2026-08-30T22:00:00Z",
+      "siteId": "2026V0662",
+      "point": [
+        8.461323,
+        48.992959
+      ],
+      "closure": "full",
+      "startDate": "2026-11-02",
       "endDate": "2027-04-30",
       "municipality": "Karlsruhe",
-      "location": "Bismarckstraße zw. Schirmerstraße und Seminarstraße"
+      "location": "Westmarkstraße zw. Auer Straße und Leußlerstraße"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V5444",
-      "siteId": "2026V5444",
+      "kind": "changed",
+      "signature": "changed:2026V4335:2026-08-30T22:00:00Z",
+      "siteId": "2026V4335",
       "point": [
-        8.420956,
-        49.012043
+        8.44509,
+        49.021042
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-11-14",
+      "startDate": "2026-07-13",
+      "endDate": "2026-10-25",
       "municipality": "Karlsruhe",
-      "location": "Hölderlinstraße, Emil-Gött-Straße"
+      "location": "Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V5451",
-      "siteId": "2026V5451",
-      "point": [
-        8.420864,
-        49.007314
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-31",
-      "endDate": "2026-10-31",
-      "municipality": "Karlsruhe",
-      "location": "Durlacher Allee 26 - 30; Lachnerstr.  1 - 11; Degenfeldstraße; Buntestraße 2 - 18; Gottesauer Str. 27 - 39"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30060",
-      "siteId": "30060",
-      "point": [
-        8.471731,
-        49.102335
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-07-27",
-      "endDate": "2026-10-30",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Friedrichstaler Allee/Lessingstraße bis Heidelberger Ring 68"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30083",
-      "siteId": "30083",
-      "point": [
-        8.509067,
-        49.093163
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-14",
-      "endDate": "2026-09-04",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Blankenlocher Straße 16"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30084",
+      "kind": "changed",
+      "signature": "changed:30084:2026-08-27T13:16:18Z",
       "siteId": "30084",
       "point": [
-        8.466488,
-        49.057228
+        8.392097,
+        49.019334
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-18",
-      "endDate": "2026-09-04",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Saverner Weg"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30085",
-      "siteId": "30085",
-      "point": [
-        8.508321,
-        49.113681
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-26",
-      "endDate": "2026-09-09",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Teichäckerweg 2"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30086",
-      "siteId": "30086",
-      "point": [
-        8.470328,
-        49.061901
-      ],
-      "closure": "none",
       "startDate": "2026-08-31",
-      "endDate": "2026-10-30",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Hauptstraße 155"
+      "endDate": "2026-09-18",
+      "municipality": "Rheinstetten",
+      "location": "Kastenwörthstraße 39"
     },
     {
       "kind": "new",
-      "signature": "new:30087",
-      "siteId": "30087",
+      "signature": "new:2026V5457",
+      "siteId": "2026V5457",
       "point": [
-        8.474412,
-        49.108469
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-27",
-      "endDate": "2026-09-09",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Rheinstraße West 57"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30116",
-      "siteId": "30116",
-      "point": [
-        8.205297,
-        48.856928
+        8.39227,
+        49.002654
       ],
       "closure": "full",
-      "startDate": "2026-08-31",
-      "endDate": "2026-09-11",
-      "municipality": "Rastatt",
-      "location": "76437 Rastatt, Herrenstraße"
+      "startDate": "2026-09-04",
+      "endDate": "2026-09-05",
+      "municipality": "Karlsruhe",
+      "location": "Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße"
     },
     {
       "kind": "new",
-      "signature": "new:30190",
-      "siteId": "30190",
+      "signature": "new:2026V5460",
+      "siteId": "2026V5460",
       "point": [
-        8.643665,
-        49.086623
+        8.377605,
+        49.050914
+      ],
+      "closure": "full",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-18",
+      "municipality": "Karlsruhe",
+      "location": "Kirchfeldstraße zw. Bärenweg und Mitteltorstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5464",
+      "siteId": "2026V5464",
+      "point": [
+        8.39227,
+        49.002654
+      ],
+      "closure": "full",
+      "startDate": "2026-09-11",
+      "endDate": "2026-09-12",
+      "municipality": "Karlsruhe",
+      "location": "Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40168",
+      "siteId": "40168",
+      "point": [
+        8.556691,
+        49.090508
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-19",
+      "municipality": "Bruchsal",
+      "location": "Bruchsaler Str. 80"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40169",
+      "siteId": "40169",
+      "point": [
+        8.588031,
+        49.077188
       ],
       "closure": "obstruction",
       "startDate": "2026-08-31",
       "endDate": "2026-09-18",
       "municipality": "Bruchsal",
-      "location": "Kantstraße 21"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40118",
-      "siteId": "40118",
-      "point": [
-        8.480132,
-        49.079324
-      ],
-      "closure": "full",
-      "startDate": "2026-08-24",
-      "endDate": "2026-10-23",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Wirtschaftsweg zwischen der L559 und dem Schloß Stutensee"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40122",
-      "siteId": "40122",
-      "point": [
-        8.471377,
-        49.100948
-      ],
-      "closure": "none",
-      "startDate": "2026-07-20",
-      "endDate": "2026-10-30",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Heidelberger Ring ggü. 22"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40123",
-      "siteId": "40123",
-      "point": [
-        8.503138,
-        49.113571
-      ],
-      "closure": "full",
-      "startDate": "2026-08-10",
-      "endDate": "2026-12-10",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Am Speyerer Hof"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40138",
-      "siteId": "40138",
-      "point": [
-        8.447742,
-        49.051405
-      ],
-      "closure": "full",
-      "startDate": "2026-08-03",
-      "endDate": "2026-11-17",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Stutenseer Allee Brückenbauwerk 119"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40140",
-      "siteId": "40140",
-      "point": [
-        8.471587,
-        49.1022
-      ],
-      "closure": "none",
-      "startDate": "2026-08-03",
-      "endDate": "2026-10-30",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Sinsheimer Straße / dortige öffentliche Parkplätze"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40149",
-      "siteId": "40149",
-      "point": [
-        8.47468,
-        49.060443
-      ],
-      "closure": "none",
-      "startDate": "2026-08-19",
-      "endDate": "2026-10-09",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Am Steinweg 44"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40161",
-      "siteId": "40161",
-      "point": [
-        8.568538,
-        49.113077
-      ],
-      "closure": "full",
-      "startDate": "2026-08-31",
-      "endDate": "2026-09-10",
-      "municipality": "Bruchsal",
-      "location": "Kiefernweg 13a"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40167",
-      "siteId": "40167",
-      "point": [
-        8.593579,
-        49.122873
-      ],
-      "closure": "none",
-      "startDate": "2026-08-31",
-      "endDate": "2026-09-19",
-      "municipality": "Bruchsal",
-      "location": "Orbinstraße 22"
+      "location": "Burgstraße 5"
     },
     {
       "kind": "starts-soon",
@@ -350,34 +210,6 @@
       "endDate": "2026-09-14",
       "municipality": "Karlsruhe",
       "location": "Uhlandstraße Kreuzungsbereich Sophienstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2025V6971:2026-09-01",
-      "siteId": "2025V6971",
-      "point": [
-        8.454338,
-        48.996221
-      ],
-      "closure": "full",
-      "startDate": "2026-09-01",
-      "endDate": "2027-04-18",
-      "municipality": "Karlsruhe",
-      "location": "Lissenstraße zw. Einmündung Killifeldstraße Anliegerfahrbahn u. Killifeldstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2025V6973:2026-09-01",
-      "siteId": "2025V6973",
-      "point": [
-        8.4545,
-        48.995857
-      ],
-      "closure": "full",
-      "startDate": "2026-09-01",
-      "endDate": "2027-04-18",
-      "municipality": "Karlsruhe",
-      "location": "Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn"
     },
     {
       "kind": "starts-soon",

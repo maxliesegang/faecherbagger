@@ -2050,14 +2050,14 @@
     "location": "Lissenstraße zw. Einmündung Killifeldstraße Anliegerfahrbahn u. Killifeldstraße",
     "notes": "Lissenstraße von Ellmendinger Straße bis Baufeld frei",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-01",
+    "startDate": "2027-01-25",
     "endDate": "2027-04-18",
     "point": [
       8.454338,
       48.996221
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-25T23:00:00Z"
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2025V6973",
@@ -2070,14 +2070,14 @@
     "location": "Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn",
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-01",
+    "startDate": "2026-10-10",
     "endDate": "2027-04-18",
     "point": [
       8.4545,
       48.995857
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-25T23:00:00Z"
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2025V7009",
@@ -2091,13 +2091,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-31",
-    "endDate": "2027-04-18",
+    "endDate": "2026-10-09",
     "point": [
       8.454504,
       48.99531
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2025V7017",
@@ -2264,7 +2264,7 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Pfarrstraße, Waidweg, Malvenstr., Goldgrundstr., Hammweg, Schattenstr",
@@ -2277,7 +2277,7 @@
       49.004869
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-29T22:00:00Z"
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2026V0071",
@@ -3150,14 +3150,14 @@
     "location": "Westmarkstraße zw. Auer Straße und Leußlerstraße",
     "notes": "Aufteilung nicht vorgenommen",
     "cause": "Tiefbauamt",
-    "startDate": "2026-09-14",
-    "endDate": "2027-03-31",
+    "startDate": "2026-11-02",
+    "endDate": "2027-04-30",
     "point": [
       8.461323,
       48.992959
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-07T22:00:00Z"
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2026V0671",
@@ -4133,8 +4133,8 @@
     "startDate": "2026-09-14",
     "endDate": "2026-10-30",
     "point": [
-      8.379441,
-      49.015728
+      8.379405,
+      49.015734
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-26T22:00:00Z"
@@ -5028,7 +5028,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Ritterstraße zw. Am Schlossplatz und Bankhof",
-    "notes": "Inlinersanierung, Abwicklung in mehreren Bauabschnitten, Arbeiten finden nur in den Nächten statt",
+    "notes": "Inlinersanierung, Abwicklung in mehreren Bauabschnitten, Tag- und Nachtarbeiten",
     "cause": "Tiefbauamt",
     "startDate": "2026-08-24",
     "endDate": "2026-09-04",
@@ -5891,13 +5891,13 @@
     "notes": "Sperrung Anliegerfahrbahn für KfZ, Verschwenk der Fahrbahn über den Grünstreifen, Tageweise einstreifige Verkehrsführung mit Signalisierung",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-07-13",
-    "endDate": "2026-10-18",
+    "endDate": "2026-10-25",
     "point": [
       8.44509,
       49.021042
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-13T22:00:00Z"
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2026V4336",
@@ -6893,8 +6893,8 @@
     "startDate": "2026-08-11",
     "endDate": "2026-09-15",
     "point": [
-      8.403866,
-      48.986743
+      8.403901,
+      48.986541
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-09T22:00:00Z"
@@ -7840,6 +7840,66 @@
     "lastModified": "2026-08-30T22:00:00Z"
   },
   {
+    "id": "2026V5457",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße",
+    "notes": "temporäre Sperrung für alle Verkehrsteilnehmer während Montagevorgang",
+    "cause": "Privat",
+    "startDate": "2026-09-04",
+    "endDate": "2026-09-05",
+    "point": [
+      8.39227,
+      49.002654
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-30T22:00:00Z"
+  },
+  {
+    "id": "2026V5460",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kirchfeldstraße zw. Bärenweg und Mitteltorstraße",
+    "notes": "Notmaßnahme",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-18",
+    "point": [
+      8.377605,
+      49.050914
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-30T22:00:00Z"
+  },
+  {
+    "id": "2026V5464",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße",
+    "notes": "temporäre Sperrung für alle Verkehrsteilnehmer während Montagevorgang",
+    "cause": "Privat",
+    "startDate": "2026-09-11",
+    "endDate": "2026-09-12",
+    "point": [
+      8.39227,
+      49.002654
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-30T22:00:00Z"
+  },
+  {
     "id": "30032",
     "phase": "active",
     "category": "special-use",
@@ -8082,22 +8142,22 @@
   {
     "id": "30084",
     "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Saverner Weg",
-    "notes": "Halbseitige Straßensperrung",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Kastenwörthstraße 39",
+    "notes": null,
     "cause": "Telekommunikation",
-    "startDate": "2026-08-18",
-    "endDate": "2026-09-04",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-18",
     "point": [
-      8.466488,
-      49.057228
+      8.392097,
+      49.019334
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-08-20T08:16:04Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-08-27T13:16:18Z"
   },
   {
     "id": "30085",
@@ -9518,6 +9578,46 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-31T06:25:03Z"
+  },
+  {
+    "id": "40168",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Bruchsaler Str. 80",
+    "notes": "Teilsperrung Gehweg und Fahrbahn wegen Reparaturarbeiten",
+    "cause": "Privat",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-19",
+    "point": [
+      8.556691,
+      49.090508
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-31T07:13:07Z"
+  },
+  {
+    "id": "40169",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Burgstraße 5",
+    "notes": "Verengung der Fahrbahn wegen Baugerüst",
+    "cause": "Privat",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-18",
+    "point": [
+      8.588031,
+      49.077188
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-31T08:32:43Z"
   },
   {
     "id": "40172",

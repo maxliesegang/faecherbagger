@@ -1,65 +1,84 @@
 {
-  "since": "2026-08-30T18:52:35.450Z",
+  "since": "2026-08-31T10:20:11.018Z",
   "added": [
-    "2026V1697",
-    "2026V2140",
-    "2026V5444",
-    "2026V5451",
-    "30060",
-    "30083",
-    "30084",
-    "30085",
-    "30086",
-    "30087",
-    "30116",
-    "30190",
-    "40118",
-    "40122",
-    "40123",
-    "40138",
-    "40140",
-    "40149",
-    "40161",
-    "40167"
+    "2026V5457",
+    "2026V5460",
+    "2026V5464",
+    "40168",
+    "40169"
   ],
   "modified": [
-    "2026V1163",
-    "2026V5239"
+    "2025V6971",
+    "2025V6973",
+    "2025V7009",
+    "2026V0051",
+    "2026V0662",
+    "2026V4335",
+    "30084"
   ],
-  "removed": [
-    "2026V1803",
-    "2026V2308",
-    "2026V3415",
-    "30049",
-    "30054",
-    "40031",
-    "40047",
-    "40048",
-    "40071",
-    "40089",
-    "40091",
-    "40098",
-    "40099",
-    "40112",
-    "40132"
-  ],
+  "removed": [],
   "relevantModifications": [
     {
-      "id": "2026V1163",
+      "id": "2025V6971",
       "changedFields": [
         "period"
       ],
       "previousClosure": "full",
-      "previousStartDate": "2026-08-28",
-      "previousEndDate": "2026-10-30"
+      "previousStartDate": "2026-09-01",
+      "previousEndDate": "2027-04-18"
     },
     {
-      "id": "2026V5239",
+      "id": "2025V6973",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-09-01",
+      "previousEndDate": "2027-04-18"
+    },
+    {
+      "id": "2025V7009",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-08-31",
+      "previousEndDate": "2027-04-18"
+    },
+    {
+      "id": "2026V0051",
+      "changedFields": [
+        "closure"
+      ],
+      "previousClosure": "none",
+      "previousStartDate": "2026-08-10",
+      "previousEndDate": "2026-09-14"
+    },
+    {
+      "id": "2026V0662",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-09-14",
+      "previousEndDate": "2027-03-31"
+    },
+    {
+      "id": "2026V4335",
       "changedFields": [
         "period"
       ],
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-08-31",
+      "previousStartDate": "2026-07-13",
+      "previousEndDate": "2026-10-18"
+    },
+    {
+      "id": "30084",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-08-18",
       "previousEndDate": "2026-09-04"
     }
   ]
