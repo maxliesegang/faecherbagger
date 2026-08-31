@@ -1461,7 +1461,7 @@
   },
   {
     "id": "2025V5289",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -2081,7 +2081,7 @@
   },
   {
     "id": "2025V7009",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -3550,14 +3550,14 @@
     "location": "Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße",
     "notes": null,
     "cause": "Tiefbauamt",
-    "startDate": "2026-08-28",
+    "startDate": "2026-08-31",
     "endDate": "2026-10-30",
     "point": [
       8.459091,
       48.989149
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2026V1217",
@@ -3678,6 +3678,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-27T22:00:00Z"
+  },
+  {
+    "id": "2026V1697",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ebertstraße zw. Kurfürstrenstraße und Ebertstraße",
+    "notes": "Kurfürstenstraße und Beiertheimer Allee = keine Ausfahrt auf Ebertstraße",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-21",
+    "endDate": "2026-10-31",
+    "point": [
+      8.395433,
+      48.994454
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2026V1762",
@@ -3960,26 +3980,6 @@
     "lastModified": "2026-03-17T23:00:00Z"
   },
   {
-    "id": "2026V1803",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wiesentalstraße zw. Gänsbergstraße und Neubergstraße",
-    "notes": "keine Bautätigkeiten - Bauferien",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-10",
-    "endDate": "2026-08-30",
-    "point": [
-      8.512006,
-      48.953356
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-06T22:00:00Z"
-  },
-  {
     "id": "2026V1805",
     "phase": "upcoming",
     "category": "gas-water",
@@ -4141,7 +4141,7 @@
   },
   {
     "id": "2026V2134",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "one-direction",
@@ -4158,6 +4158,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-24T22:00:00Z"
+  },
+  {
+    "id": "2026V2140",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bismarckstraße zw. Schirmerstraße und Seminarstraße",
+    "notes": "Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-09",
+    "endDate": "2027-04-30",
+    "point": [
+      8.392439,
+      49.012933
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2026V2154",
@@ -4198,26 +4218,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-23T22:00:00Z"
-  },
-  {
-    "id": "2026V2308",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg",
-    "notes": "Höhe Haus Nr. 20",
-    "cause": "Privat",
-    "startDate": "2026-04-27",
-    "endDate": "2026-08-30",
-    "point": [
-      8.379528,
-      49.043175
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V2409",
@@ -4901,7 +4901,7 @@
   },
   {
     "id": "2026V3414",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -4915,26 +4915,6 @@
     "point": [
       8.397039,
       49.050575
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
-  },
-  {
-    "id": "2026V3415",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-06",
-    "endDate": "2026-08-30",
-    "point": [
-      8.398291,
-      49.050606
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-23T22:00:00Z"
@@ -5681,7 +5661,7 @@
   },
   {
     "id": "2026V4194",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -6281,7 +6261,7 @@
   },
   {
     "id": "2026V4548",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "full",
@@ -7448,16 +7428,16 @@
     "siteType": "mobile",
     "municipality": "Karlsruhe",
     "location": "Elfmorgenbruch zw. Am Großmarkt und B10",
-    "notes": "signalisierte 1-streifige Verkehrsführung, vs. 9:00 Uhr - 15:00 Uhr",
+    "notes": "signalisierte 1-streifige Verkehrsführung, vs. 9:00 Uhr - 15:00 Uhr, kurzzeitige Vollsperrung während der Fällarbeiten",
     "cause": "Forstamt",
-    "startDate": "2026-08-31",
-    "endDate": "2026-09-04",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-03",
     "point": [
       8.451618,
       49.011574
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-18T22:00:00Z"
+    "lastModified": "2026-08-30T22:00:00Z"
   },
   {
     "id": "2026V5241",
@@ -7641,7 +7621,7 @@
   },
   {
     "id": "2026V5363",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -7701,7 +7681,7 @@
   },
   {
     "id": "2026V5404",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7741,7 +7721,7 @@
   },
   {
     "id": "2026V5421",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "none",
@@ -7820,6 +7800,46 @@
     "lastModified": "2026-08-27T22:00:00Z"
   },
   {
+    "id": "2026V5444",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hölderlinstraße, Emil-Gött-Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-14",
+    "endDate": "2026-11-14",
+    "point": [
+      8.420956,
+      49.012043
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-30T22:00:00Z"
+  },
+  {
+    "id": "2026V5451",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Durlacher Allee 26 - 30; Lachnerstr.  1 - 11; Degenfeldstraße; Buntestraße 2 - 18; Gottesauer Str. 27 - 39",
+    "notes": "Hausanschlüsse, Punktuelle Montagegruben im Gehwegbereich",
+    "cause": "Telekommunikation",
+    "startDate": "2026-08-31",
+    "endDate": "2026-10-31",
+    "point": [
+      8.420864,
+      49.007314
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-08-30T22:00:00Z"
+  },
+  {
     "id": "30032",
     "phase": "active",
     "category": "special-use",
@@ -7880,26 +7900,6 @@
     "lastModified": "2026-05-07T06:30:25Z"
   },
   {
-    "id": "30049",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Josef-Hayd-Straße / Goethestraße",
-    "notes": "Vollsperrung",
-    "cause": "Versorgungsunternehmen",
-    "startDate": "2026-06-29",
-    "endDate": "2026-07-29",
-    "point": [
-      8.508195,
-      49.109196
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-06-22T09:14:47Z"
-  },
-  {
     "id": "30051",
     "phase": "active",
     "category": "power-telecom",
@@ -7920,26 +7920,6 @@
     "lastModified": "2026-05-20T06:56:31Z"
   },
   {
-    "id": "30054",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutenee, Hauptstraße 72",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-06-30",
-    "endDate": "2026-07-17",
-    "point": [
-      8.472066,
-      49.066228
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-07-02T06:59:37Z"
-  },
-  {
     "id": "30055",
     "phase": "active",
     "category": "district-heating",
@@ -7953,8 +7933,8 @@
     "startDate": "2026-02-16",
     "endDate": "2026-12-01",
     "point": [
-      8.529882,
-      49.106461
+      8.565667,
+      49.126686
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-02-10T15:51:50Z"
@@ -7978,6 +7958,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-05-27T07:53:23Z"
+  },
+  {
+    "id": "30060",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Friedrichstaler Allee/Lessingstraße bis Heidelberger Ring 68",
+    "notes": "Abschnittsweise halbseitige Straßensperrungen sowie Gehwegsperrungen",
+    "cause": "Telekommunikation",
+    "startDate": "2026-07-27",
+    "endDate": "2026-10-30",
+    "point": [
+      8.471731,
+      49.102335
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-07-13T07:27:31Z"
   },
   {
     "id": "30075",
@@ -8060,6 +8060,106 @@
     "lastModified": "2026-08-05T10:00:54Z"
   },
   {
+    "id": "30083",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Blankenlocher Straße 16",
+    "notes": "Halbseitige Straßensperrung",
+    "cause": "Telekommunikation",
+    "startDate": "2026-08-14",
+    "endDate": "2026-09-04",
+    "point": [
+      8.509067,
+      49.093163
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-08-14T06:27:17Z"
+  },
+  {
+    "id": "30084",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Saverner Weg",
+    "notes": "Halbseitige Straßensperrung",
+    "cause": "Telekommunikation",
+    "startDate": "2026-08-18",
+    "endDate": "2026-09-04",
+    "point": [
+      8.466488,
+      49.057228
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-08-20T08:16:04Z"
+  },
+  {
+    "id": "30085",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Teichäckerweg 2",
+    "notes": "Halbseitige Straßensperrung",
+    "cause": "Versorgungsunternehmen",
+    "startDate": "2026-08-26",
+    "endDate": "2026-09-09",
+    "point": [
+      8.508321,
+      49.113681
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-08-26T05:34:37Z"
+  },
+  {
+    "id": "30086",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Hauptstraße 155",
+    "notes": "Gehwegvollsperrung",
+    "cause": "Versorgungsunternehmen",
+    "startDate": "2026-08-31",
+    "endDate": "2026-10-30",
+    "point": [
+      8.470328,
+      49.061901
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-08-26T05:37:44Z"
+  },
+  {
+    "id": "30087",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Rheinstraße West 57",
+    "notes": "Halbseitige Straßensperrung",
+    "cause": "Bauunternehmen",
+    "startDate": "2026-08-27",
+    "endDate": "2026-09-09",
+    "point": [
+      8.474412,
+      49.108469
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-08-27T06:39:55Z"
+  },
+  {
     "id": "30089",
     "phase": "active",
     "category": "gas-water",
@@ -8098,6 +8198,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2025-12-17T08:32:50Z"
+  },
+  {
+    "id": "30116",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Herrenstraße",
+    "notes": "Fahrbahnsanierung zwischen Rappenstraße und Posstraße",
+    "cause": "Fachbereich Bauen und Verkehr",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-11",
+    "point": [
+      8.205297,
+      48.856928
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-07-31T09:02:39Z"
   },
   {
     "id": "30124",
@@ -8238,6 +8358,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-14T06:46:40Z"
+  },
+  {
+    "id": "30190",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kantstraße 21",
+    "notes": "Fahrbahn verengt.\nGehweg gesperrt.",
+    "cause": "Fachgebiet Tiefbau",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-18",
+    "point": [
+      8.643665,
+      49.086623
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-14T09:56:43Z"
   },
   {
     "id": "30193",
@@ -8460,26 +8600,6 @@
     "lastModified": "2025-02-28T08:32:55Z"
   },
   {
-    "id": "40031",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Seilersbahn 2 und 4",
-    "notes": "Gehweg gesperrt, Umleitung des Fußverkehrs über den Kapuzinergarten",
-    "cause": "Privat",
-    "startDate": "2026-03-02",
-    "endDate": "2026-08-30",
-    "point": [
-      8.601544,
-      49.12336
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-02-27T08:18:12Z"
-  },
-  {
     "id": "40032",
     "phase": "active",
     "category": "special-use",
@@ -8578,46 +8698,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-05-20T10:20:00Z"
-  },
-  {
-    "id": "40047",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Im Kirchfeld 20",
-    "notes": "Gehwegsperrung sowie halbseitige Straßensperrung aufgrund Kranaufstellung",
-    "cause": "Privat",
-    "startDate": "2026-03-23",
-    "endDate": "2026-07-22",
-    "point": [
-      8.472263,
-      49.061466
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-03-23T12:11:19Z"
-  },
-  {
-    "id": "40048",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Hauptstraße 168",
-    "notes": "Einrichtung einer Halteverbotszone",
-    "cause": "Privat",
-    "startDate": "2026-03-26",
-    "endDate": "2026-08-26",
-    "point": [
-      8.470044,
-      49.0617
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-03-26T13:34:39Z"
   },
   {
     "id": "40052",
@@ -8733,8 +8813,8 @@
     "startDate": "2026-08-03",
     "endDate": "2026-09-04",
     "point": [
-      8.510811,
-      49.097572
+      8.550805,
+      49.089803
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-03-31T07:53:57Z"
@@ -8751,7 +8831,7 @@
     "notes": "Einrichtung einer Halteverbotszone",
     "cause": "Privat",
     "startDate": "2026-06-01",
-    "endDate": "2026-08-31",
+    "endDate": "2026-12-31",
     "point": [
       8.50837,
       49.112916
@@ -8778,26 +8858,6 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-05-12T09:27:00Z"
-  },
-  {
-    "id": "40071",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Brühlstraße 31-33",
-    "notes": "Kranaufstellung und dadurch halbseitige Straßensperrung sowie Gehwegsperrung",
-    "cause": "Privat",
-    "startDate": "2026-05-18",
-    "endDate": "2026-07-17",
-    "point": [
-      8.5119,
-      49.091002
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-05-13T12:01:27Z"
   },
   {
     "id": "40072",
@@ -8831,7 +8891,7 @@
     "notes": "Vollsperrung aufgrund Leitungsverlegung",
     "cause": "Stadtbauamt",
     "startDate": "2026-05-25",
-    "endDate": "2026-08-15",
+    "endDate": "2026-11-30",
     "point": [
       8.476303,
       49.069405
@@ -8851,7 +8911,7 @@
     "notes": "Vollsperrung",
     "cause": "Stadtbauamt",
     "startDate": "2026-05-25",
-    "endDate": "2026-08-15",
+    "endDate": "2026-11-30",
     "point": [
       8.476303,
       49.069405
@@ -8940,46 +9000,6 @@
     "lastModified": "2026-05-22T09:02:53Z"
   },
   {
-    "id": "40089",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Belchenstraße 18",
-    "notes": "Einrichtung einer Halteverbotszone",
-    "cause": "Privat",
-    "startDate": "2026-06-29",
-    "endDate": "2026-07-24",
-    "point": [
-      8.462409,
-      49.046053
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-06-01T06:21:32Z"
-  },
-  {
-    "id": "40091",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Berliner Allee 42",
-    "notes": "Gehwegsperrung sowie Einrichtung einer Halteverbotszone",
-    "cause": "Privat",
-    "startDate": "2026-06-08",
-    "endDate": "2026-08-03",
-    "point": [
-      8.483339,
-      49.101034
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-06-01T11:25:45Z"
-  },
-  {
     "id": "40096",
     "phase": "active",
     "category": "special-use",
@@ -8998,46 +9018,6 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-06-11T05:34:41Z"
-  },
-  {
-    "id": "40098",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Speyerer Straße 32",
-    "notes": "Gerüstaufstellung und dadurch Gehwegsperrung",
-    "cause": "Privat",
-    "startDate": "2026-06-10",
-    "endDate": "2026-07-10",
-    "point": [
-      8.509753,
-      49.115747
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-06-11T05:51:11Z"
-  },
-  {
-    "id": "40099",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Speyerer Straße",
-    "notes": "Gerüstaufstellung und dadurch Gehwegsperrung",
-    "cause": "Privat",
-    "startDate": "2026-06-29",
-    "endDate": "2026-07-29",
-    "point": [
-      8.509122,
-      49.114535
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-06-11T11:15:27Z"
   },
   {
     "id": "40100",
@@ -9120,26 +9100,6 @@
     "lastModified": "2024-09-04T09:38:45Z"
   },
   {
-    "id": "40112",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Allmendstraße",
-    "notes": "Einrichtung einer Halteverbotszone / Containerstellung",
-    "cause": "Privat",
-    "startDate": "2026-06-26",
-    "endDate": "2026-07-24",
-    "point": [
-      8.466275,
-      49.061588
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-06-24T06:48:23Z"
-  },
-  {
     "id": "40113",
     "phase": "active",
     "category": "special-use",
@@ -9153,8 +9113,8 @@
     "startDate": "2026-06-11",
     "endDate": "2026-11-07",
     "point": [
-      8.524525,
-      49.102927
+      8.495823,
+      49.081846
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-06-12T09:02:31Z"
@@ -9200,6 +9160,66 @@
     "lastModified": "2026-07-06T07:36:48Z"
   },
   {
+    "id": "40118",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Wirtschaftsweg zwischen der L559 und dem Schloß Stutensee",
+    "notes": "Leitungsverlegung / Vollsperrung / Umleitung ist entsprechend ausgeschildert",
+    "cause": "Stadtbauamt",
+    "startDate": "2026-08-24",
+    "endDate": "2026-10-23",
+    "point": [
+      8.480132,
+      49.079324
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-07-07T05:30:32Z"
+  },
+  {
+    "id": "40122",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Heidelberger Ring ggü. 22",
+    "notes": "Lagerung von Baumaterial auf den öffentlichen Parkplätzen / Einrichtung einer Halteverbotszone",
+    "cause": "Privat",
+    "startDate": "2026-07-20",
+    "endDate": "2026-10-30",
+    "point": [
+      8.471377,
+      49.100948
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-07-10T08:46:21Z"
+  },
+  {
+    "id": "40123",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Am Speyerer Hof",
+    "notes": "Vollsperrung aufgrund Kranaufstellung",
+    "cause": "Privat",
+    "startDate": "2026-08-10",
+    "endDate": "2026-12-10",
+    "point": [
+      8.503138,
+      49.113571
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-07-14T07:15:24Z"
+  },
+  {
     "id": "40126",
     "phase": "active",
     "category": "special-use",
@@ -9238,26 +9258,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-07-10T09:04:20Z"
-  },
-  {
-    "id": "40132",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Buchenring",
-    "notes": "Sperrung in eine Fahrtrichtung, Buchenring, Abschnitt Tannenweg - Kiefernweg",
-    "cause": "Privat",
-    "startDate": "2025-09-15",
-    "endDate": "2026-08-30",
-    "point": [
-      8.46407,
-      49.049677
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2025-09-02T08:48:37Z"
   },
   {
     "id": "40134",
@@ -9300,6 +9300,46 @@
     "lastModified": "2026-04-09T09:34:51Z"
   },
   {
+    "id": "40138",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Stutenseer Allee Brückenbauwerk 119",
+    "notes": "Vollsperrung",
+    "cause": "Land Baden - Württemberg",
+    "startDate": "2026-08-03",
+    "endDate": "2026-11-17",
+    "point": [
+      8.447742,
+      49.051405
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-07-28T07:57:11Z"
+  },
+  {
+    "id": "40140",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Sinsheimer Straße / dortige öffentliche Parkplätze",
+    "notes": "Lagerung von Baumaterial / Einrichtung einer Halteverbotszone",
+    "cause": "Privat",
+    "startDate": "2026-08-03",
+    "endDate": "2026-10-30",
+    "point": [
+      8.471587,
+      49.1022
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-07-29T05:44:44Z"
+  },
+  {
     "id": "40142",
     "phase": "active",
     "category": "special-use",
@@ -9313,8 +9353,8 @@
     "startDate": "2026-08-24",
     "endDate": "2026-09-14",
     "point": [
-      8.602438,
-      49.132916
+      8.558537,
+      49.112861
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-07-28T08:46:02Z"
@@ -9380,6 +9420,26 @@
     "lastModified": "2026-08-04T11:12:46Z"
   },
   {
+    "id": "40149",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Am Steinweg 44",
+    "notes": "Lagerung von Baumaterial / Sperrung der dortigen Parkplätze",
+    "cause": "Bauunternehmen",
+    "startDate": "2026-08-19",
+    "endDate": "2026-10-09",
+    "point": [
+      8.47468,
+      49.060443
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-08-18T04:43:24Z"
+  },
+  {
     "id": "40154",
     "phase": "active",
     "category": "special-use",
@@ -9418,6 +9478,46 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-24T05:42:04Z"
+  },
+  {
+    "id": "40161",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kiefernweg 13a",
+    "notes": "Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.",
+    "cause": "Privat",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-10",
+    "point": [
+      8.568538,
+      49.113077
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-26T06:47:31Z"
+  },
+  {
+    "id": "40167",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Orbinstraße 22",
+    "notes": "Zufahrt zum Parkplatz wird infolge von Reparaturarbeiten teilweise gesperrt.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-19",
+    "point": [
+      8.593579,
+      49.122873
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-31T06:25:03Z"
   },
   {
     "id": "40172",
