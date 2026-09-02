@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-09-01T18:54:58.095Z</updated>
+    <updated>2026-09-02T08:17:12.836Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -208,11 +208,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: B36 zw. Siemensallee und Sudetenstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: B36 zw. Siemensallee und Sudetenstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5494:2026-08-31T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5494"/>
         <updated>2026-08-31T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Grünpflege · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
 Zeitraum: 02.09.2026 – 02.09.2026
 Hinweis: lokale 1-streifige Verkehrsführung, Arbeiten wechselseitig
 Verantwortlich: Gartenbauamt
@@ -220,11 +220,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Beunstraße Nr. 59 - 60 – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Beunstraße Nr. 59 - 60 – Karlsruhe]]></title>
         <id>faecherbagger:2026V5497:2026-08-31T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5497"/>
         <updated>2026-08-31T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
 Zeitraum: 02.09.2026 – 02.09.2026
 Hinweis: Tagesbaustelle zw. 9.00 und 15.00 Uhr mit Sperrung Geradeausspur. Verkehrsführung über verbleibenden Linksabbieger-Streifen
 Verantwortlich: Stadtwerke Karlsruhe
@@ -266,6 +266,17 @@ Hinweis: Verengung der Fahrbahn wegen Baugerüst
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Bergstraße 30 – Ettlingen]]></title>
+        <id>faecherbagger:40351:2026-08-31T08:23:18Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40351"/>
+        <updated>2026-08-31T08:23:18.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Vollsperrung
+Zeitraum: 02.09.2026 – 18.09.2026
+Verantwortlich: Stadtwerke Ettlingen
+Quelle: Stadt Ettlingen]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Bruchsaler Str. 80 – Bruchsal]]></title>
@@ -469,6 +480,43 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Tunnelstraße 1a – Bruchsal]]></title>
+        <id>faecherbagger:40166:2026-08-28T10:21:16Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40166"/>
+        <updated>2026-08-28T10:21:16.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 02.09.2026 – 18.09.2026
+Hinweis: Gerüststellung am Eckhaus in der Tunnelstraße und Friedhofstraße
+Verantwortlich: Privat
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Pestalozzistraße geg. Haus 5-7 – Bruchsal]]></title>
+        <id>faecherbagger:30200:2026-08-28T08:37:57Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30200"/>
+        <updated>2026-08-28T08:37:57.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
+Zeitraum: 02.09.2026 – 11.09.2026
+Hinweis: Am hinteren Ende der Realschule muss der Kanal repariert werden. Dazu wird der Gehweg auf der Schulseite gesperrt und die Fahrbahn verengt.
+Verantwortlich: Eigenbetrieb Umwelttechnik
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Salinenstraße 24 – Bruchsal]]></title>
+        <id>faecherbagger:30199:2026-08-28T07:52:39Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30199"/>
+        <updated>2026-08-28T07:52:39.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
+Zeitraum: 02.09.2026 – 23.09.2026
+Hinweis: Kanalschaden in der Salinenstraße kurz vor der Schwimmbadstraße.
+Die Fahrbahn muss halb gesperrt werden.
+Verantwortlich: Eigenbetrieb Umwelttechnik
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Mastweidenweg unterhalb der DB-AG Brücke – Karlsruhe]]></title>
         <id>faecherbagger:2023V4962:2026-08-27T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2023V4962"/>
@@ -536,17 +584,6 @@ Zeitraum: 03.09.2026 – 03.09.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: B36/ Michelinstraße Abfahrt zur Carl-Metz-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5436:2026-08-27T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5436"/>
-        <updated>2026-08-27T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Sperrung (1 Richtung)
-Zeitraum: 01.09.2026 – 01.09.2026
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Kastenwörthstraße 39 – Rheinstetten]]></title>
@@ -698,18 +735,6 @@ Hinweis: Beeinträchtigung nur Radweg und Fußgänger, Umleitung über BÜ Elbin
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Margerienweg8 – Bruchsal]]></title>
-        <id>faecherbagger:40162:2026-08-26T11:05:37Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40162"/>
-        <updated>2026-08-26T11:05:37.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 01.09.2026 – 01.09.2026
-Hinweis: Parkplatzsperrung
-Verantwortlich: Privat
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Kiefernweg 13a – Bruchsal]]></title>
@@ -2550,11 +2575,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V1010:2026-07-30T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1010"/>
         <updated>2026-07-30T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
 Zeitraum: 02.09.2026 – 19.09.2026
 Hinweis: Vollsperrung Böhmerwaldstraße von Süden kommend an der Kreuzung zur Thüringer Straße
 Verantwortlich: Stadtwerke Karlsruhe
@@ -5696,18 +5721,6 @@ Hinweis: Sperrung Bahnhofsvorplatz und einiger Gehwege beiderseits der Straße B
 Verantwortlich: Fachgebiet Tiefbau
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Eggensteiner Straße – Stutensee]]></title>
-        <id>faecherbagger:40019:2025-02-28T08:32:55Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40019"/>
-        <updated>2025-02-28T08:32:55.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Keine Behinderung
-Zeitraum: 01.07.2024 – 01.09.2026
-Hinweis: Sperrung Schulgässle zwischen Eggensteiner Straße und Pestalozzi Grundschule
-Verantwortlich: Stadtbauamt
-Quelle: Stadt Stutensee]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Am Gottesauer Hof / Am Maulbronner Hof – Stutensee]]></title>

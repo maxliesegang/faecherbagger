@@ -3341,7 +3341,7 @@
   },
   {
     "id": "2026V1010",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -7640,26 +7640,6 @@
     "lastModified": "2026-08-27T22:00:00Z"
   },
   {
-    "id": "2026V5436",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "one-direction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "B36/ Michelinstraße Abfahrt zur Carl-Metz-Straße",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-01",
-    "endDate": "2026-09-01",
-    "point": [
-      8.354699,
-      49.009362
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-27T22:00:00Z"
-  },
-  {
     "id": "2026V5444",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -7761,7 +7741,7 @@
   },
   {
     "id": "2026V5494",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7781,7 +7761,7 @@
   },
   {
     "id": "2026V5497",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -8360,6 +8340,46 @@
     "lastModified": "2026-08-21T10:45:29Z"
   },
   {
+    "id": "30199",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Salinenstraße 24",
+    "notes": "Kanalschaden in der Salinenstraße kurz vor der Schwimmbadstraße.\nDie Fahrbahn muss halb gesperrt werden.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-09-02",
+    "endDate": "2026-09-23",
+    "point": [
+      8.592398,
+      49.120765
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-28T07:52:39Z"
+  },
+  {
+    "id": "30200",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Pestalozzistraße geg. Haus 5-7",
+    "notes": "Am hinteren Ende der Realschule muss der Kanal repariert werden. Dazu wird der Gehweg auf der Schulseite gesperrt und die Fahrbahn verengt.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-09-02",
+    "endDate": "2026-09-11",
+    "point": [
+      8.581675,
+      49.123812
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-28T08:37:57Z"
+  },
+  {
     "id": "30236",
     "phase": "active",
     "category": "bridge",
@@ -8458,26 +8478,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2025-03-27T14:25:12Z"
-  },
-  {
-    "id": "40019",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Eggensteiner Straße",
-    "notes": "Sperrung Schulgässle zwischen Eggensteiner Straße und Pestalozzi Grundschule",
-    "cause": "Stadtbauamt",
-    "startDate": "2024-07-01",
-    "endDate": "2026-09-01",
-    "point": [
-      8.46992,
-      49.065079
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2025-02-28T08:32:55Z"
   },
   {
     "id": "40020",
@@ -8693,8 +8693,8 @@
     "startDate": "2026-03-13",
     "endDate": "2026-09-26",
     "point": [
-      8.524345,
-      49.102939
+      8.409578,
+      49.035478
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-03-27T07:55:25Z"
@@ -9433,8 +9433,8 @@
     "startDate": "2026-08-14",
     "endDate": "2026-09-07",
     "point": [
-      8.551793,
-      49.08437
+      8.511442,
+      49.078071
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-13T09:02:17Z"
@@ -9480,26 +9480,6 @@
     "lastModified": "2026-08-26T06:47:31Z"
   },
   {
-    "id": "40162",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Margerienweg8",
-    "notes": "Parkplatzsperrung",
-    "cause": "Privat",
-    "startDate": "2026-09-01",
-    "endDate": "2026-09-01",
-    "point": [
-      8.524422,
-      49.102935
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-26T11:05:37Z"
-  },
-  {
     "id": "40163",
     "phase": "active",
     "category": "special-use",
@@ -9518,6 +9498,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-27T08:46:08Z"
+  },
+  {
+    "id": "40166",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Tunnelstraße 1a",
+    "notes": "Gerüststellung am Eckhaus in der Tunnelstraße und Friedhofstraße",
+    "cause": "Privat",
+    "startDate": "2026-09-02",
+    "endDate": "2026-09-18",
+    "point": [
+      8.600153,
+      49.12094
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-28T10:21:16Z"
   },
   {
     "id": "40167",
@@ -9738,6 +9738,26 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-08-06T14:07:17Z"
+  },
+  {
+    "id": "40351",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Ettlingen",
+    "location": "Bergstraße 30",
+    "notes": null,
+    "cause": "Stadtwerke Ettlingen",
+    "startDate": "2026-09-02",
+    "endDate": "2026-09-18",
+    "point": [
+      8.382268,
+      48.911263
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-08-31T08:23:18Z"
   },
   {
     "id": "40354",
