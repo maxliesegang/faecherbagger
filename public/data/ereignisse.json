@@ -1,61 +1,257 @@
 {
-  "generatedAt": "2026-09-02T08:17:12.836Z",
+  "generatedAt": "2026-09-02T19:00:30.321Z",
   "events": [
     {
-      "kind": "new",
-      "signature": "new:30199",
-      "siteId": "30199",
+      "kind": "changed",
+      "signature": "changed:2025V5173:2026-09-01T22:00:00Z",
+      "siteId": "2025V5173",
       "point": [
-        8.592398,
-        49.120765
+        8.412875,
+        49.003254
       ],
-      "closure": "obstruction",
-      "startDate": "2026-09-02",
-      "endDate": "2026-09-23",
-      "municipality": "Bruchsal",
-      "location": "Salinenstraße 24"
+      "closure": "one-direction",
+      "startDate": "2025-09-22",
+      "endDate": "2027-01-31",
+      "municipality": "Karlsruhe",
+      "location": "Elisabeth-Großwendt-Straße zw. Philipp-Reis-Straße und Wielandstraße"
     },
     {
-      "kind": "new",
-      "signature": "new:30200",
-      "siteId": "30200",
+      "kind": "changed",
+      "signature": "changed:2026V1797:2026-09-01T22:00:00Z",
+      "siteId": "2026V1797",
       "point": [
-        8.581675,
-        49.123812
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-02",
-      "endDate": "2026-09-11",
-      "municipality": "Bruchsal",
-      "location": "Pestalozzistraße geg. Haus 5-7"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40166",
-      "siteId": "40166",
-      "point": [
-        8.600153,
-        49.12094
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-02",
-      "endDate": "2026-09-18",
-      "municipality": "Bruchsal",
-      "location": "Tunnelstraße 1a"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40351",
-      "siteId": "40351",
-      "point": [
-        8.382268,
-        48.911263
+        8.510674,
+        48.953985
       ],
       "closure": "full",
+      "startDate": "2026-11-09",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Werrenstraße Kreuzungsbereich Gänsbergstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V1798:2026-09-01T22:00:00Z",
+      "siteId": "2026V1798",
+      "point": [
+        8.51278,
+        48.953659
+      ],
+      "closure": "full",
+      "startDate": "2027-01-11",
+      "endDate": "2027-02-28",
+      "municipality": "Karlsruhe",
+      "location": "Gänsbergstraße zw. Wiesentalstraße und Höhenstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V1799:2026-09-01T22:00:00Z",
+      "siteId": "2026V1799",
+      "point": [
+        8.513851,
+        48.953272
+      ],
+      "closure": "full",
+      "startDate": "2027-03-01",
+      "endDate": "2027-04-18",
+      "municipality": "Karlsruhe",
+      "location": "Gänsbergstraße zw. Höhenstraße und Eichwaldstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V1800:2026-09-01T22:00:00Z",
+      "siteId": "2026V1800",
+      "point": [
+        8.51454,
+        48.952791
+      ],
+      "closure": "full",
+      "startDate": "2027-04-19",
+      "endDate": "2027-05-31",
+      "municipality": "Karlsruhe",
+      "location": "Gänsbergstraße zw. Höhenstraße und Eichwaldstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V1802:2026-09-01T22:00:00Z",
+      "siteId": "2026V1802",
+      "point": [
+        8.514021,
+        48.952383
+      ],
+      "closure": "full",
+      "startDate": "2027-06-01",
+      "endDate": "2027-07-18",
+      "municipality": "Karlsruhe",
+      "location": "Eichwaldstraße zw. Höhenstraße und Gänsbergstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V1805:2026-09-01T22:00:00Z",
+      "siteId": "2026V1805",
+      "point": [
+        8.51324,
+        48.953187
+      ],
+      "closure": "full",
+      "startDate": "2027-09-01",
+      "endDate": "2027-10-31",
+      "municipality": "Karlsruhe",
+      "location": "Höhenstraße zw. Eichwaldstraße und Gänsbergstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5421:2026-09-01T22:00:00Z",
+      "siteId": "2026V5421",
+      "point": [
+        8.450595,
+        49.040722
+      ],
+      "closure": "none",
       "startDate": "2026-09-02",
-      "endDate": "2026-09-18",
-      "municipality": "Ettlingen",
-      "location": "Bergstraße 30"
+      "endDate": "2026-09-19",
+      "municipality": "Karlsruhe",
+      "location": "Bahnübergang Verlängerung Elbinger Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V4584",
+      "siteId": "2025V4584",
+      "point": [
+        8.423686,
+        49.005683
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-03-12",
+      "endDate": "2026-10-31",
+      "municipality": "Karlsruhe",
+      "location": "Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V6487",
+      "siteId": "2025V6487",
+      "point": [
+        8.369963,
+        49.00646
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-02-09",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Yorckstraße zw. Wichernstraße u. Yorckplatz"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V1804",
+      "siteId": "2026V1804",
+      "point": [
+        8.513344,
+        48.952589
+      ],
+      "closure": "full",
+      "startDate": "2027-07-19",
+      "endDate": "2027-08-15",
+      "municipality": "Karlsruhe",
+      "location": "Höhenstraße zw. Eichwaldstraße und Gänsbergstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V1807",
+      "siteId": "2026V1807",
+      "point": [
+        8.51324,
+        48.953187
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-08-01",
+      "endDate": "2027-08-31",
+      "municipality": "Karlsruhe",
+      "location": "Höhenstraße zw. Eichwaldstraße und Gänsbergstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V2798",
+      "siteId": "2026V2798",
+      "point": [
+        8.368212,
+        49.000854
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-11",
+      "municipality": "Karlsruhe",
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V2799",
+      "siteId": "2026V2799",
+      "point": [
+        8.368415,
+        49.000684
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-11-15",
+      "municipality": "Karlsruhe",
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V2800",
+      "siteId": "2026V2800",
+      "point": [
+        8.368225,
+        49.00079
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-11-15",
+      "municipality": "Karlsruhe",
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4966",
+      "siteId": "2026V4966",
+      "point": [
+        8.403054,
+        48.967183
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2027-04-02",
+      "municipality": "Karlsruhe",
+      "location": "Nikolausstraße zw. Lützowstraße und Allmendstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5519",
+      "siteId": "2026V5519",
+      "point": [
+        8.460789,
+        48.99249
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-07",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Grenzstraße zw. Westmarkstraße und Kärtner Straße, Leußlerstraße, Westmarkstraße zw. Grenzstraße und Stegwiesenstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40019",
+      "siteId": "40019",
+      "point": [
+        8.46992,
+        49.065079
+      ],
+      "closure": "none",
+      "startDate": "2024-07-01",
+      "endDate": "2027-09-01",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Eggensteiner Straße"
     },
     {
       "kind": "starts-soon",

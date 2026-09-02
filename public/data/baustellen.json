@@ -1260,6 +1260,26 @@
     "lastModified": "2026-08-12T22:00:00Z"
   },
   {
+    "id": "2025V4584",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-03-12",
+    "endDate": "2026-10-31",
+    "point": [
+      8.423686,
+      49.005683
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-01T22:00:00Z"
+  },
+  {
     "id": "2025V4609",
     "phase": "active",
     "category": "special-use",
@@ -1331,13 +1351,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2025-09-22",
-    "endDate": "2028-05-31",
+    "endDate": "2027-01-31",
     "point": [
       8.412875,
       49.003254
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-25T23:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2025V5267",
@@ -1658,6 +1678,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-03T22:00:00Z"
+  },
+  {
+    "id": "2025V6487",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Yorckstraße zw. Wichernstraße u. Yorckplatz",
+    "notes": "Lokale Arbeitsstelle Höhe Nr. 59",
+    "cause": "Privat",
+    "startDate": "2026-02-09",
+    "endDate": "2026-10-09",
+    "point": [
+      8.369963,
+      49.00646
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2025V6511",
@@ -3810,14 +3850,14 @@
     "location": "Werrenstraße Kreuzungsbereich Gänsbergstraße",
     "notes": "vs 6 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-11",
-    "endDate": "2027-02-28",
+    "startDate": "2026-11-09",
+    "endDate": "2026-12-31",
     "point": [
       8.510674,
       48.953985
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-17T23:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2026V1798",
@@ -3828,16 +3868,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Gänsbergstraße zw. Wiesentalstraße und Höhenstraße",
-    "notes": "vs 8 Wochen",
+    "notes": "vs 6 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-03-01",
-    "endDate": "2027-04-30",
+    "startDate": "2027-01-11",
+    "endDate": "2027-02-28",
     "point": [
       8.51278,
       48.953659
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-17T23:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2026V1799",
@@ -3850,14 +3890,14 @@
     "location": "Gänsbergstraße zw. Höhenstraße und Eichwaldstraße",
     "notes": "vs 6 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-05-01",
-    "endDate": "2027-06-18",
+    "startDate": "2027-03-01",
+    "endDate": "2027-04-18",
     "point": [
       8.513851,
       48.953272
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-17T23:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2026V1800",
@@ -3870,34 +3910,14 @@
     "location": "Gänsbergstraße zw. Höhenstraße und Eichwaldstraße",
     "notes": "vs. 6 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-06-19",
-    "endDate": "2027-07-31",
+    "startDate": "2027-04-19",
+    "endDate": "2027-05-31",
     "point": [
       8.51454,
       48.952791
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-17T23:00:00Z"
-  },
-  {
-    "id": "2026V1801",
-    "phase": "upcoming",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gänsbergstraße zw. Höhenstraße und Eichwaldstraße,",
-    "notes": "keine Bautätigkeiten - Bauferien",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-07-31",
-    "endDate": "2027-09-01",
-    "point": [
-      8.513191,
-      48.953015
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-17T23:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2026V1802",
@@ -3910,14 +3930,34 @@
     "location": "Eichwaldstraße zw. Höhenstraße und Gänsbergstraße",
     "notes": "vs 6 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-09-01",
-    "endDate": "2027-10-15",
+    "startDate": "2027-06-01",
+    "endDate": "2027-07-18",
     "point": [
       8.514021,
       48.952383
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-17T23:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
+  },
+  {
+    "id": "2026V1804",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Höhenstraße zw. Eichwaldstraße und Gänsbergstraße",
+    "notes": "vs. 6 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-07-19",
+    "endDate": "2027-08-15",
+    "point": [
+      8.513344,
+      48.952589
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2026V1805",
@@ -3930,34 +3970,34 @@
     "location": "Höhenstraße zw. Eichwaldstraße und Gänsbergstraße",
     "notes": "vs 8 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-12-01",
-    "endDate": "2027-01-31",
+    "startDate": "2027-09-01",
+    "endDate": "2027-10-31",
     "point": [
       8.51324,
       48.953187
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-17T23:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
-    "id": "2026V1806",
+    "id": "2026V1807",
     "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Eichwaldstraße zw. Neubergstraße und Höhenstraße",
-    "notes": "vs 8 Wochen",
+    "location": "Höhenstraße zw. Eichwaldstraße und Gänsbergstraße",
+    "notes": "keine Bautätigkeiten - Bauferien",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-02-01",
-    "endDate": "2027-03-31",
+    "startDate": "2027-08-01",
+    "endDate": "2027-08-31",
     "point": [
-      8.512848,
-      48.952123
+      8.51324,
+      48.953187
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-17T23:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2026V1814",
@@ -4478,6 +4518,66 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-03T22:00:00Z"
+  },
+  {
+    "id": "2026V2798",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
+    "notes": "Greisbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-11",
+    "point": [
+      8.368212,
+      49.000854
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-01T22:00:00Z"
+  },
+  {
+    "id": "2026V2799",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-15",
+    "point": [
+      8.368415,
+      49.000684
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-01T22:00:00Z"
+  },
+  {
+    "id": "2026V2800",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
+    "notes": "Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-15",
+    "point": [
+      8.368225,
+      49.00079
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2026V2864",
@@ -6980,6 +7080,26 @@
     "lastModified": "2026-08-09T22:00:00Z"
   },
   {
+    "id": "2026V4966",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Nikolausstraße zw. Lützowstraße und Allmendstraße",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh- und Radweg, Straßenquerungen = halbseitige lokale Engstelle",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-05",
+    "endDate": "2027-04-02",
+    "point": [
+      8.403054,
+      48.967183
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-01T22:00:00Z"
+  },
+  {
     "id": "2026V4972",
     "phase": "active",
     "category": "bridge",
@@ -7590,14 +7710,14 @@
     "location": "Bahnübergang Verlängerung Elbinger Straße",
     "notes": "Beeinträchtigung nur Radweg und Fußgänger, Umleitung Europaviertel großräumig über Ortelsburger Straße und Elbinger Straße",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-31",
+    "startDate": "2026-09-02",
     "endDate": "2026-09-19",
     "point": [
       8.450595,
       49.040722
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-26T22:00:00Z"
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "2026V5422",
@@ -7798,6 +7918,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-31T22:00:00Z"
+  },
+  {
+    "id": "2026V5519",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Grenzstraße zw. Westmarkstraße und Kärtner Straße, Leußlerstraße, Westmarkstraße zw. Grenzstraße und Stegwiesenstraße",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-07",
+    "endDate": "2026-10-30",
+    "point": [
+      8.460789,
+      48.99249
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-01T22:00:00Z"
   },
   {
     "id": "30032",
@@ -8478,6 +8618,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2025-03-27T14:25:12Z"
+  },
+  {
+    "id": "40019",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Eggensteiner Straße",
+    "notes": "Sperrung Schulgässle zwischen Eggensteiner Straße und Pestalozzi Grundschule",
+    "cause": "Stadtbauamt",
+    "startDate": "2024-07-01",
+    "endDate": "2027-09-01",
+    "point": [
+      8.46992,
+      49.065079
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2025-02-28T08:32:55Z"
   },
   {
     "id": "40020",
