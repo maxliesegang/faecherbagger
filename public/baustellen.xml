@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Wed, 02 Sep 2026 19:00:30 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 03 Sep 2026 08:26:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -28,6 +28,54 @@ Quelle: Stadt Karlsruhe]]></description>
             <description><![CDATA[Geplant · Gleisbau · Vollsperrung
 Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Nowackanlage zw. Baumeisterstraße und Ettlinger Straße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3915</link>
+            <guid isPermaLink="false">faecherbagger:2026V3915:2026-09-02T22:00:00Z</guid>
+            <pubDate>Wed, 02 Sep 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Fernwärme · Mit Behinderung
+Zeitraum: 25.09.2026 – 02.10.2026
+Hinweis: Restarbeiten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Fernwärme</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5392</link>
+            <guid isPermaLink="false">faecherbagger:2026V5392:2026-09-02T22:00:00Z</guid>
+            <pubDate>Wed, 02 Sep 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 14.09.2026 – 18.09.2026
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, geänderte Radwegführung
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Bahnübergang Verlängerung Elbinger Straße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5421</link>
+            <guid isPermaLink="false">faecherbagger:2026V5421:2026-09-02T22:00:00Z</guid>
+            <pubDate>Wed, 02 Sep 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gleisbau · Keine Behinderung
+Zeitraum: 02.09.2026 – 18.09.2026
+Hinweis: Beeinträchtigung nur Radweg und Fußgänger, Umleitung Europaviertel großräumig über Ortelsburger Straße und Elbinger Straße
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Bahnübergang Verlängerung Kolberger Straße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5422</link>
+            <guid isPermaLink="false">faecherbagger:2026V5422:2026-09-02T22:00:00Z</guid>
+            <pubDate>Wed, 02 Sep 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Gleisbau · Keine Behinderung
+Zeitraum: 19.09.2026 – 26.09.2026
+Hinweis: Beeinträchtigung nur Radweg und Fußgänger, Umleitung über BÜ Elbinger Straße
+Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
@@ -208,18 +256,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh- und Radweg
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Bahnübergang Verlängerung Elbinger Straße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5421</link>
-            <guid isPermaLink="false">faecherbagger:2026V5421:2026-09-01T22:00:00Z</guid>
-            <pubDate>Tue, 01 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Gleisbau · Keine Behinderung
-Zeitraum: 02.09.2026 – 19.09.2026
-Hinweis: Beeinträchtigung nur Radweg und Fußgänger, Umleitung Europaviertel großräumig über Ortelsburger Straße und Elbinger Straße
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gleisbau</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Grenzstraße zw. Westmarkstraße und Kärtner Straße, Leußlerstraße, Westmarkstraße zw. Grenzstraße und Stegwiesenstraße – Karlsruhe]]></title>
@@ -407,30 +443,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: B36 zw. Siemensallee und Sudetenstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5494</link>
-            <guid isPermaLink="false">faecherbagger:2026V5494:2026-08-31T22:00:00Z</guid>
-            <pubDate>Mon, 31 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 02.09.2026 – 02.09.2026
-Hinweis: lokale 1-streifige Verkehrsführung, Arbeiten wechselseitig
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Grünpflege</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Beunstraße Nr. 59 - 60 – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5497</link>
-            <guid isPermaLink="false">faecherbagger:2026V5497:2026-08-31T22:00:00Z</guid>
-            <pubDate>Mon, 31 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 02.09.2026 – 02.09.2026
-Hinweis: Tagesbaustelle zw. 9.00 und 15.00 Uhr mit Sperrung Geradeausspur. Verkehrsführung über verbleibenden Linksabbieger-Streifen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gas/Wasser</category>
-        </item>
-        <item>
             <title><![CDATA[Geplant: Grötzinger Straße zw. Gymnasiumstraße und Neuensteinstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5501</link>
             <guid isPermaLink="false">faecherbagger:2026V5501:2026-08-31T22:00:00Z</guid>
@@ -441,6 +453,17 @@ Hinweis: Einstreifige VErkehrsführung mit Lichtsignalanlage
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Bismarckstraße 23 – Ettlingen]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40353</link>
+            <guid isPermaLink="false">faecherbagger:40353:2026-08-31T11:34:43Z</guid>
+            <pubDate>Mon, 31 Aug 2026 11:34:43 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 03.09.2026 – 15.09.2026
+Verantwortlich: Tiefbauamt Ettlingen
+Quelle: Stadt Ettlingen]]></description>
+            <category>Bauliche Sondernutzung</category>
         </item>
         <item>
             <title><![CDATA[Geplant: 76297 Stutensee, Kamillenweg 10 – Stutensee]]></title>
@@ -774,11 +797,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Kanalbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5433</link>
             <guid isPermaLink="false">faecherbagger:2026V5433:2026-08-27T22:00:00Z</guid>
             <pubDate>Thu, 27 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Straßenbau · Mit Behinderung
+            <description><![CDATA[Aktuell · Straßenbau · Mit Behinderung
 Zeitraum: 03.09.2026 – 03.09.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></description>
@@ -910,18 +933,6 @@ Hinweis: 1-streifige Verkehrsführung
 Verantwortlich: Autobahn GmbH
 Quelle: Stadt Karlsruhe]]></description>
             <category>Brückenbau</category>
-        </item>
-        <item>
-            <title><![CDATA[Geplant: Bahnübergang Verlängerung Kolberger Straße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5422</link>
-            <guid isPermaLink="false">faecherbagger:2026V5422:2026-08-26T22:00:00Z</guid>
-            <pubDate>Wed, 26 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Gleisbau · Keine Behinderung
-Zeitraum: 14.09.2026 – 26.09.2026
-Hinweis: Beeinträchtigung nur Radweg und Fußgänger, Umleitung über BÜ Elbinger Straße
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gleisbau</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Kiefernweg 13a – Bruchsal]]></title>
@@ -3216,18 +3227,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Nowackanlage zw. Baumeisterstraße und Ettlinger Straße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3915</link>
-            <guid isPermaLink="false">faecherbagger:2026V3915:2026-07-22T22:00:00Z</guid>
-            <pubDate>Wed, 22 Jul 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Fernwärme · Mit Behinderung
-Zeitraum: 25.09.2026 – 04.10.2026
-Hinweis: Restarbeiten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Fernwärme</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10 – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4598</link>
             <guid isPermaLink="false">faecherbagger:2026V4598:2026-07-22T22:00:00Z</guid>
@@ -3355,18 +3354,6 @@ Zeitraum: 19.06.2026 – 19.09.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: L605 zw. Linkenheimer Landstraße und B36 – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3574</link>
-            <guid isPermaLink="false">faecherbagger:2026V3574:2026-07-19T22:00:00Z</guid>
-            <pubDate>Sun, 19 Jul 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Brückenbau · Mit Behinderung
-Zeitraum: 24.08.2026 – 31.03.2027
-Hinweis: Höhe Brückenbauwerk/ B36, beide Fahrtrichtungen betroffen
-Verantwortlich: Land Baden - Württemberg
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Brückenbau</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Verbindungsbrücke zw. B 36 von Eggenstein kommend Richtung Linkenheimer Landstraße – Karlsruhe]]></title>

@@ -5220,26 +5220,6 @@
     "lastModified": "2026-06-02T22:00:00Z"
   },
   {
-    "id": "2026V3574",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "L605 zw. Linkenheimer Landstraße und B36",
-    "notes": "Höhe Brückenbauwerk/ B36, beide Fahrtrichtungen betroffen",
-    "cause": "Land Baden - Württemberg",
-    "startDate": "2026-08-24",
-    "endDate": "2027-03-31",
-    "point": [
-      8.395027,
-      49.06406
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-19T22:00:00Z"
-  },
-  {
     "id": "2026V3597",
     "phase": "active",
     "category": "district-heating",
@@ -5511,13 +5491,13 @@
     "notes": "Restarbeiten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-25",
-    "endDate": "2026-10-04",
+    "endDate": "2026-10-02",
     "point": [
       8.404392,
       49.003539
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-22T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V3931",
@@ -7640,6 +7620,26 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
+    "id": "2026V5392",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, geänderte Radwegführung",
+    "cause": "Privat",
+    "startDate": "2026-09-14",
+    "endDate": "2026-09-18",
+    "point": [
+      8.419933,
+      49.004881
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-02T22:00:00Z"
+  },
+  {
     "id": "2026V5400",
     "phase": "upcoming",
     "category": "district-heating",
@@ -7711,13 +7711,13 @@
     "notes": "Beeinträchtigung nur Radweg und Fußgänger, Umleitung Europaviertel großräumig über Ortelsburger Straße und Elbinger Straße",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-09-02",
-    "endDate": "2026-09-19",
+    "endDate": "2026-09-18",
     "point": [
       8.450595,
       49.040722
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-01T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V5422",
@@ -7730,18 +7730,18 @@
     "location": "Bahnübergang Verlängerung Kolberger Straße",
     "notes": "Beeinträchtigung nur Radweg und Fußgänger, Umleitung über BÜ Elbinger Straße",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-14",
+    "startDate": "2026-09-19",
     "endDate": "2026-09-26",
     "point": [
       8.448107,
       49.039267
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-26T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V5433",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -7858,46 +7858,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-30T22:00:00Z"
-  },
-  {
-    "id": "2026V5494",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "B36 zw. Siemensallee und Sudetenstraße",
-    "notes": "lokale 1-streifige Verkehrsführung, Arbeiten wechselseitig",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-09-02",
-    "endDate": "2026-09-02",
-    "point": [
-      8.361013,
-      49.035285
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
-  },
-  {
-    "id": "2026V5497",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Beunstraße Nr. 59 - 60",
-    "notes": "Tagesbaustelle zw. 9.00 und 15.00 Uhr mit Sperrung Geradeausspur. Verkehrsführung über verbleibenden Linksabbieger-Streifen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-02",
-    "endDate": "2026-09-02",
-    "point": [
-      8.493446,
-      49.015207
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
   },
   {
     "id": "2026V5501",
@@ -9918,6 +9878,26 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-08-31T08:23:18Z"
+  },
+  {
+    "id": "40353",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Ettlingen",
+    "location": "Bismarckstraße 23",
+    "notes": null,
+    "cause": "Tiefbauamt Ettlingen",
+    "startDate": "2026-09-03",
+    "endDate": "2026-09-15",
+    "point": [
+      8.416388,
+      48.942458
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-08-31T11:34:43Z"
   },
   {
     "id": "40354",
