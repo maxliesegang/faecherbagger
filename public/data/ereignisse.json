@@ -1,75 +1,215 @@
 {
-  "generatedAt": "2026-09-03T08:26:43.186Z",
+  "generatedAt": "2026-09-03T18:56:00.896Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V3915:2026-09-02T22:00:00Z",
-      "siteId": "2026V3915",
+      "signature": "changed:2026V3181:2026-09-02T22:00:00Z",
+      "siteId": "2026V3181",
       "point": [
-        8.404392,
-        49.003539
+        8.457443,
+        48.9969
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-11",
+      "municipality": "Karlsruhe",
+      "location": "Killisfeldstraße Höhe Einmündung Im Blumenwinkel und Dietrichstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4250:2026-09-02T22:00:00Z",
+      "siteId": "2026V4250",
+      "point": [
+        8.44577,
+        49.028476
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-25",
-      "endDate": "2026-10-02",
+      "startDate": "2026-10-12",
+      "endDate": "2026-11-01",
       "municipality": "Karlsruhe",
-      "location": "Nowackanlage zw. Baumeisterstraße und Ettlinger Straße"
+      "location": "Waldenburger Straße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5421:2026-09-02T22:00:00Z",
-      "siteId": "2026V5421",
+      "signature": "changed:2026V4251:2026-09-02T22:00:00Z",
+      "siteId": "2026V4251",
       "point": [
-        8.450595,
-        49.040722
+        8.445906,
+        49.028211
       ],
-      "closure": "none",
-      "startDate": "2026-09-02",
-      "endDate": "2026-09-18",
+      "closure": "obstruction",
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-29",
       "municipality": "Karlsruhe",
-      "location": "Bahnübergang Verlängerung Elbinger Straße"
+      "location": "Hirschberger Straße, Waldenburger Straße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5422:2026-09-02T22:00:00Z",
-      "siteId": "2026V5422",
+      "signature": "changed:2026V4252:2026-09-02T22:00:00Z",
+      "siteId": "2026V4252",
       "point": [
-        8.448107,
-        49.039267
-      ],
-      "closure": "none",
-      "startDate": "2026-09-19",
-      "endDate": "2026-09-26",
-      "municipality": "Karlsruhe",
-      "location": "Bahnübergang Verlängerung Kolberger Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5392",
-      "siteId": "2026V5392",
-      "point": [
-        8.419933,
-        49.004881
+        8.446894,
+        49.028771
       ],
       "closure": "obstruction",
       "startDate": "2026-09-14",
-      "endDate": "2026-09-18",
+      "endDate": "2026-10-11",
       "municipality": "Karlsruhe",
-      "location": "Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße"
+      "location": "Hirschberger Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4253:2026-09-02T22:00:00Z",
+      "siteId": "2026V4253",
+      "point": [
+        8.447697,
+        49.028606
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-30",
+      "endDate": "2027-01-15",
+      "municipality": "Karlsruhe",
+      "location": "Breslauer Straße, Schweidnitzer Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4254:2026-09-02T22:00:00Z",
+      "siteId": "2026V4254",
+      "point": [
+        8.447804,
+        49.02766
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-01-15",
+      "endDate": "2027-02-19",
+      "municipality": "Karlsruhe",
+      "location": "Schweidnitzer Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4255:2026-09-02T22:00:00Z",
+      "siteId": "2026V4255",
+      "point": [
+        8.446618,
+        49.026854
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-02-22",
+      "endDate": "2027-03-17",
+      "municipality": "Karlsruhe",
+      "location": "Breslauer Sraße, Schweidnitzer Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5020:2026-09-02T22:00:00Z",
+      "siteId": "2026V5020",
+      "point": [
+        8.374436,
+        49.044917
+      ],
+      "closure": "full",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-08",
+      "municipality": "Karlsruhe",
+      "location": "Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof"
     },
     {
       "kind": "new",
-      "signature": "new:40353",
-      "siteId": "40353",
+      "signature": "new:2026V2045",
+      "siteId": "2026V2045",
       "point": [
-        8.416388,
-        48.942458
+        8.451033,
+        48.994124
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-18",
+      "municipality": "Karlsruhe",
+      "location": "Wilferdinger Str, Ispringer Str., Ellmendinger Str, Auf den Lohn"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4205",
+      "siteId": "2026V4205",
+      "point": [
+        8.446753,
+        49.028809
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-15",
+      "endDate": "2026-09-13",
+      "municipality": "Karlsruhe",
+      "location": "Waldenburger Straße bis Ende Hirschberger Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5548",
+      "siteId": "2026V5548",
+      "point": [
+        8.41267,
+        49.003024
       ],
       "closure": "full",
+      "startDate": "2026-09-04",
+      "endDate": "2026-09-04",
+      "municipality": "Karlsruhe",
+      "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5554",
+      "siteId": "2026V5554",
+      "point": [
+        8.451447,
+        48.992352
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-09",
+      "endDate": "2026-10-02",
+      "municipality": "Karlsruhe",
+      "location": "Ellmendinger Str., Ostmarkstr., Im Säuterich"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5560",
+      "siteId": "2026V5560",
+      "point": [
+        8.398237,
+        48.99929
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-17",
+      "endDate": "2026-09-17",
+      "municipality": "Karlsruhe",
+      "location": "Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30093",
+      "siteId": "30093",
+      "point": [
+        8.462208,
+        49.045388
+      ],
+      "closure": "obstruction",
       "startDate": "2026-09-03",
-      "endDate": "2026-09-15",
-      "municipality": "Ettlingen",
-      "location": "Bismarckstraße 23"
+      "endDate": "2026-09-25",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Heckengäuweg"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40055",
+      "siteId": "40055",
+      "point": [
+        8.317433,
+        48.982995
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-27",
+      "endDate": "2026-10-01",
+      "municipality": "Rheinstetten",
+      "location": "Rosenstraße 126"
     },
     {
       "kind": "starts-soon",

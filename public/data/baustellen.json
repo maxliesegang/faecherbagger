@@ -3620,26 +3620,6 @@
     "lastModified": "2026-08-27T22:00:00Z"
   },
   {
-    "id": "2026V1697",
-    "phase": "upcoming",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ebertstraße zw. Kurfürstrenstraße und Ebertstraße",
-    "notes": "Kurfürstenstraße und Beiertheimer Allee = keine Ausfahrt auf Ebertstraße",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-10-31",
-    "point": [
-      8.395433,
-      48.994454
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
-  },
-  {
     "id": "2026V1762",
     "phase": "upcoming",
     "category": "gas-water",
@@ -4118,6 +4098,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-26T22:00:00Z"
+  },
+  {
+    "id": "2026V2045",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wilferdinger Str, Ispringer Str., Ellmendinger Str, Auf den Lohn",
+    "notes": "Abwicklung in mehreren Bauabschnitten, je Abschnitt ca. 30 m",
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-18",
+    "point": [
+      8.451033,
+      48.994124
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V2134",
@@ -4771,13 +4771,13 @@
     "notes": "Killisfeldstraße: 2-streifig mit Nutzung des Parkstreifens, Im Blumenwinkel: Einmündung gesperrt, Dietrichstraße: Einmündung gesperrt",
     "cause": "Tiefbauamt",
     "startDate": "2026-09-08",
-    "endDate": "2026-09-10",
+    "endDate": "2026-09-11",
     "point": [
       8.457443,
       48.9969
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V3192",
@@ -5680,6 +5680,26 @@
     "lastModified": "2026-08-26T22:00:00Z"
   },
   {
+    "id": "2026V4205",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Waldenburger Straße bis Ende Hirschberger Straße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-07-15",
+    "endDate": "2026-09-13",
+    "point": [
+      8.446753,
+      49.028809
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-02T22:00:00Z"
+  },
+  {
     "id": "2026V4232",
     "phase": "active",
     "category": "power-telecom",
@@ -5728,16 +5748,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Waldenburger Straße",
-    "notes": null,
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-07",
-    "endDate": "2026-09-27",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-01",
     "point": [
       8.44577,
       49.028476
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V4251",
@@ -5748,36 +5768,36 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Hirschberger Straße, Waldenburger Straße",
-    "notes": null,
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-28",
-    "endDate": "2026-10-25",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-29",
     "point": [
       8.445906,
       49.028211
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V4252",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Hirschberger Straße",
-    "notes": null,
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-17",
-    "endDate": "2026-09-06",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-11",
     "point": [
       8.446894,
       49.028771
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V4253",
@@ -5788,16 +5808,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Breslauer Straße, Schweidnitzer Straße",
-    "notes": null,
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-26",
-    "endDate": "2026-11-29",
+    "startDate": "2026-11-30",
+    "endDate": "2027-01-15",
     "point": [
       8.447697,
       49.028606
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V4254",
@@ -5808,16 +5828,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Schweidnitzer Straße",
-    "notes": null,
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-30",
-    "endDate": "2027-01-31",
+    "startDate": "2027-01-15",
+    "endDate": "2027-02-19",
     "point": [
       8.447804,
       49.02766
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V4255",
@@ -5830,14 +5850,14 @@
     "location": "Breslauer Sraße, Schweidnitzer Straße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-02-01",
-    "endDate": "2027-03-07",
+    "startDate": "2027-02-22",
+    "endDate": "2027-03-17",
     "point": [
       8.446618,
       49.026854
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V4276",
@@ -6560,26 +6580,6 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
-    "id": "2026V4775",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Edgar von Gierke Straße, Siegfried-Kühn-Straße",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, Arbeitsstelle im Gehwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-01",
-    "endDate": "2026-10-05",
-    "point": [
-      8.379292,
-      49.001167
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
-  },
-  {
     "id": "2026V4791",
     "phase": "active",
     "category": "power-telecom",
@@ -7161,7 +7161,7 @@
   },
   {
     "id": "2026V5020",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7170,14 +7170,14 @@
     "location": "Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2026-09-01",
-    "endDate": "2026-09-04",
+    "startDate": "2026-09-08",
+    "endDate": "2026-09-08",
     "point": [
       8.374436,
       49.044917
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V5149",
@@ -7624,7 +7624,7 @@
     "phase": "upcoming",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße",
@@ -7898,6 +7898,66 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-01T22:00:00Z"
+  },
+  {
+    "id": "2026V5548",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-04",
+    "endDate": "2026-09-04",
+    "point": [
+      8.41267,
+      49.003024
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-02T22:00:00Z"
+  },
+  {
+    "id": "2026V5554",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ellmendinger Str., Ostmarkstr., Im Säuterich",
+    "notes": "Herstellung restlicher Hausanschlüsse",
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-09",
+    "endDate": "2026-10-02",
+    "point": [
+      8.451447,
+      48.992352
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-02T22:00:00Z"
+  },
+  {
+    "id": "2026V5560",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße",
+    "notes": "1-streifige Verkehrsführung",
+    "cause": "Privat",
+    "startDate": "2026-09-17",
+    "endDate": "2026-09-17",
+    "point": [
+      8.398237,
+      48.99929
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "30032",
@@ -8198,6 +8258,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-03-20T08:41:50Z"
+  },
+  {
+    "id": "30093",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Heckengäuweg",
+    "notes": "Halbseitige Straßensperrung",
+    "cause": "Bauunternehmen",
+    "startDate": "2026-09-03",
+    "endDate": "2026-09-25",
+    "point": [
+      8.462208,
+      49.045388
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-02T09:35:37Z"
   },
   {
     "id": "30107",
@@ -8738,6 +8818,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-07-17T08:52:33Z"
+  },
+  {
+    "id": "40055",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Rosenstraße 126",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-07-27",
+    "endDate": "2026-10-01",
+    "point": [
+      8.317433,
+      48.982995
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-07-27T13:10:01Z"
   },
   {
     "id": "40058",
@@ -9431,7 +9531,7 @@
     "notes": "Gerüstaufstellung und dadurch Gehwegsperrung",
     "cause": "Privat",
     "startDate": "2026-09-07",
-    "endDate": "2026-10-02",
+    "endDate": "2026-10-09",
     "point": [
       8.482822,
       49.100893
