@@ -1471,13 +1471,13 @@
     "notes": "Straßenquerung = lokale Engstelle wechselseitig",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-05-04",
-    "endDate": "2026-09-05",
+    "endDate": "2026-10-16",
     "point": [
       8.391369,
       49.006531
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-19T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2025V5639",
@@ -2651,13 +2651,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-07",
-    "endDate": "2026-09-14",
+    "endDate": "2026-09-21",
     "point": [
       8.475071,
       48.999333
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2026V0255",
@@ -2731,13 +2731,13 @@
     "notes": "Restarbeiten in der Fußgängerzone bis vsl. 11. September",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-08-17",
-    "endDate": "2026-09-11",
+    "endDate": "2026-09-12",
     "point": [
       8.471746,
       48.999187
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2026V0269",
@@ -7380,26 +7380,6 @@
     "lastModified": "2026-08-23T22:00:00Z"
   },
   {
-    "id": "2026V5239",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Elfmorgenbruch zw. Am Großmarkt und B10",
-    "notes": "signalisierte 1-streifige Verkehrsführung, vs. 9:00 Uhr - 15:00 Uhr, kurzzeitige Vollsperrung während der Fällarbeiten",
-    "cause": "Forstamt",
-    "startDate": "2026-09-01",
-    "endDate": "2026-09-03",
-    "point": [
-      8.451618,
-      49.011574
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
-  },
-  {
     "id": "2026V5241",
     "phase": "upcoming",
     "category": "district-heating",
@@ -7740,26 +7720,6 @@
     "lastModified": "2026-09-02T22:00:00Z"
   },
   {
-    "id": "2026V5433",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Markgrafenstraße zw. Karl-Friedrich-Straße und Kreuzstraße",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-03",
-    "endDate": "2026-09-03",
-    "point": [
-      8.404617,
-      49.00702
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-27T22:00:00Z"
-  },
-  {
     "id": "2026V5444",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -7801,7 +7761,7 @@
   },
   {
     "id": "2026V5457",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -7860,26 +7820,6 @@
     "lastModified": "2026-08-30T22:00:00Z"
   },
   {
-    "id": "2026V5501",
-    "phase": "upcoming",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Grötzinger Straße zw. Gymnasiumstraße und Neuensteinstraße",
-    "notes": "Einstreifige VErkehrsführung mit Lichtsignalanlage",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-07",
-    "endDate": "2026-09-12",
-    "point": [
-      8.479285,
-      48.999845
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
-  },
-  {
     "id": "2026V5519",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -7901,7 +7841,7 @@
   },
   {
     "id": "2026V5548",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7958,6 +7898,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-02T22:00:00Z"
+  },
+  {
+    "id": "2026V5569",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Grötzinger Straße zw. Gymnasiumstraße und Neuensteinstraße",
+    "notes": "Einstreifige VErkehrsführung mit Lichtsignalanlage",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-11",
+    "point": [
+      8.479252,
+      48.999842
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "30032",
@@ -8860,26 +8820,6 @@
     "lastModified": "2026-07-28T14:40:10Z"
   },
   {
-    "id": "40059",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Karlsruher Straße 14",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-03",
-    "endDate": "2026-09-03",
-    "point": [
-      8.309807,
-      48.972259
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-07-30T12:56:01Z"
-  },
-  {
     "id": "40060",
     "phase": "active",
     "category": "special-use",
@@ -9138,26 +9078,6 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-06-11T05:34:41Z"
-  },
-  {
-    "id": "40100",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kornblumenweg24",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-06-03",
-    "endDate": "2026-09-03",
-    "point": [
-      8.524069,
-      49.101743
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-05-22T07:56:11Z"
   },
   {
     "id": "40103",
