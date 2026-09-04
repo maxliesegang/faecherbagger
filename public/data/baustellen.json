@@ -324,7 +324,7 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Hildebrandstr./Oberwaldstr./Reichenbachstr.",
@@ -337,7 +337,7 @@
       48.996322
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-16T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2024V3170",
@@ -464,20 +464,20 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße",
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-06-29",
-    "endDate": "2026-09-04",
+    "endDate": "2026-09-09",
     "point": [
       8.454377,
       48.994847
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2024V4904",
@@ -4787,17 +4787,17 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Werderstraße 68",
-    "notes": null,
+    "location": "Werderstraße zw. Marienstraße und Rüppurrer Straße",
+    "notes": "Höhe Haus Nr 68",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-15",
-    "endDate": "2026-09-11",
+    "endDate": "2026-09-30",
     "point": [
       8.409222,
       49.001515
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-13T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2026V3196",
@@ -5220,7 +5220,7 @@
     "lastModified": "2026-06-02T22:00:00Z"
   },
   {
-    "id": "2026V3597",
+    "id": "2026V3598",
     "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
@@ -5230,34 +5230,14 @@
     "location": "Sonntagstraße zw. Jollystraße und Mathystraße",
     "notes": "Rad- und Fußweg = offen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-07",
-    "endDate": "2026-09-06",
-    "point": [
-      8.391963,
-      49.002256
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
-  },
-  {
-    "id": "2026V3598",
-    "phase": "upcoming",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Sonntagstraße zw. Jollystraße und Mathystraße",
-    "notes": "Rad- und Fußweg = offen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-07",
-    "endDate": "2026-10-04",
+    "startDate": "2026-09-04",
+    "endDate": "2026-09-18",
     "point": [
       8.391991,
       49.002538
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2026V3599",
@@ -5270,14 +5250,14 @@
     "location": "Sonntagstraße Gleisüberfahrt Mathystraße",
     "notes": "Sonntagstraße = Anliegerfahrbahn 1-streifige Verlehrsführung",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-05",
+    "startDate": "2026-10-19",
     "endDate": "2026-11-07",
     "point": [
       8.392014,
       49.002682
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2026V3613",
@@ -5578,26 +5558,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-21T22:00:00Z"
-  },
-  {
-    "id": "2026V4027",
-    "phase": "upcoming",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bernsteinstraße 38",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-07",
-    "endDate": "2026-09-09",
-    "point": [
-      8.350975,
-      48.993994
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
   },
   {
     "id": "2026V4073",
@@ -6151,13 +6111,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-21",
-    "endDate": "2026-09-05",
+    "endDate": "2026-10-09",
     "point": [
       8.391707,
       49.009771
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-23T22:00:00Z"
+    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2026V4484",
@@ -7920,6 +7880,86 @@
     "lastModified": "2026-09-03T22:00:00Z"
   },
   {
+    "id": "2026V5580",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Am Stephanienbad Gleisüberfahrt zw. Albtalbahnhof und Breite Straße",
+    "notes": "Notmaßnahme",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-04",
+    "endDate": "2026-09-13",
+    "point": [
+      8.394782,
+      48.992633
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-03T22:00:00Z"
+  },
+  {
+    "id": "2026V5583",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wattkopfstraße zw. Bernsteinstraße und Hellbergstraße und Bernsteinstraße zw. Wattkopfstraße und Kreuzelbergstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-11",
+    "point": [
+      8.351125,
+      48.994007
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-03T22:00:00Z"
+  },
+  {
+    "id": "2026V5590",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Neureuter Straße zw. Boschstraße und Siemensallee",
+    "notes": "lokale 1-streifige Verkehrsführung,",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-09",
+    "point": [
+      8.357849,
+      49.026687
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-03T22:00:00Z"
+  },
+  {
+    "id": "30021",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Diverse Straßen",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-02-18",
+    "endDate": "2026-09-25",
+    "point": [
+      8.310537,
+      48.970973
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-02-12T10:04:42Z"
+  },
+  {
     "id": "30032",
     "phase": "active",
     "category": "special-use",
@@ -7938,6 +7978,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-04-01T07:20:07Z"
+  },
+  {
+    "id": "30047",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Diverse Straßen",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-05-29",
+    "endDate": "2026-10-15",
+    "point": [
+      8.312622,
+      48.980685
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-05-05T10:07:51Z"
   },
   {
     "id": "30048",
@@ -8760,6 +8820,26 @@
     "lastModified": "2026-05-20T10:20:00Z"
   },
   {
+    "id": "40050",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Margeritenweg 33",
+    "notes": "Parkplatzsperrung wegen Stellung eines Baukrans",
+    "cause": "Privat",
+    "startDate": "2026-03-22",
+    "endDate": "2026-11-30",
+    "point": [
+      8.524237,
+      49.103846
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-03-13T11:12:22Z"
+  },
+  {
     "id": "40052",
     "phase": "active",
     "category": "special-use",
@@ -8811,7 +8891,7 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-08-03",
-    "endDate": "2026-09-07",
+    "endDate": "2026-10-06",
     "point": [
       8.318671,
       48.975338
