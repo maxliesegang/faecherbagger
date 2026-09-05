@@ -1,80 +1,25 @@
 {
-  "since": "2026-09-04T08:27:11.778Z",
-  "added": [
-    "2026V5580",
-    "2026V5583",
-    "2026V5590",
-    "30021",
-    "30047",
-    "40050"
-  ],
-  "modified": [
-    "2024V3162",
-    "2024V4681",
-    "2026V3192",
-    "2026V3598",
-    "2026V3599",
-    "2026V4479"
-  ],
+  "since": "2026-09-04T18:37:03.849Z",
+  "added": [],
+  "modified": [],
   "removed": [
-    "2026V3597",
-    "2026V4027"
+    "2024V3170",
+    "2024V4663",
+    "2024V7522",
+    "2025V1418",
+    "2025V6782",
+    "2026V1313",
+    "2026V3546",
+    "2026V4232",
+    "2026V4711",
+    "2026V4798",
+    "2026V5548",
+    "30083",
+    "30173",
+    "30184",
+    "30187",
+    "40064",
+    "40116"
   ],
-  "relevantModifications": [
-    {
-      "id": "2024V3162",
-      "changedFields": [
-        "closure"
-      ],
-      "previousClosure": "none",
-      "previousStartDate": "2026-06-22",
-      "previousEndDate": "2026-10-02"
-    },
-    {
-      "id": "2024V4681",
-      "changedFields": [
-        "period",
-        "closure"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-06-29",
-      "previousEndDate": "2026-09-04"
-    },
-    {
-      "id": "2026V3192",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-07-15",
-      "previousEndDate": "2026-09-11"
-    },
-    {
-      "id": "2026V3598",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "full",
-      "previousStartDate": "2026-09-07",
-      "previousEndDate": "2026-10-04"
-    },
-    {
-      "id": "2026V3599",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "full",
-      "previousStartDate": "2026-10-05",
-      "previousEndDate": "2026-11-07"
-    },
-    {
-      "id": "2026V4479",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-08-21",
-      "previousEndDate": "2026-09-05"
-    }
-  ]
+  "relevantModifications": []
 }

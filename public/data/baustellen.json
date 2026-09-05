@@ -340,26 +340,6 @@
     "lastModified": "2026-09-03T22:00:00Z"
   },
   {
-    "id": "2024V3170",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Killisfeldstr./Bleichstr./Schinnrainstr.",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
-    "cause": "Telekommunikation",
-    "startDate": "2025-12-02",
-    "endDate": "2026-09-04",
-    "point": [
-      8.460454,
-      48.997411
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-06T22:00:00Z"
-  },
-  {
     "id": "2024V3775",
     "phase": "active",
     "category": "special-use",
@@ -438,26 +418,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
-    "id": "2024V4663",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Weiherfeld Gebietsausbau",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich a ca 50 m, wechselseitige lokale Fahrtstreifensperrungen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2025-09-08",
-    "endDate": "2026-09-04",
-    "point": [
-      8.392771,
-      48.984219
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-05-07T22:00:00Z"
   },
   {
     "id": "2024V4681",
@@ -780,26 +740,6 @@
     "lastModified": "2026-01-29T23:00:00Z"
   },
   {
-    "id": "2024V7522",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rüppurrer Straße 104 zw. Tivoli u. Marienstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-08",
-    "endDate": "2026-09-04",
-    "point": [
-      8.409736,
-      48.99615
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
-  },
-  {
     "id": "2025V0141",
     "phase": "active",
     "category": "road-construction",
@@ -1038,26 +978,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-05-20T22:00:00Z"
-  },
-  {
-    "id": "2025V1418",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bonner Straße zw. Siemensallee und Bonner Platz",
-    "notes": "Kreuzungsbereich Karlsruher Weg= Vollsperrung, Sackgassen bis Baufeld",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-01",
-    "endDate": "2026-09-04",
-    "point": [
-      8.359404,
-      49.023278
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
   },
   {
     "id": "2025V1542",
@@ -1818,26 +1738,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-09T22:00:00Z"
-  },
-  {
-    "id": "2025V6782",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Zentralhof",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-24",
-    "endDate": "2026-09-04",
-    "point": [
-      8.399329,
-      49.010241
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-27T22:00:00Z"
   },
   {
     "id": "2025V6792",
@@ -3520,26 +3420,6 @@
     "lastModified": "2026-07-30T22:00:00Z"
   },
   {
-    "id": "2026V1313",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Weltzienstraße zw. Kriegstraße und Gustav-Heller-Platz",
-    "notes": "Einbindung Fernwärmeleitung",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-20",
-    "endDate": "2026-09-04",
-    "point": [
-      8.371219,
-      49.003548
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-24T22:00:00Z"
-  },
-  {
     "id": "2026V1353",
     "phase": "active",
     "category": "power-telecom",
@@ -5040,26 +4920,6 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
-    "id": "2026V3546",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ritterstraße zw. Am Schlossplatz und Bankhof",
-    "notes": "Inlinersanierung, Abwicklung in mehreren Bauabschnitten, Tag- und Nachtarbeiten",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-24",
-    "endDate": "2026-09-04",
-    "point": [
-      8.401566,
-      49.010148
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
     "id": "2026V3547",
     "phase": "active",
     "category": "sewer",
@@ -5521,7 +5381,7 @@
   },
   {
     "id": "2026V3976",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "full",
@@ -5541,7 +5401,7 @@
   },
   {
     "id": "2026V3977",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "obstruction",
@@ -5658,26 +5518,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-02T22:00:00Z"
-  },
-  {
-    "id": "2026V4232",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Luise-Rigger-Straße zw. Clara-Immerwahr-Haber-Platz und Hedwig-Kettler-Straße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Bauzeit vs 3 Wochen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-10",
-    "endDate": "2026-09-04",
-    "point": [
-      8.41589,
-      49.002359
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V4246",
@@ -6480,26 +6320,6 @@
     "lastModified": "2026-07-28T22:00:00Z"
   },
   {
-    "id": "2026V4711",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Stuttgarter Straße zw. Luisenstraße und Sybelstraße",
-    "notes": "signalisierte 1-streifige Verkehrsführung",
-    "cause": "Privat",
-    "startDate": "2026-08-24",
-    "endDate": "2026-09-04",
-    "point": [
-      8.417187,
-      48.999266
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-27T22:00:00Z"
-  },
-  {
     "id": "2026V4713",
     "phase": "active",
     "category": "crane",
@@ -6560,26 +6380,6 @@
     "lastModified": "2026-07-30T22:00:00Z"
   },
   {
-    "id": "2026V4798",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Lußstraße",
-    "notes": "Keine Bautätigkeit",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-01",
-    "endDate": "2026-09-04",
-    "point": [
-      8.475309,
-      48.994386
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
     "id": "2026V4799",
     "phase": "active",
     "category": "power-telecom",
@@ -6601,7 +6401,7 @@
   },
   {
     "id": "2026V4800",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7800,26 +7600,6 @@
     "lastModified": "2026-09-01T22:00:00Z"
   },
   {
-    "id": "2026V5548",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-04",
-    "endDate": "2026-09-04",
-    "point": [
-      8.41267,
-      49.003024
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
-  },
-  {
     "id": "2026V5554",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -8160,26 +7940,6 @@
     "lastModified": "2026-08-05T10:00:54Z"
   },
   {
-    "id": "30083",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Blankenlocher Straße 16",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-14",
-    "endDate": "2026-09-04",
-    "point": [
-      8.509067,
-      49.093163
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-08-14T06:27:17Z"
-  },
-  {
     "id": "30084",
     "phase": "active",
     "category": "power-telecom",
@@ -8193,8 +7953,8 @@
     "startDate": "2026-08-31",
     "endDate": "2026-09-18",
     "point": [
-      8.392097,
-      49.019334
+      8.317706,
+      48.98144
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-08-27T13:16:18Z"
@@ -8378,66 +8138,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-07-28T09:03:21Z"
-  },
-  {
-    "id": "30173",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kammerforststraße",
-    "notes": "Gem. Geh- und Radweg abschnittsweise nur Gehweg anschließend halbseitige Fahrbahnsperrung im Wechsel",
-    "cause": "Stadtwerke",
-    "startDate": "2026-08-11",
-    "endDate": "2026-09-04",
-    "point": [
-      8.567189,
-      49.137428
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-07-28T10:50:32Z"
-  },
-  {
-    "id": "30184",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Bergstraße 107",
-    "notes": "Gehweg gesperrt mit Notweg auf dem Seitenstreifen.",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-18",
-    "endDate": "2026-09-04",
-    "point": [
-      8.617205,
-      49.118218
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-14T05:26:06Z"
-  },
-  {
-    "id": "30187",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Turmbergweg 10-12",
-    "notes": "Fahrbahn verengt.",
-    "cause": "Privat",
-    "startDate": "2026-08-21",
-    "endDate": "2026-09-04",
-    "point": [
-      8.595434,
-      49.116171
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-14T05:45:31Z"
   },
   {
     "id": "30188",
@@ -8940,26 +8640,6 @@
     "lastModified": "2026-03-27T07:55:25Z"
   },
   {
-    "id": "40064",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Wittumstraße - Fußgängerunterführung",
-    "notes": "Geh- und Radweg gesperrt, Umleitung über Ernst-Renz-Straße/Büchenauer Straße/Joß-Fritz-Straße.",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-08-03",
-    "endDate": "2026-09-04",
-    "point": [
-      8.550805,
-      49.089803
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-03-31T07:53:57Z"
-  },
-  {
     "id": "40068",
     "phase": "active",
     "category": "special-use",
@@ -9258,26 +8938,6 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-04-13T08:21:33Z"
-  },
-  {
-    "id": "40116",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Seebuckweg 2",
-    "notes": "Vollsperrung",
-    "cause": "Privat",
-    "startDate": "2026-07-06",
-    "endDate": "2026-09-04",
-    "point": [
-      8.469187,
-      49.09943
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-07-06T07:36:48Z"
   },
   {
     "id": "40118",
