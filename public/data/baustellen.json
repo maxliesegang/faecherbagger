@@ -4540,26 +4540,6 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
-    "id": "2026V3017",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Westmarkstr./Grenzstr./Brühlstr",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-01",
-    "endDate": "2026-09-05",
-    "point": [
-      8.462116,
-      48.991881
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
-  },
-  {
     "id": "2026V3028",
     "phase": "active",
     "category": "gas-water",
@@ -5380,46 +5360,6 @@
     "lastModified": "2026-06-18T22:00:00Z"
   },
   {
-    "id": "2026V3976",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B36/ Michelinstraße AS7/ Auffahrt zur B10/ Südtangente",
-    "notes": "Fahrtrichtung Durlach = gesperrt, vs 1 Samstag in den Ferien, Termin noch nicht fest",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-05",
-    "endDate": "2026-09-05",
-    "point": [
-      8.357411,
-      49.008756
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-21T22:00:00Z"
-  },
-  {
-    "id": "2026V3977",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B10/ Südtangente zw. AS7 und AS6",
-    "notes": "Fahrtrichtung Durlach, 1-streifige Verkehrsführung auf der B10/ Südtangente und zum Kühlen Krug, vs. 1 Samstag in den Ferien",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-05",
-    "endDate": "2026-09-05",
-    "point": [
-      8.363759,
-      49.00601
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-21T22:00:00Z"
-  },
-  {
     "id": "2026V4073",
     "phase": "active",
     "category": "special-use",
@@ -6160,26 +6100,6 @@
     "lastModified": "2026-07-22T22:00:00Z"
   },
   {
-    "id": "2026V4615",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-29",
-    "endDate": "2026-09-05",
-    "point": [
-      8.391674,
-      49.009604
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
-  },
-  {
     "id": "2026V4632",
     "phase": "active",
     "category": "special-use",
@@ -6840,26 +6760,6 @@
     "lastModified": "2026-09-01T22:00:00Z"
   },
   {
-    "id": "2026V4972",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "L623 zw. Wolfartsweier und Stupferich",
-    "notes": "1-streifige Verkehrsführung",
-    "cause": "Autobahn GmbH",
-    "startDate": "2026-08-17",
-    "endDate": "2026-09-05",
-    "point": [
-      8.455232,
-      48.971189
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-26T22:00:00Z"
-  },
-  {
     "id": "2026V4990",
     "phase": "active",
     "category": "power-telecom",
@@ -7515,26 +7415,6 @@
     "point": [
       8.420864,
       49.007314
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
-  },
-  {
-    "id": "2026V5457",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße",
-    "notes": "temporäre Sperrung für alle Verkehrsteilnehmer während Montagevorgang",
-    "cause": "Privat",
-    "startDate": "2026-09-04",
-    "endDate": "2026-09-05",
-    "point": [
-      8.39227,
-      49.002654
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-30T22:00:00Z"
