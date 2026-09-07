@@ -1,7 +1,30 @@
 {
-  "since": "2026-09-06T08:15:52.402Z",
-  "added": [],
-  "modified": [],
-  "removed": [],
-  "relevantModifications": []
+  "since": "2026-09-06T17:48:56.804Z",
+  "added": [
+    "30083",
+    "40063",
+    "40174",
+    "40177",
+    "40207",
+    "40315",
+    "40339"
+  ],
+  "modified": [
+    "2024V4681"
+  ],
+  "removed": [
+    "2023V0848",
+    "2025V3727"
+  ],
+  "relevantModifications": [
+    {
+      "id": "2024V4681",
+      "changedFields": [
+        "closure"
+      ],
+      "previousClosure": "none",
+      "previousStartDate": "2026-06-29",
+      "previousEndDate": "2026-09-09"
+    }
+  ]
 }

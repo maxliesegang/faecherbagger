@@ -180,26 +180,6 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
-    "id": "2023V0848",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gottesauer Straße, Buntestraße, Lohfeldstraße, Sommerstraße, Wolfartsweierer Straße, Hennebergstraße, Am Schloss Gottersaue",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2023-02-17",
-    "endDate": "2026-09-06",
-    "point": [
-      8.422794,
-      49.005353
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
     "id": "2023V2060",
     "phase": "active",
     "category": "special-use",
@@ -424,7 +404,7 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße",
@@ -437,7 +417,7 @@
       48.994847
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-03T22:00:00Z"
+    "lastModified": "2026-09-06T22:00:00Z"
   },
   {
     "id": "2024V4904",
@@ -1100,26 +1080,6 @@
     "lastModified": "2026-04-15T22:00:00Z"
   },
   {
-    "id": "2025V3727",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gottesauer Straße/ Wolfartsweierer Straße",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-24",
-    "endDate": "2026-09-06",
-    "point": [
-      8.421184,
-      49.006476
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
     "id": "2025V3991",
     "phase": "active",
     "category": "gas-water",
@@ -1241,7 +1201,7 @@
   },
   {
     "id": "2025V4978",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -2541,7 +2501,7 @@
   },
   {
     "id": "2026V0254",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -3981,7 +3941,7 @@
   },
   {
     "id": "2026V2045",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -4681,7 +4641,7 @@
   },
   {
     "id": "2026V3205",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -4761,7 +4721,7 @@
   },
   {
     "id": "2026V3343",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
@@ -4921,7 +4881,7 @@
   },
   {
     "id": "2026V3554",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -5041,7 +5001,7 @@
   },
   {
     "id": "2026V3561",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "one-direction",
@@ -5461,7 +5421,7 @@
   },
   {
     "id": "2026V4246",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
@@ -5861,7 +5821,7 @@
   },
   {
     "id": "2026V4397",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -7321,7 +7281,7 @@
   },
   {
     "id": "2026V5405",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7421,7 +7381,7 @@
   },
   {
     "id": "2026V5460",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "full",
@@ -7461,7 +7421,7 @@
   },
   {
     "id": "2026V5519",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7521,7 +7481,7 @@
   },
   {
     "id": "2026V5569",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "obstruction",
@@ -7561,7 +7521,7 @@
   },
   {
     "id": "2026V5583",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -7818,6 +7778,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-08-05T10:00:54Z"
+  },
+  {
+    "id": "30083",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Kreuzung Römerstraße Storchenstraße",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-24",
+    "point": [
+      8.289166,
+      48.962406
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-08-27T12:51:25Z"
   },
   {
     "id": "30084",
@@ -8520,6 +8500,26 @@
     "lastModified": "2026-03-27T07:55:25Z"
   },
   {
+    "id": "40063",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Rastatter Straße 5 bis Viktoriastraße 17",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-09-07",
+    "endDate": "2027-02-20",
+    "point": [
+      8.29012,
+      48.958476
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-04T08:33:31Z"
+  },
+  {
     "id": "40068",
     "phase": "active",
     "category": "special-use",
@@ -9061,7 +9061,7 @@
   },
   {
     "id": "40146",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "none",
@@ -9400,6 +9400,66 @@
     "lastModified": "2026-09-01T12:46:02Z"
   },
   {
+    "id": "40174",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Grabener Straße in Höhe der Prinz-Wilhelm-Straße",
+    "notes": "Behebung von Fahrbahnschäden an der Brücke über der Prinz-Wilhelm-Straße.\nDamit wird größeren Schäden vorgebeugt, die eine längere Baustelle zur Folge hätten.\n\nDie Arbeiten finden zeitgleich mit dem Abschnitt 3a der Fahrbahndeckensanierung auf der B 35 statt.\n\nWegen der Brückenaustelle müsste eine Richtung der B 35 umgeleitet werden und wegen Fahrbahndeckensanierung gibt es diese Umleitung schon.\n\nDamit wird eine weitere Baustelle im Umleitung durch Bruchsal vermieden.",
+    "cause": "Land Baden - Württemberg",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-19",
+    "point": [
+      8.587951,
+      49.120272
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-01T13:46:12Z"
+  },
+  {
+    "id": "40177",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Schwarzwaldstraße 1",
+    "notes": "Behebung von Fahrbahnschäden in Straßenmitte.\nDie Fahrbahn muss dazu verengt werden.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-25",
+    "point": [
+      8.653734,
+      49.09962
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-04T08:40:37Z"
+  },
+  {
+    "id": "40207",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Am Gedenkstein",
+    "notes": "Vollsperrung Am Gedenkstein und Am Haswenwäldchen in 2 Bauabschnitten, Fernwärmeleitung",
+    "cause": "star.EW",
+    "startDate": "2026-09-07",
+    "endDate": "2026-11-22",
+    "point": [
+      8.200857,
+      48.864472
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-08-24T09:30:19Z"
+  },
+  {
     "id": "40241",
     "phase": "active",
     "category": "gas-water",
@@ -9480,6 +9540,26 @@
     "lastModified": "2026-07-29T07:56:13Z"
   },
   {
+    "id": "40315",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Badstraße Vollsperrung",
+    "notes": "Stellung eines Fertighauses. Der Fußgängerverkehr ist jederzeit gewährleistet.",
+    "cause": "Privat",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-14",
+    "point": [
+      8.369096,
+      48.925487
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-08-05T08:01:54Z"
+  },
+  {
     "id": "40320",
     "phase": "active",
     "category": "gas-water",
@@ -9498,6 +9578,26 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-08-06T14:07:17Z"
+  },
+  {
+    "id": "40339",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "none",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Rudolf-Plank-Straße Höhe Querung von/nach Bruchhausen",
+    "notes": "Herstellung von Fundamenten und Leerrohranbindungen für die Lichtsignalanlage\n\nIm Bauzeitraum sind die Zuwegungen für den Rad- und Fußgängerverkehr gesperrt. An der dortigen Stelle kann nicht gequert werden.",
+    "cause": "Tiefbauamt Ettlingen",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-18",
+    "point": [
+      8.37195,
+      48.93805
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-08-21T05:30:27Z"
   },
   {
     "id": "40351",
