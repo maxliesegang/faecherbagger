@@ -1104,7 +1104,7 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Gut-Magnus-Straße, Wachhausstraße, Kieselweg,",
@@ -1117,7 +1117,7 @@
       48.993917
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-17T22:00:00Z"
+    "lastModified": "2026-09-06T22:00:00Z"
   },
   {
     "id": "2025V4469",
@@ -3460,6 +3460,26 @@
     "lastModified": "2026-08-27T22:00:00Z"
   },
   {
+    "id": "2026V1697",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ebertstraße zw. Albtalbahnhof und Ebertstraße",
+    "notes": "Kurfürstenstraße und Beiertheimer Allee = keine Ausfahrt auf Ebertstraße",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-30",
+    "point": [
+      8.395433,
+      48.994454
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-06T22:00:00Z"
+  },
+  {
     "id": "2026V1762",
     "phase": "upcoming",
     "category": "gas-water",
@@ -4881,7 +4901,7 @@
   },
   {
     "id": "2026V3554",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -4890,14 +4910,14 @@
     "location": "Nürnberger Straße zw. Rechts der Alb und Sperberweg",
     "notes": "Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher FAhrtrichtung",
     "cause": "Tiefbauamt",
-    "startDate": "2026-09-07",
-    "endDate": "2026-10-18",
+    "startDate": "2026-09-15",
+    "endDate": "2026-11-23",
     "point": [
       8.398492,
       48.984331
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-02T22:00:00Z"
+    "lastModified": "2026-09-06T22:00:00Z"
   },
   {
     "id": "2026V3555",
@@ -5957,7 +5977,7 @@
       49.030292
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-21T22:00:00Z"
+    "lastModified": "2026-09-06T22:00:00Z"
   },
   {
     "id": "2026V4548",
@@ -7558,6 +7578,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-03T22:00:00Z"
+  },
+  {
+    "id": "2026V5613",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "B36/ Neureuter Straße zw. Boschstraße und Siemensallee",
+    "notes": null,
+    "cause": "Gartenbauamt",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-09",
+    "point": [
+      8.357854,
+      49.026536
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-06T22:00:00Z"
   },
   {
     "id": "30021",

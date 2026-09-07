@@ -1,117 +1,61 @@
 {
-  "generatedAt": "2026-09-07T08:48:19.532Z",
+  "generatedAt": "2026-09-07T19:26:49.906Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2024V4681:2026-09-06T22:00:00Z",
-      "siteId": "2024V4681",
+      "signature": "changed:2025V4374:2026-09-06T22:00:00Z",
+      "siteId": "2025V4374",
       "point": [
-        8.454377,
-        48.994847
+        8.441148,
+        48.993917
       ],
       "closure": "obstruction",
-      "startDate": "2026-06-29",
+      "startDate": "2026-09-01",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Gut-Magnus-Straße, Wachhausstraße, Kieselweg,"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V3554:2026-09-06T22:00:00Z",
+      "siteId": "2026V3554",
+      "point": [
+        8.398492,
+        48.984331
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-15",
+      "endDate": "2026-11-23",
+      "municipality": "Karlsruhe",
+      "location": "Nürnberger Straße zw. Rechts der Alb und Sperberweg"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V1697",
+      "siteId": "2026V1697",
+      "point": [
+        8.395433,
+        48.994454
+      ],
+      "closure": "full",
+      "startDate": "2026-09-28",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Ebertstraße zw. Albtalbahnhof und Ebertstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5613",
+      "siteId": "2026V5613",
+      "point": [
+        8.357854,
+        49.026536
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-09",
       "endDate": "2026-09-09",
       "municipality": "Karlsruhe",
-      "location": "Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30083",
-      "siteId": "30083",
-      "point": [
-        8.289166,
-        48.962406
-      ],
-      "closure": "full",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-24",
-      "municipality": "Rheinstetten",
-      "location": "Kreuzung Römerstraße Storchenstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40063",
-      "siteId": "40063",
-      "point": [
-        8.29012,
-        48.958476
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-07",
-      "endDate": "2027-02-20",
-      "municipality": "Rheinstetten",
-      "location": "Rastatter Straße 5 bis Viktoriastraße 17"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40174",
-      "siteId": "40174",
-      "point": [
-        8.587951,
-        49.120272
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-19",
-      "municipality": "Bruchsal",
-      "location": "Grabener Straße in Höhe der Prinz-Wilhelm-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40177",
-      "siteId": "40177",
-      "point": [
-        8.653734,
-        49.09962
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-25",
-      "municipality": "Bruchsal",
-      "location": "Schwarzwaldstraße 1"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40207",
-      "siteId": "40207",
-      "point": [
-        8.200857,
-        48.864472
-      ],
-      "closure": "full",
-      "startDate": "2026-09-07",
-      "endDate": "2026-11-22",
-      "municipality": "Rastatt",
-      "location": "76437 Rastatt, Am Gedenkstein"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40315",
-      "siteId": "40315",
-      "point": [
-        8.369096,
-        48.925487
-      ],
-      "closure": "full",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-14",
-      "municipality": "Ettlingen",
-      "location": "Badstraße Vollsperrung"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40339",
-      "siteId": "40339",
-      "point": [
-        8.37195,
-        48.93805
-      ],
-      "closure": "none",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-18",
-      "municipality": "Ettlingen",
-      "location": "Rudolf-Plank-Straße Höhe Querung von/nach Bruchhausen"
+      "location": "B36/ Neureuter Straße zw. Boschstraße und Siemensallee"
     },
     {
       "kind": "starts-soon",
