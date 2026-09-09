@@ -3260,26 +3260,6 @@
     "lastModified": "2026-05-10T22:00:00Z"
   },
   {
-    "id": "2026V1009",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Böhmerwaldstraße zw. Ludwigsburger Straße und Mecklenburger Straße/Thüringer Straße zw. Esslinger Srraße und Egerlandstraße",
-    "notes": "Vollsperrung Böhmerwaldstraße von Norden kommend an der Kreuzung zur Thüringer Straße",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-09-08",
-    "point": [
-      8.474904,
-      48.953258
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
-  },
-  {
     "id": "2026V1010",
     "phase": "active",
     "category": "gas-water",
@@ -4060,26 +4040,6 @@
     "lastModified": "2026-08-30T22:00:00Z"
   },
   {
-    "id": "2026V2154",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Vorholzstraße zw. Karlstraße und Hirschstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-03",
-    "endDate": "2026-09-30",
-    "point": [
-      8.392748,
-      48.999658
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-28T22:00:00Z"
-  },
-  {
     "id": "2026V2274",
     "phase": "upcoming",
     "category": "road-construction",
@@ -4798,26 +4758,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
-    "id": "2026V3343",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rittnerstraße zw. Erbprinzenstraße und Ständehausstraße",
-    "notes": "Ausführung jeweils Vormittags. Danach wird die Straße jeweils freigegeben.",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-07",
-    "endDate": "2026-09-08",
-    "point": [
-      8.40023,
-      49.008398
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-18T22:00:00Z"
   },
   {
     "id": "2026V3414",
@@ -5701,7 +5641,7 @@
   },
   {
     "id": "2026V4339",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -5721,7 +5661,7 @@
   },
   {
     "id": "2026V4340",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "one-direction",
@@ -5735,26 +5675,6 @@
     "point": [
       8.445017,
       49.034845
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
-  },
-  {
-    "id": "2026V4341",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Neisser Straße zw. Glogauer Straße und Schneidemühler Straße",
-    "notes": "Bahnübergange Neisser Straße gesperrt",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-24",
-    "endDate": "2026-09-08",
-    "point": [
-      8.444003,
-      49.033887
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-23T22:00:00Z"
@@ -6631,13 +6551,13 @@
     "notes": "Entfall eines Richtungsfahrstreifens, Geh- und Radweg als Notweg auf der Fahrbahn, Arbeitsstellen liegen im Bereich des Geh- und Radwegs",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-19",
-    "endDate": "2026-09-08",
+    "endDate": "2026-09-11",
     "point": [
       8.404137,
       48.991609
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
+    "lastModified": "2026-09-08T22:00:00Z"
   },
   {
     "id": "2026V4887",
@@ -6858,46 +6778,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-09T22:00:00Z"
-  },
-  {
-    "id": "2026V5013",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Yorckstraße zw. Kühler Krug und Yorckplatz",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-08",
-    "endDate": "2026-09-08",
-    "point": [
-      8.36884,
-      49.005873
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-10T22:00:00Z"
-  },
-  {
-    "id": "2026V5020",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Stefan-Zweig-Straße zw. Alte Freidrichstraße und am Alten Bahnhof",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-08",
-    "endDate": "2026-09-08",
-    "point": [
-      8.374436,
-      49.044917
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
   },
   {
     "id": "2026V5149",
@@ -7501,7 +7381,7 @@
   },
   {
     "id": "2026V5464",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -7510,14 +7390,14 @@
     "location": "Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße",
     "notes": "temporäre Sperrung für alle Verkehrsteilnehmer während Montagevorgang",
     "cause": "Privat",
-    "startDate": "2026-09-11",
-    "endDate": "2026-09-12",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-10",
     "point": [
       8.39227,
       49.002654
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
+    "lastModified": "2026-09-08T22:00:00Z"
   },
   {
     "id": "2026V5519",
@@ -7541,7 +7421,7 @@
   },
   {
     "id": "2026V5554",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7621,7 +7501,7 @@
   },
   {
     "id": "2026V5590",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7641,7 +7521,7 @@
   },
   {
     "id": "2026V5613",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7681,7 +7561,7 @@
   },
   {
     "id": "2026V5623",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7721,7 +7601,7 @@
   },
   {
     "id": "2026V5640",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -9280,26 +9160,6 @@
     "lastModified": "2026-08-04T11:03:25Z"
   },
   {
-    "id": "40147",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Mühlstraße 3",
-    "notes": "Fahrbahn verengt, Fahrbahnmindestrestbreite von 3,05 m",
-    "cause": "Privat",
-    "startDate": "2026-08-04",
-    "endDate": "2026-09-08",
-    "point": [
-      8.557202,
-      49.085077
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-04T11:12:46Z"
-  },
-  {
     "id": "40148",
     "phase": "upcoming",
     "category": "special-use",
@@ -9418,6 +9278,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-09-02T04:35:16Z"
+  },
+  {
+    "id": "40157",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kornblumenweg 27",
+    "notes": "Fahrbahn gesperrt.\nDurchgang für Fußgänger möglich.",
+    "cause": "Privat",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-11",
+    "point": [
+      8.52477,
+      49.101191
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-21T07:30:38Z"
   },
   {
     "id": "40158",
@@ -9640,6 +9520,26 @@
     "lastModified": "2026-09-01T13:46:12Z"
   },
   {
+    "id": "40176",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Küblergasse 2",
+    "notes": "Privater Hochbau mit Kran.\nDie Straße muss an der Baustelle für Kfz gesperrt werden.\nEin Durchgang für Fußgänger bleibt erhalten.",
+    "cause": "Privat",
+    "startDate": "2026-09-09",
+    "endDate": "2027-02-01",
+    "point": [
+      8.645765,
+      49.101452
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-04T07:39:10Z"
+  },
+  {
     "id": "40177",
     "phase": "active",
     "category": "road-maintenance",
@@ -9658,6 +9558,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-04T08:40:37Z"
+  },
+  {
+    "id": "40179",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kanzelberg 7a",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Privat",
+    "startDate": "2026-09-09",
+    "endDate": "2026-10-23",
+    "point": [
+      8.642681,
+      49.100979
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-09T05:43:09Z"
   },
   {
     "id": "40207",
