@@ -1,75 +1,173 @@
 {
-  "generatedAt": "2026-09-09T08:31:15.660Z",
+  "generatedAt": "2026-09-09T18:54:02.556Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V4878:2026-09-08T22:00:00Z",
-      "siteId": "2026V4878",
+      "signature": "changed:2024V2069:2026-09-08T22:00:00Z",
+      "siteId": "2024V2069",
       "point": [
-        8.404137,
-        48.991609
+        8.459887,
+        48.995517
       ],
-      "closure": "obstruction",
-      "startDate": "2026-08-19",
-      "endDate": "2026-09-11",
+      "closure": "none",
+      "startDate": "2026-09-21",
+      "endDate": "2026-10-31",
       "municipality": "Karlsruhe",
-      "location": "Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum"
+      "location": "Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5464:2026-09-08T22:00:00Z",
-      "siteId": "2026V5464",
+      "signature": "changed:2025V5288:2026-09-08T22:00:00Z",
+      "siteId": "2025V5288",
       "point": [
-        8.39227,
-        49.002654
+        8.390706,
+        48.999765
       ],
       "closure": "full",
-      "startDate": "2026-09-09",
-      "endDate": "2026-09-10",
+      "startDate": "2026-07-20",
+      "endDate": "2026-09-20",
       "municipality": "Karlsruhe",
-      "location": "Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße"
+      "location": "Kreuzungsbereich Hirsch- / Vorholzstraße"
     },
     {
-      "kind": "new",
-      "signature": "new:40157",
-      "siteId": "40157",
+      "kind": "changed",
+      "signature": "changed:2025V5289:2026-09-08T22:00:00Z",
+      "siteId": "2025V5289",
       "point": [
-        8.52477,
-        49.101191
+        8.39056,
+        48.999133
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-21",
+      "endDate": "2026-10-25",
+      "municipality": "Karlsruhe",
+      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V3932:2026-09-08T22:00:00Z",
+      "siteId": "2026V3932",
+      "point": [
+        8.433331,
+        48.998717
       ],
       "closure": "full",
-      "startDate": "2026-09-09",
-      "endDate": "2026-09-11",
-      "municipality": "Bruchsal",
-      "location": "Kornblumenweg 27"
+      "startDate": "2026-06-22",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Rußweg zw. Langenbruchweg und Mastweidenweg"
     },
     {
       "kind": "new",
-      "signature": "new:40176",
-      "siteId": "40176",
+      "signature": "new:2026V3197",
+      "siteId": "2026V3197",
       "point": [
-        8.645765,
-        49.101452
+        8.423974,
+        49.016201
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-19",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3198",
+      "siteId": "2026V3198",
+      "point": [
+        8.42408,
+        49.016155
       ],
       "closure": "full",
-      "startDate": "2026-09-09",
-      "endDate": "2027-02-01",
-      "municipality": "Bruchsal",
-      "location": "Küblergasse 2"
+      "startDate": "2026-10-31",
+      "endDate": "2026-12-24",
+      "municipality": "Karlsruhe",
+      "location": "Pastor-Felke-Straße zw. Werthmannstraße und Sebastian-Kneipp-Straße"
     },
     {
       "kind": "new",
-      "signature": "new:40179",
-      "siteId": "40179",
+      "signature": "new:2026V5661",
+      "siteId": "2026V5661",
       "point": [
-        8.642681,
-        49.100979
+        8.485243,
+        48.945624
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-08",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "L623/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5682",
+      "siteId": "2026V5682",
+      "point": [
+        8.40422,
+        49.005484
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-09-09",
+      "endDate": "2026-09-09",
+      "municipality": "Karlsruhe",
+      "location": "Karoline-Luise-Tunnel zw. Ostportal und Hirschstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5683",
+      "siteId": "2026V5683",
+      "point": [
+        8.460146,
+        49.019935
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "Am Storrenacker Kreuzungsbereich Printzstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5708",
+      "siteId": "2026V5708",
+      "point": [
+        8.389164,
+        48.982052
+      ],
+      "closure": "full",
+      "startDate": "2026-10-09",
+      "endDate": "2026-10-12",
+      "municipality": "Karlsruhe",
+      "location": "Bahnübergang Belchenstraße/Im Weiherwlad"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30197",
+      "siteId": "30197",
+      "point": [
+        8.54842,
+        49.086721
       ],
       "closure": "obstruction",
       "startDate": "2026-09-09",
-      "endDate": "2026-10-23",
+      "endDate": "2026-09-21",
       "municipality": "Bruchsal",
-      "location": "Kanzelberg 7a"
+      "location": "Büchenauer Straße 40"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30204",
+      "siteId": "30204",
+      "point": [
+        8.599377,
+        49.133383
+      ],
+      "closure": "full",
+      "startDate": "2026-09-09",
+      "endDate": "2026-10-09",
+      "municipality": "Bruchsal",
+      "location": "Asamstraße in Höhe Kindergarten"
     },
     {
       "kind": "starts-soon",

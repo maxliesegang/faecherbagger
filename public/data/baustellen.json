@@ -284,7 +284,7 @@
     "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße",
@@ -297,7 +297,7 @@
       48.995517
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
+    "lastModified": "2026-09-08T22:00:00Z"
   },
   {
     "id": "2024V2416",
@@ -1328,20 +1328,20 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Kreuzungsbereich Hirsch- / Vorholzstraße",
-    "notes": "Bauzeit vs. 4 Wochen",
+    "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-20",
-    "endDate": "2026-09-12",
+    "endDate": "2026-09-20",
     "point": [
       8.390706,
       48.999765
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-19T22:00:00Z"
+    "lastModified": "2026-09-08T22:00:00Z"
   },
   {
     "id": "2025V5289",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -1350,14 +1350,14 @@
     "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße",
     "notes": "Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-31",
+    "startDate": "2026-09-21",
     "endDate": "2026-10-25",
     "point": [
       8.39056,
       48.999133
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-28T22:00:00Z"
+    "lastModified": "2026-09-08T22:00:00Z"
   },
   {
     "id": "2025V5291",
@@ -1678,26 +1678,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2025-11-17T23:00:00Z"
-  },
-  {
-    "id": "2025V6566",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "L6023/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße",
-    "notes": "1-streifige Verkehrsführung mit Lichtsignal",
-    "cause": "Privat",
-    "startDate": "2026-02-03",
-    "endDate": "2026-12-31",
-    "point": [
-      8.485239,
-      48.945611
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2025V6773",
@@ -4660,6 +4640,46 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
+    "id": "2026V3197",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße",
+    "notes": "1-streifige Verkehrsführung",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-19",
+    "endDate": "2026-10-30",
+    "point": [
+      8.423974,
+      49.016201
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-08T22:00:00Z"
+  },
+  {
+    "id": "2026V3198",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pastor-Felke-Straße zw. Werthmannstraße und Sebastian-Kneipp-Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-31",
+    "endDate": "2026-12-24",
+    "point": [
+      8.42408,
+      49.016155
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-08T22:00:00Z"
+  },
+  {
     "id": "2026V3205",
     "phase": "active",
     "category": "gas-water",
@@ -5331,13 +5351,13 @@
     "notes": "Geh- und Radweg = gesperrt",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-06-22",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-30",
     "point": [
       8.433331,
       48.998717
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-18T22:00:00Z"
+    "lastModified": "2026-09-08T22:00:00Z"
   },
   {
     "id": "2026V4073",
@@ -6551,7 +6571,7 @@
     "notes": "Entfall eines Richtungsfahrstreifens, Geh- und Radweg als Notweg auf der Fahrbahn, Arbeitsstellen liegen im Bereich des Geh- und Radwegs",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-19",
-    "endDate": "2026-09-11",
+    "endDate": "2026-09-13",
     "point": [
       8.404137,
       48.991609
@@ -7568,7 +7588,7 @@
     "siteType": "mobile",
     "municipality": "Karlsruhe",
     "location": "Südtangente zw. AS11 und AS2",
-    "notes": null,
+    "notes": "vs. 9:00 Uhr - 15:00 Uhr",
     "cause": "Gartenbauamt",
     "startDate": "2026-09-09",
     "endDate": "2026-09-09",
@@ -7618,6 +7638,86 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-07T22:00:00Z"
+  },
+  {
+    "id": "2026V5661",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "L623/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße",
+    "notes": "Geh- und Radweg gebäudeseitig gesperrt, Fußgängerbedarfsampel vor und nach der Sperrung",
+    "cause": "Privat",
+    "startDate": "2026-08-08",
+    "endDate": "2026-12-31",
+    "point": [
+      8.485243,
+      48.945624
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-08T22:00:00Z"
+  },
+  {
+    "id": "2026V5682",
+    "phase": "active",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karoline-Luise-Tunnel zw. Ostportal und Hirschstraße",
+    "notes": "vs. 9:00 uhr - 15:00 Uhr",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-09",
+    "point": [
+      8.40422,
+      49.005484
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-08T22:00:00Z"
+  },
+  {
+    "id": "2026V5683",
+    "phase": "upcoming",
+    "category": "soil-survey",
+    "artRaw": "Baugrunduntersuchung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Am Storrenacker Kreuzungsbereich Printzstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-06",
+    "point": [
+      8.460146,
+      49.019935
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-08T22:00:00Z"
+  },
+  {
+    "id": "2026V5708",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bahnübergang Belchenstraße/Im Weiherwlad",
+    "notes": null,
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-12",
+    "point": [
+      8.389164,
+      48.982052
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-08T22:00:00Z"
   },
   {
     "id": "30021",
@@ -8140,6 +8240,26 @@
     "lastModified": "2026-08-21T10:45:29Z"
   },
   {
+    "id": "30197",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Büchenauer Straße 40",
+    "notes": "Straße oberhalb der Bahnunterführung wird für Kabelarbeiten verengt.",
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-21",
+    "point": [
+      8.54842,
+      49.086721
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-24T10:54:31Z"
+  },
+  {
     "id": "30199",
     "phase": "active",
     "category": "sewer",
@@ -8178,6 +8298,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-28T08:37:57Z"
+  },
+  {
+    "id": "30204",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Asamstraße in Höhe Kindergarten",
+    "notes": "Sperrung der Straße zur Verlegung von Wasser- und Stromleitungen.\nDer Gehweg gegenüber dem Kindergarten und die Fußwege in Ri. Forster Straße und Fuchsloch bleiben offen.\nZunächst wird nur in Höhe des Kindergarten gesperrt.\nDie Baustelle reicht im weiteren Verlauf bis an die Kreuzung und noch ein Stück in die Balthasar-Neumann-Straße.",
+    "cause": "Stadtwerke",
+    "startDate": "2026-09-09",
+    "endDate": "2026-10-09",
+    "point": [
+      8.599377,
+      49.133383
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-07T08:15:10Z"
   },
   {
     "id": "30206",
@@ -9611,7 +9751,7 @@
     "notes": "Vollsperrung zwischen Vogelsangweg und Steigenhohlstraße\n\nDie Bushaltestelle \"Huttenkreuz\" wird in die Karlsruher Straße (Ibis, beidseitig) verlegt. Bitte die geänderte Routenführung/geänderte Abfahrzeiten der betroffenen Linien beachten.\n\nIm Zuge der geplanten nächtlichen Wartungsarbeiten im Tunnel wird die Umleitungsbeschilderung angepasst und die Verkehrsteilnehmer bereits am Seehof informiert.\n\nWir bitten alle Verkehrsteilnehmer um Verständnis und Beachtung der aufgestellten Verkehrszeichen.",
     "cause": "Stadtwerke Ettlingen",
     "startDate": "2026-07-07",
-    "endDate": "2026-10-15",
+    "endDate": "2026-10-30",
     "point": [
       8.412285,
       48.94667
