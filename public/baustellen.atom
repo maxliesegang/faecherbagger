@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-09-09T18:54:02.556Z</updated>
+    <updated>2026-09-10T08:33:17.710Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -32,6 +32,42 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V6907:2026-09-09T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6907"/>
+        <updated>2026-09-09T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 24.08.2026 – 07.03.2027
+Hinweis: Reinhold-Frank-Straße zw. Viktoriastraße u.Kriegsstraße in südlicher Richtung gesperrt
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Rittnertstraße und Jean-Ritzert-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5716:2026-09-09T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5716"/>
+        <updated>2026-09-09T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Grünpflege · Mit Behinderung
+Zeitraum: 28.09.2026 – 02.10.2026
+Hinweis: signalisierte temporäre Sperrungen während Fällvorgang
+Verantwortlich: Forstamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Rittnertstraße und Jean-Ritzert-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5717:2026-09-09T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5717"/>
+        <updated>2026-09-09T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Grünpflege · Mit Behinderung
+Zeitraum: 07.12.2026 – 18.12.2026
+Hinweis: signalisierte temporäre Sperrungen während Fällvorgang
+Verantwortlich: Forstamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Kanzelberg 7a – Bruchsal]]></title>
@@ -150,18 +186,6 @@ Hinweis: Geh- und Radweg gebäudeseitig gesperrt, Fußgängerbedarfsampel vor un
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Karoline-Luise-Tunnel zw. Ostportal und Hirschstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5682:2026-09-08T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5682"/>
-        <updated>2026-09-08T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Brückenbau · Sperrung (1 Richtung)
-Zeitraum: 09.09.2026 – 09.09.2026
-Hinweis: vs. 9:00 uhr - 15:00 Uhr
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Am Storrenacker Kreuzungsbereich Printzstraße – Karlsruhe]]></title>
@@ -353,18 +377,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Südtangente zw. AS11 und AS2 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5623:2026-09-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5623"/>
-        <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 09.09.2026 – 09.09.2026
-Hinweis: vs. 9:00 Uhr - 15:00 Uhr
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Grünpflege" term="green-maintenance"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Weingärtensiedlung – Karlsruhe]]></title>
         <id>faecherbagger:2026V5639:2026-09-07T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5639"/>
@@ -375,18 +387,6 @@ Hinweis: lokale Arbeitsstellen im Rad und Gehwegbereich, Kabelzugarbeiten und Ge
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Schwarzwaldstraße, Ettlinger Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5640:2026-09-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5640"/>
-        <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 09.09.2026 – 09.09.2026
-Hinweis: lokale 1-streifige Verkehrsführung
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Asamstraße in Höhe Kindergarten – Bruchsal]]></title>
@@ -402,18 +402,6 @@ Die Baustelle reicht im weiteren Verlauf bis an die Kreuzung und noch ein Stück
 Verantwortlich: Stadtwerke
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2024V4681:2026-09-06T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V4681"/>
-        <updated>2026-09-06T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 29.06.2026 – 09.09.2026
-Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Gut-Magnus-Straße, Wachhausstraße, Kieselweg, – Karlsruhe]]></title>
@@ -438,17 +426,6 @@ Hinweis: Kurfürstenstraße und Beiertheimer Allee = keine Ausfahrt auf Ebertstr
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: B36/ Neureuter Straße zw. Boschstraße und Siemensallee – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5613:2026-09-06T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5613"/>
-        <updated>2026-09-06T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 09.09.2026 – 09.09.2026
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Schwarzwaldstraße 1 – Bruchsal]]></title>
@@ -604,18 +581,6 @@ Zeitraum: 07.09.2026 – 11.09.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Neureuter Straße zw. Boschstraße und Siemensallee – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5590:2026-09-03T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5590"/>
-        <updated>2026-09-03T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 09.09.2026 – 09.09.2026
-Hinweis: lokale 1-streifige Verkehrsführung,
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Wilferdinger Str, Ispringer Str., Ellmendinger Str, Auf den Lohn – Karlsruhe]]></title>
@@ -1404,9 +1369,10 @@ Quelle: Stadt Karlsruhe]]></summary>
         <id>faecherbagger:40166:2026-08-28T10:21:16Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40166"/>
         <updated>2026-08-28T10:21:16.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 02.09.2026 – 18.09.2026
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 02.09.2026 – 10.10.2026
 Hinweis: Gerüststellung am Eckhaus in der Tunnelstraße und Friedhofstraße
+Die Tunnelstraße muss im Bereich der Baustelle für Kfz gesperrt werden.
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
@@ -1514,18 +1480,6 @@ Zeitraum: 01.09.2026 – 18.09.2026
 Hinweis: Für Baustelleneinrichtung gesperrt.
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Rheinstraße West 57 – Stutensee]]></title>
-        <id>faecherbagger:30087:2026-08-27T06:39:55Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30087"/>
-        <updated>2026-08-27T06:39:55.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 27.08.2026 – 09.09.2026
-Hinweis: Halbseitige Straßensperrung
-Verantwortlich: Bauunternehmen
-Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
@@ -2223,18 +2177,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6907:2026-08-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6907"/>
-        <updated>2026-08-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 21.08.2026 – 07.03.2027
-Hinweis: Reinhold-Frank-Straße zw. Viktoriastraße u.Kriegsstraße in südlicher Richtung gesperrt
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Kreuzstraße zw. Hebelstraße und Zähringer Straße – Karlsruhe]]></title>
         <id>faecherbagger:2025V7216:2026-08-19T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7216"/>
@@ -2256,17 +2198,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3678:2026-08-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3678"/>
-        <updated>2026-08-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
-Zeitraum: 15.06.2026 – 09.09.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Südtangente zw. AS 5 und AS 7 – Karlsruhe]]></title>
@@ -2291,18 +2222,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich = Südseite gesperrt, signalis
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Fuß- und Radwegverbingung Mastweidenweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5271:2026-08-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5271"/>
-        <updated>2026-08-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gleisbau · Vollsperrung
-Zeitraum: 08.09.2026 – 09.09.2026
-Hinweis: Beginn der Sperrung vs. ab 18:00 Uhr
-Verantwortlich: Deutsche Bahn AG
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Knielinger Allee zw. Fachhochschule und Erzbergerstraße – Karlsruhe]]></title>
@@ -2704,18 +2623,6 @@ Zeitraum: 14.08.2026 – 03.12.2026
 Hinweis: Fuß- und Radverkehr frei, Anlieger- und Baustellenverkehr als Einrichtungsverkehr frei
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Eschenweg 25 – Bruchsal]]></title>
-        <id>faecherbagger:40151:2026-08-10T10:51:54Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40151"/>
-        <updated>2026-08-10T10:51:54.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 08.09.2026 – 09.09.2026
-Hinweis: Straße wird wegen Dacharbeiten verengt.
-Verantwortlich: Privat
-Quelle: Stadt Bruchsal]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
@@ -3261,17 +3168,6 @@ Hinweis: BA 2 Straßenbau und Bauhnübergangstechnik, Abwicklung der 3 Bahnüber
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Weinweg zw. Rintheimer Haupstraße und Koyweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3288:2026-07-29T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3288"/>
-        <updated>2026-07-29T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 26.05.2026 – 09.09.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Am alten Güterbahnhof/Elie-Wiesel-Weg – Bruchsal]]></title>

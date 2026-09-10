@@ -1,187 +1,75 @@
 {
-  "generatedAt": "2026-09-09T18:54:02.556Z",
+  "generatedAt": "2026-09-10T08:33:17.710Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2024V2069:2026-09-08T22:00:00Z",
-      "siteId": "2024V2069",
+      "signature": "changed:2025V6907:2026-09-09T22:00:00Z",
+      "siteId": "2025V6907",
       "point": [
-        8.459887,
-        48.995517
-      ],
-      "closure": "none",
-      "startDate": "2026-09-21",
-      "endDate": "2026-10-31",
-      "municipality": "Karlsruhe",
-      "location": "Gebietsausbau Hauptbahnstraße, Raiherwiesenstraße, Bleichstraße, Schinnrainstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V5288:2026-09-08T22:00:00Z",
-      "siteId": "2025V5288",
-      "point": [
-        8.390706,
-        48.999765
-      ],
-      "closure": "full",
-      "startDate": "2026-07-20",
-      "endDate": "2026-09-20",
-      "municipality": "Karlsruhe",
-      "location": "Kreuzungsbereich Hirsch- / Vorholzstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V5289:2026-09-08T22:00:00Z",
-      "siteId": "2025V5289",
-      "point": [
-        8.39056,
-        48.999133
+        8.38672,
+        49.005528
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-21",
-      "endDate": "2026-10-25",
+      "startDate": "2026-08-24",
+      "endDate": "2027-03-07",
       "municipality": "Karlsruhe",
-      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V3932:2026-09-08T22:00:00Z",
-      "siteId": "2026V3932",
-      "point": [
-        8.433331,
-        48.998717
-      ],
-      "closure": "full",
-      "startDate": "2026-06-22",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Rußweg zw. Langenbruchweg und Mastweidenweg"
+      "location": "Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V3197",
-      "siteId": "2026V3197",
+      "signature": "new:2026V5716",
+      "siteId": "2026V5716",
       "point": [
-        8.423974,
-        49.016201
+        8.496501,
+        48.987577
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-19",
-      "endDate": "2026-10-30",
+      "startDate": "2026-09-28",
+      "endDate": "2026-10-02",
       "municipality": "Karlsruhe",
-      "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße"
+      "location": "Rittnertstraße und Jean-Ritzert-Straße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V3198",
-      "siteId": "2026V3198",
+      "signature": "new:2026V5717",
+      "siteId": "2026V5717",
       "point": [
-        8.42408,
-        49.016155
-      ],
-      "closure": "full",
-      "startDate": "2026-10-31",
-      "endDate": "2026-12-24",
-      "municipality": "Karlsruhe",
-      "location": "Pastor-Felke-Straße zw. Werthmannstraße und Sebastian-Kneipp-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5661",
-      "siteId": "2026V5661",
-      "point": [
-        8.485243,
-        48.945624
+        8.496501,
+        48.987577
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-08",
-      "endDate": "2026-12-31",
+      "startDate": "2026-12-07",
+      "endDate": "2026-12-18",
       "municipality": "Karlsruhe",
-      "location": "L623/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5682",
-      "siteId": "2026V5682",
-      "point": [
-        8.40422,
-        49.005484
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-09-09",
-      "endDate": "2026-09-09",
-      "municipality": "Karlsruhe",
-      "location": "Karoline-Luise-Tunnel zw. Ostportal und Hirschstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5683",
-      "siteId": "2026V5683",
-      "point": [
-        8.460146,
-        49.019935
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "Am Storrenacker Kreuzungsbereich Printzstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5708",
-      "siteId": "2026V5708",
-      "point": [
-        8.389164,
-        48.982052
-      ],
-      "closure": "full",
-      "startDate": "2026-10-09",
-      "endDate": "2026-10-12",
-      "municipality": "Karlsruhe",
-      "location": "Bahnübergang Belchenstraße/Im Weiherwlad"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30197",
-      "siteId": "30197",
-      "point": [
-        8.54842,
-        49.086721
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-09",
-      "endDate": "2026-09-21",
-      "municipality": "Bruchsal",
-      "location": "Büchenauer Straße 40"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30204",
-      "siteId": "30204",
-      "point": [
-        8.599377,
-        49.133383
-      ],
-      "closure": "full",
-      "startDate": "2026-09-09",
-      "endDate": "2026-10-09",
-      "municipality": "Bruchsal",
-      "location": "Asamstraße in Höhe Kindergarten"
+      "location": "Rittnertstraße und Jean-Ritzert-Straße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V4195:2026-09-16",
-      "siteId": "2026V4195",
+      "signature": "starts-soon:2026V5560:2026-09-17",
+      "siteId": "2026V5560",
       "point": [
-        8.477454,
-        48.970932
+        8.398237,
+        48.99929
       ],
-      "closure": "full",
-      "startDate": "2026-09-16",
-      "endDate": "2026-10-10",
+      "closure": "obstruction",
+      "startDate": "2026-09-17",
+      "endDate": "2026-09-17",
       "municipality": "Karlsruhe",
-      "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße"
+      "location": "Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5617:2026-09-11",
+      "siteId": "2026V5617",
+      "point": [
+        8.372554,
+        49.063848
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-11",
+      "endDate": "2026-09-11",
+      "municipality": "Karlsruhe",
+      "location": "Unterer Dammweg zw. B36 und in den Kuhwiesen"
     }
   ]
 }

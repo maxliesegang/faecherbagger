@@ -420,26 +420,6 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
-    "id": "2024V4681",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Auf den Lohn, Elmmendinger Straße, Ispringer Straße, Lissenstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-06-29",
-    "endDate": "2026-09-09",
-    "point": [
-      8.454377,
-      48.994847
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-06T22:00:00Z"
-  },
-  {
     "id": "2024V4904",
     "phase": "active",
     "category": "power-telecom",
@@ -1730,14 +1710,14 @@
     "location": "Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße",
     "notes": "Reinhold-Frank-Straße zw. Viktoriastraße u.Kriegsstraße in südlicher Richtung gesperrt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-21",
+    "startDate": "2026-08-24",
     "endDate": "2027-03-07",
     "point": [
       8.38672,
       49.005528
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
+    "lastModified": "2026-09-09T22:00:00Z"
   },
   {
     "id": "2025V6908",
@@ -4740,26 +4720,6 @@
     "lastModified": "2026-09-07T22:00:00Z"
   },
   {
-    "id": "2026V3288",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Weinweg zw. Rintheimer Haupstraße und Koyweg",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-26",
-    "endDate": "2026-09-09",
-    "point": [
-      8.445857,
-      49.01228
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-29T22:00:00Z"
-  },
-  {
     "id": "2026V3318",
     "phase": "active",
     "category": "sewer",
@@ -5158,26 +5118,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-19T22:00:00Z"
-  },
-  {
-    "id": "2026V3678",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Johann-Strauß-Straße zw. Am dm-Platz und Parkplatz Lorzingstraße/ Milliöeckerstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-15",
-    "endDate": "2026-09-09",
-    "point": [
-      8.455193,
-      49.001498
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
   },
   {
     "id": "2026V3707",
@@ -7020,26 +6960,6 @@
     "lastModified": "2026-08-18T22:00:00Z"
   },
   {
-    "id": "2026V5271",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Fuß- und Radwegverbingung Mastweidenweg",
-    "notes": "Beginn der Sperrung vs. ab 18:00 Uhr",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-09-08",
-    "endDate": "2026-09-09",
-    "point": [
-      8.439776,
-      49.000412
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
-  },
-  {
     "id": "2026V5272",
     "phase": "upcoming",
     "category": "road-construction",
@@ -7520,46 +7440,6 @@
     "lastModified": "2026-09-03T22:00:00Z"
   },
   {
-    "id": "2026V5590",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Neureuter Straße zw. Boschstraße und Siemensallee",
-    "notes": "lokale 1-streifige Verkehrsführung,",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-09-09",
-    "endDate": "2026-09-09",
-    "point": [
-      8.357849,
-      49.026687
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-03T22:00:00Z"
-  },
-  {
-    "id": "2026V5613",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "B36/ Neureuter Straße zw. Boschstraße und Siemensallee",
-    "notes": null,
-    "cause": "Gartenbauamt",
-    "startDate": "2026-09-09",
-    "endDate": "2026-09-09",
-    "point": [
-      8.357854,
-      49.026536
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-06T22:00:00Z"
-  },
-  {
     "id": "2026V5617",
     "phase": "upcoming",
     "category": "green-maintenance",
@@ -7575,26 +7455,6 @@
     "point": [
       8.372554,
       49.063848
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
-  },
-  {
-    "id": "2026V5623",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Südtangente zw. AS11 und AS2",
-    "notes": "vs. 9:00 Uhr - 15:00 Uhr",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-09-09",
-    "endDate": "2026-09-09",
-    "point": [
-      8.372974,
-      48.996912
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-07T22:00:00Z"
@@ -7620,26 +7480,6 @@
     "lastModified": "2026-09-07T22:00:00Z"
   },
   {
-    "id": "2026V5640",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Schwarzwaldstraße, Ettlinger Straße",
-    "notes": "lokale 1-streifige Verkehrsführung",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-09-09",
-    "endDate": "2026-09-09",
-    "point": [
-      8.401797,
-      48.991756
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
-  },
-  {
     "id": "2026V5661",
     "phase": "active",
     "category": "special-use",
@@ -7655,26 +7495,6 @@
     "point": [
       8.485243,
       48.945624
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
-  },
-  {
-    "id": "2026V5682",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karoline-Luise-Tunnel zw. Ostportal und Hirschstraße",
-    "notes": "vs. 9:00 uhr - 15:00 Uhr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-09",
-    "endDate": "2026-09-09",
-    "point": [
-      8.40422,
-      49.005484
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-08T22:00:00Z"
@@ -7718,6 +7538,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-08T22:00:00Z"
+  },
+  {
+    "id": "2026V5716",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Rittnertstraße und Jean-Ritzert-Straße",
+    "notes": "signalisierte temporäre Sperrungen während Fällvorgang",
+    "cause": "Forstamt",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-02",
+    "point": [
+      8.496501,
+      48.987577
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
+    "id": "2026V5717",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Rittnertstraße und Jean-Ritzert-Straße",
+    "notes": "signalisierte temporäre Sperrungen während Fällvorgang",
+    "cause": "Forstamt",
+    "startDate": "2026-12-07",
+    "endDate": "2026-12-18",
+    "point": [
+      8.496501,
+      48.987577
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
   },
   {
     "id": "30021",
@@ -7993,8 +7853,8 @@
     "startDate": "2026-09-08",
     "endDate": "2026-12-28",
     "point": [
-      8.375009,
-      49.020407
+      8.308354,
+      48.97377
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-08-31T11:01:31Z"
@@ -8018,26 +7878,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-08-31T12:56:38Z"
-  },
-  {
-    "id": "30087",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Rheinstraße West 57",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Bauunternehmen",
-    "startDate": "2026-08-27",
-    "endDate": "2026-09-09",
-    "point": [
-      8.474412,
-      49.108469
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-08-27T06:39:55Z"
   },
   {
     "id": "30089",
@@ -9340,26 +9180,6 @@
     "lastModified": "2026-08-18T04:43:24Z"
   },
   {
-    "id": "40151",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Eschenweg 25",
-    "notes": "Straße wird wegen Dacharbeiten verengt.",
-    "cause": "Privat",
-    "startDate": "2026-09-08",
-    "endDate": "2026-09-09",
-    "point": [
-      8.566365,
-      49.112462
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-10T10:51:54Z"
-  },
-  {
     "id": "40152",
     "phase": "active",
     "category": "special-use",
@@ -9504,14 +9324,14 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
+    "closure": "full",
     "siteType": null,
     "municipality": "Bruchsal",
     "location": "Tunnelstraße 1a",
-    "notes": "Gerüststellung am Eckhaus in der Tunnelstraße und Friedhofstraße",
+    "notes": "Gerüststellung am Eckhaus in der Tunnelstraße und Friedhofstraße\nDie Tunnelstraße muss im Bereich der Baustelle für Kfz gesperrt werden.",
     "cause": "Privat",
     "startDate": "2026-09-02",
-    "endDate": "2026-09-18",
+    "endDate": "2026-10-10",
     "point": [
       8.600153,
       49.12094
