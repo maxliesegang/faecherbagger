@@ -220,6 +220,26 @@
     "lastModified": "2025-11-10T23:00:00Z"
   },
   {
+    "id": "2023V4019",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Herrenalber Straße zwischen Battstraße und Diakonissenstraße",
+    "notes": "Abwicklung in mehreren Bauabschnitten, vs 14 Monate",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-01-11",
+    "endDate": "2028-03-31",
+    "point": [
+      8.404491,
+      48.969648
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
     "id": "2023V4962",
     "phase": "active",
     "category": "special-use",
@@ -1658,6 +1678,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2025-11-17T23:00:00Z"
+  },
+  {
+    "id": "2025V6769",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-14",
+    "endDate": "2026-12-31",
+    "point": [
+      8.400107,
+      49.004041
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
   },
   {
     "id": "2025V6773",
@@ -3230,14 +3270,14 @@
     "location": "Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße",
     "notes": "Vollsperrung Böhmerwaldstraße von Süden kommend an der Kreuzung zur Thüringer Straße",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-02",
-    "endDate": "2026-09-19",
+    "startDate": "2026-09-10",
+    "endDate": "2026-10-30",
     "point": [
       8.474927,
       48.953161
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
+    "lastModified": "2026-09-09T22:00:00Z"
   },
   {
     "id": "2026V1011",
@@ -6320,86 +6360,6 @@
     "lastModified": "2026-08-03T22:00:00Z"
   },
   {
-    "id": "2026V4846",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)",
-    "notes": "Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-17",
-    "endDate": "2026-09-13",
-    "point": [
-      8.402069,
-      49.003971
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
-  },
-  {
-    "id": "2026V4847",
-    "phase": "upcoming",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hermann-Billing-Straße zw. Beiertheimer Allee (Zufahrt Landratsamt) u. Badenwerkstraße",
-    "notes": "Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-14",
-    "endDate": "2026-10-11",
-    "point": [
-      8.400486,
-      49.004054
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
-  },
-  {
-    "id": "2026V4848",
-    "phase": "upcoming",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hermann-Billing-Straße zw. Badenwerkstraße u.Ritterstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-12",
-    "endDate": "2026-11-01",
-    "point": [
-      8.39976,
-      49.00405
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
-  },
-  {
-    "id": "2026V4849",
-    "phase": "upcoming",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hermann-Billing-Straße zw. Badenwerkstraße u.Ritterstraße",
-    "notes": "Arbeitsstelle weitestgehend im Parkstreifen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-27",
-    "point": [
-      8.398849,
-      49.004055
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
-  },
-  {
     "id": "2026V4853",
     "phase": "upcoming",
     "category": "road-maintenance",
@@ -6451,13 +6411,13 @@
     "notes": "Dauer vsl. 3 Arbeitstage, signalisierte 1-streifige Verkehrsführung",
     "cause": "Tiefbauamt",
     "startDate": "2026-09-14",
-    "endDate": "2026-09-18",
+    "endDate": "2026-09-19",
     "point": [
       8.460786,
       49.001033
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
+    "lastModified": "2026-09-09T22:00:00Z"
   },
   {
     "id": "2026V4874",
@@ -6618,66 +6578,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-05T22:00:00Z"
-  },
-  {
-    "id": "2026V4926",
-    "phase": "upcoming",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herrenalber Straße Anliegerfahrbahn zw. Tulpenstraße u. Diakoniossenstraße",
-    "notes": "Herrenalbser Straße Hauptfahrbahn = lokale 1-streifige Verkehrsführung, Anliegerfahrbahn gesperrt",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-11-09",
-    "endDate": "2027-04-04",
-    "point": [
-      8.404673,
-      48.97175
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
-  },
-  {
-    "id": "2026V4927",
-    "phase": "upcoming",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herrenalber Straße = lokale Engstelle mit Lichtsignal, Tulpenstraße im Einmündungsbereich Herrenalber Straße gesperrt, Rastatter Straße im Einmündungsbereich zur Herrenalber Straße gesperrt",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2027-04-05",
-    "endDate": "2027-05-16",
-    "point": [
-      8.404392,
-      48.970726
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
-  },
-  {
-    "id": "2026V4928",
-    "phase": "upcoming",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herrenalber Straße zw. Battstraße u. Diakonissenstraße",
-    "notes": "1-streifige Verkehrsführung in beiden Fahrtrichtungen",
-    "cause": "Tiefbauamt",
-    "startDate": "2027-05-17",
-    "endDate": "2027-09-19",
-    "point": [
-      8.40442,
-      48.970372
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
   },
   {
     "id": "2026V4966",
@@ -7340,6 +7240,26 @@
     "lastModified": "2026-09-08T22:00:00Z"
   },
   {
+    "id": "2026V5490",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee",
+    "notes": "vs. zw. 1:30 Uhr - 4:00 Uhr",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-25",
+    "endDate": "2026-09-25",
+    "point": [
+      8.466705,
+      49.001968
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
     "id": "2026V5519",
     "phase": "active",
     "category": "power-telecom",
@@ -7527,7 +7447,7 @@
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Bahnübergang Belchenstraße/Im Weiherwlad",
+    "location": "Bahnübergang Belchenstraße/Im Weiherwald",
     "notes": null,
     "cause": "Deutsche Bahn AG",
     "startDate": "2026-10-09",
@@ -7548,7 +7468,7 @@
     "siteType": "mobile",
     "municipality": "Karlsruhe",
     "location": "Rittnertstraße und Jean-Ritzert-Straße",
-    "notes": "signalisierte temporäre Sperrungen während Fällvorgang",
+    "notes": "Kurzzeitige Sperrungen während der Fällvorgänge",
     "cause": "Forstamt",
     "startDate": "2026-09-28",
     "endDate": "2026-10-02",
@@ -7568,13 +7488,133 @@
     "siteType": "mobile",
     "municipality": "Karlsruhe",
     "location": "Rittnertstraße und Jean-Ritzert-Straße",
-    "notes": "signalisierte temporäre Sperrungen während Fällvorgang",
+    "notes": "Kurzzeitige Sperrungen während der Fällvorgänge",
     "cause": "Forstamt",
     "startDate": "2026-12-07",
     "endDate": "2026-12-18",
     "point": [
       8.496501,
       48.987577
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
+    "id": "2026V5740",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Frühlingstraße, Lohfeldstraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-25",
+    "point": [
+      8.421186,
+      49.005506
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
+    "id": "2026V5743",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Grenadierstraße zw. Moltkestraße und Freydorfstraße und Freydorfstraße zw. Franz-Lust-Straße und Grenadierstraße",
+    "notes": "Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-08-01",
+    "endDate": "2028-06-30",
+    "point": [
+      8.377611,
+      49.016768
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
+    "id": "2026V5755",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Luisenstraße zw. Rüppurrer Straße und Marienstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-04-01",
+    "endDate": "2027-05-31",
+    "point": [
+      8.409649,
+      49.000848
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
+    "id": "2026V5757",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Winterstraße zw. Wilhelmstraße und Marienstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-06-01",
+    "endDate": "2027-07-31",
+    "point": [
+      8.406121,
+      48.998327
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
+    "id": "2026V5759",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Winterstraße zw. Wilhemstraße und Marienstraße",
+    "notes": "Höhe Haus Nr 22a-26b",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-05-01",
+    "endDate": "2027-06-30",
+    "point": [
+      8.406936,
+      48.99823
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
+    "id": "2026V5763",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark",
+    "notes": "9:00 Uhr - 15:00 Uhr, 1-streifige Verkehrsführung in beiden Fahrtrichtungen",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-10",
+    "endDate": "2026-09-11",
+    "point": [
+      8.445188,
+      49.021112
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-09T22:00:00Z"
@@ -8531,7 +8571,7 @@
     "notes": "Neubau von zwei Wohnanlagen.\nDie Justus-Knecht-Straße wird für den Kfz-Verkehr gesperrt.\n\nFür Fußgänger gibt es einen Notweg durch die Baustelle und eine provisorischen Insel über die Prinz-Wilhelm-Straße.\nDie bauliche Verkehrsinsel ist dann nicht mehr nutzbar, da auf der Baustelleneite der Gehweg gesperrt wird.\n\nAm 19.06.2026 muss die Prinz-Wilhelm-Straße für Montagearbeiten vom Bahnhof her gesperrt und über die Justus-Knecht-Straße (die dafür wieder offen ist) umgeleitet werden.\nDie Arbeiten dauern nur 4-5 Stunden.",
     "cause": "Privat",
     "startDate": "2026-03-23",
-    "endDate": "2026-09-14",
+    "endDate": "2026-11-06",
     "point": [
       8.588561,
       49.120363
