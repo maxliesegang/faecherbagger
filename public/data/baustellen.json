@@ -671,13 +671,13 @@
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-02-11",
-    "endDate": "2026-09-11",
+    "endDate": "2026-10-02",
     "point": [
       8.3917,
       48.995707
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-27T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2024V7318",
@@ -924,11 +924,11 @@
     "phase": "upcoming",
     "category": "sewer",
     "artRaw": "Kanalbau",
-    "closure": "obstruction",
+    "closure": "one-direction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Reinhold-Krank-Straße Höhe Haus Nr 35",
-    "notes": null,
+    "location": "Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße",
+    "notes": "Höhe Haus Nr 35",
     "cause": "Privat",
     "startDate": "2026-10-05",
     "endDate": "2026-11-20",
@@ -937,7 +937,7 @@
       49.008579
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-28T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2025V0914",
@@ -1331,13 +1331,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-20",
-    "endDate": "2026-09-20",
+    "endDate": "2026-09-19",
     "point": [
       8.390706,
       48.999765
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2025V5289",
@@ -1350,14 +1350,14 @@
     "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße",
     "notes": "Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-21",
+    "startDate": "2026-09-20",
     "endDate": "2026-10-25",
     "point": [
       8.39056,
       48.999133
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2025V5291",
@@ -5090,14 +5090,14 @@
     "location": "Sonntagstraße Gleisüberfahrt Mathystraße",
     "notes": "Sonntagstraße = Anliegerfahrbahn 1-streifige Verlehrsführung",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-19",
+    "startDate": "2026-09-15",
     "endDate": "2026-11-07",
     "point": [
       8.392014,
       49.002682
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-03T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2026V3613",
@@ -5470,14 +5470,14 @@
     "location": "Waldenburger Straße",
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-12",
+    "startDate": "2026-10-10",
     "endDate": "2026-11-01",
     "point": [
       8.44577,
       49.028476
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2026V4251",
@@ -5511,13 +5511,13 @@
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-14",
-    "endDate": "2026-10-11",
+    "endDate": "2026-10-09",
     "point": [
       8.446894,
       49.028771
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2026V4253",
@@ -7171,13 +7171,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-14",
-    "endDate": "2026-11-14",
+    "endDate": "2026-10-09",
     "point": [
       8.420956,
       49.012043
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2026V5451",
@@ -7520,6 +7520,26 @@
     "lastModified": "2026-09-09T22:00:00Z"
   },
   {
+    "id": "2026V5751",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Durlacher Allee bis Haltestelle Hubstraße",
+    "notes": "Aufteilung nicht vorgenommen",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-05-18",
+    "endDate": "2027-07-01",
+    "point": [
+      8.467158,
+      49.004252
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-10T22:00:00Z"
+  },
+  {
     "id": "2026V5755",
     "phase": "upcoming",
     "category": "district-heating",
@@ -7598,6 +7618,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-09T22:00:00Z"
+  },
+  {
+    "id": "2026V5794",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Am Fasanengarten, Prakstr., Karl-Wilhelm-Str.",
+    "notes": "Aufteilung nicht vorgenommen, Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-10",
+    "endDate": "2027-01-25",
+    "point": [
+      8.422852,
+      49.012202
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "30021",
@@ -8988,10 +9028,10 @@
     "siteType": null,
     "municipality": "Bruchsal",
     "location": "Hofferichstraße",
-    "notes": "Vollsperrung für Fahrzeugverkehr und Fußgänger. Umleitung ist ausgeschildert",
+    "notes": "Vollsperrung für Fahrzeugverkehr und Fußgänger. Umleitung ist ausgeschildert.",
     "cause": "Fachgebiet Tiefbau",
     "startDate": "2026-07-20",
-    "endDate": "2026-09-11",
+    "endDate": "2026-10-09",
     "point": [
       8.649257,
       49.101278

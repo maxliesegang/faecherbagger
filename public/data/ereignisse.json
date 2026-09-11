@@ -1,61 +1,145 @@
 {
-  "generatedAt": "2026-09-11T08:27:49.388Z",
+  "generatedAt": "2026-09-11T18:48:14.058Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2022V5716:2026-09-10T22:00:00Z",
-      "siteId": "2022V5716",
+      "signature": "changed:2024V7075:2026-09-10T22:00:00Z",
+      "siteId": "2024V7075",
       "point": [
-        8.404004,
-        49.00395
+        8.3917,
+        48.995707
       ],
-      "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-12-18",
+      "closure": "one-direction",
+      "startDate": "2026-02-11",
+      "endDate": "2026-10-02",
       "municipality": "Karlsruhe",
-      "location": "Baumeisterstraße zwischen Finterstraße und Ettlinger Straße"
+      "location": "Gebhardstraße zw. Barbarossaplatz und Welfenstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2025V4469:2026-09-10T22:00:00Z",
-      "siteId": "2025V4469",
+      "signature": "changed:2025V0778:2026-09-10T22:00:00Z",
+      "siteId": "2025V0778",
       "point": [
-        8.361546,
-        48.989624
+        8.38722,
+        49.008579
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V5288:2026-09-10T22:00:00Z",
+      "siteId": "2025V5288",
+      "point": [
+        8.390706,
+        48.999765
+      ],
+      "closure": "full",
+      "startDate": "2026-07-20",
+      "endDate": "2026-09-19",
+      "municipality": "Karlsruhe",
+      "location": "Kreuzungsbereich Hirsch- / Vorholzstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V5289:2026-09-10T22:00:00Z",
+      "siteId": "2025V5289",
+      "point": [
+        8.39056,
+        48.999133
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-20",
+      "endDate": "2026-10-25",
+      "municipality": "Karlsruhe",
+      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V3599:2026-09-10T22:00:00Z",
+      "siteId": "2026V3599",
+      "point": [
+        8.392014,
+        49.002682
+      ],
+      "closure": "full",
+      "startDate": "2026-09-15",
+      "endDate": "2026-11-07",
+      "municipality": "Karlsruhe",
+      "location": "Sonntagstraße Gleisüberfahrt Mathystraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4250:2026-09-10T22:00:00Z",
+      "siteId": "2026V4250",
+      "point": [
+        8.44577,
+        49.028476
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-10",
+      "endDate": "2026-11-01",
+      "municipality": "Karlsruhe",
+      "location": "Waldenburger Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4252:2026-09-10T22:00:00Z",
+      "siteId": "2026V4252",
+      "point": [
+        8.446894,
+        49.028771
       ],
       "closure": "obstruction",
       "startDate": "2026-09-14",
-      "endDate": "2027-07-30",
+      "endDate": "2026-10-09",
       "municipality": "Karlsruhe",
-      "location": "Albert-Braun-Straße - Gebietsausbau"
+      "location": "Hirschberger Straße"
     },
     {
-      "kind": "new",
-      "signature": "new:40187",
-      "siteId": "40187",
+      "kind": "changed",
+      "signature": "changed:2026V5444:2026-09-10T22:00:00Z",
+      "siteId": "2026V5444",
       "point": [
-        8.596927,
-        49.117397
+        8.420956,
+        49.012043
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-11",
-      "endDate": "2026-09-26",
-      "municipality": "Bruchsal",
-      "location": "Silberhölle 26, 36, 48 und 60"
+      "startDate": "2026-09-14",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Hölderlinstraße, Emil-Gött-Straße"
     },
     {
       "kind": "new",
-      "signature": "new:40212",
-      "siteId": "40212",
+      "signature": "new:2026V5751",
+      "siteId": "2026V5751",
       "point": [
-        8.206062,
-        48.856104
+        8.467158,
+        49.004252
       ],
-      "closure": "full",
-      "startDate": "2026-09-11",
-      "endDate": "2026-10-09",
-      "municipality": "Rastatt",
-      "location": "76437 Rastatt, Herrenstraße 2"
+      "closure": "one-direction",
+      "startDate": "2027-05-18",
+      "endDate": "2027-07-01",
+      "municipality": "Karlsruhe",
+      "location": "Durlacher Allee bis Haltestelle Hubstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5794",
+      "siteId": "2026V5794",
+      "point": [
+        8.422852,
+        49.012202
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-10",
+      "endDate": "2027-01-25",
+      "municipality": "Karlsruhe",
+      "location": "Am Fasanengarten, Prakstr., Karl-Wilhelm-Str."
     },
     {
       "kind": "starts-soon",
