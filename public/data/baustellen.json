@@ -88,16 +88,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Baumeisterstraße zwischen Finterstraße und Ettlinger Straße",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-14",
-    "endDate": "2026-10-16",
+    "startDate": "2026-09-28",
+    "endDate": "2026-12-18",
     "point": [
       8.404004,
       49.00395
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-17T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2022V5840",
@@ -1167,17 +1167,17 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Albert-Braun-Straße",
-    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "location": "Albert-Braun-Straße - Gebietsausbau",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-14",
-    "endDate": "2026-12-31",
+    "endDate": "2027-07-30",
     "point": [
       8.361546,
       48.989624
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-12T22:00:00Z"
+    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2025V4584",
@@ -7220,26 +7220,6 @@
     "lastModified": "2026-08-30T22:00:00Z"
   },
   {
-    "id": "2026V5464",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Mathystraße zw. Gleisübergang Sonntagstraße Höhe Friedenstraße und Karlstraße",
-    "notes": "temporäre Sperrung für alle Verkehrsteilnehmer während Montagevorgang",
-    "cause": "Privat",
-    "startDate": "2026-09-09",
-    "endDate": "2026-09-10",
-    "point": [
-      8.39227,
-      49.002654
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
-  },
-  {
     "id": "2026V5490",
     "phase": "upcoming",
     "category": "crane",
@@ -7361,7 +7341,7 @@
   },
   {
     "id": "2026V5617",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -8593,8 +8573,8 @@
     "startDate": "2026-03-13",
     "endDate": "2026-09-26",
     "point": [
-      8.409578,
-      49.035478
+      8.524345,
+      49.102939
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-03-27T07:55:25Z"
@@ -9320,26 +9300,6 @@
     "lastModified": "2026-08-24T05:42:04Z"
   },
   {
-    "id": "40161",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kiefernweg 13a",
-    "notes": "Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.",
-    "cause": "Privat",
-    "startDate": "2026-08-31",
-    "endDate": "2026-09-10",
-    "point": [
-      8.568538,
-      49.113077
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-26T06:47:31Z"
-  },
-  {
     "id": "40163",
     "phase": "active",
     "category": "special-use",
@@ -9580,6 +9540,26 @@
     "lastModified": "2026-09-09T05:43:09Z"
   },
   {
+    "id": "40187",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Silberhölle 26, 36, 48 und 60",
+    "notes": "Behebung von kleineren Straßenschäden. Es wird jeweils eine halbseitige Sperrung für 1-2 Tage erforderlich.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-09-11",
+    "endDate": "2026-09-26",
+    "point": [
+      8.596927,
+      49.117397
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-10T14:06:39Z"
+  },
+  {
     "id": "40207",
     "phase": "active",
     "category": "district-heating",
@@ -9598,6 +9578,26 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-08-24T09:30:19Z"
+  },
+  {
+    "id": "40212",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Herrenstraße 2",
+    "notes": "Private Dachsanierung",
+    "cause": "Privat",
+    "startDate": "2026-09-11",
+    "endDate": "2026-10-09",
+    "point": [
+      8.206062,
+      48.856104
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-08-26T07:59:25Z"
   },
   {
     "id": "40241",
@@ -9698,26 +9698,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-08-05T08:01:54Z"
-  },
-  {
-    "id": "40320",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Vollsperrung Moosbronner Straße Höhe Bushaltestelle Breuerstraße",
-    "notes": "Die Moosbronner Straße wird von der Schwester-Baptista-Straße bis zur Johann-Gregor-Breuer-Straße für den Neubau einer Versorgungsleitung voll gesperrt. Eine örtliche Umleitung ist eingerichtet.",
-    "cause": "Stadtwerke Ettlingen",
-    "startDate": "2026-08-17",
-    "endDate": "2026-09-10",
-    "point": [
-      8.421444,
-      48.90009
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-08-06T14:07:17Z"
   },
   {
     "id": "40339",

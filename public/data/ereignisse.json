@@ -1,187 +1,75 @@
 {
-  "generatedAt": "2026-09-10T18:44:41.810Z",
+  "generatedAt": "2026-09-11T08:27:49.388Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V1010:2026-09-09T22:00:00Z",
-      "siteId": "2026V1010",
+      "signature": "changed:2022V5716:2026-09-10T22:00:00Z",
+      "siteId": "2022V5716",
       "point": [
-        8.474927,
-        48.953161
+        8.404004,
+        49.00395
       ],
-      "closure": "full",
-      "startDate": "2026-09-10",
-      "endDate": "2026-10-30",
+      "closure": "obstruction",
+      "startDate": "2026-09-28",
+      "endDate": "2026-12-18",
       "municipality": "Karlsruhe",
-      "location": "Böhmerwaldstraße zw. Mecklenburger Straße und Ludwigsburger Straße / Thüringer Straße zw. Egerlandstraße und Esslinger Srraße"
+      "location": "Baumeisterstraße zwischen Finterstraße und Ettlinger Straße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V4862:2026-09-09T22:00:00Z",
-      "siteId": "2026V4862",
+      "signature": "changed:2025V4469:2026-09-10T22:00:00Z",
+      "siteId": "2025V4469",
       "point": [
-        8.460786,
-        49.001033
+        8.361546,
+        48.989624
       ],
       "closure": "obstruction",
       "startDate": "2026-09-14",
-      "endDate": "2026-09-19",
+      "endDate": "2027-07-30",
       "municipality": "Karlsruhe",
-      "location": "Hauptbahnstraße unterhalb der Brücke/Überführung im Zuge der Durlacher Allee"
+      "location": "Albert-Braun-Straße - Gebietsausbau"
     },
     {
       "kind": "new",
-      "signature": "new:2023V4019",
-      "siteId": "2023V4019",
+      "signature": "new:40187",
+      "siteId": "40187",
       "point": [
-        8.404491,
-        48.969648
-      ],
-      "closure": "obstruction",
-      "startDate": "2027-01-11",
-      "endDate": "2028-03-31",
-      "municipality": "Karlsruhe",
-      "location": "Herrenalber Straße zwischen Battstraße und Diakonissenstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2025V6769",
-      "siteId": "2025V6769",
-      "point": [
-        8.400107,
-        49.004041
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-12-31",
-      "municipality": "Karlsruhe",
-      "location": "Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5490",
-      "siteId": "2026V5490",
-      "point": [
-        8.466705,
-        49.001968
-      ],
-      "closure": "full",
-      "startDate": "2026-09-25",
-      "endDate": "2026-09-25",
-      "municipality": "Karlsruhe",
-      "location": "Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5740",
-      "siteId": "2026V5740",
-      "point": [
-        8.421186,
-        49.005506
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-25",
-      "municipality": "Karlsruhe",
-      "location": "Frühlingstraße, Lohfeldstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5743",
-      "siteId": "2026V5743",
-      "point": [
-        8.377611,
-        49.016768
-      ],
-      "closure": "obstruction",
-      "startDate": "2027-08-01",
-      "endDate": "2028-06-30",
-      "municipality": "Karlsruhe",
-      "location": "Grenadierstraße zw. Moltkestraße und Freydorfstraße und Freydorfstraße zw. Franz-Lust-Straße und Grenadierstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5755",
-      "siteId": "2026V5755",
-      "point": [
-        8.409649,
-        49.000848
-      ],
-      "closure": "obstruction",
-      "startDate": "2027-04-01",
-      "endDate": "2027-05-31",
-      "municipality": "Karlsruhe",
-      "location": "Luisenstraße zw. Rüppurrer Straße und Marienstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5757",
-      "siteId": "2026V5757",
-      "point": [
-        8.406121,
-        48.998327
-      ],
-      "closure": "obstruction",
-      "startDate": "2027-06-01",
-      "endDate": "2027-07-31",
-      "municipality": "Karlsruhe",
-      "location": "Winterstraße zw. Wilhelmstraße und Marienstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5759",
-      "siteId": "2026V5759",
-      "point": [
-        8.406936,
-        48.99823
-      ],
-      "closure": "obstruction",
-      "startDate": "2027-05-01",
-      "endDate": "2027-06-30",
-      "municipality": "Karlsruhe",
-      "location": "Winterstraße zw. Wilhemstraße und Marienstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5763",
-      "siteId": "2026V5763",
-      "point": [
-        8.445188,
-        49.021112
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-10",
-      "endDate": "2026-09-11",
-      "municipality": "Karlsruhe",
-      "location": "Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5560:2026-09-17",
-      "siteId": "2026V5560",
-      "point": [
-        8.398237,
-        48.99929
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-17",
-      "endDate": "2026-09-17",
-      "municipality": "Karlsruhe",
-      "location": "Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5617:2026-09-11",
-      "siteId": "2026V5617",
-      "point": [
-        8.372554,
-        49.063848
+        8.596927,
+        49.117397
       ],
       "closure": "obstruction",
       "startDate": "2026-09-11",
-      "endDate": "2026-09-11",
+      "endDate": "2026-09-26",
+      "municipality": "Bruchsal",
+      "location": "Silberhölle 26, 36, 48 und 60"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40212",
+      "siteId": "40212",
+      "point": [
+        8.206062,
+        48.856104
+      ],
+      "closure": "full",
+      "startDate": "2026-09-11",
+      "endDate": "2026-10-09",
+      "municipality": "Rastatt",
+      "location": "76437 Rastatt, Herrenstraße 2"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V1795:2026-09-18",
+      "siteId": "2026V1795",
+      "point": [
+        8.511113,
+        48.953939
+      ],
+      "closure": "full",
+      "startDate": "2026-09-18",
+      "endDate": "2026-10-09",
       "municipality": "Karlsruhe",
-      "location": "Unterer Dammweg zw. B36 und in den Kuhwiesen"
+      "location": "Gänsbergstraße zw. Werrenstraße und Wiesentalstraße"
     }
   ]
 }
