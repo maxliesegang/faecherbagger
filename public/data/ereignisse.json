@@ -1,159 +1,61 @@
 {
-  "generatedAt": "2026-09-11T18:48:14.058Z",
+  "generatedAt": "2026-09-12T08:16:34.905Z",
   "events": [
     {
-      "kind": "changed",
-      "signature": "changed:2024V7075:2026-09-10T22:00:00Z",
-      "siteId": "2024V7075",
+      "kind": "starts-soon",
+      "signature": "starts-soon:2025V7364:2026-09-19",
+      "siteId": "2025V7364",
       "point": [
-        8.3917,
-        48.995707
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-02-11",
-      "endDate": "2026-10-02",
-      "municipality": "Karlsruhe",
-      "location": "Gebhardstraße zw. Barbarossaplatz und Welfenstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V0778:2026-09-10T22:00:00Z",
-      "siteId": "2025V0778",
-      "point": [
-        8.38722,
-        49.008579
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-11-20",
-      "municipality": "Karlsruhe",
-      "location": "Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V5288:2026-09-10T22:00:00Z",
-      "siteId": "2025V5288",
-      "point": [
-        8.390706,
-        48.999765
-      ],
-      "closure": "full",
-      "startDate": "2026-07-20",
-      "endDate": "2026-09-19",
-      "municipality": "Karlsruhe",
-      "location": "Kreuzungsbereich Hirsch- / Vorholzstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V5289:2026-09-10T22:00:00Z",
-      "siteId": "2025V5289",
-      "point": [
-        8.39056,
-        48.999133
+        8.396389,
+        49.007375
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-20",
-      "endDate": "2026-10-25",
+      "startDate": "2026-09-19",
+      "endDate": "2026-10-16",
       "municipality": "Karlsruhe",
-      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V3599:2026-09-10T22:00:00Z",
-      "siteId": "2026V3599",
-      "point": [
-        8.392014,
-        49.002682
-      ],
-      "closure": "full",
-      "startDate": "2026-09-15",
-      "endDate": "2026-11-07",
-      "municipality": "Karlsruhe",
-      "location": "Sonntagstraße Gleisüberfahrt Mathystraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V4250:2026-09-10T22:00:00Z",
-      "siteId": "2026V4250",
-      "point": [
-        8.44577,
-        49.028476
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-10",
-      "endDate": "2026-11-01",
-      "municipality": "Karlsruhe",
-      "location": "Waldenburger Straße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V4252:2026-09-10T22:00:00Z",
-      "siteId": "2026V4252",
-      "point": [
-        8.446894,
-        49.028771
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-09",
-      "municipality": "Karlsruhe",
-      "location": "Hirschberger Straße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V5444:2026-09-10T22:00:00Z",
-      "siteId": "2026V5444",
-      "point": [
-        8.420956,
-        49.012043
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-09",
-      "municipality": "Karlsruhe",
-      "location": "Hölderlinstraße, Emil-Gött-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5751",
-      "siteId": "2026V5751",
-      "point": [
-        8.467158,
-        49.004252
-      ],
-      "closure": "one-direction",
-      "startDate": "2027-05-18",
-      "endDate": "2027-07-01",
-      "municipality": "Karlsruhe",
-      "location": "Durlacher Allee bis Haltestelle Hubstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5794",
-      "siteId": "2026V5794",
-      "point": [
-        8.422852,
-        49.012202
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-10",
-      "endDate": "2027-01-25",
-      "municipality": "Karlsruhe",
-      "location": "Am Fasanengarten, Prakstr., Karl-Wilhelm-Str."
+      "location": "Amalienstraße Kreuzung Herrenstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V1795:2026-09-18",
-      "siteId": "2026V1795",
+      "signature": "starts-soon:2026V3197:2026-09-19",
+      "siteId": "2026V3197",
       "point": [
-        8.511113,
-        48.953939
+        8.423974,
+        49.016201
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-19",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3514:2026-09-13",
+      "siteId": "2026V3514",
+      "point": [
+        8.475786,
+        48.999371
       ],
       "closure": "full",
-      "startDate": "2026-09-18",
-      "endDate": "2026-10-09",
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-21",
       "municipality": "Karlsruhe",
-      "location": "Gänsbergstraße zw. Werrenstraße und Wiesentalstraße"
+      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5422:2026-09-19",
+      "siteId": "2026V5422",
+      "point": [
+        8.448107,
+        49.039267
+      ],
+      "closure": "none",
+      "startDate": "2026-09-19",
+      "endDate": "2026-09-26",
+      "municipality": "Karlsruhe",
+      "location": "Bahnübergang Verlängerung Kolberger Straße"
     }
   ]
 }
