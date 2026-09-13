@@ -1,61 +1,187 @@
 {
-  "generatedAt": "2026-09-12T17:55:12.780Z",
+  "generatedAt": "2026-09-13T08:41:06.484Z",
   "events": [
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2025V7364:2026-09-19",
-      "siteId": "2025V7364",
+      "signature": "starts-soon:2023V0127:2026-09-14",
+      "siteId": "2023V0127",
       "point": [
-        8.396389,
-        49.007375
+        8.420066,
+        49.011904
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-19",
-      "endDate": "2026-10-16",
+      "startDate": "2026-09-14",
+      "endDate": "2027-02-01",
       "municipality": "Karlsruhe",
-      "location": "Amalienstraße Kreuzung Herrenstraße"
+      "location": "Am Fasanengarten 2; Hansjakobstraße 1-14; Hölderlinstraße 1-5"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V3197:2026-09-19",
-      "siteId": "2026V3197",
+      "signature": "starts-soon:2025V4469:2026-09-14",
+      "siteId": "2025V4469",
       "point": [
-        8.423974,
-        49.016201
+        8.361546,
+        48.989624
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-19",
+      "startDate": "2026-09-14",
+      "endDate": "2027-07-30",
+      "municipality": "Karlsruhe",
+      "location": "Albert-Braun-Straße - Gebietsausbau"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2025V5289:2026-09-20",
+      "siteId": "2025V5289",
+      "point": [
+        8.39056,
+        48.999133
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-20",
+      "endDate": "2026-10-25",
+      "municipality": "Karlsruhe",
+      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2025V6769:2026-09-14",
+      "siteId": "2025V6769",
+      "point": [
+        8.400107,
+        49.004041
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V0096:2026-09-14",
+      "siteId": "2026V0096",
+      "point": [
+        8.379891,
+        49.005085
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2027-02-21",
+      "municipality": "Karlsruhe",
+      "location": "Gartenstraße zw. Brauerstraße u. Kriegstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V2043:2026-09-14",
+      "siteId": "2026V2043",
+      "point": [
+        8.379405,
+        49.015734
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
       "endDate": "2026-10-30",
       "municipality": "Karlsruhe",
-      "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße"
+      "location": "Freydorfstraße zw. Moltke- u. Grenadierstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V3514:2026-09-13",
-      "siteId": "2026V3514",
+      "signature": "starts-soon:2026V4252:2026-09-14",
+      "siteId": "2026V4252",
       "point": [
-        8.475786,
-        48.999371
+        8.446894,
+        49.028771
       ],
-      "closure": "full",
-      "startDate": "2026-09-13",
-      "endDate": "2026-09-21",
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2026-10-09",
       "municipality": "Karlsruhe",
-      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße"
+      "location": "Hirschberger Straße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V5422:2026-09-19",
-      "siteId": "2026V5422",
+      "signature": "starts-soon:2026V4862:2026-09-14",
+      "siteId": "2026V4862",
       "point": [
-        8.448107,
-        49.039267
+        8.460786,
+        49.001033
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2026-09-19",
+      "municipality": "Karlsruhe",
+      "location": "Hauptbahnstraße unterhalb der Brücke/Überführung im Zuge der Durlacher Allee"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4913:2026-09-14",
+      "siteId": "2026V4913",
+      "point": [
+        8.452614,
+        49.041969
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2026-11-15",
+      "municipality": "Karlsruhe",
+      "location": "Theodor-Heuss-Allee, Brücke über die L 560 Gustav-Heinemann-Allee"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4915:2026-09-14",
+      "siteId": "2026V4915",
+      "point": [
+        8.45264,
+        49.041957
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2026-11-13",
+      "municipality": "Karlsruhe",
+      "location": "L 560 Gustav-Heinemann-Allee"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5392:2026-09-14",
+      "siteId": "2026V5392",
+      "point": [
+        8.419933,
+        49.004881
       ],
       "closure": "none",
-      "startDate": "2026-09-19",
-      "endDate": "2026-09-26",
+      "startDate": "2026-09-14",
+      "endDate": "2026-09-18",
       "municipality": "Karlsruhe",
-      "location": "Bahnübergang Verlängerung Kolberger Straße"
+      "location": "Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5444:2026-09-14",
+      "siteId": "2026V5444",
+      "point": [
+        8.420956,
+        49.012043
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Hölderlinstraße, Emil-Gött-Straße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:40153:2026-09-14",
+      "siteId": "40153",
+      "point": [
+        8.503412,
+        49.119177
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2027-03-14",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Kamillenweg 10"
     }
   ]
 }

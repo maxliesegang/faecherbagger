@@ -60,26 +60,6 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
-    "id": "2022V5461",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Industriestraße, Hohleichweg, August-Ketterer-Straße, Waidweg, Babbergerstraße, Daxlander Straße, Hermann-Schneider-Allee",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2025-02-17",
-    "endDate": "2026-09-12",
-    "point": [
-      8.319763,
-      49.005479
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
     "id": "2022V5716",
     "phase": "upcoming",
     "category": "gas-water",
@@ -2580,26 +2560,6 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
-    "id": "2026V0264",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger",
-    "notes": "Restarbeiten in der Fußgängerzone bis vsl. 11. September",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-17",
-    "endDate": "2026-09-12",
-    "point": [
-      8.471746,
-      48.999187
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-03T22:00:00Z"
-  },
-  {
     "id": "2026V0269",
     "phase": "active",
     "category": "gas-water",
@@ -4801,7 +4761,7 @@
   },
   {
     "id": "2026V3514",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -5858,26 +5818,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-07T22:00:00Z"
-  },
-  {
-    "id": "2026V4548",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Moosalbstraße zw. Frauenalber Straße und Spessarter Straße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-31",
-    "endDate": "2026-09-12",
-    "point": [
-      8.399709,
-      48.96578
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V4551",
@@ -7818,26 +7758,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-03-18T13:27:33Z"
-  },
-  {
-    "id": "30189",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Im Jonas 31",
-    "notes": "Fahrbahn verengt.",
-    "cause": "Fachgebiet Tiefbau",
-    "startDate": "2026-08-24",
-    "endDate": "2026-09-12",
-    "point": [
-      8.645184,
-      49.088478
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-14T06:46:40Z"
   },
   {
     "id": "30190",
