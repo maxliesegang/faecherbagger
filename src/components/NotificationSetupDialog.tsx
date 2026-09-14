@@ -168,6 +168,10 @@ export function NotificationSetupDialog({
       radiusKm,
     };
     const updated: NotificationPreferences = {
+      // Spread first: this dialog owns the areas, the kinds and the threshold,
+      // and must carry everything else (the follow list) through untouched
+      // rather than rebuilding the record from the fields on screen.
+      ...preferences,
       areas: upsertNotificationArea(preferences.areas, area),
       // An empty selection would mean "never notify me", which is what closing
       // the dialog is for; fall back to the one thing everyone expects.

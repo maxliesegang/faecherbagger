@@ -110,8 +110,16 @@ export const findNotificationAreaForPoint = (
   areas.find((area) => isPointInNotificationArea(area, point));
 
 /**
- * The subset of `events` a device with these preferences should be shown: a
- * kind it asked for, disruptive enough, and inside one of its areas.
+ * The subset of `events` a device with these preferences should be shown.
+ *
+ * Two ways through, because they answer different questions. A site qualifies
+ * by *discovery* — a kind that was asked for, disruptive enough, inside one of
+ * the watched areas — or by having been *followed* by hand, which skips the
+ * area and severity tests entirely: following a site is an explicit statement
+ * that this one matters, and re-filtering it by rules meant for discovery would
+ * drop exactly what was asked for. The kind still applies either way, so
+ * someone who turned `changed` off does not get change notices through the back
+ * door.
  *
  * This is the whole reason the server can stay ignorant of anyone's location —
  * it runs on the device, after the push has arrived.
@@ -120,11 +128,14 @@ export function selectNotificationEvents(
   events: readonly NotificationFeedEvent[],
   preferences: NotificationPreferences,
 ): NotificationFeedEvent[] {
-  if (preferences.areas.length === 0) return [];
-  return events.filter(
-    (event) =>
-      preferences.kinds.includes(event.kind) &&
+  const followed = new Set(preferences.followedSiteIds);
+  if (preferences.areas.length === 0 && followed.size === 0) return [];
+  return events.filter((event) => {
+    if (!preferences.kinds.includes(event.kind)) return false;
+    if (followed.has(event.siteId)) return true;
+    return (
       meetsSeverityThreshold(event.closure, preferences.minSeverity) &&
-      findNotificationAreaForPoint(preferences.areas, event.point) !== undefined,
-  );
+      findNotificationAreaForPoint(preferences.areas, event.point) !== undefined
+    );
+  });
 }

@@ -107,6 +107,7 @@ describe("notification preferences", () => {
     areas: [area],
     kinds: ["new" as const],
     minSeverity: "closure" as const,
+    followedSiteIds: ["2026V2026"],
   };
 
   it("validates the whole shape", () => {
@@ -123,6 +124,12 @@ describe("notification preferences", () => {
     expect(isNotificationPreferences({ ...preferences, kinds: ["nope"] })).toBe(
       false,
     );
+    expect(
+      isNotificationPreferences({ ...preferences, followedSiteIds: ["a", "a"] }),
+    ).toBe(false);
+    expect(
+      isNotificationPreferences({ ...preferences, followedSiteIds: [""] }),
+    ).toBe(false);
   });
 
   it("keeps the valid parts when coercing damaged input", () => {
@@ -134,6 +141,26 @@ describe("notification preferences", () => {
     expect(coerced.areas).toEqual([area]);
     expect(coerced.kinds).toEqual(["new"]);
     expect(coerced.minSeverity).toBe("closure");
+  });
+
+  it("upgrades a record stored before follows existed", () => {
+    // Every device that set preferences before this field was added has one of
+    // these; it must read as "follows nothing", never as unusable.
+    const coerced = coerceNotificationPreferences({
+      areas: [area],
+      kinds: ["new"],
+      minSeverity: "closure",
+    });
+    expect(coerced.followedSiteIds).toEqual([]);
+    expect(coerced.areas).toEqual([area]);
+  });
+
+  it("deduplicates and bounds the follow list when coercing", () => {
+    const coerced = coerceNotificationPreferences({
+      ...preferences,
+      followedSiteIds: ["a", "a", "", 7, "b"],
+    });
+    expect(coerced.followedSiteIds).toEqual(["a", "b"]);
   });
 
   it("deduplicates stored areas by their stable identity", () => {

@@ -53,6 +53,16 @@ export interface NotificationPreferences {
   areas: NotificationArea[];
   kinds: NotificationEventKind[];
   minSeverity: NotificationSeverityThreshold;
+  /**
+   * Sites followed by hand, by `ConstructionSite.id`.
+   *
+   * They bypass the areas and the severity threshold entirely: following a site
+   * is an explicit statement that this one matters, and re-filtering it by
+   * rules meant for discovery would silently drop the thing that was asked for.
+   * The one thing it does not bypass is the `changed` kind — someone who has
+   * turned change notices off wants them off everywhere.
+   */
+  followedSiteIds: string[];
 }
 
 /**
