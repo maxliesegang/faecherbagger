@@ -31,11 +31,24 @@ import {
 export type ConstructionSiteResultView = "map" | "list";
 
 /**
+ * Which of the app's two questions is on screen.
+ *
+ * `"relevant"` is "what do I need to know?" — the watched areas and followed
+ * sites, which is what most visits are for. `"explore"` is "what is going on
+ * anywhere?" — the filterable map and table over the whole region. They are
+ * separate sections rather than a filter on one screen because they want
+ * different controls and answer to different state: the explorer's filters are
+ * shareable, and a personal view has nothing to share.
+ */
+export type AppSection = "relevant" | "explore";
+
+/**
  * The part of the UI state that belongs in the address bar, so a filtered view
  * can be bookmarked, shared or reloaded. Query keys are German because the URL
  * is user-facing; everything else in the codebase stays English.
  */
 export interface AppURLState {
+  section: AppSection;
   filters: ConstructionSiteFilters;
   showOnlyChanged: boolean;
   view: ConstructionSiteResultView;
@@ -46,6 +59,9 @@ export interface AppURLState {
 }
 
 export const DEFAULT_APP_URL_STATE: Readonly<AppURLState> = {
+  // The personal view is the landing screen: someone opening the app wants to
+  // know whether anything affects them, not to browse a region-wide map.
+  section: "relevant",
   filters: EMPTY_CONSTRUCTION_SITE_FILTERS,
   showOnlyChanged: false,
   view: "map",
@@ -53,6 +69,7 @@ export const DEFAULT_APP_URL_STATE: Readonly<AppURLState> = {
 };
 
 const URL_SEARCH_PARAMETER_NAMES = {
+  section: "bereich",
   search: "q",
   municipality: "ort",
   phase: "status",
@@ -65,6 +82,16 @@ const URL_SEARCH_PARAMETER_NAMES = {
   detailSiteId: "baustelle",
   legalPage: "seite",
 } as const;
+
+const SECTION_BY_URL_VALUE: Record<string, AppSection> = {
+  "fuer-mich": "relevant",
+  alle: "explore",
+};
+
+const URL_VALUE_BY_SECTION: Record<AppSection, string> = {
+  relevant: "fuer-mich",
+  explore: "alle",
+};
 
 const RESULT_VIEW_BY_URL_VALUE: Record<string, ConstructionSiteResultView> = {
   karte: "map",
@@ -100,6 +127,9 @@ export function parseAppURLState(search: string): AppURLState {
       params.get(URL_SEARCH_PARAMETER_NAMES.view) ?? ""
     ];
   return {
+    section:
+      SECTION_BY_URL_VALUE[params.get(URL_SEARCH_PARAMETER_NAMES.section) ?? ""] ??
+      DEFAULT_APP_URL_STATE.section,
     filters: {
       search:
         params.get(URL_SEARCH_PARAMETER_NAMES.search)?.slice(0, 200) ?? "",
@@ -153,6 +183,12 @@ export function serializeAppURLState(state: AppURLState): string {
   const { filters } = state;
   const search = filters.search.trim();
 
+  if (state.section !== DEFAULT_APP_URL_STATE.section) {
+    params.set(
+      URL_SEARCH_PARAMETER_NAMES.section,
+      URL_VALUE_BY_SECTION[state.section],
+    );
+  }
   if (search) params.set(URL_SEARCH_PARAMETER_NAMES.search, search);
   if (filters.phase) {
     params.set(URL_SEARCH_PARAMETER_NAMES.phase, filters.phase);

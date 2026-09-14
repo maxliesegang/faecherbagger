@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   KernAlert,
   KernButton,
@@ -54,6 +54,15 @@ interface ProgressiveWebAppSettingsProps {
   locationController: CurrentLocationController;
   preferences: NotificationPreferences;
   onPreferencesChange: (preferences: NotificationPreferences) => void;
+  /**
+   * Opens the area setup from outside this panel.
+   *
+   * The personal screen's empty state is the one caller: its "Gebiet festlegen"
+   * has to open the dialog, not scroll the visitor to a second button with the
+   * same label. A counter rather than a boolean so a repeated request reopens
+   * the dialog without the parent having to reset a flag.
+   */
+  openSetupRequest?: number;
 }
 
 function postMessageToServiceWorker(message: object) {
@@ -72,6 +81,7 @@ export function ProgressiveWebAppSettings({
   locationController,
   preferences,
   onPreferencesChange,
+  openSetupRequest = 0,
 }: ProgressiveWebAppSettingsProps) {
   const [installPrompt, setInstallPrompt] =
     useState<BeforeInstallPromptEvent>();
@@ -201,7 +211,30 @@ export function ProgressiveWebAppSettings({
   const isIosDevice = /iphone|ipad|ipod/i.test(navigator.userAgent);
   const canOfferNotifications = !isIosDevice || isInstalled;
   const isActive = subscriptionState === "registered";
+  /*
+    Seeded with the current value so only a *change* opens the dialog. A plain
+    `!== 0` check would reopen it on every remount — returning from a detail
+    view unmounts this panel and brings it back with the parent's counter still
+    raised, which showed up as the setup dialog appearing unasked.
+  */
+  const handledSetupRequest = useRef(openSetupRequest);
+  useEffect(() => {
+    if (openSetupRequest === handledSetupRequest.current) return;
+    handledSetupRequest.current = openSetupRequest;
+    setEditedArea(undefined);
+    setIsSetupOpen(true);
+  }, [openSetupRequest]);
+
   const canAddArea = preferences.areas.length < MAX_NOTIFICATION_AREAS;
+  /*
+    Whether there is anything a notification could be about. Deliberately the
+    same condition as `selectNotificationEvents`: gating the switch on areas
+    alone left someone who only follows individual sites unable to turn
+    notifications on, while the matching that runs after a push would have
+    delivered their follows perfectly well.
+  */
+  const hasNotifiableInterest =
+    preferences.areas.length > 0 || preferences.followedSiteIds.length > 0;
 
   return (
     <section className="pwa-panel" aria-labelledby="pwa-panel-heading">
@@ -224,12 +257,26 @@ export function ProgressiveWebAppSettings({
       </KernText>
 
       {preferences.areas.length === 0 ? (
-        <KernButton
-          type="button"
-          label="Gebiet festlegen"
-          disabled={isBusy}
-          onClick={() => openSetup()}
-        />
+        <>
+          <KernButton
+            type="button"
+            label="Gebiet festlegen"
+            disabled={isBusy}
+            onClick={() => openSetup()}
+          />
+          {preferences.followedSiteIds.length > 0 && (
+            /*
+              Without this the panel reads as "nothing is set up" to someone who
+              has followed sites but drawn no circle — and then offers them a
+              notification switch, which looks like a bug rather than a feature.
+            */
+            <KernText muted className="pwa-panel__follows">
+              {preferences.followedSiteIds.length === 1
+                ? "Sie beobachten 1 einzelne Baustelle. Auch ohne Gebiet werden Sie über sie benachrichtigt."
+                : `Sie beobachten ${preferences.followedSiteIds.length} einzelne Baustellen. Auch ohne Gebiet werden Sie über sie benachrichtigt.`}
+            </KernText>
+          )}
+        </>
       ) : (
         <>
           <ul className="pwa-panel__areas">
@@ -276,7 +323,7 @@ export function ProgressiveWebAppSettings({
 
       <div className="pwa-panel__actions">
         {!isActive &&
-          preferences.areas.length > 0 &&
+          hasNotifiableInterest &&
           notificationPermission !== "unsupported" &&
           canOfferNotifications &&
           isPushSupported &&

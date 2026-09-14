@@ -1,0 +1,193 @@
+.relevant {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.relevant__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.relevant__areas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--kern-color-neutral-700, #374151);
+  font-size: 0.9375rem;
+}
+
+/* A segmented control, built from radios so it works without JavaScript
+   focus management and announces as one group. */
+.relevant__views {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--kern-color-neutral-300, #d1d5db);
+  border-radius: 0.5rem;
+}
+
+.relevant__view {
+  /* Anchors the absolutely positioned `kern-sr-only` input to its own tile. */
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.relevant__view > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.relevant__view:hover > span {
+  background: var(--kern-color-neutral-100, #f3f4f6);
+}
+
+.relevant__view:has(input:checked) > span {
+  background: var(--kern-color-primary-700, #0b4f9e);
+  color: #fff;
+  font-weight: 600;
+}
+
+.relevant__view:has(input:focus-visible) > span {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.relevant__view-count {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+.relevant__description,
+.relevant__count,
+.relevant__empty {
+  margin: 0;
+}
+
+.relevant__description {
+  color: var(--kern-color-neutral-700, #374151);
+}
+
+.relevant__empty {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--kern-color-neutral-100, #f3f4f6);
+}
+
+.relevant__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.relevant__item {
+  /* Anchors the stretched link below, which makes the whole card the target. */
+  position: relative;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--kern-color-neutral-300, #d1d5db);
+  border-radius: 0.5rem;
+}
+
+.relevant__link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.relevant__link:hover .relevant__location {
+  text-decoration: underline;
+}
+
+/* Stretches the link over the whole card so the entire tile is the target,
+   while the meta row below stays selectable text. */
+.relevant__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.relevant__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.375rem 0 0;
+  font-size: 0.875rem;
+  color: var(--kern-color-neutral-700, #374151);
+}
+
+.relevant__closure,
+.relevant__changed,
+.relevant__followed {
+  padding: 0.0625rem 0.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+/* The severity keeps the badge colours the rest of the app already uses; the
+   label carries the meaning on its own, so colour is never the only signal. */
+.relevant__closure[data-variant="danger"] {
+  background: #fdeaea;
+  color: #8a1c1c;
+}
+
+.relevant__closure[data-variant="warning"] {
+  background: #fdf3e2;
+  color: #7a4a05;
+}
+
+.relevant__closure[data-variant="success"] {
+  background: #e8f5ec;
+  color: #1b5e32;
+}
+
+.relevant__closure[data-variant="info"] {
+  background: #e8eefa;
+  color: #0b4f9e;
+}
+
+.relevant__changed,
+.relevant__followed {
+  background: var(--kern-color-neutral-200, #e5e7eb);
+  color: var(--kern-color-neutral-800, #1f2937);
+}
+
+@media (max-width: 30rem) {
+  .relevant__view > span {
+    padding-inline: 0.5rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/*
+  A follow whose site the source has stopped publishing. Stated rather than
+  cleaned up silently — see the component for why.
+*/
+.relevant__stale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--kern-color-neutral-100, #f3f4f6);
+  font-size: 0.9375rem;
+}

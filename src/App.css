@@ -774,3 +774,19 @@ select {
     transition: none;
   }
 }
+
+/*
+  The personal screen's settings block. It sits below the list it feeds rather
+  than in the explorer rail, so the answer comes first and the controls that
+  shape it follow.
+*/
+.app-personal-settings {
+  margin-block-start: 2rem;
+  scroll-margin-block-start: 1rem;
+}
+
+.construction-site-detail__follow-limit {
+  flex-basis: 100%;
+  margin: 0.5rem 0 0;
+  color: var(--kern-color-danger-700, #8a1c1c);
+}

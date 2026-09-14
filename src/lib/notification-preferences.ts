@@ -22,6 +22,16 @@ export const MAX_NOTIFICATION_RADIUS_KM = 50;
 
 /** Watching more places than this is a data-collection problem, not a feature. */
 export const MAX_NOTIFICATION_AREAS = 5;
+
+/**
+ * The cap on hand-followed sites.
+ *
+ * Higher than the area cap because the cost is different: an area is a standing
+ * claim about where someone lives, while a followed site is one road works that
+ * resolves itself. The limit is here to bound the stored record and the service
+ * worker's matching, not to ration the feature.
+ */
+export const MAX_FOLLOWED_SITES = 50;
 export const MAX_NOTIFICATION_AREA_LABEL_LENGTH = 40;
 
 export const NOTIFICATION_EVENT_KINDS: readonly NotificationEventKind[] = [
@@ -62,6 +72,7 @@ export const DEFAULT_NOTIFICATION_PREFERENCES: NotificationPreferences = {
   areas: [],
   kinds: ["new", "starts-soon", "changed"],
   minSeverity: "obstruction",
+  followedSiteIds: [],
 };
 
 /** A writable copy for React state and storage fallbacks. */
@@ -69,8 +80,14 @@ export function createDefaultNotificationPreferences(): NotificationPreferences 
   return {
     ...DEFAULT_NOTIFICATION_PREFERENCES,
     kinds: [...DEFAULT_NOTIFICATION_PREFERENCES.kinds],
+    areas: [],
+    followedSiteIds: [],
   };
 }
+
+/** A site id as stored: non-empty and bounded, matching `ConstructionSite.id`. */
+const isFollowedSiteId = (value: unknown): value is string =>
+  typeof value === "string" && value.trim().length > 0 && value.length <= 64;
 
 /** Validates a WGS84 coordinate in GeoJSON `[longitude, latitude]` order. */
 export function isLngLat(value: unknown): value is LngLat {
@@ -126,7 +143,11 @@ export function isNotificationPreferences(
     ) &&
     NOTIFICATION_SEVERITY_THRESHOLDS.includes(
       candidate.minSeverity as NotificationSeverityThreshold,
-    )
+    ) &&
+    Array.isArray(candidate.followedSiteIds) &&
+    candidate.followedSiteIds.length <= MAX_FOLLOWED_SITES &&
+    candidate.followedSiteIds.every(isFollowedSiteId) &&
+    new Set(candidate.followedSiteIds).size === candidate.followedSiteIds.length
   );
 }
 
@@ -162,8 +183,18 @@ export function coerceNotificationPreferences(
         (candidate.kinds as unknown[]).includes(kind),
       )
     : [];
+  const followedSiteIds: string[] = [];
+  if (Array.isArray(candidate.followedSiteIds)) {
+    for (const siteId of candidate.followedSiteIds) {
+      if (isFollowedSiteId(siteId) && !followedSiteIds.includes(siteId)) {
+        followedSiteIds.push(siteId);
+      }
+      if (followedSiteIds.length === MAX_FOLLOWED_SITES) break;
+    }
+  }
   return {
     areas,
+    followedSiteIds,
     kinds:
       kinds.length > 0 ? kinds : [...DEFAULT_NOTIFICATION_PREFERENCES.kinds],
     minSeverity: NOTIFICATION_SEVERITY_THRESHOLDS.includes(

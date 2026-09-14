@@ -1,0 +1,50 @@
+.app-sections {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--kern-color-neutral-300, #d1d5db);
+  margin-block-end: 1.5rem;
+}
+
+.app-sections__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  /* Reserve the selected weight so the row does not shift when it changes. */
+  margin-bottom: -1px;
+}
+
+.app-sections__tab:hover {
+  background: var(--kern-color-neutral-100, #f3f4f6);
+}
+
+.app-sections__tab[aria-current="page"] {
+  border-bottom-color: var(--kern-color-primary-700, #0b4f9e);
+  color: var(--kern-color-primary-700, #0b4f9e);
+}
+
+.app-sections__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.375rem;
+  border-radius: 0.75rem;
+  background: var(--kern-color-primary-700, #0b4f9e);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 30rem) {
+  .app-sections__tab {
+    flex: 1;
+    justify-content: center;
+    padding-inline: 0.5rem;
+  }
+}

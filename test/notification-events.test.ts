@@ -28,6 +28,7 @@ const preferences: NotificationPreferences = {
   areas: [home],
   kinds: ["new", "starts-soon", "changed"],
   minSeverity: "all",
+  followedSiteIds: [],
 };
 
 function createSite(
@@ -279,5 +280,69 @@ describe("severity of the notification set", () => {
         minSeverity: "closure",
       }),
     ).toHaveLength(1);
+  });
+});
+
+describe("followed sites", () => {
+  /** Far outside `home`, and harmless enough to fail the strictest threshold. */
+  const distantAndHarmless = createSite("distant", {
+    point: [8.4044, 49.4],
+    closure: "none",
+  });
+
+  const eventsFor = (site: ConstructionSite) =>
+    collectNotificationEvents([site], createChanges({ added: [site.id] }), TODAY);
+
+  it("notifies about a followed site outside every area", () => {
+    const selected = selectNotificationEvents(eventsFor(distantAndHarmless), {
+      ...preferences,
+      followedSiteIds: ["distant"],
+    });
+    expect(selected.map((event) => event.siteId)).toEqual(["distant"]);
+  });
+
+  it("notifies about a followed site below the severity threshold", () => {
+    const selected = selectNotificationEvents(eventsFor(distantAndHarmless), {
+      ...preferences,
+      minSeverity: "closure",
+      followedSiteIds: ["distant"],
+    });
+    expect(selected.map((event) => event.siteId)).toEqual(["distant"]);
+  });
+
+  it("still respects a kind the visitor switched off", () => {
+    const selected = selectNotificationEvents(eventsFor(distantAndHarmless), {
+      ...preferences,
+      kinds: ["starts-soon"],
+      followedSiteIds: ["distant"],
+    });
+    expect(selected).toEqual([]);
+  });
+
+  it("ignores an unfollowed distant site", () => {
+    expect(
+      selectNotificationEvents(eventsFor(distantAndHarmless), preferences),
+    ).toEqual([]);
+  });
+
+  it("notifies a device that has follows but no areas at all", () => {
+    // The settings panel gates its "einschalten" button on the same condition;
+    // if these two ever disagree someone can subscribe and never hear anything,
+    // or be refused a subscription that would have worked.
+    const selected = selectNotificationEvents(eventsFor(distantAndHarmless), {
+      ...preferences,
+      areas: [],
+      followedSiteIds: ["distant"],
+    });
+    expect(selected.map((event) => event.siteId)).toEqual(["distant"]);
+  });
+
+  it("selects nothing with no areas and no follows", () => {
+    expect(
+      selectNotificationEvents(eventsFor(distantAndHarmless), {
+        ...preferences,
+        areas: [],
+      }),
+    ).toEqual([]);
   });
 });
