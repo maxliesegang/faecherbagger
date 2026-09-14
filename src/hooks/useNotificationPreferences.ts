@@ -5,12 +5,24 @@ import {
   loadNotificationPreferences,
   saveNotificationPreferences,
 } from "../lib/notification-preferences-store.ts";
+import { toggleFollowedConstructionSite } from "../lib/followed-construction-sites.ts";
+import { MAX_FOLLOWED_SITES } from "../lib/notification-preferences.ts";
 
 export interface NotificationPreferencesController {
   preferences: NotificationPreferences;
   /** False until IndexedDB has answered; the map waits rather than flashing. */
   isLoaded: boolean;
   setPreferences: (preferences: NotificationPreferences) => void;
+  /** Whether this site is on the follow list. */
+  isFollowed: (siteId: string) => boolean;
+  /**
+   * Follows or unfollows one site.
+   *
+   * Returns `false` when a *new* follow was refused because the list is full,
+   * so the caller can say so. Silently doing nothing would leave a star that
+   * looks pressed until the next reload.
+   */
+  toggleFollowed: (siteId: string) => boolean;
 }
 
 /**
@@ -48,5 +60,39 @@ export function useNotificationPreferences(): NotificationPreferencesController 
     [],
   );
 
-  return { preferences, isLoaded, setPreferences };
+  const isFollowed = useCallback(
+    (siteId: string) => preferences.followedSiteIds.includes(siteId),
+    [preferences.followedSiteIds],
+  );
+
+  const toggleFollowed = useCallback(
+    (siteId: string): boolean => {
+      const followedSiteIds = toggleFollowedConstructionSite(
+        preferences.followedSiteIds,
+        siteId,
+      );
+      // The list arithmetic refuses a new follow at the cap by returning the
+      // list unchanged; an unfollow always changes something, so an unchanged
+      // list that does not contain the id is exactly the refusal case.
+      if (
+        followedSiteIds.length === preferences.followedSiteIds.length &&
+        !followedSiteIds.includes(siteId)
+      ) {
+        return false;
+      }
+      setPreferences({ ...preferences, followedSiteIds });
+      return true;
+    },
+    [preferences, setPreferences],
+  );
+
+  return {
+    preferences,
+    isLoaded,
+    setPreferences,
+    isFollowed,
+    toggleFollowed,
+  };
 }
+
+export { MAX_FOLLOWED_SITES };

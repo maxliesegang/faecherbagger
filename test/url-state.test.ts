@@ -16,12 +16,13 @@ describe("parseAppURLState", () => {
 
   it("reads every supported parameter", () => {
     const state = parseAppURLState(
-      "?q=Hauptstra%C3%9Fe&ort=Karlsruhe&status=upcoming&art=sewer" +
+      "?bereich=alle&q=Hauptstra%C3%9Fe&ort=Karlsruhe&status=upcoming&art=sewer" +
         "&sperrung=full&zeitraum=today&neu=1&ansicht=liste" +
         "&sortierung=period%3Adescending&baustelle=2026V1",
     );
 
     expect(state).toEqual({
+      section: "explore",
       filters: {
         search: "Hauptstraße",
         municipality: "Karlsruhe",
@@ -85,6 +86,7 @@ describe("serializeAppURLState", () => {
 
   it("round-trips a fully populated state", () => {
     const state: AppURLState = {
+      section: "explore",
       filters: {
         search: "Hauptstraße",
         municipality: "Bruchsal",
@@ -100,5 +102,30 @@ describe("serializeAppURLState", () => {
     };
 
     expect(parseAppURLState(serializeAppURLState(state))).toEqual(state);
+  });
+
+  describe("section", () => {
+    it("defaults to the personal view, and keeps it out of the URL", () => {
+      expect(parseAppURLState("").section).toBe("relevant");
+      expect(serializeAppURLState(DEFAULT_APP_URL_STATE)).toBe("");
+    });
+
+    it("round-trips the explorer under a German key", () => {
+      const query = serializeAppURLState({
+        ...DEFAULT_APP_URL_STATE,
+        section: "explore",
+      });
+      expect(query).toBe("?bereich=alle");
+      expect(parseAppURLState(query).section).toBe("explore");
+    });
+
+    it("accepts the personal view spelled out", () => {
+      expect(parseAppURLState("?bereich=fuer-mich").section).toBe("relevant");
+    });
+
+    it("falls back to the default for an unknown section", () => {
+      // A hand-edited or outdated link must still open a usable page.
+      expect(parseAppURLState("?bereich=nonsense").section).toBe("relevant");
+    });
   });
 });

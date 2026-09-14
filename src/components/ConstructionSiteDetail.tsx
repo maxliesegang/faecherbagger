@@ -28,6 +28,7 @@ import {
   getConstructionPhaseLabel,
 } from "../lib/construction-site-labels.ts";
 import { ShareConstructionSiteButton } from "./ShareConstructionSiteButton.tsx";
+import { FollowConstructionSiteButton } from "./FollowConstructionSiteButton.tsx";
 import {
   formatConstructionPeriodRelativeToToday,
   getBerlinCalendarDate,
@@ -45,6 +46,10 @@ interface ConstructionSiteDetailProps {
   overviewHref: string;
   onBack: () => void;
   onShowOnMap: () => void;
+  /** Whether this site is on the device's follow list. */
+  isFollowed: boolean;
+  /** Returns false when the follow list is full; see the preferences hook. */
+  onToggleFollowed: (siteId: string) => boolean;
 }
 
 export function ConstructionSiteDetail({
@@ -52,6 +57,8 @@ export function ConstructionSiteDetail({
   overviewHref,
   onBack,
   onShowOnMap,
+  isFollowed,
+  onToggleFollowed,
 }: ConstructionSiteDetailProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const today = useMemo(() => getBerlinCalendarDate(), []);
@@ -165,6 +172,11 @@ export function ConstructionSiteDetail({
           label="In Karten-App öffnen"
         />
         <ShareConstructionSiteButton site={site} />
+        <FollowConstructionSiteButton
+          siteId={site.id}
+          isFollowed={isFollowed}
+          onToggleFollowed={onToggleFollowed}
+        />
       </div>
 
       {site.notes && (

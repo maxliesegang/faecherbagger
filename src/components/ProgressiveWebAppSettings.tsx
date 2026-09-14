@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   KernAlert,
   KernButton,
@@ -54,6 +54,15 @@ interface ProgressiveWebAppSettingsProps {
   locationController: CurrentLocationController;
   preferences: NotificationPreferences;
   onPreferencesChange: (preferences: NotificationPreferences) => void;
+  /**
+   * Opens the area setup from outside this panel.
+   *
+   * The personal screen's empty state is the one caller: its "Gebiet festlegen"
+   * has to open the dialog, not scroll the visitor to a second button with the
+   * same label. A counter rather than a boolean so a repeated request reopens
+   * the dialog without the parent having to reset a flag.
+   */
+  openSetupRequest?: number;
 }
 
 function postMessageToServiceWorker(message: object) {
@@ -72,6 +81,7 @@ export function ProgressiveWebAppSettings({
   locationController,
   preferences,
   onPreferencesChange,
+  openSetupRequest = 0,
 }: ProgressiveWebAppSettingsProps) {
   const [installPrompt, setInstallPrompt] =
     useState<BeforeInstallPromptEvent>();
@@ -201,6 +211,20 @@ export function ProgressiveWebAppSettings({
   const isIosDevice = /iphone|ipad|ipod/i.test(navigator.userAgent);
   const canOfferNotifications = !isIosDevice || isInstalled;
   const isActive = subscriptionState === "registered";
+  /*
+    Seeded with the current value so only a *change* opens the dialog. A plain
+    `!== 0` check would reopen it on every remount — returning from a detail
+    view unmounts this panel and brings it back with the parent's counter still
+    raised, which showed up as the setup dialog appearing unasked.
+  */
+  const handledSetupRequest = useRef(openSetupRequest);
+  useEffect(() => {
+    if (openSetupRequest === handledSetupRequest.current) return;
+    handledSetupRequest.current = openSetupRequest;
+    setEditedArea(undefined);
+    setIsSetupOpen(true);
+  }, [openSetupRequest]);
+
   const canAddArea = preferences.areas.length < MAX_NOTIFICATION_AREAS;
 
   return (
