@@ -141,7 +141,7 @@
   },
   {
     "id": "2023V0127",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -1121,7 +1121,7 @@
   },
   {
     "id": "2025V4469",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -1521,7 +1521,7 @@
   },
   {
     "id": "2025V6344",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -1530,14 +1530,14 @@
     "location": "Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße",
     "notes": "Abwicklung in mehreren Bauabschnitten; Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-01",
-    "endDate": "2027-09-30",
+    "startDate": "2027-01-11",
+    "endDate": "2029-12-14",
     "point": [
       8.439658,
       49.029778
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2025-11-11T23:00:00Z"
+    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2025V6455",
@@ -1641,7 +1641,7 @@
   },
   {
     "id": "2025V6769",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -1900,26 +1900,6 @@
     "lastModified": "2026-08-30T22:00:00Z"
   },
   {
-    "id": "2025V7017",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-09-13",
-    "point": [
-      8.3788,
-      49.005398
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-15T23:00:00Z"
-  },
-  {
     "id": "2025V7216",
     "phase": "active",
     "category": "district-heating",
@@ -2101,7 +2081,7 @@
   },
   {
     "id": "2026V0096",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -2638,26 +2618,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-03-09T23:00:00Z"
-  },
-  {
-    "id": "2026V0286",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz",
-    "notes": "Vollsperrung Gartenstraße vor Kreuzung Steinhäuserstraße mit Kopfwender",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-09-13",
-    "point": [
-      8.381355,
-      49.004642
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-15T23:00:00Z"
   },
   {
     "id": "2026V0289",
@@ -3901,7 +3861,7 @@
   },
   {
     "id": "2026V2043",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -4391,13 +4351,13 @@
     "notes": "Höhe Haus Nr. 7, Geh-, und Radwegbereich gesperrt, halbseitige 1-streifige Verkehrsführung",
     "cause": "Privat",
     "startDate": "2026-05-18",
-    "endDate": "2026-09-16",
+    "endDate": "2026-10-07",
     "point": [
       8.470983,
       48.996621
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
+    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2026V2881",
@@ -5300,26 +5260,6 @@
     "lastModified": "2026-08-26T22:00:00Z"
   },
   {
-    "id": "2026V4205",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Waldenburger Straße bis Ende Hirschberger Straße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-15",
-    "endDate": "2026-09-13",
-    "point": [
-      8.446753,
-      49.028809
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
-  },
-  {
     "id": "2026V4246",
     "phase": "active",
     "category": "special-use",
@@ -5381,7 +5321,7 @@
   },
   {
     "id": "2026V4252",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -6241,7 +6181,7 @@
   },
   {
     "id": "2026V4862",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "other",
     "artRaw": "Bauwerksprüfung",
     "closure": "obstruction",
@@ -6300,26 +6240,6 @@
     "lastModified": "2026-08-09T22:00:00Z"
   },
   {
-    "id": "2026V4878",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum",
-    "notes": "Entfall eines Richtungsfahrstreifens, Geh- und Radweg als Notweg auf der Fahrbahn, Arbeitsstellen liegen im Bereich des Geh- und Radwegs",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-19",
-    "endDate": "2026-09-13",
-    "point": [
-      8.404137,
-      48.991609
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
-  },
-  {
     "id": "2026V4887",
     "phase": "upcoming",
     "category": "crane",
@@ -6361,7 +6281,7 @@
   },
   {
     "id": "2026V4913",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "bridge",
     "artRaw": "Brückenbau",
     "closure": "obstruction",
@@ -6401,7 +6321,7 @@
   },
   {
     "id": "2026V4915",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "bridge",
     "artRaw": "Brückenbau",
     "closure": "obstruction",
@@ -6861,7 +6781,7 @@
   },
   {
     "id": "2026V5392",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "none",
@@ -6981,7 +6901,7 @@
   },
   {
     "id": "2026V5444",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7378,6 +7298,66 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-10T22:00:00Z"
+  },
+  {
+    "id": "2026V5797",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-28",
+    "endDate": "2026-10-28",
+    "point": [
+      8.440818,
+      49.029765
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-13T22:00:00Z"
+  },
+  {
+    "id": "2026V5807",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Richard-Wagner-Straße zw. Ludwig-Marum-Straße und Schubertstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-20",
+    "endDate": "2026-10-22",
+    "point": [
+      8.37095,
+      49.01316
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-13T22:00:00Z"
+  },
+  {
+    "id": "2026V5811",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Richard-Wagner-Str. 2-10",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-19",
+    "endDate": "2026-10-31",
+    "point": [
+      8.370611,
+      49.012612
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "30021",
@@ -7820,6 +7800,26 @@
     "lastModified": "2026-08-21T10:45:29Z"
   },
   {
+    "id": "30196",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Hochstatt 21",
+    "notes": "Herstellung Glasfaseranschluss. Gehweg gesperrt",
+    "cause": "Privat",
+    "startDate": "2026-09-14",
+    "endDate": "2026-09-26",
+    "point": [
+      8.55586,
+      49.083825
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-24T10:30:41Z"
+  },
+  {
     "id": "30197",
     "phase": "active",
     "category": "power-telecom",
@@ -7838,6 +7838,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-24T10:54:31Z"
+  },
+  {
+    "id": "30198",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Karlsdorfer Straße - Vollsperrung in Abschnitten",
+    "notes": "Verlegung von Fernwärme ab der Schwetzinger Straßen:\nDie Straße muss in Abschnitten gesperrt werden. Der Gehweg auf der Häuserseite bleibt begehbar.\n\nIn der Schwetzinger Straße vor dem Minigolf und im Sportzentrum im Anschluss an die Bushaltestelle werden Parkstreifen als Lagerfläche benötigt.",
+    "cause": "Stadtwerke",
+    "startDate": "2026-09-14",
+    "endDate": "2026-12-31",
+    "point": [
+      8.584247,
+      49.132475
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-27T14:14:58Z"
   },
   {
     "id": "30199",
@@ -8160,6 +8180,26 @@
     "lastModified": "2026-05-20T10:20:00Z"
   },
   {
+    "id": "40045",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "L566 Bahnübergang",
+    "notes": null,
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-22",
+    "point": [
+      8.317661,
+      48.95536
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-06-11T14:57:31Z"
+  },
+  {
     "id": "40050",
     "phase": "active",
     "category": "special-use",
@@ -8260,6 +8300,26 @@
     "lastModified": "2026-03-19T15:52:11Z"
   },
   {
+    "id": "40061",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Wilhelmstraße 14",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-14",
+    "endDate": "2026-09-18",
+    "point": [
+      8.294221,
+      48.960211
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-08-27T14:39:11Z"
+  },
+  {
     "id": "40062",
     "phase": "active",
     "category": "special-use",
@@ -8298,6 +8358,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-09-04T08:33:31Z"
+  },
+  {
+    "id": "40065",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Maxauer Straße",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-09-14",
+    "endDate": "2026-09-18",
+    "point": [
+      8.300904,
+      48.966036
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-10T15:49:45Z"
   },
   {
     "id": "40068",
@@ -8901,7 +8981,7 @@
   },
   {
     "id": "40153",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
@@ -9180,6 +9260,66 @@
     "lastModified": "2026-09-09T05:43:09Z"
   },
   {
+    "id": "40181",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Salinenstraße 1-5",
+    "notes": "Straße wegen der Behebung von Fahrbahnschäden verengt",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-09",
+    "point": [
+      8.589766,
+      49.121988
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-09T13:01:17Z"
+  },
+  {
+    "id": "40184",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Hardtstraße 15",
+    "notes": "Straße wegen Fahrbahnschaden verengt",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-09",
+    "point": [
+      8.581801,
+      49.126925
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-09T13:43:33Z"
+  },
+  {
+    "id": "40186",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Obergrombacher Straße am Fußgängerüberweg",
+    "notes": "Fahrbahnschaden vor der Kirche wird behoben. Die Fahrbahn wird verengt und der Gehweg auf der Kirchenseite gesperrt.\nDauer: 1 Tag im Zeitraum.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-09",
+    "point": [
+      8.554569,
+      49.086123
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-10T13:37:14Z"
+  },
+  {
     "id": "40187",
     "phase": "active",
     "category": "road-maintenance",
@@ -9198,6 +9338,46 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-10T14:06:39Z"
+  },
+  {
+    "id": "40188",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Stegwiesenstraße 1",
+    "notes": "Behebung von Fahrbahnschäden nahe Lidl.\nDie Fahrbahn wird halbseitig gesperrt",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-09",
+    "point": [
+      8.59243,
+      49.137957
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-10T14:23:29Z"
+  },
+  {
+    "id": "40189",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Eichelbergweg 14",
+    "notes": "Fahrbahnschaden beheben. Straße wird halbseitig gesperrt.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-09",
+    "point": [
+      8.585018,
+      49.115053
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-10T14:33:17Z"
   },
   {
     "id": "40207",
