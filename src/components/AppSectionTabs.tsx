@@ -6,11 +6,14 @@ interface AppSectionTabsProps {
   onSectionChange: (section: AppSection) => void;
   getSectionHref: (section: AppSection) => string;
   /**
-   * How many relevant sites need attention in the next days, shown on the
-   * personal tab. `0` renders no badge at all rather than a zero — a badge
-   * that is always there stops being read.
+   * How many of the visitor's sites the last data run added or changed.
+   *
+   * Deliberately not "how many affect you" — that is a large number which never
+   * returns to zero, and a badge that is always there stops being read. This one
+   * empties out and fills again with each run, which is what makes it worth
+   * glancing at. `0` renders no badge at all.
    */
-  shortNoticeCount: number;
+  changedCount: number;
 }
 
 const SECTION_LABELS: Record<AppSection, string> = {
@@ -32,13 +35,13 @@ export function AppSectionTabs({
   section,
   onSectionChange,
   getSectionHref,
-  shortNoticeCount,
+  changedCount,
 }: AppSectionTabsProps) {
   return (
     <nav className="app-sections" aria-label="Bereiche">
       {SECTIONS.map((candidate) => {
         const isCurrent = candidate === section;
-        const showBadge = candidate === "relevant" && shortNoticeCount > 0;
+        const showBadge = candidate === "relevant" && changedCount > 0;
         return (
           <a
             key={candidate}
@@ -64,11 +67,11 @@ export function AppSectionTabs({
             {SECTION_LABELS[candidate]}
             {showBadge ? (
               <span className="app-sections__badge">
-                {shortNoticeCount}
+                {changedCount}
                 <span className="kern-sr-only">
-                  {shortNoticeCount === 1
-                    ? " Baustelle in den nächsten Tagen"
-                    : " Baustellen in den nächsten Tagen"}
+                  {changedCount === 1
+                    ? " neue oder geänderte Baustelle für Sie"
+                    : " neue oder geänderte Baustellen für Sie"}
                 </span>
               </span>
             ) : null}

@@ -201,6 +201,26 @@ describe("selectRelevantConstructionSites", () => {
         .filter((r) => r.isChanged)
         .map((r) => r.constructionSite.id),
     ).toEqual(["changed"]);
+    expect(selection.changedCount).toBe(1);
+  });
+
+  it("counts no change when the run reported none", () => {
+    // The tab badge reads this, so it has to return to zero between runs.
+    const site = createConstructionSite({ id: "a", point: [8.4037, 49.011] });
+    expect(
+      selectRelevantConstructionSites([site], [HOME], { today: TODAY })
+        .changedCount,
+    ).toBe(0);
+  });
+
+  it("does not count a change outside the watched areas", () => {
+    const far = createConstructionSite({ id: "far", point: [8.4037, 49.4] });
+    expect(
+      selectRelevantConstructionSites([far], [HOME], {
+        today: TODAY,
+        changedSiteIds: new Set(["far"]),
+      }).changedCount,
+    ).toBe(0);
   });
 
   it("does not modify the input array", () => {

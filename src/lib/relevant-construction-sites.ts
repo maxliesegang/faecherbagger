@@ -72,6 +72,14 @@ export interface RelevanceSelection {
   /** The followed subset, whether or not it falls in a watched area. */
   followed: readonly RelevantConstructionSite[];
   /**
+   * How many relevant sites the last pipeline run added or changed.
+   *
+   * A count rather than a list because that is all anyone asks of it: it is
+   * what the section tab badges, and a badge has to be a number that returns to
+   * zero. "How many affect me at all" never does.
+   */
+  changedCount: number;
+  /**
    * The day the selection describes, carried along so a list can phrase a
    * timing sentence without reaching for the browser clock and disagreeing
    * with the buckets above it.
@@ -188,6 +196,7 @@ export function selectRelevantConstructionSites(
     running,
     planned,
     followed: all.filter((relevant) => relevant.isFollowed),
+    changedCount: all.filter((relevant) => relevant.isChanged).length,
     today,
   };
 }

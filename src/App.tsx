@@ -614,7 +614,7 @@ function ConstructionSiteExplorer({
           section={section}
           onSectionChange={onSectionChange}
           getSectionHref={getSectionHref}
-          shortNoticeCount={relevantConstructionSites.shortNotice.length}
+          changedCount={relevantConstructionSites.changedCount}
         />
 
         <RelevantConstructionSites
@@ -659,7 +659,7 @@ function ConstructionSiteExplorer({
         section={section}
         onSectionChange={onSectionChange}
         getSectionHref={getSectionHref}
-        shortNoticeCount={relevantConstructionSites.shortNotice.length}
+        changedCount={relevantConstructionSites.changedCount}
       />
 
       <div className="app-shell">
