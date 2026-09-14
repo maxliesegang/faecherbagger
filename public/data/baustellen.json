@@ -1131,13 +1131,13 @@
     "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-14",
-    "endDate": "2027-07-30",
+    "endDate": "2027-08-06",
     "point": [
       8.361546,
       48.989624
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
+    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2025V4584",
@@ -3891,13 +3891,13 @@
     "notes": "Abwicklung in mehreren Bauabschnitten, je Abschnitt ca. 30 m",
     "cause": "Telekommunikation",
     "startDate": "2026-09-07",
-    "endDate": "2026-09-18",
+    "endDate": "2026-10-02",
     "point": [
       8.451033,
       48.994124
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
+    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2026V2134",
@@ -4238,26 +4238,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-26T22:00:00Z"
-  },
-  {
-    "id": "2026V2745",
-    "phase": "upcoming",
-    "category": "traffic-reroute",
-    "artRaw": "geänderte Verkehrsführung im Zuge von Baumaßnahmen",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße",
-    "notes": "signalisierte 1-streifige Verkehrsführung",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-10-05",
-    "endDate": "2026-11-27",
-    "point": [
-      8.468582,
-      48.95682
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
   },
   {
     "id": "2026V2798",
@@ -5460,26 +5440,6 @@
     "lastModified": "2026-08-23T22:00:00Z"
   },
   {
-    "id": "2026V4339",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Beuthener Straße und Lauenburger Straße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-09",
-    "endDate": "2026-09-20",
-    "point": [
-      8.445578,
-      49.035207
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
-  },
-  {
     "id": "2026V4340",
     "phase": "active",
     "category": "rail",
@@ -5721,7 +5681,7 @@
   },
   {
     "id": "2026V4502",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -5730,14 +5690,14 @@
     "location": "Neureuter Hauptstraße, Großschneiderweg, Welschneureuter Staße, Stefan-Zweig-Straße",
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-12",
-    "endDate": "2027-07-31",
+    "startDate": "2026-09-14",
+    "endDate": "2027-09-24",
     "point": [
       8.368419,
       49.043889
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-20T22:00:00Z"
+    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2026V4539",
@@ -6148,7 +6108,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach",
-    "notes": "vs. 0:00 Uhr - 5:00 Uhr",
+    "notes": "2 Nächte, jeweils vs. 0:00 Uhr - 5:00 Uhr",
     "cause": "Tiefbauamt",
     "startDate": "2026-10-05",
     "endDate": "2026-10-07",
@@ -6847,7 +6807,7 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Rintheiemr Hauptstraße von Mosbacherstraße bis Drosselsangweg",
+    "location": "Rintheimer Hauptstraße von Mosbacherstraße bis Drosselsangweg",
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-07",
@@ -7060,6 +7020,26 @@
     "lastModified": "2026-09-07T22:00:00Z"
   },
   {
+    "id": "2026V5650",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Raiherwiesenstraße zw. Schinnrainstraße u. Bleichstraße",
+    "notes": "lokale Engstelle",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-14",
+    "endDate": "2026-09-18",
+    "point": [
+      8.459343,
+      48.999132
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-13T22:00:00Z"
+  },
+  {
     "id": "2026V5661",
     "phase": "active",
     "category": "special-use",
@@ -7204,11 +7184,11 @@
     "phase": "upcoming",
     "category": "rail",
     "artRaw": "Gleisbau",
-    "closure": "one-direction",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Durlacher Allee bis Haltestelle Hubstraße",
-    "notes": "Aufteilung nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2027-05-18",
     "endDate": "2027-07-01",
@@ -7217,7 +7197,7 @@
       49.004252
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
+    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2026V5755",
@@ -7355,6 +7335,46 @@
     "point": [
       8.370611,
       49.012612
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-13T22:00:00Z"
+  },
+  {
+    "id": "2026V5821",
+    "phase": "upcoming",
+    "category": "traffic-reroute",
+    "artRaw": "geänderte Verkehrsführung im Zuge von Baumaßnahmen",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße",
+    "notes": "signalisierte 1-streifige Verkehrsführung",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-09-23",
+    "endDate": "2026-12-31",
+    "point": [
+      8.468248,
+      48.956736
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-13T22:00:00Z"
+  },
+  {
+    "id": "2026V5833",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld",
+    "notes": "Arbeitsstellen im Mittelstreifen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-23",
+    "endDate": "2026-09-30",
+    "point": [
+      8.376697,
+      48.990131
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-13T22:00:00Z"

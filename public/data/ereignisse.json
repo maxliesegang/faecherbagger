@@ -1,215 +1,103 @@
 {
-  "generatedAt": "2026-09-14T09:27:05.075Z",
+  "generatedAt": "2026-09-14T19:58:35.545Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2025V6344:2026-09-13T22:00:00Z",
-      "siteId": "2025V6344",
+      "signature": "changed:2025V4469:2026-09-13T22:00:00Z",
+      "siteId": "2025V4469",
       "point": [
-        8.439658,
-        49.029778
+        8.361546,
+        48.989624
       ],
-      "closure": "full",
-      "startDate": "2027-01-11",
-      "endDate": "2029-12-14",
+      "closure": "obstruction",
+      "startDate": "2026-09-14",
+      "endDate": "2027-08-06",
       "municipality": "Karlsruhe",
-      "location": "Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße"
+      "location": "Albert-Braun-Straße - Gebietsausbau"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V2874:2026-09-13T22:00:00Z",
-      "siteId": "2026V2874",
+      "signature": "changed:2026V2045:2026-09-13T22:00:00Z",
+      "siteId": "2026V2045",
       "point": [
-        8.470983,
-        48.996621
+        8.451033,
+        48.994124
       ],
       "closure": "obstruction",
-      "startDate": "2026-05-18",
-      "endDate": "2026-10-07",
+      "startDate": "2026-09-07",
+      "endDate": "2026-10-02",
       "municipality": "Karlsruhe",
-      "location": "Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße"
+      "location": "Wilferdinger Str, Ispringer Str., Ellmendinger Str, Auf den Lohn"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V5797",
-      "siteId": "2026V5797",
+      "kind": "changed",
+      "signature": "changed:2026V4502:2026-09-13T22:00:00Z",
+      "siteId": "2026V4502",
       "point": [
-        8.440818,
-        49.029765
-      ],
-      "closure": "full",
-      "startDate": "2026-10-28",
-      "endDate": "2026-10-28",
-      "municipality": "Karlsruhe",
-      "location": "Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5807",
-      "siteId": "2026V5807",
-      "point": [
-        8.37095,
-        49.01316
-      ],
-      "closure": "full",
-      "startDate": "2026-10-20",
-      "endDate": "2026-10-22",
-      "municipality": "Karlsruhe",
-      "location": "Richard-Wagner-Straße zw. Ludwig-Marum-Straße und Schubertstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5811",
-      "siteId": "2026V5811",
-      "point": [
-        8.370611,
-        49.012612
-      ],
-      "closure": "full",
-      "startDate": "2026-10-19",
-      "endDate": "2026-10-31",
-      "municipality": "Karlsruhe",
-      "location": "Richard-Wagner-Str. 2-10"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30196",
-      "siteId": "30196",
-      "point": [
-        8.55586,
-        49.083825
+        8.368419,
+        49.043889
       ],
       "closure": "obstruction",
       "startDate": "2026-09-14",
-      "endDate": "2026-09-26",
-      "municipality": "Bruchsal",
-      "location": "Hochstatt 21"
+      "endDate": "2027-09-24",
+      "municipality": "Karlsruhe",
+      "location": "Neureuter Hauptstraße, Großschneiderweg, Welschneureuter Staße, Stefan-Zweig-Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5751:2026-09-13T22:00:00Z",
+      "siteId": "2026V5751",
+      "point": [
+        8.467158,
+        49.004252
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-05-18",
+      "endDate": "2027-07-01",
+      "municipality": "Karlsruhe",
+      "location": "Durlacher Allee bis Haltestelle Hubstraße"
     },
     {
       "kind": "new",
-      "signature": "new:30198",
-      "siteId": "30198",
+      "signature": "new:2026V5650",
+      "siteId": "2026V5650",
       "point": [
-        8.584247,
-        49.132475
+        8.459343,
+        48.999132
       ],
-      "closure": "full",
+      "closure": "obstruction",
       "startDate": "2026-09-14",
+      "endDate": "2026-09-18",
+      "municipality": "Karlsruhe",
+      "location": "Raiherwiesenstraße zw. Schinnrainstraße u. Bleichstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5821",
+      "siteId": "2026V5821",
+      "point": [
+        8.468248,
+        48.956736
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-23",
       "endDate": "2026-12-31",
-      "municipality": "Bruchsal",
-      "location": "Karlsdorfer Straße - Vollsperrung in Abschnitten"
+      "municipality": "Karlsruhe",
+      "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße"
     },
     {
       "kind": "new",
-      "signature": "new:40045",
-      "siteId": "40045",
+      "signature": "new:2026V5833",
+      "siteId": "2026V5833",
       "point": [
-        8.317661,
-        48.95536
-      ],
-      "closure": "full",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-22",
-      "municipality": "Rheinstetten",
-      "location": "L566 Bahnübergang"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40061",
-      "siteId": "40061",
-      "point": [
-        8.294221,
-        48.960211
-      ],
-      "closure": "full",
-      "startDate": "2026-09-14",
-      "endDate": "2026-09-18",
-      "municipality": "Rheinstetten",
-      "location": "Wilhelmstraße 14"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40065",
-      "siteId": "40065",
-      "point": [
-        8.300904,
-        48.966036
+        8.376697,
+        48.990131
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-09-18",
-      "municipality": "Rheinstetten",
-      "location": "Maxauer Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40181",
-      "siteId": "40181",
-      "point": [
-        8.589766,
-        49.121988
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-09",
-      "municipality": "Bruchsal",
-      "location": "Salinenstraße 1-5"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40184",
-      "siteId": "40184",
-      "point": [
-        8.581801,
-        49.126925
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-09",
-      "municipality": "Bruchsal",
-      "location": "Hardtstraße 15"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40186",
-      "siteId": "40186",
-      "point": [
-        8.554569,
-        49.086123
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-09",
-      "municipality": "Bruchsal",
-      "location": "Obergrombacher Straße am Fußgängerüberweg"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40188",
-      "siteId": "40188",
-      "point": [
-        8.59243,
-        49.137957
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-09",
-      "municipality": "Bruchsal",
-      "location": "Stegwiesenstraße 1"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40189",
-      "siteId": "40189",
-      "point": [
-        8.585018,
-        49.115053
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-14",
-      "endDate": "2026-10-09",
-      "municipality": "Bruchsal",
-      "location": "Eichelbergweg 14"
+      "startDate": "2026-09-23",
+      "endDate": "2026-09-30",
+      "municipality": "Karlsruhe",
+      "location": "L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld"
     },
     {
       "kind": "starts-soon",
