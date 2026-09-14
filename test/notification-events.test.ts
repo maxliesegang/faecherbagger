@@ -325,6 +325,18 @@ describe("followed sites", () => {
     ).toEqual([]);
   });
 
+  it("notifies a device that has follows but no areas at all", () => {
+    // The settings panel gates its "einschalten" button on the same condition;
+    // if these two ever disagree someone can subscribe and never hear anything,
+    // or be refused a subscription that would have worked.
+    const selected = selectNotificationEvents(eventsFor(distantAndHarmless), {
+      ...preferences,
+      areas: [],
+      followedSiteIds: ["distant"],
+    });
+    expect(selected.map((event) => event.siteId)).toEqual(["distant"]);
+  });
+
   it("selects nothing with no areas and no follows", () => {
     expect(
       selectNotificationEvents(eventsFor(distantAndHarmless), {

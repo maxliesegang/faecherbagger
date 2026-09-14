@@ -99,6 +99,13 @@ interface RelevantConstructionSitesProps {
   onDetailOpen: (siteId: string) => void;
   /** Opens the area setup, for the empty state and the "Gebiete" action. */
   onEditAreas: () => void;
+  /**
+   * Follows whose site the current dataset no longer publishes. They cannot be
+   * listed — there is no record left to render — so the count is the only way
+   * the visitor learns the slots are still taken.
+   */
+  staleFollowedCount: number;
+  onPruneFollowed: () => void;
 }
 
 /**
@@ -117,6 +124,8 @@ export function RelevantConstructionSites({
   getDetailHref,
   onDetailOpen,
   onEditAreas,
+  staleFollowedCount,
+  onPruneFollowed,
 }: RelevantConstructionSitesProps) {
   const [view, setView] = useState<RelevanceView>("short-notice");
 
@@ -198,6 +207,27 @@ export function RelevantConstructionSites({
       <p className="relevant__count" aria-live="polite" aria-atomic="true">
         <strong>{visible.length}</strong> {describeCount(view, visible.length)}
       </p>
+
+      {view === "followed" && staleFollowedCount > 0 && (
+        /*
+          A followed site the source has stopped publishing keeps its slot but
+          has nothing left to render, so without this it is invisible and
+          un-unfollowable. Offered rather than done automatically: the source
+          drops and restores records between runs, and a follow removed on a
+          blip is not something the visitor can get back.
+        */
+        <p className="relevant__stale">
+          {staleFollowedCount === 1
+            ? "Eine beobachtete Baustelle ist im aktuellen Datenstand nicht mehr enthalten — vermutlich abgeschlossen."
+            : `${staleFollowedCount} beobachtete Baustellen sind im aktuellen Datenstand nicht mehr enthalten — vermutlich abgeschlossen.`}
+          <KernButton
+            type="button"
+            variant="tertiary"
+            label="Nicht mehr beobachten"
+            onClick={onPruneFollowed}
+          />
+        </p>
+      )}
 
       {visible.length === 0 ? (
         <p className="relevant__empty">{describeEmptyView(view)}</p>

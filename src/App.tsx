@@ -303,6 +303,7 @@ export function App() {
                 notificationPreferencesController.setPreferences
               }
               onToggleFollowed={notificationPreferencesController.toggleFollowed}
+              onPruneFollowed={notificationPreferencesController.pruneFollowed}
               getLegalPageHref={(pageId) => getAppHref({ legalPageId: pageId })}
               onLegalPageOpen={openLegalPage}
             />
@@ -456,6 +457,7 @@ interface ConstructionSiteExplorerProps
   onSectionChange: (section: AppSection) => void;
   getSectionHref: (section: AppSection) => string;
   onToggleFollowed: (siteId: string) => boolean;
+  onPruneFollowed: (knownSiteIds: ReadonlySet<string>) => void;
   filters: ConstructionSiteFilters;
   onFiltersChange: (filters: ConstructionSiteFilters) => void;
   onFiltersReset: () => void;
@@ -493,6 +495,7 @@ function ConstructionSiteExplorer({
   onSectionChange,
   getSectionHref,
   onToggleFollowed,
+  onPruneFollowed,
   filters,
   onFiltersChange,
   onFiltersReset,
@@ -544,6 +547,12 @@ function ConstructionSiteExplorer({
     () => new Set(notificationPreferences.followedSiteIds),
     [notificationPreferences.followedSiteIds],
   );
+  const staleFollowedCount = useMemo(() => {
+    const knownSiteIds = new Set(constructionSites.map((site) => site.id));
+    return notificationPreferences.followedSiteIds.filter(
+      (siteId) => !knownSiteIds.has(siteId),
+    ).length;
+  }, [constructionSites, notificationPreferences.followedSiteIds]);
   const relevantConstructionSites = useMemo(
     () =>
       selectRelevantConstructionSites(
@@ -614,6 +623,10 @@ function ConstructionSiteExplorer({
           getDetailHref={getDetailHref}
           onDetailOpen={onDetailOpen}
           onEditAreas={() => setAreaSetupRequest((request) => request + 1)}
+          staleFollowedCount={staleFollowedCount}
+          onPruneFollowed={() =>
+            onPruneFollowed(new Set(constructionSites.map((site) => site.id)))
+          }
         />
 
         {/*

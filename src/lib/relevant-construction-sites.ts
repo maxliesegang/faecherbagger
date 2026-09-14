@@ -81,17 +81,6 @@ export interface RelevanceSelection {
   today: ISODate;
 }
 
-/** Nothing to show: no areas watched, nothing followed, or data still loading. */
-export const EMPTY_RELEVANCE_SELECTION: RelevanceSelection = {
-  all: [],
-  shortNotice: [],
-  running: [],
-  planned: [],
-  followed: [],
-  changed: [],
-  today: "",
-};
-
 export interface RelevanceOptions {
   /** Anchor day, from the dataset's `fetchedAt` rather than the browser clock. */
   today: ISODate;

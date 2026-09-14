@@ -97,6 +97,8 @@
 }
 
 .relevant__item {
+  /* Anchors the stretched link below, which makes the whole card the target. */
+  position: relative;
   padding: 0.75rem 1rem;
   border: 1px solid var(--kern-color-neutral-300, #d1d5db);
   border-radius: 0.5rem;
@@ -118,10 +120,6 @@
   content: "";
   position: absolute;
   inset: 0;
-}
-
-.relevant__item {
-  position: relative;
 }
 
 .relevant__meta {
@@ -176,4 +174,20 @@
     padding-inline: 0.5rem;
     font-size: 0.9375rem;
   }
+}
+
+/*
+  A follow whose site the source has stopped publishing. Stated rather than
+  cleaned up silently — see the component for why.
+*/
+.relevant__stale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--kern-color-neutral-100, #f3f4f6);
+  font-size: 0.9375rem;
 }

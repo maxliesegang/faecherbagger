@@ -128,3 +128,8 @@
   outline: 4px solid var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: 2px;
 }
+
+/* The follow-only case: areas are empty but notifications still make sense. */
+.pwa-panel__follows {
+  margin-block-start: 0.5rem;
+}
