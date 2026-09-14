@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { ConstructionSite } from "../src/types/index.ts";
 import {
   addCalendarDays,
+  describeConstructionPeriod,
   countDaysBetween,
   formatConstructionPeriodRelativeToToday,
   getBerlinCalendarDate,
@@ -187,5 +188,50 @@ describe("formatConstructionPeriodRelativeToToday", () => {
 
   it("stays silent when the end is too far out to be meaningful", () => {
     expect(format({ startDate: "2026-01-01", endDate: "2027-12-31" })).toBeNull();
+  });
+});
+
+describe("describeConstructionPeriod", () => {
+  it("prefers the relative sentence when it is defined", () => {
+    expect(
+      describeConstructionPeriod(
+        createConstructionSite({ startDate: "2026-07-16", endDate: null }),
+        TODAY,
+      ),
+    ).toBe("beginnt morgen");
+  });
+
+  it("falls back to the plain range for a start beyond the relative window", () => {
+    // Over a month out: the relative phrasing gives up here, and without the
+    // fallback the card named no date at all.
+    const site = createConstructionSite({
+      startDate: "2026-11-01",
+      endDate: "2026-12-01",
+    });
+    expect(formatConstructionPeriodRelativeToToday(site, TODAY)).toBeNull();
+    expect(describeConstructionPeriod(site, TODAY)).toBe(
+      "01.11.2026 – 01.12.2026",
+    );
+  });
+
+  it("falls back for a run longer than the relative window", () => {
+    const site = createConstructionSite({
+      startDate: "2026-07-01",
+      endDate: "2027-07-01",
+    });
+    expect(formatConstructionPeriodRelativeToToday(site, TODAY)).toBeNull();
+    expect(describeConstructionPeriod(site, TODAY)).toBe(
+      "01.07.2026 – 01.07.2027",
+    );
+  });
+
+  it("never returns an empty description", () => {
+    for (const site of [
+      createConstructionSite({ startDate: "2026-11-01", endDate: null }),
+      createConstructionSite({ startDate: "2020-01-01", endDate: "2030-01-01" }),
+      createConstructionSite({ startDate: "2026-07-15", endDate: "2026-07-15" }),
+    ]) {
+      expect(describeConstructionPeriod(site, TODAY)).not.toBe("");
+    }
   });
 });

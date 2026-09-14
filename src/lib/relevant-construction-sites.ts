@@ -71,8 +71,6 @@ export interface RelevanceSelection {
   planned: readonly RelevantConstructionSite[];
   /** The followed subset, whether or not it falls in a watched area. */
   followed: readonly RelevantConstructionSite[];
-  /** Relevant sites that changed in the last run. */
-  changed: readonly RelevantConstructionSite[];
   /**
    * The day the selection describes, carried along so a list can phrase a
    * timing sentence without reaching for the browser clock and disagreeing
@@ -190,7 +188,6 @@ export function selectRelevantConstructionSites(
     running,
     planned,
     followed: all.filter((relevant) => relevant.isFollowed),
-    changed: all.filter((relevant) => relevant.isChanged),
     today,
   };
 }

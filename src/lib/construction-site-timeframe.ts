@@ -3,6 +3,7 @@ import type {
   ISODate,
   ISOTimestamp,
 } from "../types/index.ts";
+import { formatConstructionPeriod } from "./construction-site-labels.ts";
 
 /**
  * Relevance windows over the construction period.
@@ -231,4 +232,28 @@ export function compareByShortNoticeUrgency(
     return leadDays >= 0 ? leadDays : SHORT_NOTICE_LEAD_DAYS - leadDays;
   };
   return rank(left) - rank(right);
+}
+
+/**
+ * What a list card says about a site's timing — always something.
+ *
+ * {@link formatConstructionPeriodRelativeToToday} gives the better sentence
+ * ("beginnt morgen") but is only defined for the near term, returning `null`
+ * for a start more than a month out or a run longer than two months. That is
+ * most of a planned list: left unhandled it put no date at all on roughly three
+ * quarters of the planned cards and a third of the running ones. The plain
+ * range is the documented fallback, so this pairs them and callers stop having
+ * to remember.
+ */
+export function describeConstructionPeriod(
+  constructionSite: ConstructionSite,
+  today: ISODate,
+): string {
+  return (
+    formatConstructionPeriodRelativeToToday(constructionSite, today) ??
+    formatConstructionPeriod(
+      constructionSite.startDate,
+      constructionSite.endDate,
+    )
+  );
 }

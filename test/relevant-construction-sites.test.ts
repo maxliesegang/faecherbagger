@@ -182,7 +182,7 @@ describe("selectRelevantConstructionSites", () => {
     ]);
   });
 
-  it("marks and collects sites changed in the last run", () => {
+  it("marks sites changed in the last run, for the card badge", () => {
     const changed = createConstructionSite({
       id: "changed",
       point: [8.4037, 49.011],
@@ -196,9 +196,11 @@ describe("selectRelevantConstructionSites", () => {
       [HOME],
       { today: TODAY, changedSiteIds: new Set(["changed"]) },
     );
-    expect(selection.changed.map((r) => r.constructionSite.id)).toEqual([
-      "changed",
-    ]);
+    expect(
+      selection.all
+        .filter((r) => r.isChanged)
+        .map((r) => r.constructionSite.id),
+    ).toEqual(["changed"]);
   });
 
   it("does not modify the input array", () => {

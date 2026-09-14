@@ -7,7 +7,7 @@ import {
 import type { NotificationArea } from "../types/index.ts";
 import {
   SHORT_NOTICE_LEAD_DAYS,
-  formatConstructionPeriodRelativeToToday,
+  describeConstructionPeriod,
 } from "../lib/construction-site-timeframe.ts";
 import {
   getClosureBadgeVariant,
@@ -235,7 +235,7 @@ export function RelevantConstructionSites({
         <ul className="relevant__list" aria-label={VIEW_LABELS[view]}>
           {visible.map((relevant) => {
             const { constructionSite } = relevant;
-            const period = formatConstructionPeriodRelativeToToday(
+            const period = describeConstructionPeriod(
               constructionSite,
               selection.today,
             );
@@ -274,7 +274,7 @@ export function RelevantConstructionSites({
                   <span className="relevant__reason">
                     {describeRelevance(relevant)}
                   </span>
-                  {period && <span className="relevant__period">{period}</span>}
+                  <span className="relevant__period">{period}</span>
                   {relevant.isChanged && (
                     <span className="relevant__changed">Geändert</span>
                   )}
