@@ -60,26 +60,6 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
-    "id": "2022V5716",
-    "phase": "upcoming",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Baumeisterstraße zwischen Finterstraße und Ettlinger Straße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-28",
-    "endDate": "2026-12-18",
-    "point": [
-      8.404004,
-      49.00395
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
-  },
-  {
     "id": "2022V5840",
     "phase": "active",
     "category": "special-use",
@@ -2884,7 +2864,7 @@
     "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
+    "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße",
@@ -2897,7 +2877,7 @@
       49.009031
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-20T22:00:00Z"
+    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V0725",
@@ -3311,13 +3291,13 @@
     "notes": "Baumeisterstraße Sperrung der Richtungsfahrbahn nach Osten ab Ettlinger Straße",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-20",
-    "endDate": "2026-09-25",
+    "endDate": "2026-09-18",
     "point": [
       8.40394,
       49.003714
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-14T22:00:00Z"
+    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V1676",
@@ -4591,13 +4571,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-31",
-    "endDate": "2026-09-30",
+    "endDate": "2026-10-16",
     "point": [
       8.397039,
       49.050575
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
+    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V3416",
@@ -4610,14 +4590,14 @@
     "location": "Donauschwabenstrße zw. Föhrenweg und Kiefernweg",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-01",
-    "endDate": "2026-10-17",
+    "startDate": "2026-09-21",
+    "endDate": "2026-09-25",
     "point": [
       8.396676,
       49.050553
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
+    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V3478",
@@ -5068,16 +5048,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Nowackanlage zw. Baumeisterstraße und Ettlinger Straße",
-    "notes": "Restarbeiten",
+    "notes": "Restarbeiten im Geh- und Radweg und bei den Grundstückszufahrten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-25",
-    "endDate": "2026-10-02",
+    "startDate": "2026-09-19",
+    "endDate": "2026-10-09",
     "point": [
-      8.404392,
-      49.003539
+      8.403783,
+      49.003645
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
+    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V3931",
@@ -6140,24 +6120,24 @@
     "lastModified": "2026-08-24T22:00:00Z"
   },
   {
-    "id": "2026V4877",
+    "id": "2026V4878",
     "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz",
-    "notes": "Entfall eines Roichtungsfahrstreifens, Geh- und Radweg entlang der Fahrbahn gesperrt, Umleitung über Anliegerfahrbahn",
+    "location": "Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum",
+    "notes": "Entfall eines Richtungsfahrstreifens, Geh- und Radweg als Notweg auf der Fahrbahn, Arbeitsstellen liegen im Bereich des Geh- und Radwegs",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-11",
-    "endDate": "2026-09-15",
+    "startDate": "2026-08-19",
+    "endDate": "2026-09-18",
     "point": [
-      8.403901,
-      48.986541
+      8.404137,
+      48.991609
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
+    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V4887",
@@ -6900,6 +6880,26 @@
     "lastModified": "2026-09-09T22:00:00Z"
   },
   {
+    "id": "2026V5495",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Albert-Schweitzer-Straße zw. Gustav-Heinemann-Allee und Bertha-von-Stuttner-Straße",
+    "notes": "1-streifige Verkehrsführung, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-01",
+    "endDate": "2026-12-14",
+    "point": [
+      8.447247,
+      49.045086
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-14T22:00:00Z"
+  },
+  {
     "id": "2026V5519",
     "phase": "active",
     "category": "power-telecom",
@@ -6960,6 +6960,26 @@
     "lastModified": "2026-09-02T22:00:00Z"
   },
   {
+    "id": "2026V5614",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "B36/ Neureuter Straße zw. Siemensallee und Landauer Straße",
+    "notes": null,
+    "cause": "Gartenbauamt",
+    "startDate": "2026-09-16",
+    "endDate": "2026-09-16",
+    "point": [
+      8.36702,
+      49.03014
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-14T22:00:00Z"
+  },
+  {
     "id": "2026V5639",
     "phase": "active",
     "category": "power-telecom",
@@ -6978,6 +6998,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-07T22:00:00Z"
+  },
+  {
+    "id": "2026V5649",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße",
+    "notes": "Dauer vslo. 2 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-29",
+    "endDate": "2026-10-30",
+    "point": [
+      8.460286,
+      48.995006
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V5650",
@@ -7018,6 +7058,86 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-08T22:00:00Z"
+  },
+  {
+    "id": "2026V5662",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße",
+    "notes": "1-streifige Verkehrsführung, Bauzeit vs 3 Tage",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-21",
+    "endDate": "2026-09-27",
+    "point": [
+      8.404452,
+      49.003879
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-14T22:00:00Z"
+  },
+  {
+    "id": "2026V5665",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße",
+    "notes": "geänderte 1-streifige Verkehrsführung, Bauzeit vs. 4 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-28",
+    "endDate": "2026-11-01",
+    "point": [
+      8.403946,
+      49.003965
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-14T22:00:00Z"
+  },
+  {
+    "id": "2026V5666",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße",
+    "notes": "geänderte 1-streifige Verkehrsführung, Bauzeit vs 5 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-02",
+    "endDate": "2026-12-13",
+    "point": [
+      8.404711,
+      49.003936
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-14T22:00:00Z"
+  },
+  {
+    "id": "2026V5667",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße",
+    "notes": "1-streifige Verkehrsführung, Bauzeit vs 5 Tage",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-12-14",
+    "endDate": "2026-12-23",
+    "point": [
+      8.404419,
+      49.003883
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V5683",
