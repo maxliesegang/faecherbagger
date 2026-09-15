@@ -1,56 +1,78 @@
 {
-  "since": "2026-09-14T09:27:05.075Z",
+  "since": "2026-09-14T19:58:35.545Z",
   "added": [
-    "2026V5650",
-    "2026V5821",
-    "2026V5833"
+    "40064",
+    "40066",
+    "40178",
+    "40183"
   ],
   "modified": [
-    "2025V4469",
-    "2026V2045",
-    "2026V4502",
-    "2026V5751"
+    "2024V5789",
+    "2025V6773",
+    "2026V0102",
+    "2026V0277",
+    "2026V4394",
+    "40142"
   ],
   "removed": [
-    "2026V2745",
-    "2026V4339"
+    "2025V6085",
+    "2026V0051",
+    "40315"
   ],
   "relevantModifications": [
     {
-      "id": "2025V4469",
+      "id": "2024V5789",
       "changedFields": [
         "period"
       ],
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-09-14",
-      "previousEndDate": "2027-07-30"
+      "previousStartDate": "2026-08-24",
+      "previousEndDate": "2026-10-11"
     },
     {
-      "id": "2026V2045",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-09-07",
-      "previousEndDate": "2026-09-18"
-    },
-    {
-      "id": "2026V4502",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-11-12",
-      "previousEndDate": "2027-07-31"
-    },
-    {
-      "id": "2026V5751",
+      "id": "2025V6773",
       "changedFields": [
         "closure"
       ],
-      "previousClosure": "one-direction",
-      "previousStartDate": "2027-05-18",
-      "previousEndDate": "2027-07-01"
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-21",
+      "previousEndDate": "2026-11-15"
+    },
+    {
+      "id": "2026V0102",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-10",
+      "previousEndDate": "2026-12-20"
+    },
+    {
+      "id": "2026V0277",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-12",
+      "previousEndDate": "2026-12-20"
+    },
+    {
+      "id": "2026V4394",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-12",
+      "previousEndDate": "2026-12-20"
+    },
+    {
+      "id": "40142",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "none",
+      "previousStartDate": "2026-08-24",
+      "previousEndDate": "2026-09-14"
     }
   ]
 }
