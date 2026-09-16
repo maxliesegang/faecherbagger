@@ -1,103 +1,145 @@
 {
-  "generatedAt": "2026-09-16T08:58:38.796Z",
+  "generatedAt": "2026-09-16T19:09:10.633Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2025V5275:2026-09-15T22:00:00Z",
-      "siteId": "2025V5275",
+      "signature": "changed:2023V0127:2026-09-15T22:00:00Z",
+      "siteId": "2023V0127",
       "point": [
-        8.385041,
-        49.007798
+        8.420066,
+        49.011904
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-28",
-      "endDate": "2026-09-18",
+      "startDate": "2027-01-25",
+      "endDate": "2027-05-31",
       "municipality": "Karlsruhe",
-      "location": "Lessingstraße Einmündungsbereich Sophienstraße"
+      "location": "Am Fasanengarten 2; Hansjakobstraße 1-14; Hölderlinstraße 1-5"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5662:2026-09-15T22:00:00Z",
-      "siteId": "2026V5662",
+      "signature": "changed:2025V6773:2026-09-15T22:00:00Z",
+      "siteId": "2025V6773",
       "point": [
-        8.404452,
-        49.003879
+        8.459291,
+        48.979769
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-21",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Gleistrasse entlang Steinkreuzstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:40142:2026-07-28T08:46:02Z",
+      "siteId": "40142",
+      "point": [
+        8.558537,
+        49.112861
+      ],
+      "closure": "none",
+      "startDate": "2026-08-24",
+      "endDate": "2026-09-28",
+      "municipality": "Bruchsal",
+      "location": "Heidelberger Straße 4"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V2212",
+      "siteId": "2026V2212",
+      "point": [
+        8.411983,
+        49.007558
       ],
       "closure": "obstruction",
       "startDate": "2026-10-05",
-      "endDate": "2026-10-11",
+      "endDate": "2027-02-26",
       "municipality": "Karlsruhe",
-      "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße"
+      "location": "Markgrafenstraße und Waldhornstraße"
     },
     {
-      "kind": "changed",
-      "signature": "changed:2026V5665:2026-09-15T22:00:00Z",
-      "siteId": "2026V5665",
+      "kind": "new",
+      "signature": "new:2026V2745",
+      "siteId": "2026V2745",
       "point": [
-        8.403946,
-        49.003965
+        8.468582,
+        48.95682
       ],
       "closure": "obstruction",
-      "startDate": "2026-10-12",
-      "endDate": "2026-11-15",
-      "municipality": "Karlsruhe",
-      "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V5667:2026-09-15T22:00:00Z",
-      "siteId": "2026V5667",
-      "point": [
-        8.404419,
-        49.003883
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-12-21",
+      "startDate": "2026-09-23",
       "endDate": "2026-12-31",
       "municipality": "Karlsruhe",
-      "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße"
+      "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße"
     },
     {
       "kind": "new",
-      "signature": "new:2025V5363",
-      "siteId": "2025V5363",
+      "signature": "new:2026V5874",
+      "siteId": "2026V5874",
       "point": [
-        8.446409,
-        49.027283
+        8.405263,
+        48.998302
       ],
       "closure": "obstruction",
-      "startDate": "2026-05-18",
-      "endDate": "2026-10-31",
+      "startDate": "2027-05-03",
+      "endDate": "2027-07-02",
       "municipality": "Karlsruhe",
-      "location": "Breslauer Straße Wohnwege 64 A - I und 66 A -L"
+      "location": "Winterstraße zw. Ettlinger Straße und Marienstraße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V4877",
-      "siteId": "2026V4877",
+      "signature": "new:2026V5880",
+      "siteId": "2026V5880",
       "point": [
-        8.403901,
-        48.986541
+        8.401534,
+        49.010165
       ],
-      "closure": "obstruction",
-      "startDate": "2026-08-11",
+      "closure": "full",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "Ritterstraße zw. Zirkel und Kaiserstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5881",
+      "siteId": "2026V5881",
+      "point": [
+        8.401534,
+        49.010165
+      ],
+      "closure": "full",
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-20",
+      "municipality": "Karlsruhe",
+      "location": "Ritterstraße zw. Zirkel und Kaiserstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30094",
+      "siteId": "30094",
+      "point": [
+        8.465753,
+        49.047651
+      ],
+      "closure": "full",
+      "startDate": "2026-09-08",
       "endDate": "2026-09-18",
-      "municipality": "Karlsruhe",
-      "location": "Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz"
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Waldstraße 38"
     },
     {
       "kind": "new",
-      "signature": "new:2026V5763",
-      "siteId": "2026V5763",
+      "signature": "new:30210",
+      "siteId": "30210",
       "point": [
-        8.445188,
-        49.021112
+        8.552271,
+        49.086915
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-16",
-      "endDate": "2026-09-17",
-      "municipality": "Karlsruhe",
-      "location": "Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark"
+      "startDate": "2026-09-15",
+      "endDate": "2026-12-31",
+      "municipality": "Bruchsal",
+      "location": "Raiffeisenstraße"
     },
     {
       "kind": "starts-soon",
@@ -112,20 +154,6 @@
       "endDate": "2026-09-17",
       "municipality": "Karlsruhe",
       "location": "Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5821:2026-09-23",
-      "siteId": "2026V5821",
-      "point": [
-        8.468248,
-        48.956736
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-23",
-      "endDate": "2026-12-31",
-      "municipality": "Karlsruhe",
-      "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße"
     },
     {
       "kind": "starts-soon",
