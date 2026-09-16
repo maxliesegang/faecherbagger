@@ -1,215 +1,145 @@
 {
-  "generatedAt": "2026-09-15T19:18:50.884Z",
+  "generatedAt": "2026-09-16T08:58:38.796Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V0691:2026-09-14T22:00:00Z",
-      "siteId": "2026V0691",
+      "signature": "changed:2025V5275:2026-09-15T22:00:00Z",
+      "siteId": "2025V5275",
       "point": [
-        8.381675,
-        49.009031
+        8.385041,
+        49.007798
       ],
-      "closure": "full",
-      "startDate": "2026-10-05",
-      "endDate": "2027-12-31",
-      "municipality": "Karlsruhe",
-      "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V1559:2026-09-14T22:00:00Z",
-      "siteId": "2026V1559",
-      "point": [
-        8.40394,
-        49.003714
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-07-20",
+      "closure": "obstruction",
+      "startDate": "2026-08-28",
       "endDate": "2026-09-18",
       "municipality": "Karlsruhe",
-      "location": "Baumeisterstraße zw. Ettlinger Straße und Nowackanlage"
+      "location": "Lessingstraße Einmündungsbereich Sophienstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V3414:2026-09-14T22:00:00Z",
-      "siteId": "2026V3414",
-      "point": [
-        8.397039,
-        49.050575
-      ],
-      "closure": "full",
-      "startDate": "2026-08-31",
-      "endDate": "2026-10-16",
-      "municipality": "Karlsruhe",
-      "location": "Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V3416:2026-09-14T22:00:00Z",
-      "siteId": "2026V3416",
-      "point": [
-        8.396676,
-        49.050553
-      ],
-      "closure": "full",
-      "startDate": "2026-09-21",
-      "endDate": "2026-09-25",
-      "municipality": "Karlsruhe",
-      "location": "Donauschwabenstrße zw. Föhrenweg und Kiefernweg"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V3915:2026-09-14T22:00:00Z",
-      "siteId": "2026V3915",
-      "point": [
-        8.403783,
-        49.003645
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-19",
-      "endDate": "2026-10-09",
-      "municipality": "Karlsruhe",
-      "location": "Nowackanlage zw. Baumeisterstraße und Ettlinger Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4878",
-      "siteId": "2026V4878",
-      "point": [
-        8.404137,
-        48.991609
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-19",
-      "endDate": "2026-09-18",
-      "municipality": "Karlsruhe",
-      "location": "Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5495",
-      "siteId": "2026V5495",
-      "point": [
-        8.447247,
-        49.045086
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-01",
-      "endDate": "2026-12-14",
-      "municipality": "Karlsruhe",
-      "location": "Albert-Schweitzer-Straße zw. Gustav-Heinemann-Allee und Bertha-von-Stuttner-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5614",
-      "siteId": "2026V5614",
-      "point": [
-        8.36702,
-        49.03014
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-16",
-      "endDate": "2026-09-16",
-      "municipality": "Karlsruhe",
-      "location": "B36/ Neureuter Straße zw. Siemensallee und Landauer Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5649",
-      "siteId": "2026V5649",
-      "point": [
-        8.460286,
-        48.995006
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-09-29",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5662",
+      "signature": "changed:2026V5662:2026-09-15T22:00:00Z",
       "siteId": "2026V5662",
       "point": [
         8.404452,
         49.003879
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-21",
-      "endDate": "2026-09-27",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-11",
       "municipality": "Karlsruhe",
       "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V5665",
+      "kind": "changed",
+      "signature": "changed:2026V5665:2026-09-15T22:00:00Z",
       "siteId": "2026V5665",
       "point": [
         8.403946,
         49.003965
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-11-01",
+      "startDate": "2026-10-12",
+      "endDate": "2026-11-15",
       "municipality": "Karlsruhe",
       "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V5666",
-      "siteId": "2026V5666",
-      "point": [
-        8.404711,
-        49.003936
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-02",
-      "endDate": "2026-12-13",
-      "municipality": "Karlsruhe",
-      "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5667",
+      "kind": "changed",
+      "signature": "changed:2026V5667:2026-09-15T22:00:00Z",
       "siteId": "2026V5667",
       "point": [
         8.404419,
         49.003883
       ],
       "closure": "obstruction",
-      "startDate": "2026-12-14",
-      "endDate": "2026-12-23",
+      "startDate": "2026-12-21",
+      "endDate": "2026-12-31",
       "municipality": "Karlsruhe",
       "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße"
     },
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4195:2026-09-16",
-      "siteId": "2026V4195",
+      "kind": "new",
+      "signature": "new:2025V5363",
+      "siteId": "2025V5363",
       "point": [
-        8.477454,
-        48.970932
+        8.446409,
+        49.027283
       ],
-      "closure": "full",
-      "startDate": "2026-09-16",
-      "endDate": "2026-10-10",
+      "closure": "obstruction",
+      "startDate": "2026-05-18",
+      "endDate": "2026-10-31",
       "municipality": "Karlsruhe",
-      "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße"
+      "location": "Breslauer Straße Wohnwege 64 A - I und 66 A -L"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4877",
+      "siteId": "2026V4877",
+      "point": [
+        8.403901,
+        48.986541
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-11",
+      "endDate": "2026-09-18",
+      "municipality": "Karlsruhe",
+      "location": "Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5763",
+      "siteId": "2026V5763",
+      "point": [
+        8.445188,
+        49.021112
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-16",
+      "endDate": "2026-09-17",
+      "municipality": "Karlsruhe",
+      "location": "Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V5368:2026-09-22",
-      "siteId": "2026V5368",
+      "signature": "starts-soon:2026V5560:2026-09-17",
+      "siteId": "2026V5560",
       "point": [
-        8.355927,
-        49.010959
+        8.398237,
+        48.99929
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-22",
-      "endDate": "2026-11-20",
+      "startDate": "2026-09-17",
+      "endDate": "2026-09-17",
       "municipality": "Karlsruhe",
-      "location": "Hardtstraße zw. Lameystraße und Am Entenfang"
+      "location": "Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5821:2026-09-23",
+      "siteId": "2026V5821",
+      "point": [
+        8.468248,
+        48.956736
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-23",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5833:2026-09-23",
+      "siteId": "2026V5833",
+      "point": [
+        8.376697,
+        48.990131
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-23",
+      "endDate": "2026-09-30",
+      "municipality": "Karlsruhe",
+      "location": "L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld"
     }
   ]
 }

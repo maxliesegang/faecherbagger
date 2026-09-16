@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-09-15T19:18:50.884Z</updated>
+    <updated>2026-09-16T08:58:38.796Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -32,6 +32,89 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Lessingstraße Einmündungsbereich Sophienstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V5275:2026-09-15T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5275"/>
+        <updated>2026-09-15T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 28.08.2026 – 18.09.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Breslauer Straße Wohnwege 64 A - I und 66 A -L – Karlsruhe]]></title>
+        <id>faecherbagger:2025V5363:2026-09-15T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5363"/>
+        <updated>2026-09-15T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 18.05.2026 – 31.10.2026
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4877:2026-09-15T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4877"/>
+        <updated>2026-09-15T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 11.08.2026 – 18.09.2026
+Hinweis: Entfall eines Roichtungsfahrstreifens, Geh- und Radweg entlang der Fahrbahn gesperrt, Umleitung über Anliegerfahrbahn
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Baumeisterstraße zw. Finterstraße und Ettlinger Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5662:2026-09-15T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5662"/>
+        <updated>2026-09-15T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+Zeitraum: 05.10.2026 – 11.10.2026
+Hinweis: 1-streifige Verkehrsführung, Bauzeit vs 3 Tage
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Baumeisterstraße zw. Finterstraße und Ettinger Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5665:2026-09-15T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5665"/>
+        <updated>2026-09-15T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+Zeitraum: 12.10.2026 – 15.11.2026
+Hinweis: geänderte 1-streifige Verkehrsführung, Bauzeit vs. 4 Wochen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Baumeisterstraße zw. Finterstraße und Ettlinger Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5667:2026-09-15T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5667"/>
+        <updated>2026-09-15T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+Zeitraum: 21.12.2026 – 31.12.2026
+Hinweis: 1-streifige Verkehrsführung, Bauzeit vs 5 Tage
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5763:2026-09-15T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5763"/>
+        <updated>2026-09-15T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
+Zeitraum: 16.09.2026 – 17.09.2026
+Hinweis: 9:00 Uhr - 15:00 Uhr, 1-streifige Verkehrsführung in beiden Fahrtrichtungen
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Brauerstraße zw. Putlitzstraße u. Kriegstraße – Karlsruhe]]></title>
@@ -152,18 +235,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Ettlinger Allee, Brücke über die DB-Gleisanlagen am Schwarzwaldkreuz Fahrtrichtung Zentrum – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4878:2026-09-14T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4878"/>
-        <updated>2026-09-14T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 19.08.2026 – 18.09.2026
-Hinweis: Entfall eines Richtungsfahrstreifens, Geh- und Radweg als Notweg auf der Fahrbahn, Arbeitsstellen liegen im Bereich des Geh- und Radwegs
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Albert-Schweitzer-Straße zw. Gustav-Heinemann-Allee und Bertha-von-Stuttner-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5495:2026-09-14T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5495"/>
@@ -176,11 +247,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: B36/ Neureuter Straße zw. Siemensallee und Landauer Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: B36/ Neureuter Straße zw. Siemensallee und Landauer Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5614:2026-09-14T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5614"/>
         <updated>2026-09-14T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Grünpflege · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
 Zeitraum: 16.09.2026 – 16.09.2026
 Verantwortlich: Gartenbauamt
 Quelle: Stadt Karlsruhe]]></summary>
@@ -199,30 +270,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Baumeisterstraße zw. Finterstraße und Ettlinger Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5662:2026-09-14T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5662"/>
-        <updated>2026-09-14T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
-Zeitraum: 21.09.2026 – 27.09.2026
-Hinweis: 1-streifige Verkehrsführung, Bauzeit vs 3 Tage
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Baumeisterstraße zw. Finterstraße und Ettinger Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5665:2026-09-14T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5665"/>
-        <updated>2026-09-14T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
-Zeitraum: 28.09.2026 – 01.11.2026
-Hinweis: geänderte 1-streifige Verkehrsführung, Bauzeit vs. 4 Wochen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Baumeisterstraße zw. Finterstraße und Ettinger Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5666:2026-09-14T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5666"/>
@@ -233,29 +280,6 @@ Hinweis: geänderte 1-streifige Verkehrsführung, Bauzeit vs 5 Wochen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Baumeisterstraße zw. Finterstraße und Ettlinger Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5667:2026-09-14T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5667"/>
-        <updated>2026-09-14T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
-Zeitraum: 14.12.2026 – 23.12.2026
-Hinweis: 1-streifige Verkehrsführung, Bauzeit vs 5 Tage
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Siegelgrundstraße – Rheinstetten]]></title>
-        <id>faecherbagger:40066:2026-09-14T09:51:28Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40066"/>
-        <updated>2026-09-14T09:51:28.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 15.09.2026 – 15.09.2026
-Verantwortlich: Privat
-Quelle: Stadt Rheinstetten]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Albert-Braun-Straße - Gebietsausbau – Karlsruhe]]></title>
@@ -1674,17 +1698,6 @@ Quelle: Stadt Rheinstetten]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Bismarckstraße 23 – Ettlingen]]></title>
-        <id>faecherbagger:40353:2026-08-31T11:34:43Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40353"/>
-        <updated>2026-08-31T11:34:43.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 03.09.2026 – 15.09.2026
-Verantwortlich: Tiefbauamt Ettlingen
-Quelle: Stadt Ettlingen]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Diverse Straßen – Rheinstetten]]></title>
         <id>faecherbagger:30085:2026-08-31T11:01:31Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30085"/>
@@ -2016,21 +2029,10 @@ Quelle: Stadt Karlsruhe]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4194:2026-08-26T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4194"/>
-        <updated>2026-08-26T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
-Zeitraum: 31.08.2026 – 15.09.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4195:2026-08-26T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4195"/>
         <updated>2026-08-26T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
 Zeitraum: 16.09.2026 – 10.10.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
@@ -2105,17 +2107,6 @@ Hinweis: Arbeitsstellen im Seitenbereich, Abwicklung in mehreren Bauabschnitten 
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Lessingstraße Einmündungsbereich Sophienstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V5275:2026-08-25T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5275"/>
-        <updated>2026-08-25T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 28.08.2026 – 19.09.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Pfinztalstraße zw. Badener Straße u. Jägerstraße – Karlsruhe]]></title>
@@ -2508,30 +2499,6 @@ Zeitraum: 21.09.2026 – 04.10.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Im Jüden 71 – Bruchsal]]></title>
-        <id>faecherbagger:30194:2026-08-21T10:45:29Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30194"/>
-        <updated>2026-08-21T10:45:29.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 26.08.2026 – 15.09.2026
-Hinweis: Teilsperrung wegen Wasserrohrbruch
-Verantwortlich: Stadtwerke
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Raiffeisenstraße 6 – Bruchsal]]></title>
-        <id>faecherbagger:30193:2026-08-21T10:21:02Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30193"/>
-        <updated>2026-08-21T10:21:02.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 26.08.2026 – 15.09.2026
-Hinweis: Teilsperrung wegen Wasserrohrbruch
-Verantwortlich: Stadtwerke
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Rudolf-Plank-Straße Höhe Querung von/nach Bruchhausen – Ettlingen]]></title>
