@@ -1,117 +1,61 @@
 {
-  "generatedAt": "2026-09-17T09:04:39.216Z",
+  "generatedAt": "2026-09-17T19:20:44.839Z",
   "events": [
     {
       "kind": "new",
-      "signature": "new:2026V0264",
-      "siteId": "2026V0264",
+      "signature": "new:2026V2308",
+      "siteId": "2026V2308",
       "point": [
-        8.471746,
-        48.999187
+        8.379528,
+        49.043175
       ],
       "closure": "full",
-      "startDate": "2026-08-17",
-      "endDate": "2026-09-17",
-      "municipality": "Karlsruhe",
-      "location": "Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V4194",
-      "siteId": "2026V4194",
-      "point": [
-        8.47753,
-        48.971312
-      ],
-      "closure": "full",
-      "startDate": "2026-08-31",
-      "endDate": "2026-09-27",
-      "municipality": "Karlsruhe",
-      "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5787",
-      "siteId": "2026V5787",
-      "point": [
-        8.375179,
-        49.020389
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-30",
-      "endDate": "2026-09-30",
-      "municipality": "Karlsruhe",
-      "location": "Franz-Lust-Straße zw. Kußmaulstraße u. Knielinger Allee"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5896",
-      "siteId": "2026V5896",
-      "point": [
-        8.366166,
-        49.028858
-      ],
-      "closure": "full",
-      "startDate": "2026-09-21",
-      "endDate": "2026-09-30",
-      "municipality": "Karlsruhe",
-      "location": "Kropsburgweg zw. Hambacher Straße u. Maxburgweg"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30088",
-      "siteId": "30088",
-      "point": [
-        8.29422,
-        48.960218
-      ],
-      "closure": "full",
-      "startDate": "2026-09-17",
-      "endDate": "2026-10-02",
-      "municipality": "Rheinstetten",
-      "location": "Wilhelmstraße 14"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30186",
-      "siteId": "30186",
-      "point": [
-        8.609023,
-        49.123548
-      ],
-      "closure": "full",
-      "startDate": "2026-08-12",
-      "endDate": "2026-09-30",
-      "municipality": "Bruchsal",
-      "location": "Vogelhohle 2"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30202",
-      "siteId": "30202",
-      "point": [
-        8.553325,
-        49.083989
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-17",
-      "endDate": "2026-10-09",
-      "municipality": "Bruchsal",
-      "location": "Frühmessweinberg 4 (Kurvenbereich)"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40185",
-      "siteId": "40185",
-      "point": [
-        8.639997,
-        49.085561
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-17",
+      "startDate": "2026-04-27",
       "endDate": "2026-10-01",
-      "municipality": "Bruchsal",
-      "location": "Eberhardstraße 11a"
+      "municipality": "Karlsruhe",
+      "location": "Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30091",
+      "siteId": "30091",
+      "point": [
+        8.316896,
+        48.982818
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-16",
+      "endDate": "2026-10-09",
+      "municipality": "Rheinstetten",
+      "location": "Rosenstraße 118"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30096",
+      "siteId": "30096",
+      "point": [
+        8.471732,
+        49.047511
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-16",
+      "endDate": "2026-09-21",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Waldstraße Verbindungsweg bei Haus 58a"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30098",
+      "siteId": "30098",
+      "point": [
+        8.476439,
+        49.070989
+      ],
+      "closure": "none",
+      "startDate": "2026-09-22",
+      "endDate": "2026-10-08",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Seegrabenweg 9"
     },
     {
       "kind": "starts-soon",

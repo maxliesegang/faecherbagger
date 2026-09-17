@@ -3900,6 +3900,26 @@
     "lastModified": "2026-07-23T22:00:00Z"
   },
   {
+    "id": "2026V2308",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg",
+    "notes": "Höhe Haus Nr. 20",
+    "cause": "Privat",
+    "startDate": "2026-04-27",
+    "endDate": "2026-10-01",
+    "point": [
+      8.379528,
+      49.043175
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-16T22:00:00Z"
+  },
+  {
     "id": "2026V2409",
     "phase": "active",
     "category": "special-use",
@@ -7880,6 +7900,26 @@
     "lastModified": "2026-03-20T08:41:50Z"
   },
   {
+    "id": "30091",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Rosenstraße 118",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-16",
+    "endDate": "2026-10-09",
+    "point": [
+      8.316896,
+      48.982818
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-17T09:29:25Z"
+  },
+  {
     "id": "30093",
     "phase": "active",
     "category": "special-use",
@@ -7918,6 +7958,46 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-09-16T06:39:18Z"
+  },
+  {
+    "id": "30096",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Waldstraße Verbindungsweg bei Haus 58a",
+    "notes": "Stellung Lichtmasten mit geringfügiger Einschränkung am Fahrbahnrand",
+    "cause": "Stadtbauamt",
+    "startDate": "2026-09-16",
+    "endDate": "2026-09-21",
+    "point": [
+      8.471732,
+      49.047511
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-16T07:15:28Z"
+  },
+  {
+    "id": "30098",
+    "phase": "upcoming",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Seegrabenweg 9",
+    "notes": "Stellung Lichtmasten deswegen Sperrung Gehweg und Fahrradweg",
+    "cause": "Stadtbauamt",
+    "startDate": "2026-09-22",
+    "endDate": "2026-10-08",
+    "point": [
+      8.476439,
+      49.070989
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-17T06:14:23Z"
   },
   {
     "id": "30107",
@@ -8544,17 +8624,17 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": "stationary",
     "municipality": "Rheinstetten",
     "location": "Wilhelmstraße 14",
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-09-14",
-    "endDate": "2026-09-18",
+    "endDate": "2026-12-31",
     "point": [
-      8.294221,
-      48.960211
+      8.294233,
+      48.960204
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-08-27T14:39:11Z"

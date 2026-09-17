@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-09-17T09:04:39.216Z</updated>
+    <updated>2026-09-17T19:20:44.839Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -34,6 +34,29 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Rosenstraße 118 – Rheinstetten]]></title>
+        <id>faecherbagger:30091:2026-09-17T09:29:25Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30091"/>
+        <updated>2026-09-17T09:29:25.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 16.09.2026 – 09.10.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: 76297 Stutensee, Seegrabenweg 9 – Stutensee]]></title>
+        <id>faecherbagger:30098:2026-09-17T06:14:23Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30098"/>
+        <updated>2026-09-17T06:14:23.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenunterhaltung · Keine Behinderung
+Zeitraum: 22.09.2026 – 08.10.2026
+Hinweis: Stellung Lichtmasten deswegen Sperrung Gehweg und Fahrradweg
+Verantwortlich: Stadtbauamt
+Quelle: Stadt Stutensee]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger – Karlsruhe]]></title>
         <id>faecherbagger:2026V0264:2026-09-16T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0264"/>
@@ -43,6 +66,18 @@ Zeitraum: 17.08.2026 – 17.09.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2308:2026-09-16T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2308"/>
+        <updated>2026-09-16T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 27.04.2026 – 01.10.2026
+Hinweis: Höhe Haus Nr. 20
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße – Karlsruhe]]></title>
@@ -76,6 +111,18 @@ Zeitraum: 21.09.2026 – 30.09.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Waldstraße Verbindungsweg bei Haus 58a – Stutensee]]></title>
+        <id>faecherbagger:30096:2026-09-16T07:15:28Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30096"/>
+        <updated>2026-09-16T07:15:28.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
+Zeitraum: 16.09.2026 – 21.09.2026
+Hinweis: Stellung Lichtmasten mit geringfügiger Einschränkung am Fahrbahnrand
+Verantwortlich: Stadtbauamt
+Quelle: Stadt Stutensee]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Raiffeisenstraße – Bruchsal]]></title>
@@ -2088,8 +2135,8 @@ Quelle: Stadt Karlsruhe]]></summary>
         <id>faecherbagger:40061:2026-08-27T14:39:11Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40061"/>
         <updated>2026-08-27T14:39:11.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 14.09.2026 – 18.09.2026
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 14.09.2026 – 31.12.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
