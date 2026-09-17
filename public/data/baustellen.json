@@ -2440,6 +2440,26 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
+    "id": "2026V0264",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-08-17",
+    "endDate": "2026-09-17",
+    "point": [
+      8.471746,
+      48.999187
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-16T22:00:00Z"
+  },
+  {
     "id": "2026V0269",
     "phase": "active",
     "category": "gas-water",
@@ -5140,6 +5160,26 @@
     "lastModified": "2026-08-23T22:00:00Z"
   },
   {
+    "id": "2026V4194",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-31",
+    "endDate": "2026-09-27",
+    "point": [
+      8.47753,
+      48.971312
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-16T22:00:00Z"
+  },
+  {
     "id": "2026V4195",
     "phase": "active",
     "category": "gas-water",
@@ -6921,7 +6961,7 @@
   },
   {
     "id": "2026V5560",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "obstruction",
@@ -6938,26 +6978,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-02T22:00:00Z"
-  },
-  {
-    "id": "2026V5614",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "B36/ Neureuter Straße zw. Siemensallee und Landauer Straße",
-    "notes": null,
-    "cause": "Gartenbauamt",
-    "startDate": "2026-09-16",
-    "endDate": "2026-09-16",
-    "point": [
-      8.36702,
-      49.03014
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
   },
   {
     "id": "2026V5639",
@@ -7340,6 +7360,26 @@
     "lastModified": "2026-09-15T22:00:00Z"
   },
   {
+    "id": "2026V5787",
+    "phase": "upcoming",
+    "category": "soil-survey",
+    "artRaw": "Baugrunduntersuchung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Franz-Lust-Straße zw. Kußmaulstraße u. Knielinger Allee",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-30",
+    "endDate": "2026-09-30",
+    "point": [
+      8.375179,
+      49.020389
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-16T22:00:00Z"
+  },
+  {
     "id": "2026V5794",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -7498,6 +7538,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-15T22:00:00Z"
+  },
+  {
+    "id": "2026V5896",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kropsburgweg zw. Hambacher Straße u. Maxburgweg",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-21",
+    "endDate": "2026-09-30",
+    "point": [
+      8.366166,
+      49.028858
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-16T22:00:00Z"
   },
   {
     "id": "30021",
@@ -7680,26 +7740,6 @@
     "lastModified": "2026-07-21T07:15:22Z"
   },
   {
-    "id": "30077",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Hardtstraße 25 und Theodor-Heuss-Straße 68-70",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
-    "startDate": "2026-08-05",
-    "endDate": "2026-09-16",
-    "point": [
-      8.31709,
-      48.976999
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-08-04T06:40:56Z"
-  },
-  {
     "id": "30082",
     "phase": "active",
     "category": "district-heating",
@@ -7800,6 +7840,26 @@
     "lastModified": "2026-08-31T12:56:38Z"
   },
   {
+    "id": "30088",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Wilhelmstraße 14",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-09-17",
+    "endDate": "2026-10-02",
+    "point": [
+      8.29422,
+      48.960218
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-10T10:36:27Z"
+  },
+  {
     "id": "30089",
     "phase": "active",
     "category": "gas-water",
@@ -7813,8 +7873,8 @@
     "startDate": "2026-03-30",
     "endDate": "2026-10-31",
     "point": [
-      8.60761,
-      49.134578
+      8.510824,
+      49.081942
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-03-20T08:41:50Z"
@@ -7898,6 +7958,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-03-18T13:27:33Z"
+  },
+  {
+    "id": "30186",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Vogelhohle 2",
+    "notes": "Fahrbahnvollsperrung, Gehwege nicht betroffen,\nZufahrt zum Schaffnersberg über den Schwalbenweg nur möglich,",
+    "cause": "Stadtwerke",
+    "startDate": "2026-08-12",
+    "endDate": "2026-09-30",
+    "point": [
+      8.609023,
+      49.123548
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-14T05:39:13Z"
   },
   {
     "id": "30190",
@@ -7998,6 +8078,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-28T07:52:39Z"
+  },
+  {
+    "id": "30202",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Frühmessweinberg 4 (Kurvenbereich)",
+    "notes": "Verengung der Fahrbahn für Kabelarbeiten.",
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-17",
+    "endDate": "2026-10-09",
+    "point": [
+      8.553325,
+      49.083989
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-02T07:29:51Z"
   },
   {
     "id": "30204",
@@ -9498,6 +9598,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-09T13:43:33Z"
+  },
+  {
+    "id": "40185",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Eberhardstraße 11a",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-17",
+    "endDate": "2026-10-01",
+    "point": [
+      8.639997,
+      49.085561
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-10T09:35:45Z"
   },
   {
     "id": "40186",
