@@ -1420,6 +1420,86 @@
     "lastModified": "2026-08-19T22:00:00Z"
   },
   {
+    "id": "2025V6084",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Uhlandstraße zw. Gorthestraße und Sophienstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-14",
+    "endDate": "2026-11-06",
+    "point": [
+      8.374663,
+      49.008925
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
+    "id": "2025V6085",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Uhlandstraße Kreuzungsbereich Sophienstraße",
+    "notes": "Sophienstraße in Fahrtrichtung Yorckstraße gesperrt",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-22",
+    "endDate": "2026-11-30",
+    "point": [
+      8.374461,
+      49.008479
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
+    "id": "2025V6086",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Sophienstraße Wender Höhe Uhlandstraße",
+    "notes": "Sophienstraße zw. Gutenbergstraße und Uhlandstraße = Fahrtrichtung Yorckstraße gesperrt",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-22",
+    "endDate": "2026-11-30",
+    "point": [
+      8.374436,
+      49.008377
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
+    "id": "2025V6087",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Uhlandstraße zw. Sophienstraße und Draisstraße",
+    "notes": "Sophienstraße zw. Uhlandstraße und Gabelsbergstraße",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-22",
+    "endDate": "2026-11-30",
+    "point": [
+      8.374335,
+      49.008237
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
     "id": "2025V6317",
     "phase": "upcoming",
     "category": "tunnel",
@@ -2438,26 +2518,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
-    "id": "2026V0264",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Rappenstraße u. Rollerstraße sowie Zunftstraße ab Spitalstraße bis Amthausstraße Höhe Am Zwinger",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-17",
-    "endDate": "2026-09-17",
-    "point": [
-      8.471746,
-      48.999187
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-16T22:00:00Z"
   },
   {
     "id": "2026V0269",
@@ -3481,7 +3541,7 @@
   },
   {
     "id": "2026V1795",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -4987,17 +5047,17 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "B3/Südtangente Kreuzungsbereiche Fiduciastraße und B 3 Ortsumfahrung Wolfartsweier",
+    "location": "B3/Südtangente Kreuzungsbereiche Fiduciastraße und B3 Ortsumfahrung Wolfartsweier",
     "notes": "Erneuerung der Lichtsignalanlage, Entfall von Richtungsfahrstreifen",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-01",
-    "endDate": "2026-10-30",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-13",
     "point": [
       8.447177,
       48.986526
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-17T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2026V3724",
@@ -5775,26 +5835,6 @@
     "point": [
       8.48208,
       48.970312
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
-  },
-  {
-    "id": "2026V4598",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pforzheimer Straße - Waldshuter Straße - Turmbergbad - Campingplatz Durlach - Bundestraßenkreuz B3 / B10",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Inlinereinzug in Kanal, Halteverbote im Bereich der Arbeitsstellen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-08",
-    "endDate": "2026-09-17",
-    "point": [
-      8.480425,
-      49.004222
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-07T22:00:00Z"
@@ -6980,26 +7020,6 @@
     "lastModified": "2026-09-02T22:00:00Z"
   },
   {
-    "id": "2026V5560",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bahnhofstraße zw. Beiertheimer Allee und Gutschstraße",
-    "notes": "1-streifige Verkehrsführung",
-    "cause": "Privat",
-    "startDate": "2026-09-17",
-    "endDate": "2026-09-17",
-    "point": [
-      8.398237,
-      48.99929
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
-  },
-  {
     "id": "2026V5639",
     "phase": "active",
     "category": "power-telecom",
@@ -7360,26 +7380,6 @@
     "lastModified": "2026-09-09T22:00:00Z"
   },
   {
-    "id": "2026V5763",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Haid- u. neu-Straße zw. Hirtenweg und Am Sportpark",
-    "notes": "9:00 Uhr - 15:00 Uhr, 1-streifige Verkehrsführung in beiden Fahrtrichtungen",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-16",
-    "endDate": "2026-09-17",
-    "point": [
-      8.445188,
-      49.021112
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
-  },
-  {
     "id": "2026V5787",
     "phase": "upcoming",
     "category": "soil-survey",
@@ -7578,6 +7578,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-16T22:00:00Z"
+  },
+  {
+    "id": "2026V5920",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Röntgenstraße zw. Südliche Hildapromenade und Röntgenstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-06",
+    "point": [
+      8.383377,
+      49.012115
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "30021",
@@ -9380,6 +9400,26 @@
     "lastModified": "2026-08-24T05:42:04Z"
   },
   {
+    "id": "40158",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Siedlungsstraße 5-9",
+    "notes": "Gehwegvollsperrung mit gegenüberliegendem Halteverbot wegen Kranstellung",
+    "cause": "Privat",
+    "startDate": "2026-09-21",
+    "endDate": "2027-01-31",
+    "point": [
+      8.505736,
+      49.115076
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-18T06:46:27Z"
+  },
+  {
     "id": "40163",
     "phase": "active",
     "category": "special-use",
@@ -9580,26 +9620,6 @@
     "lastModified": "2026-09-04T08:40:37Z"
   },
   {
-    "id": "40178",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Eggerten 66",
-    "notes": "Vollsperrung wegen Sanierungsarbeiten, Gehweg bleibt frei. Umleitung über die Straße Silberhölle",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-09-15",
-    "endDate": "2026-09-17",
-    "point": [
-      8.599078,
-      49.116736
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-04T09:31:18Z"
-  },
-  {
     "id": "40179",
     "phase": "active",
     "category": "special-use",
@@ -9618,6 +9638,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-09T05:43:09Z"
+  },
+  {
+    "id": "40180",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Eberhardstraße 20a",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Privat",
+    "startDate": "2026-09-18",
+    "endDate": "2026-09-18",
+    "point": [
+      8.640405,
+      49.086253
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-09T08:43:36Z"
   },
   {
     "id": "40181",
