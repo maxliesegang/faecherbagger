@@ -431,13 +431,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-30",
-    "endDate": "2026-10-02",
+    "endDate": "2026-11-13",
     "point": [
       8.387393,
       49.009589
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-27T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2024V5526",
@@ -1271,13 +1271,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-20",
-    "endDate": "2026-09-19",
+    "endDate": "2026-09-20",
     "point": [
       8.390706,
       48.999765
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2025V5289",
@@ -1288,16 +1288,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße",
-    "notes": "Aufteilung nicht vorgenommen",
+    "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-20",
-    "endDate": "2026-10-25",
+    "startDate": "2026-09-21",
+    "endDate": "2026-10-30",
     "point": [
       8.39056,
       48.999133
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2025V5291",
@@ -1495,6 +1495,26 @@
     "point": [
       8.374335,
       49.008237
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
+    "id": "2025V6088",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Sophienstraße zw. Yorckstraße und Uhlandstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-22",
+    "endDate": "2026-11-30",
+    "point": [
+      8.374023,
+      49.008367
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-17T22:00:00Z"
@@ -2481,7 +2501,7 @@
   },
   {
     "id": "2026V0256",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "one-direction",
@@ -2490,14 +2510,14 @@
     "location": "Badener Straße zw. Grötzinger Straße u. Hengstplatz",
     "notes": "1-Richtungsverkehr zum Hengstplatz, Einmündung Karl-Weysser",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-08",
-    "endDate": "2026-09-26",
+    "startDate": "2026-09-21",
+    "endDate": "2026-10-02",
     "point": [
       8.477002,
       48.998541
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2026V0262",
@@ -3950,14 +3970,14 @@
     "location": "Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße",
     "notes": "Abwicklung in drei Bauabschnitten",
     "cause": "Tiefbauamt",
-    "startDate": "2026-09-21",
+    "startDate": "2026-09-23",
     "endDate": "2027-01-29",
     "point": [
       8.458497,
       49.002912
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-23T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2026V2308",
@@ -4531,13 +4551,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-18",
-    "endDate": "2026-09-18",
+    "endDate": "2026-10-09",
     "point": [
       8.423901,
       49.016368
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2026V3197",
@@ -4550,14 +4570,14 @@
     "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße",
     "notes": "1-streifige Verkehrsführung",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-19",
+    "startDate": "2026-10-10",
     "endDate": "2026-10-30",
     "point": [
       8.423974,
       49.016201
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2026V3198",
@@ -5031,13 +5051,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-30",
-    "endDate": "2026-10-16",
+    "endDate": "2026-11-13",
     "point": [
       8.387524,
       49.00879
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-10T22:00:00Z"
+    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2026V3716",
@@ -5258,26 +5278,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-16T22:00:00Z"
-  },
-  {
-    "id": "2026V4195",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-16",
-    "endDate": "2026-10-10",
-    "point": [
-      8.477454,
-      48.970932
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-26T22:00:00Z"
   },
   {
     "id": "2026V4246",
@@ -5840,6 +5840,26 @@
     "lastModified": "2026-09-07T22:00:00Z"
   },
   {
+    "id": "2026V4610",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Schückstraße zw. Tullastraße und Gustav-Specht-Straße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-23",
+    "endDate": "2026-10-30",
+    "point": [
+      8.432241,
+      49.00912
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
     "id": "2026V4632",
     "phase": "active",
     "category": "special-use",
@@ -6220,6 +6240,26 @@
     "lastModified": "2026-09-15T22:00:00Z"
   },
   {
+    "id": "2026V4881",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "L604/ Theodor-Heuss-Allee zw. Gustav-Heinemann-Allee und Lachenweg",
+    "notes": "signalisierte 1-streifige Verkehrsführung, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-01-18",
+    "endDate": "2027-04-30",
+    "point": [
+      8.452614,
+      49.041969
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
     "id": "2026V4887",
     "phase": "upcoming",
     "category": "crane",
@@ -6258,66 +6298,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-20T22:00:00Z"
-  },
-  {
-    "id": "2026V4913",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Theodor-Heuss-Allee, Brücke über die L 560 Gustav-Heinemann-Allee",
-    "notes": "Engstelle mit Lichtsignal",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-14",
-    "endDate": "2026-11-15",
-    "point": [
-      8.452614,
-      49.041969
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-05T22:00:00Z"
-  },
-  {
-    "id": "2026V4914",
-    "phase": "upcoming",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Theodor-Heuss-Allee, Brücke über die DB Höhe Lachenweg",
-    "notes": "Engstelle mit Lichtsignal",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-11-16",
-    "endDate": "2026-12-18",
-    "point": [
-      8.45771,
-      49.040858
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-05T22:00:00Z"
-  },
-  {
-    "id": "2026V4915",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "L 560 Gustav-Heinemann-Allee",
-    "notes": "Dauer der Arbeiten ca. 2 Arbeitswochen, lokale Arbeitsstellen unterhalb der Brücke, Entfall von Richtungsfahrstreifen wechselweise in beiden Fahrtrichtungen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-14",
-    "endDate": "2026-11-13",
-    "point": [
-      8.45264,
-      49.041957
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-05T22:00:00Z"
   },
   {
     "id": "2026V4966",
@@ -7200,6 +7180,26 @@
     "lastModified": "2026-09-08T22:00:00Z"
   },
   {
+    "id": "2026V5705",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hertzstr., Stösserstr., Isoldestr.",
+    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-03-01",
+    "endDate": "2027-12-31",
+    "point": [
+      8.364358,
+      49.016733
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
     "id": "2026V5708",
     "phase": "upcoming",
     "category": "rail",
@@ -7595,6 +7595,26 @@
     "point": [
       8.383377,
       49.012115
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
+    "id": "2026V5935",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Battstraße, Göhrenstraße, Breisgaustraße, Ortehnaustraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-01",
+    "endDate": "2026-10-16",
+    "point": [
+      8.406426,
+      48.972086
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-17T22:00:00Z"
@@ -8018,6 +8038,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-09-17T06:14:23Z"
+  },
+  {
+    "id": "30099",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Diverse Straßen",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-01-07",
+    "endDate": "2026-10-02",
+    "point": [
+      8.32196,
+      48.981419
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2025-12-03T08:51:27Z"
   },
   {
     "id": "30107",
