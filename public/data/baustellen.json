@@ -2020,28 +2020,8 @@
     "lastModified": "2026-08-24T22:00:00Z"
   },
   {
-    "id": "2025V7363",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herrenstraße zw. Amalienstraße und Blumenstraße",
-    "notes": "Bauzeit gesamt ca 12 Wochen (drei Bauabschnitte mit je Abschnitt 4 Wochen)",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-10",
-    "endDate": "2026-09-18",
-    "point": [
-      8.396864,
-      49.007636
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
-  },
-  {
     "id": "2025V7364",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -2518,26 +2498,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-17T22:00:00Z"
-  },
-  {
-    "id": "2026V0262",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Nordbeckenstraße 17b, Im Schlehert 38",
-    "notes": "Kabelgraben im Bankett/Gehweg und Spülbohrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-10",
-    "endDate": "2026-09-18",
-    "point": [
-      8.318572,
-      49.017118
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
   },
   {
     "id": "2026V0269",
@@ -3340,26 +3300,6 @@
     "lastModified": "2026-03-03T23:00:00Z"
   },
   {
-    "id": "2026V1559",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Baumeisterstraße zw. Ettlinger Straße und Nowackanlage",
-    "notes": "Baumeisterstraße Sperrung der Richtungsfahrbahn nach Osten ab Ettlinger Straße",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-20",
-    "endDate": "2026-09-18",
-    "point": [
-      8.40394,
-      49.003714
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
-  },
-  {
     "id": "2026V1676",
     "phase": "upcoming",
     "category": "sewer",
@@ -3538,26 +3478,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-28T22:00:00Z"
-  },
-  {
-    "id": "2026V1794",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gänsbergstraße zw. Werrenstraße und Wiesentalstraße",
-    "notes": "vs 5 Wochen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-01",
-    "endDate": "2026-09-18",
-    "point": [
-      8.511801,
-      48.95388
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
   },
   {
     "id": "2026V1795",
@@ -4940,26 +4860,6 @@
     "lastModified": "2026-09-07T22:00:00Z"
   },
   {
-    "id": "2026V3598",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Sonntagstraße zw. Jollystraße und Mathystraße",
-    "notes": "Rad- und Fußweg = offen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-04",
-    "endDate": "2026-09-18",
-    "point": [
-      8.391991,
-      49.002538
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-03T22:00:00Z"
-  },
-  {
     "id": "2026V3599",
     "phase": "active",
     "category": "district-heating",
@@ -5161,7 +5061,7 @@
   },
   {
     "id": "2026V3915",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -6220,26 +6120,6 @@
     "lastModified": "2026-08-24T22:00:00Z"
   },
   {
-    "id": "2026V4877",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz",
-    "notes": "Entfall eines Roichtungsfahrstreifens, Geh- und Radweg entlang der Fahrbahn gesperrt, Umleitung über Anliegerfahrbahn",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-11",
-    "endDate": "2026-09-18",
-    "point": [
-      8.403901,
-      48.986541
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
-  },
-  {
     "id": "2026V4881",
     "phase": "upcoming",
     "category": "bridge",
@@ -6740,26 +6620,6 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
-    "id": "2026V5392",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ludwig-Erhard-Allee zw. Hennebergstraße und Sommerstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, geänderte Radwegführung",
-    "cause": "Privat",
-    "startDate": "2026-09-14",
-    "endDate": "2026-09-18",
-    "point": [
-      8.419933,
-      49.004881
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
-  },
-  {
     "id": "2026V5400",
     "phase": "upcoming",
     "category": "district-heating",
@@ -6820,28 +6680,8 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
-    "id": "2026V5421",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bahnübergang Verlängerung Elbinger Straße",
-    "notes": "Beeinträchtigung nur Radweg und Fußgänger, Umleitung Europaviertel großräumig über Ortelsburger Straße und Elbinger Straße",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-02",
-    "endDate": "2026-09-18",
-    "point": [
-      8.450595,
-      49.040722
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
-  },
-  {
     "id": "2026V5422",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "none",
@@ -6895,26 +6735,6 @@
     "point": [
       8.420864,
       49.007314
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
-  },
-  {
-    "id": "2026V5460",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kirchfeldstraße zw. Bärenweg und Mitteltorstraße",
-    "notes": "Notmaßnahme",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-07",
-    "endDate": "2026-09-18",
-    "point": [
-      8.377605,
-      49.050914
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-30T22:00:00Z"
@@ -7038,26 +6858,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-14T22:00:00Z"
-  },
-  {
-    "id": "2026V5650",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Raiherwiesenstraße zw. Schinnrainstraße u. Bleichstraße",
-    "notes": "lokale Engstelle",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-14",
-    "endDate": "2026-09-18",
-    "point": [
-      8.459343,
-      48.999132
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2026V5661",
@@ -7840,26 +7640,6 @@
     "lastModified": "2026-08-27T12:51:25Z"
   },
   {
-    "id": "30084",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Kastenwörthstraße 39",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-31",
-    "endDate": "2026-09-18",
-    "point": [
-      8.317706,
-      48.98144
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-08-27T13:16:18Z"
-  },
-  {
     "id": "30085",
     "phase": "active",
     "category": "power-telecom",
@@ -7980,26 +7760,6 @@
     "lastModified": "2026-09-02T09:35:37Z"
   },
   {
-    "id": "30094",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Waldstraße 38",
-    "notes": "Vollsperrung Straßeneck wegen Freilegung Wasserschieber",
-    "cause": "Versorgungsunternehmen",
-    "startDate": "2026-09-08",
-    "endDate": "2026-09-18",
-    "point": [
-      8.465753,
-      49.047651
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-16T06:39:18Z"
-  },
-  {
     "id": "30096",
     "phase": "active",
     "category": "road-maintenance",
@@ -8118,26 +7878,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-14T05:39:13Z"
-  },
-  {
-    "id": "30190",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kantstraße 21",
-    "notes": "Fahrbahn verengt.\nGehweg gesperrt.",
-    "cause": "Fachgebiet Tiefbau",
-    "startDate": "2026-08-31",
-    "endDate": "2026-09-18",
-    "point": [
-      8.643665,
-      49.086623
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-14T09:56:43Z"
   },
   {
     "id": "30196",
@@ -8758,26 +8498,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-09-10T09:44:19Z"
-  },
-  {
-    "id": "40065",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Rheinstetten",
-    "location": "Maxauer Straße",
-    "notes": null,
-    "cause": "Stadtbauamt",
-    "startDate": "2026-09-14",
-    "endDate": "2026-09-18",
-    "point": [
-      8.300904,
-      48.966036
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-09-10T15:49:45Z"
   },
   {
     "id": "40068",
@@ -9460,26 +9180,6 @@
     "lastModified": "2026-09-18T06:46:27Z"
   },
   {
-    "id": "40163",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Parkplätze Heidelsheimer Straße.",
-    "notes": "Für Baustelleneinrichtung gesperrt.",
-    "cause": "Privat",
-    "startDate": "2026-09-01",
-    "endDate": "2026-09-18",
-    "point": [
-      8.641612,
-      49.085199
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-27T08:46:08Z"
-  },
-  {
     "id": "40166",
     "phase": "active",
     "category": "special-use",
@@ -9538,26 +9238,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-31T07:13:07Z"
-  },
-  {
-    "id": "40169",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Burgstraße 5",
-    "notes": "Verengung der Fahrbahn wegen Baugerüst",
-    "cause": "Privat",
-    "startDate": "2026-08-31",
-    "endDate": "2026-09-18",
-    "point": [
-      8.588031,
-      49.077188
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-31T08:32:43Z"
   },
   {
     "id": "40172",
@@ -9678,26 +9358,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-09T05:43:09Z"
-  },
-  {
-    "id": "40180",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Eberhardstraße 20a",
-    "notes": "Fahrbahn verengt.",
-    "cause": "Privat",
-    "startDate": "2026-09-18",
-    "endDate": "2026-09-18",
-    "point": [
-      8.640405,
-      49.086253
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-09T08:43:36Z"
   },
   {
     "id": "40181",
@@ -9958,46 +9618,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-07-29T07:56:13Z"
-  },
-  {
-    "id": "40339",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "none",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Rudolf-Plank-Straße Höhe Querung von/nach Bruchhausen",
-    "notes": "Herstellung von Fundamenten und Leerrohranbindungen für die Lichtsignalanlage\n\nIm Bauzeitraum sind die Zuwegungen für den Rad- und Fußgängerverkehr gesperrt. An der dortigen Stelle kann nicht gequert werden.",
-    "cause": "Tiefbauamt Ettlingen",
-    "startDate": "2026-09-07",
-    "endDate": "2026-09-18",
-    "point": [
-      8.37195,
-      48.93805
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-08-21T05:30:27Z"
-  },
-  {
-    "id": "40351",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Ettlingen",
-    "location": "Bergstraße 30",
-    "notes": null,
-    "cause": "Stadtwerke Ettlingen",
-    "startDate": "2026-09-02",
-    "endDate": "2026-09-18",
-    "point": [
-      8.382268,
-      48.911263
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-08-31T08:23:18Z"
   },
   {
     "id": "40643",
