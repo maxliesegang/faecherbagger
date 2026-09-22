@@ -1,145 +1,159 @@
 {
-  "generatedAt": "2026-09-22T08:56:32.550Z",
+  "generatedAt": "2026-09-22T19:18:53.955Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2025V6085:2026-09-21T22:00:00Z",
-      "siteId": "2025V6085",
+      "signature": "changed:2026V3515:2026-09-21T22:00:00Z",
+      "siteId": "2026V3515",
       "point": [
-        8.374461,
-        49.008479
+        8.475669,
+        48.999394
       ],
       "closure": "full",
-      "startDate": "2026-10-22",
-      "endDate": "2026-11-13",
+      "startDate": "2026-09-24",
+      "endDate": "2026-11-22",
       "municipality": "Karlsruhe",
-      "location": "Uhlandstraße Kreuzungsbereich Sophienstraße"
+      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2025V6086:2026-09-21T22:00:00Z",
-      "siteId": "2025V6086",
+      "signature": "changed:2026V4610:2026-09-21T22:00:00Z",
+      "siteId": "2026V4610",
       "point": [
-        8.374436,
-        49.008377
+        8.432241,
+        49.00912
       ],
       "closure": "full",
-      "startDate": "2026-11-09",
-      "endDate": "2026-12-05",
+      "startDate": "2026-09-23",
+      "endDate": "2026-12-02",
       "municipality": "Karlsruhe",
-      "location": "Sophienstraße Wender Höhe Uhlandstraße"
+      "location": "Schückstraße zw. Tullastraße und Gustav-Specht-Straße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2025V6087:2026-09-21T22:00:00Z",
-      "siteId": "2025V6087",
+      "signature": "changed:2026V5327:2026-09-21T22:00:00Z",
+      "siteId": "2026V5327",
       "point": [
-        8.374335,
-        49.008237
-      ],
-      "closure": "full",
-      "startDate": "2026-11-23",
-      "endDate": "2026-12-17",
-      "municipality": "Karlsruhe",
-      "location": "Uhlandstraße zw. Sophienstraße und Draisstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V6088:2026-09-21T22:00:00Z",
-      "siteId": "2025V6088",
-      "point": [
-        8.374023,
-        49.008367
+        8.441634,
+        49.031301
       ],
       "closure": "one-direction",
-      "startDate": "2026-11-23",
-      "endDate": "2026-12-17",
+      "startDate": "2026-09-28",
+      "endDate": "2026-11-21",
       "municipality": "Karlsruhe",
-      "location": "Sophienstraße zw. Yorckstraße und Uhlandstraße"
+      "location": "Glogauer Straße zw. Königsberger Straße und Im Eichbäumle"
     },
     {
       "kind": "changed",
-      "signature": "changed:40068:2026-09-16T14:11:32Z",
-      "siteId": "40068",
+      "signature": "changed:30083:2026-08-14T06:27:17Z",
+      "siteId": "30083",
       "point": [
-        8.421645,
-        49.048028
-      ],
-      "closure": "full",
-      "startDate": "2026-09-22",
-      "endDate": "2026-09-22",
-      "municipality": "Rheinstetten",
-      "location": "Messering Ecke Messestraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2024V5135",
-      "siteId": "2024V5135",
-      "point": [
-        8.313711,
-        49.011612
+        8.399117,
+        49.027785
       ],
       "closure": "obstruction",
-      "startDate": "2025-06-30",
-      "endDate": "2026-12-31",
-      "municipality": "Karlsruhe",
-      "location": "Koellestraße 10-26 und 13-27a"
+      "startDate": "2026-08-14",
+      "endDate": "2026-10-02",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Blankenlocher Straße 16"
     },
     {
       "kind": "new",
-      "signature": "new:2026V5344",
-      "siteId": "2026V5344",
+      "signature": "new:2020V3604",
+      "siteId": "2020V3604",
       "point": [
-        8.468583,
-        48.959194
+        8.387382,
+        49.009233
+      ],
+      "closure": "full",
+      "startDate": "2027-02-15",
+      "endDate": "2027-03-12",
+      "municipality": "Karlsruhe",
+      "location": "Rheinhold-Frank-Straße zw. Belfortstraße und Mühlburger Tor"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5498",
+      "siteId": "2026V5498",
+      "point": [
+        8.356485,
+        49.022636
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-25",
+      "endDate": "2026-10-01",
+      "municipality": "Karlsruhe",
+      "location": "B36/ Neureuter Straße Höhe Gablonzer Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5509",
+      "siteId": "2026V5509",
+      "point": [
+        8.492003,
+        49.008823
       ],
       "closure": "full",
       "startDate": "2026-09-23",
       "endDate": "2026-09-23",
       "municipality": "Karlsruhe",
-      "location": "Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße"
+      "location": "In den Weihergärten zw. Fröbelstraße und Eugen-Kleiber-Straße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V5452",
-      "siteId": "2026V5452",
+      "signature": "new:2026V5624",
+      "siteId": "2026V5624",
       "point": [
-        8.385718,
-        49.014782
+        8.424265,
+        48.99503
       ],
       "closure": "obstruction",
-      "startDate": "2026-11-09",
-      "endDate": "2026-11-27",
+      "startDate": "2026-09-23",
+      "endDate": "2026-09-25",
       "municipality": "Karlsruhe",
-      "location": "Moltkestraße Höhe Erzbergerstraße"
+      "location": "Südtangente zw. Fiduciastraße und Schwarzwaldkreuz inkl. der Auf- und Abfahrten"
     },
     {
       "kind": "new",
-      "signature": "new:2026V5984",
-      "siteId": "2026V5984",
+      "signature": "new:2026V6011",
+      "siteId": "2026V6011",
       "point": [
-        8.320812,
-        49.042654
+        8.437585,
+        49.020346
       ],
-      "closure": "obstruction",
-      "startDate": "2026-09-26",
-      "endDate": "2026-09-26",
+      "closure": "full",
+      "startDate": "2026-09-30",
+      "endDate": "2026-09-30",
       "municipality": "Karlsruhe",
-      "location": "Dea-Scholven-Brücke"
+      "location": "Ada-Lovelace-Straße (BV Emmy-Noether-Straße 17)"
     },
     {
       "kind": "new",
-      "signature": "new:2026V5997",
-      "siteId": "2026V5997",
+      "signature": "new:2026V6017",
+      "siteId": "2026V6017",
       "point": [
-        8.401439,
-        49.010004
+        8.442297,
+        48.991506
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-24",
-      "endDate": "2026-10-05",
+      "startDate": "2026-09-30",
+      "endDate": "2026-10-30",
       "municipality": "Karlsruhe",
-      "location": "Ritterstraße zw. Am Schlossplatz und Bankhof"
+      "location": "Kieselweg"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40159",
+      "siteId": "40159",
+      "point": [
+        8.5158,
+        49.093396
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-21",
+      "endDate": "2026-10-02",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Büchenauerstraße 42"
     },
     {
       "kind": "starts-soon",
@@ -179,7 +193,7 @@
       ],
       "closure": "full",
       "startDate": "2026-09-23",
-      "endDate": "2026-10-30",
+      "endDate": "2026-12-02",
       "municipality": "Karlsruhe",
       "location": "Schückstraße zw. Tullastraße und Gustav-Specht-Straße"
     },
@@ -196,6 +210,20 @@
       "endDate": "2026-09-29",
       "municipality": "Karlsruhe",
       "location": "Luisenstraße zw. Marienstraße und Wilhelmstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5344:2026-09-23",
+      "siteId": "2026V5344",
+      "point": [
+        8.468583,
+        48.959194
+      ],
+      "closure": "full",
+      "startDate": "2026-09-23",
+      "endDate": "2026-09-23",
+      "municipality": "Karlsruhe",
+      "location": "Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße"
     },
     {
       "kind": "starts-soon",
@@ -221,7 +249,7 @@
       ],
       "closure": "obstruction",
       "startDate": "2026-09-23",
-      "endDate": "2026-09-30",
+      "endDate": "2026-09-25",
       "municipality": "Karlsruhe",
       "location": "L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld/ Wilhelm-Leuschner-Straße"
     }
