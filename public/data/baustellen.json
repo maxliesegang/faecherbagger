@@ -400,6 +400,26 @@
     "lastModified": "2026-08-05T22:00:00Z"
   },
   {
+    "id": "2024V5135",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Koellestraße 10-26 und 13-27a",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Notgehweg auf der Fahrbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2025-06-30",
+    "endDate": "2026-12-31",
+    "point": [
+      8.313711,
+      49.011612
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-21T22:00:00Z"
+  },
+  {
     "id": "2024V5284",
     "phase": "active",
     "category": "district-heating",
@@ -1411,13 +1431,13 @@
     "notes": "Sophienstraße in Fahrtrichtung Yorckstraße gesperrt",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-10-22",
-    "endDate": "2026-11-30",
+    "endDate": "2026-11-13",
     "point": [
       8.374461,
       49.008479
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
+    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "2025V6086",
@@ -1430,14 +1450,14 @@
     "location": "Sophienstraße Wender Höhe Uhlandstraße",
     "notes": "Sophienstraße zw. Gutenbergstraße und Uhlandstraße = Fahrtrichtung Yorckstraße gesperrt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-22",
-    "endDate": "2026-11-30",
+    "startDate": "2026-11-09",
+    "endDate": "2026-12-05",
     "point": [
       8.374436,
       49.008377
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
+    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "2025V6087",
@@ -1450,14 +1470,14 @@
     "location": "Uhlandstraße zw. Sophienstraße und Draisstraße",
     "notes": "Sophienstraße zw. Uhlandstraße und Gabelsbergstraße",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-22",
-    "endDate": "2026-11-30",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-17",
     "point": [
       8.374335,
       49.008237
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
+    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "2025V6088",
@@ -1470,14 +1490,14 @@
     "location": "Sophienstraße zw. Yorckstraße und Uhlandstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-22",
-    "endDate": "2026-11-30",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-17",
     "point": [
       8.374023,
       49.008367
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
+    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "2025V6317",
@@ -2458,26 +2478,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-04-27T22:00:00Z"
-  },
-  {
-    "id": "2026V0254",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-07",
-    "endDate": "2026-09-21",
-    "point": [
-      8.475071,
-      48.999333
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2026V0255",
@@ -4760,26 +4760,6 @@
     "lastModified": "2026-06-01T22:00:00Z"
   },
   {
-    "id": "2026V3514",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-13",
-    "endDate": "2026-09-21",
-    "point": [
-      8.475786,
-      48.999371
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
-  },
-  {
     "id": "2026V3515",
     "phase": "active",
     "category": "rail",
@@ -6660,6 +6640,26 @@
     "lastModified": "2026-09-20T22:00:00Z"
   },
   {
+    "id": "2026V5344",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße",
+    "notes": "Höhe Haus Nr 35",
+    "cause": "Privat",
+    "startDate": "2026-09-23",
+    "endDate": "2026-09-23",
+    "point": [
+      8.468583,
+      48.959194
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-21T22:00:00Z"
+  },
+  {
     "id": "2026V5363",
     "phase": "active",
     "category": "district-heating",
@@ -6681,7 +6681,7 @@
   },
   {
     "id": "2026V5368",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -6818,6 +6818,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-30T22:00:00Z"
+  },
+  {
+    "id": "2026V5452",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Moltkestraße Höhe Erzbergerstraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, geänderte Verkehrsführung im Zuge der Bauarbeiten, Fahrtrichtung Klinikum",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-27",
+    "point": [
+      8.385718,
+      49.014782
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "2026V5490",
@@ -7367,17 +7387,17 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld",
-    "notes": "Arbeitsstellen im Mittelstreifen",
+    "location": "L 605 zwischen Hermann-Veit-Straße und Höhe Großoberfeld/ Wilhelm-Leuschner-Straße",
+    "notes": "Arbeitsstellen am Mittelstreifen, sowie Zufahrtsrampe Pulverhausstarße auf L605 Richtung Ettlingen vs. ab 7:00 Uhr- 15:00 Uhr",
     "cause": "Tiefbauamt",
     "startDate": "2026-09-23",
     "endDate": "2026-09-30",
     "point": [
-      8.376697,
-      48.990131
+      8.375364,
+      48.989096
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-13T22:00:00Z"
+    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "2026V5874",
@@ -7538,6 +7558,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-20T22:00:00Z"
+  },
+  {
+    "id": "2026V5984",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Dea-Scholven-Brücke",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Beseitigung Unfallschaden am Geländer",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-26",
+    "endDate": "2026-09-26",
+    "point": [
+      8.320812,
+      49.042654
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-21T22:00:00Z"
+  },
+  {
+    "id": "2026V5997",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ritterstraße zw. Am Schlossplatz und Bankhof",
+    "notes": "Inlinereinzug in Kanal",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-09-24",
+    "endDate": "2026-10-05",
+    "point": [
+      8.401439,
+      49.010004
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "30021",
@@ -7961,7 +8021,7 @@
   },
   {
     "id": "30098",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "none",
@@ -8098,26 +8158,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-24T10:30:41Z"
-  },
-  {
-    "id": "30197",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Büchenauer Straße 40",
-    "notes": "Straße oberhalb der Bahnunterführung wird für Kabelarbeiten verengt.",
-    "cause": "Telekommunikation",
-    "startDate": "2026-09-09",
-    "endDate": "2026-09-21",
-    "point": [
-      8.54842,
-      49.086721
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-24T10:54:31Z"
   },
   {
     "id": "30198",
@@ -8724,20 +8764,20 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Spechaastraße 44",
-    "notes": "Einrichtung einer Halteverbotszone",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Messering Ecke Messestraße",
+    "notes": null,
     "cause": "Privat",
-    "startDate": "2026-06-01",
-    "endDate": "2026-12-31",
+    "startDate": "2026-09-22",
+    "endDate": "2026-09-22",
     "point": [
-      8.50837,
-      49.112916
+      8.421645,
+      49.048028
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-04-30T13:23:00Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-16T14:11:32Z"
   },
   {
     "id": "40069",
