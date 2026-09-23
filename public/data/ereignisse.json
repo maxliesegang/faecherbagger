@@ -1,75 +1,47 @@
 {
-  "generatedAt": "2026-09-23T08:58:48.933Z",
+  "generatedAt": "2026-09-23T19:16:14.609Z",
   "events": [
     {
-      "kind": "changed",
-      "signature": "changed:30083:2026-08-27T12:51:25Z",
-      "siteId": "30083",
+      "kind": "new",
+      "signature": "new:2026V6056",
+      "siteId": "2026V6056",
       "point": [
-        8.399117,
-        49.027785
+        8.444945,
+        49.020948
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-24",
+      "endDate": "2026-09-24",
+      "municipality": "Karlsruhe",
+      "location": "Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6057",
+      "siteId": "2026V6057",
+      "point": [
+        8.44486,
+        49.020891
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-28",
+      "endDate": "2026-09-29",
+      "municipality": "Karlsruhe",
+      "location": "Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40248",
+      "siteId": "40248",
+      "point": [
+        8.187214,
+        48.862211
       ],
       "closure": "full",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-24",
-      "municipality": "Rheinstetten",
-      "location": "Kreuzung Römerstraße Storchenstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:30093:2026-09-17T10:39:12Z",
-      "siteId": "30093",
-      "point": [
-        8.399609,
-        49.012338
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-23",
-      "endDate": "2026-10-16",
-      "municipality": "Rheinstetten",
-      "location": "Messering 5"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:40068:2026-04-30T13:23:00Z",
-      "siteId": "40068",
-      "point": [
-        8.50837,
-        49.112916
-      ],
-      "closure": "none",
-      "startDate": "2026-06-01",
-      "endDate": "2026-12-31",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Spechaastraße 44"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V5753",
-      "siteId": "2026V5753",
-      "point": [
-        8.458952,
-        49.001427
-      ],
-      "closure": "one-direction",
-      "startDate": "2027-05-18",
-      "endDate": "2027-05-24",
-      "municipality": "Karlsruhe",
-      "location": "Durlacher Allee zw. Pforzheimer Straße und Einmündung K9659"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40203",
-      "siteId": "40203",
-      "point": [
-        8.585018,
-        49.116809
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-23",
-      "endDate": "2026-09-23",
-      "municipality": "Bruchsal",
-      "location": "Ernst-Blickle-Straße in der Kurve unterhalb der B 3"
+      "startDate": "2026-09-18",
+      "endDate": "2026-11-27",
+      "municipality": "Rastatt",
+      "location": "76437 Rastatt, Siemensstraße"
     },
     {
       "kind": "starts-soon",

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-09-23T08:58:48.933Z</updated>
+    <updated>2026-09-23T19:16:14.609Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -34,6 +34,17 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: 76437 Rastatt, Siemensstraße – Rastatt]]></title>
+        <id>faecherbagger:40248:2026-09-23T12:45:18Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40248"/>
+        <updated>2026-09-23T12:45:18.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Vollsperrung
+Zeitraum: 18.09.2026 – 27.11.2026
+Verantwortlich: star.EW
+Quelle: Stadt Rastatt]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Durlacher Allee zw. Pforzheimer Straße und Einmündung K9659 – Karlsruhe]]></title>
         <id>faecherbagger:2026V5753:2026-09-22T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5753"/>
@@ -43,6 +54,30 @@ Zeitraum: 18.05.2027 – 24.05.2027
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6056:2026-09-22T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6056"/>
+        <updated>2026-09-22T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+Zeitraum: 24.09.2026 – 24.09.2026
+Hinweis: 1-streifige Verkehrsführung in beiden Fahrtrichtungen
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6057:2026-09-22T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6057"/>
+        <updated>2026-09-22T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+Zeitraum: 28.09.2026 – 29.09.2026
+Hinweis: 1-streifige Verkehrsführung in beiden Fahrtrichtungen
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Büchenauerstraße 42 – Stutensee]]></title>
