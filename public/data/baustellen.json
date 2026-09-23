@@ -3961,7 +3961,7 @@
   },
   {
     "id": "2026V2274",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
@@ -4281,7 +4281,7 @@
   },
   {
     "id": "2026V2745",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "traffic-reroute",
     "artRaw": "geänderte Verkehrsführung im Zuge von Baumaßnahmen",
     "closure": "obstruction",
@@ -5821,7 +5821,7 @@
   },
   {
     "id": "2026V4610",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -6641,7 +6641,7 @@
   },
   {
     "id": "2026V5344",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -6901,7 +6901,7 @@
   },
   {
     "id": "2026V5509",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -6961,7 +6961,7 @@
   },
   {
     "id": "2026V5624",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7273,11 +7273,31 @@
     "startDate": "2027-05-18",
     "endDate": "2027-07-01",
     "point": [
-      8.467158,
-      49.004252
+      8.4675,
+      49.004396
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-13T22:00:00Z"
+  },
+  {
+    "id": "2026V5753",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Durlacher Allee zw. Pforzheimer Straße und Einmündung K9659",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-05-18",
+    "endDate": "2027-05-24",
+    "point": [
+      8.458952,
+      49.001427
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-22T22:00:00Z"
   },
   {
     "id": "2026V5755",
@@ -7441,7 +7461,7 @@
   },
   {
     "id": "2026V5833",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7942,22 +7962,22 @@
   {
     "id": "30083",
     "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Blankenlocher Straße 16",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-14",
-    "endDate": "2026-10-02",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Kreuzung Römerstraße Storchenstraße",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-24",
     "point": [
       8.399117,
       49.027785
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-08-14T06:27:17Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-08-27T12:51:25Z"
   },
   {
     "id": "30085",
@@ -8082,22 +8102,22 @@
   {
     "id": "30093",
     "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Heckengäuweg",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Bauunternehmen",
-    "startDate": "2026-09-03",
-    "endDate": "2026-09-25",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Messering 5",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-23",
+    "endDate": "2026-10-16",
     "point": [
-      8.462208,
-      49.045388
+      8.399609,
+      49.012338
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-02T09:35:37Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-17T10:39:12Z"
   },
   {
     "id": "30096",
@@ -8198,26 +8218,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-03-18T13:27:33Z"
-  },
-  {
-    "id": "30149",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Zeilich 16",
-    "notes": "Kabelarbeiten: Fahrbahn verengt und einseitig der Gehweg gesperrt.",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-15",
-    "endDate": "2026-09-22",
-    "point": [
-      8.585873,
-      49.138584
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-06-23T06:44:11Z"
   },
   {
     "id": "30186",
@@ -8864,20 +8864,20 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Messering Ecke Messestraße",
-    "notes": null,
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Spechaastraße 44",
+    "notes": "Einrichtung einer Halteverbotszone",
     "cause": "Privat",
-    "startDate": "2026-09-22",
-    "endDate": "2026-09-22",
+    "startDate": "2026-06-01",
+    "endDate": "2026-12-31",
     "point": [
-      8.421645,
-      49.048028
+      8.50837,
+      49.112916
     ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-09-16T14:11:32Z"
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-04-30T13:23:00Z"
   },
   {
     "id": "40069",
@@ -9938,6 +9938,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-16T12:46:53Z"
+  },
+  {
+    "id": "40203",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Ernst-Blickle-Straße in der Kurve unterhalb der B 3",
+    "notes": "Fahrbahn halbseitig wegen Wartungsarbeiten des Abwasserbetriebes gesperrt.",
+    "cause": "Fachgebiet Tiefbau",
+    "startDate": "2026-09-23",
+    "endDate": "2026-09-23",
+    "point": [
+      8.585018,
+      49.116809
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-21T12:14:47Z"
   },
   {
     "id": "40207",
