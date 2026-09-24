@@ -3411,13 +3411,13 @@
     "notes": "Kurfürstenstraße und Beiertheimer Allee = keine Ausfahrt auf Ebertstraße",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-28",
-    "endDate": "2026-10-30",
+    "endDate": "2026-11-05",
     "point": [
       8.395433,
       48.994454
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-06T22:00:00Z"
+    "lastModified": "2026-09-23T22:00:00Z"
   },
   {
     "id": "2026V1762",
@@ -5820,26 +5820,6 @@
     "lastModified": "2026-09-20T22:00:00Z"
   },
   {
-    "id": "2026V4610",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Schückstraße zw. Tullastraße und Gustav-Specht-Straße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-23",
-    "endDate": "2026-12-02",
-    "point": [
-      8.432241,
-      49.00912
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
-  },
-  {
     "id": "2026V4632",
     "phase": "active",
     "category": "special-use",
@@ -6020,26 +6000,6 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
-    "id": "2026V4791",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Danziger Straße 18, Etttlinger Allee vor Am Rüppurrer Schloß 1",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-03",
-    "endDate": "2026-09-30",
-    "point": [
-      8.403216,
-      48.982057
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
-  },
-  {
     "id": "2026V4799",
     "phase": "active",
     "category": "power-telecom",
@@ -6178,6 +6138,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-24T22:00:00Z"
+  },
+  {
+    "id": "2026V4877",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz",
+    "notes": "Entfall eines Roichtungsfahrstreifens, Geh- und Radweg entlang der Fahrbahn gesperrt, Umleitung über Anliegerfahrbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-11",
+    "endDate": "2026-09-24",
+    "point": [
+      8.403901,
+      48.986541
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-23T22:00:00Z"
   },
   {
     "id": "2026V4881",
@@ -6891,13 +6871,13 @@
     "notes": "Fahrtrichtung stadtauswärts, 1-streifige Verkehrsführung, Reparatur Schieberkreuz",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-25",
-    "endDate": "2026-10-01",
+    "endDate": "2026-10-02",
     "point": [
-      8.356485,
-      49.022636
+      8.356449,
+      49.022544
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
+    "lastModified": "2026-09-23T22:00:00Z"
   },
   {
     "id": "2026V5519",
@@ -7760,6 +7740,46 @@
     "lastModified": "2026-09-23T22:00:00Z"
   },
   {
+    "id": "2026V6094",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Tullastraße Gleisüberfahrt Höhe Schückstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-23",
+    "endDate": "2026-10-30",
+    "point": [
+      8.431931,
+      49.009129
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-23T22:00:00Z"
+  },
+  {
+    "id": "2026V6095",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Schückstraße zw. Tullastraße und Gustav-Specht-Straße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-23",
+    "endDate": "2026-12-02",
+    "point": [
+      8.432241,
+      49.00912
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-23T22:00:00Z"
+  },
+  {
     "id": "30021",
     "phase": "active",
     "category": "power-telecom",
@@ -8198,6 +8218,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2025-12-03T08:51:27Z"
+  },
+  {
+    "id": "30100",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Fichtenstraße 8",
+    "notes": "Gehwegvollsperrung",
+    "cause": "Versorgungsunternehmen",
+    "startDate": "2026-09-25",
+    "endDate": "2026-10-08",
+    "point": [
+      8.471679,
+      49.108187
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-24T08:42:14Z"
   },
   {
     "id": "30107",
@@ -9578,6 +9618,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-09-22T15:09:56Z"
+  },
+  {
+    "id": "40160",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Petunienweg 5",
+    "notes": "Halbseitige Sperrung mit Gehwegsperrung",
+    "cause": "Privat",
+    "startDate": "2026-09-21",
+    "endDate": "2026-12-31",
+    "point": [
+      8.503333,
+      49.109531
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-24T07:33:59Z"
   },
   {
     "id": "40166",
