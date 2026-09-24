@@ -2513,8 +2513,8 @@
     "startDate": "2026-09-21",
     "endDate": "2026-11-22",
     "point": [
-      8.474601,
-      48.999242
+      8.474962,
+      48.9993
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-25T22:00:00Z"
@@ -4761,7 +4761,7 @@
   },
   {
     "id": "2026V3515",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -6540,6 +6540,26 @@
     "lastModified": "2026-08-19T22:00:00Z"
   },
   {
+    "id": "2026V5311",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfinztalstraße zw. Marstallstaße und Karlsburgstraße",
+    "notes": "vs 6 Wochen",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-21",
+    "endDate": "2026-11-06",
+    "point": [
+      8.47394,
+      48.999128
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-23T22:00:00Z"
+  },
+  {
     "id": "2026V5327",
     "phase": "upcoming",
     "category": "rail",
@@ -6638,26 +6658,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
-    "id": "2026V5344",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Am Berg zw. Hohenwetterbacher Straße und Heidenheimer Straße",
-    "notes": "Höhe Haus Nr 35",
-    "cause": "Privat",
-    "startDate": "2026-09-23",
-    "endDate": "2026-09-23",
-    "point": [
-      8.468583,
-      48.959194
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "2026V5363",
@@ -6895,26 +6895,6 @@
     "point": [
       8.356485,
       49.022636
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
-  },
-  {
-    "id": "2026V5509",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "In den Weihergärten zw. Fröbelstraße und Eugen-Kleiber-Straße",
-    "notes": "Höhe Haus Nr 12",
-    "cause": "Privat",
-    "startDate": "2026-09-23",
-    "endDate": "2026-09-23",
-    "point": [
-      8.492003,
-      49.008823
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-21T22:00:00Z"
@@ -7661,7 +7641,7 @@
   },
   {
     "id": "2026V5997",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -7721,7 +7701,7 @@
   },
   {
     "id": "2026V6056",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -7758,6 +7738,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-22T22:00:00Z"
+  },
+  {
+    "id": "2026V6073",
+    "phase": "upcoming",
+    "category": "traffic-reroute",
+    "artRaw": "geänderte Verkehrsführung im Zuge von Baumaßnahmen",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-16",
+    "point": [
+      8.396955,
+      48.989821
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-23T22:00:00Z"
   },
   {
     "id": "30021",
@@ -8118,26 +8118,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-09-17T09:29:25Z"
-  },
-  {
-    "id": "30092",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Rastatter Straße 7",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
-    "startDate": "2026-09-21",
-    "endDate": "2026-09-23",
-    "point": [
-      8.2898,
-      48.958406
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-09-17T09:56:29Z"
   },
   {
     "id": "30093",
@@ -9433,8 +9413,8 @@
     "startDate": "2026-08-10",
     "endDate": "2026-11-30",
     "point": [
-      8.508036,
-      49.065013
+      8.553291,
+      49.082593
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-07-29T08:31:05Z"
@@ -9978,26 +9958,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-16T12:46:53Z"
-  },
-  {
-    "id": "40203",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Ernst-Blickle-Straße in der Kurve unterhalb der B 3",
-    "notes": "Fahrbahn halbseitig wegen Wartungsarbeiten des Abwasserbetriebes gesperrt.",
-    "cause": "Fachgebiet Tiefbau",
-    "startDate": "2026-09-23",
-    "endDate": "2026-09-23",
-    "point": [
-      8.585018,
-      49.116809
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-21T12:14:47Z"
   },
   {
     "id": "40207",

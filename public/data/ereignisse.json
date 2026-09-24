@@ -1,117 +1,117 @@
 {
-  "generatedAt": "2026-09-23T19:16:14.609Z",
+  "generatedAt": "2026-09-24T08:54:42.645Z",
   "events": [
     {
       "kind": "new",
-      "signature": "new:2026V6056",
-      "siteId": "2026V6056",
+      "signature": "new:2026V5311",
+      "siteId": "2026V5311",
       "point": [
-        8.444945,
-        49.020948
+        8.47394,
+        48.999128
       ],
-      "closure": "obstruction",
-      "startDate": "2026-09-24",
-      "endDate": "2026-09-24",
+      "closure": "full",
+      "startDate": "2026-09-21",
+      "endDate": "2026-11-06",
       "municipality": "Karlsruhe",
-      "location": "Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark"
+      "location": "Pfinztalstraße zw. Marstallstaße und Karlsburgstraße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V6057",
-      "siteId": "2026V6057",
+      "signature": "new:2026V6073",
+      "siteId": "2026V6073",
       "point": [
-        8.44486,
-        49.020891
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-09-29",
-      "municipality": "Karlsruhe",
-      "location": "Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40248",
-      "siteId": "40248",
-      "point": [
-        8.187214,
-        48.862211
+        8.396955,
+        48.989821
       ],
       "closure": "full",
-      "startDate": "2026-09-18",
-      "endDate": "2026-11-27",
-      "municipality": "Rastatt",
-      "location": "76437 Rastatt, Siemensstraße"
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-16",
+      "municipality": "Karlsruhe",
+      "location": "Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V3515:2026-09-24",
-      "siteId": "2026V3515",
+      "signature": "starts-soon:2025V0238:2026-10-01",
+      "siteId": "2025V0238",
       "point": [
-        8.475669,
-        48.999394
+        8.407929,
+        49.00947
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-01",
+      "endDate": "2027-02-26",
+      "municipality": "Karlsruhe",
+      "location": "Kaiserstraße zw. Kronenstraße und Adlerstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V0531:2026-09-25",
+      "siteId": "2026V0531",
+      "point": [
+        8.395905,
+        48.989073
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-25",
+      "endDate": "2026-09-25",
+      "municipality": "Karlsruhe",
+      "location": "Südtangente zw. AS3 und AS4"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3911:2026-10-01",
+      "siteId": "2026V3911",
+      "point": [
+        8.422751,
+        49.013015
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-31",
+      "municipality": "Karlsruhe",
+      "location": "Parkstraße zw. Karl-Wilhem-Platz und Am Fasanengarten"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5490:2026-09-25",
+      "siteId": "2026V5490",
+      "point": [
+        8.466705,
+        49.001968
       ],
       "closure": "full",
-      "startDate": "2026-09-24",
-      "endDate": "2026-11-22",
+      "startDate": "2026-09-25",
+      "endDate": "2026-09-25",
       "municipality": "Karlsruhe",
-      "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße"
+      "location": "Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V5787:2026-09-30",
-      "siteId": "2026V5787",
+      "signature": "starts-soon:2026V5495:2026-10-01",
+      "siteId": "2026V5495",
       "point": [
-        8.375179,
-        49.020389
+        8.447247,
+        49.045086
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-30",
-      "endDate": "2026-09-30",
+      "startDate": "2026-10-01",
+      "endDate": "2026-12-14",
       "municipality": "Karlsruhe",
-      "location": "Franz-Lust-Straße zw. Kußmaulstraße u. Knielinger Allee"
+      "location": "Albert-Schweitzer-Straße zw. Gustav-Heinemann-Allee und Bertha-von-Stuttner-Straße"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V5997:2026-09-24",
-      "siteId": "2026V5997",
+      "signature": "starts-soon:2026V5498:2026-09-25",
+      "siteId": "2026V5498",
       "point": [
-        8.401439,
-        49.010004
+        8.356485,
+        49.022636
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-24",
-      "endDate": "2026-10-05",
+      "startDate": "2026-09-25",
+      "endDate": "2026-10-01",
       "municipality": "Karlsruhe",
-      "location": "Ritterstraße zw. Am Schlossplatz und Bankhof"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6011:2026-09-30",
-      "siteId": "2026V6011",
-      "point": [
-        8.437585,
-        49.020346
-      ],
-      "closure": "full",
-      "startDate": "2026-09-30",
-      "endDate": "2026-09-30",
-      "municipality": "Karlsruhe",
-      "location": "Ada-Lovelace-Straße (BV Emmy-Noether-Straße 17)"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6017:2026-09-30",
-      "siteId": "2026V6017",
-      "point": [
-        8.442297,
-        48.991506
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-30",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Kieselweg"
+      "location": "B36/ Neureuter Straße Höhe Gablonzer Straße"
     }
   ]
 }
