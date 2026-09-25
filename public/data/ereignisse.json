@@ -1,61 +1,47 @@
 {
-  "generatedAt": "2026-09-25T09:15:24.532Z",
+  "generatedAt": "2026-09-25T19:37:04.624Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V6073:2026-09-24T22:00:00Z",
-      "siteId": "2026V6073",
+      "signature": "changed:2026V2212:2026-09-24T22:00:00Z",
+      "siteId": "2026V2212",
       "point": [
-        8.396955,
-        48.989821
+        8.411983,
+        49.007558
       ],
       "closure": "none",
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-16",
+      "startDate": "2026-10-05",
+      "endDate": "2027-02-26",
       "municipality": "Karlsruhe",
-      "location": "Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:30083:2026-08-14T06:27:17Z",
-      "siteId": "30083",
-      "point": [
-        8.509067,
-        49.093163
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-14",
-      "endDate": "2026-10-02",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Blankenlocher Straße 16"
+      "location": "Markgrafenstraße und Waldhornstraße"
     },
     {
       "kind": "new",
-      "signature": "new:30094",
-      "siteId": "30094",
+      "signature": "new:30221",
+      "siteId": "30221",
       "point": [
-        8.304282,
-        48.964677
+        8.530786,
+        49.098408
       ],
-      "closure": "obstruction",
-      "startDate": "2026-09-25",
+      "closure": "full",
+      "startDate": "2026-09-24",
       "endDate": "2026-10-09",
-      "municipality": "Rheinstetten",
-      "location": "Lupinenstraße 20"
+      "municipality": "Bruchsal",
+      "location": "Hubertusstraße 79"
     },
     {
       "kind": "new",
-      "signature": "new:30214",
-      "siteId": "30214",
+      "signature": "new:40161",
+      "siteId": "40161",
       "point": [
-        8.647635,
-        49.103691
+        8.467989,
+        49.061353
       ],
-      "closure": "obstruction",
-      "startDate": "2026-09-25",
-      "endDate": "2026-10-15",
-      "municipality": "Bruchsal",
-      "location": "Fichtenweg 21"
+      "closure": "none",
+      "startDate": "2026-09-28",
+      "endDate": "2026-11-20",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Allmendstraße 14"
     },
     {
       "kind": "starts-soon",

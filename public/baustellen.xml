@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Fri, 25 Sep 2026 09:15:24 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 25 Sep 2026 19:37:04 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -30,6 +30,42 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: 76297 Stutensee, Allmendstraße 14 – Stutensee]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40161</link>
+            <guid isPermaLink="false">faecherbagger:40161:2026-09-25T08:21:42Z</guid>
+            <pubDate>Fri, 25 Sep 2026 08:21:42 GMT</pubDate>
+            <description><![CDATA[Geplant · Bauliche Sondernutzung · Keine Behinderung
+Zeitraum: 28.09.2026 – 20.11.2026
+Hinweis: Gehwegsperrung wegen Gerüstaufstellung
+Verantwortlich: Privat
+Quelle: Stadt Stutensee]]></description>
+            <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Hubertusstraße 79 – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30221</link>
+            <guid isPermaLink="false">faecherbagger:30221:2026-09-25T07:19:11Z</guid>
+            <pubDate>Fri, 25 Sep 2026 07:19:11 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
+Zeitraum: 24.09.2026 – 09.10.2026
+Hinweis: Vollsperrung der Fahrbahn, Gehweg frei
+Verantwortlich: Privat
+Quelle: Stadt Bruchsal]]></description>
+            <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Markgrafenstraße und Waldhornstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2212</link>
+            <guid isPermaLink="false">faecherbagger:2026V2212:2026-09-24T22:00:00Z</guid>
+            <pubDate>Thu, 24 Sep 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Strom/TK-Versorgung · Keine Behinderung
+Zeitraum: 05.10.2026 – 26.02.2027
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten a 30 m, teilweise Notgehweg
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Strom/TK-Versorgung</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße – Karlsruhe]]></title>
@@ -871,18 +907,6 @@ Hinweis: Zeitweise Engstelle mit Lichtsignal auf der Steinkreuzstraße für Be- 
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
-        </item>
-        <item>
-            <title><![CDATA[Geplant: Markgrafenstraße und Waldhornstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2212</link>
-            <guid isPermaLink="false">faecherbagger:2026V2212:2026-09-15T22:00:00Z</guid>
-            <pubDate>Tue, 15 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 05.10.2026 – 26.02.2027
-Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten a 30 m, teilweise Notgehweg
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Strom/TK-Versorgung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße – Karlsruhe]]></title>
