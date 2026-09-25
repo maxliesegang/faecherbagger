@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Thu, 24 Sep 2026 19:32:48 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 25 Sep 2026 09:15:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -32,11 +32,22 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: 76297 Stutensee, Fichtenstraße 8 – Stutensee]]></title>
+            <title><![CDATA[Geplant: Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6073</link>
+            <guid isPermaLink="false">faecherbagger:2026V6073:2026-09-24T22:00:00Z</guid>
+            <pubDate>Thu, 24 Sep 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Geänderte Verkehrsführung · Keine Behinderung
+Zeitraum: 12.10.2026 – 16.10.2026
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Geänderte Verkehrsführung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: 76297 Stutensee, Fichtenstraße 8 – Stutensee]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30100</link>
             <guid isPermaLink="false">faecherbagger:30100:2026-09-24T08:42:14Z</guid>
             <pubDate>Thu, 24 Sep 2026 08:42:14 GMT</pubDate>
-            <description><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 25.09.2026 – 08.10.2026
 Hinweis: Gehwegvollsperrung
 Verantwortlich: Versorgungsunternehmen
@@ -56,6 +67,17 @@ Quelle: Stadt Stutensee]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
+            <title><![CDATA[Aktuell: Lupinenstraße 20 – Rheinstetten]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30094</link>
+            <guid isPermaLink="false">faecherbagger:30094:2026-09-24T06:45:27Z</guid>
+            <pubDate>Thu, 24 Sep 2026 06:45:27 GMT</pubDate>
+            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 25.09.2026 – 09.10.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></description>
+            <category>Strom/TK-Versorgung</category>
+        </item>
+        <item>
             <title><![CDATA[Geplant: Ebertstraße zw. Albtalbahnhof und Ebertstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1697</link>
             <guid isPermaLink="false">faecherbagger:2026V1697:2026-09-23T22:00:00Z</guid>
@@ -66,18 +88,6 @@ Hinweis: Kurfürstenstraße und Beiertheimer Allee = keine Ausfahrt auf Ebertstr
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Ettlinger Allee zw. Zufahrt PSK (Höhe Nürnberger Straße) u. Ausfahrt PSK Anliegerfahrbahn Richtung Schwarzwaldkreuz – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4877</link>
-            <guid isPermaLink="false">faecherbagger:2026V4877:2026-09-23T22:00:00Z</guid>
-            <pubDate>Wed, 23 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 11.08.2026 – 24.09.2026
-Hinweis: Entfall eines Roichtungsfahrstreifens, Geh- und Radweg entlang der Fahrbahn gesperrt, Umleitung über Anliegerfahrbahn
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gas/Wasser</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Pfinztalstraße zw. Marstallstaße und Karlsburgstraße – Karlsruhe]]></title>
@@ -92,27 +102,16 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: B36/ Neureuter Straße Höhe Gablonzer Straße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: B36/ Neureuter Straße Höhe Gablonzer Straße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5498</link>
             <guid isPermaLink="false">faecherbagger:2026V5498:2026-09-23T22:00:00Z</guid>
             <pubDate>Wed, 23 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
 Zeitraum: 25.09.2026 – 02.10.2026
 Hinweis: Fahrtrichtung stadtauswärts, 1-streifige Verkehrsführung, Reparatur Schieberkreuz
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
-        </item>
-        <item>
-            <title><![CDATA[Geplant: Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6073</link>
-            <guid isPermaLink="false">faecherbagger:2026V6073:2026-09-23T22:00:00Z</guid>
-            <pubDate>Wed, 23 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Geänderte Verkehrsführung · Vollsperrung
-Zeitraum: 12.10.2026 – 16.10.2026
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Geänderte Verkehrsführung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Tullastraße Gleisüberfahrt Höhe Schückstraße – Karlsruhe]]></title>
@@ -159,18 +158,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6056</link>
-            <guid isPermaLink="false">faecherbagger:2026V6056:2026-09-22T22:00:00Z</guid>
-            <pubDate>Tue, 22 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Straßenbau · Mit Behinderung
-Zeitraum: 24.09.2026 – 24.09.2026
-Hinweis: 1-streifige Verkehrsführung in beiden Fahrtrichtungen
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Straßenbau</category>
-        </item>
-        <item>
             <title><![CDATA[Geplant: Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6057</link>
             <guid isPermaLink="false">faecherbagger:2026V6057:2026-09-22T22:00:00Z</guid>
@@ -193,6 +180,18 @@ Hinweis: Halbseitige Straßensperrung wegen Freilegung Schacht
 Verantwortlich: Versorgungsunternehmen
 Quelle: Stadt Stutensee]]></description>
             <category>Straßenunterhaltung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Fichtenweg 21 – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30214</link>
+            <guid isPermaLink="false">faecherbagger:30214:2026-09-22T12:22:46Z</guid>
+            <pubDate>Tue, 22 Sep 2026 12:22:46 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 25.09.2026 – 15.10.2026
+Hinweis: Fahrbahn verengt.
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></description>
+            <category>Gas/Wasser</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Rheinhold-Frank-Straße zw. Belfortstraße und Mühlburger Tor – Karlsruhe]]></title>
@@ -1494,11 +1493,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Pfinzstraße zw. Pforzheiemr Straße und Durlacher Allee – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5490</link>
             <guid isPermaLink="false">faecherbagger:2026V5490:2026-09-09T22:00:00Z</guid>
             <pubDate>Wed, 09 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+            <description><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
 Zeitraum: 25.09.2026 – 25.09.2026
 Hinweis: vs. zw. 1:30 Uhr - 4:00 Uhr
 Verantwortlich: Stadtwerke Karlsruhe
@@ -2549,17 +2548,6 @@ Quelle: Stadt Bruchsal]]></description>
             <category>Fernwärme</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Kreuzung Römerstraße Storchenstraße – Rheinstetten]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30083</link>
-            <guid isPermaLink="false">faecherbagger:30083:2026-08-27T12:51:25Z</guid>
-            <pubDate>Thu, 27 Aug 2026 12:51:25 GMT</pubDate>
-            <description><![CDATA[Aktuell · Straßenunterhaltung · Vollsperrung
-Zeitraum: 07.09.2026 – 24.09.2026
-Verantwortlich: Stadtbauamt
-Quelle: Stadt Rheinstetten]]></description>
-            <category>Straßenunterhaltung</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0269</link>
             <guid isPermaLink="false">faecherbagger:2026V0269:2026-08-26T22:00:00Z</guid>
@@ -3268,6 +3256,18 @@ Quelle: Stadt Karlsruhe]]></description>
 Zeitraum: 15.09.2026 – 25.09.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></description>
+            <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: 76297 Stutensee, Blankenlocher Straße 16 – Stutensee]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30083</link>
+            <guid isPermaLink="false">faecherbagger:30083:2026-08-14T06:27:17Z</guid>
+            <pubDate>Fri, 14 Aug 2026 06:27:17 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 14.08.2026 – 02.10.2026
+Hinweis: Halbseitige Straßensperrung
+Verantwortlich: Telekommunikation
+Quelle: Stadt Stutensee]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
@@ -5594,11 +5594,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Südtangente zw. AS3 und AS4 – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Südtangente zw. AS3 und AS4 – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0531</link>
             <guid isPermaLink="false">faecherbagger:2026V0531:2026-01-26T23:00:00Z</guid>
             <pubDate>Mon, 26 Jan 2026 23:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Straßenunterhaltung · Mit Behinderung
+            <description><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
 Zeitraum: 25.09.2026 – 25.09.2026
 Hinweis: wechselseitig, Entfall von Seitenstreifen in der Nordröhre und linker Fahrstreifen in der Südröhre
 Verantwortlich: Tiefbauamt
