@@ -1,34 +1,6 @@
 {
-  "generatedAt": "2026-09-27T09:42:13.638Z",
+  "generatedAt": "2026-09-27T19:21:22.499Z",
   "events": [
-    {
-      "kind": "changed",
-      "signature": "changed:40146:2026-08-04T11:03:25Z",
-      "siteId": "40146",
-      "point": [
-        8.482822,
-        49.100893
-      ],
-      "closure": "none",
-      "startDate": "2026-09-07",
-      "endDate": "2026-10-09",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Berliner Allee 40"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V1768",
-      "siteId": "2026V1768",
-      "point": [
-        8.386075,
-        48.993024
-      ],
-      "closure": "full",
-      "startDate": "2027-09-27",
-      "endDate": "2027-10-24",
-      "municipality": "Karlsruhe",
-      "location": "Marie-Alexandra-Straße zw. Cäciliastraße und Wartburgstraße, Wartburgstraße zw. Breite Straße und Hohenzollernstraße"
-    },
     {
       "kind": "starts-soon",
       "signature": "starts-soon:2025V7301:2026-09-28",
