@@ -1961,7 +1961,7 @@
   },
   {
     "id": "2025V7301",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
@@ -1981,7 +1981,7 @@
   },
   {
     "id": "2025V7302",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
@@ -3350,14 +3350,14 @@
     "location": "Ebertstraße zw. Albtalbahnhof und Ebertstraße",
     "notes": "Kurfürstenstraße und Beiertheimer Allee = keine Ausfahrt auf Ebertstraße",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-28",
+    "startDate": "2026-09-29",
     "endDate": "2026-11-05",
     "point": [
       8.395433,
       48.994454
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-23T22:00:00Z"
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V1762",
@@ -3901,23 +3901,23 @@
   },
   {
     "id": "2026V2212",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Markgrafenstraße und Waldhornstraße",
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten a 30 m, teilweise Notgehweg",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-05",
-    "endDate": "2027-02-26",
+    "startDate": "2026-09-28",
+    "endDate": "2027-01-21",
     "point": [
       8.411983,
       49.007558
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-24T22:00:00Z"
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V2274",
@@ -5151,13 +5151,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-07-15",
-    "endDate": "2026-09-30",
+    "endDate": "2026-11-30",
     "point": [
       8.413283,
       49.011928
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V4194",
@@ -5171,13 +5171,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-31",
-    "endDate": "2026-09-27",
+    "endDate": "2026-10-12",
     "point": [
       8.47753,
       48.971312
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-16T22:00:00Z"
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V4246",
@@ -5501,7 +5501,7 @@
   },
   {
     "id": "2026V4393",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "obstruction",
@@ -5835,26 +5835,6 @@
     "point": [
       8.44756,
       49.029746
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
-  },
-  {
-    "id": "2026V4705",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-07-30",
-    "endDate": "2026-09-27",
-    "point": [
-      8.441961,
-      49.030897
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-23T22:00:00Z"
@@ -6421,7 +6401,7 @@
   },
   {
     "id": "2026V5327",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "one-direction",
@@ -6941,7 +6921,7 @@
   },
   {
     "id": "2026V5716",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7421,7 +7401,7 @@
   },
   {
     "id": "2026V6057",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -7880,6 +7860,26 @@
     "lastModified": "2026-09-24T06:45:27Z"
   },
   {
+    "id": "30095",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Akazienweg 3a, vor Hausnummer 3",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-16",
+    "point": [
+      8.338866,
+      48.96377
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-24T07:18:45Z"
+  },
+  {
     "id": "30096",
     "phase": "active",
     "category": "road-maintenance",
@@ -8120,6 +8120,26 @@
     "lastModified": "2026-09-16T07:10:18Z"
   },
   {
+    "id": "30213",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Friedenstraße 16",
+    "notes": "Arbeiten am Kanal. Dauer: Mehrere Tage im Zeitraum.\n\nFahrbahn und Gehweg werden verengt.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-07",
+    "point": [
+      8.584936,
+      49.125733
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-22T07:12:07Z"
+  },
+  {
     "id": "30214",
     "phase": "active",
     "category": "gas-water",
@@ -8138,6 +8158,66 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-22T12:22:46Z"
+  },
+  {
+    "id": "30217",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Bruchsaler Str. 60",
+    "notes": "Gehweg gesperrt mit Notweg auf der Fahrbahnbahn",
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-23",
+    "endDate": "2026-09-29",
+    "point": [
+      8.555784,
+      49.089457
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-23T12:54:20Z"
+  },
+  {
+    "id": "30219",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Franz-Sigel-Straße 53",
+    "notes": "Kanalschaden mit Absenkung der Fahrbahn kurz nach der Einmündung Florian-Geyer-Straße in Ri. Süden.\n\nFahrbahn und Gehweg werden verengt.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-16",
+    "point": [
+      8.572083,
+      49.113916
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-24T06:49:24Z"
+  },
+  {
+    "id": "30220",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Paul-Gerhardt-Straße 32",
+    "notes": "Kanalschaden gegenüber der Einmündung Bruhrainweg.\nDie Fahrbahn muss für mehrere Tage im Zeitraum verengt werden.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-16",
+    "point": [
+      8.573428,
+      49.118058
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-25T06:21:44Z"
   },
   {
     "id": "30221",
@@ -8645,19 +8725,19 @@
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Rohrackerweg 21",
-    "notes": "Gehwegsperrung sowie halbseitige Straßensperrung",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Karlsruher Straße 38",
+    "notes": null,
     "cause": "Privat",
-    "startDate": "2026-05-11",
-    "endDate": "2026-12-31",
+    "startDate": "2026-09-28",
+    "endDate": "2026-09-29",
     "point": [
-      8.466288,
-      49.066397
+      8.389063,
+      49.020313
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-05-12T09:27:00Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-23T14:23:17Z"
   },
   {
     "id": "40072",
@@ -9321,7 +9401,7 @@
   },
   {
     "id": "40161",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "none",
@@ -9338,6 +9418,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-09-25T08:21:42Z"
+  },
+  {
+    "id": "40162",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Eggensteiner Straße 101a",
+    "notes": "Halbseitige Sperrung mit Einrichtung Halteverbot",
+    "cause": "Privat",
+    "startDate": "2026-09-30",
+    "endDate": "2026-10-02",
+    "point": [
+      8.462209,
+      49.065803
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-28T07:04:16Z"
   },
   {
     "id": "40166",
@@ -9748,13 +9848,13 @@
     "siteType": "stationary",
     "municipality": "Ettlingen",
     "location": "Durlacher Straße",
-    "notes": "Vollsperrung zwischen Vogelsangweg und Steigenhohlstraße\n\nDie Bushaltestelle \"Huttenkreuz\" wird in die Karlsruher Straße (Ibis, beidseitig) verlegt. Bitte die geänderte Routenführung/geänderte Abfahrzeiten der betroffenen Linien beachten.\n\nIm Zuge der geplanten nächtlichen Wartungsarbeiten im Tunnel wird die Umleitungsbeschilderung angepasst und die Verkehrsteilnehmer bereits am Seehof informiert.\n\nWir bitten alle Verkehrsteilnehmer um Verständnis und Beachtung der aufgestellten Verkehrszeichen.",
+    "notes": "Vollsperrung zwischen Gutleuthausstraße und Alexiusstraße.Im Vogelsangweg ist das Baufeld bis zur Ausfahrt vom Friedhofsparkplatz ausgedehnt. Eine Beschilderung aus der Innenstadt zum Friedhof ist ausgeschildert.\n\nWir bitten alle Verkehrsteilnehmer um Verständnis und Beachtung der aufgestellten Verkehrszeichen.",
     "cause": "Stadtwerke Ettlingen",
     "startDate": "2026-07-07",
     "endDate": "2026-10-30",
     "point": [
-      8.412285,
-      48.94667
+      8.412648,
+      48.947492
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-06-24T05:29:54Z"
@@ -9818,6 +9918,46 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-07-29T07:56:13Z"
+  },
+  {
+    "id": "40392",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "L613 Wilhelmshöhe",
+    "notes": "Korrekturarbeiten an den Bushaltestellen",
+    "cause": "Tiefbauamt Ettlingen",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-02",
+    "point": [
+      8.425272,
+      48.931682
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-09-22T07:58:55Z"
+  },
+  {
+    "id": "40403",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Ludwig-Albert-Straße 8",
+    "notes": "Vollsperrung wg. Abbrucharbeiten",
+    "cause": "Privat",
+    "startDate": "2026-09-28",
+    "endDate": "2026-10-05",
+    "point": [
+      8.410942,
+      48.943826
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-09-24T05:22:58Z"
   },
   {
     "id": "40643",
