@@ -1,187 +1,103 @@
 {
-  "generatedAt": "2026-09-28T10:22:25.856Z",
+  "generatedAt": "2026-09-28T21:26:16.114Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V1697:2026-09-27T22:00:00Z",
-      "siteId": "2026V1697",
+      "signature": "changed:2026V0635:2026-09-27T22:00:00Z",
+      "siteId": "2026V0635",
       "point": [
-        8.395433,
-        48.994454
+        8.374221,
+        49.009587
       ],
       "closure": "full",
-      "startDate": "2026-09-29",
-      "endDate": "2026-11-05",
+      "startDate": "2026-03-02",
+      "endDate": "2026-11-20",
       "municipality": "Karlsruhe",
-      "location": "Ebertstraße zw. Albtalbahnhof und Ebertstraße"
+      "location": "Goethestraße zw. Uhlandstraße und Yorckstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V2212:2026-09-27T22:00:00Z",
-      "siteId": "2026V2212",
+      "signature": "changed:2026V0858:2026-09-27T22:00:00Z",
+      "siteId": "2026V0858",
       "point": [
-        8.411983,
-        49.007558
+        8.410113,
+        49.008655
+      ],
+      "closure": "full",
+      "startDate": "2026-04-13",
+      "endDate": "2026-11-27",
+      "municipality": "Karlsruhe",
+      "location": "Zähringer Straße zw. Waldhornstraße und Kronenstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0861:2026-09-27T22:00:00Z",
+      "siteId": "2026V0861",
+      "point": [
+        8.410054,
+        49.008584
       ],
       "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2027-01-21",
+      "startDate": "2026-04-13",
+      "endDate": "2026-11-27",
       "municipality": "Karlsruhe",
-      "location": "Markgrafenstraße und Waldhornstraße"
+      "location": "Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V4127:2026-09-27T22:00:00Z",
-      "siteId": "2026V4127",
+      "signature": "changed:2026V4484:2026-09-27T22:00:00Z",
+      "siteId": "2026V4484",
       "point": [
-        8.413283,
-        49.011928
+        8.3863,
+        48.998591
       ],
-      "closure": "full",
-      "startDate": "2026-07-15",
-      "endDate": "2026-11-30",
+      "closure": "obstruction",
+      "startDate": "2026-07-27",
+      "endDate": "2026-11-15",
       "municipality": "Karlsruhe",
-      "location": "Fritz-Haber-Weg"
+      "location": "Südendstraße zw. Brauerstraße und Boeckhstraße"
     },
     {
-      "kind": "changed",
-      "signature": "changed:2026V4194:2026-09-27T22:00:00Z",
-      "siteId": "2026V4194",
+      "kind": "new",
+      "signature": "new:2026V5422",
+      "siteId": "2026V5422",
       "point": [
-        8.47753,
-        48.971312
+        8.448107,
+        49.039267
       ],
-      "closure": "full",
+      "closure": "none",
+      "startDate": "2026-09-25",
+      "endDate": "2026-10-14",
+      "municipality": "Karlsruhe",
+      "location": "Bahnübergang Verlängerung Kolberger Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6146",
+      "siteId": "2026V6146",
+      "point": [
+        8.460018,
+        49.001171
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40169",
+      "siteId": "40169",
+      "point": [
+        8.588031,
+        49.077188
+      ],
+      "closure": "obstruction",
       "startDate": "2026-08-31",
-      "endDate": "2026-10-12",
-      "municipality": "Karlsruhe",
-      "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:40069:2026-09-23T14:23:17Z",
-      "siteId": "40069",
-      "point": [
-        8.389063,
-        49.020313
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-09-29",
-      "municipality": "Rheinstetten",
-      "location": "Karlsruher Straße 38"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30095",
-      "siteId": "30095",
-      "point": [
-        8.338866,
-        48.96377
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-10-16",
-      "municipality": "Rheinstetten",
-      "location": "Akazienweg 3a, vor Hausnummer 3"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30213",
-      "siteId": "30213",
-      "point": [
-        8.584936,
-        49.125733
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-10-07",
+      "endDate": "2026-10-31",
       "municipality": "Bruchsal",
-      "location": "Friedenstraße 16"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30217",
-      "siteId": "30217",
-      "point": [
-        8.555784,
-        49.089457
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-23",
-      "endDate": "2026-09-29",
-      "municipality": "Bruchsal",
-      "location": "Bruchsaler Str. 60"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30219",
-      "siteId": "30219",
-      "point": [
-        8.572083,
-        49.113916
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-10-16",
-      "municipality": "Bruchsal",
-      "location": "Franz-Sigel-Straße 53"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30220",
-      "siteId": "30220",
-      "point": [
-        8.573428,
-        49.118058
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-10-16",
-      "municipality": "Bruchsal",
-      "location": "Paul-Gerhardt-Straße 32"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40162",
-      "siteId": "40162",
-      "point": [
-        8.462209,
-        49.065803
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-09-30",
-      "endDate": "2026-10-02",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Eggensteiner Straße 101a"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40392",
-      "siteId": "40392",
-      "point": [
-        8.425272,
-        48.931682
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-28",
-      "endDate": "2026-10-02",
-      "municipality": "Ettlingen",
-      "location": "L613 Wilhelmshöhe"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40403",
-      "siteId": "40403",
-      "point": [
-        8.410942,
-        48.943826
-      ],
-      "closure": "full",
-      "startDate": "2026-09-28",
-      "endDate": "2026-10-05",
-      "municipality": "Ettlingen",
-      "location": "Ludwig-Albert-Straße 8"
+      "location": "Burgstraße 5"
     },
     {
       "kind": "starts-soon",

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-09-28T10:22:25.856Z</updated>
+    <updated>2026-09-28T21:26:16.114Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -44,6 +44,41 @@ Hinweis: Halbseitige Sperrung mit Einrichtung Halteverbot
 Verantwortlich: Privat
 Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Goethestraße zw. Uhlandstraße und Yorckstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0635:2026-09-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0635"/>
+        <updated>2026-09-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 02.03.2026 – 20.11.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Zähringer Straße zw. Waldhornstraße und Kronenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0858:2026-09-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0858"/>
+        <updated>2026-09-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Brückenbau · Vollsperrung
+Zeitraum: 13.04.2026 – 27.11.2026
+Hinweis: Geh- und Radweg sowie Anlieferzufahrten (Rampen) Jubez und KIT/Fritz-Erler-Garage
+Verantwortlich: Hochbau und Gebäudewirtschaft
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Brückenbau" term="bridge"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V0861:2026-09-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0861"/>
+        <updated>2026-09-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Brückenbau · Mit Behinderung
+Zeitraum: 13.04.2026 – 27.11.2026
+Hinweis: Lokale Engstelle, Entfall der Radfahrstreifen auf der Fahrbahn, VBK Streckensperrung
+Verantwortlich: Hochbau und Gebäudewirtschaft
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Ebertstraße zw. Albtalbahnhof und Ebertstraße – Karlsruhe]]></title>
@@ -90,6 +125,42 @@ Zeitraum: 31.08.2026 – 12.10.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Südendstraße zw. Brauerstraße und Boeckhstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4484:2026-09-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4484"/>
+        <updated>2026-09-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 27.07.2026 – 15.11.2026
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich = Südseite gesperrt, signalisierter Überweg
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Bahnübergang Verlängerung Kolberger Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5422:2026-09-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5422"/>
+        <updated>2026-09-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gleisbau · Keine Behinderung
+Zeitraum: 25.09.2026 – 14.10.2026
+Hinweis: Beeinträchtigung nur Radweg und Fußgänger, Umleitung über BÜ Elbinger Straße
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6146:2026-09-27T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6146"/>
+        <updated>2026-09-27T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Sonstiges · Mit Behinderung
+Zeitraum: 06.10.2026 – 06.10.2026
+Hinweis: Zeitweise Fahrstreifensperrung abwechselnd in beide Fahrtrichtungen
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Sonstiges" term="other"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Allmendstraße 14 – Stutensee]]></title>
@@ -2361,6 +2432,18 @@ Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Burgstraße 5 – Bruchsal]]></title>
+        <id>faecherbagger:40169:2026-08-31T08:32:43Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40169"/>
+        <updated>2026-08-31T08:32:43.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 31.08.2026 – 31.10.2026
+Hinweis: Verengung der Fahrbahn wegen Baugerüst
+Verantwortlich: Privat
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Killisfeldstraße zw. Ottostraße u. Lissenstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V6969:2026-08-30T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6969"/>
@@ -2845,17 +2928,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Goethestraße zw. Uhlandstraße und Yorckstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0635:2026-08-23T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0635"/>
-        <updated>2026-08-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 02.03.2026 – 02.10.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4336:2026-08-23T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4336"/>
@@ -3027,18 +3099,6 @@ Hinweis: genauer Termin noch nicht bekannt, 2-4 Nächte, beide Fahrtrichtungen, 
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Südendstraße zw. Brauerstraße und Boeckhstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4484:2026-08-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4484"/>
-        <updated>2026-08-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 27.07.2026 – 31.10.2026
-Hinweis: Arbeitsstelle im Geh-, und Radwegbereich = Südseite gesperrt, signalisierter Überweg
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Knielinger Allee zw. Fachhochschule und Erzbergerstraße – Karlsruhe]]></title>
@@ -3860,7 +3920,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40052"/>
         <updated>2026-07-17T08:52:33.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 20.07.2026 – 01.10.2026
+Zeitraum: 20.07.2026 – 29.01.2027
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
@@ -5031,30 +5091,6 @@ Zeitraum: 23.03.2026 – 30.09.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Zähringer Straße zw. Waldhornstraße und Kronenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0858:2026-03-15T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0858"/>
-        <updated>2026-03-15T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Brückenbau · Vollsperrung
-Zeitraum: 13.04.2026 – 23.10.2026
-Hinweis: Geh- und Radweg sowie Anlieferzufahrten (Rampen) Jubez und KIT/Fritz-Erler-Garage
-Verantwortlich: Hochbau und Gebäudewirtschaft
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Brückenbau" term="bridge"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Fritz-Erler-Straße zw. Markgrafenstraße u. Kaiserstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V0861:2026-03-15T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0861"/>
-        <updated>2026-03-15T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Brückenbau · Mit Behinderung
-Zeitraum: 13.04.2026 – 23.10.2026
-Hinweis: Lokale Engstelle, Entfall der Radfahrstreifen auf der Fahrbahn, VBK Streckensperrung
-Verantwortlich: Hochbau und Gebäudewirtschaft
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Margeritenweg 33 – Bruchsal]]></title>

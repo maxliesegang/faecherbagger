@@ -2811,13 +2811,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-03-02",
-    "endDate": "2026-10-02",
+    "endDate": "2026-11-20",
     "point": [
       8.374221,
       49.009587
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V0658",
@@ -3051,13 +3051,13 @@
     "notes": "Geh- und Radweg sowie Anlieferzufahrten (Rampen) Jubez und KIT/Fritz-Erler-Garage",
     "cause": "Hochbau und Gebäudewirtschaft",
     "startDate": "2026-04-13",
-    "endDate": "2026-10-23",
+    "endDate": "2026-11-27",
     "point": [
       8.410113,
       49.008655
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-15T23:00:00Z"
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V0861",
@@ -3071,13 +3071,13 @@
     "notes": "Lokale Engstelle, Entfall der Radfahrstreifen auf der Fahrbahn, VBK Streckensperrung",
     "cause": "Hochbau und Gebäudewirtschaft",
     "startDate": "2026-04-13",
-    "endDate": "2026-10-23",
+    "endDate": "2026-11-27",
     "point": [
       8.410054,
       49.008584
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-15T23:00:00Z"
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V0876",
@@ -5571,13 +5571,13 @@
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich = Südseite gesperrt, signalisierter Überweg",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-27",
-    "endDate": "2026-10-31",
+    "endDate": "2026-11-15",
     "point": [
       8.3863,
       48.998591
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V4500",
@@ -6580,6 +6580,26 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
+    "id": "2026V5422",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bahnübergang Verlängerung Kolberger Straße",
+    "notes": "Beeinträchtigung nur Radweg und Fußgänger, Umleitung über BÜ Elbinger Straße",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-25",
+    "endDate": "2026-10-14",
+    "point": [
+      8.448107,
+      49.039267
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-27T22:00:00Z"
+  },
+  {
     "id": "2026V5444",
     "phase": "active",
     "category": "power-telecom",
@@ -7478,6 +7498,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-23T22:00:00Z"
+  },
+  {
+    "id": "2026V6146",
+    "phase": "upcoming",
+    "category": "other",
+    "artRaw": "Bauwerksprüfung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659",
+    "notes": "Zeitweise Fahrstreifensperrung abwechselnd in beide Fahrtrichtungen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-06",
+    "endDate": "2026-10-06",
+    "point": [
+      8.460018,
+      49.001171
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "30032",
@@ -8551,7 +8591,7 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-07-20",
-    "endDate": "2026-10-01",
+    "endDate": "2027-01-29",
     "point": [
       8.305898,
       48.96542
@@ -9458,6 +9498,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-28T10:21:16Z"
+  },
+  {
+    "id": "40169",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Burgstraße 5",
+    "notes": "Verengung der Fahrbahn wegen Baugerüst",
+    "cause": "Privat",
+    "startDate": "2026-08-31",
+    "endDate": "2026-10-31",
+    "point": [
+      8.588031,
+      49.077188
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-31T08:32:43Z"
   },
   {
     "id": "40172",
