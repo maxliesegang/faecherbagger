@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Mon, 28 Sep 2026 21:26:16 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 29 Sep 2026 10:17:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -30,6 +30,29 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Isoldestraße zw. Stösserstraße und Niebelungenstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4683</link>
+            <guid isPermaLink="false">faecherbagger:2026V4683:2026-09-28T22:00:00Z</guid>
+            <pubDate>Mon, 28 Sep 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 31.07.2026 – 11.12.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Grillparzerstraße zw. Kaiserallee u. Gellertstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6140</link>
+            <guid isPermaLink="false">faecherbagger:2026V6140:2026-09-28T22:00:00Z</guid>
+            <pubDate>Mon, 28 Sep 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 02.10.2026 – 02.10.2026
+Hinweis: Lokale Sperrung Höhe Nr. 9
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Kraneinsatz</category>
         </item>
         <item>
             <title><![CDATA[Geplant: 76297 Stutensee, Eggensteiner Straße 101a – Stutensee]]></title>
@@ -79,11 +102,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Brückenbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Ebertstraße zw. Albtalbahnhof und Ebertstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Ebertstraße zw. Albtalbahnhof und Ebertstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1697</link>
             <guid isPermaLink="false">faecherbagger:2026V1697:2026-09-27T22:00:00Z</guid>
             <pubDate>Sun, 27 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Fernwärme · Vollsperrung
+            <description><![CDATA[Aktuell · Fernwärme · Vollsperrung
 Zeitraum: 29.09.2026 – 05.11.2026
 Hinweis: Kurfürstenstraße und Beiertheimer Allee = keine Ausfahrt auf Ebertstraße
 Verantwortlich: Stadtwerke Karlsruhe
@@ -207,6 +230,17 @@ Zeitraum: 12.10.2026 – 16.10.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></description>
             <category>Geänderte Verkehrsführung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Kapellenstraße 3 – Rheinstetten]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40070</link>
+            <guid isPermaLink="false">faecherbagger:40070:2026-09-24T09:32:16Z</guid>
+            <pubDate>Thu, 24 Sep 2026 09:32:16 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 29.09.2026 – 29.09.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></description>
+            <category>Bauliche Sondernutzung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: 76297 Stutensee, Fichtenstraße 8 – Stutensee]]></title>
@@ -1276,11 +1310,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5649</link>
             <guid isPermaLink="false">faecherbagger:2026V5649:2026-09-14T22:00:00Z</guid>
             <pubDate>Mon, 14 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
+            <description><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
 Zeitraum: 29.09.2026 – 30.10.2026
 Hinweis: Dauer vslo. 2 Wochen
 Verantwortlich: Stadtwerke Karlsruhe
@@ -3111,11 +3145,11 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Straßenbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Luisenstraße zw. Marienstraße und Wilhelmstraße – Karlsruhe]]></title>
+            <title><![CDATA[Aktuell: Luisenstraße zw. Marienstraße und Wilhelmstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5274</link>
             <guid isPermaLink="false">faecherbagger:2026V5274:2026-08-19T22:00:00Z</guid>
             <pubDate>Wed, 19 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
 Zeitraum: 29.09.2026 – 29.09.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></description>
@@ -3522,6 +3556,17 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
+            <title><![CDATA[Aktuell: 76297 Stutensee, Gartenstraße 4-6 – Stutensee]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40142</link>
+            <guid isPermaLink="false">faecherbagger:40142:2026-08-03T05:55:39Z</guid>
+            <pubDate>Mon, 03 Aug 2026 05:55:39 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Keine Behinderung
+Zeitraum: 17.08.2026 – 30.10.2026
+Verantwortlich: Privat
+Quelle: Stadt Stutensee]]></description>
+            <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
             <title><![CDATA[Aktuell: Wolfweg zw. Turmbergstraße und Blankenhornweg – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0743</link>
             <guid isPermaLink="false">faecherbagger:2026V0743:2026-08-02T22:00:00Z</guid>
@@ -3728,18 +3773,6 @@ Quelle: Stadt Rheinstetten]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Heidelberger Straße 4 – Bruchsal]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40142</link>
-            <guid isPermaLink="false">faecherbagger:40142:2026-07-28T08:46:02Z</guid>
-            <pubDate>Tue, 28 Jul 2026 08:46:02 GMT</pubDate>
-            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Keine Behinderung
-Zeitraum: 24.08.2026 – 28.09.2026
-Hinweis: Geh- und Radweg gesperrt, Umleitung ist ausgeschildert
-Verantwortlich: Privat
-Quelle: Stadt Bruchsal]]></description>
-            <category>Bauliche Sondernutzung</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: 76297 Stutensee, Stutenseer Allee Brückenbauwerk 119 – Stutensee]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40138</link>
             <guid isPermaLink="false">faecherbagger:40138:2026-07-28T07:57:11Z</guid>
@@ -3749,17 +3782,6 @@ Zeitraum: 03.08.2026 – 17.11.2026
 Hinweis: Vollsperrung
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Stutensee]]></description>
-            <category>Bauliche Sondernutzung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Isoldestraße zw. Stösserstraße und Niebelungenstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4683</link>
-            <guid isPermaLink="false">faecherbagger:2026V4683:2026-07-27T22:00:00Z</guid>
-            <pubDate>Mon, 27 Jul 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 31.07.2026 – 16.10.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>

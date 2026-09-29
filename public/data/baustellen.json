@@ -3341,7 +3341,7 @@
   },
   {
     "id": "2026V1697",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -5791,13 +5791,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-07-31",
-    "endDate": "2026-10-16",
+    "endDate": "2026-12-11",
     "point": [
       8.366439,
       49.016974
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-27T22:00:00Z"
+    "lastModified": "2026-09-28T22:00:00Z"
   },
   {
     "id": "2026V4696",
@@ -6361,7 +6361,7 @@
   },
   {
     "id": "2026V5274",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -6761,7 +6761,7 @@
   },
   {
     "id": "2026V5649",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "one-direction",
@@ -7498,6 +7498,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-23T22:00:00Z"
+  },
+  {
+    "id": "2026V6140",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Grillparzerstraße zw. Kaiserallee u. Gellertstraße",
+    "notes": "Lokale Sperrung Höhe Nr. 9",
+    "cause": "Privat",
+    "startDate": "2026-10-02",
+    "endDate": "2026-10-02",
+    "point": [
+      8.372387,
+      49.010187
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-28T22:00:00Z"
   },
   {
     "id": "2026V6146",
@@ -8780,6 +8800,26 @@
     "lastModified": "2026-09-23T14:23:17Z"
   },
   {
+    "id": "40070",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Kapellenstraße 3",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-29",
+    "endDate": "2026-09-29",
+    "point": [
+      8.293872,
+      48.960735
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-24T09:32:16Z"
+  },
+  {
     "id": "40072",
     "phase": "active",
     "category": "special-use",
@@ -9226,18 +9266,18 @@
     "artRaw": "Bauliche Sondernutzung",
     "closure": "none",
     "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Heidelberger Straße 4",
-    "notes": "Geh- und Radweg gesperrt, Umleitung ist ausgeschildert",
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Gartenstraße 4-6",
+    "notes": null,
     "cause": "Privat",
-    "startDate": "2026-08-24",
-    "endDate": "2026-09-28",
+    "startDate": "2026-08-17",
+    "endDate": "2026-10-30",
     "point": [
-      8.558537,
-      49.112861
+      8.514636,
+      49.092806
     ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-07-28T08:46:02Z"
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-08-03T05:55:39Z"
   },
   {
     "id": "40143",
