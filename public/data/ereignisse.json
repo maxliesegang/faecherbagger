@@ -1,61 +1,103 @@
 {
-  "generatedAt": "2026-09-29T10:17:54.273Z",
+  "generatedAt": "2026-09-29T20:17:08.608Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V4683:2026-09-28T22:00:00Z",
-      "siteId": "2026V4683",
+      "signature": "changed:2026V0096:2026-09-28T22:00:00Z",
+      "siteId": "2026V0096",
       "point": [
-        8.366439,
-        49.016974
+        8.379891,
+        49.005085
       ],
-      "closure": "full",
-      "startDate": "2026-07-31",
-      "endDate": "2026-12-11",
+      "closure": "obstruction",
+      "startDate": "2026-11-07",
+      "endDate": "2027-02-21",
       "municipality": "Karlsruhe",
-      "location": "Isoldestraße zw. Stösserstraße und Niebelungenstraße"
+      "location": "Gartenstraße zw. Brauerstraße u. Kriegstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:40142:2026-08-03T05:55:39Z",
-      "siteId": "40142",
+      "signature": "changed:2026V0691:2026-09-28T22:00:00Z",
+      "siteId": "2026V0691",
       "point": [
-        8.514636,
-        49.092806
+        8.381675,
+        49.009031
+      ],
+      "closure": "full",
+      "startDate": "2026-10-19",
+      "endDate": "2027-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V2308:2026-09-28T22:00:00Z",
+      "siteId": "2026V2308",
+      "point": [
+        8.379528,
+        49.043175
+      ],
+      "closure": "full",
+      "startDate": "2026-04-27",
+      "endDate": "2026-10-31",
+      "municipality": "Karlsruhe",
+      "location": "Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V7017",
+      "siteId": "2025V7017",
+      "point": [
+        8.3788,
+        49.005398
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-03",
+      "endDate": "2026-11-07",
+      "municipality": "Karlsruhe",
+      "location": "Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V0286",
+      "siteId": "2026V0286",
+      "point": [
+        8.381355,
+        49.004642
+      ],
+      "closure": "full",
+      "startDate": "2026-08-03",
+      "endDate": "2026-11-07",
+      "municipality": "Karlsruhe",
+      "location": "Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V0768",
+      "siteId": "2026V0768",
+      "point": [
+        8.47583,
+        49.002039
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2027-03-15",
+      "municipality": "Karlsruhe",
+      "location": "Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40137",
+      "siteId": "40137",
+      "point": [
+        8.638782,
+        49.105698
       ],
       "closure": "none",
-      "startDate": "2026-08-17",
-      "endDate": "2026-10-30",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Gartenstraße 4-6"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6140",
-      "siteId": "2026V6140",
-      "point": [
-        8.372387,
-        49.010187
-      ],
-      "closure": "full",
-      "startDate": "2026-10-02",
-      "endDate": "2026-10-02",
-      "municipality": "Karlsruhe",
-      "location": "Grillparzerstraße zw. Kaiserallee u. Gellertstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40070",
-      "siteId": "40070",
-      "point": [
-        8.293872,
-        48.960735
-      ],
-      "closure": "full",
-      "startDate": "2026-09-29",
-      "endDate": "2026-09-29",
-      "municipality": "Rheinstetten",
-      "location": "Kapellenstraße 3"
+      "startDate": "2026-07-22",
+      "endDate": "2026-10-16",
+      "municipality": "Bruchsal",
+      "location": "Schillerstraße 12"
     },
     {
       "kind": "starts-soon",

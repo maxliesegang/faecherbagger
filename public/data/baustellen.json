@@ -1940,6 +1940,26 @@
     "lastModified": "2026-08-30T22:00:00Z"
   },
   {
+    "id": "2025V7017",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-08-03",
+    "endDate": "2026-11-07",
+    "point": [
+      8.3788,
+      49.005398
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-28T22:00:00Z"
+  },
+  {
     "id": "2025V7216",
     "phase": "active",
     "category": "district-heating",
@@ -2101,7 +2121,7 @@
   },
   {
     "id": "2026V0096",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -2110,14 +2130,14 @@
     "location": "Gartenstraße zw. Brauerstraße u. Kriegstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-14",
+    "startDate": "2026-11-07",
     "endDate": "2027-02-21",
     "point": [
       8.379891,
       49.005085
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-05T23:00:00Z"
+    "lastModified": "2026-09-28T22:00:00Z"
   },
   {
     "id": "2026V0097",
@@ -2580,6 +2600,26 @@
     "lastModified": "2026-03-09T23:00:00Z"
   },
   {
+    "id": "2026V0286",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz",
+    "notes": "Vollsperrung Gartenstraße vor Kreuzung Steinhäuserstraße mit Kopfwender",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-03",
+    "endDate": "2026-11-07",
+    "point": [
+      8.381355,
+      49.004642
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-28T22:00:00Z"
+  },
+  {
     "id": "2026V0289",
     "phase": "active",
     "category": "power-telecom",
@@ -2910,14 +2950,14 @@
     "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße",
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-05",
+    "startDate": "2026-10-19",
     "endDate": "2027-12-31",
     "point": [
       8.381675,
       49.009031
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
+    "lastModified": "2026-09-28T22:00:00Z"
   },
   {
     "id": "2026V0725",
@@ -2978,6 +3018,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-02-18T23:00:00Z"
+  },
+  {
+    "id": "2026V0768",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße",
+    "notes": "Abwicklung in mehreren Bauabschnitte, Straßenquerungen = lokale Engstelle wechselseitig, Arbeitsstelle im Geh-, und Radwegbereich",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-05",
+    "endDate": "2027-03-15",
+    "point": [
+      8.47583,
+      49.002039
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-28T22:00:00Z"
   },
   {
     "id": "2026V0781",
@@ -3880,26 +3940,6 @@
     "lastModified": "2026-08-24T22:00:00Z"
   },
   {
-    "id": "2026V2140",
-    "phase": "upcoming",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bismarckstraße zw. Schirmerstraße und Seminarstraße",
-    "notes": "Aufteilung nicht vorgenommen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-09",
-    "endDate": "2027-04-30",
-    "point": [
-      8.392439,
-      49.012933
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
-  },
-  {
     "id": "2026V2212",
     "phase": "active",
     "category": "power-telecom",
@@ -3951,13 +3991,13 @@
     "notes": "Höhe Haus Nr. 20",
     "cause": "Privat",
     "startDate": "2026-04-27",
-    "endDate": "2026-10-01",
+    "endDate": "2026-10-31",
     "point": [
       8.379528,
       49.043175
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-16T22:00:00Z"
+    "lastModified": "2026-09-28T22:00:00Z"
   },
   {
     "id": "2026V2409",
@@ -7644,14 +7684,14 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": "mobile",
     "municipality": "Rheinstetten",
     "location": "Diverse Straßen",
     "notes": null,
     "cause": "Telekommunikation",
     "startDate": "2026-07-01",
-    "endDate": "2026-10-15",
+    "endDate": "2026-12-20",
     "point": [
       8.293321,
       48.961245
@@ -9220,6 +9260,26 @@
     "lastModified": "2026-04-09T09:34:51Z"
   },
   {
+    "id": "40137",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Schillerstraße 12",
+    "notes": "Gehweg verengt.",
+    "cause": "Privat",
+    "startDate": "2026-07-22",
+    "endDate": "2026-10-16",
+    "point": [
+      8.638782,
+      49.105698
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-07-22T06:52:27Z"
+  },
+  {
     "id": "40138",
     "phase": "active",
     "category": "special-use",
@@ -9571,7 +9631,7 @@
     "notes": "Fahrbahn verengt, Gehweg gesperrt.",
     "cause": "Privat",
     "startDate": "2025-10-21",
-    "endDate": "2026-09-30",
+    "endDate": "2026-12-31",
     "point": [
       8.638351,
       49.106289
