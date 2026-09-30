@@ -4601,7 +4601,7 @@
   },
   {
     "id": "2026V3205",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -4610,14 +4610,14 @@
     "location": "Vogelsang",
     "notes": "Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-07",
+    "startDate": "2026-10-19",
     "endDate": "2027-12-31",
     "point": [
       8.498679,
       48.998834
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
+    "lastModified": "2026-09-29T22:00:00Z"
   },
   {
     "id": "2026V3250",
@@ -7540,6 +7540,46 @@
     "lastModified": "2026-09-27T22:00:00Z"
   },
   {
+    "id": "2026V6155",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karlsruher Allee 13 - 15",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-01",
+    "endDate": "2026-10-01",
+    "point": [
+      8.462332,
+      49.000388
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-29T22:00:00Z"
+  },
+  {
+    "id": "2026V6163",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Petergraben 2",
+    "notes": null,
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2026-10-06",
+    "endDate": "2026-10-07",
+    "point": [
+      8.382974,
+      48.985072
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-29T22:00:00Z"
+  },
+  {
     "id": "2026V6185",
     "phase": "upcoming",
     "category": "special-use",
@@ -7555,6 +7595,26 @@
     "point": [
       8.392424,
       48.997232
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-29T22:00:00Z"
+  },
+  {
+    "id": "2026V6197",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Jollystraße zw. Roon- und Boeckhstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-14",
+    "endDate": "2026-10-14",
+    "point": [
+      8.391418,
+      49.002229
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-29T22:00:00Z"
@@ -8280,6 +8340,26 @@
     "lastModified": "2026-09-25T07:19:11Z"
   },
   {
+    "id": "30222",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Steighohle",
+    "notes": "Gehweg gesperrt und Fahrbahn verengt.\nAn einem Tag während des Genehmigungszeitraumes",
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-30",
+    "endDate": "2026-10-15",
+    "point": [
+      8.606915,
+      49.124934
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-29T05:28:43Z"
+  },
+  {
     "id": "30224",
     "phase": "active",
     "category": "gas-water",
@@ -8318,6 +8398,26 @@
     ],
     "source": "Stadt Baden-Baden",
     "lastModified": "2026-07-31T13:20:13Z"
+  },
+  {
+    "id": "30347",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Gehweg beim Damianstor gesperrt",
+    "notes": "Wegen Restarbeiten am Kanal ist vor dem Bären noch der Gehweg gesperrt. Fußgänger können am Damianstor den Durchgang auf der anderen Straßenseite nutzen.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-02-02",
+    "endDate": "2026-10-30",
+    "point": [
+      8.600178,
+      49.129432
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2025-11-18T06:16:12Z"
   },
   {
     "id": "40000",

@@ -1,30 +1,25 @@
 {
-  "since": "2026-09-29T20:17:08.608Z",
+  "since": "2026-09-30T10:10:38.742Z",
   "added": [
-    "2026V6185",
-    "30224",
-    "40163",
-    "40206"
+    "2026V6155",
+    "2026V6163",
+    "2026V6197",
+    "30222",
+    "30347"
   ],
   "modified": [
-    "40069"
+    "2026V3205"
   ],
-  "removed": [
-    "2026V5274",
-    "2026V6057",
-    "30096",
-    "30217",
-    "40070"
-  ],
+  "removed": [],
   "relevantModifications": [
     {
-      "id": "40069",
+      "id": "2026V3205",
       "changedFields": [
         "period"
       ],
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-09-28",
-      "previousEndDate": "2026-09-29"
+      "previousStartDate": "2026-09-07",
+      "previousEndDate": "2027-12-31"
     }
   ]
 }

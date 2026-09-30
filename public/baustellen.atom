@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-09-30T10:10:38.742Z</updated>
+    <updated>2026-09-30T20:21:46.722Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -58,6 +58,40 @@ Quelle: Stadt Bruchsal]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Geplant: Vogelsang – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3205:2026-09-29T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3205"/>
+        <updated>2026-09-29T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+Zeitraum: 19.10.2026 – 31.12.2027
+Hinweis: Aufteilung nicht vorgenommen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Karlsruher Allee 13 - 15 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6155:2026-09-29T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6155"/>
+        <updated>2026-09-29T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 01.10.2026 – 01.10.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Petergraben 2 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6163:2026-09-29T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6163"/>
+        <updated>2026-09-29T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 06.10.2026 – 07.10.2026
+Verantwortlich: Deutsche Bahn AG
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Graf-Rhena-Str.2a – Karlsruhe]]></title>
         <id>faecherbagger:2026V6185:2026-09-29T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6185"/>
@@ -67,6 +101,30 @@ Zeitraum: 19.10.2026 – 22.12.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Jollystraße zw. Roon- und Boeckhstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6197:2026-09-29T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6197"/>
+        <updated>2026-09-29T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 14.10.2026 – 14.10.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Steighohle – Bruchsal]]></title>
+        <id>faecherbagger:30222:2026-09-29T05:28:43Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30222"/>
+        <updated>2026-09-29T05:28:43.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 30.09.2026 – 15.10.2026
+Hinweis: Gehweg gesperrt und Fahrbahn verengt.
+An einem Tag während des Genehmigungszeitraumes
+Verantwortlich: Telekommunikation
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße – Karlsruhe]]></title>
@@ -3111,18 +3169,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Vogelsang – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3205:2026-08-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3205"/>
-        <updated>2026-08-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 07.09.2026 – 31.12.2027
-Hinweis: Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Verbindung zw. Rußweg u.Mastweidenweg (Bahnübergänge) – Karlsruhe]]></title>
         <id>faecherbagger:2026V4894:2026-08-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4894"/>
@@ -5795,6 +5841,18 @@ Zeitraum: 26.11.2025 – 30.09.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Gehweg beim Damianstor gesperrt – Bruchsal]]></title>
+        <id>faecherbagger:30347:2025-11-18T06:16:12Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30347"/>
+        <updated>2025-11-18T06:16:12.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
+Zeitraum: 02.02.2026 – 30.10.2026
+Hinweis: Wegen Restarbeiten am Kanal ist vor dem Bären noch der Gehweg gesperrt. Fußgänger können am Damianstor den Durchgang auf der anderen Straßenseite nutzen.
+Verantwortlich: Eigenbetrieb Umwelttechnik
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: B 10 Augustenburgstraße Tunnel Grötzingen – Karlsruhe]]></title>
