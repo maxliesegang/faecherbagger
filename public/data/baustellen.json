@@ -6400,26 +6400,6 @@
     "lastModified": "2026-08-19T22:00:00Z"
   },
   {
-    "id": "2026V5274",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Luisenstraße zw. Marienstraße und Wilhelmstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-29",
-    "endDate": "2026-09-29",
-    "point": [
-      8.407784,
-      49.000825
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
-  },
-  {
     "id": "2026V5311",
     "phase": "active",
     "category": "rail",
@@ -7141,7 +7121,7 @@
   },
   {
     "id": "2026V5787",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "soil-survey",
     "artRaw": "Baugrunduntersuchung",
     "closure": "obstruction",
@@ -7421,7 +7401,7 @@
   },
   {
     "id": "2026V6011",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7441,7 +7421,7 @@
   },
   {
     "id": "2026V6017",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7458,26 +7438,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-21T22:00:00Z"
-  },
-  {
-    "id": "2026V6057",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Haid- u. Neu-Straße zw. Hirtenweg und Am Sportpark",
-    "notes": "1-streifige Verkehrsführung in beiden Fahrtrichtungen",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-28",
-    "endDate": "2026-09-29",
-    "point": [
-      8.44486,
-      49.020891
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-22T22:00:00Z"
   },
   {
     "id": "2026V6073",
@@ -7578,6 +7538,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-27T22:00:00Z"
+  },
+  {
+    "id": "2026V6185",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Graf-Rhena-Str.2a",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-19",
+    "endDate": "2026-12-22",
+    "point": [
+      8.392424,
+      48.997232
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-09-29T22:00:00Z"
   },
   {
     "id": "30032",
@@ -7980,26 +7960,6 @@
     "lastModified": "2026-09-24T07:18:45Z"
   },
   {
-    "id": "30096",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Waldstraße Verbindungsweg bei Haus 58a",
-    "notes": "Stellung Lichtmasten mit geringfügiger Einschränkung am Fahrbahnrand",
-    "cause": "Stadtbauamt",
-    "startDate": "2026-09-16",
-    "endDate": "2026-09-29",
-    "point": [
-      8.471732,
-      49.047511
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-16T07:15:28Z"
-  },
-  {
     "id": "30098",
     "phase": "active",
     "category": "road-maintenance",
@@ -8260,26 +8220,6 @@
     "lastModified": "2026-09-22T12:22:46Z"
   },
   {
-    "id": "30217",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Bruchsaler Str. 60",
-    "notes": "Gehweg gesperrt mit Notweg auf der Fahrbahnbahn",
-    "cause": "Telekommunikation",
-    "startDate": "2026-09-23",
-    "endDate": "2026-09-29",
-    "point": [
-      8.555784,
-      49.089457
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-23T12:54:20Z"
-  },
-  {
     "id": "30219",
     "phase": "active",
     "category": "sewer",
@@ -8338,6 +8278,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-25T07:19:11Z"
+  },
+  {
+    "id": "30224",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Obere Mühlstraße 42",
+    "notes": "Gehweg gesperrt, Fahrbahn halbseitig mit Restbreite von 3,05 m, gegenüberliegender Gehweg frei",
+    "cause": "Stadtwerke",
+    "startDate": "2026-09-29",
+    "endDate": "2026-10-15",
+    "point": [
+      8.561271,
+      49.082472
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-30T05:35:28Z"
   },
   {
     "id": "30236",
@@ -8825,39 +8785,19 @@
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Karlsruher Straße 38",
-    "notes": null,
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Rohrackerweg 21",
+    "notes": "Gehwegsperrung sowie halbseitige Straßensperrung",
     "cause": "Privat",
-    "startDate": "2026-09-28",
-    "endDate": "2026-09-29",
+    "startDate": "2026-05-11",
+    "endDate": "2026-12-31",
     "point": [
-      8.389063,
-      49.020313
+      8.466288,
+      49.066397
     ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-09-23T14:23:17Z"
-  },
-  {
-    "id": "40070",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Kapellenstraße 3",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-29",
-    "endDate": "2026-09-29",
-    "point": [
-      8.293872,
-      48.960735
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-09-24T09:32:16Z"
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-05-12T09:27:00Z"
   },
   {
     "id": "40072",
@@ -9561,6 +9501,26 @@
   },
   {
     "id": "40162",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Eggensteiner Straße 101a",
+    "notes": "Halbseitige Sperrung mit Einrichtung Halteverbot",
+    "cause": "Privat",
+    "startDate": "2026-09-30",
+    "endDate": "2026-10-02",
+    "point": [
+      8.462209,
+      49.065803
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-28T07:04:16Z"
+  },
+  {
+    "id": "40162",
     "phase": "upcoming",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
@@ -9578,6 +9538,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-09-28T07:04:16Z"
+  },
+  {
+    "id": "40163",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Oberfeldstraße 4",
+    "notes": "Gehwegsperrung mit Halteverbot",
+    "cause": "Privat",
+    "startDate": "2026-10-01",
+    "endDate": "2026-11-20",
+    "point": [
+      8.46811,
+      49.058036
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-30T07:44:22Z"
   },
   {
     "id": "40166",
@@ -9938,6 +9918,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-16T12:46:53Z"
+  },
+  {
+    "id": "40206",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Schillerstraße 4",
+    "notes": "Gerüst mit Fußgängertunnel",
+    "cause": "Privat",
+    "startDate": "2026-09-30",
+    "endDate": "2026-10-31",
+    "point": [
+      8.638996,
+      49.104644
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-23T07:42:12Z"
   },
   {
     "id": "40207",

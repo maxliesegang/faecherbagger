@@ -1,229 +1,117 @@
 {
-  "generatedAt": "2026-09-29T20:17:08.608Z",
+  "generatedAt": "2026-09-30T10:10:38.742Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V0096:2026-09-28T22:00:00Z",
-      "siteId": "2026V0096",
+      "signature": "changed:40069:2026-05-12T09:27:00Z",
+      "siteId": "40069",
       "point": [
-        8.379891,
-        49.005085
+        8.466288,
+        49.066397
       ],
       "closure": "obstruction",
-      "startDate": "2026-11-07",
-      "endDate": "2027-02-21",
-      "municipality": "Karlsruhe",
-      "location": "Gartenstraße zw. Brauerstraße u. Kriegstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V0691:2026-09-28T22:00:00Z",
-      "siteId": "2026V0691",
-      "point": [
-        8.381675,
-        49.009031
-      ],
-      "closure": "full",
-      "startDate": "2026-10-19",
-      "endDate": "2027-12-31",
-      "municipality": "Karlsruhe",
-      "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V2308:2026-09-28T22:00:00Z",
-      "siteId": "2026V2308",
-      "point": [
-        8.379528,
-        49.043175
-      ],
-      "closure": "full",
-      "startDate": "2026-04-27",
-      "endDate": "2026-10-31",
-      "municipality": "Karlsruhe",
-      "location": "Martin-Schongauer-Weg zw. Albrecht-Altdorf-Weg und Frans-Hals-Weg"
+      "startDate": "2026-05-11",
+      "endDate": "2026-12-31",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Rohrackerweg 21"
     },
     {
       "kind": "new",
-      "signature": "new:2025V7017",
-      "siteId": "2025V7017",
+      "signature": "new:2026V6185",
+      "siteId": "2026V6185",
       "point": [
-        8.3788,
-        49.005398
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-08-03",
-      "endDate": "2026-11-07",
-      "municipality": "Karlsruhe",
-      "location": "Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V0286",
-      "siteId": "2026V0286",
-      "point": [
-        8.381355,
-        49.004642
-      ],
-      "closure": "full",
-      "startDate": "2026-08-03",
-      "endDate": "2026-11-07",
-      "municipality": "Karlsruhe",
-      "location": "Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V0768",
-      "siteId": "2026V0768",
-      "point": [
-        8.47583,
-        49.002039
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2027-03-15",
-      "municipality": "Karlsruhe",
-      "location": "Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40137",
-      "siteId": "40137",
-      "point": [
-        8.638782,
-        49.105698
+        8.392424,
+        48.997232
       ],
       "closure": "none",
-      "startDate": "2026-07-22",
-      "endDate": "2026-10-16",
+      "startDate": "2026-10-19",
+      "endDate": "2026-12-22",
+      "municipality": "Karlsruhe",
+      "location": "Graf-Rhena-Str.2a"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30224",
+      "siteId": "30224",
+      "point": [
+        8.561271,
+        49.082472
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-29",
+      "endDate": "2026-10-15",
       "municipality": "Bruchsal",
-      "location": "Schillerstraße 12"
+      "location": "Obere Mühlstraße 42"
     },
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4859:2026-10-06",
-      "siteId": "2026V4859",
+      "kind": "new",
+      "signature": "new:40163",
+      "siteId": "40163",
       "point": [
-        8.340106,
-        49.033441
+        8.46811,
+        49.058036
       ],
-      "closure": "full",
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "Heckerstraße zw. Eggensteiner Straße und Lönnsstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5225:2026-10-06",
-      "siteId": "2026V5225",
-      "point": [
-        8.497173,
-        48.979354
-      ],
-      "closure": "full",
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5787:2026-09-30",
-      "siteId": "2026V5787",
-      "point": [
-        8.375179,
-        49.020389
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-30",
-      "endDate": "2026-09-30",
-      "municipality": "Karlsruhe",
-      "location": "Franz-Lust-Straße zw. Kußmaulstraße u. Knielinger Allee"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5880:2026-10-06",
-      "siteId": "2026V5880",
-      "point": [
-        8.401534,
-        49.010165
-      ],
-      "closure": "full",
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "Ritterstraße zw. Zirkel und Kaiserstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5978:2026-10-06",
-      "siteId": "2026V5978",
-      "point": [
-        8.337047,
-        48.999982
-      ],
-      "closure": "full",
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "Bert-Brecht-Straße Höhe Huas Nr. 3"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6011:2026-09-30",
-      "siteId": "2026V6011",
-      "point": [
-        8.437585,
-        49.020346
-      ],
-      "closure": "full",
-      "startDate": "2026-09-30",
-      "endDate": "2026-09-30",
-      "municipality": "Karlsruhe",
-      "location": "Ada-Lovelace-Straße (BV Emmy-Noether-Straße 17)"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6017:2026-09-30",
-      "siteId": "2026V6017",
-      "point": [
-        8.442297,
-        48.991506
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-30",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Kieselweg"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6146:2026-10-06",
-      "siteId": "2026V6146",
-      "point": [
-        8.460018,
-        49.001171
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:40162:2026-09-30",
-      "siteId": "40162",
-      "point": [
-        8.462209,
-        49.065803
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-09-30",
-      "endDate": "2026-10-02",
+      "closure": "none",
+      "startDate": "2026-10-01",
+      "endDate": "2026-11-20",
       "municipality": "Stutensee",
-      "location": "76297 Stutensee, Eggensteiner Straße 101a"
+      "location": "76297 Stutensee, Oberfeldstraße 4"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40206",
+      "siteId": "40206",
+      "point": [
+        8.638996,
+        49.104644
+      ],
+      "closure": "none",
+      "startDate": "2026-09-30",
+      "endDate": "2026-10-31",
+      "municipality": "Bruchsal",
+      "location": "Schillerstraße 4"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2025V0238:2026-10-01",
+      "siteId": "2025V0238",
+      "point": [
+        8.407929,
+        49.00947
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-01",
+      "endDate": "2027-02-26",
+      "municipality": "Karlsruhe",
+      "location": "Kaiserstraße zw. Kronenstraße und Adlerstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3911:2026-10-01",
+      "siteId": "2026V3911",
+      "point": [
+        8.422751,
+        49.013015
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-31",
+      "municipality": "Karlsruhe",
+      "location": "Parkstraße zw. Karl-Wilhem-Platz und Am Fasanengarten"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5495:2026-10-01",
+      "siteId": "2026V5495",
+      "point": [
+        8.447247,
+        49.045086
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-01",
+      "endDate": "2026-12-14",
+      "municipality": "Karlsruhe",
+      "location": "Albert-Schweitzer-Straße zw. Gustav-Heinemann-Allee und Bertha-von-Stuttner-Straße"
     }
   ]
 }
