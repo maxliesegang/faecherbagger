@@ -1,89 +1,257 @@
 {
-  "generatedAt": "2026-10-01T10:37:49.342Z",
+  "generatedAt": "2026-10-01T20:36:37.081Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:40009:2025-02-25T09:33:47Z",
-      "siteId": "40009",
+      "signature": "changed:2025V3336:2026-09-30T22:00:00Z",
+      "siteId": "2025V3336",
       "point": [
-        8.292881,
-        48.958007
+        8.404823,
+        49.010776
       ],
-      "closure": "obstruction",
-      "startDate": "2025-02-27",
-      "endDate": "2026-12-31",
-      "municipality": "Rheinstetten",
-      "location": "Viktoriastraße 36"
+      "closure": "one-direction",
+      "startDate": "2026-01-30",
+      "endDate": "2026-10-04",
+      "municipality": "Karlsruhe",
+      "location": "Schlossplatz zw. Herrenstraße u. Zirkel"
     },
     {
       "kind": "changed",
-      "signature": "changed:40079:2026-05-20T06:15:01Z",
-      "siteId": "40079",
+      "signature": "changed:2026V2798:2026-09-30T22:00:00Z",
+      "siteId": "2026V2798",
       "point": [
-        8.470272,
-        49.064492
+        8.368212,
+        49.000854
       ],
-      "closure": "obstruction",
-      "startDate": "2026-05-27",
-      "endDate": "2026-10-31",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Eggensteiner Straße 11"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6203",
-      "siteId": "2026V6203",
-      "point": [
-        8.447523,
-        49.017127
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-01",
-      "endDate": "2026-11-20",
+      "closure": "one-direction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-18",
       "municipality": "Karlsruhe",
-      "location": "Rintheimer Hauptstraße zw. Hirtenweg und Drosselsangweg"
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
     },
     {
-      "kind": "new",
-      "signature": "new:2026V6230",
-      "siteId": "2026V6230",
+      "kind": "changed",
+      "signature": "changed:2026V2800:2026-09-30T22:00:00Z",
+      "siteId": "2026V2800",
       "point": [
-        8.457273,
-        48.996091
+        8.368225,
+        49.00079
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-19",
+      "endDate": "2026-12-23",
+      "municipality": "Karlsruhe",
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4853:2026-09-30T22:00:00Z",
+      "siteId": "2026V4853",
+      "point": [
+        8.461453,
+        48.967681
+      ],
+      "closure": "full",
+      "startDate": "2026-10-07",
+      "endDate": "2026-10-07",
+      "municipality": "Karlsruhe",
+      "location": "L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5224:2026-09-30T22:00:00Z",
+      "siteId": "2026V5224",
+      "point": [
+        8.468102,
+        48.977222
+      ],
+      "closure": "full",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5225:2026-09-30T22:00:00Z",
+      "siteId": "2026V5225",
+      "point": [
+        8.497173,
+        48.979354
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-05",
+      "municipality": "Karlsruhe",
+      "location": "K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5716:2026-09-30T22:00:00Z",
+      "siteId": "2026V5716",
+      "point": [
+        8.496501,
+        48.987577
       ],
       "closure": "obstruction",
-      "startDate": "2026-10-01",
+      "startDate": "2026-10-05",
       "endDate": "2026-10-09",
       "municipality": "Karlsruhe",
-      "location": "Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße"
+      "location": "Rittnertstraße und Jean-Ritzert-Straße"
     },
     {
-      "kind": "new",
-      "signature": "new:40147",
-      "siteId": "40147",
+      "kind": "changed",
+      "signature": "changed:40210:2026-10-01T13:50:09Z",
+      "siteId": "40210",
       "point": [
-        8.557202,
-        49.085077
+        8.396735,
+        48.989779
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-04",
-      "endDate": "2026-10-08",
+      "startDate": "2026-10-01",
+      "endDate": "2026-12-31",
       "municipality": "Bruchsal",
-      "location": "Mühlstraße 3"
+      "location": "Steinackerstraße 36"
     },
     {
       "kind": "new",
-      "signature": "new:40420",
-      "siteId": "40420",
+      "signature": "new:2026V2801",
+      "siteId": "2026V2801",
       "point": [
-        8.410282,
-        48.939903
+        8.368115,
+        49.000808
+      ],
+      "closure": "one-direction",
+      "startDate": "2027-01-18",
+      "endDate": "2027-02-14",
+      "municipality": "Karlsruhe",
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5765",
+      "siteId": "2026V5765",
+      "point": [
+        8.318762,
+        49.039198
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-07",
+      "endDate": "2026-10-16",
+      "municipality": "Karlsruhe",
+      "location": "Gewann Grabenort"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6231",
+      "siteId": "2026V6231",
+      "point": [
+        8.395632,
+        48.988986
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-01",
+      "municipality": "Karlsruhe",
+      "location": "Edeltrudtunnel \"klein\" in Fahrtrichtung Durlach"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6248",
+      "siteId": "2026V6248",
+      "point": [
+        8.370497,
+        48.998804
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-24",
+      "endDate": "2027-01-17",
+      "municipality": "Karlsruhe",
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6253",
+      "siteId": "2026V6253",
+      "point": [
+        8.404595,
+        49.011125
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Schlossplatz zw. Herrenstraße u. Zirkel"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6254",
+      "siteId": "2026V6254",
+      "point": [
+        8.391757,
+        49.009896
+      ],
+      "closure": "full",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-19",
+      "municipality": "Karlsruhe",
+      "location": "Hirschstraße zw. Kaiser- und Amalienstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30016",
+      "siteId": "30016",
+      "point": [
+        8.32024,
+        48.978602
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-02-13",
+      "endDate": "2026-11-01",
+      "municipality": "Rheinstetten",
+      "location": "Diverse Straßen"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30077",
+      "siteId": "30077",
+      "point": [
+        8.31709,
+        48.976999
+      ],
+      "closure": "full",
+      "startDate": "2026-08-05",
+      "endDate": "2026-10-21",
+      "municipality": "Rheinstetten",
+      "location": "Hardtstraße 25 und Theodor-Heuss-Straße 68-70"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30225",
+      "siteId": "30225",
+      "point": [
+        8.613092,
+        49.125307
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-10",
+      "municipality": "Bruchsal",
+      "location": "Holzmann"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40421",
+      "siteId": "40421",
+      "point": [
+        8.404229,
+        48.942886
       ],
       "closure": "full",
       "startDate": "2026-10-01",
       "endDate": "2026-10-16",
       "municipality": "Ettlingen",
-      "location": "Friedrichstraße"
+      "location": "Mühlenstraße 37"
     },
     {
       "kind": "starts-soon",
