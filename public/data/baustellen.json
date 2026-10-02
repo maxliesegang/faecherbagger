@@ -640,6 +640,26 @@
     "lastModified": "2026-08-31T22:00:00Z"
   },
   {
+    "id": "2025V0142",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kaiserstraße zw. Kreuzstraße und Kronenstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-05-04",
+    "endDate": "2026-11-20",
+    "point": [
+      8.407159,
+      49.009393
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-01T22:00:00Z"
+  },
+  {
     "id": "2025V0237",
     "phase": "active",
     "category": "road-construction",
@@ -651,13 +671,13 @@
     "notes": null,
     "cause": "Tiefbauamt",
     "startDate": "2026-06-01",
-    "endDate": "2026-11-13",
+    "endDate": "2026-10-30",
     "point": [
       8.406706,
       49.00957
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
+    "lastModified": "2026-10-01T22:00:00Z"
   },
   {
     "id": "2025V0238",
@@ -1820,6 +1840,26 @@
     "lastModified": "2026-09-28T22:00:00Z"
   },
   {
+    "id": "2025V7216",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kreuzstraße zw. Hebelstraße und Zähringer Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-17",
+    "endDate": "2026-10-23",
+    "point": [
+      8.405584,
+      49.008109
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-01T22:00:00Z"
+  },
+  {
     "id": "2025V7301",
     "phase": "active",
     "category": "road-construction",
@@ -1858,26 +1898,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-29T22:00:00Z"
-  },
-  {
-    "id": "2025V7303",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Adlerstraße zw. Zähringerstraße u. Kaiserstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-01-12",
-    "endDate": "2026-10-01",
-    "point": [
-      8.406898,
-      49.009095
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-24T22:00:00Z"
   },
   {
     "id": "2025V7354",
@@ -4260,28 +4280,8 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
-    "id": "2026V3028",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-24",
-    "endDate": "2026-10-01",
-    "point": [
-      8.506198,
-      49.003911
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
-  },
-  {
     "id": "2026V3029",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -5201,7 +5201,7 @@
   },
   {
     "id": "2026V4344",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "one-direction",
@@ -6220,26 +6220,6 @@
     "lastModified": "2026-08-23T22:00:00Z"
   },
   {
-    "id": "2026V5336",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Löätzener Straße zw. Glogauer Straße und Insterburger Straße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-10-01",
-    "point": [
-      8.446588,
-      49.036395
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
     "id": "2026V5363",
     "phase": "active",
     "category": "district-heating",
@@ -7181,7 +7161,7 @@
   },
   {
     "id": "2026V6140",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -7218,26 +7198,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-27T22:00:00Z"
-  },
-  {
-    "id": "2026V6155",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karlsruher Allee 13 - 15",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-01",
-    "endDate": "2026-10-01",
-    "point": [
-      8.462332,
-      49.000388
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-29T22:00:00Z"
   },
   {
     "id": "2026V6163",
@@ -7330,34 +7290,14 @@
     "location": "Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße",
     "notes": "Montagegruben im Gehwegbereich",
     "cause": "Telekommunikation",
-    "startDate": "2026-10-01",
+    "startDate": "2026-10-02",
     "endDate": "2026-10-09",
     "point": [
-      8.457273,
-      48.996091
+      8.457637,
+      48.995958
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
-  },
-  {
-    "id": "2026V6231",
-    "phase": "active",
-    "category": "tunnel",
-    "artRaw": "Tunnelwartung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Edeltrudtunnel \"klein\" in Fahrtrichtung Durlach",
-    "notes": "Tagesbaustelle zw. 9.00 u. 12.00 Uhr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-01",
-    "endDate": "2026-10-01",
-    "point": [
-      8.395632,
-      48.988986
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
+    "lastModified": "2026-10-01T22:00:00Z"
   },
   {
     "id": "2026V6248",
@@ -7418,6 +7358,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-30T22:00:00Z"
+  },
+  {
+    "id": "2026V6260",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kaiserstraße zw. Kronenstraße und Fritz-Erler-Straße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-01",
+    "endDate": "2026-10-16",
+    "point": [
+      8.409026,
+      49.009372
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-01T22:00:00Z"
+  },
+  {
+    "id": "2026V6261",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kaiserstraße zw. Adlerstraße und Kronen straße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-01",
+    "endDate": "2027-02-26",
+    "point": [
+      8.408297,
+      49.009342
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-01T22:00:00Z"
   },
   {
     "id": "30016",
@@ -7753,8 +7733,8 @@
     "startDate": "2026-03-30",
     "endDate": "2026-10-31",
     "point": [
-      8.510824,
-      49.081942
+      8.60761,
+      49.134578
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-03-20T08:41:50Z"
@@ -8220,6 +8200,26 @@
     "lastModified": "2026-07-31T13:20:13Z"
   },
   {
+    "id": "30286",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Baden-Baden",
+    "location": "B3 alt zwischen Steinbach und Sinzheim",
+    "notes": "Umleitung über neue B3",
+    "cause": "Land Baden - Württemberg",
+    "startDate": "2026-10-02",
+    "endDate": "2026-11-06",
+    "point": [
+      8.163086,
+      48.742274
+    ],
+    "source": "Stadt Baden-Baden",
+    "lastModified": "2026-09-25T11:09:50Z"
+  },
+  {
     "id": "30347",
     "phase": "active",
     "category": "sewer",
@@ -8420,26 +8420,6 @@
     "lastModified": "2026-07-17T08:52:33Z"
   },
   {
-    "id": "40055",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Rosenstraße 126",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-07-27",
-    "endDate": "2026-10-01",
-    "point": [
-      8.317433,
-      48.982995
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-07-27T13:10:01Z"
-  },
-  {
     "id": "40058",
     "phase": "active",
     "category": "special-use",
@@ -8580,6 +8560,26 @@
     "lastModified": "2026-05-12T09:27:00Z"
   },
   {
+    "id": "40071",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Gladiolenstraße 4",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-02",
+    "endDate": "2026-10-30",
+    "point": [
+      8.301876,
+      48.964962
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-30T14:41:18Z"
+  },
+  {
     "id": "40072",
     "phase": "active",
     "category": "special-use",
@@ -8638,6 +8638,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-05-20T05:32:48Z"
+  },
+  {
+    "id": "40077",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Eggensteiner Straße 101",
+    "notes": "Sperrung Parkflächen",
+    "cause": "Privat",
+    "startDate": "2026-05-12",
+    "endDate": "2026-11-11",
+    "point": [
+      8.46217,
+      49.065767
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-05-20T05:43:29Z"
   },
   {
     "id": "40079",
@@ -9251,7 +9271,7 @@
     "notes": "Halbseitige Sperrung mit Einrichtung Halteverbot",
     "cause": "Privat",
     "startDate": "2026-09-30",
-    "endDate": "2026-10-02",
+    "endDate": "2026-10-14",
     "point": [
       8.462209,
       49.065803
@@ -9438,26 +9458,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-09T13:43:33Z"
-  },
-  {
-    "id": "40185",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Eberhardstraße 11a",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-17",
-    "endDate": "2026-10-01",
-    "point": [
-      8.639997,
-      49.085561
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-10T09:35:45Z"
   },
   {
     "id": "40186",
@@ -9831,7 +9831,7 @@
     "notes": "Vollsperrung wg. Abbrucharbeiten",
     "cause": "Privat",
     "startDate": "2026-09-28",
-    "endDate": "2026-10-05",
+    "endDate": "2026-11-02",
     "point": [
       8.410942,
       48.943826
