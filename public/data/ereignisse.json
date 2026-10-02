@@ -1,131 +1,89 @@
 {
-  "generatedAt": "2026-10-02T10:13:13.794Z",
+  "generatedAt": "2026-10-02T20:12:04.296Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2025V0237:2026-10-01T22:00:00Z",
-      "siteId": "2025V0237",
+      "signature": "changed:2026V5182:2026-10-01T22:00:00Z",
+      "siteId": "2026V5182",
       "point": [
-        8.406706,
-        49.00957
+        8.394166,
+        49.012981
       ],
-      "closure": "obstruction",
-      "startDate": "2026-06-01",
-      "endDate": "2026-10-30",
+      "closure": "full",
+      "startDate": "2026-08-17",
+      "endDate": "2026-10-04",
       "municipality": "Karlsruhe",
-      "location": "Kaiserstraße zw. Kronenstraße und adlerstraße"
+      "location": "Seminarstraße zw. Stephanienstraße und Bismarckstraße"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V6230:2026-10-01T22:00:00Z",
-      "siteId": "2026V6230",
+      "signature": "changed:2026V5649:2026-10-01T22:00:00Z",
+      "siteId": "2026V5649",
       "point": [
-        8.457637,
-        48.995958
+        8.460286,
+        48.995006
       ],
-      "closure": "obstruction",
-      "startDate": "2026-10-02",
-      "endDate": "2026-10-09",
-      "municipality": "Karlsruhe",
-      "location": "Killisfeldstraße, Gudrunstraße, Oberwaldstraße, Dietrichstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2025V0142",
-      "siteId": "2025V0142",
-      "point": [
-        8.407159,
-        49.009393
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-05-04",
+      "closure": "one-direction",
+      "startDate": "2026-10-15",
       "endDate": "2026-11-20",
       "municipality": "Karlsruhe",
-      "location": "Kaiserstraße zw. Kreuzstraße und Kronenstraße"
+      "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße"
     },
     {
       "kind": "new",
-      "signature": "new:2025V7216",
-      "siteId": "2025V7216",
+      "signature": "new:2025V7015",
+      "siteId": "2025V7015",
       "point": [
-        8.405584,
-        49.008109
+        8.393996,
+        49.013122
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-17",
-      "endDate": "2026-10-23",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-26",
       "municipality": "Karlsruhe",
-      "location": "Kreuzstraße zw. Hebelstraße und Zähringer Straße"
+      "location": "Bismarckstraße zw. Fichte- u. Seminarstraße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V6260",
-      "siteId": "2026V6260",
+      "signature": "new:2026V4600",
+      "siteId": "2026V4600",
       "point": [
-        8.409026,
-        49.009372
+        8.383624,
+        49.013735
       ],
       "closure": "full",
-      "startDate": "2026-10-01",
-      "endDate": "2026-10-16",
-      "municipality": "Karlsruhe",
-      "location": "Kaiserstraße zw. Kronenstraße und Fritz-Erler-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6261",
-      "siteId": "2026V6261",
-      "point": [
-        8.408297,
-        49.009342
-      ],
-      "closure": "full",
-      "startDate": "2026-10-01",
-      "endDate": "2027-02-26",
-      "municipality": "Karlsruhe",
-      "location": "Kaiserstraße zw. Adlerstraße und Kronen straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30286",
-      "siteId": "30286",
-      "point": [
-        8.163086,
-        48.742274
-      ],
-      "closure": "full",
-      "startDate": "2026-10-02",
-      "endDate": "2026-11-06",
-      "municipality": "Baden-Baden",
-      "location": "B3 alt zwischen Steinbach und Sinzheim"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40071",
-      "siteId": "40071",
-      "point": [
-        8.301876,
-        48.964962
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-02",
+      "startDate": "2026-10-05",
       "endDate": "2026-10-30",
-      "municipality": "Rheinstetten",
-      "location": "Gladiolenstraße 4"
+      "municipality": "Karlsruhe",
+      "location": "Maximilianstraße zw. Stabelstraße und Weberstraße"
     },
     {
       "kind": "new",
-      "signature": "new:40077",
-      "siteId": "40077",
+      "signature": "new:40073",
+      "siteId": "40073",
       "point": [
-        8.46217,
-        49.065767
+        8.292278,
+        48.962393
       ],
       "closure": "obstruction",
-      "startDate": "2026-05-12",
-      "endDate": "2026-11-11",
+      "startDate": "2026-09-29",
+      "endDate": "2026-10-02",
+      "municipality": "Rheinstetten",
+      "location": "Bergstraße 10"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40164",
+      "siteId": "40164",
+      "point": [
+        8.512578,
+        49.111535
+      ],
+      "closure": "none",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-30",
       "municipality": "Stutensee",
-      "location": "76297 Stutensee, Eggensteiner Straße 101"
+      "location": "76297 Stutensee, Kronenstraße 2"
     },
     {
       "kind": "starts-soon",

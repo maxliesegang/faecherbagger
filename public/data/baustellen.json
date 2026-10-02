@@ -1560,26 +1560,6 @@
     "lastModified": "2026-09-15T22:00:00Z"
   },
   {
-    "id": "2025V6792",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Seminarstraße zwischen Bismarckstraße und Moltkestraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten; Aufteilung nicht vorgenommen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-27",
-    "point": [
-      8.393886,
-      49.013879
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2025-11-27T23:00:00Z"
-  },
-  {
     "id": "2025V6907",
     "phase": "active",
     "category": "gas-water",
@@ -1818,6 +1798,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-30T22:00:00Z"
+  },
+  {
+    "id": "2025V7015",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bismarckstraße zw. Fichte- u. Seminarstraße",
+    "notes": "Lokale Engstelle",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-26",
+    "point": [
+      8.393996,
+      49.013122
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-01T22:00:00Z"
   },
   {
     "id": "2025V7017",
@@ -5540,6 +5540,26 @@
     "lastModified": "2026-09-20T22:00:00Z"
   },
   {
+    "id": "2026V4600",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Maximilianstraße zw. Stabelstraße und Weberstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-30",
+    "point": [
+      8.383624,
+      49.013735
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-01T22:00:00Z"
+  },
+  {
     "id": "2026V4632",
     "phase": "active",
     "category": "special-use",
@@ -6011,13 +6031,13 @@
     "notes": "Bismarckstraße = 1- streifig Höhe Seminarstraße",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-17",
-    "endDate": "2026-10-02",
+    "endDate": "2026-10-04",
     "point": [
       8.394166,
       49.012981
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-16T22:00:00Z"
+    "lastModified": "2026-10-01T22:00:00Z"
   },
   {
     "id": "2026V5224",
@@ -6481,23 +6501,23 @@
   },
   {
     "id": "2026V5649",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "one-direction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße",
-    "notes": "Dauer vslo. 2 Wochen",
+    "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-29",
-    "endDate": "2026-10-30",
+    "startDate": "2026-10-15",
+    "endDate": "2026-11-20",
     "point": [
       8.460286,
       48.995006
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
+    "lastModified": "2026-10-01T22:00:00Z"
   },
   {
     "id": "2026V5661",
@@ -8600,6 +8620,26 @@
     "lastModified": "2026-05-18T10:38:52Z"
   },
   {
+    "id": "40073",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Bergstraße 10",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-29",
+    "endDate": "2026-10-02",
+    "point": [
+      8.292278,
+      48.962393
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-02T12:16:14Z"
+  },
+  {
     "id": "40075",
     "phase": "active",
     "category": "special-use",
@@ -9298,6 +9338,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-09-30T07:44:22Z"
+  },
+  {
+    "id": "40164",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Kronenstraße 2",
+    "notes": "Gehwegvollsperrung mit Halteverbot",
+    "cause": "Privat",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-30",
+    "point": [
+      8.512578,
+      49.111535
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-10-02T06:11:02Z"
   },
   {
     "id": "40166",

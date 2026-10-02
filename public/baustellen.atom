@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-02T10:13:13.794Z</updated>
+    <updated>2026-10-02T20:12:04.296Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -34,6 +34,29 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Bergstraße 10 – Rheinstetten]]></title>
+        <id>faecherbagger:40073:2026-10-02T12:16:14Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40073"/>
+        <updated>2026-10-02T12:16:14.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 29.09.2026 – 02.10.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: 76297 Stutensee, Kronenstraße 2 – Stutensee]]></title>
+        <id>faecherbagger:40164:2026-10-02T06:11:02Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40164"/>
+        <updated>2026-10-02T06:11:02.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Keine Behinderung
+Zeitraum: 05.10.2026 – 30.10.2026
+Hinweis: Gehwegvollsperrung mit Halteverbot
+Verantwortlich: Privat
+Quelle: Stadt Stutensee]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Kaiserstraße zw. Kreuzstraße und Kronenstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V0142:2026-10-01T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V0142"/>
@@ -56,12 +79,58 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Geplant: Bismarckstraße zw. Fichte- u. Seminarstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V7015:2026-10-01T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7015"/>
+        <updated>2026-10-01T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 05.10.2026 – 26.10.2026
+Hinweis: Lokale Engstelle
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Kreuzstraße zw. Hebelstraße und Zähringer Straße – Karlsruhe]]></title>
         <id>faecherbagger:2025V7216:2026-10-01T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7216"/>
         <updated>2026-10-01T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
 Zeitraum: 17.08.2026 – 23.10.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Maximilianstraße zw. Stabelstraße und Weberstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4600:2026-10-01T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4600"/>
+        <updated>2026-10-01T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Vollsperrung
+Zeitraum: 05.10.2026 – 30.10.2026
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Seminarstraße zw. Stephanienstraße und Bismarckstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5182:2026-10-01T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5182"/>
+        <updated>2026-10-01T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Vollsperrung
+Zeitraum: 17.08.2026 – 04.10.2026
+Hinweis: Bismarckstraße = 1- streifig Höhe Seminarstraße
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5649:2026-10-01T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5649"/>
+        <updated>2026-10-01T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
+Zeitraum: 15.10.2026 – 20.11.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
@@ -1628,18 +1697,6 @@ Hinweis: 1-streifige Verkehrsführung, Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5649:2026-09-14T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5649"/>
-        <updated>2026-09-14T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 29.09.2026 – 30.10.2026
-Hinweis: Dauer vslo. 2 Wochen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Baumeisterstraße zw. Finterstraße und Ettinger Straße – Karlsruhe]]></title>
@@ -3358,18 +3415,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 02.08.2026 – 31.10.2026
 Hinweis: Abwicklung in mehreren Bauabschnitten, lokale Arbeitsstellen im Geh- und Radwegbereich
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Seminarstraße zw. Stephanienstraße und Bismarckstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5182:2026-08-16T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5182"/>
-        <updated>2026-08-16T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Vollsperrung
-Zeitraum: 17.08.2026 – 02.10.2026
-Hinweis: Bismarckstraße = 1- streifig Höhe Seminarstraße
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
@@ -5645,18 +5690,6 @@ Quelle: Stadt Rheinstetten]]></summary>
 Zeitraum: 07.01.2026 – 02.10.2026
 Verantwortlich: Telekommunikation
 Quelle: Stadt Rheinstetten]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Seminarstraße zwischen Bismarckstraße und Moltkestraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6792:2025-11-27T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6792"/>
-        <updated>2025-11-27T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 21.09.2026 – 27.11.2026
-Hinweis: Abwicklung in mehreren Bauabschnitten; Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
