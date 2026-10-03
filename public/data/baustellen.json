@@ -60,26 +60,6 @@
     "lastModified": "2026-04-12T22:00:00Z"
   },
   {
-    "id": "2021V4565",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)",
-    "notes": null,
-    "cause": "Stadt Karlsruhe",
-    "startDate": "2026-07-13",
-    "endDate": "2026-10-02",
-    "point": [
-      8.379352,
-      48.998884
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
-  },
-  {
     "id": "2022V5840",
     "phase": "active",
     "category": "special-use",
@@ -115,26 +95,6 @@
     "point": [
       8.42701,
       49.008832
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-17T22:00:00Z"
-  },
-  {
-    "id": "2022V6190",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Lachnerstraße, Durlacher Allee, Georg.Friedrich-Straße, Rintheimer Straße, Veilchen Straße, Humnmboldt Straße",
-    "notes": "Arbeiten Im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-18",
-    "endDate": "2026-10-02",
-    "point": [
-      8.424027,
-      49.007965
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-17T22:00:00Z"
@@ -258,26 +218,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
-    "id": "2024V3162",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hildebrandstr./Oberwaldstr./Reichenbachstr.",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-06-22",
-    "endDate": "2026-10-02",
-    "point": [
-      8.460239,
-      48.996322
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-03T22:00:00Z"
   },
   {
     "id": "2024V3775",
@@ -460,26 +400,6 @@
     "lastModified": "2026-09-14T22:00:00Z"
   },
   {
-    "id": "2024V5818",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gablonzerstraße zw. B36 und Schoemperlenstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-01",
-    "endDate": "2026-10-02",
-    "point": [
-      8.353056,
-      49.023418
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-05T23:00:00Z"
-  },
-  {
     "id": "2024V6753",
     "phase": "active",
     "category": "district-heating",
@@ -538,26 +458,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-05-17T22:00:00Z"
-  },
-  {
-    "id": "2024V7075",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gebhardstraße zw. Barbarossaplatz und Welfenstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-02-11",
-    "endDate": "2026-10-02",
-    "point": [
-      8.3917,
-      48.995707
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
   },
   {
     "id": "2024V7318",
@@ -2340,26 +2240,6 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
-    "id": "2026V0256",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Badener Straße zw. Grötzinger Straße u. Hengstplatz",
-    "notes": "1-Richtungsverkehr zum Hengstplatz, Einmündung Karl-Weysser",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-10-02",
-    "point": [
-      8.477002,
-      48.998541
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
-  },
-  {
     "id": "2026V0269",
     "phase": "active",
     "category": "gas-water",
@@ -2820,26 +2700,6 @@
     "lastModified": "2026-07-08T22:00:00Z"
   },
   {
-    "id": "2026V0743",
-    "phase": "active",
-    "category": "demolition",
-    "artRaw": "Abbruch/Rückbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wolfweg zw. Turmbergstraße und Blankenhornweg",
-    "notes": "temporäre Sperrung während der Arbeiten",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-24",
-    "endDate": "2026-10-02",
-    "point": [
-      8.482252,
-      48.997634
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
-  },
-  {
     "id": "2026V0748",
     "phase": "active",
     "category": "special-use",
@@ -2918,26 +2778,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-15T22:00:00Z"
-  },
-  {
-    "id": "2026V0801",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wendtstraße zw. Dragonerstraße und Ludwig-Marum-Straße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-19",
-    "endDate": "2026-10-02",
-    "point": [
-      8.372912,
-      49.012903
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-20T22:00:00Z"
   },
   {
     "id": "2026V0858",
@@ -3718,26 +3558,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-26T22:00:00Z"
-  },
-  {
-    "id": "2026V2045",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wilferdinger Str, Ispringer Str., Ellmendinger Str, Auf den Lohn",
-    "notes": "Abwicklung in mehreren Bauabschnitten, je Abschnitt ca. 30 m",
-    "cause": "Telekommunikation",
-    "startDate": "2026-09-07",
-    "endDate": "2026-10-02",
-    "point": [
-      8.451033,
-      48.994124
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2026V2134",
@@ -6420,26 +6240,6 @@
     "lastModified": "2026-09-14T22:00:00Z"
   },
   {
-    "id": "2026V5498",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B36/ Neureuter Straße Höhe Gablonzer Straße",
-    "notes": "Fahrtrichtung stadtauswärts, 1-streifige Verkehrsführung, Reparatur Schieberkreuz",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-25",
-    "endDate": "2026-10-02",
-    "point": [
-      8.356449,
-      49.022544
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-23T22:00:00Z"
-  },
-  {
     "id": "2026V5519",
     "phase": "active",
     "category": "power-telecom",
@@ -6458,46 +6258,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-01T22:00:00Z"
-  },
-  {
-    "id": "2026V5554",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ellmendinger Str., Ostmarkstr., Im Säuterich",
-    "notes": "Herstellung restlicher Hausanschlüsse",
-    "cause": "Telekommunikation",
-    "startDate": "2026-09-09",
-    "endDate": "2026-10-02",
-    "point": [
-      8.451447,
-      48.992352
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-02T22:00:00Z"
-  },
-  {
-    "id": "2026V5639",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Weingärtensiedlung",
-    "notes": "lokale Arbeitsstellen im Rad und Gehwegbereich, Kabelzugarbeiten und Gehwegwiederherstellung",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-08",
-    "endDate": "2026-10-02",
-    "point": [
-      8.358077,
-      49.020053
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
   },
   {
     "id": "2026V5649",
@@ -7180,26 +6940,6 @@
     "lastModified": "2026-09-23T22:00:00Z"
   },
   {
-    "id": "2026V6140",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Grillparzerstraße zw. Kaiserallee u. Gellertstraße",
-    "notes": "Lokale Sperrung Höhe Nr. 9",
-    "cause": "Privat",
-    "startDate": "2026-10-02",
-    "endDate": "2026-10-02",
-    "point": [
-      8.372387,
-      49.010187
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-28T22:00:00Z"
-  },
-  {
     "id": "2026V6146",
     "phase": "upcoming",
     "category": "other",
@@ -7560,46 +7300,6 @@
     "lastModified": "2026-07-13T07:27:31Z"
   },
   {
-    "id": "30062",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Bahnhofstraße 74",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-15",
-    "endDate": "2026-10-02",
-    "point": [
-      8.466477,
-      49.071341
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-07-14T10:07:28Z"
-  },
-  {
-    "id": "30063",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Brühlstraße 19",
-    "notes": "Aufgrabung und dadurch halbseitige Straßensperrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-15",
-    "endDate": "2026-10-02",
-    "point": [
-      8.512443,
-      49.09192
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-07-14T09:40:12Z"
-  },
-  {
     "id": "30075",
     "phase": "active",
     "category": "gas-water",
@@ -7660,26 +7360,6 @@
     "lastModified": "2026-08-05T10:00:54Z"
   },
   {
-    "id": "30083",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Blankenlocher Straße 16",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-14",
-    "endDate": "2026-10-02",
-    "point": [
-      8.509067,
-      49.093163
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-08-14T06:27:17Z"
-  },
-  {
     "id": "30085",
     "phase": "active",
     "category": "power-telecom",
@@ -7718,26 +7398,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-08-31T12:56:38Z"
-  },
-  {
-    "id": "30088",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Wilhelmstraße 14",
-    "notes": null,
-    "cause": "Stadtbauamt",
-    "startDate": "2026-09-17",
-    "endDate": "2026-10-02",
-    "point": [
-      8.29422,
-      48.960218
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-09-10T10:36:27Z"
   },
   {
     "id": "30089",
@@ -7860,26 +7520,6 @@
     "lastModified": "2026-09-17T06:14:23Z"
   },
   {
-    "id": "30099",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Rheinstetten",
-    "location": "Diverse Straßen",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-01-07",
-    "endDate": "2026-10-02",
-    "point": [
-      8.32196,
-      48.981419
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2025-12-03T08:51:27Z"
-  },
-  {
     "id": "30100",
     "phase": "active",
     "category": "power-telecom",
@@ -7958,26 +7598,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-27T14:14:58Z"
-  },
-  {
-    "id": "30199",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Salinenstraße 24",
-    "notes": "Kanalschaden in der Salinenstraße kurz vor der Schwimmbadstraße.\nDie Fahrbahn muss halb gesperrt werden.",
-    "cause": "Eigenbetrieb Umwelttechnik",
-    "startDate": "2026-09-02",
-    "endDate": "2026-10-02",
-    "point": [
-      8.592398,
-      49.120765
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-28T07:52:39Z"
   },
   {
     "id": "30202",
@@ -8620,26 +8240,6 @@
     "lastModified": "2026-05-18T10:38:52Z"
   },
   {
-    "id": "40073",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Bergstraße 10",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-09-29",
-    "endDate": "2026-10-02",
-    "point": [
-      8.292278,
-      48.962393
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-10-02T12:16:14Z"
-  },
-  {
     "id": "40075",
     "phase": "active",
     "category": "special-use",
@@ -8940,46 +8540,6 @@
     "lastModified": "2026-07-10T09:04:20Z"
   },
   {
-    "id": "40132",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Brunnenstraße",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-22",
-    "endDate": "2026-10-02",
-    "point": [
-      8.510731,
-      49.109668
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-07-22T05:55:27Z"
-  },
-  {
-    "id": "40133",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Lauterburger Weg",
-    "notes": "Halbseitige Straßensperrung",
-    "cause": "Telekommunikation",
-    "startDate": "2026-07-22",
-    "endDate": "2026-10-02",
-    "point": [
-      8.464817,
-      49.058115
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-07-22T05:59:00Z"
-  },
-  {
     "id": "40137",
     "phase": "active",
     "category": "special-use",
@@ -9238,26 +8798,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-24T05:42:04Z"
-  },
-  {
-    "id": "40159",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Büchenauerstraße 42",
-    "notes": "Halbseitige Straßensperrung wegen Freilegung Schacht",
-    "cause": "Versorgungsunternehmen",
-    "startDate": "2026-09-21",
-    "endDate": "2026-10-02",
-    "point": [
-      8.5158,
-      49.093396
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-22T15:09:56Z"
   },
   {
     "id": "40160",
@@ -9858,26 +9398,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-07-29T07:56:13Z"
-  },
-  {
-    "id": "40392",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "L613 Wilhelmshöhe",
-    "notes": "Korrekturarbeiten an den Bushaltestellen",
-    "cause": "Tiefbauamt Ettlingen",
-    "startDate": "2026-09-28",
-    "endDate": "2026-10-02",
-    "point": [
-      8.425272,
-      48.931682
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-09-22T07:58:55Z"
   },
   {
     "id": "40403",
