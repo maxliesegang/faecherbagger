@@ -5131,13 +5131,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-21",
-    "endDate": "2026-10-09",
+    "endDate": "2026-10-23",
     "point": [
       8.391707,
       49.009771
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-03T22:00:00Z"
+    "lastModified": "2026-10-04T22:00:00Z"
   },
   {
     "id": "2026V4484",
@@ -5338,6 +5338,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-01T22:00:00Z"
+  },
+  {
+    "id": "2026V4615",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-07-29",
+    "endDate": "2026-10-23",
+    "point": [
+      8.391674,
+      49.009604
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-04T22:00:00Z"
   },
   {
     "id": "2026V4632",
@@ -7155,6 +7175,66 @@
     "point": [
       8.406156,
       48.977639
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-04T22:00:00Z"
+  },
+  {
+    "id": "2026V6299",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Seydlitzstr. 4-24",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-06-29",
+    "endDate": "2026-10-09",
+    "point": [
+      8.357269,
+      49.022612
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-04T22:00:00Z"
+  },
+  {
+    "id": "2026V6300",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Keplerstraße von Bodelschwinghstraße bis Zietenstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-30",
+    "point": [
+      8.359491,
+      49.018008
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-04T22:00:00Z"
+  },
+  {
+    "id": "2026V6301",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Feierabendweg",
+    "notes": "Punktuelle Gruben für Hausanschlüsse",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-30",
+    "point": [
+      8.359004,
+      49.020769
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-04T22:00:00Z"
