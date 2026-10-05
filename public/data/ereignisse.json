@@ -1,215 +1,467 @@
 {
-  "generatedAt": "2026-10-04T18:51:18.084Z",
+  "generatedAt": "2026-10-05T11:03:50.902Z",
   "events": [
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2025V0778:2026-10-05",
-      "siteId": "2025V0778",
+      "kind": "changed",
+      "signature": "changed:40072:2026-09-30T15:01:51Z",
+      "siteId": "40072",
       "point": [
-        8.38722,
-        49.008579
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-11-20",
-      "municipality": "Karlsruhe",
-      "location": "Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2025V7015:2026-10-05",
-      "siteId": "2025V7015",
-      "point": [
-        8.393996,
-        49.013122
+        8.396106,
+        49.040062
       ],
       "closure": "obstruction",
       "startDate": "2026-10-05",
-      "endDate": "2026-10-26",
-      "municipality": "Karlsruhe",
-      "location": "Bismarckstraße zw. Fichte- u. Seminarstraße"
+      "endDate": "2026-10-18",
+      "municipality": "Rheinstetten",
+      "location": "Karlsruher Straße 36"
     },
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V0768:2026-10-05",
-      "siteId": "2026V0768",
+      "kind": "changed",
+      "signature": "changed:40166:2026-10-05T06:51:42Z",
+      "siteId": "40166",
       "point": [
-        8.47583,
-        49.002039
+        8.456338,
+        49.111951
       ],
       "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2027-03-15",
-      "municipality": "Karlsruhe",
-      "location": "Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße"
+      "startDate": "2026-11-23",
+      "endDate": "2026-12-10",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, L558"
     },
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V2444:2026-10-05",
-      "siteId": "2026V2444",
+      "kind": "new",
+      "signature": "new:2026V6271",
+      "siteId": "2026V6271",
       "point": [
-        8.383095,
-        49.014289
-      ],
-      "closure": "full",
-      "startDate": "2026-10-05",
-      "endDate": "2027-03-12",
-      "municipality": "Karlsruhe",
-      "location": "Maximilianstraße zw. Weberstr. u. Stabelstr."
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V3724:2026-10-05",
-      "siteId": "2026V3724",
-      "point": [
-        8.36893,
-        49.000729
+        8.481459,
+        48.992945
       ],
       "closure": "obstruction",
-      "startDate": "2026-10-05",
+      "startDate": "2026-10-09",
       "endDate": "2026-10-09",
       "municipality": "Karlsruhe",
-      "location": "Südtangente zw. AS 5 und AS 7"
+      "location": "Strählerweg Höhe Nr. 20"
     },
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4600:2026-10-05",
-      "siteId": "2026V4600",
+      "kind": "new",
+      "signature": "new:2026V6277",
+      "siteId": "2026V6277",
       "point": [
-        8.383624,
-        49.013735
-      ],
-      "closure": "full",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Maximilianstraße zw. Stabelstraße und Weberstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4887:2026-10-05",
-      "siteId": "2026V4887",
-      "point": [
-        8.39268,
-        48.997993
-      ],
-      "closure": "full",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-07",
-      "municipality": "Karlsruhe",
-      "location": "Leibnitzstraße zw. Südendstraße und Kolpingplatz"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4966:2026-10-05",
-      "siteId": "2026V4966",
-      "point": [
-        8.403054,
-        48.967183
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2027-04-02",
-      "municipality": "Karlsruhe",
-      "location": "Nikolausstraße zw. Lützowstraße und Allmendstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5225:2026-10-05",
-      "siteId": "2026V5225",
-      "point": [
-        8.497173,
-        48.979354
-      ],
-      "closure": "full",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-05",
-      "municipality": "Karlsruhe",
-      "location": "K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5662:2026-10-05",
-      "siteId": "2026V5662",
-      "point": [
-        8.404452,
-        49.003879
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-11",
-      "municipality": "Karlsruhe",
-      "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5683:2026-10-05",
-      "siteId": "2026V5683",
-      "point": [
-        8.460146,
-        49.019935
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "Am Storrenacker Kreuzungsbereich Printzstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5716:2026-10-05",
-      "siteId": "2026V5716",
-      "point": [
-        8.496501,
-        48.987577
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-09",
-      "municipality": "Karlsruhe",
-      "location": "Rittnertstraße und Jean-Ritzert-Straße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5920:2026-10-05",
-      "siteId": "2026V5920",
-      "point": [
-        8.383377,
-        49.012115
-      ],
-      "closure": "full",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-06",
-      "municipality": "Karlsruhe",
-      "location": "Röntgenstraße zw. Südliche Hildapromenade und Röntgenstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6253:2026-10-05",
-      "siteId": "2026V6253",
-      "point": [
-        8.404595,
-        49.011125
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-11-20",
-      "municipality": "Karlsruhe",
-      "location": "Schlossplatz zw. Herrenstraße u. Zirkel"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:40164:2026-10-05",
-      "siteId": "40164",
-      "point": [
-        8.512578,
-        49.111535
+        8.355415,
+        49.023444
       ],
       "closure": "none",
-      "startDate": "2026-10-05",
+      "startDate": "2026-10-21",
+      "endDate": "2026-10-21",
+      "municipality": "Karlsruhe",
+      "location": "Gablonzer Str. 23"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6279",
+      "siteId": "2026V6279",
+      "point": [
+        8.406156,
+        48.977639
+      ],
+      "closure": "full",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-17",
+      "municipality": "Karlsruhe",
+      "location": "Herrenalber Str. Nähe Nr. 34"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40008",
+      "siteId": "40008",
+      "point": [
+        8.500533,
+        49.112958
+      ],
+      "closure": "obstruction",
+      "startDate": "2025-02-05",
       "endDate": "2026-10-30",
       "municipality": "Stutensee",
-      "location": "76297 Stutensee, Kronenstraße 2"
+      "location": "76297 Stutensee, Am Gottesauer Hof / Am Maulbronner Hof"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40031",
+      "siteId": "40031",
+      "point": [
+        8.601544,
+        49.12336
+      ],
+      "closure": "none",
+      "startDate": "2026-03-02",
+      "endDate": "2026-12-15",
+      "municipality": "Bruchsal",
+      "location": "Seilersbahn 2 und 4"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40165",
+      "siteId": "40165",
+      "point": [
+        8.508052,
+        49.108989
+      ],
+      "closure": "none",
+      "startDate": "2026-10-12",
+      "endDate": "2026-11-27",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Goethestraße 37"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40168",
+      "siteId": "40168",
+      "point": [
+        8.469586,
+        49.064122
+      ],
+      "closure": "none",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-28",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Neue Straße 48"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40208",
+      "siteId": "40208",
+      "point": [
+        8.52413,
+        49.102391
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-17",
+      "municipality": "Bruchsal",
+      "location": "Kornblumenweg 12"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40209",
+      "siteId": "40209",
+      "point": [
+        8.524307,
+        49.102344
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-08",
+      "municipality": "Bruchsal",
+      "location": "Kornblumenweg 12"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40211",
+      "siteId": "40211",
+      "point": [
+        8.524307,
+        49.102344
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-08",
+      "municipality": "Bruchsal",
+      "location": "Kornblumenweg 12"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40236",
+      "siteId": "40236",
+      "point": [
+        8.211822,
+        48.854991
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2027-04-09",
+      "municipality": "Rastatt",
+      "location": "76437 Rastatt, Prinz-Eugen-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40242",
+      "siteId": "40242",
+      "point": [
+        8.23306,
+        48.820968
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2026-12-04",
+      "municipality": "Rastatt",
+      "location": "76437 Rastatt / Förch Parkplatz beim Schloß Favorite"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40252",
+      "siteId": "40252",
+      "point": [
+        8.193024,
+        48.86036
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2026-12-04",
+      "municipality": "Rastatt",
+      "location": "76437 Rastatt, Schillerstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40385",
+      "siteId": "40385",
+      "point": [
+        8.411164,
+        48.939036
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-13",
+      "municipality": "Ettlingen",
+      "location": "Schöllbronner Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40418",
+      "siteId": "40418",
+      "point": [
+        8.42168,
+        48.899612
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-16",
+      "municipality": "Ettlingen",
+      "location": "Moosbronner Straße 1 Haltestelle"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V0124:2026-10-12",
+      "siteId": "2026V0124",
+      "point": [
+        8.386822,
+        49.004251
+      ],
+      "closure": "full",
+      "startDate": "2026-10-12",
+      "endDate": "2027-03-07",
+      "municipality": "Karlsruhe",
+      "location": "Gartenstraße zw. Jollystraße und Brauerstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V0127:2026-10-12",
+      "siteId": "2026V0127",
+      "point": [
+        8.387448,
+        49.004326
+      ],
+      "closure": "full",
+      "startDate": "2026-10-12",
+      "endDate": "2027-02-21",
+      "municipality": "Karlsruhe",
+      "location": "Knoten Brauerstraße / Reinhold-Frank-Straße / Kriegsstraße / Gartenstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V0277:2026-10-12",
+      "siteId": "2026V0277",
+      "point": [
+        8.385418,
+        49.004315
+      ],
+      "closure": "full",
+      "startDate": "2026-10-12",
+      "endDate": "2027-01-10",
+      "municipality": "Karlsruhe",
+      "location": "Gartenstraße zw. Lessingstraße und Brauerstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V2798:2026-10-12",
+      "siteId": "2026V2798",
+      "point": [
+        8.368212,
+        49.000854
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-18",
+      "municipality": "Karlsruhe",
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V2799:2026-10-12",
+      "siteId": "2026V2799",
+      "point": [
+        8.368415,
+        49.000684
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-11-15",
+      "municipality": "Karlsruhe",
+      "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4336:2026-10-12",
+      "siteId": "2026V4336",
+      "point": [
+        8.448186,
+        49.025863
+      ],
+      "closure": "full",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-25",
+      "municipality": "Karlsruhe",
+      "location": "Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4394:2026-10-12",
+      "siteId": "2026V4394",
+      "point": [
+        8.38651,
+        49.002938
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-12",
+      "endDate": "2027-01-10",
+      "municipality": "Karlsruhe",
+      "location": "Brauerstraße zw. Roonstraße und Gartenstaße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4500:2026-10-12",
+      "siteId": "2026V4500",
+      "point": [
+        8.37596,
+        49.04905
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-12",
+      "endDate": "2027-04-23",
+      "municipality": "Karlsruhe",
+      "location": "Bärenweg zw. Kirchfeldstraße und Alte Friedrichstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4859:2026-10-06",
+      "siteId": "2026V4859",
+      "point": [
+        8.340106,
+        49.033441
+      ],
+      "closure": "full",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "Heckerstraße zw. Eggensteiner Straße und Lönnsstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5224:2026-10-06",
+      "siteId": "2026V5224",
+      "point": [
+        8.468102,
+        48.977222
+      ],
+      "closure": "full",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5665:2026-10-12",
+      "siteId": "2026V5665",
+      "point": [
+        8.403946,
+        49.003965
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-11-15",
+      "municipality": "Karlsruhe",
+      "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5880:2026-10-06",
+      "siteId": "2026V5880",
+      "point": [
+        8.401534,
+        49.010165
+      ],
+      "closure": "full",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "Ritterstraße zw. Zirkel und Kaiserstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5978:2026-10-06",
+      "siteId": "2026V5978",
+      "point": [
+        8.337047,
+        48.999982
+      ],
+      "closure": "full",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "Bert-Brecht-Straße Höhe Huas Nr. 3"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V6073:2026-10-12",
+      "siteId": "2026V6073",
+      "point": [
+        8.396955,
+        48.989821
+      ],
+      "closure": "none",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-16",
+      "municipality": "Karlsruhe",
+      "location": "Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V6146:2026-10-06",
+      "siteId": "2026V6146",
+      "point": [
+        8.460018,
+        49.001171
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Karlsruhe",
+      "location": "Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V6163:2026-10-06",
+      "siteId": "2026V6163",
+      "point": [
+        8.382974,
+        48.985072
+      ],
+      "closure": "full",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-07",
+      "municipality": "Karlsruhe",
+      "location": "Petergraben 2"
     }
   ]
 }

@@ -1,7 +1,50 @@
 {
-  "since": "2026-10-04T10:20:26.532Z",
-  "added": [],
-  "modified": [],
-  "removed": [],
-  "relevantModifications": []
+  "since": "2026-10-04T18:51:18.084Z",
+  "added": [
+    "2026V6271",
+    "2026V6277",
+    "2026V6279",
+    "40008",
+    "40031",
+    "40165",
+    "40168",
+    "40208",
+    "40209",
+    "40211",
+    "40236",
+    "40242",
+    "40252",
+    "40385",
+    "40418"
+  ],
+  "modified": [
+    "40072",
+    "40166"
+  ],
+  "removed": [
+    "2025V3336",
+    "2026V5182"
+  ],
+  "relevantModifications": [
+    {
+      "id": "40072",
+      "changedFields": [
+        "period",
+        "closure"
+      ],
+      "previousClosure": "none",
+      "previousStartDate": "2026-05-15",
+      "previousEndDate": "2026-10-31"
+    },
+    {
+      "id": "40166",
+      "changedFields": [
+        "period",
+        "closure"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-09-02",
+      "previousEndDate": "2026-10-10"
+    }
+  ]
 }

@@ -701,7 +701,7 @@
   },
   {
     "id": "2025V0778",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "one-direction",
@@ -798,26 +798,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-02-25T23:00:00Z"
-  },
-  {
-    "id": "2025V3336",
-    "phase": "active",
-    "category": "tunnel",
-    "artRaw": "Tunnelbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Schlossplatz zw. Herrenstraße u. Zirkel",
-    "notes": "Jederzeit ein Fahrstreifen im Haupttunnel und/oder in der Tiefspur (Höhe max. 2,00 m) jeweils Zirkel Richtung Kunsthalle frei, Anbindung der Parkhäuser wechselweise über Haupttunnel oder Tiefspur.",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-01-30",
-    "endDate": "2026-10-04",
-    "point": [
-      8.404823,
-      49.010776
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
   },
   {
     "id": "2025V3514",
@@ -1681,7 +1661,7 @@
   },
   {
     "id": "2025V7015",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -2701,7 +2681,7 @@
   },
   {
     "id": "2026V0768",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -3681,7 +3661,7 @@
   },
   {
     "id": "2026V2444",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
@@ -4621,7 +4601,7 @@
   },
   {
     "id": "2026V3724",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "obstruction",
@@ -5341,7 +5321,7 @@
   },
   {
     "id": "2026V4600",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
@@ -5641,7 +5621,7 @@
   },
   {
     "id": "2026V4887",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -5681,7 +5661,7 @@
   },
   {
     "id": "2026V4966",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -5820,26 +5800,6 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
-    "id": "2026V5182",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Seminarstraße zw. Stephanienstraße und Bismarckstraße",
-    "notes": "Bismarckstraße = 1- streifig Höhe Seminarstraße",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-17",
-    "endDate": "2026-10-04",
-    "point": [
-      8.394166,
-      49.012981
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-01T22:00:00Z"
-  },
-  {
     "id": "2026V5224",
     "phase": "upcoming",
     "category": "road-maintenance",
@@ -5861,7 +5821,7 @@
   },
   {
     "id": "2026V5225",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "full",
@@ -6281,7 +6241,7 @@
   },
   {
     "id": "2026V5662",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -6361,7 +6321,7 @@
   },
   {
     "id": "2026V5683",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "soil-survey",
     "artRaw": "Baugrunduntersuchung",
     "closure": "obstruction",
@@ -6421,7 +6381,7 @@
   },
   {
     "id": "2026V5716",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -6741,7 +6701,7 @@
   },
   {
     "id": "2026V5920",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -7061,7 +7021,7 @@
   },
   {
     "id": "2026V6253",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "retaining-wall",
     "artRaw": "Stützwand",
     "closure": "one-direction",
@@ -7138,6 +7098,66 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-01T22:00:00Z"
+  },
+  {
+    "id": "2026V6271",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Strählerweg Höhe Nr. 20",
+    "notes": "Lokale Arbeitsstelle",
+    "cause": "Privat",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-09",
+    "point": [
+      8.481459,
+      48.992945
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-04T22:00:00Z"
+  },
+  {
+    "id": "2026V6277",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gablonzer Str. 23",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-21",
+    "endDate": "2026-10-21",
+    "point": [
+      8.355415,
+      49.023444
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-04T22:00:00Z"
+  },
+  {
+    "id": "2026V6279",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Herrenalber Str. Nähe Nr. 34",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-16",
+    "endDate": "2026-11-17",
+    "point": [
+      8.406156,
+      48.977639
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-04T22:00:00Z"
   },
   {
     "id": "30016",
@@ -7860,6 +7880,26 @@
     "lastModified": "2025-11-18T06:16:12Z"
   },
   {
+    "id": "40008",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Am Gottesauer Hof / Am Maulbronner Hof",
+    "notes": "Halbseitige Straßensperrung",
+    "cause": "Privat",
+    "startDate": "2025-02-05",
+    "endDate": "2026-10-30",
+    "point": [
+      8.500533,
+      49.112958
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2025-02-03T07:36:39Z"
+  },
+  {
     "id": "40009",
     "phase": "active",
     "category": "special-use",
@@ -7938,6 +7978,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-03-12T15:31:58Z"
+  },
+  {
+    "id": "40031",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Seilersbahn 2 und 4",
+    "notes": "Gehweg gesperrt, Umleitung des Fußverkehrs über den Kapuzinergarten",
+    "cause": "Privat",
+    "startDate": "2026-03-02",
+    "endDate": "2026-12-15",
+    "point": [
+      8.601544,
+      49.12336
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-02-27T08:18:12Z"
   },
   {
     "id": "40032",
@@ -8204,20 +8264,20 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Wallonenstraße 28-30",
-    "notes": "Gehwegsperrung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Karlsruher Straße 36",
+    "notes": null,
     "cause": "Privat",
-    "startDate": "2026-05-15",
-    "endDate": "2026-10-31",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-18",
     "point": [
-      8.480568,
-      49.106092
+      8.396106,
+      49.040062
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-05-18T10:38:52Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-30T15:01:51Z"
   },
   {
     "id": "40075",
@@ -8861,7 +8921,7 @@
   },
   {
     "id": "40164",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "none",
@@ -8878,6 +8938,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-10-02T06:11:02Z"
+  },
+  {
+    "id": "40165",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Goethestraße 37",
+    "notes": "Gehwegsperrung sowie Einrichtung einer Halteverbotszone",
+    "cause": "Privat",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-27",
+    "point": [
+      8.508052,
+      49.108989
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-10-05T06:40:38Z"
   },
   {
     "id": "40166",
@@ -8898,6 +8978,46 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-08-28T10:21:16Z"
+  },
+  {
+    "id": "40166",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, L558",
+    "notes": "Halbseitige Straßensperrung / Regelung durch Lichtsignalanlage",
+    "cause": "Land Baden - Württemberg",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-10",
+    "point": [
+      8.456338,
+      49.111951
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-10-05T06:51:42Z"
+  },
+  {
+    "id": "40168",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Neue Straße 48",
+    "notes": "Einrichtung einer Halteverbotszone",
+    "cause": "Privat",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-28",
+    "point": [
+      8.469586,
+      49.064122
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-10-05T07:10:47Z"
   },
   {
     "id": "40169",
@@ -9260,6 +9380,46 @@
     "lastModified": "2026-08-24T09:30:19Z"
   },
   {
+    "id": "40208",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kornblumenweg 12",
+    "notes": "Sackgasse gesperrt",
+    "cause": "Privat",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-17",
+    "point": [
+      8.52413,
+      49.102391
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-30T06:18:26Z"
+  },
+  {
+    "id": "40209",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kornblumenweg 12",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Privat",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-08",
+    "point": [
+      8.524307,
+      49.102344
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-30T09:28:49Z"
+  },
+  {
     "id": "40210",
     "phase": "active",
     "category": "special-use",
@@ -9278,6 +9438,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-01T13:50:09Z"
+  },
+  {
+    "id": "40211",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kornblumenweg 12",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Privat",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-08",
+    "point": [
+      8.524307,
+      49.102344
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-02T06:26:06Z"
   },
   {
     "id": "40212",
@@ -9300,6 +9480,26 @@
     "lastModified": "2026-08-26T07:59:25Z"
   },
   {
+    "id": "40236",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Prinz-Eugen-Straße",
+    "notes": null,
+    "cause": "Fachbereich Bauen und Verkehr",
+    "startDate": "2026-10-05",
+    "endDate": "2027-04-09",
+    "point": [
+      8.211822,
+      48.854991
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-09-17T05:12:51Z"
+  },
+  {
     "id": "40241",
     "phase": "active",
     "category": "gas-water",
@@ -9320,6 +9520,26 @@
     "lastModified": "2026-06-24T05:29:54Z"
   },
   {
+    "id": "40242",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt / Förch Parkplatz beim Schloß Favorite",
+    "notes": null,
+    "cause": "Fachbereich Bauen und Verkehr",
+    "startDate": "2026-10-05",
+    "endDate": "2026-12-04",
+    "point": [
+      8.23306,
+      48.820968
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-09-21T11:52:38Z"
+  },
+  {
     "id": "40248",
     "phase": "active",
     "category": "power-telecom",
@@ -9338,6 +9558,26 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-09-23T12:45:18Z"
+  },
+  {
+    "id": "40252",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Schillerstraße",
+    "notes": "Vollsperrung zwischen Scheffelstraße und Theodor-Storm-Straße, Neubau Wasserleitung",
+    "cause": "star.EW",
+    "startDate": "2026-10-05",
+    "endDate": "2026-12-04",
+    "point": [
+      8.193024,
+      48.86036
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-09-28T11:25:28Z"
   },
   {
     "id": "40292",
@@ -9380,6 +9620,26 @@
     "lastModified": "2026-07-29T07:56:13Z"
   },
   {
+    "id": "40385",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Schöllbronner Straße",
+    "notes": "Vollsperrung wg. Hausanschlussarbeiten",
+    "cause": "Tiefbauamt Ettlingen",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-13",
+    "point": [
+      8.411164,
+      48.939036
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-09-21T09:17:00Z"
+  },
+  {
     "id": "40403",
     "phase": "active",
     "category": "special-use",
@@ -9398,6 +9658,26 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-09-24T05:22:58Z"
+  },
+  {
+    "id": "40418",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Moosbronner Straße 1 Haltestelle",
+    "notes": "Halbseitige Sperrung mittels LSA zum Neubau einer Wasserleittung",
+    "cause": "Stadtwerke Ettlingen",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-16",
+    "point": [
+      8.42168,
+      48.899612
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-10-01T06:26:06Z"
   },
   {
     "id": "40420",
