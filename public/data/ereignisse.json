@@ -1,75 +1,47 @@
 {
-  "generatedAt": "2026-10-05T22:13:42.222Z",
+  "generatedAt": "2026-10-06T10:57:11.737Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V4479:2026-10-04T22:00:00Z",
-      "siteId": "2026V4479",
+      "signature": "changed:40212:2026-10-02T07:52:12Z",
+      "siteId": "40212",
       "point": [
-        8.391707,
-        49.009771
+        8.401005,
+        48.99029
       ],
       "closure": "obstruction",
-      "startDate": "2026-08-21",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße"
+      "startDate": "2026-10-06",
+      "endDate": "2027-02-26",
+      "municipality": "Bruchsal",
+      "location": "John-Bopp-Straße vor der Sparkasse"
     },
     {
       "kind": "new",
-      "signature": "new:2026V4615",
-      "siteId": "2026V4615",
+      "signature": "new:30090",
+      "siteId": "30090",
       "point": [
-        8.391674,
-        49.009604
+        8.307096,
+        48.978197
       ],
       "closure": "obstruction",
-      "startDate": "2026-07-29",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße"
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-06",
+      "municipality": "Rheinstetten",
+      "location": "Rathausstraße 22"
     },
     {
       "kind": "new",
-      "signature": "new:2026V6299",
-      "siteId": "2026V6299",
+      "signature": "new:30228",
+      "siteId": "30228",
       "point": [
-        8.357269,
-        49.022612
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-06-29",
-      "endDate": "2026-10-09",
-      "municipality": "Karlsruhe",
-      "location": "Seydlitzstr. 4-24"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6300",
-      "siteId": "2026V6300",
-      "point": [
-        8.359491,
-        49.018008
+        8.646584,
+        49.099069
       ],
       "closure": "obstruction",
       "startDate": "2026-10-05",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Keplerstraße von Bodelschwinghstraße bis Zietenstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6301",
-      "siteId": "2026V6301",
-      "point": [
-        8.359004,
-        49.020769
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Feierabendweg"
+      "endDate": "2026-10-23",
+      "municipality": "Bruchsal",
+      "location": "Schwabenstraße 7"
     },
     {
       "kind": "starts-soon",

@@ -2200,26 +2200,6 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
-    "id": "2026V0269",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kurt-Schumacher-Straße zw. Wilhelm-Hausenstein-Allee und Josef-Schofer-Straße",
-    "notes": "Ausführung in mehreren Abschnitten mit Vollsperrung Gehweg und Notweg auf den Parkplätzen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-02-03",
-    "endDate": "2026-10-05",
-    "point": [
-      8.372291,
-      49.030292
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-26T22:00:00Z"
-  },
-  {
     "id": "2026V0274",
     "phase": "active",
     "category": "gas-water",
@@ -5601,7 +5581,7 @@
   },
   {
     "id": "2026V4859",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -5821,7 +5801,7 @@
   },
   {
     "id": "2026V5224",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "full",
@@ -5835,26 +5815,6 @@
     "point": [
       8.468102,
       48.977222
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
-  },
-  {
-    "id": "2026V5225",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "K9654/Rittnertstraße zw. Jean-Ritzert-Straße und Lamprechtshof",
-    "notes": "vs. 0:00 Uhr - 5:00 Uhr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-05",
-    "endDate": "2026-10-05",
-    "point": [
-      8.497173,
-      48.979354
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-30T22:00:00Z"
@@ -6681,7 +6641,7 @@
   },
   {
     "id": "2026V5880",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -6781,7 +6741,7 @@
   },
   {
     "id": "2026V5978",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -6798,26 +6758,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
-    "id": "2026V5997",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ritterstraße zw. Am Schlossplatz und Bankhof",
-    "notes": "Inlinereinzug in Kanal",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-24",
-    "endDate": "2026-10-05",
-    "point": [
-      8.401439,
-      49.010004
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
   },
   {
     "id": "2026V6017",
@@ -6901,7 +6841,7 @@
   },
   {
     "id": "2026V6146",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "other",
     "artRaw": "Bauwerksprüfung",
     "closure": "obstruction",
@@ -6921,7 +6861,7 @@
   },
   {
     "id": "2026V6163",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7500,6 +7440,26 @@
     "lastModified": "2026-03-20T08:41:50Z"
   },
   {
+    "id": "30090",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Rathausstraße 22",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-06",
+    "endDate": "2026-10-06",
+    "point": [
+      8.307096,
+      48.978197
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-09-16T07:53:25Z"
+  },
+  {
     "id": "30091",
     "phase": "active",
     "category": "power-telecom",
@@ -7898,6 +7858,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-01T05:57:48Z"
+  },
+  {
+    "id": "30228",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Schwabenstraße 7",
+    "notes": "Gehweg gesperrt. Fahrbahn verengt.",
+    "cause": "Fachgebiet Tiefbau",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-23",
+    "point": [
+      8.646584,
+      49.099069
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-02T07:30:00Z"
   },
   {
     "id": "30236",
@@ -8880,26 +8860,6 @@
     "lastModified": "2026-08-31T10:43:56Z"
   },
   {
-    "id": "40154",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Gernotstraße 4",
-    "notes": "Kranaufstellung und dadurch Gehwegpserrung, Sperrung der Parkflächen sowie halbseitige Straßensperrung",
-    "cause": "Privat",
-    "startDate": "2026-09-02",
-    "endDate": "2026-10-05",
-    "point": [
-      8.471091,
-      49.071772
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-02T04:35:16Z"
-  },
-  {
     "id": "40158",
     "phase": "active",
     "category": "special-use",
@@ -9544,20 +9504,20 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": null,
-    "municipality": "Rastatt",
-    "location": "76437 Rastatt, Herrenstraße 2",
-    "notes": "Private Dachsanierung",
+    "municipality": "Bruchsal",
+    "location": "John-Bopp-Straße vor der Sparkasse",
+    "notes": "Arbeiten mit Baukran an der Sparkasse\nDie Fahrbahn wird verengt und der Fußgängerverkehr vor der Sparkasse wird durch ein Gerüst mit Tunnel geführt",
     "cause": "Privat",
-    "startDate": "2026-09-11",
-    "endDate": "2026-10-09",
+    "startDate": "2026-10-06",
+    "endDate": "2027-02-26",
     "point": [
-      8.206062,
-      48.856104
+      8.401005,
+      48.99029
     ],
-    "source": "Stadt Rastatt",
-    "lastModified": "2026-08-26T07:59:25Z"
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-02T07:52:12Z"
   },
   {
     "id": "40236",
