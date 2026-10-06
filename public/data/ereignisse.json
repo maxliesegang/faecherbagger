@@ -1,47 +1,61 @@
 {
-  "generatedAt": "2026-10-06T10:57:11.737Z",
+  "generatedAt": "2026-10-06T20:36:50.844Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:40212:2026-10-02T07:52:12Z",
-      "siteId": "40212",
+      "signature": "changed:30098:2026-10-06T07:36:20Z",
+      "siteId": "30098",
       "point": [
-        8.401005,
-        48.99029
+        8.380145,
+        49.013737
       ],
-      "closure": "obstruction",
-      "startDate": "2026-10-06",
-      "endDate": "2027-02-26",
-      "municipality": "Bruchsal",
-      "location": "John-Bopp-Straße vor der Sparkasse"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30090",
-      "siteId": "30090",
-      "point": [
-        8.307096,
-        48.978197
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-06",
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-09",
       "municipality": "Rheinstetten",
-      "location": "Rathausstraße 22"
+      "location": "Günther-Laukien-Straße 7"
     },
     {
-      "kind": "new",
-      "signature": "new:30228",
-      "siteId": "30228",
+      "kind": "changed",
+      "signature": "changed:30100:2026-10-06T08:04:34Z",
+      "siteId": "30100",
       "point": [
-        8.646584,
-        49.099069
+        8.367161,
+        49.040008
       ],
       "closure": "obstruction",
       "startDate": "2026-10-05",
-      "endDate": "2026-10-23",
-      "municipality": "Bruchsal",
-      "location": "Schwabenstraße 7"
+      "endDate": "2026-10-16",
+      "municipality": "Rheinstetten",
+      "location": "Pappelweg 2"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30099",
+      "siteId": "30099",
+      "point": [
+        8.297433,
+        48.96909
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-13",
+      "municipality": "Rheinstetten",
+      "location": "Umgehungsstraße zwischen Feuerwehrhaus und Zufahrt Keltenhalle"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30168",
+      "siteId": "30168",
+      "point": [
+        8.249654,
+        48.727776
+      ],
+      "closure": "full",
+      "startDate": "2026-06-22",
+      "endDate": "2026-12-18",
+      "municipality": "Baden-Baden",
+      "location": "Geroldsauer Straße Höhe \"Im Schatzgraben\""
     },
     {
       "kind": "starts-soon",

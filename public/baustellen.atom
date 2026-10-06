@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-06T10:57:11.737Z</updated>
+    <updated>2026-10-06T20:36:50.844Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -32,6 +32,39 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Pappelweg 2 – Rheinstetten]]></title>
+        <id>faecherbagger:30100:2026-10-06T08:04:34Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30100"/>
+        <updated>2026-10-06T08:04:34.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 05.10.2026 – 16.10.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Umgehungsstraße zwischen Feuerwehrhaus und Zufahrt Keltenhalle – Rheinstetten]]></title>
+        <id>faecherbagger:30099:2026-10-06T07:54:46Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30099"/>
+        <updated>2026-10-06T07:54:46.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
+Zeitraum: 06.10.2026 – 13.10.2026
+Verantwortlich: Stadtbauamt
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Günther-Laukien-Straße 7 – Rheinstetten]]></title>
+        <id>faecherbagger:30098:2026-10-06T07:36:20Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30098"/>
+        <updated>2026-10-06T07:36:20.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
+Zeitraum: 05.10.2026 – 09.10.2026
+Verantwortlich: Stadtbauamt
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: 76297 Stutensee, Neue Straße 48 – Stutensee]]></title>
@@ -910,18 +943,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Geänderte Verkehrsführung" term="traffic-reroute"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Fichtenstraße 8 – Stutensee]]></title>
-        <id>faecherbagger:30100:2026-09-24T08:42:14Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30100"/>
-        <updated>2026-09-24T08:42:14.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 25.09.2026 – 08.10.2026
-Hinweis: Gehwegvollsperrung
-Verantwortlich: Versorgungsunternehmen
-Quelle: Stadt Stutensee]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Petunienweg 5 – Stutensee]]></title>
         <id>faecherbagger:40160:2026-09-24T07:33:59Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40160"/>
@@ -1211,7 +1232,7 @@ Quelle: Stadt Rastatt]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40385"/>
         <updated>2026-09-21T09:17:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
-Zeitraum: 05.10.2026 – 13.10.2026
+Zeitraum: 05.10.2026 – 14.10.2026
 Hinweis: Vollsperrung wg. Hausanschlussarbeiten
 Verantwortlich: Tiefbauamt Ettlingen
 Quelle: Stadt Ettlingen]]></summary>
@@ -1528,18 +1549,6 @@ Zeitraum: 16.09.2026 – 09.10.2026
 Verantwortlich: Telekommunikation
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Seegrabenweg 9 – Stutensee]]></title>
-        <id>faecherbagger:30098:2026-09-17T06:14:23Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30098"/>
-        <updated>2026-09-17T06:14:23.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Keine Behinderung
-Zeitraum: 22.09.2026 – 08.10.2026
-Hinweis: Stellung Lichtmasten deswegen Sperrung Gehweg und Fahrradweg
-Verantwortlich: Stadtbauamt
-Quelle: Stadt Stutensee]]></summary>
-        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76437 Rastatt, Prinz-Eugen-Straße – Rastatt]]></title>
@@ -4351,6 +4360,18 @@ Zeitraum: 01.02.2027 – 05.03.2028
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Geroldsauer Straße Höhe "Im Schatzgraben" – Baden-Baden]]></title>
+        <id>faecherbagger:30168:2026-06-15T13:47:20Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30168"/>
+        <updated>2026-06-15T13:47:20.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Brückenbau · Vollsperrung
+Zeitraum: 22.06.2026 – 18.12.2026
+Hinweis: Verkehrsregelung mittels Baustellenampel
+Verantwortlich: Tiefbau
+Quelle: Stadt Baden-Baden]]></summary>
+        <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Margeritenweg 8 – Bruchsal]]></title>

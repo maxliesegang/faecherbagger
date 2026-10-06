@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Tue, 06 Oct 2026 10:57:11 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 06 Oct 2026 20:36:50 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -30,6 +30,39 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Pappelweg 2 – Rheinstetten]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30100</link>
+            <guid isPermaLink="false">faecherbagger:30100:2026-10-06T08:04:34Z</guid>
+            <pubDate>Tue, 06 Oct 2026 08:04:34 GMT</pubDate>
+            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 05.10.2026 – 16.10.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></description>
+            <category>Strom/TK-Versorgung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Umgehungsstraße zwischen Feuerwehrhaus und Zufahrt Keltenhalle – Rheinstetten]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30099</link>
+            <guid isPermaLink="false">faecherbagger:30099:2026-10-06T07:54:46Z</guid>
+            <pubDate>Tue, 06 Oct 2026 07:54:46 GMT</pubDate>
+            <description><![CDATA[Aktuell · Straßenunterhaltung · Mit Behinderung
+Zeitraum: 06.10.2026 – 13.10.2026
+Verantwortlich: Stadtbauamt
+Quelle: Stadt Rheinstetten]]></description>
+            <category>Straßenunterhaltung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Günther-Laukien-Straße 7 – Rheinstetten]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30098</link>
+            <guid isPermaLink="false">faecherbagger:30098:2026-10-06T07:36:20Z</guid>
+            <pubDate>Tue, 06 Oct 2026 07:36:20 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
+Zeitraum: 05.10.2026 – 09.10.2026
+Verantwortlich: Stadtbauamt
+Quelle: Stadt Rheinstetten]]></description>
+            <category>Gas/Wasser</category>
         </item>
         <item>
             <title><![CDATA[Geplant: 76297 Stutensee, Neue Straße 48 – Stutensee]]></title>
@@ -908,18 +941,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Geänderte Verkehrsführung</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: 76297 Stutensee, Fichtenstraße 8 – Stutensee]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30100</link>
-            <guid isPermaLink="false">faecherbagger:30100:2026-09-24T08:42:14Z</guid>
-            <pubDate>Thu, 24 Sep 2026 08:42:14 GMT</pubDate>
-            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 25.09.2026 – 08.10.2026
-Hinweis: Gehwegvollsperrung
-Verantwortlich: Versorgungsunternehmen
-Quelle: Stadt Stutensee]]></description>
-            <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: 76297 Stutensee, Petunienweg 5 – Stutensee]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40160</link>
             <guid isPermaLink="false">faecherbagger:40160:2026-09-24T07:33:59Z</guid>
@@ -1209,7 +1230,7 @@ Quelle: Stadt Rastatt]]></description>
             <guid isPermaLink="false">faecherbagger:40385:2026-09-21T09:17:00Z</guid>
             <pubDate>Mon, 21 Sep 2026 09:17:00 GMT</pubDate>
             <description><![CDATA[Aktuell · Kanalbau · Vollsperrung
-Zeitraum: 05.10.2026 – 13.10.2026
+Zeitraum: 05.10.2026 – 14.10.2026
 Hinweis: Vollsperrung wg. Hausanschlussarbeiten
 Verantwortlich: Tiefbauamt Ettlingen
 Quelle: Stadt Ettlingen]]></description>
@@ -1526,18 +1547,6 @@ Zeitraum: 16.09.2026 – 09.10.2026
 Verantwortlich: Telekommunikation
 Quelle: Stadt Rheinstetten]]></description>
             <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: 76297 Stutensee, Seegrabenweg 9 – Stutensee]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30098</link>
-            <guid isPermaLink="false">faecherbagger:30098:2026-09-17T06:14:23Z</guid>
-            <pubDate>Thu, 17 Sep 2026 06:14:23 GMT</pubDate>
-            <description><![CDATA[Aktuell · Straßenunterhaltung · Keine Behinderung
-Zeitraum: 22.09.2026 – 08.10.2026
-Hinweis: Stellung Lichtmasten deswegen Sperrung Gehweg und Fahrradweg
-Verantwortlich: Stadtbauamt
-Quelle: Stadt Stutensee]]></description>
-            <category>Straßenunterhaltung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: 76437 Rastatt, Prinz-Eugen-Straße – Rastatt]]></title>
@@ -4349,6 +4358,18 @@ Zeitraum: 01.02.2027 – 05.03.2028
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></description>
             <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Geroldsauer Straße Höhe "Im Schatzgraben" – Baden-Baden]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30168</link>
+            <guid isPermaLink="false">faecherbagger:30168:2026-06-15T13:47:20Z</guid>
+            <pubDate>Mon, 15 Jun 2026 13:47:20 GMT</pubDate>
+            <description><![CDATA[Aktuell · Brückenbau · Vollsperrung
+Zeitraum: 22.06.2026 – 18.12.2026
+Hinweis: Verkehrsregelung mittels Baustellenampel
+Verantwortlich: Tiefbau
+Quelle: Stadt Baden-Baden]]></description>
+            <category>Brückenbau</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Margeritenweg 8 – Bruchsal]]></title>

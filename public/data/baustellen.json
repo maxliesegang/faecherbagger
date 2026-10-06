@@ -7542,22 +7542,42 @@
   {
     "id": "30098",
     "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Günther-Laukien-Straße 7",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-09",
+    "point": [
+      8.380145,
+      49.013737
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-06T07:36:20Z"
+  },
+  {
+    "id": "30099",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Seegrabenweg 9",
-    "notes": "Stellung Lichtmasten deswegen Sperrung Gehweg und Fahrradweg",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Umgehungsstraße zwischen Feuerwehrhaus und Zufahrt Keltenhalle",
+    "notes": null,
     "cause": "Stadtbauamt",
-    "startDate": "2026-09-22",
-    "endDate": "2026-10-08",
+    "startDate": "2026-10-06",
+    "endDate": "2026-10-13",
     "point": [
-      8.476439,
-      49.070989
+      8.297433,
+      48.96909
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-17T06:14:23Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-06T07:54:46Z"
   },
   {
     "id": "30100",
@@ -7565,19 +7585,19 @@
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Fichtenstraße 8",
-    "notes": "Gehwegvollsperrung",
-    "cause": "Versorgungsunternehmen",
-    "startDate": "2026-09-25",
-    "endDate": "2026-10-08",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Pappelweg 2",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-16",
     "point": [
-      8.471679,
-      49.108187
+      8.367161,
+      49.040008
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-24T08:42:14Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-06T08:04:34Z"
   },
   {
     "id": "30107",
@@ -7618,6 +7638,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-03-18T13:27:33Z"
+  },
+  {
+    "id": "30168",
+    "phase": "active",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Baden-Baden",
+    "location": "Geroldsauer Straße Höhe \"Im Schatzgraben\"",
+    "notes": "Verkehrsregelung mittels Baustellenampel",
+    "cause": "Tiefbau",
+    "startDate": "2026-06-22",
+    "endDate": "2026-12-18",
+    "point": [
+      8.249654,
+      48.727776
+    ],
+    "source": "Stadt Baden-Baden",
+    "lastModified": "2026-06-15T13:47:20Z"
   },
   {
     "id": "30198",
@@ -9671,7 +9711,7 @@
     "notes": "Vollsperrung wg. Hausanschlussarbeiten",
     "cause": "Tiefbauamt Ettlingen",
     "startDate": "2026-10-05",
-    "endDate": "2026-10-13",
+    "endDate": "2026-10-14",
     "point": [
       8.411164,
       48.939036
