@@ -1,103 +1,33 @@
 {
-  "generatedAt": "2026-10-07T10:45:17.523Z",
+  "generatedAt": "2026-10-07T20:51:32.769Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2025V7015:2026-10-06T22:00:00Z",
-      "siteId": "2025V7015",
+      "signature": "changed:2025V6317:2026-10-06T22:00:00Z",
+      "siteId": "2025V6317",
       "point": [
-        8.393996,
-        49.013122
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-31",
-      "municipality": "Karlsruhe",
-      "location": "Bismarckstraße zw. Fichte- u. Seminarstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V0691:2026-10-06T22:00:00Z",
-      "siteId": "2026V0691",
-      "point": [
-        8.381675,
-        49.009031
+        8.403394,
+        49.005516
       ],
       "closure": "full",
-      "startDate": "2026-11-02",
-      "endDate": "2027-12-31",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-15",
       "municipality": "Karlsruhe",
-      "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße"
+      "location": "Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)"
     },
     {
-      "kind": "changed",
-      "signature": "changed:2026V5807:2026-10-06T22:00:00Z",
-      "siteId": "2026V5807",
+      "kind": "new",
+      "signature": "new:2026V6065",
+      "siteId": "2026V6065",
       "point": [
-        8.37095,
-        49.01316
+        8.346546,
+        48.992241
       ],
       "closure": "full",
-      "startDate": "2026-11-03",
-      "endDate": "2026-11-05",
-      "municipality": "Karlsruhe",
-      "location": "Richard-Wagner-Straße zw. Ludwig-Marum-Straße und Schubertstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:30098:2026-09-17T06:14:23Z",
-      "siteId": "30098",
-      "point": [
-        8.380145,
-        49.013737
-      ],
-      "closure": "none",
-      "startDate": "2026-09-22",
-      "endDate": "2026-10-08",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Seegrabenweg 9"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2025V4908",
-      "siteId": "2025V4908",
-      "point": [
-        8.409891,
-        49.011954
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-04-27",
-      "endDate": "2026-10-08",
-      "municipality": "Karlsruhe",
-      "location": "Engesserstr. 2-6/8-12 und Lehmannstr. 1-3"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6323",
-      "siteId": "2026V6323",
-      "point": [
-        8.407874,
-        48.968214
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-16",
-      "endDate": "2026-11-15",
-      "municipality": "Karlsruhe",
-      "location": "Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30226",
-      "siteId": "30226",
-      "point": [
-        8.60759,
-        49.123475
-      ],
-      "closure": "obstruction",
       "startDate": "2026-10-07",
-      "endDate": "2026-12-31",
-      "municipality": "Bruchsal",
-      "location": "Huttenstraße/Auweg"
+      "endDate": "2026-10-07",
+      "municipality": "Karlsruhe",
+      "location": "Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg"
     },
     {
       "kind": "starts-soon",

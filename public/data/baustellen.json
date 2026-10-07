@@ -1288,16 +1288,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)",
-    "notes": null,
+    "notes": "Sperrung jeweils 9:00 bis 17:00 Uhr und 20:00 bis 6:00 Uhr",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-13",
-    "endDate": "2026-10-14",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-15",
     "point": [
       8.403394,
       49.005516
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-11T23:00:00Z"
+    "lastModified": "2026-10-06T22:00:00Z"
   },
   {
     "id": "2025V6344",
@@ -6678,6 +6678,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-21T22:00:00Z"
+  },
+  {
+    "id": "2026V6065",
+    "phase": "active",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-07",
+    "endDate": "2026-10-07",
+    "point": [
+      8.346546,
+      48.992241
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-06T22:00:00Z"
   },
   {
     "id": "2026V6073",

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-07T10:45:17.523Z</updated>
+    <updated>2026-10-07T20:51:32.769Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -46,6 +46,18 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Geplant: Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel) – Karlsruhe]]></title>
+        <id>faecherbagger:2025V6317:2026-10-06T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6317"/>
+        <updated>2026-10-06T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Tunnel · Vollsperrung
+Zeitraum: 12.10.2026 – 15.10.2026
+Hinweis: Sperrung jeweils 9:00 bis 17:00 Uhr und 20:00 bis 6:00 Uhr
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Tunnel" term="tunnel"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Bismarckstraße zw. Fichte- u. Seminarstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V7015:2026-10-06T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7015"/>
@@ -76,6 +88,17 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-10-06T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
 Zeitraum: 03.11.2026 – 05.11.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6065:2026-10-06T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6065"/>
+        <updated>2026-10-06T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
+Zeitraum: 07.10.2026 – 07.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
@@ -5477,17 +5500,6 @@ Hinweis: Gartenstraße in Östlicher Richtung zw. Steinhäuserstraße u. Lessing
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel) – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6317:2026-01-11T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6317"/>
-        <updated>2026-01-11T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Tunnel · Vollsperrung
-Zeitraum: 13.10.2026 – 14.10.2026
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Tunnel" term="tunnel"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: K 9675 zw. AS3 und AS4 (Edeltrudtunnel) – Karlsruhe]]></title>
