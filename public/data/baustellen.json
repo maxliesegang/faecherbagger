@@ -980,6 +980,26 @@
     "lastModified": "2025-08-28T22:00:00Z"
   },
   {
+    "id": "2025V4908",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Engesserstr. 2-6/8-12 und Lehmannstr. 1-3",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-04-27",
+    "endDate": "2026-10-08",
+    "point": [
+      8.409891,
+      49.011954
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-06T22:00:00Z"
+  },
+  {
     "id": "2025V5173",
     "phase": "active",
     "category": "special-use",
@@ -1671,13 +1691,13 @@
     "notes": "Lokale Engstelle",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-10-05",
-    "endDate": "2026-10-26",
+    "endDate": "2026-10-31",
     "point": [
       8.393996,
       49.013122
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-01T22:00:00Z"
+    "lastModified": "2026-10-06T22:00:00Z"
   },
   {
     "id": "2025V7017",
@@ -2610,14 +2630,14 @@
     "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße",
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-19",
+    "startDate": "2026-11-02",
     "endDate": "2027-12-31",
     "point": [
       8.381675,
       49.009031
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-28T22:00:00Z"
+    "lastModified": "2026-10-06T22:00:00Z"
   },
   {
     "id": "2026V0725",
@@ -5561,7 +5581,7 @@
   },
   {
     "id": "2026V4853",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "full",
@@ -5578,26 +5598,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-30T22:00:00Z"
-  },
-  {
-    "id": "2026V4859",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Heckerstraße zw. Eggensteiner Straße und Lönnsstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-06",
-    "endDate": "2026-10-06",
-    "point": [
-      8.340106,
-      49.033441
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
   },
   {
     "id": "2026V4881",
@@ -5798,26 +5798,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-16T22:00:00Z"
-  },
-  {
-    "id": "2026V5224",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "K9652/Tiefentalstraße von Albert-Einstein-Straße bis Straße des Roten Kreuzes",
-    "notes": "vs. 0:00 Uhr - 5:00 Uhr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-06",
-    "endDate": "2026-10-06",
-    "point": [
-      8.468102,
-      48.977222
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
   },
   {
     "id": "2026V5229",
@@ -6300,26 +6280,6 @@
     "lastModified": "2026-09-15T22:00:00Z"
   },
   {
-    "id": "2026V5683",
-    "phase": "active",
-    "category": "soil-survey",
-    "artRaw": "Baugrunduntersuchung",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Am Storrenacker Kreuzungsbereich Printzstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-05",
-    "endDate": "2026-10-06",
-    "point": [
-      8.460146,
-      49.019935
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
-  },
-  {
     "id": "2026V5705",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -6521,7 +6481,7 @@
   },
   {
     "id": "2026V5765",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -6590,14 +6550,14 @@
     "location": "Richard-Wagner-Straße zw. Ludwig-Marum-Straße und Schubertstraße",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2026-10-20",
-    "endDate": "2026-10-22",
+    "startDate": "2026-11-03",
+    "endDate": "2026-11-05",
     "point": [
       8.37095,
       49.01316
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
+    "lastModified": "2026-10-06T22:00:00Z"
   },
   {
     "id": "2026V5811",
@@ -6640,26 +6600,6 @@
     "lastModified": "2026-09-15T22:00:00Z"
   },
   {
-    "id": "2026V5880",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ritterstraße zw. Zirkel und Kaiserstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-06",
-    "endDate": "2026-10-06",
-    "point": [
-      8.401534,
-      49.010165
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
-  },
-  {
     "id": "2026V5881",
     "phase": "upcoming",
     "category": "crane",
@@ -6678,26 +6618,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-15T22:00:00Z"
-  },
-  {
-    "id": "2026V5920",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Röntgenstraße zw. Südliche Hildapromenade und Röntgenstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-05",
-    "endDate": "2026-10-06",
-    "point": [
-      8.383377,
-      49.012115
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
   },
   {
     "id": "2026V5942",
@@ -6735,26 +6655,6 @@
     "point": [
       8.444182,
       49.03047
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
-    "id": "2026V5978",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bert-Brecht-Straße Höhe Huas Nr. 3",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-06",
-    "endDate": "2026-10-06",
-    "point": [
-      8.337047,
-      48.999982
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-20T22:00:00Z"
@@ -6838,26 +6738,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-23T22:00:00Z"
-  },
-  {
-    "id": "2026V6146",
-    "phase": "active",
-    "category": "other",
-    "artRaw": "Bauwerksprüfung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Durlacher Allee zw.Wilmar-Schwabe-Straße und K9659",
-    "notes": "Zeitweise Fahrstreifensperrung abwechselnd in beide Fahrtrichtungen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-06",
-    "endDate": "2026-10-06",
-    "point": [
-      8.460018,
-      49.001171
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-27T22:00:00Z"
   },
   {
     "id": "2026V6163",
@@ -7180,6 +7060,26 @@
     "lastModified": "2026-10-04T22:00:00Z"
   },
   {
+    "id": "2026V6323",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-16",
+    "endDate": "2026-11-15",
+    "point": [
+      8.407874,
+      48.968214
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-06T22:00:00Z"
+  },
+  {
     "id": "30016",
     "phase": "active",
     "category": "power-telecom",
@@ -7440,26 +7340,6 @@
     "lastModified": "2026-03-20T08:41:50Z"
   },
   {
-    "id": "30090",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Rathausstraße 22",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-10-06",
-    "endDate": "2026-10-06",
-    "point": [
-      8.307096,
-      48.978197
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-09-16T07:53:25Z"
-  },
-  {
     "id": "30091",
     "phase": "active",
     "category": "power-telecom",
@@ -7542,22 +7422,22 @@
   {
     "id": "30098",
     "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Günther-Laukien-Straße 7",
-    "notes": null,
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Seegrabenweg 9",
+    "notes": "Stellung Lichtmasten deswegen Sperrung Gehweg und Fahrradweg",
     "cause": "Stadtbauamt",
-    "startDate": "2026-10-05",
-    "endDate": "2026-10-09",
+    "startDate": "2026-09-22",
+    "endDate": "2026-10-08",
     "point": [
       8.380145,
       49.013737
     ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-10-06T07:36:20Z"
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-17T06:14:23Z"
   },
   {
     "id": "30099",
@@ -7900,6 +7780,26 @@
     "lastModified": "2026-10-01T05:57:48Z"
   },
   {
+    "id": "30226",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Huttenstraße/Auweg",
+    "notes": "Fahrbahn verengt, Gehwege nicht betroffen",
+    "cause": "Stadtwerke",
+    "startDate": "2026-10-07",
+    "endDate": "2026-12-31",
+    "point": [
+      8.60759,
+      49.123475
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-01T10:00:00Z"
+  },
+  {
     "id": "30228",
     "phase": "active",
     "category": "sewer",
@@ -8198,26 +8098,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-07-17T08:52:33Z"
-  },
-  {
-    "id": "40058",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Albgaustraße 63",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-08-03",
-    "endDate": "2026-10-06",
-    "point": [
-      8.318671,
-      48.975338
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-07-28T14:40:10Z"
   },
   {
     "id": "40060",

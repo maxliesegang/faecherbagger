@@ -1,117 +1,117 @@
 {
-  "generatedAt": "2026-10-06T20:36:50.844Z",
+  "generatedAt": "2026-10-07T10:45:17.523Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:30098:2026-10-06T07:36:20Z",
+      "signature": "changed:2025V7015:2026-10-06T22:00:00Z",
+      "siteId": "2025V7015",
+      "point": [
+        8.393996,
+        49.013122
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-31",
+      "municipality": "Karlsruhe",
+      "location": "Bismarckstraße zw. Fichte- u. Seminarstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0691:2026-10-06T22:00:00Z",
+      "siteId": "2026V0691",
+      "point": [
+        8.381675,
+        49.009031
+      ],
+      "closure": "full",
+      "startDate": "2026-11-02",
+      "endDate": "2027-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5807:2026-10-06T22:00:00Z",
+      "siteId": "2026V5807",
+      "point": [
+        8.37095,
+        49.01316
+      ],
+      "closure": "full",
+      "startDate": "2026-11-03",
+      "endDate": "2026-11-05",
+      "municipality": "Karlsruhe",
+      "location": "Richard-Wagner-Straße zw. Ludwig-Marum-Straße und Schubertstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:30098:2026-09-17T06:14:23Z",
       "siteId": "30098",
       "point": [
         8.380145,
         49.013737
       ],
-      "closure": "full",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-09",
-      "municipality": "Rheinstetten",
-      "location": "Günther-Laukien-Straße 7"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:30100:2026-10-06T08:04:34Z",
-      "siteId": "30100",
-      "point": [
-        8.367161,
-        49.040008
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-05",
-      "endDate": "2026-10-16",
-      "municipality": "Rheinstetten",
-      "location": "Pappelweg 2"
+      "closure": "none",
+      "startDate": "2026-09-22",
+      "endDate": "2026-10-08",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Seegrabenweg 9"
     },
     {
       "kind": "new",
-      "signature": "new:30099",
-      "siteId": "30099",
+      "signature": "new:2025V4908",
+      "siteId": "2025V4908",
       "point": [
-        8.297433,
-        48.96909
+        8.409891,
+        49.011954
       ],
       "closure": "obstruction",
-      "startDate": "2026-10-06",
-      "endDate": "2026-10-13",
-      "municipality": "Rheinstetten",
-      "location": "Umgehungsstraße zwischen Feuerwehrhaus und Zufahrt Keltenhalle"
+      "startDate": "2026-04-27",
+      "endDate": "2026-10-08",
+      "municipality": "Karlsruhe",
+      "location": "Engesserstr. 2-6/8-12 und Lehmannstr. 1-3"
     },
     {
       "kind": "new",
-      "signature": "new:30168",
-      "siteId": "30168",
+      "signature": "new:2026V6323",
+      "siteId": "2026V6323",
       "point": [
-        8.249654,
-        48.727776
+        8.407874,
+        48.968214
       ],
-      "closure": "full",
-      "startDate": "2026-06-22",
-      "endDate": "2026-12-18",
-      "municipality": "Baden-Baden",
-      "location": "Geroldsauer Straße Höhe \"Im Schatzgraben\""
+      "closure": "obstruction",
+      "startDate": "2026-10-16",
+      "endDate": "2026-11-15",
+      "municipality": "Karlsruhe",
+      "location": "Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30226",
+      "siteId": "30226",
+      "point": [
+        8.60759,
+        49.123475
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-07",
+      "endDate": "2026-12-31",
+      "municipality": "Bruchsal",
+      "location": "Huttenstraße/Auweg"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2025V6317:2026-10-13",
-      "siteId": "2025V6317",
+      "signature": "starts-soon:2026V6197:2026-10-14",
+      "siteId": "2026V6197",
       "point": [
-        8.403394,
-        49.005516
+        8.391418,
+        49.002229
       ],
       "closure": "full",
-      "startDate": "2026-10-13",
+      "startDate": "2026-10-14",
       "endDate": "2026-10-14",
       "municipality": "Karlsruhe",
-      "location": "Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V0102:2026-10-13",
-      "siteId": "2026V0102",
-      "point": [
-        8.386934,
-        49.00479
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-13",
-      "endDate": "2027-01-10",
-      "municipality": "Karlsruhe",
-      "location": "Brauerstraße zw. Gartenstraße u. Kriegstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V4853:2026-10-07",
-      "siteId": "2026V4853",
-      "point": [
-        8.461453,
-        48.967681
-      ],
-      "closure": "full",
-      "startDate": "2026-10-07",
-      "endDate": "2026-10-07",
-      "municipality": "Karlsruhe",
-      "location": "L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5765:2026-10-07",
-      "siteId": "2026V5765",
-      "point": [
-        8.318762,
-        49.039198
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-07",
-      "endDate": "2026-10-16",
-      "municipality": "Karlsruhe",
-      "location": "Gewann Grabenort"
+      "location": "Jollystraße zw. Roon- und Boeckhstraße"
     }
   ]
 }
