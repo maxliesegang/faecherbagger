@@ -3501,23 +3501,23 @@
   },
   {
     "id": "2026V2043",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Freydorfstraße zw. Moltke- u. Grenadierstraße",
-    "notes": null,
+    "notes": "Ausführung in 2 Abschnitten, jeweils halbseitig gesperrt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-14",
-    "endDate": "2026-10-30",
+    "startDate": "2026-10-12",
+    "endDate": "2026-12-24",
     "point": [
       8.379405,
       49.015734
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-26T22:00:00Z"
+    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "2026V2134",
@@ -4100,6 +4100,26 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
+    "id": "2026V3192",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Werderstraße zw. Marienstraße und Rüppurrer Straße",
+    "notes": "Höhe Haus Nr 68",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-07-15",
+    "endDate": "2026-10-30",
+    "point": [
+      8.409222,
+      49.001515
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-07T22:00:00Z"
+  },
+  {
     "id": "2026V3196",
     "phase": "active",
     "category": "district-heating",
@@ -4251,13 +4271,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-31",
-    "endDate": "2026-10-16",
+    "endDate": "2026-10-14",
     "point": [
       8.397039,
       49.050575
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
+    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "2026V3478",
@@ -6995,6 +7015,46 @@
     "point": [
       8.421892,
       49.013259
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-07T22:00:00Z"
+  },
+  {
+    "id": "2026V6345",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Nikolausstraße zw. Lützowstraße und Allmendstraße",
+    "notes": "Baugrunderkundung, Bohrungen an 2 Tagen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-23",
+    "point": [
+      8.403099,
+      48.967164
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-07T22:00:00Z"
+  },
+  {
+    "id": "2026V6347",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Silcherstraße, Rabenweg, Buschwiesenweg",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-08",
+    "endDate": "2026-12-31",
+    "point": [
+      8.34204,
+      49.006128
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-07T22:00:00Z"
