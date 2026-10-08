@@ -1,47 +1,187 @@
 {
-  "generatedAt": "2026-10-07T20:51:32.769Z",
+  "generatedAt": "2026-10-08T11:04:40.850Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2025V6317:2026-10-06T22:00:00Z",
-      "siteId": "2025V6317",
+      "signature": "changed:2024V5789:2026-10-07T22:00:00Z",
+      "siteId": "2024V5789",
       "point": [
-        8.403394,
-        49.005516
+        8.386921,
+        49.004906
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-04",
+      "endDate": "2026-12-23",
+      "municipality": "Karlsruhe",
+      "location": "Brauerstraße zw. Putlitzstraße u. Kriegstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0124:2026-10-07T22:00:00Z",
+      "siteId": "2026V0124",
+      "point": [
+        8.386822,
+        49.004251
       ],
       "closure": "full",
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-15",
+      "startDate": "2026-11-04",
+      "endDate": "2027-03-07",
       "municipality": "Karlsruhe",
-      "location": "Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)"
+      "location": "Gartenstraße zw. Jollystraße und Brauerstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0277:2026-10-07T22:00:00Z",
+      "siteId": "2026V0277",
+      "point": [
+        8.385418,
+        49.004315
+      ],
+      "closure": "full",
+      "startDate": "2026-11-02",
+      "endDate": "2027-01-31",
+      "municipality": "Karlsruhe",
+      "location": "Gartenstraße zw. Lessingstraße und Brauerstraße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4394:2026-10-07T22:00:00Z",
+      "siteId": "2026V4394",
+      "point": [
+        8.38651,
+        49.002938
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-04",
+      "endDate": "2027-03-07",
+      "municipality": "Karlsruhe",
+      "location": "Brauerstraße zw. Roonstraße und Gartenstaße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4551:2026-10-07T22:00:00Z",
+      "siteId": "2026V4551",
+      "point": [
+        8.479498,
+        48.999712
+      ],
+      "closure": "full",
+      "startDate": "2026-08-11",
+      "endDate": "2026-11-02",
+      "municipality": "Karlsruhe",
+      "location": "Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:30098:2026-10-06T07:36:20Z",
+      "siteId": "30098",
+      "point": [
+        8.380145,
+        49.013737
+      ],
+      "closure": "full",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-09",
+      "municipality": "Rheinstetten",
+      "location": "Günther-Laukien-Straße 7"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:40072:2026-05-18T10:38:52Z",
+      "siteId": "40072",
+      "point": [
+        8.396106,
+        49.040062
+      ],
+      "closure": "none",
+      "startDate": "2026-05-15",
+      "endDate": "2026-10-31",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Wallonenstraße 28-30"
     },
     {
       "kind": "new",
-      "signature": "new:2026V6065",
-      "siteId": "2026V6065",
+      "signature": "new:2026V6340",
+      "siteId": "2026V6340",
       "point": [
-        8.346546,
-        48.992241
+        8.421892,
+        49.013259
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-08",
+      "endDate": "2026-10-24",
+      "municipality": "Karlsruhe",
+      "location": "Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30101",
+      "siteId": "30101",
+      "point": [
+        8.336195,
+        48.964791
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-08",
+      "endDate": "2026-10-22",
+      "municipality": "Rheinstetten",
+      "location": "Herrenalber Straße 2a"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40173",
+      "siteId": "40173",
+      "point": [
+        8.244608,
+        48.767335
       ],
       "closure": "full",
-      "startDate": "2026-10-07",
-      "endDate": "2026-10-07",
-      "municipality": "Karlsruhe",
-      "location": "Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg"
+      "startDate": "2026-10-08",
+      "endDate": "2026-10-09",
+      "municipality": "Baden-Baden",
+      "location": "Schloßbergtunnel (Zähringerstraße)"
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V6197:2026-10-14",
-      "siteId": "2026V6197",
+      "signature": "starts-soon:2026V5649:2026-10-15",
+      "siteId": "2026V5649",
       "point": [
-        8.391418,
-        49.002229
+        8.460286,
+        48.995006
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-15",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5708:2026-10-09",
+      "siteId": "2026V5708",
+      "point": [
+        8.389164,
+        48.982052
       ],
       "closure": "full",
-      "startDate": "2026-10-14",
-      "endDate": "2026-10-14",
+      "startDate": "2026-10-09",
+      "endDate": "2026-10-12",
       "municipality": "Karlsruhe",
-      "location": "Jollystraße zw. Roon- und Boeckhstraße"
+      "location": "Bahnübergang Belchenstraße/Im Weiherwald"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V6271:2026-10-09",
+      "siteId": "2026V6271",
+      "point": [
+        8.481459,
+        48.992945
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-09",
+      "endDate": "2026-10-09",
+      "municipality": "Karlsruhe",
+      "location": "Strählerweg Höhe Nr. 20"
     }
   ]
 }

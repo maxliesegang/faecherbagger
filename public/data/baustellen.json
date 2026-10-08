@@ -381,7 +381,7 @@
   },
   {
     "id": "2024V5789",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -390,14 +390,14 @@
     "location": "Brauerstraße zw. Putlitzstraße u. Kriegstraße",
     "notes": "Arbeiten in Mittellage, Entfall von Richtungsfahrstreifen",
     "cause": "Tiefbauamt",
-    "startDate": "2026-08-24",
-    "endDate": "2026-10-13",
+    "startDate": "2026-11-04",
+    "endDate": "2026-12-23",
     "point": [
       8.386921,
       49.004906
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
+    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "2024V6753",
@@ -1453,8 +1453,8 @@
     "startDate": "2026-08-24",
     "endDate": "2027-03-07",
     "point": [
-      8.38672,
-      49.005528
+      8.386729,
+      49.00553
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-09T22:00:00Z"
@@ -1950,14 +1950,14 @@
     "location": "Gartenstraße zw. Jollystraße und Brauerstraße",
     "notes": "Jollystraße mit Kopfwender, Zufahrt Tankstelle frei",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-10-12",
+    "startDate": "2026-11-04",
     "endDate": "2027-03-07",
     "point": [
       8.386822,
       49.004251
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-05T23:00:00Z"
+    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "2026V0127",
@@ -2250,14 +2250,14 @@
     "location": "Gartenstraße zw. Lessingstraße und Brauerstraße",
     "notes": "Gartenstraße zw. Lessingstraße und Brauerstraße gesperrt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-12",
-    "endDate": "2027-01-10",
+    "startDate": "2026-11-02",
+    "endDate": "2027-01-31",
     "point": [
       8.385418,
       49.004315
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
+    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "2026V0282",
@@ -4000,26 +4000,6 @@
     "lastModified": "2026-08-26T22:00:00Z"
   },
   {
-    "id": "2026V2874",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Weiherstraße zw. Basler-Tor-Straße und Brunnenhausstraße",
-    "notes": "Höhe Haus Nr. 7, Geh-, und Radwegbereich gesperrt, halbseitige 1-streifige Verkehrsführung",
-    "cause": "Privat",
-    "startDate": "2026-05-18",
-    "endDate": "2026-10-07",
-    "point": [
-      8.470983,
-      48.996621
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-13T22:00:00Z"
-  },
-  {
     "id": "2026V2881",
     "phase": "active",
     "category": "special-use",
@@ -5080,26 +5060,6 @@
     "lastModified": "2026-07-12T22:00:00Z"
   },
   {
-    "id": "2026V4393",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Brauerstraße zw. Roonstraße und Gartenstraße",
-    "notes": "Sperrung einer Geradeausspur Fahrtrichtung Norden Mo.-Fr. 9.00-15.00 Uhr",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-28",
-    "endDate": "2026-10-11",
-    "point": [
-      8.386656,
-      49.003568
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
-  },
-  {
     "id": "2026V4394",
     "phase": "upcoming",
     "category": "rail",
@@ -5110,14 +5070,14 @@
     "location": "Brauerstraße zw. Roonstraße und Gartenstaße",
     "notes": "Verkehrsführung ab der Roonstraße in nördlicher Richtung auf der Gegenfahrbahn, Zufahrt Putlitzstraße über Anliegerfahrbahn",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-10-12",
-    "endDate": "2027-01-10",
+    "startDate": "2026-11-04",
+    "endDate": "2027-03-07",
     "point": [
       8.38651,
       49.002938
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
+    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "2026V4479",
@@ -5231,13 +5191,13 @@
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-08-11",
-    "endDate": "2026-10-09",
+    "endDate": "2026-11-02",
     "point": [
       8.479498,
       48.999712
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
+    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "2026V4562",
@@ -5580,26 +5540,6 @@
     "lastModified": "2026-08-03T22:00:00Z"
   },
   {
-    "id": "2026V4853",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "L623/ Am Wetterbach zw. Wolfartsweier und Hohenwettersbach",
-    "notes": "vs. 0:00 Uhr - 5:00 Uhr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-07",
-    "endDate": "2026-10-07",
-    "point": [
-      8.461453,
-      48.967681
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
-  },
-  {
     "id": "2026V4881",
     "phase": "upcoming",
     "category": "bridge",
@@ -5618,26 +5558,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-17T22:00:00Z"
-  },
-  {
-    "id": "2026V4887",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Leibnitzstraße zw. Südendstraße und Kolpingplatz",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-05",
-    "endDate": "2026-10-07",
-    "point": [
-      8.39268,
-      48.997993
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-04T22:00:00Z"
   },
   {
     "id": "2026V4894",
@@ -6680,26 +6600,6 @@
     "lastModified": "2026-09-21T22:00:00Z"
   },
   {
-    "id": "2026V6065",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Yburgweg zw. zw. Schliffkpfweg und Kreuzung Plättigweg",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-07",
-    "endDate": "2026-10-07",
-    "point": [
-      8.346546,
-      48.992241
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-06T22:00:00Z"
-  },
-  {
     "id": "2026V6073",
     "phase": "upcoming",
     "category": "traffic-reroute",
@@ -6758,26 +6658,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-23T22:00:00Z"
-  },
-  {
-    "id": "2026V6163",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Petergraben 2",
-    "notes": null,
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-06",
-    "endDate": "2026-10-07",
-    "point": [
-      8.382974,
-      48.985072
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
   },
   {
     "id": "2026V6185",
@@ -7098,6 +6978,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-06T22:00:00Z"
+  },
+  {
+    "id": "2026V6340",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-08",
+    "endDate": "2026-10-24",
+    "point": [
+      8.421892,
+      49.013259
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "30016",
@@ -7442,22 +7342,22 @@
   {
     "id": "30098",
     "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Seegrabenweg 9",
-    "notes": "Stellung Lichtmasten deswegen Sperrung Gehweg und Fahrradweg",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Günther-Laukien-Straße 7",
+    "notes": null,
     "cause": "Stadtbauamt",
-    "startDate": "2026-09-22",
-    "endDate": "2026-10-08",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-09",
     "point": [
       8.380145,
       49.013737
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-17T06:14:23Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-06T07:36:20Z"
   },
   {
     "id": "30099",
@@ -7498,6 +7398,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-10-06T08:04:34Z"
+  },
+  {
+    "id": "30101",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Herrenalber Straße 2a",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-08",
+    "endDate": "2026-10-22",
+    "point": [
+      8.336195,
+      48.964791
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-06T10:40:06Z"
   },
   {
     "id": "30107",
@@ -7544,7 +7464,7 @@
     "phase": "active",
     "category": "bridge",
     "artRaw": "Brückenbau",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Baden-Baden",
     "location": "Geroldsauer Straße Höhe \"Im Schatzgraben\"",
@@ -7638,26 +7558,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-16T07:10:18Z"
-  },
-  {
-    "id": "30213",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Friedenstraße 16",
-    "notes": "Arbeiten am Kanal. Dauer: Mehrere Tage im Zeitraum.\n\nFahrbahn und Gehweg werden verengt.",
-    "cause": "Eigenbetrieb Umwelttechnik",
-    "startDate": "2026-09-28",
-    "endDate": "2026-10-07",
-    "point": [
-      8.584936,
-      49.125733
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-22T07:12:07Z"
   },
   {
     "id": "30214",
@@ -8264,20 +8164,20 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Karlsruher Straße 36",
-    "notes": null,
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Wallonenstraße 28-30",
+    "notes": "Gehwegsperrung",
     "cause": "Privat",
-    "startDate": "2026-10-05",
-    "endDate": "2026-10-18",
+    "startDate": "2026-05-15",
+    "endDate": "2026-10-31",
     "point": [
       8.396106,
       49.040062
     ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-09-30T15:01:51Z"
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-05-18T10:38:52Z"
   },
   {
     "id": "40075",
@@ -9038,6 +8938,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-10-15T13:25:10Z"
+  },
+  {
+    "id": "40173",
+    "phase": "active",
+    "category": "tunnel",
+    "artRaw": "Tunnelbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Baden-Baden",
+    "location": "Schloßbergtunnel (Zähringerstraße)",
+    "notes": "Nachtsperrung Hauptreinigung und Wartungsarbeiten: von Donnerstag Abend (08.10.) bis Freitag Morgen (09.10.) zwischen 21:00 Uhr und 05:00 Uhr",
+    "cause": "Tiefbau",
+    "startDate": "2026-10-08",
+    "endDate": "2026-10-09",
+    "point": [
+      8.244608,
+      48.767335
+    ],
+    "source": "Stadt Baden-Baden",
+    "lastModified": "2026-04-29T11:22:27Z"
   },
   {
     "id": "40176",
