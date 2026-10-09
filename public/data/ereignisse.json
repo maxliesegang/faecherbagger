@@ -1,117 +1,243 @@
 {
-  "generatedAt": "2026-10-08T20:53:19.846Z",
+  "generatedAt": "2026-10-09T11:03:41.384Z",
   "events": [
     {
       "kind": "changed",
-      "signature": "changed:2026V2043:2026-10-07T22:00:00Z",
-      "siteId": "2026V2043",
+      "signature": "changed:2026V0367:2026-10-08T22:00:00Z",
+      "siteId": "2026V0367",
       "point": [
-        8.379405,
-        49.015734
+        8.448072,
+        49.025332
+      ],
+      "closure": "none",
+      "startDate": "2026-09-21",
+      "endDate": "2026-10-26",
+      "municipality": "Karlsruhe",
+      "location": "Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V4336:2026-10-08T22:00:00Z",
+      "siteId": "2026V4336",
+      "point": [
+        8.448186,
+        49.025858
+      ],
+      "closure": "full",
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-26",
+      "municipality": "Karlsruhe",
+      "location": "Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5327:2026-10-08T22:00:00Z",
+      "siteId": "2026V5327",
+      "point": [
+        8.441634,
+        49.031301
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-09-28",
+      "endDate": "2026-10-13",
+      "municipality": "Karlsruhe",
+      "location": "Glogauer Straße zw. Königsberger Straße und Im Eichbäumle"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5328:2026-10-08T22:00:00Z",
+      "siteId": "2026V5328",
+      "point": [
+        8.44215,
+        49.032055
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-27",
+      "endDate": "2026-11-21",
+      "municipality": "Karlsruhe",
+      "location": "Glogauer Straße zw. Königsberger Straße und Neisser Straße"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:40072:2026-09-30T15:01:51Z",
+      "siteId": "40072",
+      "point": [
+        8.396106,
+        49.040062
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-18",
+      "municipality": "Rheinstetten",
+      "location": "Karlsruher Straße 36"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V2670",
+      "siteId": "2026V2670",
+      "point": [
+        8.398203,
+        49.00463
       ],
       "closure": "obstruction",
       "startDate": "2026-10-12",
       "endDate": "2026-12-24",
       "municipality": "Karlsruhe",
-      "location": "Freydorfstraße zw. Moltke- u. Grenadierstraße"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V3414:2026-10-07T22:00:00Z",
-      "siteId": "2026V3414",
-      "point": [
-        8.397039,
-        49.050575
-      ],
-      "closure": "full",
-      "startDate": "2026-08-31",
-      "endDate": "2026-10-14",
-      "municipality": "Karlsruhe",
-      "location": "Lärchenweg zw. Zehntwaldstraße und Donauschwabenstraße"
+      "location": "Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V3192",
-      "siteId": "2026V3192",
+      "signature": "new:2026V5235",
+      "siteId": "2026V5235",
       "point": [
-        8.409222,
-        49.001515
+        8.466859,
+        48.999663
       ],
-      "closure": "obstruction",
-      "startDate": "2026-07-15",
-      "endDate": "2026-10-30",
+      "closure": "none",
+      "startDate": "2026-10-19",
+      "endDate": "2027-10-23",
       "municipality": "Karlsruhe",
-      "location": "Werderstraße zw. Marienstraße und Rüppurrer Straße"
+      "location": "Pfinztalstraße zw. seboldstraße und Pforzheimer Straße"
     },
     {
       "kind": "new",
-      "signature": "new:2026V6345",
-      "siteId": "2026V6345",
+      "signature": "new:2026V6350",
+      "siteId": "2026V6350",
       "point": [
-        8.403099,
-        48.967164
+        8.326597,
+        49.005175
       ],
       "closure": "obstruction",
       "startDate": "2026-10-12",
-      "endDate": "2026-10-23",
+      "endDate": "2026-10-30",
       "municipality": "Karlsruhe",
-      "location": "Nikolausstraße zw. Lützowstraße und Allmendstraße"
+      "location": "Pfarrstraße Haus Nr.12-18 und Haus Nr. 43-51"
     },
     {
       "kind": "new",
-      "signature": "new:2026V6347",
-      "siteId": "2026V6347",
+      "signature": "new:2026V6353",
+      "siteId": "2026V6353",
       "point": [
-        8.34204,
-        49.006128
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-08",
-      "endDate": "2026-12-31",
-      "municipality": "Karlsruhe",
-      "location": "Silcherstraße, Rabenweg, Buschwiesenweg"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5649:2026-10-15",
-      "siteId": "2026V5649",
-      "point": [
-        8.460286,
-        48.995006
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-10-15",
-      "endDate": "2026-11-20",
-      "municipality": "Karlsruhe",
-      "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5708:2026-10-09",
-      "siteId": "2026V5708",
-      "point": [
-        8.389164,
-        48.982052
+        8.366651,
+        49.050568
       ],
       "closure": "full",
-      "startDate": "2026-10-09",
-      "endDate": "2026-10-12",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-18",
       "municipality": "Karlsruhe",
-      "location": "Bahnübergang Belchenstraße/Im Weiherwald"
+      "location": "B36 Fahrtrichtung Karlsruhe, Ausfahrt Neureut-Süd"
     },
     {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6271:2026-10-09",
-      "siteId": "2026V6271",
+      "kind": "new",
+      "signature": "new:2026V6360",
+      "siteId": "2026V6360",
       "point": [
-        8.481459,
-        48.992945
+        8.330465,
+        49.032671
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-15",
+      "endDate": "2026-11-12",
+      "municipality": "Karlsruhe",
+      "location": "B10 Südtangente zwischen AS9 und AS10"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30230",
+      "siteId": "30230",
+      "point": [
+        8.643733,
+        49.099915
       ],
       "closure": "obstruction",
       "startDate": "2026-10-09",
-      "endDate": "2026-10-09",
+      "endDate": "2026-10-14",
+      "municipality": "Bruchsal",
+      "location": "Brettener Straße 13"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2025V6973:2026-10-10",
+      "siteId": "2025V6973",
+      "point": [
+        8.4545,
+        48.995857
+      ],
+      "closure": "full",
+      "startDate": "2026-10-10",
+      "endDate": "2027-04-18",
       "municipality": "Karlsruhe",
-      "location": "Strählerweg Höhe Nr. 20"
+      "location": "Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V2504:2026-10-16",
+      "siteId": "2026V2504",
+      "point": [
+        8.357103,
+        49.023802
+      ],
+      "closure": "full",
+      "startDate": "2026-10-16",
+      "endDate": "2026-11-30",
+      "municipality": "Karlsruhe",
+      "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3197:2026-10-10",
+      "siteId": "2026V3197",
+      "point": [
+        8.423974,
+        49.016201
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-10",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4250:2026-10-10",
+      "siteId": "2026V4250",
+      "point": [
+        8.44577,
+        49.028476
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-10",
+      "endDate": "2026-11-01",
+      "municipality": "Karlsruhe",
+      "location": "Waldenburger Straße"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V5794:2026-10-10",
+      "siteId": "2026V5794",
+      "point": [
+        8.422852,
+        49.012202
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-10",
+      "endDate": "2027-01-25",
+      "municipality": "Karlsruhe",
+      "location": "Am Fasanengarten, Prakstr., Karl-Wilhelm-Str."
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V6323:2026-10-16",
+      "siteId": "2026V6323",
+      "point": [
+        8.407874,
+        48.968214
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-16",
+      "endDate": "2026-11-15",
+      "municipality": "Karlsruhe",
+      "location": "Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße"
     }
   ]
 }
