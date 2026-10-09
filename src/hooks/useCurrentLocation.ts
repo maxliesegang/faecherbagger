@@ -14,13 +14,13 @@ function getGeolocationErrorMessage(
 ): string {
   switch (error.code) {
     case error.PERMISSION_DENIED:
-      return "Der Standortzugriff wurde nicht erlaubt.";
+      return "Standortzugriff nicht erlaubt.";
     case error.POSITION_UNAVAILABLE:
-      return "Der aktuelle Standort konnte nicht bestimmt werden.";
+      return "Standort konnte nicht ermittelt werden.";
     case error.TIMEOUT:
-      return "Die Standortabfrage hat zu lange gedauert.";
+      return "Standortabfrage dauerte zu lange.";
     default:
-      return "Der aktuelle Standort konnte nicht bestimmt werden.";
+      return "Standort konnte nicht ermittelt werden.";
   }
 }
 
@@ -36,7 +36,7 @@ export function useCurrentLocation() {
   const requestLocation = useCallback(async (): Promise<LngLat> => {
     if (!navigator.geolocation) {
       const message =
-        "Standortzugriff wird von diesem Browser nicht unterstützt.";
+        "Dieser Browser kann keinen Standort ermitteln.";
       setLocationState({
         status: "error",
         message,

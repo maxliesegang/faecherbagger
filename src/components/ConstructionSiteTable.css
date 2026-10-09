@@ -118,15 +118,13 @@
   min-width: 0;
 }
 
-.construction-site-table__details-link,
-.construction-site-card__details-link {
+.construction-site-table__details-link {
   color: var(--kern-color-action-default, #454b6b);
   font-weight: 700;
   text-decoration: underline;
 }
 
-.construction-site-table__map-button,
-.construction-site-card__map-button {
+.construction-site-table__map-button {
   display: inline-flex;
   gap: 0.2rem;
   align-items: center;
@@ -140,15 +138,12 @@
   cursor: pointer;
 }
 
-.construction-site-table__map-button:hover,
-.construction-site-card__map-button:hover {
+.construction-site-table__map-button:hover {
   text-decoration: underline;
 }
 
 .construction-site-table__details-link:focus-visible,
-.construction-site-table__map-button:focus-visible,
-.construction-site-card__map-button:focus-visible,
-.construction-site-card__details-link:focus-visible {
+.construction-site-table__map-button:focus-visible {
   border-radius: var(--kern-metric-border-radius-default, 0.25rem);
   outline: 4px solid
     var(--kern-color-action-focus-default-contextual, #454b6b);
@@ -160,72 +155,6 @@
   display: block;
   color: var(--kern-color-layout-text-muted, #595959);
   font-size: 0.8125rem;
-}
-
-.construction-site-card__facts dt {
-  margin-bottom: 0.2rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
-.construction-site-card__facts dd {
-  margin: 0;
-  overflow-wrap: anywhere;
-}
-
-/*
- * Cards are the narrow-column presentation of the same records. Which of the
- * two is built is decided in React from the results column's measured width
- * (see `useResultLayout`), so only one of them ever exists in the DOM and these
- * rules need no visibility toggle.
- */
-.construction-site-cards {
-  display: grid;
-  gap: 0.65rem;
-}
-
-.construction-site-card {
-  padding: 0.75rem 0.85rem;
-  border: 1px solid var(--kern-color-layout-border, #c9c9c9);
-  border-inline-start: 0.3rem solid
-    var(--kern-color-decorative-brand-default, #454b6b);
-  background: var(--kern-color-layout-background-default, #fff);
-}
-
-.construction-site-card__topline {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.35rem;
-}
-
-.construction-site-card__title {
-  margin-block: 0 0.25rem;
-  font-size: 1.1rem;
-  line-height: 1.35;
-}
-
-.construction-site-card__municipality {
-  margin-block: 0 0.5rem;
-  color: var(--kern-color-layout-text-default, #444);
-}
-
-.construction-site-card__facts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem 0.75rem;
-  margin: 0;
-}
-
-.construction-site-card__map-button {
-  margin-top: 0.55rem;
-  padding-inline: 0;
-}
-
-@container results (max-width: 34rem) {
-  .construction-site-card__facts {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Paging control below either layout. */

@@ -145,14 +145,17 @@ export function ConstructionSiteResults({
       aria-labelledby="results-heading"
       ref={resultsRef}
     >
-      <div className="results__toolbar">
+      <div className="results__toolbar" data-view={view}>
         <KernHeading level={2} id="results-heading" className="kern-sr-only">
           Ergebnisse
         </KernHeading>
-        <p className="results__count">
-          <strong>{displayedConstructionSites.length}</strong>
-          {resultCountSuffix}
-        </p>
+        {/* The status tabs above already show the count; this is for the list. */}
+        {view === "list" && (
+          <p className="results__count">
+            <strong>{displayedConstructionSites.length}</strong>
+            {resultCountSuffix}
+          </p>
+        )}
         {/*
           Announced separately and only once typing stops: an `aria-live` count
           on the element itself fires on every keystroke of the search field.
@@ -162,7 +165,7 @@ export function ConstructionSiteResults({
         </p>
 
         <div className="results__controls">
-          <div className="results__sort">
+          {view === "list" && <div className="results__sort">
             <label htmlFor="results-sort" className="kern-label">
               Sortierung
             </label>
@@ -188,30 +191,8 @@ export function ConstructionSiteResults({
                 ))}
               </select>
             </div>
-          </div>
+          </div>}
 
-          {/*
-            Native radios rather than KERN's tab set: the choice has to be
-            restorable from the URL, and `KernTabs` owns its active index
-            internally and would also mount both panels, defeating the map's
-            lazy import.
-          */}
-          <fieldset className="view-switcher">
-            <legend className="kern-sr-only">Darstellung wählen</legend>
-            {RESULT_VIEW_OPTIONS.map((option) => (
-              <label key={option.value} className="view-switcher__item">
-                <input
-                  className="view-switcher__input kern-sr-only"
-                  type="radio"
-                  name="results-view"
-                  value={option.value}
-                  checked={view === option.value}
-                  onChange={() => onViewChange(option.value)}
-                />
-                {option.label}
-              </label>
-            ))}
-          </fieldset>
         </div>
       </div>
 
@@ -220,7 +201,7 @@ export function ConstructionSiteResults({
           Seit {new Date(changes.since).toLocaleString("de-DE")}:{" "}
           {changes.added.length} neu, {changes.modified.length} geändert
           {changes.removed.length > 0 &&
-            `, ${changes.removed.length} nicht mehr gelistet`}
+            `, ${changes.removed.length} entfernt`}
           .
         </KernText>
       )}
@@ -274,13 +255,49 @@ export function ConstructionSiteResults({
         >
           <KernText>
             {showOnlyChanged && changes.since === null
-              ? "Für diesen Datenstand liegt noch kein vorheriger Vergleich vor."
+              ? "Es gibt noch keinen älteren Stand zum Vergleichen."
               : showOnlyChanged
-                ? "Seit der vorherigen Aktualisierung gibt es für die gewählten Filter keine Änderungen."
-                : "Ändern Sie Ihre Suche oder löschen Sie die gewählten Filter."}
+                ? "Seit der letzten Aktualisierung hat sich hier nichts geändert."
+                : "Ändern Sie die Suche oder setzen Sie die Filter zurück."}
           </KernText>
         </KernAlert>
       )}
     </section>
+  );
+}
+
+interface ResultViewSwitcherProps {
+  view: ConstructionSiteResultView;
+  onViewChange: (view: ConstructionSiteResultView) => void;
+}
+
+/**
+ * Map or list. Exported so it can sit beside the page title and the results
+ * can start right below the filters.
+ */
+export function ResultViewSwitcher({ view, onViewChange }: ResultViewSwitcherProps) {
+  return (
+    /*
+        Native radios rather than KERN's tab set: the choice has to be
+        restorable from the URL, and `KernTabs` owns its active index
+        internally and would also mount both panels, defeating the map's
+        lazy import.
+    */
+      <fieldset className="view-switcher">
+        <legend className="kern-sr-only">Darstellung</legend>
+        {RESULT_VIEW_OPTIONS.map((option) => (
+          <label key={option.value} className="view-switcher__item">
+            <input
+              className="view-switcher__input kern-sr-only"
+              type="radio"
+              name="results-view"
+              value={option.value}
+              checked={view === option.value}
+              onChange={() => onViewChange(option.value)}
+            />
+            {option.label}
+          </label>
+        ))}
+      </fieldset>
   );
 }

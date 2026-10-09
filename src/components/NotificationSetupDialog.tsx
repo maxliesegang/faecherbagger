@@ -7,11 +7,10 @@ import {
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import type {
+  ConstructionSite,
   LngLat,
   NotificationArea,
-  NotificationEventKind,
   NotificationPreferences,
-  NotificationSeverityThreshold,
 } from "../types/index.ts";
 import {
   createNotificationAreaId,
@@ -19,11 +18,19 @@ import {
 } from "../lib/notification-area.ts";
 import {
   DEFAULT_NOTIFICATION_RADIUS_KM,
+  findNearestNotificationRadiusStepIndex,
+  formatNotificationRadius,
   MAX_NOTIFICATION_AREA_LABEL_LENGTH,
-  MAX_NOTIFICATION_RADIUS_KM,
-  MIN_NOTIFICATION_RADIUS_KM,
+  NOTIFICATION_RADIUS_STEPS_KM,
 } from "../lib/notification-preferences.ts";
 import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
+import type { PushNotificationsController } from "../hooks/usePushNotifications.ts";
+import { findAreaMatches } from "../lib/relevant-construction-sites.ts";
+import {
+  getBerlinCalendarDate,
+  getStartLeadDays,
+  SHORT_NOTICE_LEAD_DAYS,
+} from "../lib/construction-site-timeframe.ts";
 import "./NotificationSetupDialog.css";
 
 const NotificationAreaPickerMap = lazy(() =>
@@ -35,77 +42,38 @@ const NotificationAreaPickerMap = lazy(() =>
 /** Karlsruhe's Marktplatz — a sensible first guess for the region. */
 const FALLBACK_CENTER: LngLat = [8.4044, 49.0094];
 
-const STEPS = ["Wo?", "Wie weit?", "Worüber?"] as const;
-const LAST_STEP = STEPS.length - 1;
-
-const KIND_OPTIONS: readonly {
-  value: NotificationEventKind;
-  label: string;
-  hint: string;
-}[] = [
-  {
-    value: "new",
-    label: "Neu angekündigt",
-    hint: "Sobald eine Baustelle in Ihrem Gebiet erstmals gemeldet wird.",
-  },
-  {
-    value: "starts-soon",
-    label: "Beginnt bald",
-    hint: "Erinnerung eine Woche und einen Tag vor dem Baustart.",
-  },
-  {
-    value: "changed",
-    label: "Zeitraum oder Sperrung geändert",
-    hint: "Wenn sich Dauer oder Verkehrsauswirkung einer Baustelle ändert.",
-  },
-];
-
-const SEVERITY_OPTIONS: readonly {
-  value: NotificationSeverityThreshold;
-  label: string;
-  hint: string;
-}[] = [
-  {
-    value: "all",
-    label: "Alles",
-    hint: "Auch Arbeiten ohne Auswirkung auf den Verkehr.",
-  },
-  {
-    value: "obstruction",
-    label: "Ab Behinderung",
-    hint: "Alles, was den Verkehr spürbar einschränkt.",
-  },
-  {
-    value: "closure",
-    label: "Nur Sperrungen",
-    hint: "Nur Vollsperrungen und gesperrte Fahrtrichtungen.",
-  },
-];
+const AREA_STEPS = ["Wo?", "Wie weit?"] as const;
+const NOTIFICATION_STEP = "Benachrichtigen?";
 
 interface NotificationSetupDialogProps {
+  constructionSites: readonly ConstructionSite[];
   preferences: NotificationPreferences;
   onPreferencesChange: (preferences: NotificationPreferences) => void;
   /** The area being edited; a new one when `undefined`. */
   editedArea?: NotificationArea;
   locationController: CurrentLocationController;
+  pushNotifications: PushNotificationsController;
   onClose: () => void;
   /** Called once the visitor finishes the flow and the area has been saved. */
   onComplete: () => void;
 }
 
 /**
- * Guided setup for a notification area.
+ * Guided setup for a watched place.
  *
- * Replaces a panel of four buttons whose order was only discoverable by getting
- * it wrong: the three questions that actually have to be answered — where, how
- * far, about what — are asked one at a time, each with the map showing what the
- * answer means.
+ * Two questions — where, how far — each with the map showing what the answer
+ * means, and then, if notifications are still off and could be switched on,
+ * a third: whether to be told. That last step is the point of the whole app,
+ * so it is asked here rather than left on the settings screen. The finer
+ * notification options live there.
  */
 export function NotificationSetupDialog({
+  constructionSites,
   preferences,
   onPreferencesChange,
   editedArea,
   locationController,
+  pushNotifications,
   onClose,
   onComplete,
 }: NotificationSetupDialogProps) {
@@ -122,10 +90,13 @@ export function NotificationSetupDialog({
     editedArea?.radiusKm ?? DEFAULT_NOTIFICATION_RADIUS_KM,
   );
   const [label, setLabel] = useState(editedArea?.label ?? "");
-  const [kinds, setKinds] = useState<NotificationEventKind[]>([
-    ...preferences.kinds,
-  ]);
-  const [minSeverity, setMinSeverity] = useState(preferences.minSeverity);
+  // Decided once on open, so switching notifications on in the last step does
+  // not make that step vanish under the visitor's finger.
+  const [steps] = useState<readonly string[]>(() =>
+    pushNotifications.isActive || pushNotifications.unavailableReason
+      ? AREA_STEPS
+      : [...AREA_STEPS, NOTIFICATION_STEP],
+  );
   const [locationError, setLocationError] = useState<string>();
 
   // `showModal` rather than the `open` attribute: only the modal form makes the
@@ -145,22 +116,15 @@ export function NotificationSetupDialog({
       setLocationError(
         error instanceof Error
           ? error.message
-          : "Der Standort konnte nicht bestimmt werden.",
+          : "Standort konnte nicht ermittelt werden.",
       );
     }
   };
 
-  const toggleKind = (kind: NotificationEventKind) =>
-    setKinds((current) =>
-      current.includes(kind)
-        ? current.filter((candidate) => candidate !== kind)
-        : [...current, kind],
-    );
-
-  const complete = () => {
+  const complete = async (shouldEnableNotifications = false) => {
     const area: NotificationArea = {
       id: editedArea?.id ?? createNotificationAreaId(),
-      label: label.trim() || "Mein Gebiet",
+      label: label.trim() || "Mein Ort",
       center: [
         Number(center[0].toFixed(5)),
         Number(center[1].toFixed(5)),
@@ -168,22 +132,29 @@ export function NotificationSetupDialog({
       radiusKm,
     };
     const updated: NotificationPreferences = {
-      // Spread first: this dialog owns the areas, the kinds and the threshold,
-      // and must carry everything else (the follow list) through untouched
-      // rather than rebuilding the record from the fields on screen.
+      // Spread first: this dialog owns the areas and must carry everything else
+      // (the follow list, the settings screen's options) through untouched.
       ...preferences,
       areas: upsertNotificationArea(preferences.areas, area),
-      // An empty selection would mean "never notify me", which is what closing
-      // the dialog is for; fall back to the one thing everyone expects.
-      kinds: kinds.length > 0 ? kinds : ["new"],
-      minSeverity,
+      // No screen offers a choice of kinds; this repairs records saved by
+      // older versions that did.
+      kinds: ["new", "starts-soon", "changed"],
     };
     onPreferencesChange(updated);
+    // Saved before asking: a refused permission must not lose the place.
+    if (shouldEnableNotifications) await pushNotifications.enable();
     onComplete();
   };
 
-  const isLastStep = step === LAST_STEP;
-  const canContinue = !isLastStep || kinds.length > 0;
+  const isLastStep = step === steps.length - 1;
+  const isNotificationStep = steps[step] === NOTIFICATION_STEP;
+  const previewArea: NotificationArea = { id: "preview", label: "Vorschau", center, radiusKm };
+  const today = getBerlinCalendarDate();
+  const nearbyConstructionSites = constructionSites.filter((constructionSite) => findAreaMatches([previewArea], constructionSite.point).length > 0);
+  const startingSoonCount = nearbyConstructionSites.filter((constructionSite) => {
+    const leadDays = getStartLeadDays(constructionSite, today);
+    return leadDays >= 0 && leadDays <= SHORT_NOTICE_LEAD_DAYS;
+  }).length;
 
   return (
     <dialog
@@ -204,9 +175,9 @@ export function NotificationSetupDialog({
       <div className="notification-setup__header">
         <div>
           <p className="notification-setup__step-count">
-            Schritt {step + 1} von {STEPS.length}
+            Schritt {step + 1} von {steps.length}
           </p>
-          <h2 id={headingId}>{STEPS[step]}</h2>
+          <h2 id={headingId}>{steps[step]}</h2>
         </div>
         <button
           type="button"
@@ -219,7 +190,7 @@ export function NotificationSetupDialog({
       </div>
 
       <ol className="notification-setup__progress" aria-hidden="true">
-        {STEPS.map((title, index) => (
+        {steps.map((title, index) => (
           <li key={title} data-state={index <= step ? "done" : "todo"} />
         ))}
       </ol>
@@ -227,18 +198,14 @@ export function NotificationSetupDialog({
       <div className="notification-setup__body">
         {step === 0 && (
           <>
-            <KernText>
-              Tippen Sie auf der Karte die Stelle an, um die es gehen soll —
-              zum Beispiel Ihre Wohnadresse. Sie muss nicht Ihr aktueller
-              Standort sein.
-            </KernText>
+            <KernText>Tippen Sie auf die Karte, z. B. auf Ihre Wohnung.</KernText>
             <KernButton
               type="button"
               variant="secondary"
               label={
                 locationController.locationState.status === "requesting"
                   ? "Standort wird ermittelt …"
-                  : "Meinen aktuellen Standort verwenden"
+                  : "Meinen Standort verwenden"
               }
               disabled={
                 locationController.locationState.status === "requesting"
@@ -255,35 +222,45 @@ export function NotificationSetupDialog({
 
         {step === 1 && (
           <>
-            <KernText>
-              Wie weit um diesen Punkt herum möchten Sie informiert werden? Der
-              Kreis auf der Karte zeigt das Gebiet.
-            </KernText>
+            <p role="status" className="notification-setup__preview">
+              <strong>{nearbyConstructionSites.length}</strong> Baustellen im
+              Umkreis, <strong>{startingSoonCount}</strong> beginnen bald.
+            </p>
             <div className="notification-setup__radius">
               <label htmlFor="notification-radius">
-                Radius: <strong>{radiusKm} km</strong>
+                Radius: <strong>{formatNotificationRadius(radiusKm)}</strong>
               </label>
               <input
                 id="notification-radius"
                 type="range"
-                min={MIN_NOTIFICATION_RADIUS_KM}
-                max={MAX_NOTIFICATION_RADIUS_KM}
+                min={0}
+                max={NOTIFICATION_RADIUS_STEPS_KM.length - 1}
                 step="1"
-                value={radiusKm}
-                aria-valuetext={`${radiusKm} Kilometer`}
+                value={findNearestNotificationRadiusStepIndex(radiusKm)}
+                aria-valuetext={formatNotificationRadius(radiusKm)}
                 onChange={(event) =>
-                  setRadiusKm(Number(event.currentTarget.value))
+                  setRadiusKm(
+                    NOTIFICATION_RADIUS_STEPS_KM[
+                      Number(event.currentTarget.value)
+                    ],
+                  )
                 }
               />
               <p className="notification-setup__radius-scale" aria-hidden="true">
-                <span>{MIN_NOTIFICATION_RADIUS_KM} km</span>
-                <span>{MAX_NOTIFICATION_RADIUS_KM} km</span>
+                <span>{formatNotificationRadius(NOTIFICATION_RADIUS_STEPS_KM[0])}</span>
+                <span>
+                  {formatNotificationRadius(
+                    NOTIFICATION_RADIUS_STEPS_KM[
+                      NOTIFICATION_RADIUS_STEPS_KM.length - 1
+                    ],
+                  )}
+                </span>
               </p>
             </div>
             <KernInput
               id="notification-area-label"
-              label="Name für dieses Gebiet"
-              hint="Zum Beispiel „Zuhause“ oder „Arbeit“"
+              label="Name"
+              hint="z. B. „Zuhause“ oder „Arbeit“"
               maxLength={MAX_NOTIFICATION_AREA_LABEL_LENGTH}
               value={label}
               onChange={(event) => setLabel(event.currentTarget.value)}
@@ -291,54 +268,11 @@ export function NotificationSetupDialog({
           </>
         )}
 
-        {step === 2 && (
-          <>
-            <fieldset className="notification-setup__choices">
-              <legend>Worüber möchten Sie informiert werden?</legend>
-              {KIND_OPTIONS.map((option) => (
-                <label key={option.value} className="notification-setup__choice">
-                  <input
-                    type="checkbox"
-                    checked={kinds.includes(option.value)}
-                    onChange={() => toggleKind(option.value)}
-                  />
-                  <span>
-                    <strong>{option.label}</strong>
-                    <span className="notification-setup__choice-hint">
-                      {option.hint}
-                    </span>
-                  </span>
-                </label>
-              ))}
-            </fieldset>
-
-            <fieldset className="notification-setup__choices">
-              <legend>Ab welcher Auswirkung?</legend>
-              {SEVERITY_OPTIONS.map((option) => (
-                <label key={option.value} className="notification-setup__choice">
-                  <input
-                    type="radio"
-                    name="notification-severity"
-                    checked={minSeverity === option.value}
-                    onChange={() => setMinSeverity(option.value)}
-                  />
-                  <span>
-                    <strong>{option.label}</strong>
-                    <span className="notification-setup__choice-hint">
-                      {option.hint}
-                    </span>
-                  </span>
-                </label>
-              ))}
-            </fieldset>
-
-            {kinds.length === 0 && (
-              <KernAlert variant="warning" title="Nichts ausgewählt">
-                Wählen Sie mindestens einen Anlass, sonst gibt es nichts zu
-                  melden.
-              </KernAlert>
-            )}
-          </>
+        {isNotificationStep && (
+          <KernText>
+            Sollen wir Sie benachrichtigen, wenn im Umkreis eine Baustelle
+            angekündigt wird oder sich ändert?
+          </KernText>
         )}
       </div>
 
@@ -361,29 +295,49 @@ export function NotificationSetupDialog({
       </Suspense>
 
       <div className="notification-setup__actions">
-        {step > 0 ? (
-          <KernButton
-            type="button"
-            variant="tertiary"
-            label="Zurück"
-            onClick={() => setStep((current) => current - 1)}
-          />
+        {isNotificationStep ? (
+          // The place is decided by now; only the answer is left, so no "Zurück".
+          <>
+            <KernButton
+              type="button"
+              variant="secondary"
+              label="Später"
+              disabled={pushNotifications.isBusy}
+              onClick={() => void complete(false)}
+            />
+            <KernButton
+              type="button"
+              label="Benachrichtigen"
+              disabled={pushNotifications.isBusy}
+              onClick={() => void complete(true)}
+            />
+          </>
         ) : (
-          <KernButton
-            type="button"
-            variant="tertiary"
-            label="Abbrechen"
-            onClick={onClose}
-          />
+          <>
+            {step > 0 ? (
+              <KernButton
+                type="button"
+                variant="tertiary"
+                label="Zurück"
+                onClick={() => setStep((current) => current - 1)}
+              />
+            ) : (
+              <KernButton
+                type="button"
+                variant="tertiary"
+                label="Abbrechen"
+                onClick={onClose}
+              />
+            )}
+            <KernButton
+              type="button"
+              label={isLastStep ? "Speichern" : "Weiter"}
+              onClick={() =>
+                isLastStep ? void complete() : setStep((current) => current + 1)
+              }
+            />
+          </>
         )}
-        <KernButton
-          type="button"
-          label={isLastStep ? "Gebiet speichern" : "Weiter"}
-          disabled={!canContinue}
-          onClick={() =>
-            isLastStep ? complete() : setStep((current) => current + 1)
-          }
-        />
       </div>
     </dialog>
   );

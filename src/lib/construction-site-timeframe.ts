@@ -120,10 +120,8 @@ export function countDaysBetween(from: ISODate, to: ISODate): number {
 /**
  * The calendar date a timestamp falls on in Karlsruhe.
  *
- * The counterpart to {@link getBerlinCalendarDate} for a value that already
- * exists: screens anchor "heute" on the dataset's own `fetchedAt` rather than on
- * the browser clock, so a device in another timezone — or one looking at data
- * fetched twelve hours ago — classifies records exactly as the pipeline did.
+ * Converts a known timestamp, including the previous data fetch, to the same
+ * Berlin calendar that the live screens use for relative dates.
  */
 export function toBerlinCalendarDate(timestamp: ISOTimestamp): ISODate {
   const instant = new Date(timestamp);
@@ -132,15 +130,8 @@ export function toBerlinCalendarDate(timestamp: ISOTimestamp): ISODate {
     : BERLIN_CALENDAR_DATE.format(instant);
 }
 
-/**
- * How far ahead a start still counts as short notice, in days — and equally how
- * long after a start the site is still news to someone who was away.
- *
- * The one number behind "kurzfristig": the relevance list, the notification
- * copy and the ranking all read it, so the app cannot promise a week in one
- * place and act on three days in another.
- */
-export const SHORT_NOTICE_LEAD_DAYS = 7;
+/** The personal timeline's preparation horizon, separate from source phase. */
+export const SHORT_NOTICE_LEAD_DAYS = 14;
 
 /**
  * When a construction site happens, relative to the day being looked at.
@@ -194,15 +185,7 @@ export function getConstructionSiteTiming(
   return leadDays <= SHORT_NOTICE_LEAD_DAYS ? "starting-soon" : "later";
 }
 
-/**
- * Whether the site is something to plan around this week: it starts within the
- * next {@link SHORT_NOTICE_LEAD_DAYS} days, or it started within the last that
- * many and is still running.
- *
- * This is the product. A visitor cannot re-plan a route around a Vollsperrung
- * announced for next March, and does not need telling about one that has been
- * in place since spring — what they need is the week around today.
- */
+/** Starts from today through the preparation horizon; running sites have their own list. */
 export function isShortNoticeConstructionSite(
   constructionSite: ConstructionSite,
   today: ISODate,
@@ -211,7 +194,7 @@ export function isShortNoticeConstructionSite(
   if (timing === "ended" || timing === "later") return false;
   const leadDays = getStartLeadDays(constructionSite, today);
   if (Number.isNaN(leadDays)) return false;
-  return Math.abs(leadDays) <= SHORT_NOTICE_LEAD_DAYS;
+  return leadDays >= 0 && leadDays <= SHORT_NOTICE_LEAD_DAYS;
 }
 
 /**
@@ -228,7 +211,7 @@ export function compareByShortNoticeUrgency(
   const rank = (constructionSite: ConstructionSite): number => {
     const leadDays = getStartLeadDays(constructionSite, today);
     if (Number.isNaN(leadDays)) return Number.MAX_SAFE_INTEGER;
-    // Upcoming starts (0…7) sort ahead of starts already past (-1…-7).
+    // Upcoming starts sort ahead of starts already past.
     return leadDays >= 0 ? leadDays : SHORT_NOTICE_LEAD_DAYS - leadDays;
   };
   return rank(left) - rank(right);

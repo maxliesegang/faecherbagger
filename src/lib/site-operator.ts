@@ -44,4 +44,4 @@ export const isSiteOperatorConfigured = Boolean(name && address && email);
  * it look like one, so every legal page and the page header say otherwise.
  */
 export const UNOFFICIAL_NOTICE =
-  "Unabhängiges Angebot – keine amtliche Auskunft der Stadt Karlsruhe oder der TechnologieRegion Karlsruhe.";
+  "Privates Angebot, keine amtliche Auskunft der Stadt Karlsruhe oder der TechnologieRegion Karlsruhe.";

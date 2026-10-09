@@ -11,7 +11,6 @@ import type {
   ConstructionSiteSortKey,
 } from "../lib/construction-site-sort.ts";
 import {
-  getConstructionCategoryLabel,
   getClosureLabel,
   getClosureBadgeVariant,
   formatConstructionPeriod,
@@ -19,6 +18,7 @@ import {
   getConstructionPhaseBadgeVariant,
 } from "../lib/construction-site-labels.ts";
 import {
+  describeConstructionPeriod,
   formatConstructionPeriodRelativeToToday,
   getBerlinCalendarDate,
 } from "../lib/construction-site-timeframe.ts";
@@ -27,6 +27,7 @@ import {
   useIncrementalList,
 } from "../hooks/useIncrementalList.ts";
 import type { ResultLayout } from "../hooks/useResultLayout.ts";
+import { ConstructionSiteCard } from "./ConstructionSiteCard.tsx";
 import "./ConstructionSiteTable.css";
 
 interface ConstructionSiteTableProps {
@@ -66,7 +67,7 @@ const isPlainClick = (event: ReactMouseEvent): boolean =>
 const BASE_COLUMNS: readonly ConstructionSiteTableColumn[] = [
   {
     key: "location",
-    label: "Lage",
+    label: "Straße",
     render: (site) => site.location,
   },
   {
@@ -102,11 +103,6 @@ const BASE_COLUMNS: readonly ConstructionSiteTableColumn[] = [
         </>
       );
     },
-  },
-  {
-    key: "category",
-    label: "Art",
-    render: (site) => getConstructionCategoryLabel(site.category),
   },
   {
     key: "closure",
@@ -212,69 +208,24 @@ export function ConstructionSiteTable({
   if (layout === "cards") {
     return (
       <>
-        <div className="construction-site-cards" aria-label="Baustellenliste">
-          {visibleItems.map((site) => {
-            const relative = formatConstructionPeriodRelativeToToday(
-              site,
-              today,
-            );
-            return (
-              <article className="construction-site-card" key={site.id}>
-                <div className="construction-site-card__topline">
-                  <KernBadge
-                    variant={getConstructionPhaseBadgeVariant(site.phase)}
-                    label={getConstructionPhaseLabel(site.phase)}
-                  />
-                  <KernBadge
-                    variant={getClosureBadgeVariant(site.closure)}
-                    label={getClosureLabel(site.closure)}
-                  />
-                </div>
-                <h3 className="construction-site-card__title">
-                  {renderDetailLink(
-                    site,
-                    "construction-site-card__details-link",
-                  )}
-                </h3>
-                <p className="construction-site-card__municipality">
-                  {site.municipality}
-                </p>
-                <dl className="construction-site-card__facts">
-                  <div>
-                    <dt>Zeitraum</dt>
-                    <dd>
-                      {formatConstructionPeriod(site.startDate, site.endDate)}
-                      {relative && (
-                        <span className="construction-site-table__period-relative">
-                          {relative}
-                        </span>
-                      )}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>Art</dt>
-                    <dd>{getConstructionCategoryLabel(site.category)}</dd>
-                  </div>
-                  {currentLocation && (
-                    <div>
-                      <dt>Entfernung</dt>
-                      <dd>
-                        {formatDistance(
-                          distanceInMeters(currentLocation, site.point),
-                        )}
-                      </dd>
-                    </div>
-                  )}
-                </dl>
-                {renderMapButton(
-                  site,
-                  "construction-site-card__map-button",
-                  "Auf der Karte zeigen",
-                )}
-              </article>
-            );
-          })}
-        </div>
+        <ul className="site-cards" aria-label="Baustellenliste">
+          {visibleItems.map((site) => (
+            <ConstructionSiteCard
+              key={site.id}
+              title={site.location}
+              closure={site.closure}
+              detailsHref={getSiteDetailsHref(site.id)}
+              onDetailsOpen={() => onShowSiteDetails(site.id)}
+              facts={[
+                site.municipality,
+                describeConstructionPeriod(site, today),
+                ...(currentLocation
+                  ? [formatDistance(distanceInMeters(currentLocation, site.point))]
+                  : []),
+              ]}
+            />
+          ))}
+        </ul>
         {showMoreButton}
       </>
     );

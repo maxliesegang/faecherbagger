@@ -31,16 +31,16 @@ import {
 export type ConstructionSiteResultView = "map" | "list";
 
 /**
- * Which of the app's two questions is on screen.
+ * The app's three screens.
  *
- * `"relevant"` is "what do I need to know?" — the watched areas and followed
- * sites, which is what most visits are for. `"explore"` is "what is going on
- * anywhere?" — the filterable map and table over the whole region. They are
- * separate sections rather than a filter on one screen because they want
- * different controls and answer to different state: the explorer's filters are
- * shareable, and a personal view has nothing to share.
+ * `"relevant"` is "what affects me?" — the watched areas and followed sites,
+ * and the reason the app exists, so it is the start page. `"explore"` is "what
+ * is going on anywhere?" — the filterable map and list over the whole region.
+ * `"settings"` holds areas, notifications and everything about the app itself,
+ * so neither of the other two has to carry it. The explorer's filters are
+ * shareable; a personal view has nothing to share.
  */
-export type AppSection = "relevant" | "explore";
+export type AppSection = "relevant" | "explore" | "settings";
 
 /**
  * The part of the UI state that belongs in the address bar, so a filtered view
@@ -59,8 +59,7 @@ export interface AppURLState {
 }
 
 export const DEFAULT_APP_URL_STATE: Readonly<AppURLState> = {
-  // The personal view is the landing screen: someone opening the app wants to
-  // know whether anything affects them, not to browse a region-wide map.
+  // The personal view leads; it explains itself when nothing is set up yet.
   section: "relevant",
   filters: EMPTY_CONSTRUCTION_SITE_FILTERS,
   showOnlyChanged: false,
@@ -86,11 +85,13 @@ const URL_SEARCH_PARAMETER_NAMES = {
 const SECTION_BY_URL_VALUE: Record<string, AppSection> = {
   "fuer-mich": "relevant",
   alle: "explore",
+  einstellungen: "settings",
 };
 
 const URL_VALUE_BY_SECTION: Record<AppSection, string> = {
   relevant: "fuer-mich",
   explore: "alle",
+  settings: "einstellungen",
 };
 
 const RESULT_VIEW_BY_URL_VALUE: Record<string, ConstructionSiteResultView> = {

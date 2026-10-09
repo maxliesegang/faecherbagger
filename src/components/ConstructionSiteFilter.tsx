@@ -1,8 +1,6 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import {
   KernButton,
-  KernHeading,
-  KernInput,
   KernSelect,
 } from "@kern-ux-annex/kern-react-kit";
 import type { ConstructionPhase, ConstructionSite } from "../types/index.ts";
@@ -32,6 +30,7 @@ interface ConstructionSiteFilterProps {
   onFiltersChange: (filters: ConstructionSiteFilters) => void;
   onShowOnlyChangedChange: (showOnlyChanged: boolean) => void;
   onFiltersReset: () => void;
+  locationControl: ReactNode;
 }
 
 const PHASE_OPTIONS: readonly {
@@ -43,8 +42,6 @@ const PHASE_OPTIONS: readonly {
   { value: "active", label: "Aktuell", kind: "active" },
   { value: "upcoming", label: "Geplant", kind: "upcoming" },
 ];
-
-const DESKTOP_RAIL_QUERY = "(min-width: 64rem)";
 
 const getTimeframeLabel = (timeframe: ConstructionSiteTimeframe): string =>
   CONSTRUCTION_SITE_TIMEFRAMES.find(
@@ -58,10 +55,8 @@ interface FilterChip {
 }
 
 /**
- * The control rail's filter card: search, timeframe and status first (what
- * nearly every visit needs), then the narrowing selects. Options for Ort/Art
- * come from the data so only values that actually occur are offered; Status,
- * Zeitraum and Sperrung use the fixed enums.
+ * Search and status stay visible; narrowing filters open on demand. Options
+ * for municipality and category come from the committed construction sites.
  */
 export function ConstructionSiteFilter({
   constructionSites,
@@ -72,14 +67,9 @@ export function ConstructionSiteFilter({
   onFiltersChange,
   onShowOnlyChangedChange,
   onFiltersReset,
+  locationControl,
 }: ConstructionSiteFilterProps) {
-  // Detail filters stay open on the rail (there is vertical room and power
-  // users want them at hand) and start collapsed on narrow screens.
-  const [advancedOpen, setAdvancedOpen] = useState(
-    () =>
-      Boolean(filters.municipality || filters.category || filters.closure) ||
-      window.matchMedia(DESKTOP_RAIL_QUERY).matches,
-  );
+  const [advancedOpen, setAdvancedOpen] = useState(false);
   const setFilter = <K extends keyof ConstructionSiteFilters>(
     key: K,
     value: ConstructionSiteFilters[K],
@@ -104,6 +94,8 @@ export function ConstructionSiteFilter({
     filters.municipality,
     filters.category,
     filters.closure,
+    filters.timeframe,
+    showOnlyChanged,
   ].filter(Boolean).length;
   const activeChips: FilterChip[] = [];
   if (filters.search.trim()) {
@@ -140,10 +132,158 @@ export function ConstructionSiteFilter({
 
   return (
     <section className="filter-panel" aria-labelledby="filter-heading">
-      <div className="filter-panel__heading">
-        <KernHeading level={2} id="filter-heading">
-          Baustelle finden
-        </KernHeading>
+      <h2 id="filter-heading" className="kern-sr-only">Baustellen suchen und filtern</h2>
+      <div className="filter-panel__primary">
+        <div className="filter-panel__search">
+          <label className="kern-label kern-sr-only" htmlFor="filter-search">Straße oder Ort suchen</label>
+          <input
+            className="kern-form-input__input"
+            id="filter-search"
+            type="search"
+            placeholder="Straße oder Ort suchen"
+            value={filters.search}
+            onChange={(event) => setFilter("search", event.currentTarget.value)}
+          />
+        </div>
+        {locationControl}
+      </div>
+      <div className="filter-panel__secondary">
+        {/*
+          Native radios: the three counts are mutually exclusive, so the platform
+          should say so and arrow keys should move between them. The input stays
+          in the accessibility tree and only its box is hidden; the tile is the
+          label, which is what makes the whole surface clickable.
+        */}
+        <fieldset className="phase-switch">
+          <legend className="kern-sr-only">Nach Status filtern</legend>
+          {PHASE_OPTIONS.map((option) => (
+            <label
+              key={option.kind}
+              className={`phase-switch__item phase-switch__item--${option.kind}`}
+            >
+              <input
+                className="phase-switch__input kern-sr-only"
+                type="radio"
+                name="filter-phase"
+                value={option.value}
+                checked={filters.phase === option.value}
+                onChange={() => setFilter("phase", option.value)}
+              />
+              <span className="phase-switch__label">{option.label}</span>
+              <span className="phase-switch__value">{countForPhase(option.value)}</span>
+            </label>
+          ))}
+        </fieldset>
+
+        <details
+          className="kern-accordion filter-panel__advanced"
+          open={advancedOpen}
+          onToggle={(event) => setAdvancedOpen(event.currentTarget.open)}
+        >
+          {/*
+            A real heading, so the section shows up when a screen reader lists the
+            page's structure. KERN's own accordion renders a plain span here and
+            offers no controlled open state, hence the hand-written markup.
+          */}
+          <summary className="kern-accordion__header">
+            <h3 className="kern-title">
+              Filter
+              {advancedFilterCount > 0 && (
+                <span className="filter-panel__active-count">
+                  {advancedFilterCount} aktiv
+                </span>
+              )}
+            </h3>
+          </summary>
+          <section className="kern-accordion__body filter-panel__grid">
+            <div className="filter-panel__timeframe">
+              <KernSelect
+                id="filter-timeframe"
+                label="Zeitraum"
+                value={filters.timeframe}
+                onChange={(event) =>
+                  setFilter(
+                    "timeframe",
+                    event.currentTarget.value as ConstructionSiteTimeframe,
+                  )
+                }
+              >
+                <option value="">Alle Zeiträume</option>
+                {CONSTRUCTION_SITE_TIMEFRAMES.map((timeframe) => (
+                  <option key={timeframe.value} value={timeframe.value}>
+                    {timeframe.label}
+                  </option>
+                ))}
+              </KernSelect>
+            </div>
+
+            <button
+              type="button"
+              className="filter-panel__scope"
+              aria-pressed={showOnlyChanged}
+              disabled={changedCount === 0 && !showOnlyChanged}
+              onClick={() => onShowOnlyChangedChange(!showOnlyChanged)}
+            >
+              Nur neu oder geändert
+              <span className="filter-panel__scope-count">{changedCount}</span>
+            </button>
+
+            <KernSelect
+              id="filter-municipality"
+              label="Ort"
+              value={filters.municipality}
+              onChange={(event) =>
+                setFilter("municipality", event.currentTarget.value)
+              }
+            >
+              <option value="">Alle Orte</option>
+              {municipalities.map((municipality) => (
+                <option key={municipality} value={municipality}>
+                  {municipality}
+                </option>
+              ))}
+            </KernSelect>
+
+            <KernSelect
+              id="filter-category"
+              label="Art der Baustelle"
+              value={filters.category}
+              onChange={(event) =>
+                setFilter(
+                  "category",
+                  event.currentTarget
+                    .value as ConstructionSiteFilters["category"],
+                )
+              }
+            >
+              <option value="">Alle Arten</option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {getConstructionCategoryLabel(category)}
+                </option>
+              ))}
+            </KernSelect>
+
+            <KernSelect
+              id="filter-closure"
+              label="Verkehrsauswirkung"
+              value={filters.closure}
+              onChange={(event) =>
+                setFilter(
+                  "closure",
+                  event.currentTarget.value as ConstructionSiteFilters["closure"],
+                )
+              }
+            >
+              <option value="">Alle Auswirkungen</option>
+              {CLOSURE_SEVERITIES.map((closure) => (
+                <option key={closure} value={closure}>
+                  {getClosureLabel(closure)}
+                </option>
+              ))}
+            </KernSelect>
+          </section>
+        </details>
         {!isUnfiltered && (
           <KernButton
             type="button"
@@ -153,80 +293,6 @@ export function ConstructionSiteFilter({
           />
         )}
       </div>
-
-      <div className="filter-panel__search">
-        <KernInput
-          id="filter-search"
-          type="search"
-          label="Suche"
-          hint="Straße, Ort oder Stichwort"
-          value={filters.search}
-          onChange={(event) => setFilter("search", event.currentTarget.value)}
-        />
-      </div>
-
-      {/*
-        Native radios: the three counts are mutually exclusive, so the platform
-        should say so and arrow keys should move between them. The input stays
-        in the accessibility tree and only its box is hidden; the tile is the
-        label, which is what makes the whole surface clickable.
-      */}
-      <fieldset className="phase-switch">
-        <legend className="kern-sr-only">Nach Status filtern</legend>
-        {PHASE_OPTIONS.map((option) => (
-          <label
-            key={option.kind}
-            className={`phase-switch__item phase-switch__item--${option.kind}`}
-          >
-            <input
-              className="phase-switch__input kern-sr-only"
-              type="radio"
-              name="filter-phase"
-              value={option.value}
-              checked={filters.phase === option.value}
-              onChange={() => setFilter("phase", option.value)}
-            />
-            <span className="phase-switch__value">
-              {countForPhase(option.value)}
-            </span>
-            <span className="phase-switch__label">{option.label}</span>
-          </label>
-        ))}
-      </fieldset>
-
-      <div className="filter-panel__timeframe">
-        <KernSelect
-          id="filter-timeframe"
-          label="Zeitraum"
-          hint="Wann die Baustelle Sie betrifft"
-          value={filters.timeframe}
-          onChange={(event) =>
-            setFilter(
-              "timeframe",
-              event.currentTarget.value as ConstructionSiteTimeframe,
-            )
-          }
-        >
-          <option value="">Alle Zeiträume</option>
-          {CONSTRUCTION_SITE_TIMEFRAMES.map((timeframe) => (
-            <option key={timeframe.value} value={timeframe.value}>
-              {timeframe.label}
-            </option>
-          ))}
-        </KernSelect>
-      </div>
-
-      <button
-        type="button"
-        className="filter-panel__scope"
-        aria-pressed={showOnlyChanged}
-        disabled={changedCount === 0 && !showOnlyChanged}
-        onClick={() => onShowOnlyChangedChange(!showOnlyChanged)}
-      >
-        Nur neu oder geändert
-        <span className="filter-panel__scope-count">{changedCount}</span>
-      </button>
-
       {activeChips.length > 0 && (
         <ul className="filter-chips" aria-label="Aktive Filter">
           {activeChips.map((chip) => (
@@ -247,83 +313,6 @@ export function ConstructionSiteFilter({
         </ul>
       )}
 
-      <details
-        className="kern-accordion filter-panel__advanced"
-        open={advancedOpen}
-        onToggle={(event) => setAdvancedOpen(event.currentTarget.open)}
-      >
-        {/*
-          A real heading, so the section shows up when a screen reader lists the
-          page's structure. KERN's own accordion renders a plain span here and
-          offers no controlled open state, hence the hand-written markup.
-        */}
-        <summary className="kern-accordion__header">
-          <h3 className="kern-title">
-            Weitere Filter
-            {advancedFilterCount > 0 && (
-              <span className="filter-panel__active-count">
-                {advancedFilterCount} aktiv
-              </span>
-            )}
-          </h3>
-        </summary>
-        <section className="kern-accordion__body filter-panel__grid">
-          <KernSelect
-            id="filter-municipality"
-            label="Ort"
-            value={filters.municipality}
-            onChange={(event) =>
-              setFilter("municipality", event.currentTarget.value)
-            }
-          >
-            <option value="">Alle Orte</option>
-            {municipalities.map((municipality) => (
-              <option key={municipality} value={municipality}>
-                {municipality}
-              </option>
-            ))}
-          </KernSelect>
-
-          <KernSelect
-            id="filter-category"
-            label="Art der Baustelle"
-            value={filters.category}
-            onChange={(event) =>
-              setFilter(
-                "category",
-                event.currentTarget
-                  .value as ConstructionSiteFilters["category"],
-              )
-            }
-          >
-            <option value="">Alle Arten</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {getConstructionCategoryLabel(category)}
-              </option>
-            ))}
-          </KernSelect>
-
-          <KernSelect
-            id="filter-closure"
-            label="Verkehrsauswirkung"
-            value={filters.closure}
-            onChange={(event) =>
-              setFilter(
-                "closure",
-                event.currentTarget.value as ConstructionSiteFilters["closure"],
-              )
-            }
-          >
-            <option value="">Alle Auswirkungen</option>
-            {CLOSURE_SEVERITIES.map((closure) => (
-              <option key={closure} value={closure}>
-                {getClosureLabel(closure)}
-              </option>
-            ))}
-          </KernSelect>
-        </section>
-      </details>
     </section>
   );
 }

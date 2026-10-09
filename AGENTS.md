@@ -57,6 +57,9 @@
   linter command, so do not introduce broad formatting-only changes.
 - Add or update focused tests whenever behavior changes. Tests should describe
   public behavior and use small fixtures rather than live network requests.
+- Keep German UI copy short and plain: long enough to be useful, no longer.
+  Address the visitor as "Sie". Labels, hints and empty states state the fact
+  or the next step; skip filler, em-dash asides and repeating the heading.
 - Maintain accessible HTML: keyboard operation, visible focus, useful labels,
   semantic landmarks, and appropriate live regions are required.
 - Reuse KERN UX components and tokens where they fit; use native KERN classes or

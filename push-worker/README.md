@@ -1,19 +1,16 @@
 # Fächerbagger Web Push Worker
 
-This Cloudflare Worker stores standards-based Web Push subscriptions in D1.
+This Cloudflare Worker stores Web Push subscriptions in D1.
 
-**It stores delivery data, not watched locations** — no coordinates, no radius,
-no notification preferences. Those stay on the subscriber's device, and the
-service worker decides locally which of a run's events to show. Subscription
-rows contain the endpoint, encryption keys, expiration and operational
-timestamps only. Keep it that way: do not add a location, radius or preference
-column.
+**It stores delivery data, not locations.** Rows hold the endpoint, encryption
+keys, expiration and timestamps. Areas, radii and preferences stay on the
+device, where the service worker decides what to show. Do not add a location,
+radius or preference column.
 
-It deliberately does not fan out pushes itself: after a successful Pages
-deployment, the GitHub Actions runner reads subscriptions in paginated batches
-and broadcasts the wake-up push. This avoids Worker subrequest limits and stays
-inside the free tier. The Worker does send one push on its own — the on-demand
-delivery test — which is why `src/web-push.ts` exists.
+The Worker does not fan out pushes. After a Pages deployment, the GitHub
+Actions runner reads subscriptions in pages and broadcasts the wake-up push,
+which avoids Worker subrequest limits and stays in the free tier. The only push
+the Worker sends itself is the delivery test, hence `src/web-push.ts`.
 
 ## One-time production setup
 
@@ -53,10 +50,10 @@ databases created before it.
 The Worker additionally needs `VAPID_PRIVATE_KEY` and `VAPID_SUBJECT` as
 secrets, for the delivery test; `deploy-push-worker.yml` sets them.
 
-`push:secrets:setup` refuses to overwrite an existing local secret set because
-rotating VAPID keys invalidates every current browser subscription. The ignored
-file `push-worker/.production-secrets.local.json` is mode `0600` and is the
-recovery copy for the GitHub Actions secrets.
+`push:secrets:setup` will not overwrite an existing local secret set: rotating
+VAPID keys invalidates every browser subscription. The git-ignored
+`push-worker/.production-secrets.local.json` (mode `0600`) is the recovery copy
+of the GitHub Actions secrets.
 
 The GitHub repository contains these values:
 

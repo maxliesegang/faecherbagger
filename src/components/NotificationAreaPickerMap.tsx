@@ -138,7 +138,7 @@ export function NotificationAreaPickerMap({
       ref={containerRef}
       className="notification-area-picker-map"
       role="application"
-      aria-label="Karte: Mittelpunkt des Gebiets antippen"
+      aria-label="Karte: Mittelpunkt wählen"
     />
   );
 }

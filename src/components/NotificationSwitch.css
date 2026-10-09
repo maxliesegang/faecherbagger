@@ -1,0 +1,38 @@
+.notification-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--app-surface);
+  box-sizing: border-box;
+}
+
+.notification-switch--banner {
+  background: var(--accent-tint);
+}
+
+.notification-switch__icon {
+  flex: 0 0 auto;
+  color: var(--app-accent);
+}
+
+.notification-switch__text {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.notification-switch__text p {
+  margin: 0;
+}
+
+.notification-switch__state {
+  font-weight: 600;
+}
+
+.notification-switch__hint {
+  color: var(--app-muted);
+  font-size: 0.875rem;
+}

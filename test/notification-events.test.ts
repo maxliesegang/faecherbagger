@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   collectNotificationEvents,
-  selectNotificationEvents,
+  selectNotificationEvents as selectEventsForDate,
+  createNotificationFeed,
 } from "../src/lib/notification-events.ts";
 import {
   createNotificationPayload,
@@ -16,6 +17,11 @@ import type {
 } from "../src/types/index.ts";
 
 const TODAY = "2026-08-01";
+const selectNotificationEvents: typeof selectEventsForDate = (
+  events,
+  preferences,
+  today = TODAY,
+) => selectEventsForDate(events, preferences, today);
 
 const home: NotificationArea = {
   id: "home",
@@ -29,6 +35,7 @@ const preferences: NotificationPreferences = {
   kinds: ["new", "starts-soon", "changed"],
   minSeverity: "all",
   followedSiteIds: [],
+  notifyEarly: true,
 };
 
 function createSite(
@@ -78,6 +85,7 @@ describe("collectNotificationEvents", () => {
       {
         kind: "new",
         signature: "new:new-1",
+        announcedOn: TODAY,
         siteId: "new-1",
         point: site.point,
         closure: site.closure,
@@ -89,10 +97,10 @@ describe("collectNotificationEvents", () => {
     ]);
   });
 
-  it("reminds a week and a day before a site starts", () => {
-    const inAWeek = createSite("week", { startDate: "2026-08-08" });
+  it("reminds fourteen days and a day before a site starts", () => {
+    const inAWeek = createSite("week", { startDate: "2026-08-15" });
     const tomorrow = createSite("tomorrow", { startDate: "2026-08-02" });
-    const inTwoWeeks = createSite("later", { startDate: "2026-08-15" });
+    const inTwoWeeks = createSite("later", { startDate: "2026-08-16" });
 
     const events = collectNotificationEvents(
       [inAWeek, tomorrow, inTwoWeeks],
@@ -109,7 +117,7 @@ describe("collectNotificationEvents", () => {
 
   it("re-arms a start reminder when the start date moves", () => {
     const [first] = collectNotificationEvents(
-      [createSite("s", { startDate: "2026-08-08" })],
+      [createSite("s", { startDate: "2026-08-15" })],
       createChanges(),
       TODAY,
     );
@@ -203,9 +211,9 @@ describe("selectNotificationEvents", () => {
   });
 
   it("sends nothing to a subscriber without areas", () => {
-    expect(selectNotificationEvents(events, { ...preferences, areas: [] })).toEqual(
-      [],
-    );
+    expect(
+      selectNotificationEvents(events, { ...preferences, areas: [] }),
+    ).toEqual([]);
   });
 });
 
@@ -236,7 +244,8 @@ describe("createNotificationPayload", () => {
     expect(payload.count).toBe(3);
     expect(payload.title).toBe("3 Meldungen bei Zuhause");
     expect(payload.body).toContain("3× Vollsperrung");
-    expect(new URL(payload.url).searchParams.get("neu")).toBe("1");
+    expect(new URL(payload.url).hash).toBe("#meldungen");
+    expect(new URL(payload.url).searchParams.get("bereich")).toBe("fuer-mich");
   });
 
   it("has nothing to say when there are no events", () => {
@@ -291,7 +300,11 @@ describe("followed sites", () => {
   });
 
   const eventsFor = (site: ConstructionSite) =>
-    collectNotificationEvents([site], createChanges({ added: [site.id] }), TODAY);
+    collectNotificationEvents(
+      [site],
+      createChanges({ added: [site.id] }),
+      TODAY,
+    );
 
   it("notifies about a followed site outside every area", () => {
     const selected = selectNotificationEvents(eventsFor(distantAndHarmless), {
@@ -344,5 +357,183 @@ describe("followed sites", () => {
         areas: [],
       }),
     ).toEqual([]);
+  });
+});
+
+describe("planning and delivery rules", () => {
+  it("keeps long-term announcements quiet by default, but permits explicit early notices", () => {
+    const events = collectNotificationEvents(
+      [createSite("early")],
+      createChanges({ added: ["early"] }),
+      TODAY,
+    );
+    expect(
+      selectNotificationEvents(events, { ...preferences, notifyEarly: false }),
+    ).toEqual([]);
+    expect(
+      selectNotificationEvents(events, { ...preferences, notifyEarly: true }),
+    ).toHaveLength(1);
+    expect(
+      selectNotificationEvents(events, {
+        ...preferences,
+        notifyEarly: false,
+        followedSiteIds: ["early"],
+      }),
+    ).toHaveLength(1);
+  });
+
+  it("announces a newly discovered site inside fourteen days even without early notices", () => {
+    const events = collectNotificationEvents(
+      [createSite("near", { startDate: "2026-08-12" })],
+      createChanges({ added: ["near"] }),
+      TODAY,
+    );
+    expect(
+      selectNotificationEvents(events, { ...preferences, notifyEarly: false }),
+    ).toHaveLength(1);
+  });
+
+  it("identifies each reminder separately for an unchanged start date", () => {
+    const constructionSite = createSite("reminder", {
+      startDate: "2026-08-15",
+    });
+    const first = collectNotificationEvents(
+      [constructionSite],
+      createChanges(),
+      TODAY,
+    )[0]!;
+    const second = collectNotificationEvents(
+      [constructionSite],
+      createChanges({ since: "2026-08-13T16:00:00Z" }),
+      "2026-08-14",
+    )[0]!;
+    expect(first.reminderLeadDays).toBe(14);
+    expect(second.reminderLeadDays).toBe(1);
+    expect(first.signature).not.toBe(second.signature);
+    expect(
+      selectNotificationEvents(
+        [second],
+        { ...preferences, remindDayBefore: false },
+        "2026-08-14",
+      ),
+    ).toEqual([]);
+    expect(
+      selectNotificationEvents([first], {
+        ...preferences,
+        remindDayBefore: false,
+      }),
+    ).toHaveLength(1);
+  });
+
+  it("catches up a reminder after a missed pipeline day", () => {
+    const events = collectNotificationEvents(
+      [createSite("missed", { startDate: "2026-08-14" })],
+      createChanges({ since: "2026-07-30T16:00:00Z" }),
+      TODAY,
+    );
+    expect(events).toHaveLength(1);
+    expect(events[0]!.reminderLeadDays).toBe(14);
+  });
+
+  it("includes an improvement below the threshold and a postponement beyond the horizon", () => {
+    const constructionSite = createSite("changed", {
+      closure: "none",
+      startDate: "2026-10-01",
+    });
+    const events = collectNotificationEvents(
+      [constructionSite],
+      createChanges({
+        relevantModifications: [
+          {
+            id: "changed",
+            changedFields: ["closure", "period"],
+            previousClosure: "full",
+            previousStartDate: "2026-08-03",
+            previousEndDate: null,
+          },
+        ],
+      }),
+      TODAY,
+    );
+    expect(
+      selectNotificationEvents(events, {
+        ...preferences,
+        notifyEarly: false,
+        minSeverity: "closure",
+      }),
+    ).toHaveLength(1);
+  });
+
+  it("preserves morning events across the evening run without duplicating or renewing them", () => {
+    const constructionSite = createSite("morning");
+    const events = collectNotificationEvents(
+      [constructionSite],
+      createChanges({ added: ["morning"] }),
+      TODAY,
+    );
+    const morning = createNotificationFeed(events, "2026-08-01T04:00:00Z");
+    const evening = createNotificationFeed(
+      [],
+      "2026-08-01T16:00:00Z",
+      morning,
+      [constructionSite],
+    );
+    expect(evening.events).toEqual(events);
+    expect(
+      createNotificationFeed(events, "2026-08-01T17:00:00Z", evening, [
+        constructionSite,
+      ]).events,
+    ).toEqual(events);
+    expect(
+      createNotificationFeed([], "2026-08-05T16:00:00Z", evening, [
+        constructionSite,
+      ]).events,
+    ).toEqual([]);
+  });
+
+  it("removes retained notices whose dates or closure are no longer current", () => {
+    const constructionSite = createSite("postponed", {
+      startDate: "2026-08-15",
+    });
+    const previous = createNotificationFeed(
+      collectNotificationEvents([constructionSite], createChanges(), TODAY),
+      "2026-08-01T04:00:00Z",
+    );
+    expect(
+      createNotificationFeed([], "2026-08-01T16:00:00Z", previous, [
+        { ...constructionSite, startDate: "2026-09-15" },
+      ]).events,
+    ).toEqual([]);
+    expect(
+      createNotificationFeed([], "2026-08-01T16:00:00Z", previous, []).events,
+    ).toEqual([]);
+  });
+});
+
+describe("extended pipeline outages", () => {
+  it("still offers the first reminder when the optional day-before reminder is disabled", () => {
+    const events = collectNotificationEvents(
+      [createSite("outage", { startDate: "2026-08-02" })],
+      createChanges({ since: "2026-07-15T16:00:00Z" }),
+      TODAY,
+    );
+    expect(
+      events
+        .map((event) => event.reminderLeadDays)
+        .sort((left, right) => left! - right!),
+    ).toEqual([1, 14]);
+    expect(
+      selectNotificationEvents(events, {
+        ...preferences,
+        remindDayBefore: false,
+      }),
+    ).toHaveLength(1);
+    const payload = createNotificationPayload(
+      events,
+      preferences,
+      "https://example.org/faecherbagger/",
+    )!;
+    expect(payload.count).toBe(1);
+    expect(new URL(payload.url).searchParams.get("baustelle")).toBe("outage");
   });
 });

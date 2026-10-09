@@ -32,6 +32,7 @@ import {
   createUserLocationFeatureCollection,
   type NotificationAreaShape,
 } from "../lib/map-geojson.ts";
+import { formatNotificationRadius } from "../lib/notification-preferences.ts";
 import { useConstructionSiteGeometries } from "../hooks/useConstructionSiteGeometries.ts";
 import {
   addConstructionSiteMapLayers,
@@ -383,8 +384,8 @@ export function ConstructionSiteMap({
             <li>
               <i className="map-legend__radius" />
               {notificationAreas.length === 1
-                ? `Mein Gebiet (${notificationAreas[0].radiusKm} km)`
-                : `Meine Gebiete (${notificationAreas.length})`}
+                ? `Mein Ort (${formatNotificationRadius(notificationAreas[0].radiusKm)})`
+                : `Meine Orte (${notificationAreas.length})`}
             </li>
           )}
         </ul>
@@ -448,7 +449,7 @@ export function ConstructionSiteMap({
               onSiteDetailsRequest(selectedSite.id);
             }}
           >
-            Details ansehen
+            Details
           </a>
           <button
             type="button"

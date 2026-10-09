@@ -1,15 +1,21 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import {
   KernAlert,
-  KernButton,
   KernContainer,
-  KernHeading,
-  KernKopfzeile,
-  KernLink,
   KernLoader,
   KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import type { LngLat, NotificationPreferences } from "./types/index.ts";
+import type {
+  LngLat,
+  NotificationArea,
+  NotificationPreferences,
+} from "./types/index.ts";
 import {
   countConstructionSitesByPhase,
   type ConstructionSiteFilters,
@@ -24,17 +30,20 @@ import {
   type ConstructionSiteResultView,
 } from "./lib/url-state.ts";
 import { LEGAL_PAGES, type LegalPageId } from "./lib/legal-pages.ts";
-import { UNOFFICIAL_NOTICE } from "./lib/site-operator.ts";
 import { formatISOTimestamp } from "./lib/construction-site-labels.ts";
 import { ConstructionSiteFilter } from "./components/ConstructionSiteFilter.tsx";
 import { LegalPage } from "./components/LegalPage.tsx";
 import { ConstructionSiteDetail } from "./components/ConstructionSiteDetail.tsx";
-import { ConstructionSiteResults } from "./components/ConstructionSiteResults.tsx";
-import { AppSectionTabs } from "./components/AppSectionTabs.tsx";
+import {
+  ConstructionSiteResults,
+  ResultViewSwitcher,
+} from "./components/ConstructionSiteResults.tsx";
+import { AppNavigation } from "./components/AppNavigation.tsx";
 import { RelevantConstructionSites } from "./components/RelevantConstructionSites.tsx";
+import { SettingsPage } from "./components/SettingsPage.tsx";
+import { NotificationSetupDialog } from "./components/NotificationSetupDialog.tsx";
 import { selectRelevantConstructionSites } from "./lib/relevant-construction-sites.ts";
 import { CurrentLocationControl } from "./components/CurrentLocationControl.tsx";
-import { ProgressiveWebAppSettings } from "./components/ProgressiveWebAppSettings.tsx";
 import {
   useCurrentLocation,
   type CurrentLocationController,
@@ -44,16 +53,24 @@ import {
   type ConstructionSiteDataState,
 } from "./hooks/useConstructionSiteData.ts";
 import { getChangedConstructionSiteIds } from "./lib/construction-site-changes.ts";
-import { toBerlinCalendarDate } from "./lib/construction-site-timeframe.ts";
+import { useBerlinCalendarDate } from "./hooks/useBerlinCalendarDate.ts";
+import { useNotificationInbox } from "./hooks/useNotificationInbox.ts";
 import { useNotificationPreferences } from "./hooks/useNotificationPreferences.ts";
+import {
+  usePushNotifications,
+  type PushNotificationsController,
+} from "./hooks/usePushNotifications.ts";
 import "./App.css";
 
-/** Scroll target for the personal screen's "Gebiete ändern" action. */
-const PERSONAL_SETTINGS_ID = "persoenliche-einstellungen";
+const SECTION_TITLES: Record<AppSection, string> = {
+  relevant: "Für mich",
+  explore: "Alle Baustellen",
+  settings: "Einstellungen",
+};
 
 /**
- * Page shell: owns the shareable view state (filters, scope, presentation,
- * sort, detail) and arranges the control rail beside the results.
+ * Page shell: owns the shareable view state (section, filters, presentation,
+ * sort, detail), the app header and the navigation.
  */
 export function App() {
   const constructionSiteData = useConstructionSiteData();
@@ -83,6 +100,8 @@ export function App() {
   );
   const notificationPreferencesController = useNotificationPreferences();
   const locationController = useCurrentLocation();
+  const pushNotifications = usePushNotifications();
+  const notificationInbox = useNotificationInbox();
 
   // Keep the address bar in step with the view so it can be shared or reloaded.
   // `replaceState` keeps typing out of the history stack; the delay keeps a
@@ -143,7 +162,23 @@ export function App() {
       });
       return `${window.location.pathname}${query}${window.location.hash}`;
     },
-    [detailSiteId, filters, legalPageId, showOnlyChanged, sort, view],
+    [detailSiteId, filters, legalPageId, section, showOnlyChanged, sort, view],
+  );
+
+  const changeSection = useCallback((target: AppSection) => {
+    setSection(target);
+    setDetailSiteId(undefined);
+    setLegalPageId(undefined);
+  }, []);
+
+  const getSectionHref = useCallback(
+    (target: AppSection) =>
+      getAppHref({
+        section: target,
+        detailSiteId: undefined,
+        legalPageId: undefined,
+      }),
+    [getAppHref],
   );
 
   const getDetailHref = useCallback(
@@ -204,8 +239,9 @@ export function App() {
     window.history.replaceState(
       null,
       "",
-      getAppHref({ view: "map", detailSiteId: undefined }),
+      getAppHref({ section: "explore", view: "map", detailSiteId: undefined }),
     );
+    setSection("explore");
     setView("map");
     setDetailSiteId(undefined);
   }, [getAppHref]);
@@ -252,21 +288,48 @@ export function App() {
     );
   }, [locationController]);
 
+  const dataFreshness =
+    constructionSiteData.status === "ready" ? (
+      <DataFreshness fetchedAt={constructionSiteData.metadata.fetchedAt} />
+    ) : null;
+
   return (
     <>
       <a className="skip-link" href="#main-content">
         Zum Inhalt
       </a>
-      <KernKopfzeile label="Fächerbagger · Baustellen in der Region Karlsruhe" />
+      <header className="app-header">
+        <div className="app-header__inner">
+          <a
+            className="app-header__brand"
+            href={getSectionHref("relevant")}
+            onClick={(event) => {
+              if (
+                event.button !== 0 ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+              ) {
+                return;
+              }
+              event.preventDefault();
+              changeSection("relevant");
+            }}
+          >
+            <span className="app-header__name">Fächerbagger</span>
+            <span className="app-header__tagline">Baustellen Karlsruhe</span>
+          </a>
+          <AppNavigation
+            section={section}
+            onSectionChange={changeSection}
+            getSectionHref={getSectionHref}
+            unreadCount={notificationInbox.unreadCount}
+          />
+        </div>
+      </header>
       <main id="main-content">
         <KernContainer>
-          {/*
-            KERN is the state's design system, so an app built with it reads as
-            an official service. It is not one, and that has to be visible
-            without opening the Impressum.
-          */}
-          <p className="app-unofficial">{UNOFFICIAL_NOTICE}</p>
-
           {legalPageId ? (
             <LegalPage
               pageId={legalPageId}
@@ -276,9 +339,10 @@ export function App() {
           ) : (
             <ConstructionSitePortal
               constructionSiteData={constructionSiteData}
+              dataFreshness={dataFreshness}
               section={section}
-              onSectionChange={setSection}
-              getSectionHref={(target) => getAppHref({ section: target })}
+              onSectionChange={changeSection}
+              getSectionHref={getSectionHref}
               filters={filters}
               onFiltersChange={setFilters}
               onFiltersReset={resetFilters}
@@ -299,15 +363,22 @@ export function App() {
               notificationPreferences={
                 notificationPreferencesController.preferences
               }
+              isNotificationPreferencesLoaded={
+                notificationPreferencesController.isLoaded
+              }
               onNotificationPreferencesChange={
                 notificationPreferencesController.setPreferences
               }
               onToggleFollowed={notificationPreferencesController.toggleFollowed}
               onPruneFollowed={notificationPreferencesController.pruneFollowed}
-              getLegalPageHref={(pageId) => getAppHref({ legalPageId: pageId })}
-              onLegalPageOpen={openLegalPage}
+              pushNotifications={pushNotifications}
+              notificationInbox={notificationInbox}
             />
           )}
+          <AppFooter
+            getLegalPageHref={(pageId) => getAppHref({ legalPageId: pageId })}
+            onLegalPageOpen={openLegalPage}
+          />
         </KernContainer>
       </main>
     </>
@@ -320,74 +391,42 @@ interface ConstructionSitePortalProps
     "constructionSites" | "changes" | "metadata"
   > {
   constructionSiteData: ConstructionSiteDataState;
+  dataFreshness: ReactNode;
 }
 
 /**
- * The portal itself: page bar, load state, and the explorer once data is there.
- * Split from {@link App} so the legal pages can take over the container without
- * carrying any of this along.
+ * The portal itself: page title, load state, and the screens once data is
+ * there. Split from {@link App} so the legal pages can take over the container
+ * without carrying any of this along.
  */
 function ConstructionSitePortal({
   constructionSiteData,
+  dataFreshness,
   ...explorerProps
 }: ConstructionSitePortalProps) {
-  const {
-    detailSiteId,
-    locationController,
-    onUseCurrentLocation,
-    currentLocation,
-    section,
-  } = explorerProps;
-  const isDetailView = Boolean(detailSiteId);
-  /*
-    "In meiner Nähe" sorts the explorer's result list, so it only means
-    something there. On the personal screen the list is already built around
-    saved areas and every card carries its own distance.
-  */
-  const canCentreOnLocation = !isDetailView && section === "explore";
+  const isDetailView = Boolean(explorerProps.detailSiteId);
 
   return (
     <>
-      <header className="app-bar">
-        {/*
-          On the detail view the site itself owns the h1, so this generic
-          title steps aside rather than competing with it in the outline.
-        */}
-        {!isDetailView && (
-          <div className="app-bar__titles">
-            <KernHeading level={1}>Baustellen in der Region Karlsruhe</KernHeading>
-            <KernText className="app-bar__intro">
-              Aktuelle und geplante Straßenbaustellen finden, vergleichen und
-              im Blick behalten.
-            </KernText>
+      {/*
+        On the detail view the site itself owns the h1, so the section title
+        steps aside rather than competing with it in the outline.
+      */}
+      {!isDetailView && (
+        <div className="app-title">
+          <div className="app-title__text">
+            <h1>{SECTION_TITLES[explorerProps.section]}</h1>
+            {/* Settings states the data age in its own words. */}
+            {explorerProps.section !== "settings" && dataFreshness}
           </div>
-        )}
-        <div className="app-bar__meta">
-          {canCentreOnLocation && constructionSiteData.status === "ready" && (
-            <KernButton
-              type="button"
-              className="app-bar__nearby"
-              label={
-                locationController.locationState.status === "requesting"
-                  ? "Standort wird ermittelt …"
-                  : currentLocation
-                    ? "Umkreis erneut zentrieren"
-                    : "Baustellen in meiner Nähe"
-              }
-              disabled={
-                locationController.locationState.status === "requesting"
-              }
-              onClick={() => {
-                // The rail card reports failures through `locationState`.
-                void onUseCurrentLocation().catch(() => undefined);
-              }}
+          {explorerProps.section === "explore" && (
+            <ResultViewSwitcher
+              view={explorerProps.view}
+              onViewChange={explorerProps.onViewChange}
             />
           )}
-          {constructionSiteData.status === "ready" && (
-            <DataFreshness fetchedAt={constructionSiteData.metadata.fetchedAt} />
-          )}
         </div>
-      </header>
+      )}
 
       {constructionSiteData.status === "loading" && (
         <div className="app-status" role="status">
@@ -397,10 +436,9 @@ function ConstructionSitePortal({
       )}
 
       {constructionSiteData.status === "error" && (
-        <KernAlert variant="warning" title="Daten noch nicht verfügbar">
+        <KernAlert variant="warning" title="Daten nicht geladen">
           <KernText>
-            Die Baustellendaten konnten nicht geladen werden. Versuchen Sie
-            es später erneut. ({constructionSiteData.message})
+            Bitte versuchen Sie es später erneut. ({constructionSiteData.message})
           </KernText>
         </KernAlert>
       )}
@@ -428,17 +466,17 @@ function DataFreshness({ fetchedAt }: { fetchedAt: string }) {
   const isStale = Date.now() - new Date(fetchedAt).getTime() > STALE_DATA_AFTER_MS;
   return (
     <p
-      className="app-bar__updated"
+      className="app-freshness"
       data-state={isStale ? "stale" : "fresh"}
       title={
         isStale
-          ? "Die letzte Aktualisierung liegt mehr als einen Tag zurück."
+          ? "Seit über einem Tag nicht aktualisiert."
           : undefined
       }
     >
-      <span className="app-bar__dot" aria-hidden="true" />
-      {isStale ? "Möglicherweise veraltet — Stand " : "Stand "}
-      {formatISOTimestamp(fetchedAt)}
+      <span className="app-freshness__dot" aria-hidden="true" />
+      Stand {formatISOTimestamp(fetchedAt)}
+      {isStale && " · veraltet"}
     </p>
   );
 }
@@ -447,6 +485,8 @@ type LoadedConstructionSiteData = Extract<
   ReturnType<typeof useConstructionSiteData>,
   { status: "ready" }
 >;
+
+type NotificationInbox = ReturnType<typeof useNotificationInbox>;
 
 interface ConstructionSiteExplorerProps
   extends Pick<
@@ -476,16 +516,22 @@ interface ConstructionSiteExplorerProps
   locationController: CurrentLocationController;
   onUseCurrentLocation: () => Promise<void>;
   notificationPreferences: NotificationPreferences;
+  isNotificationPreferencesLoaded: boolean;
   onNotificationPreferencesChange: (
     preferences: NotificationPreferences,
   ) => void;
-  getLegalPageHref: (pageId: LegalPageId) => string;
-  onLegalPageOpen: (pageId: LegalPageId) => void;
+  pushNotifications: PushNotificationsController;
+  notificationInbox: NotificationInbox;
+}
+
+/** The place being edited in the setup dialog; `undefined` area means a new one. */
+interface AreaSetupState {
+  editedArea?: NotificationArea;
 }
 
 /**
- * The loaded page: a persistent control rail beside the results. Split out so
- * the derived counts are only computed once data is available.
+ * The loaded screens. Split out so the derived lists are only computed once
+ * data is available.
  */
 function ConstructionSiteExplorer({
   constructionSites,
@@ -514,15 +560,15 @@ function ConstructionSiteExplorer({
   locationController,
   onUseCurrentLocation,
   notificationPreferences,
+  isNotificationPreferencesLoaded,
   onNotificationPreferencesChange,
-  getLegalPageHref,
-  onLegalPageOpen,
+  pushNotifications,
+  notificationInbox,
 }: ConstructionSiteExplorerProps) {
   const [mapSelectedSiteId, setMapSelectedSiteId] = useState<
     string | undefined
   >();
-  // A counter, so asking twice reopens the dialog; see the settings panel.
-  const [areaSetupRequest, setAreaSetupRequest] = useState(0);
+  const [areaSetup, setAreaSetup] = useState<AreaSetupState>();
   const changedSiteIds = useMemo(
     () => getChangedConstructionSiteIds(changes),
     [changes],
@@ -536,13 +582,7 @@ function ConstructionSiteExplorer({
         : constructionSites,
     [changedSiteIds, constructionSites, showOnlyChanged],
   );
-  const today = useMemo(
-    // The dataset's own timestamp, not the browser clock: the data is up to
-    // twelve hours old and a device may sit in another timezone, so "heute"
-    // has to mean the same day here as it did in the pipeline.
-    () => toBerlinCalendarDate(metadata.fetchedAt),
-    [metadata.fetchedAt],
-  );
+  const today = useBerlinCalendarDate();
   const followedSiteIds = useMemo(
     () => new Set(notificationPreferences.followedSiteIds),
     [notificationPreferences.followedSiteIds],
@@ -576,6 +616,22 @@ function ConstructionSiteExplorer({
     ? constructionSites.find((site) => site.id === detailSiteId)
     : undefined;
 
+  const setupDialog = areaSetup && (
+    <NotificationSetupDialog
+      preferences={notificationPreferences}
+      constructionSites={constructionSites}
+      editedArea={areaSetup.editedArea}
+      locationController={locationController}
+      pushNotifications={pushNotifications}
+      onPreferencesChange={onNotificationPreferencesChange}
+      onClose={() => setAreaSetup(undefined)}
+      onComplete={() => {
+        setAreaSetup(undefined);
+        onSectionChange("relevant");
+      }}
+    />
+  );
+
   if (detailSiteId) {
     return detailSite ? (
       <ConstructionSiteDetail
@@ -588,11 +644,12 @@ function ConstructionSiteExplorer({
         }}
         isFollowed={followedSiteIds.has(detailSite.id)}
         onToggleFollowed={onToggleFollowed}
+        onNotificationSettingsOpen={() => onSectionChange("settings")}
       />
     ) : (
       <KernAlert variant="warning" title="Baustelle nicht gefunden">
         <KernText>
-          Die verlinkte Baustelle ist im aktuellen Datenstand nicht enthalten.
+          Die Baustelle ist nicht mehr in den aktuellen Daten.
         </KernText>
         <a
           href={getDetailHref(undefined)}
@@ -601,7 +658,7 @@ function ConstructionSiteExplorer({
             onDetailClose();
           }}
         >
-          Zur Baustellenübersicht
+          Zur Übersicht
         </a>
       </KernAlert>
     );
@@ -610,159 +667,112 @@ function ConstructionSiteExplorer({
   if (section === "relevant") {
     return (
       <>
-        <AppSectionTabs
-          section={section}
-          onSectionChange={onSectionChange}
-          getSectionHref={getSectionHref}
-          changedCount={relevantConstructionSites.changedCount}
-        />
-
         <RelevantConstructionSites
           selection={relevantConstructionSites}
           areas={notificationPreferences.areas}
+          isPreferencesLoaded={isNotificationPreferencesLoaded}
+          notificationEvents={notificationInbox.events}
+          unreadSignatures={notificationInbox.unreadSignatures}
+          onMarkRead={notificationInbox.markRead}
+          hasInboxError={notificationInbox.hasError}
+          pushNotifications={pushNotifications}
           getDetailHref={getDetailHref}
           onDetailOpen={onDetailOpen}
-          onEditAreas={() => setAreaSetupRequest((request) => request + 1)}
+          onAreaSetupOpen={() => setAreaSetup({})}
+          getSettingsHref={() => getSectionHref("settings")}
+          onSettingsOpen={() => onSectionChange("settings")}
+          getExploreHref={() => getSectionHref("explore")}
+          onExploreOpen={() => onSectionChange("explore")}
           staleFollowedCount={staleFollowedCount}
           onPruneFollowed={() =>
             onPruneFollowed(new Set(constructionSites.map((site) => site.id)))
           }
         />
+        {setupDialog}
+      </>
+    );
+  }
 
-        {/*
-          The notification settings live here rather than in the explorer rail:
-          the areas they manage are the input to the list above them, so the
-          screen that depends on them is the screen that should let you change
-          them.
-        */}
-        <div id={PERSONAL_SETTINGS_ID} className="app-personal-settings">
-          <ProgressiveWebAppSettings
-            locationController={locationController}
-            preferences={notificationPreferences}
-            onPreferencesChange={onNotificationPreferencesChange}
-            openSetupRequest={areaSetupRequest}
-          />
-        </div>
-
-        <AppFooter
+  if (section === "settings") {
+    return (
+      <>
+        <SettingsPage
+          preferences={notificationPreferences}
+          onPreferencesChange={onNotificationPreferencesChange}
+          onAreaEdit={(area) => setAreaSetup({ editedArea: area })}
+          pushNotifications={pushNotifications}
           metadata={metadata}
-          getLegalPageHref={getLegalPageHref}
-          onLegalPageOpen={onLegalPageOpen}
         />
+        {setupDialog}
       </>
     );
   }
 
   return (
-    <>
-      <AppSectionTabs
-        section={section}
-        onSectionChange={onSectionChange}
-        getSectionHref={getSectionHref}
-        changedCount={relevantConstructionSites.changedCount}
-      />
-
-      <div className="app-shell">
-        <div className="app-rail">
-          <ConstructionSiteFilter
-            constructionSites={constructionSites}
-            filters={filters}
-            phaseCounts={phaseCounts}
-            showOnlyChanged={showOnlyChanged}
-            changedCount={changedSiteIds.size}
-            onFiltersChange={onFiltersChange}
-            onShowOnlyChangedChange={onShowOnlyChangedChange}
-            onFiltersReset={onFiltersReset}
-          />
-
-          <div className="app-rail__tools" aria-label="Persönliche Werkzeuge">
+    <div className="app-shell">
+      <div className="app-rail">
+        <ConstructionSiteFilter
+          constructionSites={constructionSites}
+          filters={filters}
+          phaseCounts={phaseCounts}
+          showOnlyChanged={showOnlyChanged}
+          changedCount={changedSiteIds.size}
+          onFiltersChange={onFiltersChange}
+          onShowOnlyChangedChange={onShowOnlyChangedChange}
+          onFiltersReset={onFiltersReset}
+          locationControl={
             <CurrentLocationControl
               locationController={locationController}
               onUseCurrentLocation={onUseCurrentLocation}
             />
-          </div>
-        </div>
-
-        <ConstructionSiteResults
-          constructionSites={constructionSites}
-          changes={changes}
-          changedSiteIds={changedSiteIds}
-          filters={filters}
-          showOnlyChanged={showOnlyChanged}
-          view={view}
-          onViewChange={onViewChange}
-          sort={sort}
-          onSortChange={onSortChange}
-          selectedSiteId={mapSelectedSiteId}
-          onSelectedSiteIdChange={setMapSelectedSiteId}
-          getDetailHref={getDetailHref}
-          onDetailOpen={onDetailOpen}
-          currentLocation={currentLocation}
-          notificationAreas={notificationPreferences.areas}
+          }
         />
       </div>
 
-      <AppFooter
-        metadata={metadata}
-        getLegalPageHref={getLegalPageHref}
-        onLegalPageOpen={onLegalPageOpen}
+      <ConstructionSiteResults
+        constructionSites={constructionSites}
+        changes={changes}
+        changedSiteIds={changedSiteIds}
+        filters={filters}
+        showOnlyChanged={showOnlyChanged}
+        view={view}
+        onViewChange={onViewChange}
+        sort={sort}
+        onSortChange={onSortChange}
+        selectedSiteId={mapSelectedSiteId}
+        onSelectedSiteIdChange={setMapSelectedSiteId}
+        getDetailHref={getDetailHref}
+        onDetailOpen={onDetailOpen}
+        currentLocation={currentLocation}
+        notificationAreas={notificationPreferences.areas}
       />
-    </>
+    </div>
   );
 }
 
-interface AppFooterProps
-  extends Pick<ConstructionSiteExplorerProps, "getLegalPageHref" | "onLegalPageOpen"> {
-  metadata: LoadedConstructionSiteData["metadata"];
+interface AppFooterProps {
+  getLegalPageHref: (pageId: LegalPageId) => string;
+  onLegalPageOpen: (pageId: LegalPageId) => void;
 }
 
 /**
- * Attribution, disclaimer and legal links.
- *
- * Shared by both sections rather than living in the explorer: a site that tells
- * people which roads are closed has to say where the data comes from and that
- * it is not binding, on whichever screen they happen to be reading.
+ * Disclaimer and legal links on every screen. A site that tells people which
+ * roads are closed has to say that it is not binding wherever they read it;
+ * sources and feeds live on the settings screen.
  */
-function AppFooter({
-  metadata,
-  getLegalPageHref,
-  onLegalPageOpen,
-}: AppFooterProps) {
+function AppFooter({ getLegalPageHref, onLegalPageOpen }: AppFooterProps) {
   return (
     <footer className="app-footer">
       {/*
-        Attribution, the disclaimer and the legal links stay visible: a site
-        that tells people which roads are closed has to say where the data
-        comes from and that it is not a binding statement.
+        KERN is the state's design system, so an app built with it reads as an
+        official service. It is not one, and that has to be visible on every
+        screen without opening the Impressum.
       */}
-      <p className="app-footer__disclaimer">
-        Angaben ohne Gewähr und ohne Rechtsverbindlichkeit. Maßgeblich sind
-        die Anordnungen und Beschilderungen vor Ort.
+      <p>
+        Privates Angebot, keine amtliche Auskunft. Angaben ohne Gewähr, es gilt
+        die Beschilderung vor Ort.
       </p>
-      <KernText muted className="app-footer__source">
-        Daten: {metadata.source.name} · Quellen:{" "}
-        {metadata.attribution.join(", ")} · Stand:{" "}
-        {formatISOTimestamp(metadata.fetchedAt)}
-      </KernText>
       <ul className="app-footer__links">
-        <li>
-          <KernLink
-            href="https://mobil.trk.de/"
-            label="Mobilitätsportal der TRK"
-          />
-        </li>
-        <li>
-          <KernLink
-            href={`${import.meta.env.BASE_URL}baustellen.xml`}
-            label="RSS-Feed"
-          />
-        </li>
-        <li>
-          <KernLink
-            href={`${import.meta.env.BASE_URL}baustellen.atom`}
-            label="Atom-Feed"
-          />
-        </li>
         {LEGAL_PAGES.map((page) => (
           <li key={page.id}>
             {/*

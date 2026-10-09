@@ -2,8 +2,7 @@
   max-width: 62rem;
   margin-inline: auto;
   padding: clamp(1rem, 2.5vw, 2rem);
-  border: 1px solid var(--app-border);
-  border-top: 0.25rem solid var(--app-accent);
+
   background: var(--app-card);
 }
 
@@ -86,7 +85,7 @@
   font-weight: 700;
 }
 
-/* Row of equal-weight actions under the locator map. */
+/* Saving is the primary action; map navigation stays secondary. */
 .construction-site-detail__actions {
   display: flex;
   gap: 0.5rem 1rem;
@@ -186,4 +185,20 @@
   .construction-site-detail__facts > div:nth-child(odd) {
     padding-right: 0;
   }
+}
+
+/* KERN wraps button children in a block label; keep the star beside the text. */
+.follow-button .kern-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.follow-button .app-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.follow-button[aria-pressed="true"] .app-icon {
+  color: #b07d00;
 }

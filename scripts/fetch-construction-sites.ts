@@ -21,6 +21,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type {
+  NotificationFeed,
   ConstructionPhase,
   ConstructionSite,
   ConstructionSiteGeometries,
@@ -164,6 +165,9 @@ async function main(): Promise<void> {
   // The notification events are derived here rather than on the device: the
   // service worker only has to fetch this small file and match it against its
   // own areas, which is what keeps every location out of the push service.
+  const previousNotificationFeed = await readJSONIfExists<NotificationFeed>(
+    join(DATA_DIR, CONSTRUCTION_SITE_DATA_FILENAMES.notificationFeed),
+  );
   const notificationFeed = createNotificationFeed(
     collectNotificationEvents(
       constructionSites,
@@ -171,6 +175,8 @@ async function main(): Promise<void> {
       getBerlinCalendarDate(),
     ),
     fetchedAt,
+    previousNotificationFeed,
+    constructionSites,
   );
   await writeJSON(
     join(DATA_DIR, CONSTRUCTION_SITE_DATA_FILENAMES.notificationFeed),

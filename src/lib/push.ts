@@ -15,7 +15,7 @@ function base64UrlToUint8Array(value: string): Uint8Array<ArrayBuffer> {
 
 async function requestPushAPI(path: string, init?: RequestInit) {
   if (!PUSH_API_URL) {
-    throw new Error("Der Benachrichtigungsdienst ist noch nicht konfiguriert.");
+    throw new Error("Benachrichtigungen sind hier nicht eingerichtet.");
   }
   const response = await fetch(`${PUSH_API_URL}${path}`, {
     ...init,
@@ -26,7 +26,7 @@ async function requestPushAPI(path: string, init?: RequestInit) {
   });
   if (!response.ok) {
     throw new Error(
-      `Der Benachrichtigungsdienst antwortet mit Status ${response.status}.`,
+      `Benachrichtigungsdienst nicht erreichbar (Status ${response.status}).`,
     );
   }
   return response;
@@ -47,7 +47,7 @@ export async function getPushSubscription() {
  */
 export async function subscribeToPush() {
   if (!isPushSupported) {
-    throw new Error("Web Push wird von diesem Browser nicht unterstützt.");
+    throw new Error("Dieser Browser unterstützt keine Push-Benachrichtigungen.");
   }
   const registration = await navigator.serviceWorker.ready;
   const existing = await registration.pushManager.getSubscription();
@@ -59,7 +59,7 @@ export async function subscribeToPush() {
   const configResponse = await requestPushAPI("/config");
   const config = (await configResponse.json()) as { vapidPublicKey?: string };
   if (!config.vapidPublicKey) {
-    throw new Error("Der Benachrichtigungsdienst liefert keinen VAPID-Schlüssel.");
+    throw new Error("Benachrichtigungsdienst falsch eingerichtet (VAPID-Schlüssel fehlt).");
   }
   const subscription = await registration.pushManager.subscribe({
     userVisibleOnly: true,

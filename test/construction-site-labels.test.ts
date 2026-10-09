@@ -48,7 +48,7 @@ describe("plain-language labels", () => {
   });
 
   it("states the full closure as a consequence, not as a category name", () => {
-    expect(getClosureHeadline("full")).toMatch(/nicht durch/);
-    expect(getClosureHeadline("none")).toMatch(/normal durch/);
+    expect(getClosureHeadline("full")).toMatch(/kein Durchkommen/);
+    expect(getClosureHeadline("none")).toMatch(/befahrbar/);
   });
 });

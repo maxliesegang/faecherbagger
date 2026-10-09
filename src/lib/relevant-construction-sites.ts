@@ -21,8 +21,8 @@ import {
  * after it drops out of every window. Neither subsumes the other, so both feed
  * this selector and the reason is recorded per site rather than collapsed.
  *
- * Pure and free of browser globals: the screens call it, and the same rules
- * decide what a push is allowed to interrupt someone for.
+ * Pure and free of browser globals. Notification delivery has separate
+ * timing and severity rules so planning remains visible without extra pushes.
  */
 
 /** One watched area a site falls inside, and how far it is from that centre. */
@@ -50,7 +50,7 @@ export interface RelevantConstructionSite {
   isFollowed: boolean;
   /** What the dates mean on `today`. */
   timing: ConstructionSiteTiming;
-  /** Starts, or has just started, within the short-notice lead. */
+  /** Starts between today and the planning horizon, inclusive. */
   isShortNotice: boolean;
   /** Changed in the most recent pipeline run. */
   isChanged: boolean;
@@ -62,7 +62,7 @@ export interface RelevanceSelection {
   all: readonly RelevantConstructionSite[];
   /**
    * What is happening in the next few days, most urgent first. The app's
-   * primary answer and the same set a notification is composed from.
+   * primary planning answer; notification selection also considers preferences.
    */
   shortNotice: readonly RelevantConstructionSite[];
   /** Under way on `today`, nearest first. */
@@ -88,7 +88,7 @@ export interface RelevanceSelection {
 }
 
 export interface RelevanceOptions {
-  /** Anchor day, from the dataset's `fetchedAt` rather than the browser clock. */
+  /** Current Europe/Berlin calendar day. */
   today: ISODate;
   /** Ids the visitor follows explicitly; relevant at any distance. */
   followedSiteIds?: ReadonlySet<string>;

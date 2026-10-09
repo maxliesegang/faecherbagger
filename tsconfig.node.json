@@ -12,6 +12,7 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
+    "jsx": "react-jsx",
 
     "strict": true,
     "noUnusedLocals": true,
@@ -19,7 +20,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
 
-    "types": ["node"]
+    "types": ["node", "vite/client"]
   },
   "include": ["scripts", "test", "vite.config.ts"]
 }

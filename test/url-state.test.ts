@@ -105,12 +105,12 @@ describe("serializeAppURLState", () => {
   });
 
   describe("section", () => {
-    it("defaults to the personal view, and keeps it out of the URL", () => {
+    it("opens the personal view by default", () => {
       expect(parseAppURLState("").section).toBe("relevant");
       expect(serializeAppURLState(DEFAULT_APP_URL_STATE)).toBe("");
     });
 
-    it("round-trips the explorer under a German key", () => {
+    it("round-trips the explorer under the established German key", () => {
       const query = serializeAppURLState({
         ...DEFAULT_APP_URL_STATE,
         section: "explore",
@@ -119,7 +119,16 @@ describe("serializeAppURLState", () => {
       expect(parseAppURLState(query).section).toBe("explore");
     });
 
-    it("accepts the personal view spelled out", () => {
+    it("round-trips the settings screen", () => {
+      const query = serializeAppURLState({
+        ...DEFAULT_APP_URL_STATE,
+        section: "settings",
+      });
+      expect(query).toBe("?bereich=einstellungen");
+      expect(parseAppURLState(query).section).toBe("settings");
+    });
+
+    it("continues to accept the personal view spelled out", () => {
       expect(parseAppURLState("?bereich=fuer-mich").section).toBe("relevant");
     });
 

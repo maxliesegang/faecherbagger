@@ -1,3 +1,9 @@
+import type { NotificationDeliveryState } from "./notification-delivery.ts";
+import {
+  createNotificationDeliveryState,
+  coerceNotificationDeliveryState,
+  recordNotificationDelivery,
+} from "./notification-delivery.ts";
 import type { NotificationPreferences } from "../types/index.ts";
 import {
   coerceNotificationPreferences,
@@ -49,7 +55,15 @@ async function withStore<T>(
   const database = await openDatabase();
   try {
     const transaction = database.transaction(STORE_NAME, mode);
-    const result = await promisifyRequest(run(transaction.objectStore(STORE_NAME)));
+    const completion = new Promise<void>((resolve, reject) => {
+      transaction.oncomplete = () => resolve();
+      transaction.onabort = () => reject(transaction.error);
+      transaction.onerror = () => reject(transaction.error);
+    });
+    const [result] = await Promise.all([
+      promisifyRequest(run(transaction.objectStore(STORE_NAME))),
+      completion,
+    ]);
     return result;
   } finally {
     database.close();
@@ -122,5 +136,46 @@ function migrateLegacyNotificationArea(): NotificationPreferences {
     return migrated;
   } catch {
     return defaults;
+  }
+}
+
+/** Notification delivery history stays in the same device-only database. */
+export async function loadNotificationDeliveryState(): Promise<NotificationDeliveryState> {
+  const stored = await withStore<unknown>("readonly", (store) =>
+    store.get("notification-delivery"),
+  );
+  const state =
+    stored === undefined
+      ? createNotificationDeliveryState()
+      : coerceNotificationDeliveryState(stored);
+  return recordNotificationDelivery(state, [], new Date().toISOString());
+}
+
+/** A read/write transaction prevents an inbox read action from erasing a concurrent push. */
+export async function updateNotificationDeliveryState(
+  update: (state: NotificationDeliveryState) => NotificationDeliveryState,
+): Promise<NotificationDeliveryState> {
+  const database = await openDatabase();
+  try {
+    return await new Promise<NotificationDeliveryState>((resolve, reject) => {
+      const transaction = database.transaction(STORE_NAME, "readwrite");
+      const store = transaction.objectStore(STORE_NAME);
+      let updated = createNotificationDeliveryState();
+      transaction.oncomplete = () => resolve(updated);
+      transaction.onabort = () => reject(transaction.error);
+      transaction.onerror = () => reject(transaction.error);
+      const request = store.get("notification-delivery") as IDBRequest<unknown>;
+      request.onsuccess = () => {
+        try {
+          updated = update(coerceNotificationDeliveryState(request.result));
+          store.put(updated, "notification-delivery");
+        } catch (error) {
+          transaction.abort();
+          reject(error);
+        }
+      };
+    });
+  } finally {
+    database.close();
   }
 }

@@ -41,23 +41,23 @@ const CATEGORY_LABELS: Record<ConstructionCategory, string> = {
  * Kept short enough to sit under the label without becoming a second paragraph.
  */
 const CATEGORY_DESCRIPTIONS: Record<ConstructionCategory, string> = {
-  "special-use": "Gerüst, Container, Kran o. Ä. beansprucht die Straße",
-  "power-telecom": "Arbeiten an Strom- oder Telefon- und Internetleitungen",
-  "district-heating": "Arbeiten an Fernwärmeleitungen im Untergrund",
-  "gas-water": "Arbeiten an Gas- oder Wasserleitungen im Untergrund",
-  "road-construction": "Die Straße selbst wird gebaut oder umgebaut",
-  "road-maintenance": "Ausbesserung der Fahrbahn, meist kürzer",
-  sewer: "Arbeiten an der Kanalisation unter der Straße",
-  rail: "Arbeiten an Straßenbahn- oder Bahngleisen",
+  "special-use": "Gerüst, Container, Kran o. Ä. steht auf der Straße",
+  "power-telecom": "Strom-, Telefon- oder Internetleitungen",
+  "district-heating": "Fernwärmeleitungen im Boden",
+  "gas-water": "Gas- oder Wasserleitungen im Boden",
+  "road-construction": "Die Straße wird neu- oder umgebaut",
+  "road-maintenance": "Die Fahrbahn wird ausgebessert, meist kurz",
+  sewer: "Kanalisation unter der Straße",
+  rail: "Straßenbahn- oder Bahngleise",
   bridge: "Arbeiten an einer Brücke",
   tunnel: "Arbeiten in oder an einem Tunnel",
-  "retaining-wall": "Arbeiten an einer Stützmauer am Straßenrand",
+  "retaining-wall": "Stützmauer am Straßenrand",
   demolition: "Ein Gebäude oder Bauwerk wird abgerissen",
   "stop-rebuild": "Eine Haltestelle wird umgebaut",
-  "traffic-reroute": "Der Verkehr wird wegen einer Baustelle anders geführt",
+  "traffic-reroute": "Der Verkehr wird wegen einer Baustelle umgeleitet",
   crane: "Ein Kran steht auf oder an der Straße",
-  "soil-survey": "Der Untergrund wird untersucht, meist kurz",
-  "green-maintenance": "Pflege von Bäumen und Grünflächen am Straßenrand",
+  "soil-survey": "Der Boden wird untersucht, meist kurz",
+  "green-maintenance": "Bäume und Grünflächen am Straßenrand",
   other: "Sonstige Arbeiten im Straßenraum",
 };
 
@@ -66,22 +66,20 @@ const CATEGORY_DESCRIPTIONS: Record<ConstructionCategory, string> = {
  * as an answer rather than as the source's category name.
  */
 const CLOSURE_HEADLINES: Record<ClosureSeverity, string> = {
-  none: "Sie kommen normal durch",
-  obstruction: "Durchkommen möglich, aber behindert",
-  "one-direction": "Eine Fahrtrichtung ist gesperrt",
-  full: "Gesperrt – hier kommen Sie nicht durch",
-  unknown: "Auswirkung auf den Verkehr nicht angegeben",
+  none: "Normal befahrbar",
+  obstruction: "Befahrbar, aber behindert",
+  "one-direction": "Eine Richtung gesperrt",
+  full: "Gesperrt, kein Durchkommen",
+  unknown: "Auswirkung unbekannt",
 };
 
 const CLOSURE_DESCRIPTIONS: Record<ClosureSeverity, string> = {
-  none: "Die Arbeiten finden neben dem Verkehr statt.",
+  none: "Die Arbeiten behindern den Verkehr nicht.",
   obstruction:
-    "Rechnen Sie mit verengter Fahrbahn, Wartezeit oder Umleitung für Gehweg und Radweg.",
-  "one-direction":
-    "Aus einer Richtung ist die Durchfahrt gesperrt; aus der anderen kommen Sie durch.",
-  full: "Die Straße ist für den Durchgangsverkehr gesperrt. Planen Sie eine Umfahrung ein.",
-  unknown:
-    "Die Quelle macht keine Angabe. Rechnen Sie vorsichtshalber mit einer Einschränkung.",
+    "Rechnen Sie mit Engstellen, Wartezeit oder Umleitungen für Fuß- und Radverkehr.",
+  "one-direction": "In der Gegenrichtung kommen Sie durch.",
+  full: "Kein Durchgangsverkehr. Planen Sie einen Umweg ein.",
+  unknown: "Die Quelle sagt nichts dazu. Rechnen Sie mit Einschränkungen.",
 };
 
 const CLOSURE_LABELS: Record<ClosureSeverity, string> = {

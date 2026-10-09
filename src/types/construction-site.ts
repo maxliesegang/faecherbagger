@@ -53,6 +53,9 @@ export interface NotificationPreferences {
   areas: NotificationArea[];
   kinds: NotificationEventKind[];
   minSeverity: NotificationSeverityThreshold;
+  /** Optional for compatibility with preferences saved before these controls. */
+  remindDayBefore?: boolean;
+  notifyEarly?: boolean;
   /**
    * Sites followed by hand, by `ConstructionSite.id`.
    *
@@ -83,6 +86,11 @@ export interface NotificationFeedEvent {
    * nothing.
    */
   signature: string;
+  /** Calendar date on which the event was first collected. */
+  announcedOn?: ISODate;
+  reminderLeadDays?: number;
+  previousClosure?: ClosureSeverity;
+  previousStartDate?: ISODate;
   siteId: string;
   point: LngLat;
   closure: ClosureSeverity;

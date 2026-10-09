@@ -7,6 +7,7 @@ import {
   getClosureHeadline,
 } from "./construction-site-labels.ts";
 import { findNotificationAreaForPoint } from "./notification-events.ts";
+import { summarizeNotificationEvents } from "./notification-delivery.ts";
 
 /**
  * The wording of a notification, and the link it opens.
@@ -83,9 +84,11 @@ export function createNotificationPayload(
   appURL: string,
 ): NotificationPayload | null {
   if (events.length === 0) return null;
-  const [firstEvent] = events;
+  // One construction site may have several events after a delayed delivery.
+  const constructionSiteEvents = summarizeNotificationEvents(events);
+  const [firstEvent] = constructionSiteEvents;
 
-  if (events.length === 1) {
+  if (constructionSiteEvents.length === 1) {
     const url = new URL(appURL);
     url.searchParams.set("baustelle", firstEvent.siteId);
     return {
@@ -97,10 +100,8 @@ export function createNotificationPayload(
   }
 
   const url = new URL(appURL);
-  // Everything in a batch is either new, changed or about to start; the
-  // "new or changed" scope is the closest existing view for all three.
-  url.searchParams.set("neu", "1");
-  url.searchParams.set("sortierung", "lastModified:descending");
+  url.searchParams.set("bereich", "fuer-mich");
+  url.hash = "meldungen";
 
   const areaLabels = [
     ...new Set(
@@ -113,19 +114,19 @@ export function createNotificationPayload(
     ),
   ];
   const scope =
-    areaLabels.length === 1 ? ` bei ${areaLabels[0]}` : " in Ihren Gebieten";
+    areaLabels.length === 1 ? ` bei ${areaLabels[0]}` : " für Sie";
 
-  const fullClosureCount = events.filter(
+  const fullClosureCount = constructionSiteEvents.filter(
     (event) => event.closure === "full",
   ).length;
 
   return {
-    title: `${events.length} Meldungen${scope}`,
+    title: `${constructionSiteEvents.length} Meldungen${scope}`,
     body:
       fullClosureCount > 0
         ? `Darunter ${fullClosureCount}× Vollsperrung. Unter anderem: ${firstEvent.location}.`
         : `Unter anderem: ${firstEvent.location}, ${firstEvent.municipality}.`,
     url: url.href,
-    count: events.length,
+    count: constructionSiteEvents.length,
   };
 }

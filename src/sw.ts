@@ -14,7 +14,12 @@ import {
   createNotificationPayload,
   type NotificationPayload,
 } from "./lib/notification-message.ts";
-import { loadNotificationPreferences } from "./lib/notification-preferences-store.ts";
+import {
+  loadNotificationPreferences,
+  loadNotificationDeliveryState,
+  updateNotificationDeliveryState,
+} from "./lib/notification-preferences-store.ts";
+import { isNotificationFeedEvent, selectUndeliveredNotificationEvents, recordNotificationDelivery } from "./lib/notification-delivery.ts";
 
 declare let self: ServiceWorkerGlobalScope;
 
@@ -126,7 +131,8 @@ function showConstructionSiteNotification(payload: NotificationPayload) {
  * cost is this fetch: a small events file, not the full record set.
  */
 async function showMatchingConstructionSiteEvents(appURL: string) {
-  const [preferences, response] = await Promise.all([
+  const [deliveryState, preferences, response] = await Promise.all([
+    loadNotificationDeliveryState(),
     loadNotificationPreferences(),
     fetch(getDataURL(CONSTRUCTION_SITE_DATA_FILENAMES.notificationFeed), {
       cache: "no-store",
@@ -134,15 +140,28 @@ async function showMatchingConstructionSiteEvents(appURL: string) {
   ]);
   if (!response.ok) throw new Error("Notification feed unavailable");
 
-  const feed = (await response.json()) as NotificationFeed;
-  const matching = selectNotificationEvents(feed.events, preferences);
+  const feed = (await response.json()) as Partial<NotificationFeed>;
+  if (!Array.isArray(feed.events) || !feed.events.every(isNotificationFeedEvent)) {
+    throw new Error("Invalid notification feed");
+  }
+  const matching = selectUndeliveredNotificationEvents(
+    selectNotificationEvents(feed.events, preferences),
+    deliveryState,
+  );
   const payload = createNotificationPayload(matching, preferences, appURL);
   if (!payload) return;
 
-  if ("setAppBadge" in self.navigator) {
-    await self.navigator.setAppBadge(payload.count).catch(() => undefined);
-  }
   await showConstructionSiteNotification(payload);
+  // Once a visible notification exists, a storage failure must not replace it
+  // with the generic fetch-error fallback. A later wake-up can retry the receipt.
+  const updated = await updateNotificationDeliveryState((current) =>
+    recordNotificationDelivery(current, matching, new Date().toISOString()),
+  ).catch(() => recordNotificationDelivery(deliveryState, matching, new Date().toISOString()));
+  if ("setAppBadge" in self.navigator) {
+    const unreadCount = updated.events.filter((event) => !updated.readSignatures.includes(event.signature)).length;
+    await self.navigator.setAppBadge(unreadCount).catch(() => undefined);
+  }
+  await notifyClientsOfDataUpdate();
 }
 
 interface PushMessage {
@@ -152,6 +171,9 @@ interface PushMessage {
   body?: string;
   url?: string;
 }
+
+// Serialize event deliveries so overlapping wake-ups cannot show the same event.
+let notificationDelivery: Promise<void> = Promise.resolve();
 
 self.addEventListener("push", (event) => {
   let message: PushMessage = {};
@@ -177,14 +199,16 @@ self.addEventListener("push", (event) => {
       }
 
       try {
-        await showMatchingConstructionSiteEvents(appURL);
+        notificationDelivery = notificationDelivery.catch(() => undefined)
+          .then(() => showMatchingConstructionSiteEvents(appURL));
+        await notificationDelivery;
       } catch {
         // `userVisibleOnly` obliges us to show *something* when we cannot tell
         // whether anything matched; staying silent here would spend the
         // browser's budget and eventually earn its own generic notification.
         await showConstructionSiteNotification({
           title: "Neue Baustellendaten",
-          body: "Öffnen Sie die App, um zu sehen, was sich geändert hat.",
+          body: "Öffnen Sie die App für Details.",
           url: appURL,
           count: 0,
         });
@@ -241,9 +265,6 @@ self.addEventListener("notificationclick", (event) => {
     self.registration.scope;
   event.waitUntil(
     Promise.all([
-      "clearAppBadge" in self.navigator
-        ? self.navigator.clearAppBadge().catch(() => undefined)
-        : Promise.resolve(),
       self.clients
         .matchAll({ type: "window", includeUncontrolled: true })
         .then(async (windows) => {

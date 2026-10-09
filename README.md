@@ -1,16 +1,26 @@
 # Fächerbagger
 
-Understandable view of current and upcoming road construction sites
-("Baustellen") in the TechnologieRegion Karlsruhe. A static React app that makes
-the data easier to grasp than the existing map-only view provided by TRK.
+Current and upcoming road construction sites ("Baustellen") in the
+TechnologieRegion Karlsruhe, as a map and a list. A static React app that is
+easier to read than TRK's map-only portal.
 
-The name is a pun on Karlsruhe's nickname *Fächerstadt* (fan-shaped city) and
-*Bagger* (excavator). UI language is German; code, comments and commits are
-English.
+The name combines Karlsruhe's nickname *Fächerstadt* (fan-shaped city) with
+*Bagger* (excavator). The UI is German; code, comments and commits are English.
 
-> **Status:** The app includes the data pipeline, filterable map, table and card
-> views, shareable construction-site details, offline support, and private
-> device-local notification preferences.
+## The app
+
+- **Für mich** is the start page. Before anything is set up it asks for one
+  place; the setup then offers notifications. Afterwards it shows new
+  notifications, then sites near the visitor's places or marked with a star,
+  split into *Beginnt bald* (within 14 days), *Läuft gerade* and *Später
+  geplant*.
+- **Karte** shows all sites with search, filters, a map and a list.
+- **Einstellungen** holds places, notification options, the app itself, sources
+  and feeds.
+- On phones the three sections sit in a bottom bar.
+- Each site has a shareable page that answers "can I get through?" first.
+- Works offline as a PWA, with optional Web Push notifications that are matched
+  on the device.
 
 ## How it works
 
@@ -89,7 +99,7 @@ npm ci            # install the locked dependencies
 npm run data      # fetch the WFS and (re)generate public/data/*.json
 npm run feeds     # regenerate RSS and Atom from the existing local JSON
 npm run dev       # start the dev server
-npm test          # run the normalizer tests (Vitest)
+npm test          # run all tests (app and Worker, Vitest)
 npm run typecheck # strict TypeScript check (app + node projects)
 npm run build     # production build into dist/
 npm run preview   # serve the production build
@@ -112,9 +122,8 @@ privacy policy and accessibility statement can render real contact details:
 | `VITE_OPERATOR_EMAIL` | Operator contact address |
 | `VITE_OPERATOR_ACCESSIBILITY_CONTACT` | Optional accessibility contact; defaults to the operator email |
 
-The legal pages deliberately show a configuration warning when the required
-operator values are absent. Set the same variables in the environment that
-runs `npm run build`; Vite embeds them at build time.
+Without the required operator values the legal pages show a warning. Set them
+where `npm run build` runs; Vite embeds them at build time.
 
 ## PWA, offline data and notifications
 
@@ -131,24 +140,37 @@ shown and then served from the same runtime cache.
 
 ### Notifications
 
-**No watched location ever reaches the server.** The areas a visitor watches,
-their radius and what they want to hear about are stored in IndexedDB on the
-device and nowhere else. D1 holds only the delivery details and timestamps
-needed to manage Web Push subscriptions.
+**No watched location ever reaches the server.** Areas, radii, followed sites
+and notification choices live in IndexedDB on the device. D1 holds only what
+Web Push delivery needs: endpoints, keys and timestamps.
 
 A run therefore works like this:
 
-1. The pipeline writes `ereignisse.json`, the events this run produced.
-2. `scripts/send-push.ts` claims each event's signature through the Worker (so
-   it is announced exactly once) and sends **every** subscriber the same
-   contentless wake-up push.
+1. The pipeline writes `ereignisse.json`, retaining three calendar days of
+   events so quiet hours and temporary delivery failures do not discard them.
+2. `scripts/send-push.ts` sends every eligible subscriber the same contentless
+   wake-up push. It retries retained events within the existing daily guard;
+   global event claims are no longer used for broadcast delivery.
 3. The service worker wakes, fetches `ereignisse.json`, loads the device's own
-   preferences from IndexedDB, and decides locally which events fall inside the
-   device's areas. Only then does it show a notification — aggregated into one,
-   deep-linked to the site when there is exactly one.
+   preferences from IndexedDB, and keeps the events inside the device's areas
+   or about a followed site. It shows one aggregated notification, deep-linked
+   to the site when there is only one, or to the local inbox for a batch.
+   Event receipts on the device suppress duplicates. The inbox keeps up to 500
+   delivered events for 30 days, with an explicit read action and unread count.
 
-The sender cannot tell who an event concerns, which is why the wake-up carries
-no content and the events file is small enough to fetch on every push.
+The default planning horizon is 14 days. Start reminders have distinct
+signatures for 14 days and the optional day-before reminder. A successful run
+catches reminder thresholds crossed since the previous fetch. Early
+announcements beyond 14 days are opt-in; explicitly followed sites also qualify
+for early notices. Changes consider both old and new closure severity so an
+improvement is not accidentally filtered out. A postponement of an imminent
+site remains notifiable even when the new date falls outside the horizon.
+The personal overview always shows the long-term timeline, independently of
+notification severity filters. Dates use the current Europe/Berlin calendar
+with a separate warning when the dataset is stale.
+
+The sender cannot tell who an event concerns. That is why the wake-up has no
+content and the events file stays small enough to fetch on every push.
 
 Delivery is gated to 09:00–21:00 Europe/Berlin. The pipeline runs at 04:00 and
 16:00 UTC (05:00/17:00 in winter, 06:00/18:00 in summer), so the morning run
@@ -185,12 +207,10 @@ be overridden at build time with the `BASE_PATH` env var. Enable Pages with the
 
 - **React 19 + TypeScript (strict)** + **Vite**. Function components and hooks.
 - **KERN UX** via **`@kern-ux-annex/kern-react-kit`** (community React
-  implementation, EUPL-1.2) plus `@kern-ux/native` for CSS and Fira Sans. This
-  was preferred over the alternative `@publicplan/kern-react-kit` for its
-  built-in Tabs (a fit for the planned map/table switch), layout primitives,
-  dark-mode toggle, longer release history and zero runtime dependencies. Both
-  React wrappers lag `@kern-ux/native` by a few months, so we fall back to native
-  KERN CSS classes where a component or token is missing.
+  implementation, EUPL-1.2) plus `@kern-ux/native` for CSS and Fira Sans. Chosen
+  over `@publicplan/kern-react-kit` for its layout primitives, release history
+  and zero runtime dependencies. Both wrappers lag `@kern-ux/native`, so native
+  KERN classes fill the gaps.
 - **MapLibre GL JS directly, without a React map binding.** Filtered GeoJSON is
   rendered as clustered overview points and detailed line/polygon geometry on
   an OpenFreeMap/OpenStreetMap basemap. Data is loaded with plain `fetch`.
@@ -202,7 +222,8 @@ See
 normalizations:
 
 - `id` = `vorgangsnummer` (a **string**, e.g. `"2026V2026"`).
-- `phase` = `"active"` | `"upcoming"` (from the source layer, robust to date).
+- `phase` = `"active"` | `"upcoming"` (from the source layer, not recomputed
+  from dates).
 - `category` = fixed set mapped from `art`; unknown values log and fall back to
   `"other"`.
 - `closure` = ordinal severity from `sperrung`

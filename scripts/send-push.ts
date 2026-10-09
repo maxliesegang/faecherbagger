@@ -1,8 +1,8 @@
 /**
  * Notification broadcast.
  *
- * Runs after a successful data refresh. Claims this run's notification events
- * so each is announced exactly once, then sends every subscriber the same
+ * Runs after a successful data refresh. Retains delivery opportunities for
+ * pending events and sends every eligible subscriber the same
  * contentless wake-up push.
  *
  * It deliberately cannot tell who an event concerns: areas and preferences live
@@ -82,15 +82,10 @@ if (feed.events.length === 0) {
   process.exit(0);
 }
 
-// Claim first: a crash mid-broadcast must not re-announce everything on the
-// next run. The cost is that a claimed event whose send fails is not retried,
-// which is the right trade for notifications that age out anyway.
-const claimed = await claimEvents(feed.events.map((event) => event.signature));
-console.log(
-  `${feed.events.length} events in the feed, ${claimed.length} newly claimed ` +
-    `(generated ${feed.generatedAt}).`,
-);
-if (claimed.length === 0) process.exit(0);
+// Every eligible device gets another chance to fetch the retained feed. A global
+// claim cannot represent successful delivery to each device; deduplication is
+// local, where preferences and the notification history already live.
+console.log(`${feed.events.length} retained events (generated ${feed.generatedAt}).`);
 
 const minimumLastNotifiedAt =
   Math.floor(now.getTime() / 1_000) - MIN_HOURS_BETWEEN_PUSHES * 60 * 60;
@@ -154,7 +149,7 @@ while (cursor !== null) {
         } else {
           failed += 1;
           console.warn(
-            `Push failed (${statusCode ?? "unknown"}): ${subscription.endpoint.slice(0, 60)}…`,
+            `Push failed (${statusCode ?? "unknown"}).`,
           );
         }
       }
@@ -170,18 +165,6 @@ console.log(
     `${removed} expired removed, ${failed} failed.`,
 );
 if (failed > 0 && sent === 0) process.exitCode = 1;
-
-async function claimEvents(signatures: readonly string[]): Promise<string[]> {
-  const response = await fetch(`${apiURL}/events/claim`, {
-    method: "POST",
-    headers,
-    body: JSON.stringify({ signatures }),
-  });
-  if (!response.ok) {
-    throw new Error(`Could not claim notification events: ${response.status}`);
-  }
-  return ((await response.json()) as { claimed: string[] }).claimed;
-}
 
 async function getPage(pageCursor: string): Promise<SubscriptionPage> {
   const query = new URLSearchParams({ limit: "500" });

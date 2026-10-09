@@ -10,11 +10,16 @@ import {
 import {
   coerceNotificationPreferences,
   DEFAULT_NOTIFICATION_PREFERENCES,
+  findNearestNotificationRadiusStepIndex,
+  formatNotificationRadius,
   isLngLat,
   isNotificationArea,
   isNotificationPreferences,
   MAX_NOTIFICATION_AREAS,
   meetsSeverityThreshold,
+  MAX_NOTIFICATION_RADIUS_KM,
+  MIN_NOTIFICATION_RADIUS_KM,
+  NOTIFICATION_RADIUS_STEPS_KM,
 } from "../src/lib/notification-preferences.ts";
 import type { NotificationArea } from "../src/types/index.ts";
 
@@ -40,6 +45,35 @@ describe("notification area", () => {
     expect(isNotificationArea({ ...area, label: "" })).toBe(false);
     expect(isNotificationArea({ ...area, label: "   " })).toBe(false);
     expect(isNotificationArea({ ...area, id: undefined })).toBe(false);
+  });
+
+  it("accepts sub-kilometre radii down to the minimum", () => {
+    expect(isNotificationArea({ ...area, radiusKm: 0.5 })).toBe(true);
+    expect(isNotificationArea({ ...area, radiusKm: 0.1 })).toBe(false);
+    expect(isNotificationArea({ ...area, radiusKm: 51 })).toBe(false);
+  });
+
+  it("offers radius steps that are sorted and within the bounds", () => {
+    const steps = [...NOTIFICATION_RADIUS_STEPS_KM];
+    expect(steps).toEqual([...steps].sort((a, b) => a - b));
+    expect(steps[0]).toBe(MIN_NOTIFICATION_RADIUS_KM);
+    expect(steps.at(-1)).toBe(MAX_NOTIFICATION_RADIUS_KM);
+    expect(steps.filter((step) => step < 1).length).toBeGreaterThan(1);
+  });
+
+  it("snaps a saved radius to the nearest offered step", () => {
+    const stepAt = (radiusKm: number) =>
+      NOTIFICATION_RADIUS_STEPS_KM[
+        findNearestNotificationRadiusStepIndex(radiusKm)
+      ];
+    expect(stepAt(0.5)).toBe(0.5);
+    expect(stepAt(11)).toBe(10);
+    expect(stepAt(45)).toBeOneOf([40, 50]);
+  });
+
+  it("formats radii with a German decimal comma", () => {
+    expect(formatNotificationRadius(0.5)).toBe("0,5 km");
+    expect(formatNotificationRadius(5)).toBe("5 km");
   });
 
   it("matches points inside the configured radius", () => {
@@ -109,6 +143,26 @@ describe("notification preferences", () => {
     minSeverity: "closure" as const,
     followedSiteIds: ["2026V2026"],
   };
+
+  it("upgrades saved areas without enabling early announcements", () => {
+    const upgraded = coerceNotificationPreferences(preferences);
+    expect(upgraded.areas).toEqual([area]);
+    expect(upgraded.followedSiteIds).toEqual(["2026V2026"]);
+    expect(upgraded.remindDayBefore).toBe(true);
+    expect(upgraded.notifyEarly).toBe(false);
+  });
+
+  it("preserves explicit reminder choices and rejects malformed values", () => {
+    const chosen = coerceNotificationPreferences({
+      ...preferences,
+      remindDayBefore: false,
+      notifyEarly: true,
+    });
+    expect(chosen.remindDayBefore).toBe(false);
+    expect(chosen.notifyEarly).toBe(true);
+    expect(isNotificationPreferences({ ...preferences, notifyEarly: "yes" })).toBe(false);
+    expect(isNotificationPreferences({ ...preferences, remindDayBefore: 1 })).toBe(false);
+  });
 
   it("validates the whole shape", () => {
     expect(isNotificationPreferences(preferences)).toBe(true);

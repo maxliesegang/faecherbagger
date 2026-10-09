@@ -1,10 +1,6 @@
-import {
-  KernAlert,
-  KernButton,
-  KernHeading,
-  KernText,
-} from "@kern-ux-annex/kern-react-kit";
+import { KernAlert, KernText } from "@kern-ux-annex/kern-react-kit";
 import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
+import { AppIcon } from "./AppIcon.tsx";
 
 interface CurrentLocationControlProps {
   locationController: CurrentLocationController;
@@ -13,9 +9,7 @@ interface CurrentLocationControlProps {
 }
 
 /**
- * Compact rail card. The main entry point for sharing a location is the button
- * in the page header; this card repeats it, reports failures and is the only
- * place that can withdraw the location again.
+ * One location action next to search, including errors and withdrawal.
  */
 export function CurrentLocationControl({
   locationController,
@@ -25,56 +19,34 @@ export function CurrentLocationControl({
   const isReady = locationState.status === "ready";
 
   return (
-    <section className="location-control" aria-labelledby="location-heading">
-      <div className="location-control__heading">
-        <KernHeading level={2} id="location-heading">
-          Mein Standort
-        </KernHeading>
-        {isReady && (
-          <span className="location-control__state">
-            <span className="location-control__dot" aria-hidden="true" />
-            aktiv
-          </span>
-        )}
-      </div>
-
-      <KernText muted className="location-control__intro">
-        {isReady
-          ? "Die Karte zeigt Ihren Umkreis, die Liste ist nach Entfernung sortiert. Der Standort bleibt im Browser."
-          : "Zeigt Ihren Umkreis auf der Karte und sortiert die Liste nach Nähe. Der Standort bleibt im Browser."}
-      </KernText>
-
-      {isReady ? (
-        <KernButton
-          type="button"
-          variant="tertiary"
-          label="Standort entfernen"
-          onClick={clearLocation}
-        />
-      ) : (
-        <KernButton
-          type="button"
-          variant="secondary"
-          label={
-            locationState.status === "requesting"
-              ? "Standort wird ermittelt …"
-              : "Meinen Standort verwenden"
-          }
-          disabled={locationState.status === "requesting"}
-          onClick={() => {
-            // The hook exposes the failure through locationState for this
-            // control. Consume the rejected promise to avoid an uncaught
-            // rejection in the browser console.
-            void onUseCurrentLocation().catch(() => undefined);
-          }}
-        />
-      )}
+    <div className="location-control">
+      {/*
+        Icon and short text; on phones only the icon shows and the text stays
+        for screen readers, so the search field keeps the row.
+      */}
+      <button
+        type="button"
+        className="tool-button"
+        aria-pressed={isReady}
+        disabled={locationState.status === "requesting"}
+        onClick={() => {
+          if (isReady) clearLocation();
+          else void onUseCurrentLocation().catch(() => undefined);
+        }}
+      >
+        <AppIcon name="person-pin" isFilled={isReady} />
+        <span className="tool-button__label">
+          {locationState.status === "requesting"
+            ? "Wird ermittelt …"
+            : "In meiner Nähe"}
+        </span>
+      </button>
 
       {locationState.status === "error" && (
         <KernAlert variant="warning" title="Standort nicht verfügbar">
           <KernText>{locationState.message}</KernText>
         </KernAlert>
       )}
-    </section>
+    </div>
   );
 }

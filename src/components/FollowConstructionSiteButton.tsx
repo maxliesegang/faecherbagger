@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { KernButton } from "@kern-ux-annex/kern-react-kit";
 import { MAX_FOLLOWED_SITES } from "../lib/notification-preferences.ts";
+import { AppIcon } from "./AppIcon.tsx";
 
 interface FollowConstructionSiteButtonProps {
   siteId: string;
@@ -10,13 +11,8 @@ interface FollowConstructionSiteButtonProps {
 }
 
 /**
- * Follow or unfollow one construction site.
- *
- * Worth its own control next to "teilen" because it is the only way to keep
- * hold of a site that sits outside every watched area — a closure on a route
- * someone drives weekly but does not live near. A followed site notifies
- * regardless of distance, so the label says what happens rather than naming an
- * abstraction ("merken" would not explain why a notification arrived).
+ * Marks a construction site on this device. A marked site appears under
+ * "Für mich" wherever it is and is included in notifications.
  */
 export function FollowConstructionSiteButton({
   siteId,
@@ -29,11 +25,14 @@ export function FollowConstructionSiteButton({
     <>
       <KernButton
         type="button"
-        variant={isFollowed ? "primary" : "secondary"}
-        label={isFollowed ? "Wird beobachtet" : "Baustelle beobachten"}
+        variant="secondary"
+        className="follow-button"
         aria-pressed={isFollowed}
         onClick={() => setIsFull(!onToggleFollowed(siteId))}
-      />
+      >
+        <AppIcon name="star" isFilled={isFollowed} />
+        <span>{isFollowed ? "Gemerkt" : "Merken"}</span>
+      </KernButton>
       {isFull && (
         /*
           `alert` rather than a toast: the button did not do what it looks like
@@ -41,8 +40,8 @@ export function FollowConstructionSiteButton({
           happens.
         */
         <p role="alert" className="construction-site-detail__follow-limit">
-          Es lassen sich höchstens {MAX_FOLLOWED_SITES} Baustellen beobachten.
-          Entfernen Sie zuerst eine andere.
+          Sie können höchstens {MAX_FOLLOWED_SITES} Baustellen merken.
+          Entfernen Sie zuerst eine.
         </p>
       )}
     </>

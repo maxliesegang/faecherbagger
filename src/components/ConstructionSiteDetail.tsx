@@ -2,7 +2,6 @@ import {
   lazy,
   Suspense,
   useEffect,
-  useMemo,
   useRef,
   type CSSProperties,
 } from "react";
@@ -18,7 +17,6 @@ import {
   CLOSURE_SEVERITY_COLORS,
   formatConstructionPeriod,
   formatISODate,
-  getClosureBadgeVariant,
   getClosureDescription,
   getClosureHeadline,
   getClosureLabel,
@@ -29,10 +27,8 @@ import {
 } from "../lib/construction-site-labels.ts";
 import { ShareConstructionSiteButton } from "./ShareConstructionSiteButton.tsx";
 import { FollowConstructionSiteButton } from "./FollowConstructionSiteButton.tsx";
-import {
-  formatConstructionPeriodRelativeToToday,
-  getBerlinCalendarDate,
-} from "../lib/construction-site-timeframe.ts";
+import { formatConstructionPeriodRelativeToToday } from "../lib/construction-site-timeframe.ts";
+import { useBerlinCalendarDate } from "../hooks/useBerlinCalendarDate.ts";
 import "./ConstructionSiteDetail.css";
 
 const ConstructionSiteLocationMap = lazy(() =>
@@ -50,6 +46,7 @@ interface ConstructionSiteDetailProps {
   isFollowed: boolean;
   /** Returns false when the follow list is full; see the preferences hook. */
   onToggleFollowed: (siteId: string) => boolean;
+  onNotificationSettingsOpen: () => void;
 }
 
 export function ConstructionSiteDetail({
@@ -59,9 +56,10 @@ export function ConstructionSiteDetail({
   onShowOnMap,
   isFollowed,
   onToggleFollowed,
+  onNotificationSettingsOpen,
 }: ConstructionSiteDetailProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const today = useMemo(() => getBerlinCalendarDate(), []);
+  const today = useBerlinCalendarDate();
   const relativePeriod = formatConstructionPeriodRelativeToToday(site, today);
 
   useEffect(() => {
@@ -98,7 +96,7 @@ export function ConstructionSiteDetail({
         }}
       >
         <KernIcon icon="arrow-back" />
-        Zur Baustellenübersicht
+        Zur Übersicht
       </a>
 
       <header className="construction-site-detail__header">
@@ -106,10 +104,6 @@ export function ConstructionSiteDetail({
           <KernBadge
             variant={getConstructionPhaseBadgeVariant(site.phase)}
             label={getConstructionPhaseLabel(site.phase)}
-          />
-          <KernBadge
-            variant={getClosureBadgeVariant(site.closure)}
-            label={getClosureLabel(site.closure)}
           />
         </div>
         {/*
@@ -145,39 +139,39 @@ export function ConstructionSiteDetail({
           {getClosureDescription(site.closure)}
         </p>
         <p className="construction-site-detail__summary">
-          {site.endDate
-            ? `Voraussichtlich bis ${formatISODate(site.endDate)}`
-            : `Seit ${formatISODate(site.startDate)}, Ende offen`}
+          {formatConstructionPeriod(site.startDate, site.endDate)}
           {relativePeriod && ` · ${relativePeriod}`}
         </p>
       </section>
 
-      <Suspense fallback={<KernLoader />}>
-        <ConstructionSiteLocationMap constructionSite={site} />
-      </Suspense>
-
       <div className="construction-site-detail__actions">
-        <KernButton
-          type="button"
-          variant="secondary"
-          label="In der großen Karte zeigen"
-          onClick={onShowOnMap}
-        />
-        {/*
-          A plain `geo:` link hands the coordinates to whichever map application
-          the device actually uses, instead of picking a vendor for the visitor.
-        */}
-        <KernLink
-          href={`geo:${site.point[1]},${site.point[0]}?q=${site.point[1]},${site.point[0]}`}
-          label="In Karten-App öffnen"
-        />
-        <ShareConstructionSiteButton site={site} />
         <FollowConstructionSiteButton
           siteId={site.id}
           isFollowed={isFollowed}
           onToggleFollowed={onToggleFollowed}
         />
+        <KernButton
+          type="button"
+          variant="secondary"
+          label="Auf der Karte zeigen"
+          onClick={onShowOnMap}
+        />
       </div>
+
+      {isFollowed && (
+        <div className="construction-site-detail__notification">
+          <KernButton
+            type="button"
+            variant="tertiary"
+            label="Benachrichtigungen einrichten"
+            onClick={onNotificationSettingsOpen}
+          />
+        </div>
+      )}
+
+      <Suspense fallback={<KernLoader />}>
+        <ConstructionSiteLocationMap constructionSite={site} />
+      </Suspense>
 
       {site.notes && (
         <section className="construction-site-detail__notice">
@@ -186,31 +180,42 @@ export function ConstructionSiteDetail({
         </section>
       )}
 
-      <dl className="construction-site-detail__facts">
-        <div>
-          <dt>Zeitraum</dt>
-          <dd>{formatConstructionPeriod(site.startDate, site.endDate)}</dd>
-        </div>
-        <div>
-          <dt>Art der Baustelle</dt>
-          <dd>
-            {getConstructionCategoryLabel(site.category)}
-            <span className="construction-site-detail__gloss">
-              {getConstructionCategoryDescription(site.category)}
-            </span>
-          </dd>
-        </div>
-        <div>
-          <dt>Verkehrseinschränkung</dt>
-          <dd>{getClosureLabel(site.closure)}</dd>
-        </div>
-      </dl>
-
       <details className="kern-accordion construction-site-detail__technical">
         <summary className="kern-accordion__header">
-          <h2 className="kern-title">Technische Angaben</h2>
+          <h2 className="kern-title">Weitere Informationen</h2>
         </summary>
         <section className="kern-accordion__body">
+          <div className="construction-site-detail__actions">
+            {/*
+              A plain `geo:` link hands the coordinates to whichever map application
+              the device actually uses, instead of picking a vendor for the visitor.
+            */}
+            <KernLink
+              href={`geo:${site.point[1]},${site.point[0]}?q=${site.point[1]},${site.point[0]}`}
+              label="In Karten-App öffnen"
+            />
+            <ShareConstructionSiteButton site={site} />
+          </div>
+          <dl className="construction-site-detail__facts">
+            <div>
+              <dt>Zeitraum</dt>
+              <dd>{formatConstructionPeriod(site.startDate, site.endDate)}</dd>
+            </div>
+            <div>
+              <dt>Art der Baustelle</dt>
+              <dd>
+                {getConstructionCategoryLabel(site.category)}
+                <span className="construction-site-detail__gloss">
+                  {getConstructionCategoryDescription(site.category)}
+                </span>
+              </dd>
+            </div>
+            <div>
+              <dt>Verkehrseinschränkung</dt>
+              <dd>{getClosureLabel(site.closure)}</dd>
+            </div>
+          </dl>
+
           <dl className="construction-site-detail__facts">
             <div>
               <dt>Datenquelle</dt>

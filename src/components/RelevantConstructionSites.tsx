@@ -1,292 +1,359 @@
-import { useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
+import { KernAlert, KernButton } from "@kern-ux-annex/kern-react-kit";
+import type {
+  NotificationArea,
+  NotificationFeedEvent,
+} from "../types/index.ts";
+import type { PushNotificationsController } from "../hooks/usePushNotifications.ts";
 import {
-  KernAlert,
-  KernButton,
-  KernHeading,
-} from "@kern-ux-annex/kern-react-kit";
-import type { NotificationArea } from "../types/index.ts";
-import {
-  SHORT_NOTICE_LEAD_DAYS,
   describeConstructionPeriod,
+  SHORT_NOTICE_LEAD_DAYS,
 } from "../lib/construction-site-timeframe.ts";
-import {
-  getClosureBadgeVariant,
-  getClosureLabel,
-} from "../lib/construction-site-labels.ts";
-import { formatDistance } from "../lib/distance.ts";
+import { formatISODate, getClosureLabel } from "../lib/construction-site-labels.ts";
+import { formatNotificationRadius } from "../lib/notification-preferences.ts";
 import type {
   RelevanceSelection,
   RelevantConstructionSite,
 } from "../lib/relevant-construction-sites.ts";
+import { AppIcon } from "./AppIcon.tsx";
+import { ConstructionSiteCard } from "./ConstructionSiteCard.tsx";
+import { NotificationSwitch } from "./NotificationSwitch.tsx";
 import "./RelevantConstructionSites.css";
 
-/** Which slice of the personal set is listed. */
-type RelevanceView = "short-notice" | "running" | "planned" | "followed";
-
-const RELEVANCE_VIEWS: readonly RelevanceView[] = [
-  "short-notice",
-  "running",
-  "planned",
-  "followed",
-];
-
-const VIEW_LABELS: Record<RelevanceView, string> = {
-  "short-notice": "Kurzfristig",
-  running: "Läuft",
-  planned: "Geplant",
-  followed: "Beobachtet",
-};
-
-/** What the visible list is, in one sentence under the control. */
-const VIEW_DESCRIPTIONS: Record<RelevanceView, string> = {
-  "short-notice": `Beginnt in den nächsten ${SHORT_NOTICE_LEAD_DAYS} Tagen oder hat gerade erst begonnen — das, wofür sich Umplanen lohnt.`,
-  running: "Wird gerade gebaut.",
-  planned: "Angekündigt, aber noch nicht begonnen.",
-  followed: "Baustellen, die Sie selbst ausgewählt haben — unabhängig vom Ort.",
-};
-
 /**
- * German plural and adjective agreement does not survive concatenation, so the
- * counted noun is spelled out per view rather than assembled from fragments.
+ * Cards shown per list before "Alle zeigen". A 5 km circle around the city
+ * centre holds about twenty starts within two weeks and over a hundred running
+ * sites; nobody reads that as a list.
  */
-function describeCount(view: RelevanceView, count: number): string {
-  const isSingular = count === 1;
-  switch (view) {
-    case "short-notice":
-      return isSingular ? "kurzfristige Baustelle" : "kurzfristige Baustellen";
-    case "running":
-      return isSingular ? "Baustelle im Bau" : "Baustellen im Bau";
-    case "planned":
-      return isSingular ? "geplante Baustelle" : "geplante Baustellen";
-    case "followed":
-      return isSingular
-        ? "beobachtete Baustelle"
-        : "beobachtete Baustellen";
-  }
-}
+const PREVIEW_COUNT = { soon: 8, running: 5 } as const;
+type ExpandableGroup = keyof typeof PREVIEW_COUNT;
 
-/** Each empty state names the way on rather than stopping at "nichts". */
-function describeEmptyView(view: RelevanceView): string {
-  switch (view) {
-    case "short-notice":
-      return `In Ihren Gebieten beginnt in den nächsten ${SHORT_NOTICE_LEAD_DAYS} Tagen keine Baustelle. Das ist die gute Nachricht.`;
-    case "running":
-      return "In Ihren Gebieten wird derzeit nicht gebaut.";
-    case "planned":
-      return "Für Ihre Gebiete ist derzeit nichts angekündigt.";
-    case "followed":
-      return "Sie beobachten noch keine einzelne Baustelle. Öffnen Sie eine Baustelle und wählen Sie „Baustelle beobachten“, um auch außerhalb Ihrer Gebiete benachrichtigt zu werden.";
-  }
-}
-
-/**
- * Why this site is on the list: the nearest watched area, or the fact that it
- * was followed by hand. Always says something — a card with no reason on it
- * leaves the visitor wondering why they are being shown it.
- */
-function describeRelevance(relevant: RelevantConstructionSite): string {
-  const nearest = relevant.areas[0];
-  if (nearest) {
-    return `${formatDistance(nearest.distanceMeters)} von ${nearest.area.label}`;
-  }
-  return "Von Ihnen beobachtet";
-}
+const NOTIFICATION_KIND_LABELS: Record<NotificationFeedEvent["kind"], string> = {
+  new: "Neu angekündigt",
+  changed: "Geändert",
+  "starts-soon": "Beginnt bald",
+};
 
 interface RelevantConstructionSitesProps {
   selection: RelevanceSelection;
   areas: readonly NotificationArea[];
+  /** False until the device's preferences have loaded; avoids a flash of the welcome. */
+  isPreferencesLoaded: boolean;
+  notificationEvents: readonly NotificationFeedEvent[];
+  unreadSignatures: ReadonlySet<string>;
+  onMarkRead: () => void;
+  hasInboxError: boolean;
+  pushNotifications: PushNotificationsController;
   getDetailHref: (siteId: string) => string;
   onDetailOpen: (siteId: string) => void;
-  /** Opens the area setup, for the empty state and the "Gebiete" action. */
-  onEditAreas: () => void;
-  /**
-   * Follows whose site the current dataset no longer publishes. They cannot be
-   * listed — there is no record left to render — so the count is the only way
-   * the visitor learns the slots are still taken.
-   */
+  onAreaSetupOpen: () => void;
+  getSettingsHref: () => string;
+  onSettingsOpen: () => void;
+  getExploreHref: () => string;
+  onExploreOpen: () => void;
   staleFollowedCount: number;
   onPruneFollowed: () => void;
 }
 
+/** Leaves modified clicks to the browser; returns whether the app handles it. */
+const isPlainClick = (event: MouseEvent) =>
+  event.button === 0 &&
+  !event.metaKey &&
+  !event.ctrlKey &&
+  !event.shiftKey &&
+  !event.altKey;
+
 /**
- * The app's primary screen: what is about to happen around the places someone
- * watches, soon enough that they can still plan around it.
+ * "Für mich": what affects the visitor, in the order they need it.
  *
- * It shows the areas but does not edit them — that belongs with the
- * notification settings the radius actually drives. There is no map here
- * either: a distance is a number every card already carries, and a map above
- * the answer pushes it below the fold on a phone. The explorer has the map, one
- * tab away, for the questions that are genuinely spatial.
+ * New notifications first, then what starts soon, then what is already under
+ * way, then everything announced for later. Followed sites sit in the same
+ * lists, marked with a star, rather than in a section of their own: whether a
+ * site matters because of an area or because it was marked changes nothing
+ * about when it starts.
  */
 export function RelevantConstructionSites({
   selection,
   areas,
+  isPreferencesLoaded,
+  notificationEvents,
+  unreadSignatures,
+  onMarkRead,
+  hasInboxError,
+  pushNotifications,
   getDetailHref,
   onDetailOpen,
-  onEditAreas,
+  onAreaSetupOpen,
+  getSettingsHref,
+  onSettingsOpen,
+  getExploreHref,
+  onExploreOpen,
   staleFollowedCount,
   onPruneFollowed,
 }: RelevantConstructionSitesProps) {
-  const [view, setView] = useState<RelevanceView>("short-notice");
+  const [expandedGroups, setExpandedGroups] = useState<
+    ReadonlySet<ExpandableGroup>
+  >(new Set());
+  // A batch notification opens `?bereich=fuer-mich#meldungen`.
+  const [isHistoryOpen, setIsHistoryOpen] = useState(
+    () => window.location.hash === "#meldungen",
+  );
+  useEffect(() => {
+    if (isPreferencesLoaded && window.location.hash === "#meldungen") {
+      document.getElementById("meldungen")?.scrollIntoView({ block: "start" });
+    }
+  }, [isPreferencesLoaded]);
 
-  const lists: Record<RelevanceView, readonly RelevantConstructionSite[]> = {
-    "short-notice": selection.shortNotice,
-    running: selection.running,
-    planned: selection.planned,
-    followed: selection.followed,
-  };
-  const visible = lists[view];
+  if (!isPreferencesLoaded) return null;
 
-  // Nothing watched and nothing followed: the screen has no question to answer
-  // yet, so it asks one instead of rendering four empty lists.
-  if (areas.length === 0 && selection.followed.length === 0) {
+  const hasInterest = areas.length > 0 || selection.followed.length > 0;
+  if (!hasInterest) {
     return (
-      <section className="relevant" aria-labelledby="relevant-heading">
-        <KernHeading level={2} id="relevant-heading">
-          Was betrifft mich?
-        </KernHeading>
-        <KernAlert variant="info" title="Noch kein Gebiet festgelegt">
-          Legen Sie fest, wo Sie wohnen oder arbeiten. Fächerbagger zeigt Ihnen
-          dann nur die Baustellen in diesen Gebieten — und kann Sie
-          benachrichtigen, wenn dort kurzfristig gebaut wird.
-        </KernAlert>
+      <section className="welcome" aria-labelledby="welcome-heading">
+        <AppIcon name="person-pin" className="welcome__icon" />
+        <h2 id="welcome-heading" className="welcome__heading">
+          Welche Baustellen betreffen Sie?
+        </h2>
+        <p className="welcome__text">
+          Legen Sie einen Ort fest, z. B. Zuhause oder Arbeit. Sie sehen dann
+          die Baustellen dort und werden auf Wunsch benachrichtigt.
+        </p>
         <KernButton
           type="button"
           variant="primary"
-          label="Gebiet festlegen"
-          onClick={onEditAreas}
+          label="Ort festlegen"
+          onClick={onAreaSetupOpen}
         />
+        <a
+          className="welcome__secondary"
+          href={getExploreHref()}
+          onClick={(event) => {
+            if (!isPlainClick(event)) return;
+            event.preventDefault();
+            onExploreOpen();
+          }}
+        >
+          Alle Baustellen auf der Karte ansehen
+        </a>
       </section>
     );
   }
 
-  return (
-    <section className="relevant" aria-labelledby="relevant-heading">
-      <div className="relevant__header">
-        <KernHeading level={2} id="relevant-heading">
-          Was betrifft mich?
-        </KernHeading>
-        <p className="relevant__areas">
-          {areas.length > 0
-            ? areas.map((area) => area.label).join(" · ")
-            : "Keine Gebiete"}
-          <KernButton
-            type="button"
-            variant="tertiary"
-            label="Gebiete ändern"
-            onClick={onEditAreas}
+  const isMultiArea = areas.length > 1;
+  const soon = selection.shortNotice;
+  const running = selection.running.filter(
+    (relevant) => !relevant.isShortNotice,
+  );
+  const later = selection.planned.filter((relevant) => !relevant.isShortNotice);
+  const unreadEvents = notificationEvents.filter((event) =>
+    unreadSignatures.has(event.signature),
+  );
+  const readEvents = notificationEvents.filter(
+    (event) => !unreadSignatures.has(event.signature),
+  );
+  const relevantSiteIds = new Set(
+    selection.all.map((relevant) => relevant.constructionSite.id),
+  );
+
+  const renderSiteCards = (
+    constructionSites: readonly RelevantConstructionSite[],
+  ) => (
+    <ul className="site-cards">
+      {constructionSites.map((relevant) => {
+        const { constructionSite } = relevant;
+        const reason = relevant.areas[0]?.area.label;
+        return (
+          <ConstructionSiteCard
+            key={constructionSite.id}
+            title={constructionSite.location || constructionSite.municipality}
+            closure={constructionSite.closure}
+            detailsHref={getDetailHref(constructionSite.id)}
+            onDetailsOpen={() => onDetailOpen(constructionSite.id)}
+            facts={[
+              describeConstructionPeriod(constructionSite, selection.today),
+              ...(isMultiArea && reason ? [reason] : []),
+            ]}
+            isFollowed={relevant.isFollowed}
+            isChanged={relevant.isChanged}
           />
+        );
+      })}
+    </ul>
+  );
+
+  const renderCappedSiteCards = (
+    group: ExpandableGroup,
+    constructionSites: readonly RelevantConstructionSite[],
+  ) => {
+    const isExpanded = expandedGroups.has(group);
+    const limit = PREVIEW_COUNT[group];
+    return (
+      <>
+        {renderSiteCards(
+          isExpanded ? constructionSites : constructionSites.slice(0, limit),
+        )}
+        {constructionSites.length > limit && (
+          <button
+            type="button"
+            className="relevant__text-button"
+            aria-expanded={isExpanded}
+            onClick={() =>
+              setExpandedGroups((current) => {
+                const next = new Set(current);
+                if (isExpanded) next.delete(group);
+                else next.add(group);
+                return next;
+              })
+            }
+          >
+            {isExpanded
+              ? "Weniger zeigen"
+              : `Alle ${constructionSites.length} zeigen`}
+          </button>
+        )}
+      </>
+    );
+  };
+
+  const renderNotificationEvents = (
+    events: readonly NotificationFeedEvent[],
+  ) => (
+    <ul className="site-cards">
+      {events.map((event) => {
+        // A site that has left the data has no detail page to open.
+        const isKnown = relevantSiteIds.has(event.siteId);
+        return (
+          <ConstructionSiteCard
+            key={event.signature}
+            title={event.location || event.municipality}
+            closure={event.closure}
+            detailsHref={isKnown ? getDetailHref(event.siteId) : undefined}
+            onDetailsOpen={isKnown ? () => onDetailOpen(event.siteId) : undefined}
+            lead={NOTIFICATION_KIND_LABELS[event.kind]}
+            facts={[`ab ${formatISODate(event.startDate)}`, getClosureLabel(event.closure)]}
+          />
+        );
+      })}
+    </ul>
+  );
+
+  return (
+    <div className="relevant">
+      <div className="relevant__overview">
+        <p className="relevant__summary">
+          <span>
+            <strong>{soon.length}</strong> beginnen bald
+          </span>
+          <span>
+            <strong>{running.length}</strong> laufen
+          </span>
+          <span>
+            <strong>{later.length}</strong> später
+          </span>
         </p>
+        <ul className="relevant__areas" aria-label="Ihre Orte">
+          {areas.map((area) => (
+            <li key={area.id} className="relevant__area">
+              {area.label} · {formatNotificationRadius(area.radiusKm)}
+            </li>
+          ))}
+          <li>
+            <a
+              className="relevant__edit"
+              href={getSettingsHref()}
+              onClick={(event) => {
+                if (!isPlainClick(event)) return;
+                event.preventDefault();
+                onSettingsOpen();
+              }}
+            >
+              {areas.length > 0 ? "Orte ändern" : "Ort festlegen"}
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <fieldset className="relevant__views">
-        <legend className="kern-sr-only">Auswahl anzeigen</legend>
-        {RELEVANCE_VIEWS.map((candidate) => (
-          <label key={candidate} className="relevant__view">
-            <input
-              className="kern-sr-only"
-              type="radio"
-              name="relevance-view"
-              value={candidate}
-              checked={candidate === view}
-              onChange={() => setView(candidate)}
-            />
-            <span>
-              {VIEW_LABELS[candidate]}
-              {" "}
-              <span className="relevant__view-count">
-                {lists[candidate].length}
-              </span>
-            </span>
-          </label>
-        ))}
-      </fieldset>
+      <NotificationSwitch pushNotifications={pushNotifications} variant="banner" />
 
-      <p className="relevant__description">{VIEW_DESCRIPTIONS[view]}</p>
+      {hasInboxError && (
+        <KernAlert variant="warning" title="Meldungen nicht geladen" />
+      )}
 
-      <p className="relevant__count" aria-live="polite" aria-atomic="true">
-        <strong>{visible.length}</strong> {describeCount(view, visible.length)}
-      </p>
+      {unreadEvents.length > 0 && (
+        <section
+          id="meldungen"
+          className="relevant__group relevant__group--inbox"
+          aria-labelledby="inbox-heading"
+        >
+          <div className="relevant__group-header">
+            <h2 id="inbox-heading">Neue Meldungen</h2>
+            <button type="button" className="relevant__text-button" onClick={onMarkRead}>
+              Gelesen
+            </button>
+          </div>
+          {renderNotificationEvents(unreadEvents)}
+        </section>
+      )}
 
-      {view === "followed" && staleFollowedCount > 0 && (
-        /*
-          A followed site the source has stopped publishing keeps its slot but
-          has nothing left to render, so without this it is invisible and
-          un-unfollowable. Offered rather than done automatically: the source
-          drops and restores records between runs, and a follow removed on a
-          blip is not something the visitor can get back.
-        */
+      <section className="relevant__group" aria-labelledby="soon-heading">
+        <h2 id="soon-heading">
+          Beginnt bald
+          {soon.length > 0 && (
+            <span className="relevant__count">{soon.length}</span>
+          )}
+        </h2>
+        {soon.length > 0 ? (
+          renderCappedSiteCards("soon", soon)
+        ) : (
+          <p className="relevant__empty">
+            In den nächsten {SHORT_NOTICE_LEAD_DAYS} Tagen beginnt nichts.
+          </p>
+        )}
+      </section>
+
+      {running.length > 0 && (
+        <section className="relevant__group" aria-labelledby="running-heading">
+          <h2 id="running-heading">
+            Läuft gerade <span className="relevant__count">{running.length}</span>
+          </h2>
+          {renderCappedSiteCards("running", running)}
+        </section>
+      )}
+
+      {later.length > 0 && (
+        <details className="relevant__disclosure">
+          <summary>
+            Später geplant <span className="relevant__count">{later.length}</span>
+          </summary>
+          {renderSiteCards(later)}
+        </details>
+      )}
+
+      {readEvents.length > 0 && (
+        <details
+          id={unreadEvents.length === 0 ? "meldungen" : undefined}
+          className="relevant__disclosure"
+          open={isHistoryOpen}
+          onToggle={(event) => setIsHistoryOpen(event.currentTarget.open)}
+        >
+          <summary>
+            Frühere Meldungen{" "}
+            <span className="relevant__count">{readEvents.length}</span>
+          </summary>
+          {renderNotificationEvents(readEvents)}
+        </details>
+      )}
+
+      {staleFollowedCount > 0 && (
         <p className="relevant__stale">
           {staleFollowedCount === 1
-            ? "Eine beobachtete Baustelle ist im aktuellen Datenstand nicht mehr enthalten — vermutlich abgeschlossen."
-            : `${staleFollowedCount} beobachtete Baustellen sind im aktuellen Datenstand nicht mehr enthalten — vermutlich abgeschlossen.`}
-          <KernButton
-            type="button"
-            variant="tertiary"
-            label="Nicht mehr beobachten"
-            onClick={onPruneFollowed}
-          />
+            ? "1 gemerkte Baustelle ist nicht mehr in den Daten."
+            : `${staleFollowedCount} gemerkte Baustellen sind nicht mehr in den Daten.`}
+          <button type="button" className="relevant__text-button" onClick={onPruneFollowed}>
+            Entfernen
+          </button>
         </p>
       )}
-
-      {visible.length === 0 ? (
-        <p className="relevant__empty">{describeEmptyView(view)}</p>
-      ) : (
-        <ul className="relevant__list" aria-label={VIEW_LABELS[view]}>
-          {visible.map((relevant) => {
-            const { constructionSite } = relevant;
-            const period = describeConstructionPeriod(
-              constructionSite,
-              selection.today,
-            );
-            return (
-              <li key={constructionSite.id} className="relevant__item">
-                <a
-                  className="relevant__link"
-                  href={getDetailHref(constructionSite.id)}
-                  onClick={(event) => {
-                    if (
-                      event.button !== 0 ||
-                      event.metaKey ||
-                      event.ctrlKey ||
-                      event.shiftKey ||
-                      event.altKey
-                    ) {
-                      return;
-                    }
-                    event.preventDefault();
-                    onDetailOpen(constructionSite.id);
-                  }}
-                >
-                  <span className="relevant__location">
-                    {constructionSite.location || constructionSite.municipality}
-                  </span>
-                </a>
-                <p className="relevant__meta">
-                  <span
-                    className="relevant__closure"
-                    data-variant={getClosureBadgeVariant(
-                      constructionSite.closure,
-                    )}
-                  >
-                    {getClosureLabel(constructionSite.closure)}
-                  </span>
-                  <span className="relevant__reason">
-                    {describeRelevance(relevant)}
-                  </span>
-                  <span className="relevant__period">{period}</span>
-                  {relevant.isChanged && (
-                    <span className="relevant__changed">Geändert</span>
-                  )}
-                  {relevant.isFollowed && view !== "followed" && (
-                    <span className="relevant__followed">Beobachtet</span>
-                  )}
-                </p>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </section>
+    </div>
   );
 }

@@ -60,7 +60,7 @@ export function LegalPage({ pageId, overviewHref, onBack }: LegalPageProps) {
         }}
       >
         <KernIcon icon="arrow-back" />
-        Zur Baustellenübersicht
+        Zur Übersicht
       </a>
 
       <h1 id="legal-page-title" ref={headingRef} tabIndex={-1}>
@@ -69,11 +69,9 @@ export function LegalPage({ pageId, overviewHref, onBack }: LegalPageProps) {
 
       {!isSiteOperatorConfigured && (
         <KernAlert variant="warning" title="Angaben zum Betreiber fehlen">
-          Diese Bereitstellung wurde noch nicht vollständig konfiguriert. Die
-            verantwortliche Stelle muss über die Build-Variablen
-            <code> VITE_OPERATOR_NAME</code>, <code>VITE_OPERATOR_ADDRESS</code>{" "}
-            und <code>VITE_OPERATOR_EMAIL</code> hinterlegt werden, bevor das
-            Angebot öffentlich betrieben wird.
+          Vor der Veröffentlichung müssen die Build-Variablen
+          <code> VITE_OPERATOR_NAME</code>, <code>VITE_OPERATOR_ADDRESS</code>{" "}
+          und <code>VITE_OPERATOR_EMAIL</code> gesetzt werden.
         </KernAlert>
       )}
 
@@ -105,32 +103,31 @@ function ImprintContent() {
 
       <h2>Art des Angebots</h2>
       <p>
-        Fächerbagger ist ein unabhängiges, privat betriebenes Angebot. Es ist
+        Fächerbagger ist ein privates Angebot und
         <strong> kein amtliches Angebot</strong> der Stadt Karlsruhe, einer
-        anderen Kommune oder der TechnologieRegion Karlsruhe und wird von diesen
-        weder betrieben noch geprüft.
+        anderen Kommune oder der TechnologieRegion Karlsruhe. Diese betreiben
+        oder prüfen es nicht.
       </p>
 
       <h2>Datenquelle</h2>
       <p>
-        Die dargestellten Baustellendaten stammen aus dem Mobilitätsportal der
+        Die Baustellendaten stammen aus dem Mobilitätsportal der
         TechnologieRegion Karlsruhe (WFS des TRK-GeoServers) und werden
-        regelmäßig automatisiert abgerufen. Die Rechte an den Daten liegen bei
-        den jeweils angegebenen Quellen.
+        regelmäßig automatisch abgerufen. Die Rechte liegen bei den jeweils
+        angegebenen Quellen.
       </p>
 
       <h2>Haftung für Inhalte</h2>
       <p>
-        Die Angaben erfolgen ohne Gewähr und ohne Rechtsverbindlichkeit.
-        Maßgeblich sind ausschließlich die Anordnungen und Beschilderungen vor
-        Ort. Für Vollständigkeit, Richtigkeit und Aktualität der übernommenen
-        Daten wird keine Haftung übernommen.
+        Alle Angaben ohne Gewähr und ohne Rechtsverbindlichkeit. Es gelten
+        allein die Anordnungen und die Beschilderung vor Ort. Für
+        Vollständigkeit, Richtigkeit und Aktualität der Daten wird nicht
+        gehaftet.
       </p>
 
       <h2>Quellcode und Lizenz</h2>
       <p>
-        Der Quellcode dieses Angebots ist öffentlich und steht unter der
-        EUPL-1.2.
+        Der Quellcode ist öffentlich und steht unter der EUPL-1.2.
       </p>
     </>
   );
@@ -144,70 +141,59 @@ function PrivacyContent() {
 
       <h2>Grundsatz</h2>
       <p>
-        Fächerbagger ist eine statische Anwendung. Es gibt keine Benutzerkonten,
-        keine Analyse- oder Tracking-Dienste und keine Werbung. Die
-        Baustellendaten werden als unveränderliche Dateien ausgeliefert; welche
-        Filter Sie setzen, verlässt Ihr Gerät nicht.
+        Fächerbagger ist eine statische Website: keine Benutzerkonten, kein
+        Tracking, keine Werbung. Ihre Filter und Einstellungen verlassen Ihr
+        Gerät nicht.
       </p>
 
       <h2>Aufruf der Seite</h2>
       <p>
-        Beim Abruf der Seite überträgt Ihr Browser technisch notwendige Daten
-        (unter anderem Ihre IP-Adresse) an den Hosting-Dienst, über den das
-        Angebot ausgeliefert wird. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f
-        DSGVO (Bereitstellung des Angebots).
+        Beim Aufruf überträgt Ihr Browser technisch notwendige Daten wie Ihre
+        IP-Adresse an den Hosting-Dienst. Rechtsgrundlage ist Art. 6 Abs. 1
+        lit. f DSGVO (Bereitstellung des Angebots).
       </p>
 
       <h2>Kartendarstellung</h2>
       <p>
-        Für die Karte werden Kartenkacheln und der Kartenstil von{" "}
-        <a href="https://openfreemap.org/">OpenFreeMap</a> geladen. Dabei wird
-        Ihre IP-Adresse an diesen Dienst übertragen. Die Karte wird erst
-        geladen, wenn Sie eine Kartenansicht öffnen.
+        Kartenkacheln und Kartenstil kommen von{" "}
+        <a href="https://openfreemap.org/">OpenFreeMap</a>. Dabei erhält dieser
+        Dienst Ihre IP-Adresse, aber erst, wenn eine Karte angezeigt wird.
       </p>
 
       <h2>Standort</h2>
       <p>
-        Ihr Standort wird nur abgefragt, wenn Sie ihn ausdrücklich freigeben. Er
-        wird ausschließlich im Browser verwendet — für den Kartenausschnitt und
-        die Sortierung nach Entfernung — und nicht an einen Server übertragen.
-        Sie können die Freigabe jederzeit widerrufen.
+        Ihr Standort wird nur abgefragt, wenn Sie es auslösen. Er wird nur im
+        Browser verwendet (Kartenausschnitt, Sortierung nach Entfernung) und
+        nicht übertragen. Sie können die Freigabe jederzeit widerrufen.
       </p>
 
       <h2>Benachrichtigungen (Web Push)</h2>
       <p>
-        <strong>
-          Ihre Benachrichtigungsgebiete verlassen Ihr Gerät nicht.
-        </strong>{" "}
-        Mittelpunkt, Radius und Ihre Auswahl, worüber Sie informiert werden
-        möchten, werden ausschließlich lokal in Ihrem Browser gespeichert. Sie
-        werden weder übertragen noch gespeichert und sind uns nicht bekannt.
+        <strong>Ihre Gebiete verlassen Ihr Gerät nicht.</strong> Mittelpunkt,
+        Radius, beobachtete Baustellen und Ihre Auswahl liegen nur in Ihrem
+        Browser. Wir kennen sie nicht.
       </p>
       <p>
-        Beim Aktivieren wird beim Benachrichtigungsdienst dieses Angebots
-        ausschließlich eine anonyme, von Ihrem Browser erzeugte Geräteadresse
-        (Push-Endpoint samt zugehörigen Schlüsseln) gespeichert — sonst nichts.
-        Gibt es neue Baustellenmeldungen, erhält jedes angemeldete Gerät
-        denselben inhaltslosen Hinweis. Erst auf Ihrem Gerät wird geprüft,
-        welche der Meldungen in Ihre Gebiete fallen; nur dann wird überhaupt
-        eine Benachrichtigung angezeigt. Der Dienst kann daher nicht erkennen,
-        wo Sie wohnen oder welche Meldungen Sie erhalten haben.
+        Beim Einschalten speichert unser Benachrichtigungsdienst nur eine
+        anonyme Geräteadresse, die Ihr Browser erzeugt (Push-Endpoint und
+        Schlüssel). Bei neuen Meldungen erhalten alle angemeldeten Geräte
+        denselben Hinweis ohne Inhalt. Erst Ihr Gerät prüft, ob etwas davon
+        Sie betrifft, und zeigt nur dann eine Benachrichtigung. Der Dienst
+        weiß daher nicht, wo Sie wohnen oder was Ihnen angezeigt wird.
       </p>
       <p>
         Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Beim
-        Ausschalten der Benachrichtigungen wird die Geräteadresse gelöscht. Der
-        Versand erfolgt technisch über den Push-Dienst Ihres
-        Browser-Herstellers.
+        Ausschalten wird die Geräteadresse gelöscht. Zugestellt wird über den
+        Push-Dienst Ihres Browser-Herstellers.
       </p>
 
       <h2>Lokale Speicherung</h2>
       <p>
-        In der lokalen Datenbank Ihres Browsers (IndexedDB) werden Ihre
-        Benachrichtigungsgebiete und Einstellungen abgelegt, damit sie beim
-        nächsten Besuch erhalten bleiben und damit der Hintergrunddienst des
-        Browsers passende Meldungen auswählen kann. Es werden keine Cookies zu
-        Analysezwecken gesetzt. Sie können diese Daten jederzeit über die
-        Einstellungen Ihres Browsers löschen.
+        Gebiete, beobachtete Baustellen und Einstellungen liegen in der
+        Browser-Datenbank (IndexedDB). So bleiben sie erhalten, und der
+        Hintergrunddienst kann passende Meldungen auswählen. Es gibt keine
+        Analyse-Cookies. Sie können die Daten jederzeit in Ihren
+        Browsereinstellungen löschen.
       </p>
 
       <h2>Ihre Rechte</h2>
@@ -226,56 +212,51 @@ function AccessibilityContent() {
     <>
       <h2>Geltungsbereich</h2>
       <p>
-        Diese Erklärung gilt für die Web-Anwendung Fächerbagger. Ziel ist die
-        Erfüllung der Anforderungen der BITV 2.0 beziehungsweise der EN 301 549
-        (WCAG 2.1, Stufe AA).
+        Diese Erklärung gilt für Fächerbagger. Ziel sind die Anforderungen der
+        BITV 2.0 bzw. EN 301 549 (WCAG 2.1, Stufe AA).
       </p>
 
       <h2>Stand der Vereinbarkeit</h2>
       <p>
         Das Angebot ist mit den genannten Anforderungen{" "}
-        <strong>teilweise vereinbar</strong>. Die nachstehend genannten Inhalte
-        sind nicht barrierefrei.
+        <strong>teilweise vereinbar</strong>. Folgende Inhalte sind nicht
+        barrierefrei.
       </p>
 
       <h2>Nicht barrierefreie Inhalte</h2>
       <ul>
         <li>
-          <strong>Interaktive Karte:</strong> Die Marker der Karte liegen in
-          einem Canvas und sind nicht mit der Tastatur erreichbar. Als
-          gleichwertige Alternative steht die Listenansicht mit denselben Daten,
-          Filtern und Sortierungen zur Verfügung; ein Hinweis am Anfang der
-          Karte führt dorthin. Die Kartenansicht ist keine Voraussetzung, um an
-          eine Information zu gelangen.
+          <strong>Interaktive Karte:</strong> Die Marker liegen in einem Canvas
+          und sind per Tastatur nicht erreichbar. Die Listenansicht bietet
+          dieselben Daten, Filter und Sortierungen; ein Hinweis am Anfang der
+          Karte führt dorthin.
         </li>
         <li>
           <strong>Kartenkacheln:</strong> Die Hintergrundkarte stammt von einem
-          Drittanbieter. Kontrastverhältnisse innerhalb der Kacheln liegen
-          außerhalb unseres Einflussbereichs.
+          Drittanbieter. Ihre Kontraste können wir nicht beeinflussen.
         </li>
         <li>
-          <strong>Quelltexte:</strong> Freitextangaben zu einzelnen Baustellen
-          werden unverändert aus der Datenquelle übernommen. Formulierung und
-          Verständlichkeit dieser Texte können wir nicht beeinflussen.
+          <strong>Quelltexte:</strong> Freitexte zu Baustellen stammen
+          unverändert aus der Datenquelle. Ihre Verständlichkeit können wir
+          nicht beeinflussen.
         </li>
       </ul>
 
       <h2>Erstellung dieser Erklärung</h2>
       <p>
-        Diese Erklärung beruht auf einer Selbstbewertung des Angebots durch den
-        Betreiber.
+        Die Erklärung beruht auf einer Selbstbewertung des Betreibers.
       </p>
 
       <h2>Barriere melden</h2>
       <p>
-        Sind Ihnen Barrieren aufgefallen oder benötigen Sie eine Information in
-        einer zugänglichen Form?{" "}
+        Ist Ihnen eine Barriere aufgefallen, oder brauchen Sie eine Information
+        in anderer Form?{" "}
         {SITE_OPERATOR.accessibilityContact ? (
           <a href={`mailto:${SITE_OPERATOR.accessibilityContact}`}>
-            Melden Sie sich gern per E-Mail.
+            Schreiben Sie uns eine E-Mail.
           </a>
         ) : (
-          "Eine Kontaktmöglichkeit ist für diese Bereitstellung noch nicht hinterlegt."
+          "Für diese Bereitstellung ist noch kein Kontakt hinterlegt."
         )}
       </p>
 

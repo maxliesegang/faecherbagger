@@ -16,9 +16,40 @@ import {
  * value that one of them accepts cannot surprise the others.
  */
 
-export const DEFAULT_NOTIFICATION_RADIUS_KM = 5;
-export const MIN_NOTIFICATION_RADIUS_KM = 1;
+export const DEFAULT_NOTIFICATION_RADIUS_KM = 1;
+export const MIN_NOTIFICATION_RADIUS_KM = 0.25;
 export const MAX_NOTIFICATION_RADIUS_KM = 50;
+
+/**
+ * The radii the picker offers: fine-grained in town, where a kilometre is a
+ * whole district, and coarser further out. Any value within the min/max bounds
+ * is still valid, so areas saved with the old 1 km steps keep working.
+ */
+export const NOTIFICATION_RADIUS_STEPS_KM: readonly number[] = [
+  0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 10, 15, 20, 30, 40,
+  50,
+];
+
+/** Index of the offered radius closest to `radiusKm`. */
+export function findNearestNotificationRadiusStepIndex(
+  radiusKm: number,
+): number {
+  let nearestIndex = 0;
+  NOTIFICATION_RADIUS_STEPS_KM.forEach((stepKm, index) => {
+    if (
+      Math.abs(stepKm - radiusKm) <
+      Math.abs(NOTIFICATION_RADIUS_STEPS_KM[nearestIndex] - radiusKm)
+    ) {
+      nearestIndex = index;
+    }
+  });
+  return nearestIndex;
+}
+
+/** German display text for a radius, e.g. "0,5 km" or "5 km". */
+export function formatNotificationRadius(radiusKm: number): string {
+  return `${radiusKm.toLocaleString("de-DE", { maximumFractionDigits: 2 })} km`;
+}
 
 /** Watching more places than this is a data-collection problem, not a feature. */
 export const MAX_NOTIFICATION_AREAS = 5;
@@ -73,6 +104,8 @@ export const DEFAULT_NOTIFICATION_PREFERENCES: NotificationPreferences = {
   kinds: ["new", "starts-soon", "changed"],
   minSeverity: "obstruction",
   followedSiteIds: [],
+  remindDayBefore: true,
+  notifyEarly: false,
 };
 
 /** A writable copy for React state and storage fallbacks. */
@@ -131,6 +164,10 @@ export function isNotificationPreferences(
   const areas = candidate.areas;
   const kinds = candidate.kinds;
   return (
+    (candidate.remindDayBefore === undefined ||
+      typeof candidate.remindDayBefore === "boolean") &&
+    (candidate.notifyEarly === undefined ||
+      typeof candidate.notifyEarly === "boolean") &&
     Array.isArray(areas) &&
     areas.length <= MAX_NOTIFICATION_AREAS &&
     areas.every(isNotificationArea) &&
@@ -197,6 +234,12 @@ export function coerceNotificationPreferences(
     followedSiteIds,
     kinds:
       kinds.length > 0 ? kinds : [...DEFAULT_NOTIFICATION_PREFERENCES.kinds],
+    remindDayBefore:
+      typeof candidate.remindDayBefore === "boolean"
+        ? candidate.remindDayBefore
+        : true,
+    notifyEarly:
+      typeof candidate.notifyEarly === "boolean" ? candidate.notifyEarly : false,
     minSeverity: NOTIFICATION_SEVERITY_THRESHOLDS.includes(
       candidate.minSeverity as NotificationSeverityThreshold,
     )

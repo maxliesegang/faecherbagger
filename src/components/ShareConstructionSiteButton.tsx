@@ -39,11 +39,11 @@ export function ShareConstructionSiteButton({
         return;
       }
       await navigator.clipboard.writeText(shareData.url);
-      confirm("Link wurde kopiert.");
+      confirm("Link kopiert.");
     } catch (error) {
       // A cancelled share sheet rejects too; only report real failures.
       if (error instanceof DOMException && error.name === "AbortError") return;
-      confirm("Teilen hat nicht geklappt. Kopieren Sie die Adresse manuell.");
+      confirm("Teilen fehlgeschlagen. Bitte kopieren Sie die Adresse.");
     }
   };
 
