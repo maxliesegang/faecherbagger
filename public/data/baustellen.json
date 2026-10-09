@@ -280,6 +280,26 @@
     "lastModified": "2026-06-28T22:00:00Z"
   },
   {
+    "id": "2024V5097",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee",
+    "notes": "Arbeiten im Gehwegbereich in mehreren Abschnitten, Aufteilung nicht vorgenommen",
+    "cause": "Telekommunikation",
+    "startDate": "2025-04-07",
+    "endDate": "2026-10-23",
+    "point": [
+      8.403151,
+      48.982134
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-08T22:00:00Z"
+  },
+  {
     "id": "2024V5135",
     "phase": "active",
     "category": "power-telecom",
@@ -1630,14 +1650,14 @@
     "location": "Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn",
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-10",
+    "startDate": "2026-11-09",
     "endDate": "2027-04-18",
     "point": [
       8.4545,
       48.995857
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
+    "lastModified": "2026-10-08T22:00:00Z"
   },
   {
     "id": "2025V7009",
@@ -1651,13 +1671,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-31",
-    "endDate": "2026-10-09",
+    "endDate": "2026-11-08",
     "point": [
       8.454504,
       48.99531
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-30T22:00:00Z"
+    "lastModified": "2026-10-08T22:00:00Z"
   },
   {
     "id": "2025V7015",
@@ -3511,13 +3531,13 @@
     "notes": "Wender Höhe Haus Nr 39",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-31",
-    "endDate": "2026-10-10",
+    "endDate": "2026-10-14",
     "point": [
       8.372314,
       49.003561
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-24T22:00:00Z"
+    "lastModified": "2026-10-08T22:00:00Z"
   },
   {
     "id": "2026V2212",
@@ -3671,13 +3691,13 @@
     "notes": "Siemensallee zw. B 36 Neureuter Straße u. Hertzstraße",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-03",
-    "endDate": "2026-10-16",
+    "endDate": "2026-10-23",
     "point": [
       8.356912,
       49.023915
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-28T22:00:00Z"
+    "lastModified": "2026-10-08T22:00:00Z"
   },
   {
     "id": "2026V2504",
@@ -4040,7 +4060,7 @@
     "lastModified": "2026-08-10T22:00:00Z"
   },
   {
-    "id": "2026V3029",
+    "id": "2026V3028",
     "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
@@ -4050,14 +4070,34 @@
     "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-02",
+    "startDate": "2026-08-24",
+    "endDate": "2026-10-25",
+    "point": [
+      8.506198,
+      49.003911
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-08T22:00:00Z"
+  },
+  {
+    "id": "2026V3029",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-26",
     "endDate": "2027-01-11",
     "point": [
       8.505439,
       49.003775
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
+    "lastModified": "2026-10-08T22:00:00Z"
   },
   {
     "id": "2026V3030",
@@ -7140,6 +7180,46 @@
     "lastModified": "2026-10-08T22:00:00Z"
   },
   {
+    "id": "2026V6379",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hirschstraße zw. Südendstraße und Vorholzstraße",
+    "notes": "Vollsperrung im Zeitraum 11.00 bis 15.00 Uhr",
+    "cause": "Privat",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-12",
+    "point": [
+      8.390565,
+      48.998275
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-08T22:00:00Z"
+  },
+  {
+    "id": "2026V6381",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Albert-Schweitzer-Straße zw. Bertha-von-Suttner-Straße und Theodor-Heuss-Allee",
+    "notes": "Lokale Engstelle mit Signalisierung",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-09",
+    "endDate": "2026-12-14",
+    "point": [
+      8.446978,
+      49.044824
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-08T22:00:00Z"
+  },
+  {
     "id": "30016",
     "phase": "active",
     "category": "power-telecom",
@@ -7858,6 +7938,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-01T10:00:00Z"
+  },
+  {
+    "id": "30227",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Hauptstraße 54",
+    "notes": "Gehweg gesperrt, Notweg für Fußgänger eingerichtet",
+    "cause": "Privat",
+    "startDate": "2026-10-07",
+    "endDate": "2026-10-21",
+    "point": [
+      8.579617,
+      49.077624
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-02T07:28:03Z"
   },
   {
     "id": "30228",
@@ -9618,26 +9718,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-07-29T07:56:13Z"
-  },
-  {
-    "id": "40385",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Schöllbronner Straße",
-    "notes": "Vollsperrung wg. Hausanschlussarbeiten",
-    "cause": "Tiefbauamt Ettlingen",
-    "startDate": "2026-10-05",
-    "endDate": "2026-10-14",
-    "point": [
-      8.411164,
-      48.939036
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-09-21T09:17:00Z"
   },
   {
     "id": "40403",
