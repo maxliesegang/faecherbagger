@@ -101,3 +101,11 @@
     transition: none;
   }
 }
+
+/* MapLibre's 29 px zoom buttons are too small for a finger. */
+@media (pointer: coarse) {
+  .notification-area-picker-map .maplibregl-ctrl-group button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}

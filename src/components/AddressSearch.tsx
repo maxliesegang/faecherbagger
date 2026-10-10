@@ -98,9 +98,13 @@ export function AddressSearch({
           },
         })}
       />
+      {/* One line, but still before anything is sent: the transfer notice. */}
       {showAttribution && (
         <p id={`${inputId}-hint`} className="address-search__hint">
-          Ab 3 Zeichen wird Ihre Eingabe an Photon (komoot) gesendet.
+          Suche über{" "}
+          <a href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon (komoot)</a>
+          {" "}ab 3 Zeichen · ©{" "}
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>
         </p>
       )}
       <p role="status" className="address-search__status">
@@ -133,12 +137,6 @@ export function AddressSearch({
           </li>
         ))}
       </ul>
-      {showAttribution && (
-        <p className="address-search__hint">
-          Suche: <a href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a>
-          {" · © "}<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap-Mitwirkende</a>
-        </p>
-      )}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { LngLat } from "../types/index.ts";
 import { AddressSearch } from "./AddressSearch.tsx";
 
@@ -47,12 +47,29 @@ export function RouteEndpointPicker({
   const labelId = useId();
   const [isSearching, setIsSearching] = useState(false);
   const [locationStatus, setLocationStatus] = useState<"idle" | "requesting" | "error">("idle");
+  // Picking, clearing or cancelling unmounts the focused control; focus goes
+  // to what replaced it instead of falling back to the top of the dialog.
+  const [pendingFocus, setPendingFocus] = useState<"value" | "choices">();
+  const clearButtonRef = useRef<HTMLButtonElement>(null);
+  const choicesRef = useRef<HTMLUListElement>(null);
+  useEffect(() => {
+    if (!pendingFocus) return;
+    if (pendingFocus === "value") clearButtonRef.current?.focus();
+    else choicesRef.current?.querySelector("button")?.focus();
+    setPendingFocus(undefined);
+  }, [pendingFocus, value, isSearching]);
+
+  const choose = (endpoint: RouteEndpoint) => {
+    setIsSearching(false);
+    onChange(endpoint);
+    setPendingFocus("value");
+  };
 
   const useCurrentLocation = async () => {
     if (!requestCurrentLocation) return;
     setLocationStatus("requesting");
     try {
-      onChange({ point: await requestCurrentLocation(), label: "Mein Standort" });
+      choose({ point: await requestCurrentLocation(), label: "Mein Standort" });
       setLocationStatus("idle");
     } catch {
       setLocationStatus("error");
@@ -71,10 +88,14 @@ export function RouteEndpointPicker({
           </span>
           <span className="route-endpoint__text">{value.label}</span>
           <button
+            ref={clearButtonRef}
             type="button"
             className="route-endpoint__clear"
             aria-label={`${label} entfernen`}
-            onClick={() => onChange(undefined)}
+            onClick={() => {
+              onChange(undefined);
+              setPendingFocus("choices");
+            }}
           >
             ×
           </button>
@@ -88,24 +109,26 @@ export function RouteEndpointPicker({
             placeholder="Straße, Hausnummer, Ort"
             showAttribution={false}
             autoFocus
-            onAddressSelect={(result) => {
-              setIsSearching(false);
-              onChange({ point: result.point, label: result.label });
-            }}
+            onAddressSelect={(result) =>
+              choose({ point: result.point, label: result.label })
+            }
           />
           <button
             type="button"
             className="route-endpoint__cancel"
-            onClick={() => setIsSearching(false)}
+            onClick={() => {
+              setIsSearching(false);
+              setPendingFocus("choices");
+            }}
           >
-            Abbrechen
+            Suche abbrechen
           </button>
         </div>
       ) : (
-        <ul className="route-endpoint__choices">
+        <ul ref={choicesRef} className="route-endpoint__choices">
           {savedPlaces.map((place) => (
             <li key={`${place.label}|${place.point.join(",")}`}>
-              <button type="button" onClick={() => onChange(place)}>
+              <button type="button" onClick={() => choose(place)}>
                 {place.label}
               </button>
             </li>

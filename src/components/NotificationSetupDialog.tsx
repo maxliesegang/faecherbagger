@@ -73,6 +73,7 @@ import {
   type RouteEndpoint,
 } from "./RouteEndpointPicker.tsx";
 import { StreetSearch } from "./StreetSearch.tsx";
+import { AppIcon, NOTIFICATION_AREA_ICON } from "./AppIcon.tsx";
 
 const NotificationAreaPickerMap = lazy(() =>
   import("./NotificationAreaPickerMap.tsx").then((module) => ({
@@ -92,11 +93,16 @@ const NOTIFICATION_STEP = "Benachrichtigen?";
  */
 type AreaKindTab = Exclude<NotificationAreaKind, "municipality">;
 
-const AREA_KIND_TABS: readonly { value: AreaKindTab; label: string }[] = [
-  { value: "circle", label: "Ort" },
-  { value: "corridor", label: "Strecke" },
-  { value: "polygon", label: "Fläche" },
-  { value: "street", label: "Straße" },
+const AREA_KIND_TABS: readonly {
+  value: AreaKindTab;
+  label: string;
+  /** One line under the tabs, so the abstract ones read at a glance. */
+  description: string;
+}[] = [
+  { value: "circle", label: "Ort", description: "Umkreis um eine Adresse." },
+  { value: "corridor", label: "Strecke", description: "Ein Weg, z. B. zur Arbeit." },
+  { value: "polygon", label: "Fläche", description: "Ein Gebiet, das Sie einzeichnen." },
+  { value: "street", label: "Straße", description: "Eine Straße in einer Gemeinde." },
 ];
 
 const TRAVEL_MODE_OPTIONS: readonly { value: RouteTravelMode; label: string }[] = [
@@ -113,13 +119,6 @@ const DEFAULT_LABEL: Record<NotificationAreaKind, string> = {
   street: "Meine Straße",
 };
 
-/** How the severity threshold reads next to the preview count. */
-const THRESHOLD_PHRASE: Record<NotificationPreferences["minSeverity"], string> = {
-  all: "alle Baustellen",
-  obstruction: "ab Behinderung",
-  closure: "nur Sperrungen",
-};
-
 /** What a route end picked by tapping the map is called. */
 const MAP_POINT_LABEL = "Punkt auf der Karte";
 
@@ -128,8 +127,8 @@ const SEVERITY_OPTIONS: readonly {
   label: string;
 }[] = [
   { value: "all", label: "Alles" },
-  { value: "obstruction", label: "Behinderungen" },
-  { value: "closure", label: "Sperrungen" },
+  { value: "obstruction", label: "Ab Behinderung" },
+  { value: "closure", label: "Nur Sperrungen" },
 ];
 
 /** "Strecke: 4,9 km" or "Hin 4,9 km · zurück 5,3 km". */
@@ -340,8 +339,23 @@ export function NotificationSetupDialog({
     const dialog = dialogRef.current;
     if (!dialog?.isConnected || dialog.open) return;
     dialog.showModal();
+    // The platform focuses "Schließen" first; the kind is the first question.
+    dialog
+      .querySelector<HTMLInputElement>('input[name="notification-area-kind"]:checked')
+      ?.focus();
     return () => dialog.close();
   }, []);
+
+  // A new step replaces everything under the heading, so focus moves there:
+  // it announces the step and keeps a second Enter from pressing the next
+  // button that happens to sit where the last one was.
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const previousStepRef = useRef(step);
+  useEffect(() => {
+    if (previousStepRef.current === step) return;
+    previousStepRef.current = step;
+    headingRef.current?.focus();
+  }, [step]);
 
   const shape = useMemo((): NotificationAreaShape | undefined => {
     switch (kind) {
@@ -436,9 +450,18 @@ export function NotificationSetupDialog({
     ];
   }, [kind, center, routeStart, routeDestination]);
 
+  // Without any way to be notified on this device, a threshold means nothing.
+  const canNotify =
+    pushNotifications.unavailableReason !== "unconfigured" &&
+    pushNotifications.unavailableReason !== "unsupported";
+  const previewId = useId();
   const steps = [
     "Wo?",
-    kind === "circle" || kind === "corridor" ? "Wie weit?" : "Name",
+    kind === "circle" || kind === "corridor"
+      ? "Wie weit?"
+      : canNotify
+        ? "Was melden?"
+        : "Name",
     ...(isNotificationStepOffered ? [NOTIFICATION_STEP] : []),
   ];
   const isLastStep = step === steps.length - 1;
@@ -602,7 +625,7 @@ export function NotificationSetupDialog({
       ? undefined
       : kind === "corridor"
         ? {
-            label: corridorLine && !routeStart ? "Neu nachziehen" : "Strecke nachziehen",
+            label: corridorLine && !routeStart ? "Neu zeichnen" : "Selbst zeichnen",
             mode: "line" as const,
           }
         : kind === "polygon"
@@ -631,7 +654,14 @@ export function NotificationSetupDialog({
           <p className="notification-setup__step-count">
             Schritt {step + 1} von {steps.length}
           </p>
-          <h2 id={headingId}>{steps[step]}</h2>
+          <h2
+            id={headingId}
+            ref={headingRef}
+            tabIndex={-1}
+            aria-describedby={step === 1 ? previewId : undefined}
+          >
+            {steps[step]}
+          </h2>
         </div>
         <button
           type="button"
@@ -649,357 +679,396 @@ export function NotificationSetupDialog({
         ))}
       </ol>
 
-      <div className="notification-setup__body">
-        {step === 0 && (
-          <>
-            <fieldset className="view-switcher notification-setup__kinds">
-              <legend className="kern-sr-only">Was möchten Sie beobachten?</legend>
-              {AREA_KIND_TABS.map((option) => (
-                <label key={option.value} className="view-switcher__item">
-                  <input
-                    className="view-switcher__input kern-sr-only"
-                    type="radio"
-                    name="notification-area-kind"
-                    value={option.value}
-                    checked={kindTab === option.value}
-                    onChange={() => {
-                      setDrawMode(undefined);
-                      setKind(option.value === "circle" ? placeKind : option.value);
+      {/*
+        The controls scroll on their own beside the map on a wide screen; on a
+        narrow one the wrapper dissolves and the map sits between them.
+      */}
+      <div className="notification-setup__controls">
+        <div className="notification-setup__body">
+          {step === 0 && (
+            <>
+              <fieldset className="view-switcher notification-setup__kinds">
+                <legend className="kern-sr-only">Was möchten Sie beobachten?</legend>
+                {AREA_KIND_TABS.map((option) => (
+                  <label key={option.value} className="view-switcher__item">
+                    <input
+                      className="view-switcher__input kern-sr-only"
+                      type="radio"
+                      name="notification-area-kind"
+                      value={option.value}
+                      checked={kindTab === option.value}
+                      onChange={() => {
+                        setDrawMode(undefined);
+                        setKind(option.value === "circle" ? placeKind : option.value);
+                      }}
+                    />
+                    <AppIcon name={NOTIFICATION_AREA_ICON[option.value]} />
+                    {option.label}
+                  </label>
+                ))}
+              </fieldset>
+              <p className="notification-setup__hint">
+                {AREA_KIND_TABS.find((option) => option.value === kindTab)?.description}
+              </p>
+
+              {kindTab === "circle" && (
+                <>
+                  <AddressSearch
+                    label="Adresse oder Gemeinde"
+                    onAddressSelect={(result) => {
+                      setCenter(result.point);
+                      choosePlaceKind("circle");
+                    }}
+                    suggestMunicipalities={(query) =>
+                      suggestMunicipalities(constructionSites, query)
+                    }
+                    onMunicipalitySelect={(selected) => {
+                      setMunicipality(selected);
+                      choosePlaceKind("municipality");
                     }}
                   />
-                  {option.label}
-                </label>
-              ))}
-            </fieldset>
-
-            {kindTab === "circle" && (
-              <>
-                <AddressSearch
-                  label="Adresse oder Gemeinde"
-                  onAddressSelect={(result) => {
-                    setCenter(result.point);
-                    choosePlaceKind("circle");
-                  }}
-                  suggestMunicipalities={(query) =>
-                    suggestMunicipalities(constructionSites, query)
-                  }
-                  onMunicipalitySelect={(selected) => {
-                    setMunicipality(selected);
-                    choosePlaceKind("municipality");
-                  }}
-                />
-                <KernText>Oder tippen Sie auf die Karte.</KernText>
-                <KernButton
-                  type="button"
-                  variant="secondary"
-                  label={
-                    locationController.locationState.status === "requesting"
-                      ? "Standort wird ermittelt …"
-                      : "Meinen Standort verwenden"
-                  }
-                  disabled={
-                    locationController.locationState.status === "requesting"
-                  }
-                  onClick={() => void useCurrentLocationAsCenter()}
-                />
-                {locationError && (
-                  <KernAlert variant="warning" title="Standort nicht verfügbar">
-                    {locationError}
-                  </KernAlert>
-                )}
-              </>
-            )}
-
-            {kind === "corridor" && (
-              <>
-                <div className="notification-setup__route">
-                  <RouteEndpointPicker
-                    label="Start"
-                    marker="A"
-                    value={routeStart}
-                    savedPlaces={savedPlaces}
-                    requestCurrentLocation={locationController.requestLocation}
-                    onChange={(endpoint) => setRouteEnd("start", endpoint)}
-                  />
-                  <RouteEndpointPicker
-                    label="Ziel"
-                    marker="B"
-                    value={routeDestination}
-                    savedPlaces={savedPlaces}
-                    requestCurrentLocation={locationController.requestLocation}
-                    waitingText={routeStart ? undefined : "Wählen Sie zuerst den Start."}
-                    onChange={(endpoint) => setRouteEnd("destination", endpoint)}
-                  />
-                </div>
-                <fieldset className="view-switcher notification-setup__travel-mode">
-                  <legend className="kern-sr-only">Unterwegs mit</legend>
-                  {TRAVEL_MODE_OPTIONS.map((option) => (
-                    <label key={option.value} className="view-switcher__item">
-                      <input
-                        className="view-switcher__input kern-sr-only"
-                        type="radio"
-                        name="route-travel-mode"
-                        value={option.value}
-                        checked={travelMode === option.value}
-                        onChange={() => chooseTravelMode(option.value)}
-                      />
-                      {option.label}
-                    </label>
-                  ))}
-                </fieldset>
-                <label className="notification-setup__choice">
-                  <input
-                    type="checkbox"
-                    checked={includeReturn}
-                    onChange={(event) => {
-                      setKnownRouteKey(undefined);
-                      setIsIncludeReturnChosen(true);
-                      setIncludeReturn(event.currentTarget.checked);
-                    }}
-                  />
-                  <span>
-                    Rückweg einbeziehen
+                  <div className="notification-setup__place-choices">
+                    <button
+                      type="button"
+                      className="notification-setup__chip"
+                      disabled={
+                        locationController.locationState.status === "requesting"
+                      }
+                      onClick={() => void useCurrentLocationAsCenter()}
+                    >
+                      {locationController.locationState.status === "requesting"
+                        ? "Standort …"
+                        : "Mein Standort"}
+                    </button>
                     <span className="notification-setup__hint">
-                      {" "}
-                      (führt mit dem Auto oft woanders lang)
+                      oder auf die Karte tippen
                     </span>
-                  </span>
-                </label>
-                <p role="status" className="notification-setup__route-status">
-                  {routeState.status === "loading"
-                    ? includeReturn
-                      ? "Hin- und Rückweg werden berechnet …"
-                      : "Strecke wird berechnet …"
-                    : routeState.status === "error"
-                      ? "Strecke nicht verfügbar. Ziehen Sie sie auf der Karte nach."
-                      : corridorLine
-                        ? describeCorridorLength(corridorLine, corridorReturnLine, includeReturn && routeStart !== undefined)
-                        : routeStart
-                          ? "Wählen Sie das Ziel."
-                          : "Oder tippen Sie auf die Karte: erst Start, dann Ziel."}
-                </p>
-                <p className="notification-setup__hint">
-                  Adressen gehen an Photon (komoot), Start und Ziel zur
-                  Berechnung an FOSSGIS. Ohne Übertragung: auf die Karte
-                  tippen oder nachziehen.
-                </p>
-              </>
-            )}
+                  </div>
+                  {locationError && (
+                    <KernAlert variant="warning" title="Standort nicht verfügbar">
+                      {locationError}
+                    </KernAlert>
+                  )}
+                </>
+              )}
 
-            {kind === "polygon" && (
-              <>
-                <KernText>
-                  Umranden Sie den Bereich auf der Karte mit Finger oder Maus.
-                </KernText>
-                <KernButton
-                  type="button"
-                  variant="secondary"
-                  label="Kartenausschnitt übernehmen"
-                  disabled={!viewport || drawMode !== undefined}
-                  onClick={useViewportAsArea}
-                />
-              </>
-            )}
+              {kind === "corridor" && (
+                <>
+                  <div className="notification-setup__route">
+                    <RouteEndpointPicker
+                      label="Start"
+                      marker="A"
+                      value={routeStart}
+                      savedPlaces={savedPlaces}
+                      requestCurrentLocation={locationController.requestLocation}
+                      onChange={(endpoint) => setRouteEnd("start", endpoint)}
+                    />
+                    <RouteEndpointPicker
+                      label="Ziel"
+                      marker="B"
+                      value={routeDestination}
+                      savedPlaces={savedPlaces}
+                      requestCurrentLocation={locationController.requestLocation}
+                      waitingText={routeStart ? undefined : "Wählen Sie zuerst den Start."}
+                      onChange={(endpoint) => setRouteEnd("destination", endpoint)}
+                    />
+                  </div>
+                  <fieldset className="view-switcher notification-setup__travel-mode">
+                    <legend className="kern-sr-only">Unterwegs mit</legend>
+                    {TRAVEL_MODE_OPTIONS.map((option) => (
+                      <label key={option.value} className="view-switcher__item">
+                        <input
+                          className="view-switcher__input kern-sr-only"
+                          type="radio"
+                          name="route-travel-mode"
+                          value={option.value}
+                          checked={travelMode === option.value}
+                          onChange={() => chooseTravelMode(option.value)}
+                        />
+                        {option.label}
+                      </label>
+                    ))}
+                  </fieldset>
+                  <label className="notification-setup__choice">
+                    <input
+                      type="checkbox"
+                      checked={includeReturn}
+                      onChange={(event) => {
+                        setKnownRouteKey(undefined);
+                        setIsIncludeReturnChosen(true);
+                        setIncludeReturn(event.currentTarget.checked);
+                      }}
+                    />
+                    <span>
+                      Rückweg einbeziehen
+                      {travelMode === "car" && (
+                        <span className="notification-setup__hint">
+                          {" "}
+                          (mit dem Auto oft ein anderer Weg)
+                        </span>
+                      )}
+                    </span>
+                  </label>
+                  <p role="status" className="notification-setup__route-status">
+                    {routeState.status === "loading"
+                      ? includeReturn
+                        ? "Hin- und Rückweg werden berechnet …"
+                        : "Strecke wird berechnet …"
+                      : routeState.status === "error"
+                        ? "Strecke nicht verfügbar. Zeichnen Sie sie selbst ein."
+                        : corridorLine
+                          ? describeCorridorLength(corridorLine, corridorReturnLine, includeReturn && routeStart !== undefined)
+                          : routeStart
+                            ? "Wählen Sie das Ziel."
+                            : "Oder tippen Sie auf die Karte: erst Start, dann Ziel."}
+                  </p>
+                  <p className="notification-setup__hint">
+                    Adresssuche: Photon (komoot) · Route: FOSSGIS
+                  </p>
+                </>
+              )}
 
-            {kind === "street" && (
-              <>
-                <StreetSearch
-                  constructionSites={constructionSites}
-                  street={street}
-                  municipality={streetMunicipality}
-                  municipalities={
-                    municipalities.includes(streetMunicipality)
-                      ? municipalities
-                      : [...municipalities, streetMunicipality]
-                  }
-                  onChange={(nextStreet, nextMunicipality) => {
-                    setStreet(nextStreet);
-                    setStreetMunicipality(nextMunicipality);
-                  }}
-                />
-                <label className="notification-setup__choice">
+              {kind === "polygon" && (
+                <>
+                  <KernText>
+                    Zeichnen Sie den Bereich ein oder übernehmen Sie den
+                    Kartenausschnitt.
+                  </KernText>
+                  <KernButton
+                    type="button"
+                    variant="secondary"
+                    label="Kartenausschnitt übernehmen"
+                    disabled={!viewport || drawMode !== undefined}
+                    onClick={useViewportAsArea}
+                  />
+                </>
+              )}
+
+              {kind === "street" && (
+                <>
+                  <StreetSearch
+                    constructionSites={constructionSites}
+                    street={street}
+                    municipality={streetMunicipality}
+                    municipalities={
+                      municipalities.includes(streetMunicipality)
+                        ? municipalities
+                        : [...municipalities, streetMunicipality]
+                    }
+                    onChange={(nextStreet, nextMunicipality) => {
+                      setStreet(nextStreet);
+                      setStreetMunicipality(nextMunicipality);
+                    }}
+                  />
+                  <label className="notification-setup__choice">
+                    <input
+                      type="checkbox"
+                      checked={includeJunctions}
+                      onChange={(event) =>
+                        setIncludeJunctions(event.currentTarget.checked)
+                      }
+                    />
+                    <span>
+                      Auch Querstraßen, die hier einmünden
+                      {junctionOnlyCount > 0 && (
+                        <span className="notification-setup__hint">
+                          {" "}
+                          ({junctionOnlyCount} weitere)
+                        </span>
+                      )}
+                    </span>
+                  </label>
+                </>
+              )}
+            </>
+          )}
+
+          {step === 1 && (
+            <>
+              {kind === "circle" && (
+                <div className="notification-setup__radius">
+                  <label htmlFor="notification-radius">
+                    Radius: <strong>{formatNotificationRadius(radiusKm)}</strong>
+                  </label>
                   <input
-                    type="checkbox"
-                    checked={includeJunctions}
+                    id="notification-radius"
+                    type="range"
+                    min={0}
+                    max={NOTIFICATION_RADIUS_STEPS_KM.length - 1}
+                    step="1"
+                    value={findNearestNotificationRadiusStepIndex(radiusKm)}
+                    aria-valuetext={formatNotificationRadius(radiusKm)}
                     onChange={(event) =>
-                      setIncludeJunctions(event.currentTarget.checked)
+                      setRadiusKm(
+                        NOTIFICATION_RADIUS_STEPS_KM[
+                          Number(event.currentTarget.value)
+                        ],
+                      )
                     }
                   />
-                  <span>
-                    Auch Baustellen an Einmündungen
-                    {junctionOnlyCount > 0 && (
-                      <span className="notification-setup__hint">
-                        {" "}
-                        ({junctionOnlyCount} weitere)
-                      </span>
-                    )}
-                  </span>
-                </label>
-                <p className="notification-setup__hint">
-                  Einmündungen: Arbeiten in einer Querstraße, die hier endet.
-                </p>
-              </>
-            )}
-          </>
-        )}
+                  <p className="notification-setup__radius-scale" aria-hidden="true">
+                    <span>{formatNotificationRadius(NOTIFICATION_RADIUS_STEPS_KM[0])}</span>
+                    <span>
+                      {formatNotificationRadius(
+                        NOTIFICATION_RADIUS_STEPS_KM[
+                          NOTIFICATION_RADIUS_STEPS_KM.length - 1
+                        ],
+                      )}
+                    </span>
+                  </p>
+                </div>
+              )}
+              {kind === "corridor" && (
+                <fieldset className="notification-setup__segmented">
+                  <legend className="notification-setup__field-label">
+                    Abstand zur Strecke
+                  </legend>
+                  <div className="view-switcher">
+                    {CORRIDOR_WIDTH_STEPS_METERS.map((option, index) => (
+                      <label key={option} className="view-switcher__item">
+                        <input
+                          className="view-switcher__input kern-sr-only"
+                          type="radio"
+                          name="corridor-width"
+                          value={option}
+                          checked={widthMeters === option}
+                          onChange={() => setWidthMeters(option)}
+                        />
+                        <span>{formatCorridorWidth(option)}</span>
+                        {canNotify && upcomingCountByWidth[index] !== undefined && (
+                          <span className="notification-setup__option-count">
+                            ~{upcomingCountByWidth[index]}
+                            <span className="kern-sr-only"> Meldungen in 30 Tagen</span>
+                          </span>
+                        )}
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+              )}
+            </>
+          )}
 
+          {isNotificationStep && (
+            <KernText>
+              Sollen wir Sie benachrichtigen, wenn hier eine Baustelle angekündigt
+              wird oder sich ändert?
+            </KernText>
+          )}
+        </div>
+
+        {/*
+          Below the map on a phone (see the CSS `order`): first what the shape
+          above catches, then what to be told about, then a name.
+        */}
         {step === 1 && (
-          <>
+          <div className="notification-setup__body notification-setup__body--after-map">
             <div className="notification-setup__preview">
-              <p role="status">
+              <p id={previewId} role="status">
                 {matchingSites.length === 0 ? (
-                  <>
-                    Derzeit keine Baustellen {matchScope}. Sie hören von uns,
-                    sobald hier etwas angekündigt wird.
-                  </>
-                ) : (
+                  <>Derzeit keine Baustellen {matchScope}.</>
+                ) : canNotify ? (
                   <>
                     <strong>
                       {formatUpcomingNotificationCount(
                         preview.upcomingNotificationCount,
                       )}
                     </strong>{" "}
-                    in den nächsten {PREVIEW_HORIZON_DAYS} Tagen
+                    in {PREVIEW_HORIZON_DAYS} Tagen
                     <span className="notification-setup__preview-detail">
-                      {matchingSites.length} Baustellen {matchScope} ·
-                      gezählt: {THRESHOLD_PHRASE[areaMinSeverity]}
+                      {matchingSites.length} Baustellen {matchScope}
                     </span>
+                  </>
+                ) : (
+                  <>
+                    <strong>{matchingSites.length} Baustellen</strong> {matchScope}
                   </>
                 )}
               </p>
-              {preview.upcomingNotificationCount >= BUSY_AREA_NOTIFICATION_COUNT && (
-                <p className="notification-setup__preview-warning">
-                  Das sind viele. Wählen Sie einen kleineren Bereich oder in den
-                  Einstellungen „nur Sperrungen“.
-                </p>
-              )}
-              {matchingSites.length > 0 && (
-                <details className="notification-setup__matches">
-                  <summary>Baustellen ansehen</summary>
-                  <ul>
-                    {matchingSites.slice(0, MAX_LISTED_MATCHES).map((site) => (
-                      <li key={site.id}>
-                        <strong>{site.location || site.municipality}</strong>
-                        <span>
-                          {getClosureLabel(site.closure)} ·{" "}
-                          {formatConstructionPeriodRelativeToToday(site, today) ??
-                            formatConstructionPeriod(site.startDate, site.endDate)}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  {matchingSites.length > MAX_LISTED_MATCHES && (
-                    <p className="notification-setup__hint">
-                      und {matchingSites.length - MAX_LISTED_MATCHES} weitere
-                    </p>
-                  )}
-                </details>
-              )}
+              {canNotify &&
+                preview.upcomingNotificationCount >= BUSY_AREA_NOTIFICATION_COUNT && (
+                  <p className="notification-setup__preview-warning">
+                    Das sind viele. Verkleinern Sie den Bereich oder wählen Sie
+                    „Nur Sperrungen“.
+                  </p>
+                )}
+                {matchingSites.length > 0 && (
+                  <details className="notification-setup__matches">
+                    <summary>Baustellen ansehen</summary>
+                    <ul>
+                      {matchingSites.slice(0, MAX_LISTED_MATCHES).map((site) => (
+                        <li key={site.id}>
+                          <strong>{site.location || site.municipality}</strong>
+                          <span>
+                            {getClosureLabel(site.closure)} ·{" "}
+                            {formatConstructionPeriodRelativeToToday(site, today) ??
+                              formatConstructionPeriod(site.startDate, site.endDate)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    {matchingSites.length > MAX_LISTED_MATCHES && (
+                      <p className="notification-setup__hint">
+                        und {matchingSites.length - MAX_LISTED_MATCHES} weitere
+                      </p>
+                    )}
+                  </details>
+                )}
             </div>
-            {kind === "circle" && (
-              <div className="notification-setup__radius">
-                <label htmlFor="notification-radius">
-                  Radius: <strong>{formatNotificationRadius(radiusKm)}</strong>
-                </label>
-                <input
-                  id="notification-radius"
-                  type="range"
-                  min={0}
-                  max={NOTIFICATION_RADIUS_STEPS_KM.length - 1}
-                  step="1"
-                  value={findNearestNotificationRadiusStepIndex(radiusKm)}
-                  aria-valuetext={formatNotificationRadius(radiusKm)}
-                  onChange={(event) =>
-                    setRadiusKm(
-                      NOTIFICATION_RADIUS_STEPS_KM[
-                        Number(event.currentTarget.value)
-                      ],
-                    )
-                  }
-                />
-                <p className="notification-setup__radius-scale" aria-hidden="true">
-                  <span>{formatNotificationRadius(NOTIFICATION_RADIUS_STEPS_KM[0])}</span>
-                  <span>
-                    {formatNotificationRadius(
-                      NOTIFICATION_RADIUS_STEPS_KM[
-                        NOTIFICATION_RADIUS_STEPS_KM.length - 1
-                      ],
-                    )}
-                  </span>
-                </p>
-              </div>
-            )}
-            {kind === "corridor" && (
-              <p className="notification-setup__field-label" aria-hidden="true">
-                Abstand zur Strecke
-              </p>
-            )}
-            {kind === "corridor" && (
-              <fieldset className="view-switcher">
-                <legend className="kern-sr-only">Abstand zur Strecke</legend>
-                {CORRIDOR_WIDTH_STEPS_METERS.map((option, index) => (
-                  <label key={option} className="view-switcher__item">
-                    <input
-                      className="view-switcher__input kern-sr-only"
-                      type="radio"
-                      name="corridor-width"
-                      value={option}
-                      checked={widthMeters === option}
-                      onChange={() => setWidthMeters(option)}
-                    />
-                    <span>{formatCorridorWidth(option)}</span>
-                    {upcomingCountByWidth[index] !== undefined && (
-                      <span className="notification-setup__option-count">
-                        ~{upcomingCountByWidth[index]}
-                        <span className="kern-sr-only"> Meldungen in 30 Tagen</span>
-                      </span>
-                    )}
-                  </label>
-                ))}
+            {canNotify && (
+              <fieldset className="notification-setup__segmented">
+                <legend className="notification-setup__field-label">
+                  Benachrichtigen bei
+                </legend>
+                <div className="view-switcher">
+                  {SEVERITY_OPTIONS.map((option) => (
+                    <label key={option.value} className="view-switcher__item">
+                      <input
+                        className="view-switcher__input kern-sr-only"
+                        type="radio"
+                        name="area-min-severity"
+                        value={option.value}
+                        checked={areaMinSeverity === option.value}
+                        onChange={() => {
+                          setIsMinSeverityChosen(true);
+                          setAreaMinSeverity(option.value);
+                        }}
+                      />
+                      {option.label}
+                    </label>
+                  ))}
+                </div>
               </fieldset>
             )}
-          </>
-        )}
-
-        {step === 1 && (
-          <>
-            <p className="notification-setup__field-label" aria-hidden="true">
-              Was melden?
-            </p>
-            <fieldset className="view-switcher">
-              <legend className="kern-sr-only">Was melden?</legend>
-              {SEVERITY_OPTIONS.map((option) => (
-                <label key={option.value} className="view-switcher__item">
-                  <input
-                    className="view-switcher__input kern-sr-only"
-                    type="radio"
-                    name="area-min-severity"
-                    value={option.value}
-                    checked={areaMinSeverity === option.value}
-                    onChange={() => {
-                      setIsMinSeverityChosen(true);
-                      setAreaMinSeverity(option.value);
-                    }}
-                  />
-                  {option.label}
-                </label>
-              ))}
-            </fieldset>
-            <p className="notification-setup__hint">
-              {areaMinSeverity === "all"
-                ? "Jede Baustelle hier, auch ohne Behinderung."
-                : areaMinSeverity === "obstruction"
-                  ? "Behinderungen und Sperrungen. Unklare Fälle melden wir immer."
-                  : "Nur Sperrungen. Unklare Fälle melden wir immer."}
-            </p>
-          </>
-        )}
-
-        {isNotificationStep && (
-          <KernText>
-            Sollen wir Sie benachrichtigen, wenn hier eine Baustelle angekündigt
-            wird oder sich ändert?
-          </KernText>
+            <KernInput
+              id="notification-area-label"
+              label="Name"
+              maxLength={MAX_NOTIFICATION_AREA_LABEL_LENGTH}
+              value={label}
+              onChange={(event) => {
+                setIsLabelChosen(true);
+                setLabel(event.currentTarget.value);
+              }}
+            />
+            {NOTIFICATION_AREA_LABEL_SUGGESTIONS[kind].length > 0 && (
+              <ul className="notification-setup__label-suggestions" aria-label="Namensvorschläge">
+                {NOTIFICATION_AREA_LABEL_SUGGESTIONS[kind].map((suggestion) => (
+                  <li key={suggestion}>
+                    <button
+                      type="button"
+                      aria-pressed={label === suggestion}
+                      onClick={() => {
+                        setIsLabelChosen(true);
+                        setLabel(suggestion);
+                      }}
+                    >
+                      {suggestion}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         )}
       </div>
 
@@ -1027,7 +1096,7 @@ export function NotificationSetupDialog({
           initialCenter={center}
           ariaLabel={
             kind === "corridor"
-              ? "Karte: Start und Ziel wählen oder Strecke nachziehen"
+              ? "Karte: Start und Ziel wählen oder Strecke selbst zeichnen"
               : kind === "polygon"
                 ? "Karte: Fläche zeichnen"
                 : kind === "street" || kind === "municipality"
@@ -1037,49 +1106,13 @@ export function NotificationSetupDialog({
         />
       </Suspense>
 
-      {/*
-        Below the map, so the slider sits right above the shape it resizes;
-        the name is a finishing touch, not part of that feedback loop.
-      */}
-      {step === 1 && (
-        <div className="notification-setup__body notification-setup__body--after-map">
-          <KernInput
-            id="notification-area-label"
-            label="Name"
-            maxLength={MAX_NOTIFICATION_AREA_LABEL_LENGTH}
-            value={label}
-            onChange={(event) => {
-              setIsLabelChosen(true);
-              setLabel(event.currentTarget.value);
-            }}
-          />
-          {NOTIFICATION_AREA_LABEL_SUGGESTIONS[kind].length > 0 && (
-            <ul className="notification-setup__label-suggestions" aria-label="Namensvorschläge">
-              {NOTIFICATION_AREA_LABEL_SUGGESTIONS[kind].map((suggestion) => (
-                <li key={suggestion}>
-                  <button
-                    type="button"
-                    aria-pressed={label === suggestion}
-                    onClick={() => {
-                      setIsLabelChosen(true);
-                      setLabel(suggestion);
-                    }}
-                  >
-                    {suggestion}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
-
       <div className="notification-setup__actions">
         {isNotificationStep ? (
           // The place is decided by now; only the answer is left, so no "Zurück".
           <>
             <KernButton
               type="button"
+              key="later"
               variant="secondary"
               label="Später"
               disabled={pushNotifications.isBusy}
@@ -1098,6 +1131,7 @@ export function NotificationSetupDialog({
             {step > 0 ? (
               <KernButton
                 type="button"
+                key={`back-${step}`}
                 variant="tertiary"
                 label="Zurück"
                 onClick={() => setStep((current) => current - 1)}
@@ -1105,6 +1139,7 @@ export function NotificationSetupDialog({
             ) : (
               <KernButton
                 type="button"
+                key="cancel"
                 variant="tertiary"
                 label="Abbrechen"
                 onClick={onClose}
@@ -1112,6 +1147,7 @@ export function NotificationSetupDialog({
             )}
             <KernButton
               type="button"
+              key={`next-${step}`}
               variant="primary"
               label={isLastStep ? "Speichern" : "Weiter"}
               disabled={step === 0 && !canLeaveFirstStep}

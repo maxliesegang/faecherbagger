@@ -22,8 +22,8 @@ const SEVERITY_OPTIONS: readonly {
   label: string;
 }[] = [
   { value: "all", label: "Alle Baustellen" },
-  { value: "obstruction", label: "Nur mit Behinderung oder Sperrung" },
-  { value: "closure", label: "Nur Sperrungen und unklare Fälle" },
+  { value: "obstruction", label: "Ab Behinderung" },
+  { value: "closure", label: "Nur Sperrungen" },
 ];
 
 interface SettingsPageProps {
@@ -152,7 +152,7 @@ export function SettingsPage({
               <fieldset className="settings__fieldset">
                 <legend>Worüber?</legend>
                 <p className="settings__muted">
-                  Vorgabe für neue Orte. Jeder Ort kann davon abweichen.
+                  Vorgabe für neue Orte.
                 </p>
                 {SEVERITY_OPTIONS.map((option) => (
                   <label key={option.value} className="settings__choice">
