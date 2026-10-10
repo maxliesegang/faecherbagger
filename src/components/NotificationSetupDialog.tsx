@@ -32,6 +32,7 @@ import {
   SHORT_NOTICE_LEAD_DAYS,
 } from "../lib/construction-site-timeframe.ts";
 import "./NotificationSetupDialog.css";
+import { AddressSearch } from "./AddressSearch.tsx";
 
 const NotificationAreaPickerMap = lazy(() =>
   import("./NotificationAreaPickerMap.tsx").then((module) => ({
@@ -198,6 +199,7 @@ export function NotificationSetupDialog({
       <div className="notification-setup__body">
         {step === 0 && (
           <>
+            <AddressSearch onCenterChange={setCenter} />
             <KernText>Tippen Sie auf die Karte, z. B. auf Ihre Wohnung.</KernText>
             <KernButton
               type="button"

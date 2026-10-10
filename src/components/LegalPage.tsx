@@ -167,6 +167,16 @@ function PrivacyContent() {
         nicht übertragen. Sie können die Freigabe jederzeit widerrufen.
       </p>
 
+      <h2>Adresssuche</h2>
+      <p>
+        Wenn Sie mindestens drei Zeichen eingeben, sendet Ihr Browser den
+        Suchtext an den öffentlichen Photon-Dienst von komoot. Dabei erhält
+        der Dienst auch Ihre IP-Adresse. Die Suche bevorzugt Karlsruhe;
+        Ihr Gerätestandort und gespeicherte Gebiete werden nicht mitgesendet.
+        Suchtexte werden von Fächerbagger nicht gespeichert. Sie können den
+        Mittelpunkt auch auf der Karte wählen.
+      </p>
+
       <h2>Benachrichtigungen (Web Push)</h2>
       <p>
         <strong>Ihre Gebiete verlassen Ihr Gerät nicht.</strong> Mittelpunkt,

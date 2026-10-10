@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   AttributionControl,
   LngLatBounds,
@@ -44,7 +44,7 @@ export function NotificationAreaPickerMap({
 }: NotificationAreaPickerMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
-  const isMapReadyRef = useRef(false);
+  const [isMapReady, setIsMapReady] = useState(false);
   const onCenterChangeRef = useRef(onCenterChange);
   onCenterChangeRef.current = onCenterChange;
 
@@ -98,7 +98,7 @@ export function NotificationAreaPickerMap({
           "circle-stroke-width": 3,
         },
       });
-      isMapReadyRef.current = true;
+      setIsMapReady(true);
     });
 
     map.on("click", (event) => {
@@ -109,7 +109,7 @@ export function NotificationAreaPickerMap({
     return () => {
       map.remove();
       mapRef.current = null;
-      isMapReadyRef.current = false;
+      setIsMapReady(false);
     };
     // The map is created once; centre and radius are pushed in by the effects
     // below, so re-creating it on every slider step is neither needed nor safe.
@@ -118,7 +118,7 @@ export function NotificationAreaPickerMap({
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !isMapReadyRef.current) return;
+    if (!map || !isMapReady) return;
     (map.getSource(AREA_SOURCE_ID) as GeoJSONSource | undefined)?.setData(
       createNotificationAreaFeatureCollection([{ center, radiusKm }]),
     );
@@ -131,7 +131,7 @@ export function NotificationAreaPickerMap({
       (point) => bounds.extend(point as LngLat),
     );
     map.fitBounds(bounds, { padding: 32, duration: 400, maxZoom: 15 });
-  }, [center, radiusKm]);
+  }, [center, radiusKm, isMapReady]);
 
   return (
     <div

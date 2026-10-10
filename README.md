@@ -214,6 +214,18 @@ be overridden at build time with the `BASE_PATH` env var. Enable Pages with the
 - **MapLibre GL JS directly, without a React map binding.** Filtered GeoJSON is
   rendered as clustered overview points and detailed line/polygon geometry on
   an OpenFreeMap/OpenStreetMap basemap. Data is loaded with plain `fetch`.
+- **Address search via the public [Photon service](https://github.com/komoot/photon#demo-server).**
+  The area picker uses browser `fetch` and Downshift's accessible `useCombobox`
+  hook with native KERN styling, without an API key. Queries start at three characters after a
+  500 ms pause, return up to five German-language results, and prefer Karlsruhe
+  using a fixed focus point (not the visitor's GPS or saved area). Requests time
+  out after eight seconds and are cancelled when the query changes or the picker
+  closes. Search text/results are not persisted or cached by the app. Map
+  selection remains available offline or when Photon fails or throttles requests;
+  the public service has no availability guarantee. The provider boundary is in
+  `src/lib/address-search.ts`, request lifecycle in `address-search-request.ts`,
+  and React state in `src/hooks/useAddressSearch.ts`. Keep OSM attribution and
+  the privacy notice when changing providers.
 
 ### Data model highlights
 
