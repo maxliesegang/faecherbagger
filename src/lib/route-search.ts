@@ -1,5 +1,5 @@
 import type { LngLat, RouteTravelMode } from "../types/index.ts";
-import { simplifyToVertexLimit } from "./geometry.ts";
+import { distanceToLineMeters, simplifyToVertexLimit } from "./geometry.ts";
 import { isLngLat } from "./notification-preferences.ts";
 
 /**
@@ -89,4 +89,22 @@ export async function searchRoute(
   });
   if (!response.ok) throw new Error("Routing unavailable");
   return parseRouteResponse(await response.json());
+}
+
+/** Closer than this everywhere, the way back is the same road. */
+const SAME_ROUTE_TOLERANCE_METERS = 30;
+
+/**
+ * The way back, or `undefined` when it follows the way there anyway — the
+ * usual case on foot and by bike — so an identical second line is not stored
+ * or drawn.
+ */
+export function getDistinctReturnLine(
+  line: readonly LngLat[],
+  returnLine: readonly LngLat[],
+): LngLat[] | undefined {
+  const isSameRoute = returnLine.every(
+    (point) => distanceToLineMeters(point, line) <= SAME_ROUTE_TOLERANCE_METERS,
+  );
+  return isSameRoute ? undefined : [...returnLine];
 }

@@ -186,7 +186,11 @@ export function isNotificationArea(value: unknown): value is NotificationArea {
     candidate.id.length <= 64 &&
     typeof candidate.label === "string" &&
     candidate.label.trim().length > 0 &&
-    candidate.label.length <= MAX_NOTIFICATION_AREA_LABEL_LENGTH;
+    candidate.label.length <= MAX_NOTIFICATION_AREA_LABEL_LENGTH &&
+    (candidate.minSeverity === undefined ||
+      NOTIFICATION_SEVERITY_THRESHOLDS.includes(
+        candidate.minSeverity as NotificationSeverityThreshold,
+      ));
   if (!hasIdentity) return false;
   switch (candidate.kind) {
     case "circle":
@@ -203,6 +207,8 @@ export function isNotificationArea(value: unknown): value is NotificationArea {
       const route = candidate.route as Record<string, unknown> | undefined;
       return (
         isLngLatList(candidate.line, 2, MAX_CORRIDOR_VERTICES) &&
+        (candidate.returnLine === undefined ||
+          isLngLatList(candidate.returnLine, 2, MAX_CORRIDOR_VERTICES)) &&
         typeof candidate.widthMeters === "number" &&
         Number.isFinite(candidate.widthMeters) &&
         candidate.widthMeters >= MIN_CORRIDOR_WIDTH_METERS &&
@@ -212,7 +218,10 @@ export function isNotificationArea(value: unknown): value is NotificationArea {
             route !== null &&
             isLngLat(route.start) &&
             isLngLat(route.destination) &&
-            ROUTE_TRAVEL_MODES.includes(route.travelMode as RouteTravelMode)))
+            ROUTE_TRAVEL_MODES.includes(route.travelMode as RouteTravelMode) &&
+            (route.startLabel === undefined || isAreaName(route.startLabel)) &&
+            (route.destinationLabel === undefined ||
+              isAreaName(route.destinationLabel))))
       );
     }
     case "municipality":

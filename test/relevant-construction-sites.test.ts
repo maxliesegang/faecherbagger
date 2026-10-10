@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { ConstructionSite, NotificationArea } from "../src/types/index.ts";
 import {
   describeAreaDistance,
+  filterRelevanceSelectionByArea,
   findAreaMatches,
   selectRelevantConstructionSites,
 } from "../src/lib/relevant-construction-sites.ts";
@@ -256,5 +257,39 @@ describe("describeAreaDistance", () => {
       followedSiteIds: new Set(["a"]),
     }).all;
     expect(describeAreaDistance(relevant, false)).toBeUndefined();
+  });
+});
+
+describe("filterRelevanceSelectionByArea", () => {
+  const selection = selectRelevantConstructionSites(
+    [
+      // Inside both: nearer to "Arbeit".
+      createConstructionSite({ id: "both", point: [8.4037, 49.025], startDate: "2026-07-20" }),
+      createConstructionSite({ id: "home-only", point: [8.4037, 48.99] }),
+      createConstructionSite({ id: "followed", point: [9.5, 49.5] }),
+    ],
+    [HOME, WORK],
+    { today: TODAY, followedSiteIds: new Set(["followed"]) },
+  );
+
+  it("keeps only the sites in that area, in every list", () => {
+    const narrowed = filterRelevanceSelectionByArea(selection, "home");
+    // Nearest to "Zuhause" first: about 1.7 km and 2.1 km.
+    expect(narrowed.all.map(({ constructionSite }) => constructionSite.id)).toEqual([
+      "both",
+      "home-only",
+    ]);
+    expect(narrowed.shortNotice.map(({ constructionSite }) => constructionSite.id)).toEqual([
+      "both",
+    ]);
+    expect(narrowed.followed).toEqual([]);
+  });
+
+  it("leads each card with the chosen area", () => {
+    const [both] = filterRelevanceSelectionByArea(selection, "home").all.filter(
+      ({ constructionSite }) => constructionSite.id === "both",
+    );
+    expect(both!.areas[0]!.area.id).toBe("home");
+    expect(both!.distanceMeters).toBe(both!.areas[0]!.distanceMeters);
   });
 });

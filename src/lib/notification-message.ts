@@ -7,6 +7,7 @@ import {
   getClosureHeadline,
 } from "./construction-site-labels.ts";
 import { findNotificationAreaForTarget } from "./notification-area-match.ts";
+import { findNotifyingArea } from "./notification-events.ts";
 import { describeNotificationAreaScope } from "./notification-area.ts";
 import { summarizeNotificationEvents } from "./notification-delivery.ts";
 
@@ -107,7 +108,11 @@ export function createNotificationPayload(
   const areas = [
     ...new Set(
       events
-        .map((event) => findNotificationAreaForTarget(preferences.areas, event))
+        .map(
+          (event) =>
+            findNotifyingArea(event, preferences) ??
+            findNotificationAreaForTarget(preferences.areas, event),
+        )
         .filter((area) => area !== undefined),
     ),
   ];

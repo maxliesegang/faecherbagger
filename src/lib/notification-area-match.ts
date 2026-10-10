@@ -55,9 +55,12 @@ export function measureNotificationAreaMatch(
         : undefined;
     }
     case "corridor": {
+      const lines = area.returnLine ? [area.line, area.returnLine] : [area.line];
       let nearest = Number.POSITIVE_INFINITY;
       for (const point of targetPoints(target)) {
-        nearest = Math.min(nearest, distanceToLineMeters(point, area.line));
+        for (const line of lines) {
+          nearest = Math.min(nearest, distanceToLineMeters(point, line));
+        }
       }
       return nearest <= area.widthMeters ? nearest : undefined;
     }

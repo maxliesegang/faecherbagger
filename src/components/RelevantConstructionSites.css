@@ -136,9 +136,53 @@ span.relevant__tile strong {
 }
 
 .relevant__area {
-  padding: 0.3rem 0.7rem;
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  padding: 0.3rem 0.7rem 0.3rem 0.5rem;
   border: 1px solid var(--app-border);
   border-radius: 999px;
+  color: inherit;
+  background: none;
+  font: inherit;
+}
+
+button.relevant__area {
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+button.relevant__area:hover {
+  background: var(--app-surface);
+}
+
+button.relevant__area[aria-pressed="true"] {
+  border-color: var(--app-accent);
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+}
+
+button.relevant__area[aria-pressed="true"] .relevant__area-icon {
+  color: inherit;
+}
+
+button.relevant__area:focus-visible {
+  outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+.relevant__area-icon {
+  flex: 0 0 auto;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: #2459a9;
+}
+
+/* On phones the chip keeps only the name; the kind shows in the icon. */
+@media (max-width: 40rem) {
+  .relevant__area-detail {
+    display: none;
+  }
 }
 
 .relevant__edit {

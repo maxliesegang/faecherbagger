@@ -235,3 +235,42 @@ export function selectRelevantConstructionSites(
     today,
   };
 }
+
+/**
+ * The selection narrowed to one watched area, for "show me only my commute".
+ *
+ * Each remaining site leads with its match for that area, so a card says how
+ * far it is from the place being looked at rather than from whichever place
+ * happens to be nearest. Sites relevant only by being followed drop out: they
+ * belong to no area.
+ */
+export function filterRelevanceSelectionByArea(
+  selection: RelevanceSelection,
+  areaId: string,
+): RelevanceSelection {
+  const narrowed = new Map<RelevantConstructionSite, RelevantConstructionSite>();
+  for (const relevant of selection.all) {
+    const match = relevant.areas.find(({ area }) => area.id === areaId);
+    if (!match) continue;
+    narrowed.set(relevant, {
+      ...relevant,
+      areas: [match, ...relevant.areas.filter((other) => other !== match)],
+      distanceMeters: match.distanceMeters,
+    });
+  }
+  const pick = (list: readonly RelevantConstructionSite[]) =>
+    list.flatMap((relevant) => {
+      const narrowedSite = narrowed.get(relevant);
+      return narrowedSite ? [narrowedSite] : [];
+    });
+  const all = pick(selection.all);
+  return {
+    ...selection,
+    all,
+    shortNotice: pick(selection.shortNotice),
+    running: pick(selection.running),
+    planned: pick(selection.planned),
+    followed: pick(selection.followed),
+    changedCount: all.filter((relevant) => relevant.isChanged).length,
+  };
+}

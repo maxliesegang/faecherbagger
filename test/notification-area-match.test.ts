@@ -61,6 +61,18 @@ describe("measureNotificationAreaMatch", () => {
     expect(measureNotificationAreaMatch(commute, crossing)).toBe(0);
   });
 
+  it("matches the way back of a corridor too", () => {
+    const roundTrip: NotificationArea = {
+      ...commute,
+      returnLine: [
+        [8.401, 49.01],
+        [8.36, 49.01],
+      ],
+    };
+    expect(measureNotificationAreaMatch(commute, target([8.38, 49.0105]))).toBeUndefined();
+    expect(measureNotificationAreaMatch(roundTrip, target([8.38, 49.0105]))).toBeCloseTo(56, -1);
+  });
+
   it("matches inside a drawn outline", () => {
     const outline: NotificationArea = {
       ...identity,

@@ -148,6 +148,22 @@ describe("notification area kinds", () => {
     ).toBe(true);
     expect(isNotificationArea({ ...identity, kind: "street", street: "Kaiserstraße" })).toBe(false);
     expect(isNotificationArea({ ...identity, kind: "hexagon" })).toBe(false);
+    expect(isNotificationArea({ ...area, minSeverity: "closure" })).toBe(true);
+    expect(isNotificationArea({ ...area, minSeverity: "loud" })).toBe(false);
+    expect(isNotificationArea({ ...corridor, returnLine: [[8.41, 49], [8.39, 49]] })).toBe(true);
+    expect(isNotificationArea({ ...corridor, returnLine: [[8.41, 49]] })).toBe(false);
+    expect(
+      isNotificationArea({
+        ...corridor,
+        route: {
+          start: [8.39, 49],
+          destination: [8.41, 49],
+          travelMode: "car",
+          startLabel: "Zuhause",
+          destinationLabel: "Punkt auf der Karte",
+        },
+      }),
+    ).toBe(true);
   });
 
   it("reads areas saved before kinds existed as circles", () => {
@@ -170,6 +186,24 @@ describe("notification area kinds", () => {
     expect(
       describeNotificationArea({ ...identity, kind: "street", street: "Kaiserstraße", municipality: "Karlsruhe" }),
     ).toBe("Kaiserstraße, Karlsruhe");
+  });
+
+  it("names a threshold that differs from the usual one", () => {
+    expect(describeNotificationArea({ ...area, minSeverity: "closure" })).toBe(
+      "5 km Umkreis · nur Sperrungen",
+    );
+    expect(describeNotificationArea({ ...area, minSeverity: "obstruction" })).toBe(
+      "5 km Umkreis",
+    );
+    expect(
+      describeNotificationArea({
+        ...identity,
+        kind: "corridor",
+        line: [[8.39, 49], [8.41, 49]],
+        returnLine: [[8.41, 49.01], [8.39, 49.01]],
+        widthMeters: 100,
+      }),
+    ).toBe("Hin und zurück · 100 m Abstand");
   });
 
   it("does not repeat what the name already says", () => {

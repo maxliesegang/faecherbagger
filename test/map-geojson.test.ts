@@ -146,6 +146,27 @@ describe("map data", () => {
     expect((middle as Point).coordinates).toEqual([8.4, 49.0]);
   });
 
+  it("draws a corridor's way back as a second line", () => {
+    const { features } = createNotificationAreaFeatureCollection([
+      {
+        kind: "corridor",
+        line: [
+          [8.39, 49.0],
+          [8.41, 49.0],
+        ],
+        returnLine: [
+          [8.41, 49.01],
+          [8.39, 49.01],
+        ],
+        widthMeters: 250,
+      },
+    ]);
+    expect(features.map((feature) => feature.geometry.type)).toEqual([
+      "LineString",
+      "LineString",
+    ]);
+  });
+
   it("renders one polygon per configured area, none when there are none", () => {
     expect(createNotificationAreaFeatureCollection([]).features).toEqual([]);
     expect(

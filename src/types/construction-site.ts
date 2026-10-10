@@ -25,6 +25,12 @@ interface NotificationAreaIdentity {
   id: string;
   /** User-supplied name ("Zuhause"), shown wherever the area is listed. */
   label: string;
+  /**
+   * How disruptive a site here has to be for a notification. A commute cares
+   * about closures, the street outside the door about any works. Areas saved
+   * before this existed have none and follow the preferences' default.
+   */
+  minSeverity?: NotificationSeverityThreshold;
 }
 
 /** A circle around a chosen point: the original and still the default. */
@@ -50,12 +56,20 @@ export interface PolygonNotificationArea extends NotificationAreaIdentity {
 export interface CorridorNotificationArea extends NotificationAreaIdentity {
   kind: "corridor";
   line: LngLat[];
+  /**
+   * The way back, when it differs: by car, one-way streets often send the
+   * return trip along other roads. Matched and drawn like `line`.
+   */
+  returnLine?: LngLat[];
   /** Distance to either side of the line. */
   widthMeters: number;
   route?: {
     start: LngLat;
     destination: LngLat;
     travelMode: RouteTravelMode;
+    /** What the ends were picked as ("Zuhause", an address), for editing. */
+    startLabel?: string;
+    destinationLabel?: string;
   };
 }
 

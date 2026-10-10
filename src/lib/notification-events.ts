@@ -2,11 +2,13 @@ import type {
   ConstructionSite,
   ConstructionSiteChanges,
   ISODate,
+  NotificationArea,
   NotificationFeed,
   NotificationFeedEvent,
   NotificationPreferences,
+  NotificationSeverityThreshold,
 } from "../types/index.ts";
-import { findNotificationAreaForTarget } from "./notification-area-match.ts";
+import { isTargetInNotificationArea } from "./notification-area-match.ts";
 import { meetsSeverityThreshold } from "./notification-preferences.ts";
 import {
   addCalendarDays,
@@ -209,15 +211,36 @@ export function selectNotificationEvents(
     if (event.kind === "new" && event.endDate !== null && event.endDate < today)
       return false;
     if (isFollowed) return true;
-    return (
-      (meetsSeverityThreshold(event.closure, preferences.minSeverity) ||
-        (event.kind === "changed" &&
-          event.previousClosure !== undefined &&
-          meetsSeverityThreshold(
-            event.previousClosure,
-            preferences.minSeverity,
-          ))) &&
-      findNotificationAreaForTarget(preferences.areas, event) !== undefined
-    );
+    return findNotifyingArea(event, preferences) !== undefined;
   });
+}
+
+/**
+ * Whether an event is disruptive enough for a threshold. A change counts if
+ * either side of it is: a closure that was lifted is news to whoever was told
+ * about it.
+ */
+const isDisruptiveEnough = (
+  event: NotificationFeedEvent,
+  threshold: NotificationSeverityThreshold,
+): boolean =>
+  meetsSeverityThreshold(event.closure, threshold) ||
+  (event.kind === "changed" &&
+    event.previousClosure !== undefined &&
+    meetsSeverityThreshold(event.previousClosure, threshold));
+
+/**
+ * The first watched area an event is worth a notification for: inside it and
+ * disruptive enough for *its* threshold. A site on the commute that only
+ * narrows a lane can still notify for "Zuhause" next door.
+ */
+export function findNotifyingArea(
+  event: NotificationFeedEvent,
+  preferences: NotificationPreferences,
+): NotificationArea | undefined {
+  return preferences.areas.find(
+    (area) =>
+      isDisruptiveEnough(event, area.minSeverity ?? preferences.minSeverity) &&
+      isTargetInNotificationArea(area, event),
+  );
 }

@@ -20,6 +20,7 @@ import type {
   NotificationArea,
   NotificationAreaKind,
   NotificationPreferences,
+  NotificationSeverityThreshold,
   RouteTravelMode,
 } from "../types/index.ts";
 import {
@@ -67,6 +68,10 @@ import type {
 } from "./NotificationAreaPickerMap.tsx";
 import "./NotificationSetupDialog.css";
 import { AddressSearch } from "./AddressSearch.tsx";
+import {
+  RouteEndpointPicker,
+  type RouteEndpoint,
+} from "./RouteEndpointPicker.tsx";
 import { StreetSearch } from "./StreetSearch.tsx";
 
 const NotificationAreaPickerMap = lazy(() =>
@@ -114,6 +119,33 @@ const THRESHOLD_PHRASE: Record<NotificationPreferences["minSeverity"], string> =
   obstruction: "ab Behinderung",
   closure: "nur Sperrungen",
 };
+
+/** What a route end picked by tapping the map is called. */
+const MAP_POINT_LABEL = "Punkt auf der Karte";
+
+const SEVERITY_OPTIONS: readonly {
+  value: NotificationSeverityThreshold;
+  label: string;
+}[] = [
+  { value: "all", label: "Alles" },
+  { value: "obstruction", label: "Behinderungen" },
+  { value: "closure", label: "Sperrungen" },
+];
+
+/** "Strecke: 4,9 km" or "Hin 4,9 km · zurück 5,3 km". */
+function describeCorridorLength(
+  line: readonly LngLat[],
+  returnLine: readonly LngLat[] | undefined,
+  isReturnRequested: boolean,
+): string {
+  const there = formatDistance(lineLengthMeters(line));
+  if (returnLine) {
+    return `Hin ${there} · zurück ${formatDistance(lineLengthMeters(returnLine))}`;
+  }
+  return isReturnRequested
+    ? `Strecke: ${there}, zurück auf demselben Weg`
+    : `Strecke: ${there}`;
+}
 
 /** The expandable list stays a list, not a second results page. */
 const MAX_LISTED_MATCHES = 40;
@@ -196,29 +228,65 @@ export function NotificationSetupDialog({
   };
   const editedCorridor = editedArea?.kind === "corridor" ? editedArea : undefined;
   const [corridorLine, setCorridorLine] = useState(editedCorridor?.line);
+  const [corridorReturnLine, setCorridorReturnLine] = useState(
+    editedCorridor?.returnLine,
+  );
   const [widthMeters, setWidthMeters] = useState(
     editedCorridor?.widthMeters ?? DEFAULT_CORRIDOR_WIDTH_METERS,
   );
-  const [routeStart, setRouteStart] = useState(editedCorridor?.route?.start);
-  const [routeDestination, setRouteDestination] = useState(
-    editedCorridor?.route?.destination,
+  const savedRoute = editedCorridor?.route;
+  const [routeStart, setRouteStart] = useState<RouteEndpoint | undefined>(
+    savedRoute && {
+      point: savedRoute.start,
+      label: savedRoute.startLabel ?? MAP_POINT_LABEL,
+    },
+  );
+  const [routeDestination, setRouteDestination] = useState<
+    RouteEndpoint | undefined
+  >(
+    savedRoute && {
+      point: savedRoute.destination,
+      label: savedRoute.destinationLabel ?? MAP_POINT_LABEL,
+    },
   );
   const [travelMode, setTravelMode] = useState<RouteTravelMode>(
-    editedCorridor?.route?.travelMode ?? "bike",
+    savedRoute?.travelMode ?? "bike",
+  );
+  // By car one-way streets often send the way back elsewhere; on foot and by
+  // bike it is nearly always the same road. Follows the mode until set.
+  const [includeReturn, setIncludeReturn] = useState(
+    editedCorridor ? editedCorridor.returnLine !== undefined : false,
+  );
+  const [isIncludeReturnChosen, setIsIncludeReturnChosen] = useState(
+    editedCorridor !== undefined,
   );
   // The saved line already answers the saved inputs; no need to ask again.
   const [knownRouteKey, setKnownRouteKey] = useState(
-    editedCorridor?.route
+    savedRoute
       ? createRouteKey(
-          editedCorridor.route.start,
-          editedCorridor.route.destination,
-          editedCorridor.route.travelMode,
+          savedRoute.start,
+          savedRoute.destination,
+          savedRoute.travelMode,
+          editedCorridor?.returnLine !== undefined,
         )
       : undefined,
   );
-  // Bumped when the map sets a route end, so the typed address it replaced
-  // does not linger in the field.
-  const [routeFieldsVersion, setRouteFieldsVersion] = useState(0);
+  const [areaMinSeverity, setAreaMinSeverity] = useState<NotificationSeverityThreshold>(
+    editedArea?.minSeverity ?? preferences.minSeverity,
+  );
+  // Like the name: once picked, a threshold is not replaced by a kind's default.
+  const [isMinSeverityChosen, setIsMinSeverityChosen] = useState(
+    editedArea?.minSeverity !== undefined,
+  );
+  const savedPlaces = useMemo(
+    (): RouteEndpoint[] =>
+      preferences.areas.flatMap((area) =>
+        area.kind === "circle" && area.id !== editedArea?.id
+          ? [{ point: area.center, label: area.label }]
+          : [],
+      ),
+    [preferences.areas, editedArea?.id],
+  );
   const [ring, setRing] = useState(
     editedArea?.kind === "polygon" ? editedArea.ring : undefined,
   );
@@ -247,14 +315,17 @@ export function NotificationSetupDialog({
   const [viewport, setViewport] = useState<[LngLat, LngLat]>();
   const [locationError, setLocationError] = useState<string>();
   const routeState = useRouteSearch(
-    routeStart,
-    routeDestination,
+    routeStart?.point,
+    routeDestination?.point,
     travelMode,
+    includeReturn,
     knownRouteKey,
   );
 
   useEffect(() => {
-    if (routeState.status === "ready") setCorridorLine(routeState.line);
+    if (routeState.status !== "ready") return;
+    setCorridorLine(routeState.line);
+    setCorridorReturnLine(routeState.returnLine);
   }, [routeState]);
 
   // Decided once on open, so switching notifications on in the last step does
@@ -279,7 +350,14 @@ export function NotificationSetupDialog({
       case "municipality":
         return municipality ? { kind, municipality } : undefined;
       case "corridor":
-        return corridorLine ? { kind, line: corridorLine, widthMeters } : undefined;
+        return corridorLine
+          ? {
+              kind,
+              line: corridorLine,
+              ...(corridorReturnLine ? { returnLine: corridorReturnLine } : {}),
+              widthMeters,
+            }
+          : undefined;
       case "polygon":
         return ring ? { kind, ring } : undefined;
       case "street":
@@ -292,12 +370,12 @@ export function NotificationSetupDialog({
             }
           : undefined;
     }
-  }, [kind, center, radiusKm, municipality, corridorLine, widthMeters, ring, street, streetMunicipality, includeJunctions]);
+  }, [kind, center, radiusKm, municipality, corridorLine, corridorReturnLine, widthMeters, ring, street, streetMunicipality, includeJunctions]);
 
   const today = getBerlinCalendarDate();
   const previewOptions = useMemo(
-    () => ({ today, minSeverity: preferences.minSeverity }),
-    [today, preferences.minSeverity],
+    () => ({ today, minSeverity: areaMinSeverity }),
+    [today, areaMinSeverity],
   );
   const toPreviewArea = (areaShape: NotificationAreaShape): NotificationArea =>
     ({ ...areaShape, id: "preview", label: "Vorschau" }) as NotificationArea;
@@ -315,13 +393,18 @@ export function NotificationSetupDialog({
       corridorLine
         ? CORRIDOR_WIDTH_STEPS_METERS.map((option) =>
             countUpcomingNotifications(
-              toPreviewArea({ kind: "corridor", line: corridorLine, widthMeters: option }),
+              toPreviewArea({
+                kind: "corridor",
+                line: corridorLine,
+                ...(corridorReturnLine ? { returnLine: corridorReturnLine } : {}),
+                widthMeters: option,
+              }),
               constructionSites,
               previewOptions,
             ),
           )
         : [],
-    [corridorLine, constructionSites, previewOptions],
+    [corridorLine, corridorReturnLine, constructionSites, previewOptions],
   );
   const junctionOnlyCount = useMemo(() => {
     if (kind !== "street" || street.trim().length < 3) return 0;
@@ -348,8 +431,8 @@ export function NotificationSetupDialog({
     if (kind === "circle") return [{ point: center, text: "" }];
     if (kind !== "corridor") return [];
     return [
-      ...(routeStart ? [{ point: routeStart, text: "A" }] : []),
-      ...(routeDestination ? [{ point: routeDestination, text: "B" }] : []),
+      ...(routeStart ? [{ point: routeStart.point, text: "A" }] : []),
+      ...(routeDestination ? [{ point: routeDestination.point, text: "B" }] : []),
     ];
   }, [kind, center, routeStart, routeDestination]);
 
@@ -379,19 +462,25 @@ export function NotificationSetupDialog({
     }
   };
 
-  const setRouteEnd = (end: "start" | "destination", point: LngLat) => {
+  const clearCorridorLines = () => {
     setKnownRouteKey(undefined);
     setCorridorLine(undefined);
-    if (end === "start") setRouteStart(point);
-    else setRouteDestination(point);
+    setCorridorReturnLine(undefined);
   };
 
-  const resetRoute = () => {
+  const setRouteEnd = (
+    end: "start" | "destination",
+    endpoint: RouteEndpoint | undefined,
+  ) => {
+    clearCorridorLines();
+    if (end === "start") setRouteStart(endpoint);
+    else setRouteDestination(endpoint);
+  };
+
+  const chooseTravelMode = (nextTravelMode: RouteTravelMode) => {
     setKnownRouteKey(undefined);
-    setCorridorLine(undefined);
-    setRouteStart(undefined);
-    setRouteDestination(undefined);
-    setRouteFieldsVersion((version) => version + 1);
+    setTravelMode(nextTravelMode);
+    if (!isIncludeReturnChosen) setIncludeReturn(nextTravelMode === "car");
   };
 
   const handleMapClick = (() => {
@@ -403,10 +492,11 @@ export function NotificationSetupDialog({
     }
     if (kind === "corridor") {
       // First tap is the start, every later one moves the destination.
-      return (point: LngLat) => {
-        setRouteEnd(routeStart ? "destination" : "start", point);
-        setRouteFieldsVersion((version) => version + 1);
-      };
+      return (point: LngLat) =>
+        setRouteEnd(routeStart ? "destination" : "start", {
+          point,
+          label: MAP_POINT_LABEL,
+        });
     }
     return undefined;
   })();
@@ -415,10 +505,9 @@ export function NotificationSetupDialog({
     if (drawMode === "line" || kind === "corridor") {
       if (coordinates.length < 2 || lineLengthMeters(coordinates) < MIN_DRAWN_LINE_METERS) return;
       // A drawn line replaces the calculated one, and with it the two markers.
-      setKnownRouteKey(undefined);
+      clearCorridorLines();
       setRouteStart(undefined);
       setRouteDestination(undefined);
-      setRouteFieldsVersion((version) => version + 1);
       setCorridorLine(simplifyToVertexLimit(coordinates, MAX_CORRIDOR_VERTICES / 2));
       return;
     }
@@ -449,12 +538,15 @@ export function NotificationSetupDialog({
           ? {
               ...shape,
               route: {
-                start: roundLngLat(routeStart),
-                destination: roundLngLat(routeDestination),
+                start: roundLngLat(routeStart.point),
+                destination: roundLngLat(routeDestination.point),
                 travelMode,
+                startLabel: routeStart.label.slice(0, 100),
+                destinationLabel: routeDestination.label.slice(0, 100),
               },
             }
           : shape),
+      minSeverity: areaMinSeverity,
       id: editedArea?.id ?? createNotificationAreaId(),
       label:
         label.trim() ||
@@ -497,6 +589,10 @@ export function NotificationSetupDialog({
     if (!isLabelChosen && shape?.kind === "municipality") setLabel(shape.municipality);
     else if (!isLabelChosen && shape?.kind === "street") setLabel(shape.street);
     else if (!isLabelChosen) setLabel("");
+    // A route is about getting through: by default only closures notify there.
+    if (!isMinSeverityChosen) {
+      setAreaMinSeverity(shape?.kind === "corridor" ? "closure" : preferences.minSeverity);
+    }
     setStep(1);
   };
 
@@ -616,20 +712,23 @@ export function NotificationSetupDialog({
 
             {kind === "corridor" && (
               <>
-                <div className="notification-setup__route" key={routeFieldsVersion}>
-                  <AddressSearch
+                <div className="notification-setup__route">
+                  <RouteEndpointPicker
                     label="Start"
-                    placeholder="z. B. Ihre Adresse"
-                    showAttribution={false}
-                    onAddressSelect={(result) => setRouteEnd("start", result.point)}
+                    marker="A"
+                    value={routeStart}
+                    savedPlaces={savedPlaces}
+                    requestCurrentLocation={locationController.requestLocation}
+                    onChange={(endpoint) => setRouteEnd("start", endpoint)}
                   />
-                  <AddressSearch
+                  <RouteEndpointPicker
                     label="Ziel"
-                    placeholder="z. B. Ihre Arbeit"
-                    showAttribution={false}
-                    onAddressSelect={(result) =>
-                      setRouteEnd("destination", result.point)
-                    }
+                    marker="B"
+                    value={routeDestination}
+                    savedPlaces={savedPlaces}
+                    requestCurrentLocation={locationController.requestLocation}
+                    waitingText={routeStart ? undefined : "Wählen Sie zuerst den Start."}
+                    onChange={(endpoint) => setRouteEnd("destination", endpoint)}
                   />
                 </div>
                 <fieldset className="view-switcher notification-setup__travel-mode">
@@ -642,37 +741,47 @@ export function NotificationSetupDialog({
                         name="route-travel-mode"
                         value={option.value}
                         checked={travelMode === option.value}
-                        onChange={() => {
-                          setKnownRouteKey(undefined);
-                          setTravelMode(option.value);
-                        }}
+                        onChange={() => chooseTravelMode(option.value)}
                       />
                       {option.label}
                     </label>
                   ))}
                 </fieldset>
+                <label className="notification-setup__choice">
+                  <input
+                    type="checkbox"
+                    checked={includeReturn}
+                    onChange={(event) => {
+                      setKnownRouteKey(undefined);
+                      setIsIncludeReturnChosen(true);
+                      setIncludeReturn(event.currentTarget.checked);
+                    }}
+                  />
+                  <span>
+                    Rückweg einbeziehen
+                    <span className="notification-setup__hint">
+                      {" "}
+                      (führt mit dem Auto oft woanders lang)
+                    </span>
+                  </span>
+                </label>
                 <p role="status" className="notification-setup__route-status">
                   {routeState.status === "loading"
-                    ? "Strecke wird berechnet …"
+                    ? includeReturn
+                      ? "Hin- und Rückweg werden berechnet …"
+                      : "Strecke wird berechnet …"
                     : routeState.status === "error"
                       ? "Strecke nicht verfügbar. Ziehen Sie sie auf der Karte nach."
                       : corridorLine
-                        ? `Strecke: ${formatDistance(lineLengthMeters(corridorLine))}`
+                        ? describeCorridorLength(corridorLine, corridorReturnLine, includeReturn && routeStart !== undefined)
                         : routeStart
                           ? "Wählen Sie das Ziel."
                           : "Oder tippen Sie auf die Karte: erst Start, dann Ziel."}
                 </p>
-                {(routeStart || corridorLine) && (
-                  <KernButton
-                    type="button"
-                    variant="tertiary"
-                    label="Strecke zurücksetzen"
-                    onClick={resetRoute}
-                  />
-                )}
                 <p className="notification-setup__hint">
                   Adressen gehen an Photon (komoot), Start und Ziel zur
-                  Berechnung an FOSSGIS. Ohne Übertragung: Strecke nachziehen.
+                  Berechnung an FOSSGIS. Ohne Übertragung: auf die Karte
+                  tippen oder nachziehen.
                 </p>
               </>
             )}
@@ -753,7 +862,7 @@ export function NotificationSetupDialog({
                     in den nächsten {PREVIEW_HORIZON_DAYS} Tagen
                     <span className="notification-setup__preview-detail">
                       {matchingSites.length} Baustellen {matchScope} ·
-                      gezählt: {THRESHOLD_PHRASE[preferences.minSeverity]}
+                      gezählt: {THRESHOLD_PHRASE[areaMinSeverity]}
                     </span>
                   </>
                 )}
@@ -849,6 +958,40 @@ export function NotificationSetupDialog({
                 ))}
               </fieldset>
             )}
+          </>
+        )}
+
+        {step === 1 && (
+          <>
+            <p className="notification-setup__field-label" aria-hidden="true">
+              Was melden?
+            </p>
+            <fieldset className="view-switcher">
+              <legend className="kern-sr-only">Was melden?</legend>
+              {SEVERITY_OPTIONS.map((option) => (
+                <label key={option.value} className="view-switcher__item">
+                  <input
+                    className="view-switcher__input kern-sr-only"
+                    type="radio"
+                    name="area-min-severity"
+                    value={option.value}
+                    checked={areaMinSeverity === option.value}
+                    onChange={() => {
+                      setIsMinSeverityChosen(true);
+                      setAreaMinSeverity(option.value);
+                    }}
+                  />
+                  {option.label}
+                </label>
+              ))}
+            </fieldset>
+            <p className="notification-setup__hint">
+              {areaMinSeverity === "all"
+                ? "Jede Baustelle hier, auch ohne Behinderung."
+                : areaMinSeverity === "obstruction"
+                  ? "Behinderungen und Sperrungen. Unklare Fälle melden wir immer."
+                  : "Nur Sperrungen. Unklare Fälle melden wir immer."}
+            </p>
           </>
         )}
 

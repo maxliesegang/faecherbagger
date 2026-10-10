@@ -14,6 +14,7 @@ import {
 import { MAX_NOTIFICATION_AREAS } from "../lib/notification-preferences.ts";
 import { formatISOTimestamp } from "../lib/construction-site-labels.ts";
 import { NotificationSwitch } from "./NotificationSwitch.tsx";
+import { AppIcon, NOTIFICATION_AREA_ICON } from "./AppIcon.tsx";
 import "./SettingsPage.css";
 
 const SEVERITY_OPTIONS: readonly {
@@ -61,9 +62,15 @@ export function SettingsPage({
             <ul className="settings__list">
               {preferences.areas.map((area) => (
                 <li key={area.id} className="settings__row">
-                  <span className="settings__row-text">
-                    <strong>{area.label}</strong>
-                    <span>{describeNotificationArea(area)}</span>
+                  <span className="settings__row-main">
+                    <AppIcon
+                      name={NOTIFICATION_AREA_ICON[area.kind]}
+                      className="settings__row-icon"
+                    />
+                    <span className="settings__row-text">
+                      <strong>{area.label}</strong>
+                      <span>{describeNotificationArea(area)}</span>
+                    </span>
                   </span>
                   {confirmingAreaId === area.id ? (
                     <span
@@ -144,6 +151,9 @@ export function SettingsPage({
             <div className="settings__options">
               <fieldset className="settings__fieldset">
                 <legend>Worüber?</legend>
+                <p className="settings__muted">
+                  Vorgabe für neue Orte. Jeder Ort kann davon abweichen.
+                </p>
                 {SEVERITY_OPTIONS.map((option) => (
                   <label key={option.value} className="settings__choice">
                     <input

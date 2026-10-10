@@ -51,6 +51,8 @@ interface ConstructionSiteMapProps {
   selectedSiteId?: string;
   currentLocation?: LngLat;
   notificationAreas: readonly NotificationArea[];
+  /** An area the visitor narrowed the view to; the map frames it. */
+  focusedArea?: NotificationArea;
   onSiteSelect: (siteId: string | undefined) => void;
   getSiteDetailsHref: (siteId: string) => string;
   onSiteDetailsRequest: (siteId: string) => void;
@@ -134,6 +136,7 @@ export function ConstructionSiteMap({
   selectedSiteId,
   currentLocation,
   notificationAreas,
+  focusedArea,
   onSiteSelect,
   getSiteDetailsHref,
   onSiteDetailsRequest,
@@ -152,6 +155,7 @@ export function ConstructionSiteMap({
     selectedSiteId,
     currentLocation,
     notificationAreas,
+    focusedArea,
     onSiteSelect,
   });
   latestPropsRef.current = {
@@ -160,6 +164,7 @@ export function ConstructionSiteMap({
     selectedSiteId,
     currentLocation,
     notificationAreas,
+    focusedArea,
     onSiteSelect,
   };
 
@@ -278,8 +283,15 @@ export function ConstructionSiteMap({
     getGeoJSONSource(map, MAP_SOURCE_IDS.points).setData(
       createConstructionSitePointFeatureCollection(constructionSites),
     );
-    fitConstructionSites(map, constructionSites);
-  }, [constructionSites]);
+    // A focused area with a shape is the frame the visitor asked for; its
+    // sites lie inside it anyway.
+    const { focusedArea: currentFocusedArea } = latestPropsRef.current;
+    if (currentFocusedArea && getNotificationAreaOutline(currentFocusedArea)) {
+      fitNotificationAreas(map, [currentFocusedArea]);
+    } else {
+      fitConstructionSites(map, constructionSites);
+    }
+  }, [constructionSites, focusedArea]);
 
   // Separate from the point update: geometry arrives later than the records and
   // must not drag a viewport refit along when it does.

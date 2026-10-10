@@ -22,9 +22,10 @@ import {
   describeAreaDistance,
   type RelevanceSelection,
   type RelevantConstructionSite,
+  filterRelevanceSelectionByArea,
 } from "../lib/relevant-construction-sites.ts";
 import { useMediaQuery } from "../hooks/useMediaQuery.ts";
-import { AppIcon } from "./AppIcon.tsx";
+import { AppIcon, NOTIFICATION_AREA_ICON } from "./AppIcon.tsx";
 import { ConstructionSiteCard } from "./ConstructionSiteCard.tsx";
 import { NotificationSwitch } from "./NotificationSwitch.tsx";
 import "./RelevantConstructionSites.css";
@@ -152,10 +153,20 @@ export function RelevantConstructionSites({
   );
   const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
   const isSideMapShown = useMediaQuery(SIDE_MAP_QUERY);
+  // Narrowing to one place: "what is on my commute" without the rest.
+  const [focusedAreaId, setFocusedAreaId] = useState<string>();
+  const focusedArea = areas.find((area) => area.id === focusedAreaId);
+  const visibleSelection = useMemo(
+    () =>
+      focusedArea
+        ? filterRelevanceSelectionByArea(selection, focusedArea.id)
+        : selection,
+    [selection, focusedArea],
+  );
   // Stable between renders: the map refits whenever this array changes.
   const mapConstructionSites = useMemo(
-    () => selection.all.map((relevant) => relevant.constructionSite),
-    [selection.all],
+    () => visibleSelection.all.map((relevant) => relevant.constructionSite),
+    [visibleSelection.all],
   );
   // A batch notification opens `?bereich=fuer-mich#meldungen`.
   const [isHistoryOpen, setIsHistoryOpen] = useState(
@@ -202,12 +213,15 @@ export function RelevantConstructionSites({
     );
   }
 
-  const isMultiArea = areas.length > 1;
-  const soon = selection.shortNotice;
-  const running = selection.running.filter(
+  // Once narrowed to one place, the cards need not name it on every line.
+  const isMultiArea = areas.length > 1 && !focusedArea;
+  const soon = visibleSelection.shortNotice;
+  const running = visibleSelection.running.filter(
     (relevant) => !relevant.isShortNotice,
   );
-  const later = selection.planned.filter((relevant) => !relevant.isShortNotice);
+  const later = visibleSelection.planned.filter(
+    (relevant) => !relevant.isShortNotice,
+  );
   const unreadEvents = notificationEvents.filter((event) =>
     unreadSignatures.has(event.signature),
   );
@@ -337,8 +351,41 @@ export function RelevantConstructionSites({
           </ul>
           <ul className="relevant__areas" aria-label="Ihre Orte">
             {areas.map((area) => (
-              <li key={area.id} className="relevant__area">
-                {area.label} · {describeNotificationArea(area)}
+              <li key={area.id}>
+                {/*
+                  A single place needs no filter; with several, each chip
+                  narrows the lists and the map to that place.
+                */}
+                {areas.length > 1 ? (
+                  <button
+                    type="button"
+                    className="relevant__area"
+                    aria-pressed={area.id === focusedAreaId}
+                    onClick={() =>
+                      setFocusedAreaId((current) =>
+                        current === area.id ? undefined : area.id,
+                      )
+                    }
+                  >
+                    <AppIcon
+                      name={NOTIFICATION_AREA_ICON[area.kind]}
+                      className="relevant__area-icon"
+                    />
+                    {area.label}
+                    <span className="relevant__area-detail">
+                      {" "}
+                      · {describeNotificationArea(area)}
+                    </span>
+                  </button>
+                ) : (
+                  <span className="relevant__area">
+                    <AppIcon
+                      name={NOTIFICATION_AREA_ICON[area.kind]}
+                      className="relevant__area-icon"
+                    />
+                    {area.label} · {describeNotificationArea(area)}
+                  </span>
+                )}
               </li>
             ))}
             <li>
@@ -355,6 +402,9 @@ export function RelevantConstructionSites({
               </a>
             </li>
           </ul>
+          <p className="kern-sr-only" role="status">
+            {focusedArea ? `Nur Baustellen für „${focusedArea.label}“.` : ""}
+          </p>
         </div>
 
         {!isBannerDismissed && (
@@ -468,6 +518,7 @@ export function RelevantConstructionSites({
               constructionSites={mapConstructionSites}
               selectedSiteId={mapSelectedSiteId}
               notificationAreas={areas}
+              focusedArea={focusedArea}
               onSiteSelect={setMapSelectedSiteId}
               getSiteDetailsHref={getDetailHref}
               onSiteDetailsRequest={onDetailOpen}

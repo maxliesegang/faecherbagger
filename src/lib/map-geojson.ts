@@ -246,13 +246,15 @@ export function createNotificationAreaFeatureCollection(
         const latitude = area.line[0]![1];
         const metersPerPixel =
           METERS_PER_PIXEL_AT_ZOOM_ZERO * Math.cos((latitude * Math.PI) / 180);
-        features.push({
-          type: "Feature",
-          properties: {
-            bandWidthAtZoomZero: (2 * area.widthMeters) / metersPerPixel,
-          },
-          geometry: { type: "LineString", coordinates: area.line },
-        });
+        for (const line of area.returnLine ? [area.line, area.returnLine] : [area.line]) {
+          features.push({
+            type: "Feature",
+            properties: {
+              bandWidthAtZoomZero: (2 * area.widthMeters) / metersPerPixel,
+            },
+            geometry: { type: "LineString", coordinates: line },
+          });
+        }
         addLabelPoint(area.label, getLineMidpoint(area.line));
         break;
       }
@@ -274,7 +276,7 @@ export function getNotificationAreaOutline(
     case "polygon":
       return area.ring;
     case "corridor":
-      return area.line;
+      return area.returnLine ? [...area.line, ...area.returnLine] : area.line;
     default:
       return undefined;
   }

@@ -348,3 +348,124 @@
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
+
+/* Route ends: a chip once chosen, one-tap choices until then. */
+.route-endpoint {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.route-endpoint__label {
+  font-weight: 700;
+}
+
+.route-endpoint__value {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  border: 1px solid var(--app-border);
+  border-radius: 0.5rem;
+  background: var(--app-surface);
+}
+
+.route-endpoint__marker {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: #2459a9;
+  box-shadow: 0 0 0 1px #2459a9;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.route-endpoint__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.route-endpoint__clear,
+.route-endpoint__cancel {
+  flex: 0 0 auto;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 0.35rem;
+  color: var(--app-accent);
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.route-endpoint__clear {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.route-endpoint__cancel {
+  justify-self: start;
+  padding-inline: 0.5rem;
+  text-decoration: underline;
+}
+
+.route-endpoint__search {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.route-endpoint__choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.route-endpoint__choices button {
+  min-height: 2.75rem;
+  padding: 0 0.9rem;
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  color: var(--app-accent);
+  background: var(--app-card);
+  font: inherit;
+  cursor: pointer;
+}
+
+.route-endpoint__choices button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.route-endpoint__waiting {
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 0.75rem;
+  border: 1px dashed var(--app-border);
+  border-radius: 0.5rem;
+  color: var(--app-muted);
+}
+
+.route-endpoint__error {
+  color: var(--app-muted);
+  font-size: 0.85rem;
+}
+
+.route-endpoint__clear:focus-visible,
+.route-endpoint__cancel:focus-visible,
+.route-endpoint__choices button:focus-visible {
+  outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}

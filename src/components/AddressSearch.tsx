@@ -23,6 +23,8 @@ interface AddressSearchProps {
   onMunicipalitySelect?: (municipality: string) => void;
   /** The provider credit, shown once when several fields share a screen. */
   showAttribution?: boolean;
+  /** For a field that appears because the visitor asked to search. */
+  autoFocus?: boolean;
 }
 
 const itemToString = (item: AddressSearchItem | null): string => {
@@ -39,6 +41,7 @@ export function AddressSearch({
   suggestMunicipalities,
   onMunicipalitySelect,
   showAttribution = true,
+  autoFocus = false,
 }: AddressSearchProps) {
   const inputId = useId();
   const [query, setQuery] = useState("");
@@ -85,6 +88,7 @@ export function AddressSearch({
         maxLength={200}
         spellCheck={false}
         placeholder={placeholder}
+        autoFocus={autoFocus}
         {...getInputProps({
           "aria-describedby": showAttribution ? `${inputId}-hint` : undefined,
           onChange: () => setSelectedLabel(""),

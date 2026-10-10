@@ -50,11 +50,24 @@ export const removeNotificationArea = (
  * street saved as "Kaiserstraße" does not read "Kaiserstraße · Kaiserstraße".
  */
 export function describeNotificationArea(area: NotificationArea): string {
+  const place = describeNotificationAreaPlace(area);
+  return area.minSeverity && area.minSeverity !== "obstruction"
+    ? `${place} · ${SEVERITY_SUFFIX[area.minSeverity]}`
+    : place;
+}
+
+/** Only the thresholds that differ from the usual "ab Behinderung" are named. */
+const SEVERITY_SUFFIX: Record<"all" | "closure", string> = {
+  all: "alle Baustellen",
+  closure: "nur Sperrungen",
+};
+
+function describeNotificationAreaPlace(area: NotificationArea): string {
   switch (area.kind) {
     case "circle":
       return `${formatNotificationRadius(area.radiusKm)} Umkreis`;
     case "corridor":
-      return `Strecke · ${formatCorridorWidth(area.widthMeters)} Abstand`;
+      return `${area.returnLine ? "Hin und zurück" : "Strecke"} · ${formatCorridorWidth(area.widthMeters)} Abstand`;
     case "polygon":
       return "Gezeichnete Fläche";
     case "municipality":

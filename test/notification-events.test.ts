@@ -3,6 +3,7 @@ import {
   collectNotificationEvents,
   selectNotificationEvents as selectEventsForDate,
   createNotificationFeed,
+  findNotifyingArea,
 } from "../src/lib/notification-events.ts";
 import {
   createNotificationPayload,
@@ -228,6 +229,38 @@ describe("selectNotificationEvents", () => {
       ],
     };
     expect(selectNotificationEvents([crossing!], commute)).toEqual([crossing]);
+  });
+
+  it("applies each area's own threshold", () => {
+    const nearbyObstruction = collectNotificationEvents(
+      [createSite("lane", { point: [8.41, 49.01], closure: "obstruction" })],
+      createChanges({ added: ["lane"] }),
+      TODAY,
+    );
+    const commuteOnly: NotificationPreferences = {
+      ...preferences,
+      minSeverity: "all",
+      areas: [{ ...home, minSeverity: "closure" }],
+    };
+    expect(selectNotificationEvents(nearbyObstruction, commuteOnly)).toEqual([]);
+    // A second area over the same spot that wants everything still notifies,
+    // and the notification is attributed to it.
+    const withStreet: NotificationPreferences = {
+      ...commuteOnly,
+      areas: [...commuteOnly.areas, { ...home, id: "street", label: "Straße", minSeverity: "all" }],
+    };
+    expect(selectNotificationEvents(nearbyObstruction, withStreet)).toHaveLength(1);
+    expect(findNotifyingArea(nearbyObstruction[0]!, withStreet)?.id).toBe("street");
+  });
+
+  it("falls back to the default threshold for areas without one", () => {
+    const mild = collectNotificationEvents(
+      [createSite("mild", { point: [8.41, 49.01], closure: "none" })],
+      createChanges({ added: ["mild"] }),
+      TODAY,
+    );
+    expect(selectNotificationEvents(mild, { ...preferences, minSeverity: "closure" })).toEqual([]);
+    expect(selectNotificationEvents(mild, preferences)).toHaveLength(1);
   });
 
   it("applies the severity threshold", () => {
