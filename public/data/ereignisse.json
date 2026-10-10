@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T20:22:41.365Z",
+  "generatedAt": "2026-10-10T10:20:47.534Z",
   "events": [
     {
       "kind": "changed",
@@ -13,7 +13,8 @@
       "startDate": "2026-11-09",
       "endDate": "2027-04-18",
       "municipality": "Karlsruhe",
-      "location": "Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn"
+      "location": "Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "changed",
@@ -27,7 +28,8 @@
       "startDate": "2026-08-31",
       "endDate": "2026-11-08",
       "municipality": "Karlsruhe",
-      "location": "Ellmendinger Straße im Einmündungsbereich zur Lissenstraße"
+      "location": "Ellmendinger Straße im Einmündungsbereich zur Lissenstraße",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "changed",
@@ -41,7 +43,8 @@
       "startDate": "2026-08-31",
       "endDate": "2026-10-14",
       "municipality": "Karlsruhe",
-      "location": "Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße"
+      "location": "Eisenlohrstraße zw. Gustav-Heller-Platz und Hübschstraße",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "changed",
@@ -55,7 +58,8 @@
       "startDate": "2026-08-03",
       "endDate": "2026-10-23",
       "municipality": "Karlsruhe",
-      "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg"
+      "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "changed",
@@ -69,7 +73,25 @@
       "startDate": "2026-10-26",
       "endDate": "2027-01-11",
       "municipality": "Karlsruhe",
-      "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße"
+      "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
+      "announcedOn": "2026-10-09"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:30086:2026-08-26T05:37:44Z",
+      "announcedOn": "2026-10-10",
+      "siteId": "30086",
+      "point": [
+        8.307484,
+        48.969397
+      ],
+      "closure": "none",
+      "startDate": "2026-08-31",
+      "endDate": "2026-10-30",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Hauptstraße 155",
+      "previousClosure": "full",
+      "previousStartDate": "2026-09-08"
     },
     {
       "kind": "new",
@@ -83,7 +105,8 @@
       "startDate": "2025-04-07",
       "endDate": "2026-10-23",
       "municipality": "Karlsruhe",
-      "location": "Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee"
+      "location": "Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "new",
@@ -97,7 +120,8 @@
       "startDate": "2026-08-24",
       "endDate": "2026-10-25",
       "municipality": "Karlsruhe",
-      "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße"
+      "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "new",
@@ -111,7 +135,8 @@
       "startDate": "2026-10-12",
       "endDate": "2026-10-12",
       "municipality": "Karlsruhe",
-      "location": "Hirschstraße zw. Südendstraße und Vorholzstraße"
+      "location": "Hirschstraße zw. Südendstraße und Vorholzstraße",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "new",
@@ -125,7 +150,8 @@
       "startDate": "2026-10-09",
       "endDate": "2026-12-14",
       "municipality": "Karlsruhe",
-      "location": "Albert-Schweitzer-Straße zw. Bertha-von-Suttner-Straße und Theodor-Heuss-Allee"
+      "location": "Albert-Schweitzer-Straße zw. Bertha-von-Suttner-Straße und Theodor-Heuss-Allee",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "new",
@@ -139,7 +165,8 @@
       "startDate": "2026-10-07",
       "endDate": "2026-10-21",
       "municipality": "Bruchsal",
-      "location": "Hauptstraße 54"
+      "location": "Hauptstraße 54",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "starts-soon",
@@ -153,7 +180,8 @@
       "startDate": "2026-10-16",
       "endDate": "2026-11-30",
       "municipality": "Karlsruhe",
-      "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg"
+      "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "starts-soon",
@@ -167,7 +195,8 @@
       "startDate": "2026-10-10",
       "endDate": "2026-10-30",
       "municipality": "Karlsruhe",
-      "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße"
+      "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "starts-soon",
@@ -181,7 +210,8 @@
       "startDate": "2026-10-10",
       "endDate": "2026-11-01",
       "municipality": "Karlsruhe",
-      "location": "Waldenburger Straße"
+      "location": "Waldenburger Straße",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "starts-soon",
@@ -195,7 +225,8 @@
       "startDate": "2026-10-10",
       "endDate": "2027-01-25",
       "municipality": "Karlsruhe",
-      "location": "Am Fasanengarten, Prakstr., Karl-Wilhelm-Str."
+      "location": "Am Fasanengarten, Prakstr., Karl-Wilhelm-Str.",
+      "announcedOn": "2026-10-09"
     },
     {
       "kind": "starts-soon",
@@ -209,7 +240,8 @@
       "startDate": "2026-10-16",
       "endDate": "2026-11-15",
       "municipality": "Karlsruhe",
-      "location": "Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße"
+      "location": "Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße",
+      "announcedOn": "2026-10-09"
     }
   ]
 }
