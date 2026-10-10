@@ -7202,22 +7202,22 @@
   {
     "id": "30086",
     "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Hauptstraße 155",
-    "notes": "Gehwegvollsperrung",
-    "cause": "Versorgungsunternehmen",
-    "startDate": "2026-08-31",
-    "endDate": "2026-10-30",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Diverse Straßen",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-09-08",
+    "endDate": "2026-12-28",
     "point": [
       8.307484,
       48.969397
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-08-26T05:37:44Z"
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-08-31T12:56:38Z"
   },
   {
     "id": "30089",
