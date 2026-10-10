@@ -14,7 +14,7 @@ The name combines Karlsruhe's nickname *Fächerstadt* (fan-shaped city) with
   notifications, then sites near the visitor's places or marked with a star,
   split into *Beginnt bald* (within 14 days), *Läuft gerade* and *Später
   geplant*.
-- **Karte** shows all sites with search, filters, a map and a list.
+- **Alle Baustellen** shows all sites with search, filters, a map and a list.
 - **Einstellungen** holds places, notification options, the app itself, sources
   and feeds.
 - On phones the three sections sit in a bottom bar.

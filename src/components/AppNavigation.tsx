@@ -16,7 +16,7 @@ const DESTINATIONS: readonly {
   icon: AppIconName;
 }[] = [
   { section: "relevant", label: "Für mich", icon: "person-pin" },
-  { section: "explore", label: "Karte", icon: "map" },
+  { section: "explore", label: "Alle Baustellen", icon: "map" },
   { section: "settings", label: "Einstellungen", icon: "settings" },
 ];
 

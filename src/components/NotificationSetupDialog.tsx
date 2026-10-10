@@ -257,14 +257,6 @@ export function NotificationSetupDialog({
                 </span>
               </p>
             </div>
-            <KernInput
-              id="notification-area-label"
-              label="Name"
-              hint="z. B. „Zuhause“ oder „Arbeit“"
-              maxLength={MAX_NOTIFICATION_AREA_LABEL_LENGTH}
-              value={label}
-              onChange={(event) => setLabel(event.currentTarget.value)}
-            />
           </>
         )}
 
@@ -294,6 +286,23 @@ export function NotificationSetupDialog({
         />
       </Suspense>
 
+      {/*
+        Below the map, so the slider sits right above the circle it resizes;
+        the name is a finishing touch, not part of that feedback loop.
+      */}
+      {step === 1 && (
+        <div className="notification-setup__body notification-setup__body--after-map">
+          <KernInput
+            id="notification-area-label"
+            label="Name"
+            hint="z. B. „Zuhause“ oder „Arbeit“"
+            maxLength={MAX_NOTIFICATION_AREA_LABEL_LENGTH}
+            value={label}
+            onChange={(event) => setLabel(event.currentTarget.value)}
+          />
+        </div>
+      )}
+
       <div className="notification-setup__actions">
         {isNotificationStep ? (
           // The place is decided by now; only the answer is left, so no "Zurück".
@@ -307,6 +316,7 @@ export function NotificationSetupDialog({
             />
             <KernButton
               type="button"
+              variant="primary"
               label="Benachrichtigen"
               disabled={pushNotifications.isBusy}
               onClick={() => void complete(true)}
@@ -331,6 +341,7 @@ export function NotificationSetupDialog({
             )}
             <KernButton
               type="button"
+              variant="primary"
               label={isLastStep ? "Speichern" : "Weiter"}
               onClick={() =>
                 isLastStep ? void complete() : setStep((current) => current + 1)

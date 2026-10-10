@@ -644,6 +644,11 @@ function ConstructionSiteExplorer({
         }}
         isFollowed={followedSiteIds.has(detailSite.id)}
         onToggleFollowed={onToggleFollowed}
+        canEnableNotifications={
+          !pushNotifications.isActive &&
+          pushNotifications.unavailableReason !== "unconfigured" &&
+          pushNotifications.unavailableReason !== "unsupported"
+        }
         onNotificationSettingsOpen={() => onSectionChange("settings")}
       />
     ) : (

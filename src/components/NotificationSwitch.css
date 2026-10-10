@@ -36,3 +36,45 @@
   color: var(--app-muted);
   font-size: 0.875rem;
 }
+
+.notification-switch__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Only on the banner while there is nothing to switch, e.g. the iOS hint. */
+.notification-switch--banner {
+  position: relative;
+}
+
+.notification-switch__dismiss {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  color: var(--app-muted);
+  background: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.notification-switch__dismiss:hover {
+  color: var(--app-text);
+}
+
+.notification-switch__dismiss:focus-visible {
+  outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+.notification-switch--banner:has(.notification-switch__dismiss) {
+  padding-right: 3rem;
+}

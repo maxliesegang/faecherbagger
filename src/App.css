@@ -35,6 +35,11 @@ main > .kern-container {
   width: min(100% - 3rem, var(--app-content-width));
   max-width: var(--app-content-width);
   margin-inline: auto;
+  /*
+    The width above already leaves the gutter; KERN's own container padding
+    would add a second one and push the content off the header's edge.
+  */
+  padding-inline: 0;
   padding-bottom: calc(1.5rem + var(--app-bottom-bar));
 }
 
@@ -513,7 +518,12 @@ summary:focus-visible {
   }
 
   .app-title {
-    padding-block: 1.25rem 0.75rem;
+    padding-block: 1rem 0.75rem;
+  }
+
+  /* Compact, so "Alle Baustellen" and the switch share one line at 360 px. */
+  .view-switcher__item {
+    padding-inline: 0.75rem;
   }
 
   .tool-button {
@@ -540,6 +550,20 @@ summary:focus-visible {
 
   .filter-panel__advanced {
     min-width: 0;
+  }
+
+  /* Status and "Filter" share one row, so the map starts higher up. */
+  .filter-panel__secondary {
+    flex-wrap: nowrap;
+  }
+
+  .filter-panel__secondary:has(.filter-panel__advanced[open]),
+  .filter-panel__secondary:has(> .kern-btn) {
+    flex-wrap: wrap;
+  }
+
+  .filter-panel__advanced > .kern-accordion__header {
+    padding-inline: 0.5rem 2.25rem;
   }
 
   .filter-panel__grid {

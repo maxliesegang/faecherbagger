@@ -1,4 +1,11 @@
-import { useEffect, useState, type MouseEvent } from "react";
+import {
+  lazy,
+  Suspense,
+  useEffect,
+  useMemo,
+  useState,
+  type MouseEvent,
+} from "react";
 import { KernAlert, KernButton } from "@kern-ux-annex/kern-react-kit";
 import type {
   NotificationArea,
@@ -11,14 +18,52 @@ import {
 } from "../lib/construction-site-timeframe.ts";
 import { formatISODate, getClosureLabel } from "../lib/construction-site-labels.ts";
 import { formatNotificationRadius } from "../lib/notification-preferences.ts";
-import type {
-  RelevanceSelection,
-  RelevantConstructionSite,
+import {
+  describeAreaDistance,
+  type RelevanceSelection,
+  type RelevantConstructionSite,
 } from "../lib/relevant-construction-sites.ts";
+import { useMediaQuery } from "../hooks/useMediaQuery.ts";
 import { AppIcon } from "./AppIcon.tsx";
 import { ConstructionSiteCard } from "./ConstructionSiteCard.tsx";
 import { NotificationSwitch } from "./NotificationSwitch.tsx";
 import "./RelevantConstructionSites.css";
+
+const ConstructionSiteMap = lazy(() =>
+  import("./ConstructionSiteMap.tsx").then((module) => ({
+    default: module.ConstructionSiteMap,
+  })),
+);
+
+/**
+ * Wide enough for the cards and a map side by side. Below it the map is not
+ * mounted at all, so phones never download MapLibre for this screen; the
+ * "Alle Baustellen" destination is one tap away there.
+ */
+const SIDE_MAP_QUERY = "(min-width: 64rem)";
+
+/**
+ * Remembers that the visitor waved the notification banner away. A per-device
+ * convenience, so `localStorage` is enough; the settings still offer the
+ * switch. Storage can be missing or blocked, which simply shows the banner.
+ */
+const BANNER_DISMISSED_STORAGE_KEY = "faecherbagger:notification-banner-dismissed";
+
+const readIsBannerDismissed = (): boolean => {
+  try {
+    return window.localStorage.getItem(BANNER_DISMISSED_STORAGE_KEY) === "1";
+  } catch {
+    return false;
+  }
+};
+
+const storeIsBannerDismissed = () => {
+  try {
+    window.localStorage.setItem(BANNER_DISMISSED_STORAGE_KEY, "1");
+  } catch {
+    // Not remembered; the banner returns on the next visit.
+  }
+};
 
 /**
  * Cards shown per list before "Alle zeigen". A 5 km circle around the city
@@ -27,6 +72,11 @@ import "./RelevantConstructionSites.css";
  */
 const PREVIEW_COUNT = { soon: 8, running: 5 } as const;
 type ExpandableGroup = keyof typeof PREVIEW_COUNT;
+
+/** Jump targets for the summary tiles. */
+const SOON_GROUP_ID = "beginnt-bald";
+const RUNNING_GROUP_ID = "laeuft-gerade";
+const LATER_GROUP_ID = "spaeter-geplant";
 
 const NOTIFICATION_KIND_LABELS: Record<NotificationFeedEvent["kind"], string> = {
   new: "Neu angekündigt",
@@ -94,6 +144,19 @@ export function RelevantConstructionSites({
   const [expandedGroups, setExpandedGroups] = useState<
     ReadonlySet<ExpandableGroup>
   >(new Set());
+  const [isLaterOpen, setIsLaterOpen] = useState(
+    () => window.location.hash === `#${LATER_GROUP_ID}`,
+  );
+  const [isBannerDismissed, setIsBannerDismissed] = useState(
+    readIsBannerDismissed,
+  );
+  const [mapSelectedSiteId, setMapSelectedSiteId] = useState<string>();
+  const isSideMapShown = useMediaQuery(SIDE_MAP_QUERY);
+  // Stable between renders: the map refits whenever this array changes.
+  const mapConstructionSites = useMemo(
+    () => selection.all.map((relevant) => relevant.constructionSite),
+    [selection.all],
+  );
   // A batch notification opens `?bereich=fuer-mich#meldungen`.
   const [isHistoryOpen, setIsHistoryOpen] = useState(
     () => window.location.hash === "#meldungen",
@@ -161,7 +224,7 @@ export function RelevantConstructionSites({
     <ul className="site-cards">
       {constructionSites.map((relevant) => {
         const { constructionSite } = relevant;
-        const reason = relevant.areas[0]?.area.label;
+        const distance = describeAreaDistance(relevant, isMultiArea);
         return (
           <ConstructionSiteCard
             key={constructionSite.id}
@@ -171,7 +234,7 @@ export function RelevantConstructionSites({
             onDetailsOpen={() => onDetailOpen(constructionSite.id)}
             facts={[
               describeConstructionPeriod(constructionSite, selection.today),
-              ...(isMultiArea && reason ? [reason] : []),
+              ...(distance ? [distance] : []),
             ]}
             isFollowed={relevant.isFollowed}
             isChanged={relevant.isChanged}
@@ -237,122 +300,185 @@ export function RelevantConstructionSites({
     </ul>
   );
 
+  const summaryTiles = [
+    { targetId: SOON_GROUP_ID, count: soon.length, label: "beginnen bald" },
+    { targetId: RUNNING_GROUP_ID, count: running.length, label: "laufen" },
+    { targetId: LATER_GROUP_ID, count: later.length, label: "später" },
+  ];
+
   return (
-    <div className="relevant">
-      <div className="relevant__overview">
-        <p className="relevant__summary">
-          <span>
-            <strong>{soon.length}</strong> beginnen bald
-          </span>
-          <span>
-            <strong>{running.length}</strong> laufen
-          </span>
-          <span>
-            <strong>{later.length}</strong> später
-          </span>
-        </p>
-        <ul className="relevant__areas" aria-label="Ihre Orte">
-          {areas.map((area) => (
-            <li key={area.id} className="relevant__area">
-              {area.label} · {formatNotificationRadius(area.radiusKm)}
+    <div className="relevant-layout">
+      <div className="relevant">
+        <div className="relevant__overview">
+          {/*
+            Three numbers instead of a sentence: what the visitor scans for
+            first. Each one jumps to its list, so the tiles are not a dead end.
+          */}
+          <ul className="relevant__summary" aria-label="Übersicht">
+            {summaryTiles.map((tile) => (
+              <li key={tile.targetId}>
+                {tile.count > 0 ? (
+                  <a
+                    className="relevant__tile"
+                    href={`#${tile.targetId}`}
+                    onClick={() => {
+                      if (tile.targetId === LATER_GROUP_ID) setIsLaterOpen(true);
+                    }}
+                  >
+                    <strong>{tile.count}</strong> {tile.label}
+                  </a>
+                ) : (
+                  <span className="relevant__tile">
+                    <strong>0</strong> {tile.label}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+          <ul className="relevant__areas" aria-label="Ihre Orte">
+            {areas.map((area) => (
+              <li key={area.id} className="relevant__area">
+                {area.label} · {formatNotificationRadius(area.radiusKm)}
+              </li>
+            ))}
+            <li>
+              <a
+                className="relevant__edit"
+                href={getSettingsHref()}
+                onClick={(event) => {
+                  if (!isPlainClick(event)) return;
+                  event.preventDefault();
+                  onSettingsOpen();
+                }}
+              >
+                {areas.length > 0 ? "Orte ändern" : "Ort festlegen"}
+              </a>
             </li>
-          ))}
-          <li>
-            <a
-              className="relevant__edit"
-              href={getSettingsHref()}
-              onClick={(event) => {
-                if (!isPlainClick(event)) return;
-                event.preventDefault();
-                onSettingsOpen();
-              }}
-            >
-              {areas.length > 0 ? "Orte ändern" : "Ort festlegen"}
-            </a>
-          </li>
-        </ul>
-      </div>
+          </ul>
+        </div>
 
-      <NotificationSwitch pushNotifications={pushNotifications} variant="banner" />
+        {!isBannerDismissed && (
+          <NotificationSwitch
+            pushNotifications={pushNotifications}
+            variant="banner"
+            onDismiss={() => {
+              storeIsBannerDismissed();
+              setIsBannerDismissed(true);
+            }}
+          />
+        )}
 
-      {hasInboxError && (
-        <KernAlert variant="warning" title="Meldungen nicht geladen" />
-      )}
+        {hasInboxError && (
+          <KernAlert variant="warning" title="Meldungen nicht geladen" />
+        )}
 
-      {unreadEvents.length > 0 && (
+        {unreadEvents.length > 0 && (
+          <section
+            id="meldungen"
+            className="relevant__group relevant__group--inbox"
+            aria-labelledby="inbox-heading"
+          >
+            <div className="relevant__group-header">
+              <h2 id="inbox-heading">Neue Meldungen</h2>
+              <button type="button" className="relevant__text-button" onClick={onMarkRead}>
+                Gelesen
+              </button>
+            </div>
+            {renderNotificationEvents(unreadEvents)}
+          </section>
+        )}
+
         <section
-          id="meldungen"
-          className="relevant__group relevant__group--inbox"
-          aria-labelledby="inbox-heading"
+          id={SOON_GROUP_ID}
+          className="relevant__group"
+          aria-labelledby="soon-heading"
         >
-          <div className="relevant__group-header">
-            <h2 id="inbox-heading">Neue Meldungen</h2>
-            <button type="button" className="relevant__text-button" onClick={onMarkRead}>
-              Gelesen
-            </button>
-          </div>
-          {renderNotificationEvents(unreadEvents)}
-        </section>
-      )}
-
-      <section className="relevant__group" aria-labelledby="soon-heading">
-        <h2 id="soon-heading">
-          Beginnt bald
-          {soon.length > 0 && (
-            <span className="relevant__count">{soon.length}</span>
+          <h2 id="soon-heading">
+            Beginnt bald
+            {soon.length > 0 && (
+              <span className="relevant__count">{soon.length}</span>
+            )}
+          </h2>
+          {soon.length > 0 ? (
+            renderCappedSiteCards("soon", soon)
+          ) : (
+            <p className="relevant__empty">
+              In den nächsten {SHORT_NOTICE_LEAD_DAYS} Tagen beginnt nichts.
+            </p>
           )}
-        </h2>
-        {soon.length > 0 ? (
-          renderCappedSiteCards("soon", soon)
-        ) : (
-          <p className="relevant__empty">
-            In den nächsten {SHORT_NOTICE_LEAD_DAYS} Tagen beginnt nichts.
+        </section>
+
+        {running.length > 0 && (
+          <section
+            id={RUNNING_GROUP_ID}
+            className="relevant__group"
+            aria-labelledby="running-heading"
+          >
+            <h2 id="running-heading">
+              Läuft gerade <span className="relevant__count">{running.length}</span>
+            </h2>
+            {renderCappedSiteCards("running", running)}
+          </section>
+        )}
+
+        {later.length > 0 && (
+          <details
+            id={LATER_GROUP_ID}
+            className="relevant__disclosure"
+            open={isLaterOpen}
+            onToggle={(event) => setIsLaterOpen(event.currentTarget.open)}
+          >
+            <summary>
+              Später geplant <span className="relevant__count">{later.length}</span>
+            </summary>
+            {renderSiteCards(later)}
+          </details>
+        )}
+
+        {readEvents.length > 0 && (
+          <details
+            id={unreadEvents.length === 0 ? "meldungen" : undefined}
+            className="relevant__disclosure"
+            open={isHistoryOpen}
+            onToggle={(event) => setIsHistoryOpen(event.currentTarget.open)}
+          >
+            <summary>
+              Frühere Meldungen{" "}
+              <span className="relevant__count">{readEvents.length}</span>
+            </summary>
+            {renderNotificationEvents(readEvents)}
+          </details>
+        )}
+
+        {staleFollowedCount > 0 && (
+          <p className="relevant__stale">
+            {staleFollowedCount === 1
+              ? "1 gemerkte Baustelle ist nicht mehr in den Daten."
+              : `${staleFollowedCount} gemerkte Baustellen sind nicht mehr in den Daten.`}
+            <button type="button" className="relevant__text-button" onClick={onPruneFollowed}>
+              Entfernen
+            </button>
           </p>
         )}
-      </section>
-
-      {running.length > 0 && (
-        <section className="relevant__group" aria-labelledby="running-heading">
-          <h2 id="running-heading">
-            Läuft gerade <span className="relevant__count">{running.length}</span>
-          </h2>
-          {renderCappedSiteCards("running", running)}
-        </section>
-      )}
-
-      {later.length > 0 && (
-        <details className="relevant__disclosure">
-          <summary>
-            Später geplant <span className="relevant__count">{later.length}</span>
-          </summary>
-          {renderSiteCards(later)}
-        </details>
-      )}
-
-      {readEvents.length > 0 && (
-        <details
-          id={unreadEvents.length === 0 ? "meldungen" : undefined}
-          className="relevant__disclosure"
-          open={isHistoryOpen}
-          onToggle={(event) => setIsHistoryOpen(event.currentTarget.open)}
-        >
-          <summary>
-            Frühere Meldungen{" "}
-            <span className="relevant__count">{readEvents.length}</span>
-          </summary>
-          {renderNotificationEvents(readEvents)}
-        </details>
-      )}
-
-      {staleFollowedCount > 0 && (
-        <p className="relevant__stale">
-          {staleFollowedCount === 1
-            ? "1 gemerkte Baustelle ist nicht mehr in den Daten."
-            : `${staleFollowedCount} gemerkte Baustellen sind nicht mehr in den Daten.`}
-          <button type="button" className="relevant__text-button" onClick={onPruneFollowed}>
-            Entfernen
-          </button>
-        </p>
+      </div>
+      {isSideMapShown && (
+        <aside className="relevant__map" aria-label="Karte Ihrer Baustellen">
+          <Suspense fallback={null}>
+            <ConstructionSiteMap
+              constructionSites={mapConstructionSites}
+              selectedSiteId={mapSelectedSiteId}
+              notificationAreas={areas}
+              onSiteSelect={setMapSelectedSiteId}
+              getSiteDetailsHref={getDetailHref}
+              onSiteDetailsRequest={onDetailOpen}
+              onListViewRequest={() =>
+                document
+                  .querySelector<HTMLAnchorElement>(".relevant .site-card__link")
+                  ?.focus()
+              }
+            />
+          </Suspense>
+        </aside>
       )}
     </div>
   );

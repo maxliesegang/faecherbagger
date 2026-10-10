@@ -9,7 +9,6 @@ import {
   KernBadge,
   KernButton,
   KernIcon,
-  KernLink,
   KernLoader,
 } from "@kern-ux-annex/kern-react-kit";
 import type { ConstructionSite } from "../types/index.ts";
@@ -46,6 +45,8 @@ interface ConstructionSiteDetailProps {
   isFollowed: boolean;
   /** Returns false when the follow list is full; see the preferences hook. */
   onToggleFollowed: (siteId: string) => boolean;
+  /** Offers the way to notifications for a followed site while they are off. */
+  canEnableNotifications: boolean;
   onNotificationSettingsOpen: () => void;
 }
 
@@ -56,6 +57,7 @@ export function ConstructionSiteDetail({
   onShowOnMap,
   isFollowed,
   onToggleFollowed,
+  canEnableNotifications,
   onNotificationSettingsOpen,
 }: ConstructionSiteDetailProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -150,15 +152,10 @@ export function ConstructionSiteDetail({
           isFollowed={isFollowed}
           onToggleFollowed={onToggleFollowed}
         />
-        <KernButton
-          type="button"
-          variant="secondary"
-          label="Auf der Karte zeigen"
-          onClick={onShowOnMap}
-        />
+        <ShareConstructionSiteButton site={site} />
       </div>
 
-      {isFollowed && (
+      {isFollowed && canEnableNotifications && (
         <div className="construction-site-detail__notification">
           <KernButton
             type="button"
@@ -169,9 +166,38 @@ export function ConstructionSiteDetail({
         </div>
       )}
 
-      <Suspense fallback={<KernLoader />}>
-        <ConstructionSiteLocationMap constructionSite={site} />
-      </Suspense>
+      {/*
+        "Where" beside "what and when": the map and the ways to open it bigger
+        travel together. On wide screens this becomes the right-hand column.
+      */}
+      <section
+        className="construction-site-detail__location"
+        aria-label="Lage"
+      >
+        <Suspense fallback={<KernLoader />}>
+          <ConstructionSiteLocationMap constructionSite={site} />
+        </Suspense>
+        <div className="construction-site-detail__map-links">
+          <button
+            type="button"
+            className="construction-site-detail__map-link"
+            onClick={onShowOnMap}
+          >
+            In großer Karte zeigen
+          </button>
+          {/*
+            A plain `geo:` link hands the coordinates to whichever map
+            application the device actually uses, instead of picking a vendor
+            for the visitor.
+          */}
+          <a
+            className="construction-site-detail__map-link"
+            href={`geo:${site.point[1]},${site.point[0]}?q=${site.point[1]},${site.point[0]}`}
+          >
+            In Karten-App öffnen
+          </a>
+        </div>
+      </section>
 
       {site.notes && (
         <section className="construction-site-detail__notice">
@@ -185,17 +211,6 @@ export function ConstructionSiteDetail({
           <h2 className="kern-title">Weitere Informationen</h2>
         </summary>
         <section className="kern-accordion__body">
-          <div className="construction-site-detail__actions">
-            {/*
-              A plain `geo:` link hands the coordinates to whichever map application
-              the device actually uses, instead of picking a vendor for the visitor.
-            */}
-            <KernLink
-              href={`geo:${site.point[1]},${site.point[0]}?q=${site.point[1]},${site.point[0]}`}
-              label="In Karten-App öffnen"
-            />
-            <ShareConstructionSiteButton site={site} />
-          </div>
           <dl className="construction-site-detail__facts">
             <div>
               <dt>Zeitraum</dt>

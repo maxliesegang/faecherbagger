@@ -18,6 +18,8 @@ interface NotificationSwitchProps {
   pushNotifications: PushNotificationsController;
   /** Compact banner on the personal screen; full row in the settings. */
   variant?: "banner" | "row";
+  /** Offers "Nicht jetzt" on the banner; the settings keep the switch. */
+  onDismiss?: () => void;
 }
 
 /**
@@ -28,6 +30,7 @@ interface NotificationSwitchProps {
 export function NotificationSwitch({
   pushNotifications,
   variant = "row",
+  onDismiss,
 }: NotificationSwitchProps) {
   const {
     subscriptionState,
@@ -76,13 +79,33 @@ export function NotificationSwitch({
         )}
       </div>
       {!isActive && !unavailableReason && subscriptionState !== "unknown" && (
-        <KernButton
+        <div className="notification-switch__actions">
+          <KernButton
+            type="button"
+            variant="primary"
+            label="Einschalten"
+            disabled={isBusy}
+            onClick={() => void pushNotifications.enable()}
+          />
+          {variant === "banner" && onDismiss && (
+            <KernButton
+              type="button"
+              variant="tertiary"
+              label="Nicht jetzt"
+              onClick={onDismiss}
+            />
+          )}
+        </div>
+      )}
+      {variant === "banner" && unavailableReason && onDismiss && (
+        <button
           type="button"
-          variant={variant === "banner" ? "primary" : "secondary"}
-          label="Einschalten"
-          disabled={isBusy}
-          onClick={() => void pushNotifications.enable()}
-        />
+          className="notification-switch__dismiss"
+          aria-label="Hinweis ausblenden"
+          onClick={onDismiss}
+        >
+          ×
+        </button>
       )}
       {isActive && variant === "row" && (
         <KernButton

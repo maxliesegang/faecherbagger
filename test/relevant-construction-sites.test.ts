@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { ConstructionSite, NotificationArea } from "../src/types/index.ts";
 import {
+  describeAreaDistance,
   findAreaMatches,
   selectRelevantConstructionSites,
 } from "../src/lib/relevant-construction-sites.ts";
@@ -231,5 +232,27 @@ describe("selectRelevantConstructionSites", () => {
     const order = sites.map((site) => site.id);
     selectRelevantConstructionSites(sites, [HOME], { today: TODAY });
     expect(sites.map((site) => site.id)).toEqual(order);
+  });
+});
+
+describe("describeAreaDistance", () => {
+  const site = createConstructionSite({ id: "a", point: [8.4037, 49.011] });
+
+  it("names the distance, and the place once there are several", () => {
+    const [relevant] = selectRelevantConstructionSites([site], [HOME], {
+      today: TODAY,
+    }).all;
+    expect(describeAreaDistance(relevant, false)).toMatch(/^\d+ m entfernt$/);
+    expect(describeAreaDistance(relevant, true)).toMatch(
+      new RegExp(`^\\d+ m von ${HOME.label}$`),
+    );
+  });
+
+  it("says nothing for a site that is only followed", () => {
+    const [relevant] = selectRelevantConstructionSites([site], [], {
+      today: TODAY,
+      followedSiteIds: new Set(["a"]),
+    }).all;
+    expect(describeAreaDistance(relevant, false)).toBeUndefined();
   });
 });

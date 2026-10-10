@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { KernButton } from "@kern-ux-annex/kern-react-kit";
 import type {
   ConstructionSiteMetadata,
@@ -12,7 +13,6 @@ import {
   MAX_NOTIFICATION_AREAS,
 } from "../lib/notification-preferences.ts";
 import { formatISOTimestamp } from "../lib/construction-site-labels.ts";
-import { UNOFFICIAL_NOTICE } from "../lib/site-operator.ts";
 import { NotificationSwitch } from "./NotificationSwitch.tsx";
 import "./SettingsPage.css";
 
@@ -46,118 +46,150 @@ export function SettingsPage({
   metadata,
 }: SettingsPageProps) {
   const canAddArea = preferences.areas.length < MAX_NOTIFICATION_AREAS;
-  const canConfigureNotifications =
-    pushNotifications.unavailableReason !== "unconfigured" &&
-    pushNotifications.unavailableReason !== "unsupported";
+  // Removing a place drops its distance settings with it, so it asks once.
+  const [confirmingAreaId, setConfirmingAreaId] = useState<string>();
 
   return (
     <div className="settings">
-      <section className="settings__section" aria-labelledby="settings-areas">
-        <h2 id="settings-areas">Ihre Orte</h2>
-        {preferences.areas.length === 0 ? (
-          <p className="settings__muted">Noch kein Ort festgelegt.</p>
-        ) : (
-          <ul className="settings__list">
-            {preferences.areas.map((area) => (
-              <li key={area.id} className="settings__row">
-                <span className="settings__row-text">
-                  <strong>{area.label}</strong>
-                  <span>{formatNotificationRadius(area.radiusKm)} Umkreis</span>
-                </span>
-                <span className="settings__row-actions">
-                  <button type="button" onClick={() => onAreaEdit(area)}>
-                    Ändern<span className="kern-sr-only"> – {area.label}</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      onPreferencesChange({
-                        ...preferences,
-                        areas: removeNotificationArea(preferences.areas, area.id),
-                      })
-                    }
-                  >
-                    Entfernen<span className="kern-sr-only"> – {area.label}</span>
-                  </button>
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-        {canAddArea && (
-          <KernButton
-            type="button"
-            variant={preferences.areas.length === 0 ? "primary" : "secondary"}
-            label={preferences.areas.length === 0 ? "Ort festlegen" : "Ort hinzufügen"}
-            onClick={() => onAreaEdit()}
-          />
-        )}
-        {preferences.followedSiteIds.length > 0 && (
-          <p className="settings__muted">
-            {preferences.followedSiteIds.length === 1
-              ? "Dazu 1 gemerkte Baustelle."
-              : `Dazu ${preferences.followedSiteIds.length} gemerkte Baustellen.`}
-          </p>
-        )}
-      </section>
+      {/* What the visitor comes here to change. */}
+      <div className="settings__column">
+        <section className="settings__section" aria-labelledby="settings-areas">
+          <h2 id="settings-areas">Ihre Orte</h2>
+          {preferences.areas.length === 0 ? (
+            <p className="settings__muted">Noch kein Ort festgelegt.</p>
+          ) : (
+            <ul className="settings__list">
+              {preferences.areas.map((area) => (
+                <li key={area.id} className="settings__row">
+                  <span className="settings__row-text">
+                    <strong>{area.label}</strong>
+                    <span>{formatNotificationRadius(area.radiusKm)} Umkreis</span>
+                  </span>
+                  {confirmingAreaId === area.id ? (
+                    <span
+                      className="settings__row-actions"
+                      role="group"
+                      aria-label={`${area.label} entfernen?`}
+                    >
+                      <button
+                        type="button"
+                        className="settings__danger"
+                        onClick={() => {
+                          setConfirmingAreaId(undefined);
+                          onPreferencesChange({
+                            ...preferences,
+                            areas: removeNotificationArea(preferences.areas, area.id),
+                          });
+                        }}
+                      >
+                        Wirklich entfernen
+                      </button>
+                      {/*
+                        The pressed button is gone, so focus moves here: the
+                        safe choice, so a second Enter does not delete.
+                      */}
+                      <button
+                        type="button"
+                        autoFocus
+                        onClick={() => setConfirmingAreaId(undefined)}
+                      >
+                        Abbrechen
+                      </button>
+                    </span>
+                  ) : (
+                    <span className="settings__row-actions">
+                      <button type="button" onClick={() => onAreaEdit(area)}>
+                        Ändern<span className="kern-sr-only"> – {area.label}</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setConfirmingAreaId(area.id)}
+                      >
+                        Entfernen<span className="kern-sr-only"> – {area.label}</span>
+                      </button>
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+          {canAddArea && (
+            <KernButton
+              type="button"
+              variant={preferences.areas.length === 0 ? "primary" : "secondary"}
+              label={preferences.areas.length === 0 ? "Ort festlegen" : "Ort hinzufügen"}
+              onClick={() => onAreaEdit()}
+            />
+          )}
+          {preferences.followedSiteIds.length > 0 && (
+            <p className="settings__muted">
+              {preferences.followedSiteIds.length === 1
+                ? "Dazu 1 gemerkte Baustelle."
+                : `Dazu ${preferences.followedSiteIds.length} gemerkte Baustellen.`}
+            </p>
+          )}
+        </section>
 
-      <section
-        className="settings__section"
-        aria-labelledby="settings-notifications"
-      >
-        <h2 id="settings-notifications">Benachrichtigungen</h2>
-        <NotificationSwitch pushNotifications={pushNotifications} />
-        {canConfigureNotifications && (
-          <>
-            <fieldset className="settings__fieldset">
-              <legend>Worüber?</legend>
-              {SEVERITY_OPTIONS.map((option) => (
-                <label key={option.value} className="settings__choice">
+        <section
+          className="settings__section"
+          aria-labelledby="settings-notifications"
+        >
+          <h2 id="settings-notifications">Benachrichtigungen</h2>
+          <NotificationSwitch pushNotifications={pushNotifications} />
+          {/*
+            The options only mean something once notifications are on; until
+            then they are noise between the switch and the next section.
+          */}
+          {pushNotifications.isActive && (
+            <div className="settings__options">
+              <fieldset className="settings__fieldset">
+                <legend>Worüber?</legend>
+                {SEVERITY_OPTIONS.map((option) => (
+                  <label key={option.value} className="settings__choice">
+                    <input
+                      type="radio"
+                      name="settings-severity"
+                      checked={preferences.minSeverity === option.value}
+                      onChange={() =>
+                        onPreferencesChange({
+                          ...preferences,
+                          minSeverity: option.value,
+                        })
+                      }
+                    />
+                    {option.label}
+                  </label>
+                ))}
+              </fieldset>
+              <fieldset className="settings__fieldset">
+                <legend>Wann?</legend>
+                <label className="settings__choice">
                   <input
-                    type="radio"
-                    name="settings-severity"
-                    checked={preferences.minSeverity === option.value}
-                    onChange={() =>
+                    type="checkbox"
+                    checked={preferences.remindDayBefore !== false}
+                    onChange={(event) =>
                       onPreferencesChange({
                         ...preferences,
-                        minSeverity: option.value,
+                        remindDayBefore: event.currentTarget.checked,
                       })
                     }
                   />
-                  {option.label}
+                  Am Tag vor Beginn erinnern
                 </label>
-              ))}
-            </fieldset>
-            <fieldset className="settings__fieldset">
-              <legend>Wann?</legend>
-              <label className="settings__choice">
-                <input
-                  type="checkbox"
-                  checked={preferences.remindDayBefore !== false}
-                  onChange={(event) =>
-                    onPreferencesChange({
-                      ...preferences,
-                      remindDayBefore: event.currentTarget.checked,
-                    })
-                  }
-                />
-                Am Tag vor Beginn erinnern
-              </label>
-              <label className="settings__choice">
-                <input
-                  type="checkbox"
-                  checked={preferences.notifyEarly === true}
-                  onChange={(event) =>
-                    onPreferencesChange({
-                      ...preferences,
-                      notifyEarly: event.currentTarget.checked,
-                    })
-                  }
-                />
-                Schon bei Ankündigung, nicht erst 14 Tage vorher
-              </label>
-            </fieldset>
-            {pushNotifications.isActive && (
+                <label className="settings__choice">
+                  <input
+                    type="checkbox"
+                    checked={preferences.notifyEarly === true}
+                    onChange={(event) =>
+                      onPreferencesChange({
+                        ...preferences,
+                        notifyEarly: event.currentTarget.checked,
+                      })
+                    }
+                  />
+                  Schon bei Ankündigung, nicht erst 14 Tage vorher
+                </label>
+              </fieldset>
               <KernButton
                 type="button"
                 variant="tertiary"
@@ -165,57 +197,59 @@ export function SettingsPage({
                 disabled={pushNotifications.isBusy}
                 onClick={() => void pushNotifications.sendTest()}
               />
-            )}
-          </>
-        )}
-        <p className="settings__muted">
-          Ihre Orte bleiben auf diesem Gerät. Für Benachrichtigungen speichert
-          der Server nur eine anonyme Geräteadresse.
-        </p>
-      </section>
+            </div>
+          )}
+          <p className="settings__muted">
+            Ihre Orte bleiben auf diesem Gerät. Für Benachrichtigungen speichert
+            der Server nur eine anonyme Geräteadresse.
+          </p>
+        </section>
+      </div>
 
-      <section className="settings__section" aria-labelledby="settings-app">
-        <h2 id="settings-app">App</h2>
-        <div className="settings__actions">
-          {!pushNotifications.isInstalled && pushNotifications.install && (
+      {/* About the app; beside the main column once there is room. */}
+      <div className="settings__column settings__column--secondary">
+        <section className="settings__section" aria-labelledby="settings-app">
+          <h2 id="settings-app">App</h2>
+          <div className="settings__actions">
+            {!pushNotifications.isInstalled && pushNotifications.install && (
+              <KernButton
+                type="button"
+                variant="secondary"
+                label="App installieren"
+                onClick={() => void pushNotifications.install?.()}
+              />
+            )}
             <KernButton
               type="button"
               variant="secondary"
-              label="App installieren"
-              onClick={() => void pushNotifications.install?.()}
+              label="Daten aktualisieren"
+              onClick={pushNotifications.refreshData}
             />
-          )}
-          <KernButton
-            type="button"
-            variant="secondary"
-            label="Daten aktualisieren"
-            onClick={pushNotifications.refreshData}
-          />
-        </div>
-        <p className="settings__muted">
-          Stand der Daten: {formatISOTimestamp(metadata.fetchedAt)}
-        </p>
-      </section>
+          </div>
+          <p className="settings__muted">
+            Stand der Daten: {formatISOTimestamp(metadata.fetchedAt)}
+          </p>
+        </section>
 
-      <section className="settings__section" aria-labelledby="settings-about">
-        <h2 id="settings-about">Über Fächerbagger</h2>
-        <p>{UNOFFICIAL_NOTICE}</p>
-        <p className="settings__muted">
-          Daten: {metadata.source.name}. Quellen:{" "}
-          {metadata.attribution.join(", ")}.
-        </p>
-        <ul className="settings__links">
-          <li>
-            <a href="https://mobil.trk.de/">Mobilitätsportal der TRK</a>
-          </li>
-          <li>
-            <a href={`${import.meta.env.BASE_URL}baustellen.xml`}>RSS-Feed</a>
-          </li>
-          <li>
-            <a href={`${import.meta.env.BASE_URL}baustellen.atom`}>Atom-Feed</a>
-          </li>
-        </ul>
-      </section>
+        <section className="settings__section" aria-labelledby="settings-about">
+          <h2 id="settings-about">Datenquelle</h2>
+          <p className="settings__muted">
+            Daten: {metadata.source.name}. Quellen:{" "}
+            {metadata.attribution.join(", ")}.
+          </p>
+          <ul className="settings__links">
+            <li>
+              <a href="https://mobil.trk.de/">Mobilitätsportal der TRK</a>
+            </li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}baustellen.xml`}>RSS-Feed</a>
+            </li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}baustellen.atom`}>Atom-Feed</a>
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
   );
 }

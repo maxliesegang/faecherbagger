@@ -393,7 +393,7 @@ export function ConstructionSiteMap({
           type="button"
           variant="tertiary"
           className="map-explorer__fit"
-          label="Alle zeigen"
+          label="Auf alle zoomen"
           onClick={() => {
             if (mapRef.current) {
               fitConstructionSites(mapRef.current, constructionSites);

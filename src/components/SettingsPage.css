@@ -4,6 +4,26 @@
   max-width: 40rem;
 }
 
+.settings__column {
+  display: grid;
+  align-content: start;
+  gap: 2rem;
+  min-width: 0;
+}
+
+@media (min-width: 64rem) {
+  .settings {
+    grid-template-columns: minmax(0, 40rem) minmax(0, 22rem);
+    gap: 3rem;
+    max-width: none;
+  }
+
+  .settings__column--secondary {
+    padding-left: 2rem;
+    border-left: 1px solid var(--app-border);
+  }
+}
+
 .settings__section {
   display: grid;
   justify-items: start;
@@ -72,6 +92,21 @@
 .settings__row-actions button:focus-visible {
   outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: 2px;
+}
+
+/* The options hang off the switch above them, so they share its surface. */
+.settings__options {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.25rem 1rem 0.75rem;
+  border-left: 3px solid var(--app-border);
+  box-sizing: border-box;
+}
+
+.settings__row-actions .settings__danger {
+  color: var(--severity-full, #a4262c);
 }
 
 .settings__fieldset {

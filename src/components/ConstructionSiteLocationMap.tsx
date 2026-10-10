@@ -26,6 +26,11 @@ interface ConstructionSiteLocationMapProps {
 }
 
 const GEOMETRY_SOURCE_ID = "construction-site-geometry";
+/**
+ * The representative point, drawn on top of the shape. A short segment is a
+ * few pixels of line at this zoom; the marker is what the eye finds first.
+ */
+const POINT_SOURCE_ID = "construction-site-point";
 /** Enough context to recognize the street, without inviting panning. */
 const CONTEXT_RADIUS_KM = 0.35;
 
@@ -97,11 +102,14 @@ export function ConstructionSiteLocationMap({
         source: GEOMETRY_SOURCE_ID,
         paint: { "line-color": color, "line-width": 4, "line-opacity": 0.95 },
       });
+      map.addSource(POINT_SOURCE_ID, {
+        type: "geojson",
+        data: createConstructionSitePointFeatureCollection([constructionSite]),
+      });
       map.addLayer({
-        id: `${GEOMETRY_SOURCE_ID}-point`,
+        id: `${POINT_SOURCE_ID}-circle`,
         type: "circle",
-        source: GEOMETRY_SOURCE_ID,
-        filter: ["==", ["geometry-type"], "Point"],
+        source: POINT_SOURCE_ID,
         paint: {
           "circle-color": color,
           "circle-radius": 9,

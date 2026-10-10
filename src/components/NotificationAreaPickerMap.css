@@ -3,7 +3,8 @@
 .notification-area-picker-map {
   height: clamp(12rem, 32dvh, 20rem);
   margin: 0.85rem 1.1rem;
-  border: 1px solid var(--app-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
 }
 
 .notification-area-picker-map .maplibregl-ctrl-attrib {

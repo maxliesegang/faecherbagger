@@ -3,7 +3,7 @@ import type {
   ISODate,
   NotificationArea,
 } from "../types/index.ts";
-import { distanceInMeters } from "./distance.ts";
+import { distanceInMeters, formatDistance } from "./distance.ts";
 import {
   compareByShortNoticeUrgency,
   getConstructionSiteTiming,
@@ -124,6 +124,23 @@ export function findAreaMatches(
     }
   }
   return matches.sort((left, right) => left.distanceMeters - right.distanceMeters);
+}
+
+/**
+ * How far a relevant site is from the place that made it relevant, for a card:
+ * "350 m entfernt", or "350 m von Arbeit" once there is more than one place to
+ * be near. `undefined` for a site that is relevant only because it is followed.
+ */
+export function describeAreaDistance(
+  relevant: RelevantConstructionSite,
+  isMultiArea: boolean,
+): string | undefined {
+  const nearest = relevant.areas[0];
+  if (!nearest) return undefined;
+  const distance = formatDistance(nearest.distanceMeters);
+  return isMultiArea
+    ? `${distance} von ${nearest.area.label}`
+    : `${distance} entfernt`;
 }
 
 /**

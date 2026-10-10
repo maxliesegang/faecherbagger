@@ -4,14 +4,17 @@
  */
 .legal-page {
   max-width: 46rem;
-  margin-block: 0.5rem 2rem;
+  margin-block: 0 2rem;
+  padding-top: 1.25rem;
 }
 
+/* Same place and size as the detail page's back link. */
 .legal-page__back {
   display: inline-flex;
   gap: 0.35rem;
   align-items: center;
-  margin-bottom: 0.85rem;
+  min-height: 2.75rem;
+  margin-bottom: 0.5rem;
   font-weight: 700;
 }
 

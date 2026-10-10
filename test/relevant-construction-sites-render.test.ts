@@ -166,9 +166,23 @@ describe("personal view rendering", () => {
     expect(html).toContain("Zugestellter-Hinweis");
   });
 
-  it("offers to switch notifications on", () => {
+  it("offers to switch notifications on, or to dismiss the offer", () => {
     const html = render();
     expect(html).toContain("Benachrichtigungen sind aus");
     expect(html).toContain("Einschalten");
+    expect(html).toContain("Nicht jetzt");
+  });
+
+  it("links each summary number to its list and leaves a zero inert", () => {
+    const html = render();
+    expect(html).toMatch(/href="#beginnt-bald"><strong>1<\/strong> beginnen bald/);
+    expect(html).toContain('<details id="spaeter-geplant"');
+    const onlyLater = render("", [], [], new Set(["Später-im-November"]));
+    expect(onlyLater).not.toContain('href="#beginnt-bald"');
+    expect(onlyLater).toContain("<strong>0</strong> beginnen bald");
+  });
+
+  it("says how far each site is from the place", () => {
+    expect(render()).toContain("&lt; 50 m entfernt");
   });
 });

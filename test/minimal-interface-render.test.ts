@@ -37,8 +37,8 @@ describe("minimal interface", () => {
       unreadCount: 2,
     }));
     const text = html.replace(/<[^>]*>/g, "");
-    expect(text.indexOf("Für mich")).toBeLessThan(text.indexOf("Karte"));
-    expect(text.indexOf("Karte")).toBeLessThan(text.indexOf("Einstellungen"));
+    expect(text.indexOf("Für mich")).toBeLessThan(text.indexOf("Alle Baustellen"));
+    expect(text.indexOf("Alle Baustellen")).toBeLessThan(text.indexOf("Einstellungen"));
     expect(html).toContain('href="./" aria-current="page"');
     expect(html).toContain('href="?bereich=explore"');
     expect(text).toContain("2 neue Meldungen");

@@ -1,9 +1,10 @@
 import {
   useMemo,
+  type CSSProperties,
   type MouseEvent as ReactMouseEvent,
   type ReactNode,
 } from "react";
-import { KernBadge, KernButton, KernIcon } from "@kern-ux-annex/kern-react-kit";
+import { KernButton, KernIcon } from "@kern-ux-annex/kern-react-kit";
 import type { ConstructionSite, LngLat } from "../types/index.ts";
 import { distanceInMeters, formatDistance } from "../lib/distance.ts";
 import type {
@@ -11,11 +12,10 @@ import type {
   ConstructionSiteSortKey,
 } from "../lib/construction-site-sort.ts";
 import {
+  CLOSURE_SEVERITY_COLORS,
   getClosureLabel,
-  getClosureBadgeVariant,
   formatConstructionPeriod,
   getConstructionPhaseLabel,
-  getConstructionPhaseBadgeVariant,
 } from "../lib/construction-site-labels.ts";
 import {
   describeConstructionPeriod,
@@ -27,6 +27,7 @@ import {
   useIncrementalList,
 } from "../hooks/useIncrementalList.ts";
 import type { ResultLayout } from "../hooks/useResultLayout.ts";
+import { AppIcon } from "./AppIcon.tsx";
 import { ConstructionSiteCard } from "./ConstructionSiteCard.tsx";
 import "./ConstructionSiteTable.css";
 
@@ -78,11 +79,12 @@ const BASE_COLUMNS: readonly ConstructionSiteTableColumn[] = [
   {
     key: "phase",
     label: "Status",
+    // Plain text: a badge in every row of every column turned the table into
+    // a wall of boxes, and the status is a fact, not an alert.
     render: (site) => (
-      <KernBadge
-        variant={getConstructionPhaseBadgeVariant(site.phase)}
-        label={getConstructionPhaseLabel(site.phase)}
-      />
+      <span className={`construction-site-table__phase--${site.phase}`}>
+        {getConstructionPhaseLabel(site.phase)}
+      </span>
     ),
   },
   {
@@ -107,11 +109,19 @@ const BASE_COLUMNS: readonly ConstructionSiteTableColumn[] = [
   {
     key: "closure",
     label: "Sperrung",
+    // The same colour as the card bar and the map marker, with the label
+    // beside it so the colour is never the only signal.
     render: (site) => (
-      <KernBadge
-        variant={getClosureBadgeVariant(site.closure)}
-        label={getClosureLabel(site.closure)}
-      />
+      <span
+        className="construction-site-table__closure"
+        style={
+          {
+            "--closure-color": CLOSURE_SEVERITY_COLORS[site.closure],
+          } as CSSProperties
+        }
+      >
+        {getClosureLabel(site.closure)}
+      </span>
     ),
   },
 ];
@@ -185,8 +195,7 @@ export function ConstructionSiteTable({
         aria-label={`${site.location} auf der Karte zeigen`}
         onClick={() => onShowSiteOnMap(site.id)}
       >
-        {/* KERN has no map pin; "show" is the closest honest icon. */}
-        <KernIcon icon="visibility" />
+        <AppIcon name="map" />
         {label && <span aria-hidden="true">{label}</span>}
       </button>
     );

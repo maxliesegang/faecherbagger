@@ -91,4 +91,13 @@
     border-radius: 0.75rem;
     font-size: 0.75rem;
   }
+
+  /*
+    One line down to 320 px; should a label still not fit, it wraps centred
+    rather than being clipped.
+  */
+  .app-navigation__label {
+    line-height: 1.2;
+    text-align: center;
+  }
 }

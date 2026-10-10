@@ -28,9 +28,26 @@
   overflow-wrap: anywhere;
 }
 
-.construction-site-table .kern-badge {
-  overflow-wrap: normal;
-  white-space: normal;
+.construction-site-table__closure {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: baseline;
+  font-weight: 600;
+}
+
+.construction-site-table__closure::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--closure-color);
+}
+
+/* Planned is what changes soon, so it gets the one accent in the column. */
+.construction-site-table__phase--upcoming {
+  color: var(--phase-upcoming);
+  font-weight: 600;
 }
 
 .construction-site-table .kern-table__cell,
@@ -50,10 +67,35 @@
   width: 30%;
 }
 
+/*
+ * "Aktuell"/"Geplant" is one short word, so the status column gives its share
+ * to the period, whose two dates then fit on one line.
+ */
+.construction-site-table [data-column="municipality"] {
+  width: 13%;
+}
+
+.construction-site-table [data-column="phase"] {
+  width: 10%;
+}
+
+.construction-site-table [data-column="period"] {
+  width: 24%;
+}
+
+.construction-site-table__period {
+  white-space: nowrap;
+}
+
 /* Wide enough for the "Entfernung" header plus its sort arrow, which cannot
  * wrap and would otherwise push the table into a horizontal scroll. */
 .construction-site-table [data-column="distance"] {
-  width: 14%;
+  width: 11%;
+}
+
+/* The distance column's share comes out of the location, not the closure. */
+.construction-site-table:has([data-column="distance"]) [data-column="location"] {
+  width: 25%;
 }
 
 /* Values stay on one line; the longer header label above them may wrap. */
@@ -140,6 +182,11 @@
 
 .construction-site-table__map-button:hover {
   text-decoration: underline;
+}
+
+.construction-site-table__map-button .app-icon {
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
 .construction-site-table__details-link:focus-visible,
