@@ -3,7 +3,11 @@ import type {
   ISODate,
   NotificationArea,
 } from "../types/index.ts";
-import { distanceInMeters, formatDistance } from "./distance.ts";
+import { formatDistance } from "./distance.ts";
+import {
+  measureNotificationAreaMatch,
+  type NotificationAreaTarget,
+} from "./notification-area-match.ts";
 import {
   compareByShortNoticeUrgency,
   getConstructionSiteTiming,
@@ -25,7 +29,11 @@ import {
  * timing and severity rules so planning remains visible without extra pushes.
  */
 
-/** One watched area a site falls inside, and how far it is from that centre. */
+/**
+ * One watched area a site falls inside, and how far it is from that centre or
+ * route. `0` for areas without a meaningful distance (outline, municipality,
+ * street).
+ */
 export interface AreaMatch {
   area: NotificationArea;
   distanceMeters: number;
@@ -106,7 +114,7 @@ const byDistance = (
   left.constructionSite.id.localeCompare(right.constructionSite.id);
 
 /**
- * The watched areas a point falls inside, nearest centre first.
+ * The watched areas a site falls inside, nearest first.
  *
  * All of them, not just the first: someone whose "Zuhause" and "Arbeit" circles
  * overlap should see why a site matters in both, and the nearest one is what
@@ -114,22 +122,21 @@ const byDistance = (
  */
 export function findAreaMatches(
   areas: readonly NotificationArea[],
-  point: ConstructionSite["point"],
+  target: NotificationAreaTarget,
 ): AreaMatch[] {
   const matches: AreaMatch[] = [];
   for (const area of areas) {
-    const distance = distanceInMeters(area.center, point);
-    if (distance <= area.radiusKm * 1_000) {
-      matches.push({ area, distanceMeters: distance });
-    }
+    const distanceMeters = measureNotificationAreaMatch(area, target);
+    if (distanceMeters !== undefined) matches.push({ area, distanceMeters });
   }
   return matches.sort((left, right) => left.distanceMeters - right.distanceMeters);
 }
 
 /**
- * How far a relevant site is from the place that made it relevant, for a card:
- * "350 m entfernt", or "350 m von Arbeit" once there is more than one place to
- * be near. `undefined` for a site that is relevant only because it is followed.
+ * Where a relevant site is relative to the place that made it relevant, for a
+ * card: "350 m entfernt" for a circle, "an Ihrer Strecke" for a route, or the
+ * place's name once there is more than one to tell apart. `undefined` for a
+ * site that is relevant only because it is followed.
  */
 export function describeAreaDistance(
   relevant: RelevantConstructionSite,
@@ -137,10 +144,21 @@ export function describeAreaDistance(
 ): string | undefined {
   const nearest = relevant.areas[0];
   if (!nearest) return undefined;
-  const distance = formatDistance(nearest.distanceMeters);
-  return isMultiArea
-    ? `${distance} von ${nearest.area.label}`
-    : `${distance} entfernt`;
+  const { area } = nearest;
+  switch (area.kind) {
+    case "circle": {
+      const distance = formatDistance(nearest.distanceMeters);
+      return isMultiArea ? `${distance} von ${area.label}` : `${distance} entfernt`;
+    }
+    case "corridor":
+      return isMultiArea ? `An Strecke ${area.label}` : "An Ihrer Strecke";
+    case "polygon":
+      return isMultiArea ? `In ${area.label}` : "In Ihrer Fläche";
+    case "municipality":
+      return `In ${area.municipality}`;
+    case "street":
+      return area.street;
+  }
 }
 
 /**
@@ -161,7 +179,7 @@ export function selectRelevantConstructionSites(
   const all: RelevantConstructionSite[] = [];
   for (const constructionSite of constructionSites) {
     const isFollowed = followedSiteIds?.has(constructionSite.id) ?? false;
-    const areaMatches = findAreaMatches(areas, constructionSite.point);
+    const areaMatches = findAreaMatches(areas, constructionSite);
     if (areaMatches.length === 0 && !isFollowed) continue;
     all.push({
       constructionSite,

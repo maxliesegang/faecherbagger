@@ -65,6 +65,10 @@ export function isNotificationFeedEvent(
     typeof event.signature === "string" &&
     typeof event.siteId === "string" &&
     isLngLat(event.point) &&
+    (event.extentPoints === undefined ||
+      (Array.isArray(event.extentPoints) &&
+        event.extentPoints.length <= 64 &&
+        event.extentPoints.every(isLngLat))) &&
     ["none", "obstruction", "one-direction", "full", "unknown"].includes(
       event.closure ?? "",
     ) &&

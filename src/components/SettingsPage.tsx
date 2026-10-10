@@ -7,11 +7,11 @@ import type {
   NotificationSeverityThreshold,
 } from "../types/index.ts";
 import type { PushNotificationsController } from "../hooks/usePushNotifications.ts";
-import { removeNotificationArea } from "../lib/notification-area.ts";
 import {
-  formatNotificationRadius,
-  MAX_NOTIFICATION_AREAS,
-} from "../lib/notification-preferences.ts";
+  describeNotificationArea,
+  removeNotificationArea,
+} from "../lib/notification-area.ts";
+import { MAX_NOTIFICATION_AREAS } from "../lib/notification-preferences.ts";
 import { formatISOTimestamp } from "../lib/construction-site-labels.ts";
 import { NotificationSwitch } from "./NotificationSwitch.tsx";
 import "./SettingsPage.css";
@@ -63,7 +63,7 @@ export function SettingsPage({
                 <li key={area.id} className="settings__row">
                   <span className="settings__row-text">
                     <strong>{area.label}</strong>
-                    <span>{formatNotificationRadius(area.radiusKm)} Umkreis</span>
+                    <span>{describeNotificationArea(area)}</span>
                   </span>
                   {confirmingAreaId === area.id ? (
                     <span

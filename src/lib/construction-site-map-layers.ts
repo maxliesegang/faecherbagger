@@ -15,6 +15,17 @@ import {
   createNotificationAreaFeatureCollection,
   createUserLocationFeatureCollection,
 } from "./map-geojson.ts";
+import {
+  findBasemapRoadLayerId,
+  NOTIFICATION_AREA_COLOR,
+  NOTIFICATION_AREA_CORRIDOR_COLOR_SUBTLE,
+  NOTIFICATION_AREA_CORRIDOR_FILTER,
+  NOTIFICATION_AREA_CORRIDOR_WIDTH,
+  NOTIFICATION_AREA_LABEL_FILTER,
+  NOTIFICATION_AREA_LABEL_LAYOUT,
+  NOTIFICATION_AREA_LABEL_PAINT,
+  NOTIFICATION_AREA_POLYGON_FILTER,
+} from "./notification-area-map-style.ts";
 
 export const MAP_SOURCE_IDS = {
   points: "baustellen-points",
@@ -25,7 +36,10 @@ export const MAP_SOURCE_IDS = {
 
 export const MAP_LAYER_IDS = {
   notificationAreaFill: "notification-area-fill",
+  notificationAreaCorridorOutline: "notification-area-corridor-outline",
+  notificationAreaCorridor: "notification-area-corridor",
   notificationAreaLine: "notification-area-line",
+  notificationAreaLabel: "notification-area-label",
   areaFill: "baustellen-area-fill",
   geometryLine: "baustellen-geometry-line",
   clusters: "baustellen-clusters",
@@ -171,21 +185,64 @@ export function addConstructionSiteMapLayers(
     id: MAP_LAYER_IDS.notificationAreaFill,
     type: "fill",
     source: MAP_SOURCE_IDS.notificationArea,
+    filter: NOTIFICATION_AREA_POLYGON_FILTER,
     paint: {
-      "fill-color": "#2459a9",
+      "fill-color": NOTIFICATION_AREA_COLOR,
       "fill-opacity": 0.035,
     },
   });
+  const basemapRoadLayerId = findBasemapRoadLayerId(map);
+  // The outline is drawn first and sits just outside the band, so the band
+  // covers where the outline crosses itself on the inside of a bend.
+  map.addLayer(
+    {
+      id: MAP_LAYER_IDS.notificationAreaCorridorOutline,
+      type: "line",
+      source: MAP_SOURCE_IDS.notificationArea,
+      filter: NOTIFICATION_AREA_CORRIDOR_FILTER,
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": NOTIFICATION_AREA_COLOR,
+        "line-width": 1,
+        "line-gap-width": NOTIFICATION_AREA_CORRIDOR_WIDTH,
+        "line-opacity": 0.55,
+        "line-dasharray": [2, 2],
+      },
+    },
+    basemapRoadLayerId,
+  );
+  map.addLayer(
+    {
+      id: MAP_LAYER_IDS.notificationAreaCorridor,
+      type: "line",
+      source: MAP_SOURCE_IDS.notificationArea,
+      filter: NOTIFICATION_AREA_CORRIDOR_FILTER,
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": NOTIFICATION_AREA_CORRIDOR_COLOR_SUBTLE,
+        "line-width": NOTIFICATION_AREA_CORRIDOR_WIDTH,
+      },
+    },
+    basemapRoadLayerId,
+  );
   map.addLayer({
     id: MAP_LAYER_IDS.notificationAreaLine,
     type: "line",
     source: MAP_SOURCE_IDS.notificationArea,
     paint: {
-      "line-color": "#2459a9",
+      "line-color": NOTIFICATION_AREA_COLOR,
       "line-width": 1,
       "line-opacity": 0.55,
       "line-dasharray": [2, 2],
     },
+  });
+  map.addLayer({
+    id: MAP_LAYER_IDS.notificationAreaLabel,
+    type: "symbol",
+    source: MAP_SOURCE_IDS.notificationArea,
+    filter: NOTIFICATION_AREA_LABEL_FILTER,
+    layout: NOTIFICATION_AREA_LABEL_LAYOUT,
+    paint: NOTIFICATION_AREA_LABEL_PAINT,
   });
   // The exact outlines only carry information once they are more than a pixel
   // wide; below that they just muddy the marker colours.

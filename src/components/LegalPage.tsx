@@ -177,11 +177,23 @@ function PrivacyContent() {
         Mittelpunkt auch auf der Karte wählen.
       </p>
 
+      <h2>Streckenberechnung</h2>
+      <p>
+        Wenn Sie eine Strecke aus Start und Ziel berechnen lassen, sendet Ihr
+        Browser einmalig diese beiden Punkte und das Verkehrsmittel an den
+        Routing-Dienst der{" "}
+        <a href="https://www.fossgis.de/">FOSSGIS e.&nbsp;V.</a>{" "}
+        (routing.openstreetmap.de). Dabei erhält der Dienst auch Ihre
+        IP-Adresse. Gespeichert wird nur die berechnete Linie, und zwar in
+        Ihrem Browser. Ohne Übertragung geht es, wenn Sie die Strecke selbst
+        auf der Karte nachziehen.
+      </p>
+
       <h2>Benachrichtigungen (Web Push)</h2>
       <p>
-        <strong>Ihre Gebiete verlassen Ihr Gerät nicht.</strong> Mittelpunkt,
-        Radius, beobachtete Baustellen und Ihre Auswahl liegen nur in Ihrem
-        Browser. Wir kennen sie nicht.
+        <strong>Ihre Orte bleiben auf Ihrem Gerät.</strong> Umkreise,
+        Strecken, Flächen, Straßen, beobachtete Baustellen und Ihre Auswahl
+        liegen nur in Ihrem Browser. Wir kennen sie nicht.
       </p>
       <p>
         Beim Einschalten speichert unser Benachrichtigungsdienst nur eine

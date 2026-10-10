@@ -12,12 +12,19 @@ export type {
   ISODate,
   ISOTimestamp,
   LngLat,
+  CircleNotificationArea,
+  CorridorNotificationArea,
+  MunicipalityNotificationArea,
   NotificationArea,
+  NotificationAreaKind,
   NotificationEventKind,
   NotificationFeed,
   NotificationFeedEvent,
   NotificationPreferences,
   NotificationSeverityThreshold,
+  PolygonNotificationArea,
+  RouteTravelMode,
+  StreetNotificationArea,
 } from "./construction-site.ts";
 export { CLOSURE_SEVERITY_SORT_RANK } from "./construction-site.ts";
 export type {

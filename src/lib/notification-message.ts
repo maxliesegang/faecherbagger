@@ -6,7 +6,8 @@ import {
   formatISODate,
   getClosureHeadline,
 } from "./construction-site-labels.ts";
-import { findNotificationAreaForPoint } from "./notification-events.ts";
+import { findNotificationAreaForTarget } from "./notification-area-match.ts";
+import { describeNotificationAreaScope } from "./notification-area.ts";
 import { summarizeNotificationEvents } from "./notification-delivery.ts";
 
 /**
@@ -103,18 +104,15 @@ export function createNotificationPayload(
   url.searchParams.set("bereich", "fuer-mich");
   url.hash = "meldungen";
 
-  const areaLabels = [
+  const areas = [
     ...new Set(
       events
-        .map(
-          (event) =>
-            findNotificationAreaForPoint(preferences.areas, event.point)?.label,
-        )
-        .filter((label): label is string => Boolean(label)),
+        .map((event) => findNotificationAreaForTarget(preferences.areas, event))
+        .filter((area) => area !== undefined),
     ),
   ];
   const scope =
-    areaLabels.length === 1 ? ` bei ${areaLabels[0]}` : " für Sie";
+    areas.length === 1 ? ` ${describeNotificationAreaScope(areas[0]!)}` : " für Sie";
 
   const fullClosureCount = constructionSiteEvents.filter(
     (event) => event.closure === "full",

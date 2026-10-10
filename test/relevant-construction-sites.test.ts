@@ -35,12 +35,14 @@ const TODAY = "2026-07-15";
 const HOME: NotificationArea = {
   id: "home",
   label: "Zuhause",
+  kind: "circle",
   center: [8.4037, 49.0094],
   radiusKm: 5,
 };
 const WORK: NotificationArea = {
   id: "work",
   label: "Arbeit",
+  kind: "circle",
   center: [8.4037, 49.03],
   radiusKm: 3,
 };
@@ -48,12 +50,12 @@ const WORK: NotificationArea = {
 describe("findAreaMatches", () => {
   it("returns every containing area, nearest centre first", () => {
     // Between the two centres, inside both radii.
-    const matches = findAreaMatches([HOME, WORK], [8.4037, 49.025]);
+    const matches = findAreaMatches([HOME, WORK], createConstructionSite({ point: [8.4037, 49.025] }));
     expect(matches.map(({ area }) => area.id)).toEqual(["work", "home"]);
   });
 
   it("is empty when the point lies outside every radius", () => {
-    expect(findAreaMatches([HOME], [8.4037, 49.4])).toEqual([]);
+    expect(findAreaMatches([HOME], createConstructionSite({ point: [8.4037, 49.4] }))).toEqual([]);
   });
 });
 

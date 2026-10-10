@@ -108,9 +108,16 @@
 - `baustellen.json` carries no geometry: shapes live in
   `baustellen-geometrie.json` and are fetched only once a map mounts
   (`useConstructionSiteGeometries`). Lists, search, sorting and distance use
-  `point` alone — do not reach for geometry outside the map.
+  `point` alone — do not reach for geometry outside the map. The one
+  exception is `extentPoints`: a few sampled points on sites longer than
+  300 m (`sampleExtentPoints`), carried in `baustellen.json` and the feed so
+  area matching sees a long site crossing a route.
+- Watched areas are a union by `kind` (circle, polygon, corridor,
+  municipality, street). Records saved before kinds existed have no `kind`
+  and are read as circles by `coerceNotificationArea`; keep that working.
 - Notification rules (`src/lib/notification-events.ts`,
-  `notification-message.ts`, `notification-preferences.ts`) are pure and shared
+  `notification-message.ts`, `notification-preferences.ts`,
+  `notification-area-match.ts`) are pure and shared
   by the pipeline, the service worker and the tests. Put behaviour there rather
   than in `src/sw.ts` or `scripts/send-push.ts`, both of which are untestable.
 - Notification preferences live in IndexedDB

@@ -1,12 +1,103 @@
 /* Live preview of the area being set up; sized so it stays visible next to the
    dialog's controls on a phone. */
+.notification-area-picker {
+  position: relative;
+  margin: 0.85rem 1.1rem;
+  border-radius: 0.75rem;
+  outline: 3px solid transparent;
+  outline-offset: 0;
+  transition: outline-color 150ms ease-out;
+}
+
 .notification-area-picker-map {
   height: clamp(12rem, 32dvh, 20rem);
-  margin: 0.85rem 1.1rem;
   border-radius: 0.75rem;
   overflow: hidden;
 }
 
 .notification-area-picker-map .maplibregl-ctrl-attrib {
   font-size: 0.7rem;
+}
+
+/*
+  Draw mode: the frame takes the area colour so the changed behaviour of the
+  map — one finger draws instead of panning — is visible before it is felt.
+*/
+.notification-area-picker[data-drawing] {
+  outline-color: #2459a9;
+}
+
+.notification-area-picker[data-drawing] .notification-area-picker-map {
+  touch-action: none;
+}
+
+/* Top centre: the attribution expands along the bottom edge and would cover
+   a button there, and the zoom buttons hold the top-right corner. */
+.notification-area-picker__draw {
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  color: var(--kern-color-action-on-default, #fff);
+  background: var(--app-accent);
+  box-shadow: 0 0.25rem 0.9rem rgb(0 0 0 / 25%);
+  font: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+
+.notification-area-picker__draw:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.notification-area-picker__banner {
+  position: absolute;
+  top: 0.5rem;
+  right: 3.25rem;
+  left: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.4rem 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  background: #2459a9;
+  box-shadow: 0 0.25rem 0.9rem rgb(0 0 0 / 20%);
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.notification-area-picker__banner-action {
+  flex: 0 0 auto;
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 0.35rem;
+  color: inherit;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notification-area-picker__draw:focus-visible,
+.notification-area-picker__banner-action:focus-visible {
+  outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notification-area-picker {
+    transition: none;
+  }
 }

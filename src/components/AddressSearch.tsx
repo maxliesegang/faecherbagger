@@ -2,32 +2,75 @@ import { useId, useState } from "react";
 import { useCombobox } from "downshift";
 import { useAddressSearch } from "../hooks/useAddressSearch.ts";
 import type { AddressSearchResult } from "../lib/address-search.ts";
-import type { LngLat } from "../types/index.ts";
+import type { MunicipalitySuggestion } from "../lib/street-names.ts";
 import "./AddressSearch.css";
 
+/**
+ * Either a geocoded address or a whole municipality from the local data. The
+ * municipality entries come first: they answer "Ettlingen" better than any
+ * single point in it, and they never leave the device.
+ */
+type AddressSearchItem =
+  | { kind: "address"; result: AddressSearchResult }
+  | { kind: "municipality"; suggestion: MunicipalitySuggestion };
+
 interface AddressSearchProps {
-  onCenterChange: (center: LngLat) => void;
+  label?: string;
+  placeholder?: string;
+  onAddressSelect: (result: AddressSearchResult) => void;
+  /** Offers whole municipalities matching the query, when given. */
+  suggestMunicipalities?: (query: string) => MunicipalitySuggestion[];
+  onMunicipalitySelect?: (municipality: string) => void;
+  /** The provider credit, shown once when several fields share a screen. */
+  showAttribution?: boolean;
 }
 
-export function AddressSearch({ onCenterChange }: AddressSearchProps) {
+const itemToString = (item: AddressSearchItem | null): string => {
+  if (!item) return "";
+  return item.kind === "address"
+    ? item.result.label
+    : `Ganz ${item.suggestion.municipality}`;
+};
+
+export function AddressSearch({
+  label = "Adresse suchen",
+  placeholder = "Straße, Hausnummer, Ort",
+  onAddressSelect,
+  suggestMunicipalities,
+  onMunicipalitySelect,
+  showAttribution = true,
+}: AddressSearchProps) {
   const inputId = useId();
   const [query, setQuery] = useState("");
   const [selectedLabel, setSelectedLabel] = useState("");
-  const { status, results } = useAddressSearch(selectedLabel === query ? "" : query);
+  const isSearching = selectedLabel !== query;
+  const { status, results } = useAddressSearch(isSearching ? query : "");
+  const municipalityItems: AddressSearchItem[] =
+    isSearching && suggestMunicipalities && onMunicipalitySelect
+      ? suggestMunicipalities(query).map((suggestion) => ({
+          kind: "municipality",
+          suggestion,
+        }))
+      : [];
+  const items: AddressSearchItem[] = [
+    ...municipalityItems,
+    ...results.map((result): AddressSearchItem => ({ kind: "address", result })),
+  ];
 
-  const selectAddress = (result: AddressSearchResult) => {
-    onCenterChange(result.point);
-    setSelectedLabel(result.label);
-    setQuery(result.label);
+  const selectItem = (item: AddressSearchItem) => {
+    if (item.kind === "address") onAddressSelect(item.result);
+    else onMunicipalitySelect?.(item.suggestion.municipality);
+    setSelectedLabel(itemToString(item));
+    setQuery(itemToString(item));
   };
 
   const { isOpen, highlightedIndex, getLabelProps, getInputProps, getMenuProps, getItemProps } = useCombobox({
-    items: results,
+    items,
     inputValue: query,
-    itemToString: (result) => result?.label ?? "",
+    itemToString,
     onInputValueChange: ({ inputValue }) => setQuery(inputValue),
     onSelectedItemChange: ({ selectedItem }) => {
-      if (selectedItem) selectAddress(selectedItem);
+      if (selectedItem) selectItem(selectedItem);
     },
     // German announcements are provided by the status region below.
     getA11yStatusMessage: () => "",
@@ -35,15 +78,15 @@ export function AddressSearch({ onCenterChange }: AddressSearchProps) {
 
   return (
     <div className="address-search">
-      <label className="kern-label" {...getLabelProps()}>Adresse suchen</label>
+      <label className="kern-label" {...getLabelProps()}>{label}</label>
       <input
         className="kern-form-input__input"
         type="search"
         maxLength={200}
         spellCheck={false}
-        placeholder="Straße, Hausnummer, Ort"
+        placeholder={placeholder}
         {...getInputProps({
-          "aria-describedby": `${inputId}-hint`,
+          "aria-describedby": showAttribution ? `${inputId}-hint` : undefined,
           onChange: () => setSelectedLabel(""),
           onKeyDown: (event) => {
             // Dismiss suggestions before Escape can close the parent dialog.
@@ -51,34 +94,47 @@ export function AddressSearch({ onCenterChange }: AddressSearchProps) {
           },
         })}
       />
-      <p id={`${inputId}-hint`} className="address-search__hint">
-        Ab 3 Zeichen wird Ihre Eingabe an Photon (komoot) gesendet.
-      </p>
-      <p role="status">
+      {showAttribution && (
+        <p id={`${inputId}-hint`} className="address-search__hint">
+          Ab 3 Zeichen wird Ihre Eingabe an Photon (komoot) gesendet.
+        </p>
+      )}
+      <p role="status" className="address-search__status">
         {status === "loading" && "Adresse wird gesucht …"}
-        {status === "ready" && (results.length ? `${results.length} Treffer. Wählen Sie mit den Pfeiltasten und Enter oder tippen Sie auf eine Adresse.` : "Keine Adresse gefunden. Ergänzen Sie den Ort oder wählen Sie auf der Karte.")}
+        {status === "ready" && (items.length ? `${items.length} Treffer. Wählen Sie mit den Pfeiltasten und Enter oder tippen Sie auf einen Treffer.` : "Keine Adresse gefunden. Ergänzen Sie den Ort oder wählen Sie auf der Karte.")}
         {status === "error" && "Adresssuche nicht verfügbar. Ändern Sie Ihre Eingabe oder wählen Sie auf der Karte."}
-        {status === "idle" && selectedLabel && `Mittelpunkt gewählt: ${selectedLabel}`}
+        {status === "idle" && selectedLabel && `Gewählt: ${selectedLabel}`}
       </p>
       <ul
         className="address-search__results"
-        hidden={!isOpen || results.length === 0}
+        hidden={!isOpen || items.length === 0}
         {...getMenuProps()}
       >
-        {isOpen && results.map((result, index) => (
+        {isOpen && items.map((item, index) => (
           <li
-            key={JSON.stringify([result.label, result.point])}
+            key={item.kind === "address" ? JSON.stringify([item.result.label, item.result.point]) : `municipality:${item.suggestion.municipality}`}
             data-highlighted={highlightedIndex === index}
-            {...getItemProps({ item: result, index })}
+            {...getItemProps({ item, index })}
           >
-            {result.label}
+            {item.kind === "address" ? (
+              item.result.label
+            ) : (
+              <>
+                <strong>Ganz {item.suggestion.municipality}</strong>
+                <span className="address-search__meta">
+                  {item.suggestion.constructionSiteCount} Baustellen
+                </span>
+              </>
+            )}
           </li>
         ))}
       </ul>
-      <p className="address-search__hint">
-        Suche: <a href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a>
-        {" · © "}<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap-Mitwirkende</a>
-      </p>
+      {showAttribution && (
+        <p className="address-search__hint">
+          Suche: <a href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a>
+          {" · © "}<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap-Mitwirkende</a>
+        </p>
+      )}
     </div>
   );
 }

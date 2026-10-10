@@ -24,6 +24,7 @@ const pushNotifications: PushNotificationsController = {
 const area: NotificationArea = {
   id: "home",
   label: "Zuhause",
+  kind: "circle",
   center: [8.4, 49],
   radiusKm: 2,
 };

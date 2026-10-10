@@ -2,13 +2,11 @@ import type {
   ConstructionSite,
   ConstructionSiteChanges,
   ISODate,
-  LngLat,
-  NotificationArea,
   NotificationFeed,
   NotificationFeedEvent,
   NotificationPreferences,
 } from "../types/index.ts";
-import { distanceInMeters } from "./distance.ts";
+import { findNotificationAreaForTarget } from "./notification-area-match.ts";
 import { meetsSeverityThreshold } from "./notification-preferences.ts";
 import {
   addCalendarDays,
@@ -45,6 +43,7 @@ const toFeedEvent = (
   announcedOn,
   siteId: site.id,
   point: site.point,
+  ...(site.extentPoints ? { extentPoints: site.extentPoints } : {}),
   closure: site.closure,
   startDate: site.startDate,
   endDate: site.endDate,
@@ -167,18 +166,6 @@ export function createNotificationFeed(
   };
 }
 
-export const isPointInNotificationArea = (
-  area: NotificationArea,
-  point: LngLat,
-): boolean => distanceInMeters(area.center, point) <= area.radiusKm * 1_000;
-
-/** The first area containing the point, or `undefined` when none does. */
-export const findNotificationAreaForPoint = (
-  areas: readonly NotificationArea[],
-  point: LngLat,
-): NotificationArea | undefined =>
-  areas.find((area) => isPointInNotificationArea(area, point));
-
 /**
  * The subset of `events` a device with these preferences should be shown.
  *
@@ -230,7 +217,7 @@ export function selectNotificationEvents(
             event.previousClosure,
             preferences.minSeverity,
           ))) &&
-      findNotificationAreaForPoint(preferences.areas, event.point) !== undefined
+      findNotificationAreaForTarget(preferences.areas, event) !== undefined
     );
   });
 }

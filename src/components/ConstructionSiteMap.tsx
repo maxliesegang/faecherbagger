@@ -30,9 +30,9 @@ import {
   createNotificationAreaFeatureCollection,
   createNotificationAreaPolygon,
   createUserLocationFeatureCollection,
-  type NotificationAreaShape,
+  getNotificationAreaOutline,
 } from "../lib/map-geojson.ts";
-import { formatNotificationRadius } from "../lib/notification-preferences.ts";
+import { describeNotificationArea } from "../lib/notification-area.ts";
 import { useConstructionSiteGeometries } from "../hooks/useConstructionSiteGeometries.ts";
 import {
   addConstructionSiteMapLayers,
@@ -94,7 +94,7 @@ function fitConstructionSites(
 
 function fitRadius(
   map: MapLibreMap,
-  area: NotificationAreaShape,
+  area: { center: LngLat; radiusKm: number },
   duration: number,
 ) {
   const bounds = new LngLatBounds();
@@ -108,21 +108,16 @@ function fitRadius(
   });
 }
 
-/** Opens the map on everything the visitor is watching. */
+/** Opens the map on everything the visitor is watching that has a shape. */
 function fitNotificationAreas(
   map: MapLibreMap,
   areas: readonly NotificationArea[],
 ) {
-  if (areas.length === 1) {
-    fitRadius(map, areas[0], 500);
-    return;
-  }
   const bounds = new LngLatBounds();
   for (const area of areas) {
-    createNotificationAreaPolygon(area).coordinates[0].forEach((point) =>
-      bounds.extend(point as LngLat),
-    );
+    getNotificationAreaOutline(area)?.forEach((point) => bounds.extend(point));
   }
+  if (bounds.isEmpty()) return;
   map.fitBounds(bounds, { padding: FIT_PADDING, maxZoom: 15, duration: 500 });
 }
 
@@ -384,7 +379,7 @@ export function ConstructionSiteMap({
             <li>
               <i className="map-legend__radius" />
               {notificationAreas.length === 1
-                ? `Mein Ort (${formatNotificationRadius(notificationAreas[0].radiusKm)})`
+                ? `Mein Ort (${describeNotificationArea(notificationAreas[0])})`
                 : `Meine Orte (${notificationAreas.length})`}
             </li>
           )}

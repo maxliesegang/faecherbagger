@@ -17,7 +17,7 @@ import {
   SHORT_NOTICE_LEAD_DAYS,
 } from "../lib/construction-site-timeframe.ts";
 import { formatISODate, getClosureLabel } from "../lib/construction-site-labels.ts";
-import { formatNotificationRadius } from "../lib/notification-preferences.ts";
+import { describeNotificationArea } from "../lib/notification-area.ts";
 import {
   describeAreaDistance,
   type RelevanceSelection,
@@ -338,7 +338,7 @@ export function RelevantConstructionSites({
           <ul className="relevant__areas" aria-label="Ihre Orte">
             {areas.map((area) => (
               <li key={area.id} className="relevant__area">
-                {area.label} · {formatNotificationRadius(area.radiusKm)}
+                {area.label} · {describeNotificationArea(area)}
               </li>
             ))}
             <li>

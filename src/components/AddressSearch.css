@@ -43,3 +43,13 @@
   outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
   outline-offset: -3px;
 }
+
+.address-search__results li strong {
+  font-weight: 700;
+}
+
+.address-search__meta {
+  margin-inline-start: 0.5rem;
+  color: var(--app-muted);
+  font-size: 0.85rem;
+}

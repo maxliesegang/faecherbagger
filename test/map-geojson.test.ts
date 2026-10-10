@@ -1,3 +1,4 @@
+import type { Point } from "geojson";
 import { describe, expect, it } from "vitest";
 import { distanceInMeters } from "../src/lib/distance.ts";
 import {
@@ -11,7 +12,6 @@ import type {
   ConstructionSite,
   ConstructionSiteGeometries,
 } from "../src/types/index.ts";
-import type { NotificationAreaShape } from "../src/lib/map-geojson.ts";
 
 const constructionSite: ConstructionSite = {
   id: "site-1",
@@ -104,8 +104,8 @@ describe("map data", () => {
   });
 
   it("creates a closed geodesic notification polygon at the requested radius", () => {
-    const area: NotificationAreaShape = {
-      center: [8.4044, 49.0069],
+    const area = {
+      center: [8.4044, 49.0069] as [number, number],
       radiusKm: 5,
     };
     const ring = createNotificationAreaPolygon(area).coordinates[0];
@@ -120,12 +120,38 @@ describe("map data", () => {
     }
   });
 
+  it("adds one label point per named area: atop a circle, halfway along a route", () => {
+    const { features } = createNotificationAreaFeatureCollection([
+      { kind: "circle", label: "Zuhause", center: [8.4, 49.0], radiusKm: 1 },
+      {
+        kind: "corridor",
+        label: "Arbeitsweg",
+        line: [
+          [8.39, 49.0],
+          [8.41, 49.0],
+        ],
+        widthMeters: 250,
+      },
+      { kind: "street", label: "Kaiserstraße", street: "Kaiserstraße", municipality: "Karlsruhe" },
+    ]);
+    expect(features.map((feature) => [feature.geometry.type, feature.properties.label])).toEqual([
+      ["Polygon", undefined],
+      ["Point", "Zuhause"],
+      ["LineString", undefined],
+      ["Point", "Arbeitsweg"],
+    ]);
+    const [, top, , middle] = features.map((feature) => feature.geometry);
+    expect((top as Point).coordinates[0]).toBeCloseTo(8.4, 5);
+    expect((top as Point).coordinates[1]).toBeCloseTo(49.009, 3);
+    expect((middle as Point).coordinates).toEqual([8.4, 49.0]);
+  });
+
   it("renders one polygon per configured area, none when there are none", () => {
     expect(createNotificationAreaFeatureCollection([]).features).toEqual([]);
     expect(
       createNotificationAreaFeatureCollection([
-        { center: [8.4044, 49.0069], radiusKm: 5 },
-        { center: [8.5, 49.1], radiusKm: 2 },
+        { kind: "circle", center: [8.4044, 49.0069], radiusKm: 5 },
+        { kind: "circle", center: [8.5, 49.1], radiusKm: 2 },
       ]).features,
     ).toHaveLength(2);
   });
