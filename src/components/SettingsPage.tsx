@@ -31,6 +31,27 @@ const SEVERITY_OPTIONS: readonly {
   { value: "closure", label: "Nur Sperrungen" },
 ];
 
+type NotificationTimingKey =
+  | "notifyEarly"
+  | "remindTwoWeeksBefore"
+  | "remindDayBefore";
+
+/** In the order they happen; at least one stays on. */
+const TIMING_OPTIONS: readonly {
+  key: NotificationTimingKey;
+  label: string;
+  isOnByDefault: boolean;
+}[] = [
+  { key: "notifyEarly", label: "Sobald angekündigt", isOnByDefault: false },
+  { key: "remindTwoWeeksBefore", label: "14 Tage vor Beginn", isOnByDefault: true },
+  { key: "remindDayBefore", label: "1 Tag vor Beginn", isOnByDefault: true },
+];
+
+const isTimingOn = (
+  preferences: NotificationPreferences,
+  { key, isOnByDefault }: (typeof TIMING_OPTIONS)[number],
+): boolean => preferences[key] ?? isOnByDefault;
+
 interface SettingsPageProps {
   preferences: NotificationPreferences;
   onPreferencesChange: (preferences: NotificationPreferences) => void;
@@ -178,40 +199,41 @@ export function SettingsPage({
               </fieldset>
               <fieldset className="settings__fieldset">
                 <legend>Wann?</legend>
-                <label className="settings__choice">
-                  <input
-                    type="checkbox"
-                    checked={preferences.remindDayBefore !== false}
-                    onChange={(event) =>
-                      onPreferencesChange({
-                        ...preferences,
-                        remindDayBefore: event.currentTarget.checked,
-                      })
-                    }
-                  />
-                  Am Tag vor Beginn erinnern
-                </label>
-                <label className="settings__choice">
-                  <input
-                    type="checkbox"
-                    checked={preferences.notifyEarly === true}
-                    onChange={(event) =>
-                      onPreferencesChange({
-                        ...preferences,
-                        notifyEarly: event.currentTarget.checked,
-                      })
-                    }
-                  />
-                  Schon bei Ankündigung, nicht erst 14 Tage vorher
-                </label>
+                <p className="settings__muted">
+                  Mindestens ein Zeitpunkt bleibt gewählt.
+                </p>
+                {TIMING_OPTIONS.map((option) => {
+                  const isOn = isTimingOn(preferences, option);
+                  const isLastOn =
+                    isOn &&
+                    TIMING_OPTIONS.filter((other) =>
+                      isTimingOn(preferences, other),
+                    ).length === 1;
+                  return (
+                    <label key={option.key} className="settings__choice">
+                      <input
+                        type="checkbox"
+                        checked={isOn}
+                        disabled={isLastOn}
+                        onChange={(event) =>
+                          onPreferencesChange({
+                            ...preferences,
+                            [option.key]: event.currentTarget.checked,
+                          })
+                        }
+                      />
+                      {option.label}
+                    </label>
+                  );
+                })}
               </fieldset>
               {pushNotifications.deliveryMode === "planned" && (
                 <fieldset className="settings__fieldset">
                   <legend>Wie oft?</legend>
                   <p className="settings__muted">
-                    Neues kommt gesammelt, Erinnerungen am Termin. Ist nichts
-                    neu, sehen Sie kurz „Keine neuen Meldungen“. Das verlangt
-                    Ihr Browser.
+                    Spätestens nach dieser Zeit kommt eine Nachricht mit allem
+                    Neuen. Gibt es nichts, steht dort „Keine neuen Meldungen“.
+                    Erinnerungen kommen pünktlich am Termin.
                   </p>
                   {PUSH_RHYTHM_DAYS.map((rhythmDays) => (
                     <label key={rhythmDays} className="settings__choice">

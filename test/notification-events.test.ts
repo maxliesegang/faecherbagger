@@ -461,6 +461,48 @@ describe("planning and delivery rules", () => {
     ).toHaveLength(1);
   });
 
+  it("drops the 14-day reminder and near news when only the day before is chosen", () => {
+    const dayBeforeOnly = {
+      ...preferences,
+      notifyEarly: false,
+      remindTwoWeeksBefore: false,
+      remindDayBefore: true,
+    };
+    const reminder = collectNotificationEvents(
+      [createSite("reminder", { startDate: "2026-08-15" })],
+      createChanges(),
+      TODAY,
+    );
+    expect(reminder[0]?.reminderLeadDays).toBe(14);
+    expect(selectNotificationEvents(reminder, dayBeforeOnly)).toEqual([]);
+
+    const near = collectNotificationEvents(
+      [createSite("near", { startDate: "2026-08-12" })],
+      createChanges({ added: ["near"] }),
+      TODAY,
+    );
+    expect(selectNotificationEvents(near, dayBeforeOnly)).toEqual([]);
+    expect(
+      selectNotificationEvents(near, { ...dayBeforeOnly, notifyEarly: true }),
+    ).toHaveLength(1);
+  });
+
+  it("still reports a site announced too late for its day-before reminder", () => {
+    const sameDay = collectNotificationEvents(
+      [createSite("same-day", { startDate: TODAY })],
+      createChanges({ added: ["same-day"] }),
+      TODAY,
+    );
+    expect(
+      selectNotificationEvents(sameDay, {
+        ...preferences,
+        notifyEarly: false,
+        remindTwoWeeksBefore: false,
+        remindDayBefore: true,
+      }),
+    ).toHaveLength(1);
+  });
+
   it("identifies each reminder separately for an unchanged start date", () => {
     const constructionSite = createSite("reminder", {
       startDate: "2026-08-15",

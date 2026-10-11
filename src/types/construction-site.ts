@@ -142,6 +142,11 @@ export interface NotificationPreferences {
   minSeverity: NotificationSeverityThreshold;
   /** Optional for compatibility with preferences saved before these controls. */
   remindDayBefore?: boolean;
+  /**
+   * The reminder 14 days ahead, and news about sites starting within those
+   * days. At least one of the three timing choices stays on.
+   */
+  remindTwoWeeksBefore?: boolean;
   notifyEarly?: boolean;
   /**
    * Safari and Firefox only: hear from the service at least every this many days.

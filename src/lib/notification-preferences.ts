@@ -130,6 +130,7 @@ export const DEFAULT_NOTIFICATION_PREFERENCES: NotificationPreferences = {
   minSeverity: "obstruction",
   followedSiteIds: [],
   remindDayBefore: true,
+  remindTwoWeeksBefore: true,
   notifyEarly: false,
 };
 
@@ -262,6 +263,8 @@ export function isNotificationPreferences(
   return (
     (candidate.remindDayBefore === undefined ||
       typeof candidate.remindDayBefore === "boolean") &&
+    (candidate.remindTwoWeeksBefore === undefined ||
+      typeof candidate.remindTwoWeeksBefore === "boolean") &&
     (candidate.notifyEarly === undefined ||
       typeof candidate.notifyEarly === "boolean") &&
     (candidate.pushRhythmDays === undefined ||
@@ -284,6 +287,35 @@ export function isNotificationPreferences(
     candidate.followedSiteIds.every(isFollowedSiteId) &&
     new Set(candidate.followedSiteIds).size === candidate.followedSiteIds.length
   );
+}
+
+type NotificationTiming = Required<
+  Pick<
+    NotificationPreferences,
+    "notifyEarly" | "remindTwoWeeksBefore" | "remindDayBefore"
+  >
+>;
+
+/**
+ * The three timing choices with their defaults. All three off would mean
+ * nothing ever arrives, so that falls back to the 14-day reminder.
+ */
+function coerceNotificationTiming(
+  candidate: Partial<NotificationPreferences>,
+): NotificationTiming {
+  const timing: NotificationTiming = {
+    notifyEarly: candidate.notifyEarly === true,
+    remindTwoWeeksBefore: candidate.remindTwoWeeksBefore !== false,
+    remindDayBefore: candidate.remindDayBefore !== false,
+  };
+  if (
+    !timing.notifyEarly &&
+    !timing.remindTwoWeeksBefore &&
+    !timing.remindDayBefore
+  ) {
+    timing.remindTwoWeeksBefore = true;
+  }
+  return timing;
 }
 
 /**
@@ -325,17 +357,13 @@ export function coerceNotificationPreferences(
       if (followedSiteIds.length === MAX_FOLLOWED_SITES) break;
     }
   }
+  const timing = coerceNotificationTiming(candidate);
   return {
     areas,
     followedSiteIds,
     kinds:
       kinds.length > 0 ? kinds : [...DEFAULT_NOTIFICATION_PREFERENCES.kinds],
-    remindDayBefore:
-      typeof candidate.remindDayBefore === "boolean"
-        ? candidate.remindDayBefore
-        : true,
-    notifyEarly:
-      typeof candidate.notifyEarly === "boolean" ? candidate.notifyEarly : false,
+    ...timing,
     ...(isPushRhythmDays(candidate.pushRhythmDays)
       ? { pushRhythmDays: candidate.pushRhythmDays }
       : {}),

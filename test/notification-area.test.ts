@@ -312,6 +312,18 @@ describe("notification preferences", () => {
     });
     expect(chosen.remindDayBefore).toBe(false);
     expect(chosen.notifyEarly).toBe(true);
+    expect(chosen.remindTwoWeeksBefore).toBe(true);
+    expect(
+      coerceNotificationPreferences({
+        ...preferences,
+        notifyEarly: false,
+        remindTwoWeeksBefore: false,
+        remindDayBefore: false,
+      }).remindTwoWeeksBefore,
+    ).toBe(true);
+    expect(
+      isNotificationPreferences({ ...preferences, remindTwoWeeksBefore: "no" }),
+    ).toBe(false);
     expect(isNotificationPreferences({ ...preferences, notifyEarly: "yes" })).toBe(false);
     expect(isNotificationPreferences({ ...preferences, remindDayBefore: 1 })).toBe(false);
   });

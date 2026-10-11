@@ -215,21 +215,32 @@ export function selectNotificationEvents(
   return events.filter((event) => {
     if (!preferences.kinds.includes(event.kind)) return false;
     if (event.kind === "starts-soon" && event.startDate < today) return false;
-    if (
-      event.kind === "starts-soon" &&
-      event.reminderLeadDays === 1 &&
-      preferences.remindDayBefore === false
-    )
-      return false;
+    if (event.kind === "starts-soon") {
+      if (event.reminderLeadDays === 1 && preferences.remindDayBefore === false)
+        return false;
+      if (
+        event.reminderLeadDays === SHORT_NOTICE_LEAD_DAYS &&
+        preferences.remindTwoWeeksBefore === false
+      )
+        return false;
+    }
     const isFollowed = followed.has(event.siteId);
-    const isEarly =
-      countDaysBetween(today, event.startDate) > SHORT_NOTICE_LEAD_DAYS;
+    const daysUntilStart = countDaysBetween(today, event.startDate);
+    const isEarly = daysUntilStart > SHORT_NOTICE_LEAD_DAYS;
     const wasStartingSoon =
       event.previousStartDate !== undefined &&
       countDaysBetween(today, event.previousStartDate) <=
         SHORT_NOTICE_LEAD_DAYS;
-    if (!isFollowed && !preferences.notifyEarly && isEarly && !wasStartingSoon)
-      return false;
+    // News about a site: far ahead only when announcements were asked for.
+    // Closer in, it stands in for a reminder that was chosen but can no
+    // longer come: the 14-day one, or the day-before one once the site starts.
+    if (!isFollowed && event.kind !== "starts-soon" && !preferences.notifyEarly) {
+      if (isEarly && !wasStartingSoon) return false;
+      const isStandingInForReminder =
+        preferences.remindTwoWeeksBefore !== false ||
+        (preferences.remindDayBefore !== false && daysUntilStart < 1);
+      if (!isStandingInForReminder) return false;
+    }
     if (event.kind === "new" && event.endDate !== null && event.endDate < today)
       return false;
     if (isFollowed) return true;
