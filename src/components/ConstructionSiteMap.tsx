@@ -78,10 +78,11 @@ const LEGEND_SEVERITIES = CLOSURE_SEVERITIES.filter(
 function fitConstructionSites(
   map: MapLibreMap,
   constructionSites: readonly ConstructionSite[],
+  duration = 500,
 ) {
   if (constructionSites.length === 0) return;
   if (constructionSites.length === 1) {
-    map.easeTo({ center: constructionSites[0].point, zoom: 15, duration: 500 });
+    map.easeTo({ center: constructionSites[0].point, zoom: 15, duration });
     return;
   }
 
@@ -90,7 +91,7 @@ function fitConstructionSites(
   map.fitBounds(bounds, {
     padding: FIT_PADDING,
     maxZoom: 14,
-    duration: 500,
+    duration,
   });
 }
 
@@ -114,13 +115,14 @@ function fitRadius(
 function fitNotificationAreas(
   map: MapLibreMap,
   areas: readonly NotificationArea[],
+  duration = 500,
 ) {
   const bounds = new LngLatBounds();
   for (const area of areas) {
     getNotificationAreaOutline(area)?.forEach((point) => bounds.extend(point));
   }
   if (bounds.isEmpty()) return;
-  map.fitBounds(bounds, { padding: FIT_PADDING, maxZoom: 15, duration: 500 });
+  map.fitBounds(bounds, { padding: FIT_PADDING, maxZoom: 15, duration });
 }
 
 function focusCurrentLocation(
@@ -251,22 +253,26 @@ export function ConstructionSiteMap({
         selectedSiteId,
         currentLocation,
         notificationAreas,
+        focusedArea,
       } = latestPropsRef.current;
       map.setFilter(MAP_LAYER_IDS.selected, [
         "==",
         ["get", "id"],
         selectedSiteId ?? "",
       ]);
-      fitConstructionSites(map, constructionSites);
       const initiallySelected = constructionSites.find(
         (site) => site.id === selectedSiteId,
       );
       if (initiallySelected) {
         map.easeTo({ center: initiallySelected.point, zoom: 15, duration: 0 });
+      } else if (focusedArea && getNotificationAreaOutline(focusedArea)) {
+        fitNotificationAreas(map, [focusedArea], 0);
       } else if (currentLocation) {
         focusCurrentLocation(map, currentLocation, 0);
       } else if (notificationAreas.length > 0) {
-        fitNotificationAreas(map, notificationAreas);
+        fitNotificationAreas(map, notificationAreas, 0);
+      } else {
+        fitConstructionSites(map, constructionSites, 0);
       }
     });
 
@@ -283,15 +289,16 @@ export function ConstructionSiteMap({
     getGeoJSONSource(map, MAP_SOURCE_IDS.points).setData(
       createConstructionSitePointFeatureCollection(constructionSites),
     );
-    // A focused area with a shape is the frame the visitor asked for; its
-    // sites lie inside it anyway.
-    const { focusedArea: currentFocusedArea } = latestPropsRef.current;
-    if (currentFocusedArea && getNotificationAreaOutline(currentFocusedArea)) {
-      fitNotificationAreas(map, [currentFocusedArea]);
-    } else {
-      fitConstructionSites(map, constructionSites);
+    // Updating results must preserve the visitor's chosen viewport.
+  }, [constructionSites]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !isMapReadyRef.current) return;
+    if (focusedArea && getNotificationAreaOutline(focusedArea)) {
+      fitNotificationAreas(map, [focusedArea]);
     }
-  }, [constructionSites, focusedArea]);
+  }, [focusedArea]);
 
   // Separate from the point update: geometry arrives later than the records and
   // must not drag a viewport refit along when it does.
@@ -312,10 +319,10 @@ export function ConstructionSiteMap({
     getGeoJSONSource(map, MAP_SOURCE_IDS.userLocation).setData(
       createUserLocationFeatureCollection(currentLocation),
     );
-    if (currentLocation && !selectedSiteId) {
+    if (currentLocation && !latestPropsRef.current.selectedSiteId) {
       focusCurrentLocation(map, currentLocation);
     }
-  }, [currentLocation, selectedSiteId]);
+  }, [currentLocation]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -333,14 +340,7 @@ export function ConstructionSiteMap({
       ["get", "id"],
       selectedSiteId ?? "",
     ]);
-    if (selectedSite) {
-      map.easeTo({
-        center: selectedSite.point,
-        zoom: Math.max(map.getZoom(), 15),
-        duration: 650,
-      });
-    }
-  }, [selectedSite, selectedSiteId]);
+  }, [selectedSiteId]);
 
   useEffect(() => {
     if (!selectedSiteId) return;
