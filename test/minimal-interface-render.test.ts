@@ -4,6 +4,8 @@ import { describe, expect, it } from "vitest";
 import { AppNavigation } from "../src/components/AppNavigation.tsx";
 import { ConstructionSiteFilter } from "../src/components/ConstructionSiteFilter.tsx";
 import { ConstructionSiteTable } from "../src/components/ConstructionSiteTable.tsx";
+import { FollowConstructionSiteButton } from "../src/components/FollowConstructionSiteButton.tsx";
+import { ShareConstructionSiteButton } from "../src/components/ShareConstructionSiteButton.tsx";
 import { EMPTY_CONSTRUCTION_SITE_FILTERS } from "../src/lib/construction-site-filter.ts";
 import type { ConstructionSite } from "../src/types/index.ts";
 
@@ -28,6 +30,25 @@ const constructionSite: ConstructionSite = {
 const noop = () => undefined;
 
 describe("minimal interface", () => {
+  it.each([false, true])("restores the followed state (%s) without announcing a new action", (isFollowed) => {
+    const html = renderToStaticMarkup(createElement(FollowConstructionSiteButton, {
+      siteId: constructionSite.id,
+      isFollowed,
+      onToggleFollowed: () => true,
+    }));
+    expect(html).toContain(`aria-pressed="${isFollowed}"`);
+    expect(html).toContain(isFollowed ? "Gemerkt" : "Merken");
+    expect(html).not.toContain('data-feedback="confirmed"');
+  });
+
+  it("reserves an empty live region for share feedback before an action", () => {
+    const html = renderToStaticMarkup(createElement(ShareConstructionSiteButton, {
+      site: constructionSite,
+    }));
+    expect(html).toContain('<span class="construction-site-detail__share-feedback" role="status"></span>');
+    expect(html).not.toContain("Link kopiert.");
+  });
+
   it("leads with the personal view and uses real navigation links", () => {
     const html = renderToStaticMarkup(createElement(AppNavigation, {
       section: "relevant",

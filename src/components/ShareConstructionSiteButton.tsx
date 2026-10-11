@@ -55,11 +55,9 @@ export function ShareConstructionSiteButton({
         label="Teilen"
         onClick={() => void share()}
       />
-      {confirmation && (
-        <span className="construction-site-detail__share-feedback" role="status">
-          {confirmation}
-        </span>
-      )}
+      <span className="construction-site-detail__share-feedback" role="status">
+        {confirmation && <span key={confirmation}>{confirmation}</span>}
+      </span>
     </>
   );
 }

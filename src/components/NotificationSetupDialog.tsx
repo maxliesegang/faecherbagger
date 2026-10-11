@@ -975,7 +975,7 @@ export function NotificationSetupDialog({
 
           {isNotificationStep && (
             <>
-              <KernText>
+              <KernText className="notification-setup__saved">
                 Gespeichert. Sollen wir Sie benachrichtigen, wenn hier eine
                 Baustelle angekündigt wird oder sich ändert?
               </KernText>

@@ -20,6 +20,7 @@ export function FollowConstructionSiteButton({
   onToggleFollowed,
 }: FollowConstructionSiteButtonProps) {
   const [isFull, setIsFull] = useState(false);
+  const [followFeedbackCount, setFollowFeedbackCount] = useState(0);
 
   return (
     <>
@@ -28,9 +29,20 @@ export function FollowConstructionSiteButton({
         variant="secondary"
         className="follow-button"
         aria-pressed={isFollowed}
-        onClick={() => setIsFull(!onToggleFollowed(siteId))}
+        onClick={() => {
+          const hasChanged = onToggleFollowed(siteId);
+          setIsFull(!hasChanged);
+          if (hasChanged) setFollowFeedbackCount((count) => count + 1);
+        }}
       >
-        <AppIcon name="star" isFilled={isFollowed} />
+        <span
+          className="follow-button__icon"
+          key={followFeedbackCount}
+          data-feedback={followFeedbackCount > 0 ? "confirmed" : undefined}
+          aria-hidden="true"
+        >
+          <AppIcon name="star" isFilled={isFollowed} />
+        </span>
         <span>{isFollowed ? "Gemerkt" : "Merken"}</span>
       </KernButton>
       {isFull && (

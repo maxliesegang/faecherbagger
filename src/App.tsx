@@ -61,6 +61,7 @@ import {
   type PushNotificationsController,
 } from "./hooks/usePushNotifications.ts";
 import "./App.css";
+import "./motion.css";
 
 const SECTION_TITLES: Record<AppSection, string> = {
   relevant: "Für mich",

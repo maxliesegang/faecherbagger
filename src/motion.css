@@ -1,0 +1,102 @@
+/* Motion follows an interaction, never result updates or responsive reflow. */
+@keyframes app-feedback-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes app-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes app-follow-confirm {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/* Keep KERN's chevron shape identical in both states so it can rotate. */
+.filter-panel__advanced > .kern-accordion__header::after,
+.filter-panel__advanced[open] > .kern-accordion__header::after,
+.construction-site-detail__technical > .kern-accordion__header::after,
+.construction-site-detail__technical[open] > .kern-accordion__header::after {
+  width: 0.6rem;
+  min-width: 0.6rem;
+  height: 0.6rem;
+  margin-inline: 0.4rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  color: var(--app-accent);
+  background: none;
+  -webkit-mask: none;
+  mask: none;
+  transform: translateY(-0.15rem) rotate(45deg);
+}
+
+.filter-panel__advanced[open] > .kern-accordion__header::after,
+.construction-site-detail__technical[open] > .kern-accordion__header::after {
+  transform: translateY(0.1rem) rotate(-135deg);
+}
+
+@media (forced-colors: active) {
+  .filter-panel__advanced > .kern-accordion__header::after,
+  .construction-site-detail__technical > .kern-accordion__header::after {
+    background-color: transparent !important;
+    border-color: ButtonText;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .phase-switch__item,
+  .view-switcher__item,
+  .filter-panel__scope,
+  .app-navigation__link,
+  .notification-setup__label-suggestions button,
+  .tool-button {
+    transition: background-color 120ms ease-out, color 120ms ease-out,
+      border-color 120ms ease-out;
+  }
+
+  .follow-button .app-icon {
+    transition: color 150ms ease-out, transform 150ms ease-out;
+  }
+
+  /* Only acknowledge successful actions, never a restored saved state. */
+  .follow-button__icon[data-feedback="confirmed"] {
+    animation: app-follow-confirm 150ms ease-out;
+  }
+
+  .filter-panel__advanced > .kern-accordion__header::after,
+  .construction-site-detail__technical > .kern-accordion__header::after {
+    transition: transform 150ms ease-out;
+  }
+
+  .filter-panel__advanced[open] > .kern-accordion__body,
+  .construction-site-detail__technical[open] > .kern-accordion__body,
+  .relevant__disclosure[open] > :not(summary),
+  .construction-site-detail__share-feedback > span,
+  .notification-setup__saved {
+    animation: app-feedback-enter 150ms ease-out;
+  }
+
+  .map-selection__content {
+    animation: app-feedback-enter 140ms ease-out;
+  }
+
+  .notification-setup[open],
+  .notification-setup[open]::backdrop {
+    animation: app-feedback-enter 180ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (max-width: 40rem),
+  (prefers-reduced-motion: no-preference) and (max-height: 32rem) {
+  .notification-setup[open] {
+    animation-name: app-dialog-enter;
+  }
+}

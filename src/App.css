@@ -552,8 +552,8 @@ summary:focus-visible {
   }
 
   .phase-switch__item {
-    padding-inline: 0.55rem;
-    font-size: 0.9rem;
+    padding-inline: 0.35rem;
+    font-size: 0.85rem;
   }
 
   .phase-switch__value {
@@ -564,18 +564,27 @@ summary:focus-visible {
     min-width: 0;
   }
 
-  /* Status and "Filter" share one row, so the map starts higher up. */
+  /* Keep the filter trigger beside the status choices even while open. */
   .filter-panel__secondary {
-    flex-wrap: nowrap;
-  }
-
-  .filter-panel__secondary:has(.filter-panel__advanced[open]),
-  .filter-panel__secondary:has(> .kern-btn) {
-    flex-wrap: wrap;
+    position: relative;
+    display: block;
   }
 
   .filter-panel__advanced > .kern-accordion__header {
-    padding-inline: 0.5rem 2.25rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-inline: 0.4rem;
+  }
+
+  .filter-panel__active-count {
+    margin-left: 0.25rem;
+    font-size: 0.7rem;
+  }
+
+  .filter-panel__advanced[open] > .filter-panel__grid,
+  .filter-panel__secondary > .kern-btn {
+    margin-top: 0.5rem;
   }
 
   .filter-panel__grid {

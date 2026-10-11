@@ -418,7 +418,7 @@ export function ConstructionSiteMap({
 
       {selectedSite && (
         <article className="map-selection" aria-live="polite">
-          <div className="map-selection__content">
+          <div className="map-selection__content" key={selectedSite.id}>
             <div className="map-selection__eyebrow">
               {getConstructionPhaseLabel(selectedSite.phase)} ·{" "}
               {selectedSite.municipality}

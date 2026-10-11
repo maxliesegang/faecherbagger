@@ -139,6 +139,8 @@
 }
 
 .construction-site-detail__share-feedback {
+  flex-basis: 100%;
+  min-height: 1.5em;
   color: var(--app-muted);
   font-size: 0.875rem;
 }
@@ -275,6 +277,10 @@
 .follow-button .app-icon {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+.follow-button__icon {
+  display: inline-flex;
 }
 
 .follow-button[aria-pressed="true"] .app-icon {
