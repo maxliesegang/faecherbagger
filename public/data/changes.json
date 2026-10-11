@@ -1,20 +1,11 @@
 {
-  "since": "2026-10-10T10:20:47.534Z",
-  "added": [],
-  "modified": [
-    "30086"
+  "since": "2026-10-10T19:35:47.232Z",
+  "added": [
+    "2026V0388"
   ],
-  "removed": [],
-  "relevantModifications": [
-    {
-      "id": "30086",
-      "changedFields": [
-        "period",
-        "closure"
-      ],
-      "previousClosure": "none",
-      "previousStartDate": "2026-08-31",
-      "previousEndDate": "2026-10-30"
-    }
-  ]
+  "modified": [],
+  "removed": [
+    "30225"
+  ],
+  "relevantModifications": []
 }

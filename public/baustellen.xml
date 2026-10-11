@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Sat, 10 Oct 2026 19:35:47 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 11 Oct 2026 10:28:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -761,18 +761,6 @@ Zeitraum: 05.10.2026 – 16.10.2026
 Hinweis: Halbseitige Sperrung mittels LSA zum Neubau einer Wasserleittung
 Verantwortlich: Stadtwerke Ettlingen
 Quelle: Stadt Ettlingen]]></description>
-            <category>Gas/Wasser</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Holzmann – Bruchsal]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30225</link>
-            <guid isPermaLink="false">faecherbagger:30225:2026-10-01T05:57:48Z</guid>
-            <pubDate>Thu, 01 Oct 2026 05:57:48 GMT</pubDate>
-            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 01.10.2026 – 10.10.2026
-Hinweis: Fahrbahn verengt
-Verantwortlich: Stadtwerke
-Quelle: Stadt Bruchsal]]></description>
             <category>Gas/Wasser</category>
         </item>
         <item>
@@ -2817,19 +2805,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Tunnelstraße 1a – Bruchsal]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40166</link>
-            <guid isPermaLink="false">faecherbagger:40166:2026-08-28T10:21:16Z</guid>
-            <pubDate>Fri, 28 Aug 2026 10:21:16 GMT</pubDate>
-            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 02.09.2026 – 10.10.2026
-Hinweis: Gerüststellung am Eckhaus in der Tunnelstraße und Friedhofstraße
-Die Tunnelstraße muss im Bereich der Baustelle für Kfz gesperrt werden.
-Verantwortlich: Privat
-Quelle: Stadt Bruchsal]]></description>
-            <category>Bauliche Sondernutzung</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: Mastweidenweg unterhalb der DB-AG Brücke – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2023V4962</link>
             <guid isPermaLink="false">faecherbagger:2023V4962:2026-08-27T22:00:00Z</guid>
@@ -4503,6 +4478,17 @@ Quelle: Stadt Karlsruhe]]></description>
             <description><![CDATA[Geplant · Straßenbau · Mit Behinderung
 Zeitraum: 05.07.2027 – 18.07.2027
 Hinweis: Reinhold-Frank-Straße zw. Viktoriastraße u.Kriegsstraße in südlicher Richtung gesperrt
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Straßenbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Kriegstraße zw. Lessingstraße und Leopoldstraße, Brauerstraße zw. Kriegstraße und Gartenstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0388</link>
+            <guid isPermaLink="false">faecherbagger:2026V0388:2026-04-27T22:00:00Z</guid>
+            <pubDate>Mon, 27 Apr 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Straßenbau · Mit Behinderung
+Zeitraum: 11.10.2027 – 24.10.2027
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></description>
             <category>Straßenbau</category>
