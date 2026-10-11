@@ -105,12 +105,13 @@ const CLOSURE_VARIANTS: Record<ClosureSeverity, BadgeVariant> = {
  * the question a visitor brings to the map. Because a red/orange/amber ramp
  * collapses for red-green colour blindness, the map pairs these with a
  * severity-dependent marker size, and every list surface repeats the value as
- * text.
+ * text. Amber sits lighter and yellower than the orange so the two stay apart
+ * at dot size; it still clears 3:1 on the grey card surface.
  */
 export const CLOSURE_SEVERITY_COLORS: Record<ClosureSeverity, string> = {
   full: "#a4262c",
   "one-direction": "#c25e00",
-  obstruction: "#8a6a00",
+  obstruction: "#a47b00",
   none: "#2f6b3f",
   unknown: "#5c5c5c",
 };

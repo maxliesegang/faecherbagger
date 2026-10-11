@@ -15,7 +15,7 @@ interface ConstructionSiteCardProps {
   onDetailsOpen?: () => void;
   /** Short facts after the closure, e.g. the period and the place. */
   facts: readonly ReactNode[];
-  /** Replaces the closure label as the first fact, e.g. "Geändert". */
+  /** Comes before the closure label as the first fact, e.g. "Geändert". */
   lead?: string;
   isFollowed?: boolean;
   isChanged?: boolean;
@@ -32,8 +32,8 @@ const isPlainClick = (event: MouseEvent) =>
 /**
  * One construction site in a list: name, then a single line of facts.
  *
- * The bar on the left carries the closure colour and the first fact repeats it
- * in words, so colour is never the only signal. The whole card is the link
+ * The closure label carries a dot in the closure colour, as in the table and
+ * the map legend, so colour is never the only signal. The whole card is the link
  * target, but only the name is the link, so a screen reader hears one link per
  * site rather than a paragraph.
  */
@@ -79,7 +79,8 @@ export function ConstructionSiteCard({
         {isChanged && <span className="site-card__new">Neu</span>}
       </p>
       <p className="site-card__meta">
-        <span className="site-card__lead">{lead ?? getClosureLabel(closure)}</span>
+        {lead && <span className="site-card__lead">{lead}</span>}
+        <span className="site-card__closure">{getClosureLabel(closure)}</span>
         {facts.map((fact, index) => (
           <span key={index}>{fact}</span>
         ))}

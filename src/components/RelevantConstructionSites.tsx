@@ -16,7 +16,7 @@ import {
   describeConstructionPeriod,
   SHORT_NOTICE_LEAD_DAYS,
 } from "../lib/construction-site-timeframe.ts";
-import { formatISODate, getClosureLabel } from "../lib/construction-site-labels.ts";
+import { formatISODate } from "../lib/construction-site-labels.ts";
 import { describeNotificationArea } from "../lib/notification-area.ts";
 import {
   describeAreaDistance,
@@ -307,7 +307,7 @@ export function RelevantConstructionSites({
             detailsHref={isKnown ? getDetailHref(event.siteId) : undefined}
             onDetailsOpen={isKnown ? () => onDetailOpen(event.siteId) : undefined}
             lead={NOTIFICATION_KIND_LABELS[event.kind]}
-            facts={[`ab ${formatISODate(event.startDate)}`, getClosureLabel(event.closure)]}
+            facts={[`ab ${formatISODate(event.startDate)}`]}
           />
         );
       })}
