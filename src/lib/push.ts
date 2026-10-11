@@ -29,6 +29,10 @@ async function requestPushAPI(path: string, init?: RequestInit) {
       ...init?.headers,
     },
   });
+  if (response.status === 503) {
+    // The Worker answers, but lacks a secret it needs (see push-worker/README.md).
+    throw new Error("Benachrichtigungsdienst ist noch nicht vollständig eingerichtet.");
+  }
   if (!response.ok) {
     throw new Error(
       `Benachrichtigungsdienst nicht erreichbar (Status ${response.status}).`,

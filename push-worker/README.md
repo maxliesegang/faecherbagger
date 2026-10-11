@@ -12,65 +12,80 @@ Actions runner reads subscriptions in pages and broadcasts the wake-up push,
 which avoids Worker subrequest limits and stays in the free tier. The only push
 the Worker sends itself is the delivery test, hence `src/web-push.ts`.
 
-## One-time production setup
+## Production
 
-Requirements: a free Cloudflare account and administrator access to the GitHub
-repository.
-
-The production resources for this repository are already provisioned:
+The production resources already exist:
 
 - Worker: `https://faecherbagger-push.faecherbagger.workers.dev`
 - D1 database: `faecherbagger-push` in Western Europe
 - Allowed web origin: `https://maxliesegang.github.io`
 
-The one-time provisioning was performed with:
+### Deploying
+
+Deploy only through the **Deploy push worker** workflow. It runs on every push
+to `main` that touches `push-worker/`, and manually via
+`gh workflow run deploy-push-worker.yml`. In order, it:
+
+1. checks that every variable and secret below is set,
+2. applies pending D1 migrations (`npm run push:db:migrate:remote`),
+3. deploys the Worker and sets all four Worker secrets,
+4. checks the live Worker: `/config` must return the VAPID public key and the
+   delivery test must answer 404, not 503, for an unknown endpoint.
+
+Do not run `wrangler deploy` by hand: it uploads the code but neither the
+secrets nor the migrations. That gap once left the delivery test answering
+503.
+
+### Schema changes
+
+Add a numbered file to `migrations/` and update `schema.sql` to match. The
+workflow applies new files through `wrangler d1 migrations`, which records them
+in the `d1_migrations` table. Never edit a migration that has already run.
+
+`scripts/prepare-push-database.ts` creates that ledger the first time. On an
+empty database it loads `schema.sql`; on one migrated by hand it records the
+migrations whose effect it can see. Once the ledger exists it does nothing.
+
+### GitHub configuration
+
+| Kind | Name | Value |
+| --- | --- | --- |
+| Variable | `PUSH_API_URL` | Worker URL |
+| Variable | `APP_URL` | `https://maxliesegang.github.io/faecherbagger/` |
+| Variable | `VAPID_PUBLIC_KEY` | Public VAPID key |
+| Variable | `VAPID_SUBJECT` | Same as `APP_URL` |
+| Secret | `VAPID_PRIVATE_KEY` | Private VAPID key |
+| Secret | `PUSH_ADMIN_TOKEN` | Admin token for the Worker |
+| Secret | `CLOUDFLARE_API_TOKEN` | API token, see below |
+| Secret | `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID |
+
+`npm run push:github:setup` writes the first six from the git-ignored
+`push-worker/.production-secrets.local.json` (mode `0600`), the recovery copy
+created by `npm run push:secrets:setup`. That script refuses to overwrite
+existing keys: rotating VAPID keys invalidates every browser subscription.
+
+For `CLOUDFLARE_API_TOKEN`, create a token in the Cloudflare dashboard (My
+Profile → API Tokens) from the "Edit Cloudflare Workers" template and add
+**Account → D1 → Edit**. Then:
+
+```bash
+gh secret set CLOUDFLARE_API_TOKEN
+gh secret set CLOUDFLARE_ACCOUNT_ID   # from `npx wrangler whoami`
+```
+
+### First-time provisioning
+
+For a new Cloudflare account:
 
 ```bash
 npx wrangler login
 npx wrangler d1 create faecherbagger-push --location weur
-npm run push:db:init:remote
-npm run push:deploy
 npm run push:secrets:setup
 npm run push:github:setup
 ```
 
-Apply outstanding migrations once before deploying the updated Worker, oldest
-first:
-
-```bash
-npx wrangler d1 execute faecherbagger-push --remote \
-  --file=push-worker/migrations/0002_notification_preferences.sql \
-  --config=push-worker/wrangler.jsonc
-npx wrangler d1 execute faecherbagger-push --remote \
-  --file=push-worker/migrations/0003_next_push_on.sql \
-  --config=push-worker/wrangler.jsonc
-```
-
-`0003` adds `next_push_on`, which the Worker reads and writes. Apply it before
-deploying this Worker version.
-
-`0002` drops the stored radius columns (superseded by device-local matching) and
-adds the event ledger. `0001_notification_radius.sql` is only needed for
-databases created before it.
-
-The Worker additionally needs `VAPID_PRIVATE_KEY` and `VAPID_SUBJECT` as
-secrets, for the delivery test; `deploy-push-worker.yml` sets them.
-
-`push:secrets:setup` will not overwrite an existing local secret set: rotating
-VAPID keys invalidates every browser subscription. The git-ignored
-`push-worker/.production-secrets.local.json` (mode `0600`) is the recovery copy
-of the GitHub Actions secrets.
-
-The GitHub repository contains these values:
-
-| Kind | Names |
-| --- | --- |
-| Variables | `PUSH_API_URL`, `APP_URL`, `VAPID_PUBLIC_KEY`, `VAPID_SUBJECT` |
-| Secrets | `PUSH_ADMIN_TOKEN`, `VAPID_PRIVATE_KEY` |
-
-Future Worker deployments can be done locally with `npm run push:deploy`.
-Alternatively, configure `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` as
-GitHub secrets and run the manual **Deploy push worker** workflow.
+Put the new `database_id` into `wrangler.jsonc`, set the two Cloudflare
+secrets, and run the workflow.
 
 ## Local Worker
 

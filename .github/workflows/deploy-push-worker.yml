@@ -1,15 +1,51 @@
 name: Deploy push worker
 
+# The only supported way to deploy the Worker: it applies pending D1
+# migrations, uploads the code and sets every Worker secret, then checks the
+# live service. A plain `wrangler deploy` does the second step only.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - push-worker/**
+      - scripts/prepare-push-database.ts
+      - .github/workflows/deploy-push-worker.yml
 
 permissions:
   contents: read
 
+concurrency:
+  group: deploy-push-worker
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      ADMIN_TOKEN: ${{ secrets.PUSH_ADMIN_TOKEN }}
+      VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+      # The Worker needs the signing key for the "Zustellung testen" push;
+      # the bulk fan-out still runs in the data workflow.
+      VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+      VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT }}
+      PUSH_API_URL: ${{ vars.PUSH_API_URL }}
+      APP_URL: ${{ vars.APP_URL }}
     steps:
+      - name: Check configuration
+        run: |
+          missing=0
+          for name in CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID ADMIN_TOKEN \
+            VAPID_PUBLIC_KEY VAPID_PRIVATE_KEY VAPID_SUBJECT PUSH_API_URL APP_URL; do
+            if [[ -z "${!name}" ]]; then
+              echo "::error::$name is not set. See push-worker/README.md, 'GitHub configuration'."
+              missing=1
+            fi
+          done
+          exit "$missing"
+
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -19,23 +55,40 @@ jobs:
 
       - run: npm ci
 
+      # Before the deploy: the new Worker code may need the new columns.
+      - name: Apply D1 migrations
+        run: npm run push:db:migrate:remote
+
       - name: Deploy Worker and configure secrets
         uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0 # v4.1.3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: push-worker
-          preCommands: wrangler d1 execute faecherbagger-push --remote --file=schema.sql
           command: deploy
           secrets: |
             ADMIN_TOKEN
             VAPID_PUBLIC_KEY
             VAPID_PRIVATE_KEY
             VAPID_SUBJECT
-        env:
-          ADMIN_TOKEN: ${{ secrets.PUSH_ADMIN_TOKEN }}
-          VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
-          # The Worker needs the signing key for the "Zustellung testen" push;
-          # the bulk fan-out still runs in the data workflow.
-          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
-          VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT }}
+
+      # An unknown endpoint gets 404 once the Worker can sign pushes, and 503
+      # while a VAPID secret is missing. No push is sent.
+      - name: Check the live Worker
+        run: |
+          origin=$(node -p 'new URL(process.env.APP_URL).origin')
+          for attempt in 1 2 3 4 5 6; do
+            config=$(curl -fsS -H "Origin: $origin" "$PUSH_API_URL/config" || true)
+            status=$(curl -sS -o /dev/null -w '%{http_code}' -X POST \
+              -H "Origin: $origin" -H 'content-type: application/json' \
+              -d '{"endpoint":"https://example.invalid/deploy-check"}' \
+              "$PUSH_API_URL/notifications/test" || true)
+            if [[ "$config" == *"\"$VAPID_PUBLIC_KEY\""* && "$status" == 404 ]]; then
+              echo "Worker is live and fully configured."
+              exit 0
+            fi
+            echo "Not ready yet (config: ${config:-none}, test status: $status); retrying."
+            sleep 10
+          done
+          echo "::error::The live Worker is missing configuration (last test status: $status)."
+          exit 1

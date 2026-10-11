@@ -23,9 +23,8 @@
     "push:github:setup": "tsx scripts/configure-github-push.ts",
     "push:send": "tsx scripts/send-push.ts",
     "push:dev": "wrangler dev --config push-worker/wrangler.jsonc",
-    "push:deploy": "wrangler deploy --config push-worker/wrangler.jsonc",
     "push:db:init:local": "wrangler d1 execute faecherbagger-push --local --file=push-worker/schema.sql --config push-worker/wrangler.jsonc",
-    "push:db:init:remote": "wrangler d1 execute faecherbagger-push --remote --file=push-worker/schema.sql --config push-worker/wrangler.jsonc"
+    "push:db:migrate:remote": "tsx scripts/prepare-push-database.ts --remote && wrangler d1 migrations apply faecherbagger-push --remote --config push-worker/wrangler.jsonc"
   },
   "dependencies": {
     "@kern-ux-annex/kern-react-kit": "^2.40.0",

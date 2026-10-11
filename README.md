@@ -232,8 +232,9 @@ WebCrypto, verified against the RFC's worked example in `test/web-push.test.ts`.
 - **`update-data.yml`** — fetches the TRK WFS at 04:00 and 16:00 UTC (06:00 and
   18:00 Europe/Berlin in summer), regenerates the committed data and feeds, and
   triggers deployment when its commit succeeds.
-- **`deploy-push-worker.yml`** — manually deploys the subscription API and
-  applies its D1 schema after the one-time Cloudflare setup.
+- **`deploy-push-worker.yml`** — deploys the subscription API on pushes to
+  `main` that touch `push-worker/`, and on manual dispatch. It applies pending
+  D1 migrations, sets the Worker secrets and checks the live Worker.
 
 The Vite `base` defaults to `/faecherbagger/` (a project Pages subpath) and can
 be overridden at build time with the `BASE_PATH` env var. Enable Pages with the

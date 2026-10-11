@@ -137,8 +137,10 @@
   authenticated, use parameterized D1 queries, and never log or commit
   endpoints, auth keys, VAPID private keys, admin tokens, or local secret files.
 - D1 schema changes require an additive migration under
-  `push-worker/migrations/` and corresponding Worker type/query updates. Do not
-  rewrite an already-applied production migration.
+  `push-worker/migrations/`, a matching `schema.sql` update, and corresponding
+  Worker type/query updates. Do not rewrite an already-applied production
+  migration. `deploy-push-worker.yml` applies migrations and sets secrets; a
+  bare `wrangler deploy` does neither, so do not recommend one.
 - Load deployment values through environment variables, GitHub
   variables/secrets, or Wrangler secrets. Never hard-code private credentials.
 
