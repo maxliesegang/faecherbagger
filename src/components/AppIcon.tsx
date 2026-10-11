@@ -13,6 +13,7 @@ export type AppIconName =
   | "settings"
   | "bell"
   | "star"
+  | "share"
   | "area-circle"
   | "area-corridor"
   | "area-polygon"
@@ -28,6 +29,8 @@ const PATHS: Record<AppIconName, string> = {
   settings:
     "M4 7h10 M18 7h2 M4 17h4 M12 17h8 M4 12h2 M10 12h10 M16 5v4 M10 15v4 M8 10v4",
   bell: "M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16z M10 20.5a2 2 0 0 0 4 0",
+  // A box with an arrow out of it: the iOS "Teilen" button.
+  share: "M8.5 6.5 12 3l3.5 3.5 M12 3v11 M8.5 10H6v10.5h12V10h-2.5",
   star: "m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8L12 3.5z",
   // Watched-area kinds, so a list of places reads at a glance.
   // A ring around a point: a radius.

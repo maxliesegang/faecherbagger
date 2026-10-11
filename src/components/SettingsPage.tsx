@@ -19,6 +19,7 @@ import {
   PUSH_RHYTHM_LABELS,
 } from "../lib/push-delivery.ts";
 import { NotificationSwitch } from "./NotificationSwitch.tsx";
+import { InstallAppHint } from "./InstallAppHint.tsx";
 import { AppIcon, NOTIFICATION_AREA_ICON } from "./AppIcon.tsx";
 import "./SettingsPage.css";
 
@@ -276,15 +277,13 @@ export function SettingsPage({
       <div className="settings__column settings__column--secondary">
         <section className="settings__section" aria-labelledby="settings-app">
           <h2 id="settings-app">App</h2>
+          {!pushNotifications.isInstalled && (
+            <InstallAppHint
+              install={pushNotifications.install}
+              installPlatform={pushNotifications.installPlatform}
+            />
+          )}
           <div className="settings__actions">
-            {!pushNotifications.isInstalled && pushNotifications.install && (
-              <KernButton
-                type="button"
-                variant="secondary"
-                label="App installieren"
-                onClick={() => void pushNotifications.install?.()}
-              />
-            )}
             <KernButton
               type="button"
               variant="secondary"

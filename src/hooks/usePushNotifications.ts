@@ -9,6 +9,11 @@ import {
   unsubscribeFromPush,
 } from "../lib/push.ts";
 import type { PushDeliveryMode } from "../lib/push-delivery.ts";
+import {
+  getInstallPlatform,
+  isAppleMobileDevice,
+  type InstallPlatform,
+} from "../lib/install-platform.ts";
 
 const REFRESH_TAG = "refresh-baustellen";
 const REFRESH_INTERVAL_MS = 12 * 60 * 60 * 1000;
@@ -43,7 +48,7 @@ export type PushSubscriptionState = "unknown" | "registered" | "inactive";
  *
  * - `unconfigured`: this build has no push endpoint.
  * - `unsupported`: the browser lacks Push or Notification.
- * - `needs-install`: iOS only delivers push to an installed web app.
+ * - `needs-install`: iOS and iPadOS only deliver push to an installed web app.
  * - `denied`: the visitor blocked notifications for this site.
  */
 export type PushUnavailableReason =
@@ -66,6 +71,8 @@ export interface PushNotificationsController {
   isInstalled: boolean;
   /** Only set while the browser offers its own install prompt. */
   install?: () => Promise<void>;
+  /** Which manual steps to describe when `install` is not set. */
+  installPlatform: InstallPlatform;
   refreshData: () => void;
   /**
    * Set while registered. `planned` (Safari, Firefox) shows every push, so the device
@@ -130,7 +137,9 @@ export function usePushNotifications(): PushNotificationsController {
     const onInstalled = () => {
       setIsInstalled(true);
       setInstallPrompt(undefined);
-      setFeedbackMessage("App installiert.");
+      setFeedbackMessage(
+        "App installiert. Sie finden sie auf dem Startbildschirm.",
+      );
     };
     window.addEventListener("beforeinstallprompt", onInstallPrompt);
     window.addEventListener("appinstalled", onInstalled);
@@ -241,7 +250,10 @@ export function usePushNotifications(): PushNotificationsController {
     setFeedbackMessage("Daten werden aktualisiert.");
   }, []);
 
-  const isIOSDevice = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isIOSDevice = isAppleMobileDevice(
+    navigator.userAgent,
+    navigator.maxTouchPoints,
+  );
   const isActive = subscriptionState === "registered";
   const unavailableReason: PushUnavailableReason | undefined = isActive
     ? undefined
@@ -268,6 +280,10 @@ export function usePushNotifications(): PushNotificationsController {
     sendTest,
     isInstalled,
     install,
+    installPlatform: getInstallPlatform(
+      navigator.userAgent,
+      navigator.maxTouchPoints,
+    ),
     refreshData,
     deliveryMode: isActive ? deliveryMode : undefined,
   };

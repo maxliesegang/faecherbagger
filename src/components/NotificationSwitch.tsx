@@ -10,7 +10,7 @@ const UNAVAILABLE_HINTS: Record<PushUnavailableReason, string> = {
   unconfigured: "Benachrichtigungen sind auf dieser Seite nicht eingerichtet.",
   unsupported: "Ihr Browser unterstützt keine Benachrichtigungen.",
   "needs-install":
-    "Auf iPhone und iPad nur in der App: In Safari „Teilen“ › „Zum Home-Bildschirm“ wählen und von dort öffnen.",
+    "Auf iPhone und iPad nur in der App. Tippen Sie auf „Teilen“ › „Zum Home-Bildschirm“ und öffnen Sie Fächerbagger dann dort.",
   denied: "Erlauben Sie sie für diese Seite in den Browser-Einstellungen.",
 };
 

@@ -18,6 +18,7 @@ const pushNotifications: PushNotificationsController = {
   disable: async () => undefined,
   sendTest: async () => undefined,
   isInstalled: false,
+  installPlatform: "other",
   refreshData: () => undefined,
 };
 

@@ -1,0 +1,43 @@
+.install-app-hint summary {
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  color: var(--app-accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.install-app-hint summary:focus-visible {
+  outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: 2px;
+}
+
+.install-app-hint__body {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.install-app-hint__body p {
+  margin: 0;
+}
+
+.install-app-hint__body > p:first-child {
+  color: var(--app-muted);
+  font-size: 0.875rem;
+}
+
+.install-app-hint__steps {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding-inline-start: 1.25rem;
+}
+
+/* Sits in the sentence, the size of the text around it. */
+.install-app-hint__icon {
+  width: 1.15em;
+  height: 1.15em;
+  margin-inline-start: 0.25em;
+  vertical-align: -0.2em;
+}
