@@ -465,6 +465,16 @@ export function NotificationSetupDialog({
     ...(isNotificationStepOffered ? [NOTIFICATION_STEP] : []),
   ];
   const isLastStep = step === steps.length - 1;
+  // Names where the button leads, so "Weiter" is not the only clue. The
+  // second step always saves, even when a notification question follows.
+  const nextLabel =
+    step === 0
+      ? kind === "circle"
+        ? "Zum Radius"
+        : kind === "corridor"
+          ? "Zum Abstand"
+          : "Zur Vorschau"
+      : "Speichern";
   const isNotificationStep = steps[step] === NOTIFICATION_STEP;
   const canLeaveFirstStep =
     shape !== undefined &&
@@ -552,7 +562,7 @@ export function NotificationSetupDialog({
     );
   };
 
-  const complete = async (shouldEnableNotifications = false) => {
+  const saveArea = () => {
     if (!shape) return;
     const area: NotificationArea = {
       ...(shape.kind === "circle"
@@ -590,10 +600,23 @@ export function NotificationSetupDialog({
       kinds: ["new", "starts-soon", "changed"],
     };
     onPreferencesChange(updated);
-    // Saved before asking: a refused permission must not lose the place.
+  };
+
+  // Saved before asking, so closing the question or refusing the permission
+  // cannot lose the place.
+  const saveAndContinue = () => {
+    saveArea();
+    if (isLastStep) onComplete();
+    else setStep((current) => current + 1);
+  };
+
+  const finish = async (shouldEnableNotifications: boolean) => {
     if (shouldEnableNotifications) await pushNotifications.enable();
     onComplete();
   };
+
+  // Once saved, leaving the dialog any way is finishing it.
+  const close = isNotificationStep ? onComplete : onClose;
 
   const matchScope =
     kind === "circle"
@@ -646,7 +669,7 @@ export function NotificationSetupDialog({
       onCancel={(event) => {
         event.preventDefault();
         if (drawMode) setDrawMode(undefined);
-        else onClose();
+        else close();
       }}
     >
       <div className="notification-setup__header">
@@ -667,7 +690,7 @@ export function NotificationSetupDialog({
           type="button"
           className="notification-setup__close"
           aria-label="Schließen"
-          onClick={onClose}
+          onClick={close}
         >
           ×
         </button>
@@ -951,8 +974,8 @@ export function NotificationSetupDialog({
 
           {isNotificationStep && (
             <KernText>
-              Sollen wir Sie benachrichtigen, wenn hier eine Baustelle angekündigt
-              wird oder sich ändert?
+              Gespeichert. Sollen wir Sie benachrichtigen, wenn hier eine
+              Baustelle angekündigt wird oder sich ändert?
             </KernText>
           )}
         </div>
@@ -1108,22 +1131,22 @@ export function NotificationSetupDialog({
 
       <div className="notification-setup__actions">
         {isNotificationStep ? (
-          // The place is decided by now; only the answer is left, so no "Zurück".
+          // The place is saved by now; only the answer is left, so no "Zurück".
           <>
             <KernButton
               type="button"
               key="later"
               variant="secondary"
-              label="Später"
+              label="Nicht jetzt"
               disabled={pushNotifications.isBusy}
-              onClick={() => void complete(false)}
+              onClick={() => void finish(false)}
             />
             <KernButton
               type="button"
               variant="primary"
               label="Benachrichtigen"
               disabled={pushNotifications.isBusy}
-              onClick={() => void complete(true)}
+              onClick={() => void finish(true)}
             />
           </>
         ) : (
@@ -1149,15 +1172,9 @@ export function NotificationSetupDialog({
               type="button"
               key={`next-${step}`}
               variant="primary"
-              label={isLastStep ? "Speichern" : "Weiter"}
+              label={nextLabel}
               disabled={step === 0 && !canLeaveFirstStep}
-              onClick={() =>
-                isLastStep
-                  ? void complete()
-                  : step === 0
-                    ? goToSecondStep()
-                    : setStep((current) => current + 1)
-              }
+              onClick={step === 0 ? goToSecondStep : saveAndContinue}
             />
           </>
         )}

@@ -431,7 +431,7 @@ export function RelevantConstructionSites({
             <div className="relevant__group-header">
               <h2 id="inbox-heading">Neue Meldungen</h2>
               <button type="button" className="relevant__text-button" onClick={onMarkRead}>
-                Gelesen
+                Alle gelesen
               </button>
             </div>
             {renderNotificationEvents(unreadEvents)}

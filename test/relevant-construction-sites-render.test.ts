@@ -158,7 +158,7 @@ describe("personal view rendering", () => {
     const html = render("", [reminder]);
     expect(html.indexOf("Neue Meldungen")).toBeLessThan(html.indexOf("Beginnt bald"));
     expect(html).toContain("Zugestellter-Hinweis");
-    expect(html).toContain(">Gelesen<");
+    expect(html).toContain(">Alle gelesen<");
   });
 
   it("opens read notifications from a batch notification link", () => {

@@ -288,7 +288,7 @@ export function ConstructionSiteFilter({
           <KernButton
             type="button"
             variant="tertiary"
-            label="Zurücksetzen"
+            label="Filter zurücksetzen"
             onClick={onFiltersReset}
           />
         )}
