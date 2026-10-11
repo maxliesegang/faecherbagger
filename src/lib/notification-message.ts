@@ -10,6 +10,7 @@ import { findNotificationAreaForTarget } from "./notification-area-match.ts";
 import { findNotifyingArea } from "./notification-events.ts";
 import { describeNotificationAreaScope } from "./notification-area.ts";
 import { summarizeNotificationEvents } from "./notification-delivery.ts";
+import { createInboxURL } from "./push-delivery.ts";
 
 /**
  * The wording of a notification, and the link it opens.
@@ -101,10 +102,6 @@ export function createNotificationPayload(
     };
   }
 
-  const url = new URL(appURL);
-  url.searchParams.set("bereich", "fuer-mich");
-  url.hash = "meldungen";
-
   const areas = [
     ...new Set(
       events
@@ -129,7 +126,7 @@ export function createNotificationPayload(
       fullClosureCount > 0
         ? `Darunter ${fullClosureCount}× Vollsperrung. Unter anderem: ${firstEvent.location}.`
         : `Unter anderem: ${firstEvent.location}, ${firstEvent.municipality}.`,
-    url: url.href,
+    url: createInboxURL(appURL),
     count: constructionSiteEvents.length,
   };
 }

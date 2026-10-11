@@ -2,8 +2,10 @@
  * Notification broadcast.
  *
  * Runs after a successful data refresh. Retains delivery opportunities for
- * pending events and sends every eligible subscriber the same
- * contentless wake-up push.
+ * pending events and sends every eligible subscriber a push without personal
+ * content: a daily wake-up for Chromium, and for Safari and Firefox a
+ * declarative push on the date each device planned for itself (see
+ * `src/lib/push-delivery.ts` and `src/lib/push-schedule.ts`).
  *
  * It deliberately cannot tell who an event concerns: areas and preferences live
  * on the devices, and the service worker decides locally whether to show
@@ -17,6 +19,14 @@ import { readFile } from "node:fs/promises";
 import type { NotificationFeed } from "../src/types/index.ts";
 import { CONSTRUCTION_SITE_DATA_FILENAMES } from "../src/lib/construction-site-data-files.ts";
 import { isWithinNotificationWindow } from "../src/lib/notification-message.ts";
+import {
+  createFallbackNextPushDate,
+  createPlannedPushMessage,
+  createWakeUpMessage,
+  getPushDeliveryMode,
+  isSubscriptionDue,
+} from "../src/lib/push-delivery.ts";
+import { getBerlinCalendarDate } from "../src/lib/construction-site-timeframe.ts";
 
 interface StoredSubscription {
   endpoint: string;
@@ -24,6 +34,8 @@ interface StoredSubscription {
   auth: string;
   expirationTime: number | null;
   lastNotifiedAt: number | null;
+  /** Absent from Workers deployed before planned pushes existed. */
+  nextPushOn?: string | null;
 }
 
 interface SubscriptionPage {
@@ -33,20 +45,12 @@ interface SubscriptionPage {
 
 const REQUIRED_ENVIRONMENT_VARIABLES = [
   "PUSH_API_URL",
+  "APP_URL",
   "PUSH_ADMIN_TOKEN",
   "VAPID_PUBLIC_KEY",
   "VAPID_PRIVATE_KEY",
   "VAPID_SUBJECT",
 ] as const;
-
-/**
- * Safety valve behind the quiet-hours window.
- *
- * The window already yields at most one send per day given the twice-daily
- * pipeline; this stops a manual re-run or an extra workflow dispatch from
- * turning into a second wake-up on the same day.
- */
-const MIN_HOURS_BETWEEN_PUSHES = 12;
 
 const SEND_CONCURRENCY = 20;
 
@@ -87,9 +91,6 @@ if (feed.events.length === 0) {
 // local, where preferences and the notification history already live.
 console.log(`${feed.events.length} retained events (generated ${feed.generatedAt}).`);
 
-const minimumLastNotifiedAt =
-  Math.floor(now.getTime() / 1_000) - MIN_HOURS_BETWEEN_PUSHES * 60 * 60;
-
 webpush.setVapidDetails(
   process.env.VAPID_SUBJECT!,
   process.env.VAPID_PUBLIC_KEY!,
@@ -97,17 +98,19 @@ webpush.setVapidDetails(
 );
 
 /**
- * The wake-up itself. It says only "there is something new"; the receiving
- * device turns that into a notification — or into silence, if none of the
- * events fall inside its areas.
+ * The wake-up says only "there is something new"; the receiving device turns
+ * that into a notification, or into silence if none of the events fall inside
+ * its areas. The planned push carries a generic fallback notification the
+ * device replaces with its own summary. Neither names a place.
  */
-const wakeUpPayload = JSON.stringify({
-  kind: "events",
-  generatedAt: feed.generatedAt,
-});
+const wakeUpPayload = JSON.stringify(createWakeUpMessage(feed.generatedAt));
+const plannedPayload = JSON.stringify(
+  createPlannedPushMessage(feed.generatedAt, process.env.APP_URL!),
+);
 
 let cursor: string | null = "";
 let sent = 0;
+let planned = 0;
 let rateLimited = 0;
 let removed = 0;
 let failed = 0;
@@ -119,13 +122,16 @@ while (cursor !== null) {
     page.subscriptions,
     SEND_CONCURRENCY,
     async (subscription) => {
-      if (
-        subscription.lastNotifiedAt !== null &&
-        subscription.lastNotifiedAt > minimumLastNotifiedAt
-      ) {
+      const schedule = {
+        ...subscription,
+        nextPushOn: subscription.nextPushOn ?? null,
+      };
+      if (!isSubscriptionDue(schedule, now)) {
         rateLimited += 1;
         return;
       }
+      const isPlanned =
+        getPushDeliveryMode(subscription.endpoint) === "planned";
       try {
         await webpush.sendNotification(
           {
@@ -133,10 +139,11 @@ while (cursor !== null) {
             expirationTime: subscription.expirationTime,
             keys: { p256dh: subscription.p256dh, auth: subscription.auth },
           },
-          wakeUpPayload,
+          isPlanned ? plannedPayload : wakeUpPayload,
           { TTL: 60 * 60 * 12, urgency: "normal" },
         );
         sent += 1;
+        if (isPlanned) planned += 1;
         notifiedEndpoints.push(subscription.endpoint);
       } catch (error) {
         const statusCode =
@@ -161,7 +168,7 @@ while (cursor !== null) {
 await markNotified(notifiedEndpoints);
 
 console.log(
-  `Broadcast complete: ${sent} woken, ${rateLimited} within the daily cap, ` +
+  `Broadcast complete: ${sent} sent (${planned} planned), ${rateLimited} not yet due, ` +
     `${removed} expired removed, ${failed} failed.`,
 );
 if (failed > 0 && sent === 0) process.exitCode = 1;
@@ -181,7 +188,11 @@ async function markNotified(endpoints: readonly string[]): Promise<void> {
   const response = await fetch(`${apiURL}/subscriptions/notified`, {
     method: "POST",
     headers,
-    body: JSON.stringify({ endpoints }),
+    body: JSON.stringify({
+      endpoints,
+      today: getBerlinCalendarDate(now),
+      fallbackNextPushOn: createFallbackNextPushDate(now),
+    }),
   });
   if (!response.ok) {
     console.warn(`Could not record the send timestamps: ${response.status}`);

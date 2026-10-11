@@ -142,15 +142,19 @@ shown and then served from the same runtime cache.
 
 **No watched location ever reaches the server.** Areas, radii, followed sites
 and notification choices live in IndexedDB on the device. D1 holds only what
-Web Push delivery needs: endpoints, keys and timestamps.
+Web Push delivery needs: endpoints, keys, timestamps and, for Safari and Firefox
+devices, the date of the next planned push. That is one date, with no history and no
+reason attached.
 
 A run therefore works like this:
 
-1. The pipeline writes `ereignisse.json`, retaining three calendar days of
-   events so quiet hours and temporary delivery failures do not discard them.
-2. `scripts/send-push.ts` sends every eligible subscriber the same contentless
-   wake-up push. It retries retained events within the existing daily guard;
-   global event claims are no longer used for broadcast delivery.
+1. The pipeline writes `ereignisse.json`, retaining eight calendar days of
+   events so quiet hours, the weekly rhythm and temporary delivery failures do
+   not discard them.
+2. `scripts/send-push.ts` sends every eligible subscriber a push without
+   personal content. Chromium browsers get a daily wake-up. Safari and Firefox
+   get one on the date the device planned (see below). Global event claims are no longer
+   used for broadcast delivery.
 3. The service worker wakes, fetches `ereignisse.json`, loads the device's own
    preferences from IndexedDB, and keeps the events inside the device's areas
    or about a followed site. It shows one aggregated notification, deep-linked
@@ -177,10 +181,42 @@ Delivery is gated to 09:00–21:00 Europe/Berlin. The pipeline runs at 04:00 and
 defers to the evening one. A 12-hour per-device guard backs that roughly daily
 cadence against manual re-runs.
 
-Because matching happens after the push, a device whose areas match nothing
-shows no notification. Browsers expect `userVisibleOnly` subscriptions to
-display something, so a failed events fetch falls back to a generic notice
-rather than staying silent.
+Every browser requires `userVisibleOnly` subscriptions, and they enforce it
+differently. That is why delivery depends on the push service (read off the
+endpoint host, `src/lib/push-delivery.ts`):
+
+- **Chromium** (Chrome, Edge, Samsung Internet) tolerates pushes that show
+  nothing within an engagement budget, and keeps the subscription when it runs
+  out; it shows its own generic notice instead. Those devices get a daily
+  wake-up and stay quiet when nothing matches. Chromium also
+  runs the same local matching on `periodicsync` when the installed app is
+  granted it. That check needs no push, may stay silent, and keeps the same
+  quiet hours.
+- **Safari (iOS, iPadOS, macOS)** revokes a subscription after a few pushes
+  that show nothing, and offers neither silent push nor periodic sync.
+  **Firefox** keeps a similar quota for silent pushes. These devices therefore
+  plan their own pushes (`src/lib/push-schedule.ts`). The
+  next push falls on the day a matching start reminder becomes due (14 days
+  or one day ahead), or when the rhythm runs out (1, 3 or 7 days, default 7,
+  chosen under Einstellungen and kept on the device). The device reports only
+  the resulting date, after every push, on app start and when its settings
+  change. New sites and changes cannot be planned; they ride along with the
+  next push. After each send the server writes a fallback a week ahead, so a
+  failed report delays a push by a week at most.
+
+  The date is not entirely without information. Matched against the public
+  start dates, it points to a handful of sites across the region, or to none,
+  because it may just be the rhythm's turn. Only an operator logging every
+  reported date over time could narrow it down. The server keeps no history.
+
+  The push is a Declarative Web Push message: its generic notification is the
+  platform's fallback, and with `mutable` the service worker replaces it with
+  the device's own summary. Firefox ignores the declarative part and gets the
+  same summary from the service worker. Without a match it says "Keine neuen Meldungen".
+
+In both modes the service worker shows the notification before it refreshes
+the full data set, because the platform waits only briefly. A failed events
+fetch falls back to a generic notice rather than staying silent.
 
 The optional Cloudflare Worker in [`push-worker/`](push-worker/) stores the
 subscriptions, claims events, and can send a single on-demand delivery test —

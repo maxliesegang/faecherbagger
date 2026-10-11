@@ -6,6 +6,10 @@ import {
 } from "./notification-delivery.ts";
 import type { NotificationPreferences } from "../types/index.ts";
 import {
+  coercePushScheduleState,
+  type PushScheduleState,
+} from "./push-schedule.ts";
+import {
   coerceNotificationPreferences,
   createDefaultNotificationPreferences,
 } from "./notification-preferences.ts";
@@ -178,4 +182,28 @@ export async function updateNotificationDeliveryState(
   } finally {
     database.close();
   }
+}
+
+const PUSH_SCHEDULE_KEY = "push-schedule";
+
+/** The planned-push bookkeeping, in the same device-only database. */
+export async function loadPushScheduleState(): Promise<PushScheduleState> {
+  try {
+    return coercePushScheduleState(
+      await withStore<unknown>("readonly", (store) =>
+        store.get(PUSH_SCHEDULE_KEY),
+      ),
+    );
+  } catch {
+    return {};
+  }
+}
+
+export async function updatePushScheduleState(
+  update: Partial<PushScheduleState>,
+): Promise<void> {
+  const current = await loadPushScheduleState();
+  await withStore("readwrite", (store) =>
+    store.put({ ...current, ...update }, PUSH_SCHEDULE_KEY),
+  );
 }

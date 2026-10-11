@@ -552,8 +552,14 @@ describe("planning and delivery rules", () => {
         constructionSite,
       ]).events,
     ).toEqual(events);
+    // The weekly rhythm still finds the event a week later; then it expires.
     expect(
-      createNotificationFeed([], "2026-08-05T16:00:00Z", evening, [
+      createNotificationFeed([], "2026-08-09T16:00:00Z", evening, [
+        constructionSite,
+      ]).events,
+    ).toEqual(events);
+    expect(
+      createNotificationFeed([], "2026-08-10T16:00:00Z", evening, [
         constructionSite,
       ]).events,
     ).toEqual([]);

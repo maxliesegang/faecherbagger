@@ -1,0 +1,14 @@
+-- The date a Safari or Firefox device next wants a push (YYYY-MM-DD,
+-- Europe/Berlin).
+--
+-- Both browsers drop a subscription over silent pushes, so these devices plan
+-- their own wake-ups and report
+-- the next one. One date per device, no history: not which site, not why, and
+-- not the rhythm behind it. After each push the sender writes a fallback a week
+-- ahead, which the device overwrites with its own plan.
+--
+-- Apply once against an existing database:
+--   npx wrangler d1 execute faecherbagger-push --remote \
+--     --file=push-worker/migrations/0003_next_push_on.sql \
+--     --config=push-worker/wrangler.jsonc
+ALTER TABLE subscriptions ADD COLUMN next_push_on TEXT;

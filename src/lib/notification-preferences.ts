@@ -8,6 +8,7 @@ import {
   type NotificationPreferences,
   type NotificationSeverityThreshold,
 } from "../types/index.ts";
+import { isPushRhythmDays } from "./push-delivery.ts";
 
 /**
  * Notification preferences: defaults, limits and validation.
@@ -263,6 +264,8 @@ export function isNotificationPreferences(
       typeof candidate.remindDayBefore === "boolean") &&
     (candidate.notifyEarly === undefined ||
       typeof candidate.notifyEarly === "boolean") &&
+    (candidate.pushRhythmDays === undefined ||
+      isPushRhythmDays(candidate.pushRhythmDays)) &&
     Array.isArray(areas) &&
     areas.length <= MAX_NOTIFICATION_AREAS &&
     areas.every(isNotificationArea) &&
@@ -333,6 +336,9 @@ export function coerceNotificationPreferences(
         : true,
     notifyEarly:
       typeof candidate.notifyEarly === "boolean" ? candidate.notifyEarly : false,
+    ...(isPushRhythmDays(candidate.pushRhythmDays)
+      ? { pushRhythmDays: candidate.pushRhythmDays }
+      : {}),
     minSeverity: NOTIFICATION_SEVERITY_THRESHOLDS.includes(
       candidate.minSeverity as NotificationSeverityThreshold,
     )

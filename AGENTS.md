@@ -12,7 +12,9 @@
   It stores Web Push subscriptions — endpoints only — and GitHub Actions
   broadcast a contentless wake-up push. Notification areas and preferences stay
   on the device; the service worker decides locally what to show. Never add a
-  location, radius or preference column to that database.
+  location, radius or preference column to that database. The one exception
+  is `next_push_on`, the single date a Safari or Firefox device plans its next push for.
+  Keep it a single date: no history, no site, no reason, no rhythm.
 - Preserve compatibility with the GitHub Pages project base path. Use
   `import.meta.env.BASE_URL` or URLs resolved against the service-worker scope
   for app-owned assets rather than root-relative paths.

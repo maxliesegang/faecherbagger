@@ -5,6 +5,7 @@ import {
   readSubscription,
   readSubscriptionPage,
   rotateSubscription,
+  saveNextPushDate,
   saveSubscription,
 } from "./subscription-store.ts";
 import { sendWebPush } from "./web-push.ts";
@@ -24,6 +25,21 @@ const MAX_KEY_LENGTH = 512;
 const MAX_CLAIMED_EVENTS = 2_000;
 const DEFAULT_SUBSCRIPTION_PAGE_SIZE = 250;
 const MAX_SUBSCRIPTION_PAGE_SIZE = 500;
+/** Mirrors `MAX_PUSH_RHYTHM_DAYS` in `src/lib/push-delivery.ts`. */
+const MAX_NEXT_PUSH_DAYS = 7;
+
+const isISODate = (value: unknown): value is string => {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value))
+    return false;
+  const instant = new Date(`${value}T00:00:00Z`);
+  return (
+    Number.isFinite(instant.getTime()) &&
+    instant.toISOString().slice(0, 10) === value
+  );
+};
+
+const addDaysToToday = (days: number): string =>
+  new Date(Date.now() + days * 86_400_000).toISOString().slice(0, 10);
 /** One user-triggered test push per device per minute. */
 const TEST_NOTIFICATION_COOLDOWN_SECONDS = 60;
 
@@ -245,6 +261,48 @@ async function handleSubscriptionStatusRequest(
 }
 
 /**
+ * Stores the date a Safari or Firefox device next wants a push.
+ *
+ * Like the status check, the endpoint is the capability: whoever holds it can
+ * already push to the device, so it may also say when. The date is clamped to
+ * the slowest rhythm, so a device can postpone its push by a week at most.
+ */
+async function handleNextPushRequest(
+  request: Request,
+  env: Env,
+  origin: string | null,
+) {
+  if (request.method !== "POST") {
+    return createJSONResponse({ error: "Method not allowed" }, 405);
+  }
+  const originError = rejectDisallowedOrigin(request, origin);
+  if (originError) return originError;
+  const cors = createCorsHeaders(origin);
+  const body = await parseJSONBody<{
+    endpoint?: string;
+    nextPushOn?: unknown;
+  }>(request);
+  const nextPushOn = body?.nextPushOn;
+  if (!isValidEndpoint(body?.endpoint) || !isISODate(nextPushOn)) {
+    return createJSONResponse({ error: "Invalid request" }, 400, cors);
+  }
+  // UTC here, Berlin on the device: a day of slack either side covers it.
+  const earliest = addDaysToToday(-1);
+  const latest = addDaysToToday(MAX_NEXT_PUSH_DAYS + 1);
+  if (nextPushOn < earliest) {
+    return createJSONResponse({ error: "Invalid request" }, 400, cors);
+  }
+  const saved = await saveNextPushDate(
+    env.DB,
+    body.endpoint,
+    nextPushOn > latest ? latest : nextPushOn,
+  );
+  return saved
+    ? createJSONResponse({ ok: true }, 200, cors)
+    : createJSONResponse({ error: "Unknown subscription" }, 404, cors);
+}
+
+/**
  * Re-registers a device whose browser replaced its push subscription.
  *
  * Called from the service worker's `pushsubscriptionchange` handler. Without
@@ -386,12 +444,33 @@ async function handleNotifiedRequest(request: Request, env: Env) {
   if (!(await hasAdminAccess(request, env))) {
     return createJSONResponse({ error: "Unauthorized" }, 401);
   }
-  const body = await parseJSONBody<{ endpoints?: unknown }>(request);
+  const body = await parseJSONBody<{
+    endpoints?: unknown;
+    today?: unknown;
+    fallbackNextPushOn?: unknown;
+  }>(request);
   const endpoints = body?.endpoints;
   if (!Array.isArray(endpoints) || !endpoints.every(isValidEndpoint)) {
     return createJSONResponse({ error: "Invalid endpoints" }, 400);
   }
-  await markSubscriptionsNotified(env.DB, endpoints as string[]);
+  const hasSchedule =
+    body?.today !== undefined || body?.fallbackNextPushOn !== undefined;
+  if (
+    hasSchedule &&
+    (!isISODate(body?.today) || !isISODate(body?.fallbackNextPushOn))
+  ) {
+    return createJSONResponse({ error: "Invalid schedule" }, 400);
+  }
+  await markSubscriptionsNotified(
+    env.DB,
+    endpoints as string[],
+    hasSchedule
+      ? {
+          today: body!.today as string,
+          fallbackNextPushOn: body!.fallbackNextPushOn as string,
+        }
+      : undefined,
+  );
   return createJSONResponse({ ok: true });
 }
 
@@ -424,6 +503,9 @@ export default {
     }
     if (url.pathname === "/subscriptions/status") {
       return handleSubscriptionStatusRequest(request, env, origin);
+    }
+    if (url.pathname === "/subscriptions/next-push") {
+      return handleNextPushRequest(request, env, origin);
     }
     if (url.pathname === "/subscriptions/rotate") {
       return handleSubscriptionRotateRequest(request, env, origin);

@@ -17,6 +17,7 @@ import {
   countDaysBetween,
   SHORT_NOTICE_LEAD_DAYS,
 } from "./construction-site-timeframe.ts";
+import { MAX_PUSH_RHYTHM_DAYS } from "./push-delivery.ts";
 
 /**
  * Turns a pipeline run into the things worth announcing, and decides which of
@@ -51,6 +52,26 @@ const toFeedEvent = (
   endDate: site.endDate,
   municipality: site.municipality,
   location: site.location,
+});
+
+/**
+ * The start reminder the pipeline emits `leadDays` before a site begins.
+ *
+ * Exported so a device can foresee its own reminders with exactly the event
+ * the pipeline will later publish (see `push-schedule.ts`).
+ */
+export const createStartsSoonEvent = (
+  site: ConstructionSite,
+  leadDays: number,
+  announcedOn: ISODate,
+): NotificationFeedEvent => ({
+  ...toFeedEvent(
+    "starts-soon",
+    site,
+    `starts-soon:${site.id}:${site.startDate}:${leadDays}`,
+    announcedOn,
+  ),
+  reminderLeadDays: leadDays,
 });
 
 /**
@@ -100,15 +121,7 @@ export function collectNotificationEvents(
     for (const leadDays of STARTS_SOON_LEAD_DAYS) {
       const dueOn = addCalendarDays(site.startDate, -leadDays);
       if (dueOn !== today && !(dueOn > previousDay && dueOn < today)) continue;
-      events.push({
-        ...toFeedEvent(
-          "starts-soon",
-          site,
-          `starts-soon:${site.id}:${site.startDate}:${leadDays}`,
-          today,
-        ),
-        reminderLeadDays: leadDays,
-      });
+      events.push(createStartsSoonEvent(site, leadDays, today));
     }
   }
 
@@ -116,7 +129,16 @@ export function collectNotificationEvents(
   return events;
 }
 
-/** Keep three days of events so quiet hours and delayed delivery lose no run. */
+/**
+ * How long an event stays in the feed.
+ *
+ * Long enough for the slowest push rhythm (a week) plus a day for quiet hours
+ * and a missed run. Devices drop what they already showed, so a longer feed costs a
+ * few kilobytes, not repeated notifications.
+ */
+export const NOTIFICATION_FEED_RETENTION_DAYS = MAX_PUSH_RHYTHM_DAYS + 1;
+
+/** Retain recent events so quiet hours, the push rhythm and delayed delivery lose no run. */
 export function createNotificationFeed(
   events: readonly NotificationFeedEvent[],
   generatedAt: string,
@@ -124,7 +146,7 @@ export function createNotificationFeed(
   constructionSites?: readonly ConstructionSite[],
 ): NotificationFeed {
   const today = toBerlinCalendarDate(generatedAt);
-  const earliestDay = addCalendarDays(today, -3);
+  const earliestDay = addCalendarDays(today, -NOTIFICATION_FEED_RETENTION_DAYS);
   const currentSites = constructionSites
     ? new Map(
         constructionSites.map((constructionSite) => [

@@ -1,8 +1,9 @@
 /**
  * D1 access for push subscriptions.
  *
- * A row is a push endpoint and nothing else — no coordinates, no radius, no
- * preferences. Which of a run's events matter to a device is decided in that
+ * A row is a push endpoint plus delivery bookkeeping — no coordinates, no
+ * radius, no preferences about places or kinds. Safari and Firefox devices add the date of
+ * their next planned push, and nothing about why. Which of a run's events matter to a device is decided in that
  * device's service worker, so this database cannot reveal where anyone lives
  * even if it were disclosed in full.
  */
@@ -13,10 +14,12 @@ export interface StoredSubscription {
   auth: string;
   expirationTime: number | null;
   lastNotifiedAt: number | null;
+  nextPushOn: string | null;
 }
 
 const SUBSCRIPTION_COLUMNS = `endpoint, p256dh, auth,
-   expiration_time AS expirationTime, last_notified_at AS lastNotifiedAt`;
+   expiration_time AS expirationTime, last_notified_at AS lastNotifiedAt,
+   next_push_on AS nextPushOn`;
 
 export async function saveSubscription(
   db: D1Database,
@@ -57,6 +60,22 @@ export async function readSubscription(
     )
     .bind(endpoint)
     .first<StoredSubscription>();
+}
+
+/** Returns false when the endpoint is unknown. */
+export async function saveNextPushDate(
+  db: D1Database,
+  endpoint: string,
+  nextPushOn: string,
+): Promise<boolean> {
+  const result = await db
+    .prepare(
+      `UPDATE subscriptions SET next_push_on = ?2, updated_at = unixepoch()
+       WHERE endpoint = ?1`,
+    )
+    .bind(endpoint, nextPushOn)
+    .run();
+  return (result.meta.changes ?? 0) > 0;
 }
 
 export async function deleteSubscription(
@@ -164,18 +183,36 @@ export async function readSubscriptionPage(
   };
 }
 
+/**
+ * Records a send, and for planned pushes writes the fallback date.
+ *
+ * The fallback only replaces a date that is already due: a device that
+ * reported its next date while the broadcast was still running keeps it.
+ */
 export async function markSubscriptionsNotified(
   db: D1Database,
   endpoints: readonly string[],
+  schedule?: { today: string; fallbackNextPushOn: string },
 ): Promise<void> {
   if (endpoints.length === 0) return;
   await db.batch(
     endpoints.map((endpoint) =>
-      db
-        .prepare(
-          "UPDATE subscriptions SET last_notified_at = unixepoch() WHERE endpoint = ?1",
-        )
-        .bind(endpoint),
+      schedule
+        ? db
+            .prepare(
+              `UPDATE subscriptions SET
+                 last_notified_at = unixepoch(),
+                 next_push_on = CASE
+                   WHEN next_push_on IS NOT NULL AND next_push_on <= ?2 THEN ?3
+                   ELSE next_push_on END
+               WHERE endpoint = ?1`,
+            )
+            .bind(endpoint, schedule.today, schedule.fallbackNextPushOn)
+        : db
+            .prepare(
+              "UPDATE subscriptions SET last_notified_at = unixepoch() WHERE endpoint = ?1",
+            )
+            .bind(endpoint),
     ),
   );
 }

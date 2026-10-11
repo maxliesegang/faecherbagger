@@ -144,6 +144,11 @@ export interface NotificationPreferences {
   remindDayBefore?: boolean;
   notifyEarly?: boolean;
   /**
+   * Safari and Firefox only: hear from the service at least every this many days.
+   * Stays on the device; only the resulting next date is reported.
+   */
+  pushRhythmDays?: 1 | 3 | 7;
+  /**
    * Sites followed by hand, by `ConstructionSite.id`.
    *
    * They bypass the areas and the severity threshold entirely: following a site

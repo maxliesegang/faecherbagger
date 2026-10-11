@@ -13,6 +13,11 @@ import {
 } from "../lib/notification-area.ts";
 import { MAX_NOTIFICATION_AREAS } from "../lib/notification-preferences.ts";
 import { formatISOTimestamp } from "../lib/construction-site-labels.ts";
+import {
+  DEFAULT_PUSH_RHYTHM_DAYS,
+  PUSH_RHYTHM_DAYS,
+  PUSH_RHYTHM_LABELS,
+} from "../lib/push-delivery.ts";
 import { NotificationSwitch } from "./NotificationSwitch.tsx";
 import { AppIcon, NOTIFICATION_AREA_ICON } from "./AppIcon.tsx";
 import "./SettingsPage.css";
@@ -200,6 +205,34 @@ export function SettingsPage({
                   Schon bei Ankündigung, nicht erst 14 Tage vorher
                 </label>
               </fieldset>
+              {pushNotifications.deliveryMode === "planned" && (
+                <fieldset className="settings__fieldset">
+                  <legend>Wie oft?</legend>
+                  <p className="settings__muted">
+                    Erinnerungen kommen am Termin. Spätestens nach dieser Zeit
+                    kommt eine Nachricht, auch ohne Neuigkeiten.
+                  </p>
+                  {PUSH_RHYTHM_DAYS.map((rhythmDays) => (
+                    <label key={rhythmDays} className="settings__choice">
+                      <input
+                        type="radio"
+                        name="settings-push-rhythm"
+                        checked={
+                          (preferences.pushRhythmDays ??
+                            DEFAULT_PUSH_RHYTHM_DAYS) === rhythmDays
+                        }
+                        onChange={() =>
+                          onPreferencesChange({
+                            ...preferences,
+                            pushRhythmDays: rhythmDays,
+                          })
+                        }
+                      />
+                      {PUSH_RHYTHM_LABELS[rhythmDays]}
+                    </label>
+                  ))}
+                </fieldset>
+              )}
               <KernButton
                 type="button"
                 variant="tertiary"

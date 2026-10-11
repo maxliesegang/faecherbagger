@@ -3,7 +3,8 @@
 --
 -- Note what is *not* here: no coordinates, no radius, no notification
 -- preferences. Those stay on the device, and the service worker decides locally
--- which of a run's events to show. This database cannot reveal where any
+-- which of a run's events to show. Safari and Firefox devices report only the
+-- date of their next push. This database cannot reveal where any
 -- subscriber lives.
 
 CREATE TABLE IF NOT EXISTS subscriptions (
@@ -15,6 +16,9 @@ CREATE TABLE IF NOT EXISTS subscriptions (
   last_notified_at INTEGER,
   -- Rate-limits the user-triggered "Zustellung testen" push.
   last_test_at INTEGER,
+  -- Safari and Firefox only: next planned push, YYYY-MM-DD in Europe/Berlin. One
+  -- date, no history, no reason; see migrations/0003_next_push_on.sql.
+  next_push_on TEXT,
   created_at INTEGER NOT NULL,
   updated_at INTEGER NOT NULL
 );

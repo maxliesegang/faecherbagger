@@ -11,6 +11,7 @@ import {
   toggleFollowedConstructionSite,
 } from "../lib/followed-construction-sites.ts";
 import { MAX_FOLLOWED_SITES } from "../lib/notification-preferences.ts";
+import { requestPushScheduleUpdate } from "../lib/push.ts";
 
 export interface NotificationPreferencesController {
   preferences: NotificationPreferences;
@@ -68,7 +69,10 @@ export function useNotificationPreferences(): NotificationPreferencesController 
       // Optimistic: the UI is the source of truth for this visit, and a failed
       // write must not make an area the user just drew disappear.
       setStoredPreferences(updated);
-      void saveNotificationPreferences(updated);
+      // Areas, reminders and the rhythm all move the next planned push.
+      void saveNotificationPreferences(updated).then(() =>
+        requestPushScheduleUpdate(),
+      );
     },
     [],
   );
