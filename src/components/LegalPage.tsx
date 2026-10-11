@@ -198,10 +198,12 @@ function PrivacyContent() {
       <p>
         Beim Einschalten speichert unser Benachrichtigungsdienst nur eine
         anonyme Geräteadresse, die Ihr Browser erzeugt (Push-Endpoint und
-        Schlüssel). Bei neuen Meldungen erhalten alle angemeldeten Geräte
-        denselben Hinweis ohne Inhalt. Erst Ihr Gerät prüft, ob etwas davon
-        Sie betrifft, und zeigt nur dann eine Benachrichtigung. Der Dienst
-        weiß daher nicht, wo Sie wohnen oder was Ihnen angezeigt wird.
+        Schlüssel). In Safari und Firefox kommt das Datum hinzu, an dem Ihr
+        Gerät die nächste Nachricht erwartet. Bei neuen Meldungen erhalten alle
+        angemeldeten Geräte denselben Hinweis ohne Inhalt. Erst Ihr Gerät
+        prüft, ob etwas davon Sie betrifft, und zeigt nur dann eine
+        Benachrichtigung. Der Dienst weiß daher nicht, wo Sie wohnen oder was
+        Ihnen angezeigt wird.
       </p>
       <p>
         Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Beim

@@ -10,8 +10,8 @@ const UNAVAILABLE_HINTS: Record<PushUnavailableReason, string> = {
   unconfigured: "Benachrichtigungen sind auf dieser Seite nicht eingerichtet.",
   unsupported: "Ihr Browser unterstützt keine Benachrichtigungen.",
   "needs-install":
-    "Auf iPhone und iPad: In Safari „Teilen“ › „Zum Home-Bildschirm“ wählen, dann die App von dort öffnen.",
-  denied: "Erlauben Sie sie in den Browser-Einstellungen.",
+    "Auf iPhone und iPad nur in der App: In Safari „Teilen“ › „Zum Home-Bildschirm“ wählen und von dort öffnen.",
+  denied: "Erlauben Sie sie für diese Seite in den Browser-Einstellungen.",
 };
 
 interface NotificationSwitchProps {
@@ -71,7 +71,8 @@ export function NotificationSwitch({
         )}
         {!isActive && !unavailableReason && variant === "banner" && (
           <p className="notification-switch__hint">
-            Wir melden neue Baustellen an Ihren Orten.
+            Wir melden neue Baustellen an Ihren Orten. Die Orte bleiben auf
+            diesem Gerät.
           </p>
         )}
         {variant === "row" && feedbackMessage && (

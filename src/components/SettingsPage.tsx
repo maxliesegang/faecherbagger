@@ -209,8 +209,9 @@ export function SettingsPage({
                 <fieldset className="settings__fieldset">
                   <legend>Wie oft?</legend>
                   <p className="settings__muted">
-                    Erinnerungen kommen am Termin. Spätestens nach dieser Zeit
-                    kommt eine Nachricht, auch ohne Neuigkeiten.
+                    Neues kommt gesammelt, Erinnerungen am Termin. Ist nichts
+                    neu, sehen Sie kurz „Keine neuen Meldungen“. Das verlangt
+                    Ihr Browser.
                   </p>
                   {PUSH_RHYTHM_DAYS.map((rhythmDays) => (
                     <label key={rhythmDays} className="settings__choice">
@@ -243,8 +244,8 @@ export function SettingsPage({
             </div>
           )}
           <p className="settings__muted">
-            Ihre Orte bleiben auf diesem Gerät. Für Benachrichtigungen speichert
-            der Server nur eine anonyme Geräteadresse.
+            Ihre Orte bleiben auf diesem Gerät. Unser Server erfährt sie
+            nicht.
           </p>
         </section>
       </div>

@@ -973,10 +973,16 @@ export function NotificationSetupDialog({
           )}
 
           {isNotificationStep && (
-            <KernText>
-              Gespeichert. Sollen wir Sie benachrichtigen, wenn hier eine
-              Baustelle angekündigt wird oder sich ändert?
-            </KernText>
+            <>
+              <KernText>
+                Gespeichert. Sollen wir Sie benachrichtigen, wenn hier eine
+                Baustelle angekündigt wird oder sich ändert?
+              </KernText>
+              <p className="notification-setup__hint">
+                Der Ort bleibt auf diesem Gerät. Ausschalten können Sie
+                jederzeit in den Einstellungen.
+              </p>
+            </>
           )}
         </div>
 
