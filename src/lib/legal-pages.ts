@@ -1,21 +1,15 @@
 /**
- * The standalone pages a German public-facing portal has to carry, and the URL
- * value each is reachable under (`?seite=impressum`).
+ * The standalone legal pages and the URL value each is reachable under
+ * (`?seite=datenschutz`).
  */
-export type LegalPageId = "imprint" | "privacy" | "accessibility";
+export type LegalPageId = "privacy";
 
 export const LEGAL_PAGES: readonly {
   id: LegalPageId;
   urlValue: string;
   title: string;
 }[] = [
-  { id: "imprint", urlValue: "impressum", title: "Impressum" },
   { id: "privacy", urlValue: "datenschutz", title: "Datenschutzerklärung" },
-  {
-    id: "accessibility",
-    urlValue: "barrierefreiheit",
-    title: "Barrierefreiheitserklärung",
-  },
 ];
 
 export const getLegalPageIdFromURLValue = (

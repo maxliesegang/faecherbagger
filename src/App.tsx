@@ -781,7 +781,7 @@ function AppFooter({ getLegalPageHref, onLegalPageOpen }: AppFooterProps) {
       {/*
         KERN is the state's design system, so an app built with it reads as an
         official service. It is not one, and that has to be visible on every
-        screen without opening the Impressum.
+        screen without opening a legal page.
       */}
       <p>
         Privates Angebot, keine amtliche Auskunft. Angaben ohne Gewähr, es gilt

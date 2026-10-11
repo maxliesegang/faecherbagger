@@ -54,7 +54,7 @@ export interface AppURLState {
   view: ConstructionSiteResultView;
   sort: ConstructionSiteSort | null;
   detailSiteId?: string;
-  /** Standalone page (Impressum etc.); takes over the whole view when set. */
+  /** Standalone page (Datenschutz); takes over the whole view when set. */
   legalPageId?: LegalPageId;
 }
 

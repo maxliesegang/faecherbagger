@@ -70,3 +70,46 @@
 .legal-page .kern-alert {
   margin-bottom: 1.25rem;
 }
+
+/* Privacy details: one accordion per function, closed by default. */
+.legal-page__details {
+  margin-block: 1.5rem;
+}
+
+.legal-page__details h3 {
+  margin: 0;
+  padding-block: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.legal-page__details .kern-accordion__body {
+  padding: 0 0.25rem 0.5rem;
+}
+
+.legal-page__facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1rem;
+  margin-block: 0 0.7rem;
+  line-height: 1.5;
+}
+
+.legal-page__facts dt {
+  font-weight: 700;
+}
+
+.legal-page__facts dd {
+  margin: 0;
+}
+
+@media (max-width: 30rem) {
+  .legal-page__facts {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .legal-page__facts dd {
+    margin-bottom: 0.5rem;
+  }
+}

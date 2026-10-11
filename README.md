@@ -111,8 +111,8 @@ committed to the repo, so `dev`/`build` work offline once it exists.
 ### Deployment configuration
 
 Copy [`.env.example`](.env.example) to `.env.local` for local overrides. A
-public build must identify its operator so the German-language Impressum,
-privacy policy and accessibility statement can render real contact details:
+public build must identify its operator so the German-language privacy policy
+can name the controller with real contact details:
 
 | Build variable | Purpose |
 | --- | --- |
@@ -120,9 +120,8 @@ privacy policy and accessibility statement can render real contact details:
 | `VITE_OPERATOR_NAME` | Name of the person or organization responsible for the deployment |
 | `VITE_OPERATOR_ADDRESS` | Postal address, with lines separated by `\n` in an env file |
 | `VITE_OPERATOR_EMAIL` | Operator contact address |
-| `VITE_OPERATOR_ACCESSIBILITY_CONTACT` | Optional accessibility contact; defaults to the operator email |
 
-Without the required operator values the legal pages show a warning. Set them
+Without the required operator values the privacy page shows a warning. Set them
 where `npm run build` runs; Vite embeds them at build time.
 
 ## PWA, offline data and notifications
