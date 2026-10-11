@@ -11,7 +11,7 @@ const UNAVAILABLE_HINTS: Record<PushUnavailableReason, string> = {
   unsupported: "Ihr Browser unterstützt keine Benachrichtigungen.",
   "needs-install":
     "Auf iPhone und iPad: In Safari „Teilen“ › „Zum Home-Bildschirm“ wählen, dann die App von dort öffnen.",
-  denied: "Benachrichtigungen sind blockiert. Erlauben Sie sie in den Browser-Einstellungen.",
+  denied: "Erlauben Sie sie in den Browser-Einstellungen.",
 };
 
 interface NotificationSwitchProps {
@@ -60,7 +60,9 @@ export function NotificationSwitch({
             ? "Benachrichtigungen werden geprüft …"
             : isActive
               ? "Benachrichtigungen sind an"
-              : "Benachrichtigungen sind aus"}
+              : unavailableReason === "denied"
+                ? "Benachrichtigungen sind blockiert"
+                : "Benachrichtigungen sind aus"}
         </p>
         {!isActive && unavailableReason && (
           <p className="notification-switch__hint">

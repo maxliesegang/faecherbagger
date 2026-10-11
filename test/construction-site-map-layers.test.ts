@@ -11,6 +11,7 @@ interface RecordedLayer {
   id: string;
   minzoom?: number;
   filter?: unknown;
+  beforeId?: string;
 }
 
 interface RecordedSource {
@@ -25,9 +26,15 @@ function recordConstructionSiteMapLayers() {
     addSource(id: string, specification: RecordedSource["specification"]) {
       sources.push({ id, specification });
     },
-    addLayer(layer: RecordedLayer) {
-      layers.push(layer);
+    addLayer(layer: RecordedLayer, beforeId?: string) {
+      layers.push({ ...layer, beforeId });
     },
+    getStyle: () => ({
+      layers: [
+        { id: "water", type: "fill", "source-layer": "water" },
+        { id: "road_minor", type: "line", "source-layer": "transportation" },
+      ],
+    }),
   } as unknown as MapLibreMap;
 
   addConstructionSiteMapLayers(map, {
@@ -38,6 +45,14 @@ function recordConstructionSiteMapLayers() {
 }
 
 describe("addConstructionSiteMapLayers", () => {
+  it("slides the corridor band beneath the basemap's roads", () => {
+    const { layers } = recordConstructionSiteMapLayers();
+    const corridor = layers.find(
+      ({ id }) => id === MAP_LAYER_IDS.notificationAreaCorridor,
+    );
+    expect(corridor?.beforeId).toBe("road_minor");
+  });
+
   it("adds sources and layers in the required rendering order", () => {
     const { sources, layers } = recordConstructionSiteMapLayers();
 
@@ -49,7 +64,10 @@ describe("addConstructionSiteMapLayers", () => {
     ]);
     expect(layers.map(({ id }) => id)).toEqual([
       MAP_LAYER_IDS.notificationAreaFill,
+      MAP_LAYER_IDS.notificationAreaCorridorOutline,
+      MAP_LAYER_IDS.notificationAreaCorridor,
       MAP_LAYER_IDS.notificationAreaLine,
+      MAP_LAYER_IDS.notificationAreaLabel,
       MAP_LAYER_IDS.areaFill,
       MAP_LAYER_IDS.geometryLine,
       MAP_LAYER_IDS.clusters,

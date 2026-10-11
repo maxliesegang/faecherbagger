@@ -317,8 +317,17 @@ export function App() {
               changeSection("relevant");
             }}
           >
-            <span className="app-header__name">Fächerbagger</span>
-            <span className="app-header__tagline">Baustellen Karlsruhe</span>
+            <img
+              className="app-header__logo"
+              src={`${import.meta.env.BASE_URL}icons/faecherbagger-mark.svg`}
+              alt=""
+              width="36"
+              height="36"
+            />
+            <span className="app-header__wordmark">
+              <span className="app-header__name">Fächerbagger</span>
+              <span className="app-header__tagline">Baustellen Karlsruhe</span>
+            </span>
           </a>
           <AppNavigation
             section={section}

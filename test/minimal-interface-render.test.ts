@@ -60,7 +60,7 @@ describe("minimal interface", () => {
     expect(html).toContain("2 aktiv");
     expect(html).toContain('aria-label="Aktive Filter"');
     expect(html).toContain("Karlsruhe");
-    expect(html).toContain("Zurücksetzen");
+    expect(html).toContain("Filter zurücksetzen");
     expect(html).toContain('type="search"');
     expect(html).toContain('for="filter-search">Straße oder Ort suchen</label>');
   });

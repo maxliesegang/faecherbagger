@@ -2,13 +2,13 @@ import type {
   ConstructionSite,
   ConstructionSiteChanges,
   ISODate,
-  LngLat,
   NotificationArea,
   NotificationFeed,
   NotificationFeedEvent,
   NotificationPreferences,
+  NotificationSeverityThreshold,
 } from "../types/index.ts";
-import { distanceInMeters } from "./distance.ts";
+import { isTargetInNotificationArea } from "./notification-area-match.ts";
 import { meetsSeverityThreshold } from "./notification-preferences.ts";
 import {
   addCalendarDays,
@@ -17,6 +17,7 @@ import {
   countDaysBetween,
   SHORT_NOTICE_LEAD_DAYS,
 } from "./construction-site-timeframe.ts";
+import { MAX_PUSH_RHYTHM_DAYS } from "./push-delivery.ts";
 
 /**
  * Turns a pipeline run into the things worth announcing, and decides which of
@@ -45,11 +46,32 @@ const toFeedEvent = (
   announcedOn,
   siteId: site.id,
   point: site.point,
+  ...(site.extentPoints ? { extentPoints: site.extentPoints } : {}),
   closure: site.closure,
   startDate: site.startDate,
   endDate: site.endDate,
   municipality: site.municipality,
   location: site.location,
+});
+
+/**
+ * The start reminder the pipeline emits `leadDays` before a site begins.
+ *
+ * Exported so a device can foresee its own reminders with exactly the event
+ * the pipeline will later publish (see `push-schedule.ts`).
+ */
+export const createStartsSoonEvent = (
+  site: ConstructionSite,
+  leadDays: number,
+  announcedOn: ISODate,
+): NotificationFeedEvent => ({
+  ...toFeedEvent(
+    "starts-soon",
+    site,
+    `starts-soon:${site.id}:${site.startDate}:${leadDays}`,
+    announcedOn,
+  ),
+  reminderLeadDays: leadDays,
 });
 
 /**
@@ -99,15 +121,7 @@ export function collectNotificationEvents(
     for (const leadDays of STARTS_SOON_LEAD_DAYS) {
       const dueOn = addCalendarDays(site.startDate, -leadDays);
       if (dueOn !== today && !(dueOn > previousDay && dueOn < today)) continue;
-      events.push({
-        ...toFeedEvent(
-          "starts-soon",
-          site,
-          `starts-soon:${site.id}:${site.startDate}:${leadDays}`,
-          today,
-        ),
-        reminderLeadDays: leadDays,
-      });
+      events.push(createStartsSoonEvent(site, leadDays, today));
     }
   }
 
@@ -115,7 +129,16 @@ export function collectNotificationEvents(
   return events;
 }
 
-/** Keep three days of events so quiet hours and delayed delivery lose no run. */
+/**
+ * How long an event stays in the feed.
+ *
+ * Long enough for the slowest push rhythm (a week) plus a day for quiet hours
+ * and a missed run. Devices drop what they already showed, so a longer feed costs a
+ * few kilobytes, not repeated notifications.
+ */
+export const NOTIFICATION_FEED_RETENTION_DAYS = MAX_PUSH_RHYTHM_DAYS + 1;
+
+/** Retain recent events so quiet hours, the push rhythm and delayed delivery lose no run. */
 export function createNotificationFeed(
   events: readonly NotificationFeedEvent[],
   generatedAt: string,
@@ -123,7 +146,7 @@ export function createNotificationFeed(
   constructionSites?: readonly ConstructionSite[],
 ): NotificationFeed {
   const today = toBerlinCalendarDate(generatedAt);
-  const earliestDay = addCalendarDays(today, -3);
+  const earliestDay = addCalendarDays(today, -NOTIFICATION_FEED_RETENTION_DAYS);
   const currentSites = constructionSites
     ? new Map(
         constructionSites.map((constructionSite) => [
@@ -166,18 +189,6 @@ export function createNotificationFeed(
     ),
   };
 }
-
-export const isPointInNotificationArea = (
-  area: NotificationArea,
-  point: LngLat,
-): boolean => distanceInMeters(area.center, point) <= area.radiusKm * 1_000;
-
-/** The first area containing the point, or `undefined` when none does. */
-export const findNotificationAreaForPoint = (
-  areas: readonly NotificationArea[],
-  point: LngLat,
-): NotificationArea | undefined =>
-  areas.find((area) => isPointInNotificationArea(area, point));
 
 /**
  * The subset of `events` a device with these preferences should be shown.
@@ -222,15 +233,36 @@ export function selectNotificationEvents(
     if (event.kind === "new" && event.endDate !== null && event.endDate < today)
       return false;
     if (isFollowed) return true;
-    return (
-      (meetsSeverityThreshold(event.closure, preferences.minSeverity) ||
-        (event.kind === "changed" &&
-          event.previousClosure !== undefined &&
-          meetsSeverityThreshold(
-            event.previousClosure,
-            preferences.minSeverity,
-          ))) &&
-      findNotificationAreaForPoint(preferences.areas, event.point) !== undefined
-    );
+    return findNotifyingArea(event, preferences) !== undefined;
   });
+}
+
+/**
+ * Whether an event is disruptive enough for a threshold. A change counts if
+ * either side of it is: a closure that was lifted is news to whoever was told
+ * about it.
+ */
+const isDisruptiveEnough = (
+  event: NotificationFeedEvent,
+  threshold: NotificationSeverityThreshold,
+): boolean =>
+  meetsSeverityThreshold(event.closure, threshold) ||
+  (event.kind === "changed" &&
+    event.previousClosure !== undefined &&
+    meetsSeverityThreshold(event.previousClosure, threshold));
+
+/**
+ * The first watched area an event is worth a notification for: inside it and
+ * disruptive enough for *its* threshold. A site on the commute that only
+ * narrows a lane can still notify for "Zuhause" next door.
+ */
+export function findNotifyingArea(
+  event: NotificationFeedEvent,
+  preferences: NotificationPreferences,
+): NotificationArea | undefined {
+  return preferences.areas.find(
+    (area) =>
+      isDisruptiveEnough(event, area.minSeverity ?? preferences.minSeverity) &&
+      isTargetInNotificationArea(area, event),
+  );
 }

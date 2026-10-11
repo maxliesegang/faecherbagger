@@ -3,10 +3,12 @@ import {
   type ClosureSeverity,
   type LngLat,
   type NotificationArea,
+  type RouteTravelMode,
   type NotificationEventKind,
   type NotificationPreferences,
   type NotificationSeverityThreshold,
 } from "../types/index.ts";
+import { isPushRhythmDays } from "./push-delivery.ts";
 
 /**
  * Notification preferences: defaults, limits and validation.
@@ -64,6 +66,29 @@ export const MAX_NOTIFICATION_AREAS = 5;
  */
 export const MAX_FOLLOWED_SITES = 50;
 export const MAX_NOTIFICATION_AREA_LABEL_LENGTH = 40;
+
+/** Distances to either side of a route the corridor picker offers. */
+export const CORRIDOR_WIDTH_STEPS_METERS: readonly number[] = [100, 250, 500, 1000];
+export const DEFAULT_CORRIDOR_WIDTH_METERS = 250;
+const MIN_CORRIDOR_WIDTH_METERS = 25;
+const MAX_CORRIDOR_WIDTH_METERS = 2_000;
+
+/**
+ * Vertex caps. They bound what the service worker checks on every push and
+ * what a stored record can grow to; drawing and routing simplify to fit.
+ */
+export const MAX_POLYGON_VERTICES = 300;
+export const MAX_CORRIDOR_VERTICES = 1_000;
+const MAX_AREA_NAME_LENGTH = 100;
+
+export const ROUTE_TRAVEL_MODES: readonly RouteTravelMode[] = ["car", "bike", "foot"];
+
+/** German display text for a corridor width, e.g. "250 m" or "1 km". */
+export function formatCorridorWidth(widthMeters: number): string {
+  return widthMeters >= 1_000
+    ? formatNotificationRadius(widthMeters / 1_000)
+    : `${Math.round(widthMeters)} m`;
+}
 
 export const NOTIFICATION_EVENT_KINDS: readonly NotificationEventKind[] = [
   "new",
@@ -138,22 +163,93 @@ export function isLngLat(value: unknown): value is LngLat {
   );
 }
 
+const isLngLatList = (
+  value: unknown,
+  minLength: number,
+  maxLength: number,
+): value is LngLat[] =>
+  Array.isArray(value) &&
+  value.length >= minLength &&
+  value.length <= maxLength &&
+  value.every(isLngLat);
+
+const isAreaName = (value: unknown): value is string =>
+  typeof value === "string" &&
+  value.trim().length > 0 &&
+  value.length <= MAX_AREA_NAME_LENGTH;
+
 export function isNotificationArea(value: unknown): value is NotificationArea {
   if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<NotificationArea>;
-  return (
+  const candidate = value as Record<string, unknown>;
+  const hasIdentity =
     typeof candidate.id === "string" &&
     candidate.id.trim().length > 0 &&
     candidate.id.length <= 64 &&
     typeof candidate.label === "string" &&
     candidate.label.trim().length > 0 &&
     candidate.label.length <= MAX_NOTIFICATION_AREA_LABEL_LENGTH &&
-    isLngLat(candidate.center) &&
-    typeof candidate.radiusKm === "number" &&
-    Number.isFinite(candidate.radiusKm) &&
-    candidate.radiusKm >= MIN_NOTIFICATION_RADIUS_KM &&
-    candidate.radiusKm <= MAX_NOTIFICATION_RADIUS_KM
-  );
+    (candidate.minSeverity === undefined ||
+      NOTIFICATION_SEVERITY_THRESHOLDS.includes(
+        candidate.minSeverity as NotificationSeverityThreshold,
+      ));
+  if (!hasIdentity) return false;
+  switch (candidate.kind) {
+    case "circle":
+      return (
+        isLngLat(candidate.center) &&
+        typeof candidate.radiusKm === "number" &&
+        Number.isFinite(candidate.radiusKm) &&
+        candidate.radiusKm >= MIN_NOTIFICATION_RADIUS_KM &&
+        candidate.radiusKm <= MAX_NOTIFICATION_RADIUS_KM
+      );
+    case "polygon":
+      return isLngLatList(candidate.ring, 3, MAX_POLYGON_VERTICES);
+    case "corridor": {
+      const route = candidate.route as Record<string, unknown> | undefined;
+      return (
+        isLngLatList(candidate.line, 2, MAX_CORRIDOR_VERTICES) &&
+        (candidate.returnLine === undefined ||
+          isLngLatList(candidate.returnLine, 2, MAX_CORRIDOR_VERTICES)) &&
+        typeof candidate.widthMeters === "number" &&
+        Number.isFinite(candidate.widthMeters) &&
+        candidate.widthMeters >= MIN_CORRIDOR_WIDTH_METERS &&
+        candidate.widthMeters <= MAX_CORRIDOR_WIDTH_METERS &&
+        (route === undefined ||
+          (typeof route === "object" &&
+            route !== null &&
+            isLngLat(route.start) &&
+            isLngLat(route.destination) &&
+            ROUTE_TRAVEL_MODES.includes(route.travelMode as RouteTravelMode) &&
+            (route.startLabel === undefined || isAreaName(route.startLabel)) &&
+            (route.destinationLabel === undefined ||
+              isAreaName(route.destinationLabel))))
+      );
+    }
+    case "municipality":
+      return isAreaName(candidate.municipality);
+    case "street":
+      return (
+        isAreaName(candidate.street) &&
+        isAreaName(candidate.municipality) &&
+        (candidate.includeJunctions === undefined ||
+          typeof candidate.includeJunctions === "boolean")
+      );
+    default:
+      return false;
+  }
+}
+
+/**
+ * An area as stored, upgraded where it predates area kinds: every area saved
+ * before outlines and routes existed is a circle without a `kind`.
+ */
+export function coerceNotificationArea(
+  value: unknown,
+): NotificationArea | undefined {
+  if (!value || typeof value !== "object") return undefined;
+  const candidate =
+    "kind" in value ? value : { ...value, kind: "circle" as const };
+  return isNotificationArea(candidate) ? candidate : undefined;
 }
 
 export function isNotificationPreferences(
@@ -168,6 +264,8 @@ export function isNotificationPreferences(
       typeof candidate.remindDayBefore === "boolean") &&
     (candidate.notifyEarly === undefined ||
       typeof candidate.notifyEarly === "boolean") &&
+    (candidate.pushRhythmDays === undefined ||
+      isPushRhythmDays(candidate.pushRhythmDays)) &&
     Array.isArray(areas) &&
     areas.length <= MAX_NOTIFICATION_AREAS &&
     areas.every(isNotificationArea) &&
@@ -205,11 +303,9 @@ export function coerceNotificationPreferences(
   const candidate = value as Partial<NotificationPreferences>;
   const areas: NotificationArea[] = [];
   if (Array.isArray(candidate.areas)) {
-    for (const area of candidate.areas) {
-      if (
-        isNotificationArea(area) &&
-        !areas.some(({ id }) => id === area.id)
-      ) {
+    for (const value of candidate.areas) {
+      const area = coerceNotificationArea(value);
+      if (area && !areas.some(({ id }) => id === area.id)) {
         areas.push(area);
       }
       if (areas.length === MAX_NOTIFICATION_AREAS) break;
@@ -240,6 +336,9 @@ export function coerceNotificationPreferences(
         : true,
     notifyEarly:
       typeof candidate.notifyEarly === "boolean" ? candidate.notifyEarly : false,
+    ...(isPushRhythmDays(candidate.pushRhythmDays)
+      ? { pushRhythmDays: candidate.pushRhythmDays }
+      : {}),
     minSeverity: NOTIFICATION_SEVERITY_THRESHOLDS.includes(
       candidate.minSeverity as NotificationSeverityThreshold,
     )

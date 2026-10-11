@@ -30,10 +30,13 @@
   "dependencies": {
     "@kern-ux-annex/kern-react-kit": "^2.40.0",
     "@kern-ux/native": "^2.8.2",
+    "downshift": "9.4.0",
     "feed": "^6.0.0",
     "maplibre-gl": "^6.13.0",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "terra-draw": "^1.37.0",
+    "terra-draw-maplibre-gl-adapter": "^1.5.0"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.23.0",

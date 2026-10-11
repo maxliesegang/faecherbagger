@@ -7,13 +7,19 @@ import type {
   NotificationSeverityThreshold,
 } from "../types/index.ts";
 import type { PushNotificationsController } from "../hooks/usePushNotifications.ts";
-import { removeNotificationArea } from "../lib/notification-area.ts";
 import {
-  formatNotificationRadius,
-  MAX_NOTIFICATION_AREAS,
-} from "../lib/notification-preferences.ts";
+  describeNotificationArea,
+  removeNotificationArea,
+} from "../lib/notification-area.ts";
+import { MAX_NOTIFICATION_AREAS } from "../lib/notification-preferences.ts";
 import { formatISOTimestamp } from "../lib/construction-site-labels.ts";
+import {
+  DEFAULT_PUSH_RHYTHM_DAYS,
+  PUSH_RHYTHM_DAYS,
+  PUSH_RHYTHM_LABELS,
+} from "../lib/push-delivery.ts";
 import { NotificationSwitch } from "./NotificationSwitch.tsx";
+import { AppIcon, NOTIFICATION_AREA_ICON } from "./AppIcon.tsx";
 import "./SettingsPage.css";
 
 const SEVERITY_OPTIONS: readonly {
@@ -21,8 +27,8 @@ const SEVERITY_OPTIONS: readonly {
   label: string;
 }[] = [
   { value: "all", label: "Alle Baustellen" },
-  { value: "obstruction", label: "Nur mit Behinderung oder Sperrung" },
-  { value: "closure", label: "Nur Sperrungen und unklare Fälle" },
+  { value: "obstruction", label: "Ab Behinderung" },
+  { value: "closure", label: "Nur Sperrungen" },
 ];
 
 interface SettingsPageProps {
@@ -61,9 +67,15 @@ export function SettingsPage({
             <ul className="settings__list">
               {preferences.areas.map((area) => (
                 <li key={area.id} className="settings__row">
-                  <span className="settings__row-text">
-                    <strong>{area.label}</strong>
-                    <span>{formatNotificationRadius(area.radiusKm)} Umkreis</span>
+                  <span className="settings__row-main">
+                    <AppIcon
+                      name={NOTIFICATION_AREA_ICON[area.kind]}
+                      className="settings__row-icon"
+                    />
+                    <span className="settings__row-text">
+                      <strong>{area.label}</strong>
+                      <span>{describeNotificationArea(area)}</span>
+                    </span>
                   </span>
                   {confirmingAreaId === area.id ? (
                     <span
@@ -144,6 +156,9 @@ export function SettingsPage({
             <div className="settings__options">
               <fieldset className="settings__fieldset">
                 <legend>Worüber?</legend>
+                <p className="settings__muted">
+                  Vorgabe für neue Orte.
+                </p>
                 {SEVERITY_OPTIONS.map((option) => (
                   <label key={option.value} className="settings__choice">
                     <input
@@ -190,6 +205,34 @@ export function SettingsPage({
                   Schon bei Ankündigung, nicht erst 14 Tage vorher
                 </label>
               </fieldset>
+              {pushNotifications.deliveryMode === "planned" && (
+                <fieldset className="settings__fieldset">
+                  <legend>Wie oft?</legend>
+                  <p className="settings__muted">
+                    Erinnerungen kommen am Termin. Spätestens nach dieser Zeit
+                    kommt eine Nachricht, auch ohne Neuigkeiten.
+                  </p>
+                  {PUSH_RHYTHM_DAYS.map((rhythmDays) => (
+                    <label key={rhythmDays} className="settings__choice">
+                      <input
+                        type="radio"
+                        name="settings-push-rhythm"
+                        checked={
+                          (preferences.pushRhythmDays ??
+                            DEFAULT_PUSH_RHYTHM_DAYS) === rhythmDays
+                        }
+                        onChange={() =>
+                          onPreferencesChange({
+                            ...preferences,
+                            pushRhythmDays: rhythmDays,
+                          })
+                        }
+                      />
+                      {PUSH_RHYTHM_LABELS[rhythmDays]}
+                    </label>
+                  ))}
+                </fieldset>
+              )}
               <KernButton
                 type="button"
                 variant="tertiary"

@@ -1,0 +1,55 @@
+.address-search {
+  display: grid;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.address-search__hint {
+  color: var(--app-muted);
+  font-size: 0.85rem;
+}
+
+.address-search__results {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--app-border);
+  border-radius: 0.25rem;
+}
+
+.address-search__results li + li {
+  border-top: 1px solid var(--app-border);
+}
+
+.address-search__results li {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem;
+  border: 0;
+  color: var(--app-text);
+  background: var(--app-card);
+  font: inherit;
+  text-align: start;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.address-search__results li:hover,
+.address-search__results li[data-highlighted="true"] {
+  background: var(--app-surface);
+}
+
+.address-search__results li[data-highlighted="true"] {
+  outline: 3px solid var(--kern-color-action-focus-default-contextual, #454b6b);
+  outline-offset: -3px;
+}
+
+.address-search__results li strong {
+  font-weight: 700;
+}
+
+.address-search__meta {
+  margin-inline-start: 0.5rem;
+  color: var(--app-muted);
+  font-size: 0.85rem;
+}

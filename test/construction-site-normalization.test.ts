@@ -22,6 +22,30 @@ const fixture = JSON.parse(
 ) as WFSConstructionSiteFeatureCollection;
 
 describe("normalizeConstructionSites", () => {
+  it("adds extent points to long sites only", () => {
+    const [template] = fixture.features.filter(
+      (feature) => feature.properties.vorgangsnummer === "2022V5840",
+    );
+    const longRoad = {
+      ...template!,
+      properties: { ...template!.properties, vorgangsnummer: "2026V0001" },
+      geometry: {
+        type: "LineString" as const,
+        coordinates: [
+          [8.36, 49.0],
+          [8.40, 49.0],
+        ],
+      },
+    };
+    const records = normalizeConstructionSites(
+      [...fixture.features, longRoad],
+      "active",
+    );
+    const road = records.find((record) => record.id === "2026V0001")!;
+    expect(road.extentPoints!.length).toBeGreaterThan(10);
+    expect(records.find((record) => record.id === "2022V5840")!.extentPoints).toBeUndefined();
+  });
+
   it("drops Alsace/France records and deduplicates by vorgangsnummer", () => {
     const records = normalizeConstructionSites(fixture.features, "active");
     // 5 features -> Alsace (null vorgangsnummer) dropped, two Vorgänge (each a

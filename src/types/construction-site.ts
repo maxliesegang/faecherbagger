@@ -9,20 +9,107 @@ export type ISOTimestamp = string;
 /** WGS84 position in GeoJSON order: `[longitude, latitude]`. */
 export type LngLat = [number, number];
 
-/**
- * Anonymous notification area centered on a user-selected WGS84 point.
- *
- * People watch more than one place — home and work, or a school route — so a
- * subscription carries a list of these rather than a single circle.
- */
-export interface NotificationArea {
+/** What a watched area is drawn or named as. */
+export type NotificationAreaKind =
+  | "circle"
+  | "polygon"
+  | "corridor"
+  | "municipality"
+  | "street";
+
+/** How a corridor's route was calculated, so it can be recalculated. */
+export type RouteTravelMode = "car" | "bike" | "foot";
+
+interface NotificationAreaIdentity {
   /** Stable local identity, so an area can be edited and removed. */
   id: string;
   /** User-supplied name ("Zuhause"), shown wherever the area is listed. */
   label: string;
+  /**
+   * How disruptive a site here has to be for a notification. A commute cares
+   * about closures, the street outside the door about any works. Areas saved
+   * before this existed have none and follow the preferences' default.
+   */
+  minSeverity?: NotificationSeverityThreshold;
+}
+
+/** A circle around a chosen point: the original and still the default. */
+export interface CircleNotificationArea extends NotificationAreaIdentity {
+  kind: "circle";
   center: LngLat;
   radiusKm: number;
 }
+
+/** A hand-drawn outline, stored as one open ring (first point not repeated). */
+export interface PolygonNotificationArea extends NotificationAreaIdentity {
+  kind: "polygon";
+  ring: LngLat[];
+}
+
+/**
+ * A band along a line: a commute, a school route.
+ *
+ * A circle large enough to cover a ten-kilometre route covers the whole city,
+ * so a route needs its own shape. `route` is kept when the line came from the
+ * routing service, so the start, destination and mode can be shown on edit.
+ */
+export interface CorridorNotificationArea extends NotificationAreaIdentity {
+  kind: "corridor";
+  line: LngLat[];
+  /**
+   * The way back, when it differs: by car, one-way streets often send the
+   * return trip along other roads. Matched and drawn like `line`.
+   */
+  returnLine?: LngLat[];
+  /** Distance to either side of the line. */
+  widthMeters: number;
+  route?: {
+    start: LngLat;
+    destination: LngLat;
+    travelMode: RouteTravelMode;
+    /** What the ends were picked as ("Zuhause", an address), for editing. */
+    startLabel?: string;
+    destinationLabel?: string;
+  };
+}
+
+/** A whole municipality, matched by `ConstructionSite.municipality`. */
+export interface MunicipalityNotificationArea extends NotificationAreaIdentity {
+  kind: "municipality";
+  municipality: string;
+}
+
+/**
+ * A street by name, matched against the free-text `location`.
+ *
+ * Text rather than geometry: the source describes a site as "Kaiserstraße zw.
+ * Kronenstraße und Adlerstraße", which names exactly the streets someone
+ * would follow, and no street geometry has to leave a third-party service.
+ */
+export interface StreetNotificationArea extends NotificationAreaIdentity {
+  kind: "street";
+  street: string;
+  municipality: string;
+  /**
+   * Also match works on cross streets that only end at this one ("Herrenstraße
+   * zw. Kaiserstraße und Zirkel"). Off unless chosen: they roughly double the
+   * matches for a main street while touching it only at the junction.
+   */
+  includeJunctions?: boolean;
+}
+
+/**
+ * One watched place.
+ *
+ * People watch more than one place — home and work, or a school route — so a
+ * subscription carries a list of these. All of them stay on the device.
+ */
+export type NotificationArea =
+  | CircleNotificationArea
+  | PolygonNotificationArea
+  | CorridorNotificationArea
+  | MunicipalityNotificationArea
+  | StreetNotificationArea;
 
 /**
  * What a notification can be about.
@@ -56,6 +143,11 @@ export interface NotificationPreferences {
   /** Optional for compatibility with preferences saved before these controls. */
   remindDayBefore?: boolean;
   notifyEarly?: boolean;
+  /**
+   * Safari and Firefox only: hear from the service at least every this many days.
+   * Stays on the device; only the resulting next date is reported.
+   */
+  pushRhythmDays?: 1 | 3 | 7;
   /**
    * Sites followed by hand, by `ConstructionSite.id`.
    *
@@ -93,6 +185,8 @@ export interface NotificationFeedEvent {
   previousStartDate?: ISODate;
   siteId: string;
   point: LngLat;
+  /** See {@link ConstructionSite.extentPoints}. */
+  extentPoints?: LngLat[];
   closure: ClosureSeverity;
   startDate: ISODate;
   endDate: ISODate | null;
@@ -197,6 +291,13 @@ export interface ConstructionSite {
 
   /** Representative point for lists and distance (mean of member points). */
   point: LngLat;
+  /**
+   * A few points spread along the shape of a long site, absent for compact
+   * ones. A site several hundred metres long can cross a watched route while
+   * its representative point lies well outside it; these let area matching
+   * see the whole length without shipping the map geometry.
+   */
+  extentPoints?: LngLat[];
 
   /** Attribution: the source authority (`datenquelle`, e.g. `"Stadt Karlsruhe"`). */
   source: string;

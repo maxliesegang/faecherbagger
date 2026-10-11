@@ -3,6 +3,7 @@ import {
   collectNotificationEvents,
   selectNotificationEvents as selectEventsForDate,
   createNotificationFeed,
+  findNotifyingArea,
 } from "../src/lib/notification-events.ts";
 import {
   createNotificationPayload,
@@ -26,6 +27,7 @@ const selectNotificationEvents: typeof selectEventsForDate = (
 const home: NotificationArea = {
   id: "home",
   label: "Zuhause",
+  kind: "circle",
   center: [8.4044, 49.0069],
   radiusKm: 5,
 };
@@ -195,6 +197,72 @@ describe("selectNotificationEvents", () => {
     ).toEqual(["near-full", "near-mild"]);
   });
 
+  it("matches a route through the extent of a long site", () => {
+    const [crossing] = collectNotificationEvents(
+      [
+        createSite("crossing", {
+          point: [8.38, 49.009],
+          closure: "full",
+          extentPoints: [
+            [8.38, 49.0045],
+            [8.38, 49.0],
+          ],
+        }),
+      ],
+      createChanges({ added: ["crossing"] }),
+      TODAY,
+    );
+    expect(crossing!.extentPoints).toHaveLength(2);
+    const commute: NotificationPreferences = {
+      ...preferences,
+      areas: [
+        {
+          id: "commute",
+          label: "Arbeitsweg",
+          kind: "corridor",
+          line: [
+            [8.36, 49.0],
+            [8.401, 49.0],
+          ],
+          widthMeters: 100,
+        },
+      ],
+    };
+    expect(selectNotificationEvents([crossing!], commute)).toEqual([crossing]);
+  });
+
+  it("applies each area's own threshold", () => {
+    const nearbyObstruction = collectNotificationEvents(
+      [createSite("lane", { point: [8.41, 49.01], closure: "obstruction" })],
+      createChanges({ added: ["lane"] }),
+      TODAY,
+    );
+    const commuteOnly: NotificationPreferences = {
+      ...preferences,
+      minSeverity: "all",
+      areas: [{ ...home, minSeverity: "closure" }],
+    };
+    expect(selectNotificationEvents(nearbyObstruction, commuteOnly)).toEqual([]);
+    // A second area over the same spot that wants everything still notifies,
+    // and the notification is attributed to it.
+    const withStreet: NotificationPreferences = {
+      ...commuteOnly,
+      areas: [...commuteOnly.areas, { ...home, id: "street", label: "Straße", minSeverity: "all" }],
+    };
+    expect(selectNotificationEvents(nearbyObstruction, withStreet)).toHaveLength(1);
+    expect(findNotifyingArea(nearbyObstruction[0]!, withStreet)?.id).toBe("street");
+  });
+
+  it("falls back to the default threshold for areas without one", () => {
+    const mild = collectNotificationEvents(
+      [createSite("mild", { point: [8.41, 49.01], closure: "none" })],
+      createChanges({ added: ["mild"] }),
+      TODAY,
+    );
+    expect(selectNotificationEvents(mild, { ...preferences, minSeverity: "closure" })).toEqual([]);
+    expect(selectNotificationEvents(mild, preferences)).toHaveLength(1);
+  });
+
   it("applies the severity threshold", () => {
     expect(
       selectNotificationEvents(events, {
@@ -242,7 +310,7 @@ describe("createNotificationPayload", () => {
     const payload = createNotificationPayload(events, preferences, appURL)!;
 
     expect(payload.count).toBe(3);
-    expect(payload.title).toBe("3 Meldungen bei Zuhause");
+    expect(payload.title).toBe("3 Meldungen bei „Zuhause“");
     expect(payload.body).toContain("3× Vollsperrung");
     expect(new URL(payload.url).hash).toBe("#meldungen");
     expect(new URL(payload.url).searchParams.get("bereich")).toBe("fuer-mich");
@@ -484,8 +552,14 @@ describe("planning and delivery rules", () => {
         constructionSite,
       ]).events,
     ).toEqual(events);
+    // The weekly rhythm still finds the event a week later; then it expires.
     expect(
-      createNotificationFeed([], "2026-08-05T16:00:00Z", evening, [
+      createNotificationFeed([], "2026-08-09T16:00:00Z", evening, [
+        constructionSite,
+      ]).events,
+    ).toEqual(events);
+    expect(
+      createNotificationFeed([], "2026-08-10T16:00:00Z", evening, [
         constructionSite,
       ]).events,
     ).toEqual([]);

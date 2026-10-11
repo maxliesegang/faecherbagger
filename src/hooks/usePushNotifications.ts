@@ -3,10 +3,12 @@ import {
   getServerSubscriptionState,
   isPushConfigured,
   isPushSupported,
+  requestPushScheduleUpdate,
   sendTestNotification,
   subscribeToPush,
   unsubscribeFromPush,
 } from "../lib/push.ts";
+import type { PushDeliveryMode } from "../lib/push-delivery.ts";
 
 const REFRESH_TAG = "refresh-baustellen";
 const REFRESH_INTERVAL_MS = 12 * 60 * 60 * 1000;
@@ -65,6 +67,11 @@ export interface PushNotificationsController {
   /** Only set while the browser offers its own install prompt. */
   install?: () => Promise<void>;
   refreshData: () => void;
+  /**
+   * Set while registered. `planned` (Safari, Firefox) shows every push, so the device
+   * plans its own pushes and the visitor picks the rhythm.
+   */
+  deliveryMode?: PushDeliveryMode;
 }
 
 function postMessageToServiceWorker(message: object) {
@@ -97,13 +104,17 @@ export function usePushNotifications(): PushNotificationsController {
   >(() => ("Notification" in window ? Notification.permission : "unsupported"));
   const [subscriptionState, setSubscriptionState] =
     useState<PushSubscriptionState>("unknown");
+  const [deliveryMode, setDeliveryMode] = useState<PushDeliveryMode>();
   const [feedbackMessage, setFeedbackMessage] = useState<string>();
   const [isBusy, setIsBusy] = useState(false);
 
   const refreshSubscriptionState = useCallback(async () => {
     try {
-      const state = await getServerSubscriptionState();
-      setSubscriptionState(state === "registered" ? "registered" : "inactive");
+      const status = await getServerSubscriptionState();
+      setSubscriptionState(
+        status.state === "registered" ? "registered" : "inactive",
+      );
+      setDeliveryMode(status.deliveryMode);
     } catch {
       // A temporary failure of the notification service is not evidence that
       // the device is unsubscribed, so the state stays unknown.
@@ -174,6 +185,7 @@ export function usePushNotifications(): PushNotificationsController {
       }
       await subscribeToPush();
       await refreshSubscriptionState();
+      requestPushScheduleUpdate({ force: true });
       setFeedbackMessage("Benachrichtigungen sind an.");
       return true;
     } catch (error) {
@@ -257,5 +269,6 @@ export function usePushNotifications(): PushNotificationsController {
     isInstalled,
     install,
     refreshData,
+    deliveryMode: isActive ? deliveryMode : undefined,
   };
 }

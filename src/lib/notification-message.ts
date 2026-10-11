@@ -6,8 +6,11 @@ import {
   formatISODate,
   getClosureHeadline,
 } from "./construction-site-labels.ts";
-import { findNotificationAreaForPoint } from "./notification-events.ts";
+import { findNotificationAreaForTarget } from "./notification-area-match.ts";
+import { findNotifyingArea } from "./notification-events.ts";
+import { describeNotificationAreaScope } from "./notification-area.ts";
 import { summarizeNotificationEvents } from "./notification-delivery.ts";
+import { createInboxURL } from "./push-delivery.ts";
 
 /**
  * The wording of a notification, and the link it opens.
@@ -99,22 +102,19 @@ export function createNotificationPayload(
     };
   }
 
-  const url = new URL(appURL);
-  url.searchParams.set("bereich", "fuer-mich");
-  url.hash = "meldungen";
-
-  const areaLabels = [
+  const areas = [
     ...new Set(
       events
         .map(
           (event) =>
-            findNotificationAreaForPoint(preferences.areas, event.point)?.label,
+            findNotifyingArea(event, preferences) ??
+            findNotificationAreaForTarget(preferences.areas, event),
         )
-        .filter((label): label is string => Boolean(label)),
+        .filter((area) => area !== undefined),
     ),
   ];
   const scope =
-    areaLabels.length === 1 ? ` bei ${areaLabels[0]}` : " für Sie";
+    areas.length === 1 ? ` ${describeNotificationAreaScope(areas[0]!)}` : " für Sie";
 
   const fullClosureCount = constructionSiteEvents.filter(
     (event) => event.closure === "full",
@@ -126,7 +126,7 @@ export function createNotificationPayload(
       fullClosureCount > 0
         ? `Darunter ${fullClosureCount}× Vollsperrung. Unter anderem: ${firstEvent.location}.`
         : `Unter anderem: ${firstEvent.location}, ${firstEvent.municipality}.`,
-    url: url.href,
+    url: createInboxURL(appURL),
     count: constructionSiteEvents.length,
   };
 }

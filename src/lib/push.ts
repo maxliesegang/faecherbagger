@@ -1,3 +1,8 @@
+import {
+  getPushDeliveryMode,
+  type PushDeliveryMode,
+} from "./push-delivery.ts";
+
 const PUSH_API_URL = import.meta.env.VITE_PUSH_API_URL?.replace(/\/+$/, "");
 
 export const isPushConfigured = Boolean(PUSH_API_URL);
@@ -94,6 +99,12 @@ export async function unsubscribeFromPush() {
   }
 }
 
+export interface ServerSubscriptionStatus {
+  state: "unsupported" | "unconfigured" | "not-subscribed" | "registered";
+  /** Set once registered: how pushes reach this device. */
+  deliveryMode?: PushDeliveryMode;
+}
+
 /**
  * Whether this device is really registered with the notification service.
  *
@@ -102,19 +113,38 @@ export async function unsubscribeFromPush() {
  * failed registration all leave a device that believes it is subscribed and
  * never receives anything. This is the only honest source for "aktiv".
  */
-export async function getServerSubscriptionState(): Promise<
-  "unsupported" | "unconfigured" | "not-subscribed" | "registered"
-> {
-  if (!isPushSupported) return "unsupported";
-  if (!isPushConfigured) return "unconfigured";
+export async function getServerSubscriptionState(): Promise<ServerSubscriptionStatus> {
+  if (!isPushSupported) return { state: "unsupported" };
+  if (!isPushConfigured) return { state: "unconfigured" };
   const subscription = await getPushSubscription();
-  if (!subscription) return "not-subscribed";
+  if (!subscription) return { state: "not-subscribed" };
 
   const response = await requestPushAPI(
     `/subscriptions/status?endpoint=${encodeURIComponent(subscription.endpoint)}`,
   );
   const body = (await response.json()) as { registered?: boolean };
-  return body.registered ? "registered" : "not-subscribed";
+  if (!body.registered) return { state: "not-subscribed" };
+  return {
+    state: "registered",
+    deliveryMode: getPushDeliveryMode(subscription.endpoint),
+  };
+}
+
+/**
+ * Asks the service worker to plan this device's next push and report it.
+ *
+ * The planning runs there, not here, because the service worker also has to do
+ * it after every push, with no page open. `force` reports even an unchanged
+ * date, for when the server may have lost it.
+ */
+export function requestPushScheduleUpdate({ force = false } = {}) {
+  if (!("serviceWorker" in navigator)) return;
+  void navigator.serviceWorker.ready.then((registration) => {
+    (registration.active ?? navigator.serviceWorker.controller)?.postMessage({
+      type: "SCHEDULE_PUSH",
+      force,
+    });
+  });
 }
 
 /**

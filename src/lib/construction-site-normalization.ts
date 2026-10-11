@@ -11,6 +11,7 @@ import {
   normalizeClosureSeverity,
   normalizeConstructionSiteMobility,
 } from "./construction-site-mappings.ts";
+import { sampleExtentPoints } from "./geometry.ts";
 
 export interface ConstructionSiteNormalizationOptions {
   /** Called once per normalized record whose `art` is not in the mapping table. */
@@ -219,6 +220,11 @@ export function normalizeConstructionSites(
       continue;
     }
 
+    const geometry = roundGeometryCoordinates(
+      buildGeometry(areaGeometries, points.length > 0 ? points : [point]),
+    );
+    const extentPoints = sampleExtentPoints(geometry);
+
     constructionSites.push({
       id: vorgangsnummer,
       phase,
@@ -233,9 +239,8 @@ export function normalizeConstructionSites(
       startDate,
       endDate: toBerlinDate(properties.vorgangszeitraum_bis),
       point: roundLngLat(point),
-      geometry: roundGeometryCoordinates(
-        buildGeometry(areaGeometries, points.length > 0 ? points : [point]),
-      ),
+      ...(extentPoints ? { extentPoints } : {}),
+      geometry,
       source: properties.datenquelle ?? "",
       lastModified: properties.stand ?? "",
     });

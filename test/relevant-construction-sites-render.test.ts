@@ -24,6 +24,7 @@ const pushNotifications: PushNotificationsController = {
 const area: NotificationArea = {
   id: "home",
   label: "Zuhause",
+  kind: "circle",
   center: [8.4, 49],
   radiusKm: 2,
 };
@@ -157,7 +158,7 @@ describe("personal view rendering", () => {
     const html = render("", [reminder]);
     expect(html.indexOf("Neue Meldungen")).toBeLessThan(html.indexOf("Beginnt bald"));
     expect(html).toContain("Zugestellter-Hinweis");
-    expect(html).toContain(">Gelesen<");
+    expect(html).toContain(">Alle gelesen<");
   });
 
   it("opens read notifications from a batch notification link", () => {

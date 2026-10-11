@@ -65,6 +65,20 @@
   background: var(--app-surface);
 }
 
+.settings__row-main {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.settings__row-icon {
+  flex: 0 0 auto;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: #2459a9;
+}
+
 .settings__row-text {
   display: grid;
 }

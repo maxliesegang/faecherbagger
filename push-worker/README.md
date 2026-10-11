@@ -3,9 +3,9 @@
 This Cloudflare Worker stores Web Push subscriptions in D1.
 
 **It stores delivery data, not locations.** Rows hold the endpoint, encryption
-keys, expiration and timestamps. Areas, radii and preferences stay on the
-device, where the service worker decides what to show. Do not add a location,
-radius or preference column.
+keys, expiration, timestamps and, for Safari and Firefox devices, the date of the next
+planned push. Areas, radii and preferences stay on the device, where the service worker
+decides what to show. Do not add a location, radius or preference column.
 
 The Worker does not fan out pushes. After a Pages deployment, the GitHub
 Actions runner reads subscriptions in pages and broadcasts the wake-up push,
@@ -41,7 +41,13 @@ first:
 npx wrangler d1 execute faecherbagger-push --remote \
   --file=push-worker/migrations/0002_notification_preferences.sql \
   --config=push-worker/wrangler.jsonc
+npx wrangler d1 execute faecherbagger-push --remote \
+  --file=push-worker/migrations/0003_next_push_on.sql \
+  --config=push-worker/wrangler.jsonc
 ```
+
+`0003` adds `next_push_on`, which the Worker reads and writes. Apply it before
+deploying this Worker version.
 
 `0002` drops the stored radius columns (superseded by device-local matching) and
 adds the event ledger. `0001_notification_radius.sql` is only needed for

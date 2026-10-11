@@ -30,9 +30,9 @@ import {
   createNotificationAreaFeatureCollection,
   createNotificationAreaPolygon,
   createUserLocationFeatureCollection,
-  type NotificationAreaShape,
+  getNotificationAreaOutline,
 } from "../lib/map-geojson.ts";
-import { formatNotificationRadius } from "../lib/notification-preferences.ts";
+import { describeNotificationArea } from "../lib/notification-area.ts";
 import { useConstructionSiteGeometries } from "../hooks/useConstructionSiteGeometries.ts";
 import {
   addConstructionSiteMapLayers,
@@ -51,6 +51,8 @@ interface ConstructionSiteMapProps {
   selectedSiteId?: string;
   currentLocation?: LngLat;
   notificationAreas: readonly NotificationArea[];
+  /** An area the visitor narrowed the view to; the map frames it. */
+  focusedArea?: NotificationArea;
   onSiteSelect: (siteId: string | undefined) => void;
   getSiteDetailsHref: (siteId: string) => string;
   onSiteDetailsRequest: (siteId: string) => void;
@@ -94,7 +96,7 @@ function fitConstructionSites(
 
 function fitRadius(
   map: MapLibreMap,
-  area: NotificationAreaShape,
+  area: { center: LngLat; radiusKm: number },
   duration: number,
 ) {
   const bounds = new LngLatBounds();
@@ -108,21 +110,16 @@ function fitRadius(
   });
 }
 
-/** Opens the map on everything the visitor is watching. */
+/** Opens the map on everything the visitor is watching that has a shape. */
 function fitNotificationAreas(
   map: MapLibreMap,
   areas: readonly NotificationArea[],
 ) {
-  if (areas.length === 1) {
-    fitRadius(map, areas[0], 500);
-    return;
-  }
   const bounds = new LngLatBounds();
   for (const area of areas) {
-    createNotificationAreaPolygon(area).coordinates[0].forEach((point) =>
-      bounds.extend(point as LngLat),
-    );
+    getNotificationAreaOutline(area)?.forEach((point) => bounds.extend(point));
   }
+  if (bounds.isEmpty()) return;
   map.fitBounds(bounds, { padding: FIT_PADDING, maxZoom: 15, duration: 500 });
 }
 
@@ -139,6 +136,7 @@ export function ConstructionSiteMap({
   selectedSiteId,
   currentLocation,
   notificationAreas,
+  focusedArea,
   onSiteSelect,
   getSiteDetailsHref,
   onSiteDetailsRequest,
@@ -157,6 +155,7 @@ export function ConstructionSiteMap({
     selectedSiteId,
     currentLocation,
     notificationAreas,
+    focusedArea,
     onSiteSelect,
   });
   latestPropsRef.current = {
@@ -165,6 +164,7 @@ export function ConstructionSiteMap({
     selectedSiteId,
     currentLocation,
     notificationAreas,
+    focusedArea,
     onSiteSelect,
   };
 
@@ -283,8 +283,15 @@ export function ConstructionSiteMap({
     getGeoJSONSource(map, MAP_SOURCE_IDS.points).setData(
       createConstructionSitePointFeatureCollection(constructionSites),
     );
-    fitConstructionSites(map, constructionSites);
-  }, [constructionSites]);
+    // A focused area with a shape is the frame the visitor asked for; its
+    // sites lie inside it anyway.
+    const { focusedArea: currentFocusedArea } = latestPropsRef.current;
+    if (currentFocusedArea && getNotificationAreaOutline(currentFocusedArea)) {
+      fitNotificationAreas(map, [currentFocusedArea]);
+    } else {
+      fitConstructionSites(map, constructionSites);
+    }
+  }, [constructionSites, focusedArea]);
 
   // Separate from the point update: geometry arrives later than the records and
   // must not drag a viewport refit along when it does.
@@ -384,7 +391,7 @@ export function ConstructionSiteMap({
             <li>
               <i className="map-legend__radius" />
               {notificationAreas.length === 1
-                ? `Mein Ort (${formatNotificationRadius(notificationAreas[0].radiusKm)})`
+                ? `Mein Ort (${describeNotificationArea(notificationAreas[0])})`
                 : `Meine Orte (${notificationAreas.length})`}
             </li>
           )}
@@ -393,7 +400,7 @@ export function ConstructionSiteMap({
           type="button"
           variant="tertiary"
           className="map-explorer__fit"
-          label="Auf alle zoomen"
+          label="Alle zeigen"
           onClick={() => {
             if (mapRef.current) {
               fitConstructionSites(mapRef.current, constructionSites);

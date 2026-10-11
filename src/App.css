@@ -86,10 +86,22 @@ button, input, select {
 }
 
 .app-header__brand {
-  display: grid;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: inherit;
   text-decoration: none;
   line-height: 1.2;
+}
+
+.app-header__logo {
+  flex: 0 0 auto;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.app-header__wordmark {
+  display: grid;
 }
 
 .app-header__brand:focus-visible {

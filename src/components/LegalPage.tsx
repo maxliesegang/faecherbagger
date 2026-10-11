@@ -167,11 +167,33 @@ function PrivacyContent() {
         nicht übertragen. Sie können die Freigabe jederzeit widerrufen.
       </p>
 
+      <h2>Adresssuche</h2>
+      <p>
+        Wenn Sie mindestens drei Zeichen eingeben, sendet Ihr Browser den
+        Suchtext an den öffentlichen Photon-Dienst von komoot. Dabei erhält
+        der Dienst auch Ihre IP-Adresse. Die Suche bevorzugt Karlsruhe;
+        Ihr Gerätestandort und gespeicherte Gebiete werden nicht mitgesendet.
+        Suchtexte werden von Fächerbagger nicht gespeichert. Sie können den
+        Mittelpunkt auch auf der Karte wählen.
+      </p>
+
+      <h2>Streckenberechnung</h2>
+      <p>
+        Wenn Sie eine Strecke aus Start und Ziel berechnen lassen, sendet Ihr
+        Browser einmalig diese beiden Punkte und das Verkehrsmittel an den
+        Routing-Dienst der{" "}
+        <a href="https://www.fossgis.de/">FOSSGIS e.&nbsp;V.</a>{" "}
+        (routing.openstreetmap.de). Dabei erhält der Dienst auch Ihre
+        IP-Adresse. Gespeichert wird nur die berechnete Linie, und zwar in
+        Ihrem Browser. Ohne Übertragung geht es, wenn Sie die Strecke selbst
+        auf der Karte nachziehen.
+      </p>
+
       <h2>Benachrichtigungen (Web Push)</h2>
       <p>
-        <strong>Ihre Gebiete verlassen Ihr Gerät nicht.</strong> Mittelpunkt,
-        Radius, beobachtete Baustellen und Ihre Auswahl liegen nur in Ihrem
-        Browser. Wir kennen sie nicht.
+        <strong>Ihre Orte bleiben auf Ihrem Gerät.</strong> Umkreise,
+        Strecken, Flächen, Straßen, beobachtete Baustellen und Ihre Auswahl
+        liegen nur in Ihrem Browser. Wir kennen sie nicht.
       </p>
       <p>
         Beim Einschalten speichert unser Benachrichtigungsdienst nur eine
