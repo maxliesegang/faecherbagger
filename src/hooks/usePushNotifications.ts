@@ -4,6 +4,7 @@ import {
   isPushConfigured,
   isPushSupported,
   requestPushScheduleUpdate,
+  retryPendingPushUnsubscriptions,
   sendTestNotification,
   subscribeToPush,
   unsubscribeFromPush,
@@ -117,6 +118,14 @@ export function usePushNotifications(): PushNotificationsController {
 
   const refreshSubscriptionState = useCallback(async () => {
     try {
+      const isDeleted = await retryPendingPushUnsubscriptions();
+      if (!isDeleted) {
+        setFeedbackMessage("Benachrichtigungen sind aus. Die Zustelladresse wird gelöscht, sobald der Dienst erreichbar ist.");
+      } else {
+        setFeedbackMessage((previous) => previous?.includes("sobald der Dienst erreichbar ist")
+          ? "Benachrichtigungen sind aus. Die Zustelladresse wurde gelöscht."
+          : previous);
+      }
       const status = await getServerSubscriptionState();
       setSubscriptionState(
         status.state === "registered" ? "registered" : "inactive",
@@ -170,6 +179,7 @@ export function usePushNotifications(): PushNotificationsController {
     const refreshWhenOnline = () => {
       if (document.visibilityState === "visible") {
         postMessageToServiceWorker({ type: "REFRESH_DATA" });
+        void refreshSubscriptionState();
       }
     };
     window.addEventListener("online", refreshWhenOnline);
@@ -210,9 +220,12 @@ export function usePushNotifications(): PushNotificationsController {
   const disable = useCallback(async () => {
     setIsBusy(true);
     try {
-      await unsubscribeFromPush();
+      const isDeleted = await unsubscribeFromPush();
       setSubscriptionState("inactive");
-      setFeedbackMessage("Benachrichtigungen sind aus.");
+      setDeliveryMode(undefined);
+      setFeedbackMessage(isDeleted
+        ? "Benachrichtigungen sind aus. Die Zustelladresse wurde gelöscht."
+        : "Benachrichtigungen sind aus. Die Zustelladresse wird gelöscht, sobald der Dienst erreichbar ist.");
     } catch (error) {
       setFeedbackMessage(
         getErrorMessage(error, "Benachrichtigungen ließen sich nicht ausschalten."),

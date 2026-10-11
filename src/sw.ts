@@ -163,6 +163,9 @@ async function reportNextPushDate({ force = false } = {}) {
 
   const response = await fetch(`${PUSH_API_URL}/subscriptions/next-push`, {
     method: "POST",
+    cache: "no-store",
+    credentials: "omit",
+    referrerPolicy: "no-referrer",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ endpoint: subscription.endpoint, nextPushOn }),
   });
@@ -387,6 +390,9 @@ self.addEventListener("pushsubscriptionchange", ((
       if (!subscription) return;
 
       await fetch(`${PUSH_API_URL}/subscriptions/rotate`, {
+        cache: "no-store",
+        credentials: "omit",
+        referrerPolicy: "no-referrer",
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({

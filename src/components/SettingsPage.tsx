@@ -266,10 +266,12 @@ export function SettingsPage({
               />
             </div>
           )}
-          <p className="settings__muted">
-            Ihre Orte bleiben auf diesem Gerät. Unser Server erfährt sie
-            nicht.
-          </p>
+          {pushNotifications.isActive && (
+            <p className="settings__muted">
+              Ihre gespeicherten Orte und Ihre Auswahl werden nicht an den
+              Benachrichtigungsdienst übertragen.
+            </p>
+          )}
         </section>
       </div>
 

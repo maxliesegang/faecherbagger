@@ -4,8 +4,9 @@
 -- Note what is *not* here: no coordinates, no radius, no notification
 -- preferences. Those stay on the device, and the service worker decides locally
 -- which of a run's events to show. Safari and Firefox devices report only the
--- date of their next push. This database cannot reveal where any
--- subscriber lives.
+-- date of their next push. No watched locations are stored; delivery dates may
+-- still permit limited inferences when correlated with public construction data.
+-- D1 recovery history can temporarily retain overwritten dates and deleted rows.
 
 CREATE TABLE IF NOT EXISTS subscriptions (
   endpoint TEXT PRIMARY KEY,

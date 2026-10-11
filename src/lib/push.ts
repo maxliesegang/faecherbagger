@@ -2,6 +2,11 @@ import {
   getPushDeliveryMode,
   type PushDeliveryMode,
 } from "./push-delivery.ts";
+import {
+  loadPendingPushUnsubscriptions,
+  removePendingPushUnsubscription,
+  savePendingPushUnsubscription,
+} from "./push-unsubscription-store.ts";
 
 const PUSH_API_URL = import.meta.env.VITE_PUSH_API_URL?.replace(/\/+$/, "");
 
@@ -23,6 +28,9 @@ async function requestPushAPI(path: string, init?: RequestInit) {
     throw new Error("Benachrichtigungen sind hier nicht eingerichtet.");
   }
   const response = await fetch(`${PUSH_API_URL}${path}`, {
+    cache: "no-store",
+    credentials: "omit",
+    referrerPolicy: "no-referrer",
     ...init,
     headers: {
       "content-type": "application/json",
@@ -58,6 +66,9 @@ export async function subscribeToPush() {
   if (!isPushSupported) {
     throw new Error("Dieser Browser unterstützt keine Push-Benachrichtigungen.");
   }
+  if (!(await retryPendingPushUnsubscriptions())) {
+    throw new Error("Die vorige Anmeldung wird noch gelöscht. Versuchen Sie es erneut, sobald Sie online sind.");
+  }
   const registration = await navigator.serviceWorker.ready;
   const existing = await registration.pushManager.getSubscription();
   if (existing) {
@@ -92,15 +103,62 @@ async function storeSubscription(subscription: PushSubscription) {
 
 export async function unsubscribeFromPush() {
   const subscription = await getPushSubscription();
-  if (!subscription) return;
-  try {
-    await requestPushAPI("/subscriptions", {
-      method: "DELETE",
-      body: JSON.stringify({ endpoint: subscription.endpoint }),
-    });
-  } finally {
-    await subscription.unsubscribe();
+  if (subscription) {
+    if (!PUSH_API_URL) throw new Error("Benachrichtigungsdienst nicht eingerichtet.");
+    // Commit before unsubscribe: a failed deletion must survive closing the app.
+    try {
+      await savePendingPushUnsubscription({
+        apiURL: PUSH_API_URL,
+        endpoint: subscription.endpoint,
+      });
+    } catch {
+      throw new Error("Ihr Browser kann den Löschauftrag nicht speichern. Benachrichtigungen bleiben an. Versuchen Sie es erneut.");
+    }
+    await stopPushSubscription(subscription);
   }
+  // The browser is already stopped; a storage/read failure still means the
+  // server deletion is pending, rather than that notifications remain enabled.
+  return retryPendingPushUnsubscriptions().catch(() => false);
+}
+
+async function stopPushSubscription(subscription: PushSubscription) {
+  const stopped = await subscription.unsubscribe();
+  if (!stopped && (await getPushSubscription())?.endpoint === subscription.endpoint) {
+    throw new Error("Benachrichtigungen konnten im Browser nicht ausgeschaltet werden. Versuchen Sie es erneut.");
+  }
+}
+
+let pendingUnsubscriptionRetry: Promise<void> = Promise.resolve();
+
+/** Retry at app start and when connectivity returns; never log identifiers. */
+export function retryPendingPushUnsubscriptions(): Promise<boolean> {
+  const result = pendingUnsubscriptionRetry.then(flushPendingPushUnsubscriptions);
+  pendingUnsubscriptionRetry = result.then(() => undefined, () => undefined);
+  return result;
+}
+
+async function flushPendingPushUnsubscriptions(): Promise<boolean> {
+  const pending = await loadPendingPushUnsubscriptions();
+  let hasPendingDeletion = false;
+  for (const subscription of pending) {
+    // A changed deployment must not send an old endpoint to another provider.
+    if (subscription.apiURL !== PUSH_API_URL) {
+      hasPendingDeletion = true;
+      continue;
+    }
+    const current = await getPushSubscription();
+    if (current?.endpoint === subscription.endpoint) await stopPushSubscription(current);
+    try {
+      await requestPushAPI("/subscriptions", {
+        method: "DELETE",
+        body: JSON.stringify({ endpoint: subscription.endpoint }),
+      });
+      await removePendingPushUnsubscription(subscription);
+    } catch {
+      hasPendingDeletion = true;
+    }
+  }
+  return !hasPendingDeletion;
 }
 
 export interface ServerSubscriptionStatus {
@@ -123,9 +181,10 @@ export async function getServerSubscriptionState(): Promise<ServerSubscriptionSt
   const subscription = await getPushSubscription();
   if (!subscription) return { state: "not-subscribed" };
 
-  const response = await requestPushAPI(
-    `/subscriptions/status?endpoint=${encodeURIComponent(subscription.endpoint)}`,
-  );
+  const response = await requestPushAPI("/subscriptions/status", {
+    method: "POST",
+    body: JSON.stringify({ endpoint: subscription.endpoint }),
+  });
   const body = (await response.json()) as { registered?: boolean };
   if (!body.registered) return { state: "not-subscribed" };
   return {

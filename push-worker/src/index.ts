@@ -19,7 +19,10 @@ interface PushSubscriptionRequest {
   };
 }
 
-const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
+const JSON_HEADERS = {
+  "content-type": "application/json; charset=utf-8",
+  "cache-control": "no-store",
+};
 const MAX_ENDPOINT_LENGTH = 4096;
 const MAX_KEY_LENGTH = 512;
 const MAX_CLAIMED_EVENTS = 2_000;
@@ -153,11 +156,11 @@ async function parseJSONBody<T>(request: Request): Promise<T | null> {
   }
 }
 
-function parseSubscriptionPageSize(value: string | null): number {
-  if (value === null) return DEFAULT_SUBSCRIPTION_PAGE_SIZE;
-  const parsed = Number.parseInt(value, 10);
-  if (!Number.isFinite(parsed)) return DEFAULT_SUBSCRIPTION_PAGE_SIZE;
-  return Math.min(Math.max(parsed, 1), MAX_SUBSCRIPTION_PAGE_SIZE);
+function getSubscriptionPageSize(value: number | undefined): number {
+  return Math.min(
+    Math.max(value ?? DEFAULT_SUBSCRIPTION_PAGE_SIZE, 1),
+    MAX_SUBSCRIPTION_PAGE_SIZE,
+  );
 }
 
 function getVapidKeys(env: Env) {
@@ -208,18 +211,6 @@ async function handleSubscriptionRequest(
     return createJSONResponse({ ok: true }, 200, createCorsHeaders(origin));
   }
 
-  if (request.method === "GET") {
-    if (!(await hasAdminAccess(request, env))) {
-      return createJSONResponse({ error: "Unauthorized" }, 401);
-    }
-    const url = new URL(request.url);
-    const page = await readSubscriptionPage(env.DB, {
-      limit: parseSubscriptionPageSize(url.searchParams.get("limit")),
-      after: url.searchParams.get("after") ?? "",
-    });
-    return createJSONResponse(page);
-  }
-
   return createJSONResponse(
     { error: "Method not allowed" },
     405,
@@ -239,12 +230,16 @@ async function handleSubscriptionStatusRequest(
   env: Env,
   origin: string | null,
 ) {
-  if (request.method !== "GET") {
+  if (request.method !== "POST") {
     return createJSONResponse({ error: "Method not allowed" }, 405);
   }
   const originError = rejectDisallowedOrigin(request, origin);
   if (originError) return originError;
-  const endpoint = new URL(request.url).searchParams.get("endpoint");
+  const body = await parseJSONBody<unknown>(request);
+  const endpoint =
+    body && typeof body === "object" && "endpoint" in body
+      ? body.endpoint
+      : undefined;
   if (!isValidEndpoint(endpoint)) {
     return createJSONResponse(
       { error: "Invalid endpoint" },
@@ -257,6 +252,35 @@ async function handleSubscriptionStatusRequest(
     { registered: subscription !== null },
     200,
     createCorsHeaders(origin),
+  );
+}
+
+/** Administrator pagination keeps subscription identifiers out of URLs. */
+async function handleSubscriptionListRequest(request: Request, env: Env) {
+  if (request.method !== "POST") {
+    return createJSONResponse({ error: "Method not allowed" }, 405);
+  }
+  if (!(await hasAdminAccess(request, env))) {
+    return createJSONResponse({ error: "Unauthorized" }, 401);
+  }
+  const body = await parseJSONBody<unknown>(request);
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return createJSONResponse({ error: "Invalid pagination" }, 400);
+  }
+  const after = "after" in body ? body.after : "";
+  const limit = "limit" in body ? body.limit : undefined;
+  if (
+    typeof after !== "string" ||
+    (after !== "" && !isValidEndpoint(after)) ||
+    (limit !== undefined && (typeof limit !== "number" || !Number.isInteger(limit)))
+  ) {
+    return createJSONResponse({ error: "Invalid pagination" }, 400);
+  }
+  return createJSONResponse(
+    await readSubscriptionPage(env.DB, {
+      limit: getSubscriptionPageSize(limit),
+      after,
+    }),
   );
 }
 
@@ -474,51 +498,68 @@ async function handleNotifiedRequest(request: Request, env: Env) {
   return createJSONResponse({ ok: true });
 }
 
+async function handleRequest(request: Request, env: Env): Promise<Response> {
+  const url = new URL(request.url);
+  const origin = getAllowedOrigin(request, env);
+
+  if (request.method === "OPTIONS") {
+    if (!origin) return new Response(null, { status: 403 });
+    return new Response(null, {
+      status: 204,
+      headers: createCorsHeaders(origin),
+    });
+  }
+  if (url.pathname === "/health") {
+    return createJSONResponse({ ok: true });
+  }
+  if (url.pathname === "/config" && request.method === "GET") {
+    const originError = rejectDisallowedOrigin(request, origin);
+    if (originError) return originError;
+    return createJSONResponse(
+      { vapidPublicKey: env.VAPID_PUBLIC_KEY },
+      200,
+      createCorsHeaders(origin),
+    );
+  }
+  if (url.pathname === "/subscriptions") {
+    return handleSubscriptionRequest(request, env, origin);
+  }
+  if (url.pathname === "/subscriptions/status") {
+    return handleSubscriptionStatusRequest(request, env, origin);
+  }
+  if (url.pathname === "/subscriptions/list") {
+    return handleSubscriptionListRequest(request, env);
+  }
+  if (url.pathname === "/subscriptions/next-push") {
+    return handleNextPushRequest(request, env, origin);
+  }
+  if (url.pathname === "/subscriptions/rotate") {
+    return handleSubscriptionRotateRequest(request, env, origin);
+  }
+  if (url.pathname === "/subscriptions/notified") {
+    return handleNotifiedRequest(request, env);
+  }
+  if (url.pathname === "/notifications/test") {
+    return handleTestNotificationRequest(request, env, origin);
+  }
+  if (url.pathname === "/events/claim") {
+    return handleEventClaimRequest(request, env);
+  }
+  return createJSONResponse({ error: "Not found" }, 404);
+}
+
 export default {
   async fetch(request, env): Promise<Response> {
-    const url = new URL(request.url);
-    const origin = getAllowedOrigin(request, env);
-
-    if (request.method === "OPTIONS") {
-      if (!origin) return new Response(null, { status: 403 });
-      return new Response(null, {
-        status: 204,
-        headers: createCorsHeaders(origin),
-      });
-    }
-    if (url.pathname === "/health") {
-      return createJSONResponse({ ok: true });
-    }
-    if (url.pathname === "/config" && request.method === "GET") {
-      const originError = rejectDisallowedOrigin(request, origin);
-      if (originError) return originError;
+    try {
+      return await handleRequest(request, env);
+    } catch {
+      // Exception messages and stacks can expose request bodies or SQL values.
+      console.error({ code: "PUSH_API_REQUEST_FAILED" });
       return createJSONResponse(
-        { vapidPublicKey: env.VAPID_PUBLIC_KEY },
-        200,
-        createCorsHeaders(origin),
+        { error: "Internal error" },
+        500,
+        createCorsHeaders(getAllowedOrigin(request, env)),
       );
     }
-    if (url.pathname === "/subscriptions") {
-      return handleSubscriptionRequest(request, env, origin);
-    }
-    if (url.pathname === "/subscriptions/status") {
-      return handleSubscriptionStatusRequest(request, env, origin);
-    }
-    if (url.pathname === "/subscriptions/next-push") {
-      return handleNextPushRequest(request, env, origin);
-    }
-    if (url.pathname === "/subscriptions/rotate") {
-      return handleSubscriptionRotateRequest(request, env, origin);
-    }
-    if (url.pathname === "/subscriptions/notified") {
-      return handleNotifiedRequest(request, env);
-    }
-    if (url.pathname === "/notifications/test") {
-      return handleTestNotificationRequest(request, env, origin);
-    }
-    if (url.pathname === "/events/claim") {
-      return handleEventClaimRequest(request, env);
-    }
-    return createJSONResponse({ error: "Not found" }, 404);
   },
 } satisfies ExportedHandler<Env>;

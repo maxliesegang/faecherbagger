@@ -17,7 +17,8 @@ the Worker sends itself is the delivery test, hence `src/web-push.ts`.
 The production resources already exist:
 
 - Worker: `https://faecherbagger-push.faecherbagger.workers.dev`
-- D1 database: `faecherbagger-push` in Western Europe
+- D1 database: `faecherbagger-push`, created with a Western Europe location hint
+  (a hint is not a verified EU jurisdiction constraint)
 - Allowed web origin: `https://maxliesegang.github.io`
 
 ### Deploying
@@ -79,7 +80,7 @@ For a new Cloudflare account:
 
 ```bash
 npx wrangler login
-npx wrangler d1 create faecherbagger-push --location weur
+npx wrangler d1 create faecherbagger-push --jurisdiction eu
 npm run push:secrets:setup
 npm run push:github:setup
 ```
@@ -106,8 +107,10 @@ allows the Vite origin.
 - `GET /config` — returns the public VAPID key.
 - `POST /subscriptions` — creates or refreshes a browser subscription.
 - `DELETE /subscriptions` — removes a browser subscription.
-- `GET /subscriptions` — administrator-only cursor-paginated export.
-- `GET /subscriptions/status?endpoint=…` — tells an allowed browser origin
+- `POST /subscriptions/list` — administrator-only cursor-paginated export;
+  JSON body `{ "limit": 500, "after": "" }`, then the returned `nextCursor`
+  as `after`. Do not put endpoints in URLs.
+- `POST /subscriptions/status` — JSON body `{ "endpoint": "…" }`; tells an allowed browser origin
   whether its current subscription is still registered.
 - `POST /subscriptions/rotate` — atomically replaces a browser-managed push
   endpoint after `pushsubscriptionchange`.
@@ -118,5 +121,84 @@ allows the Vite origin.
 - `POST /subscriptions/notified` — administrator-only, records successful sends
   for the per-device delivery cap.
 
-Only endpoint URLs and their Web Push encryption keys are stored. There are no
-user accounts or analytics identifiers.
+Endpoints and encryption keys identify browser subscriptions; they are not
+anonymous. D1 also stores delivery timestamps, expiration and the single next
+push date. There are no user accounts or separate analytics identifiers.
+
+## Privacy operations
+
+All JSON responses use `Cache-Control: no-store`. The app uses request bodies,
+omits cookies and referrers on push requests, and stores pending deletion
+requests in IndexedDB before ending the browser subscription. Pending requests
+are retried when the app opens, returns online or becomes visible. Keep local
+app storage until deletion is confirmed. A deployment that changes the API URL
+does not forward old endpoints to a different API; finish pending deletions
+before changing providers. Invalid endpoints are removed when the push service
+returns 404 or 410 during a send.
+
+Automatic invocation logs and traces are disabled in `wrangler.jsonc`. Query
+redaction also protects custom log metadata from query-based requests made by
+older clients. Only a fixed error code is emitted for unexpected request
+failures; never log exceptions, request URLs, bodies, headers or SQL values.
+GitHub Actions records only aggregate delivery counts and status codes, but its
+runner still processes subscriptions and keys in memory. Cloudflare's own
+operational processing is separate from these application logging settings.
+
+Deploy the Worker through **Deploy push worker** before releasing the app and
+updated sender. The old GET status/export APIs now return 405; existing cached
+apps need to update to the new build. During the transition an old client can
+show an unknown subscription status, while existing push delivery is unchanged.
+The deploy workflow's subscription probe does not send a real push.
+
+Before publication, record the actual account plan, log retention, D1 backup
+window, applicable provider contracts and international transfer safeguards.
+The public notice gives upper bounds: seven days for Workers Logs and thirty
+days for D1 recovery history (currently three/seven and seven/thirty days for
+Free/Paid respectively). Deleting a row does not instantly erase recovery
+history. After a database restore, check for reinstated subscriptions before
+resuming delivery. Do not claim that overwriting `next_push_on` removes all
+historical copies.
+
+Cloudflare's DPA is incorporated by section 6.1 of its Self-Serve Subscription
+Agreement for covered personal data. Archive the applicable version and review
+GitHub's applicable terms as well; configuration alone is not a compliance
+assessment. Resources:
+
+- [Cloudflare DPA](https://www.cloudflare.com/cloudflare-customer-dpa/)
+- [Self-Serve Subscription Agreement](https://www.cloudflare.com/terms/)
+- [Cloudflare GDPR FAQ](https://www.cloudflare.com/trust-hub/gdpr/)
+- [Workers Logs and retention](https://developers.cloudflare.com/workers/observability/logs/workers-logs/)
+- [D1 recovery history](https://developers.cloudflare.com/d1/reference/time-travel/)
+- [GitHub privacy information](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
+
+### EU database jurisdiction
+
+No production database was inspected or migrated as part of the source change.
+A `weur` location hint does not establish EU-only storage. Inspect the database
+details in the Cloudflare dashboard (or D1 database-details API) and record its
+`jurisdiction`. For new databases, use `--jurisdiction eu` as shown above.
+Jurisdiction cannot be added to an existing database.
+
+If the current database has no EU constraint, migrate during a maintenance
+window:
+
+1. Pause broadcasts and subscription writes so an export cannot miss updates or
+   resurrect deletions. Create a new D1 database with `--jurisdiction eu`.
+2. Export and import the database using secure temporary storage outside the
+   repository. Treat the entire export as sensitive; do not attach it to an
+   issue, CI log or workflow artifact. Preserve the migration ledger and event
+   bookkeeping along with subscriptions.
+3. Update the D1 binding's database name and ID in `wrangler.jsonc`, plus the
+   database target in the npm migration commands and provisioning script.
+   Deploy through **Deploy push worker**, which applies migrations and secrets.
+4. Verify registration, deletion and a user-triggered test delivery against the
+   new database, then resume writes and broadcasts. Complete the old database's
+   retirement and document its backup lifecycle. Do not resume sending from an
+   old snapshot as a rollback without reconciling deletions first.
+
+An EU D1 jurisdiction does not regionalize Worker execution, GitHub Actions,
+browser push services or all Cloudflare operational metadata. Do not describe
+the whole service as EU-only.
+
+- [D1 jurisdiction documentation](https://developers.cloudflare.com/d1/configuration/data-location/)
+- [Worker regional processing](https://developers.cloudflare.com/data-localization/how-to/workers/)

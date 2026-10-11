@@ -140,11 +140,15 @@ shown and then served from the same runtime cache.
 
 ### Notifications
 
-**No watched location ever reaches the server.** Areas, radii, followed sites
+**No watched location is sent to the push backend.** Areas, radii, followed sites
 and notification choices live in IndexedDB on the device. D1 holds only what
 Web Push delivery needs: endpoints, keys, timestamps and, for Safari and Firefox
-devices, the date of the next planned push. That is one date, with no history and no
-reason attached.
+devices, the date of the next planned push. The live row holds one date and no
+reason; D1 recovery history can retain older values temporarily. Endpoints are
+pseudonymous subscription identifiers, not anonymous addresses. Cloudflare
+processes API connections, and the GitHub Actions runner processes delivery
+records. See [privacy operations](push-worker/README.md#privacy-operations) for
+logging, deletion retries, provider contracts and EU database jurisdiction.
 
 A run therefore works like this:
 
@@ -207,7 +211,8 @@ endpoint host, `src/lib/push-delivery.ts`):
   The date is not entirely without information. Matched against the public
   start dates, it points to a handful of sites across the region, or to none,
   because it may just be the rhythm's turn. Only an operator logging every
-  reported date over time could narrow it down. The server keeps no history.
+  reported date over time could narrow it down. The application does not keep
+  a date history, but D1 recovery history can temporarily retain older values.
 
   The push is a Declarative Web Push message: its generic notification is the
   platform's fallback, and with `mutable` the service worker replaces it with

@@ -57,6 +57,7 @@ import { distanceInMeters, formatDistance } from "../lib/distance.ts";
 import { suggestMunicipalities } from "../lib/street-names.ts";
 import type { CurrentLocationController } from "../hooks/useCurrentLocation.ts";
 import type { PushNotificationsController } from "../hooks/usePushNotifications.ts";
+import { PushPrivacyHint } from "./PushPrivacyHint.tsx";
 import { createRouteKey, useRouteSearch } from "../hooks/useRouteSearch.ts";
 import {
   formatConstructionPeriodRelativeToToday,
@@ -978,10 +979,7 @@ export function NotificationSetupDialog({
                 Gespeichert. Sollen wir Sie benachrichtigen, wenn hier eine
                 Baustelle angekündigt wird oder sich ändert?
               </KernText>
-              <p className="notification-setup__hint">
-                Der Ort bleibt auf diesem Gerät. Ausschalten können Sie
-                jederzeit in den Einstellungen.
-              </p>
+              <PushPrivacyHint className="notification-setup__hint" />
             </>
           )}
         </div>

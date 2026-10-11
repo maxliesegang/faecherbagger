@@ -4,8 +4,9 @@
  * A row is a push endpoint plus delivery bookkeeping — no coordinates, no
  * radius, no preferences about places or kinds. Safari and Firefox devices add the date of
  * their next planned push, and nothing about why. Which of a run's events matter to a device is decided in that
- * device's service worker, so this database cannot reveal where anyone lives
- * even if it were disclosed in full.
+ * device's service worker. Delivery dates can still permit limited inferences
+ * when correlated with public construction data. D1 recovery history can
+ * temporarily retain older values and deleted rows.
  */
 
 export interface StoredSubscription {

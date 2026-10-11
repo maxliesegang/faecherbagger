@@ -174,9 +174,12 @@ console.log(
 if (failed > 0 && sent === 0) process.exitCode = 1;
 
 async function getPage(pageCursor: string): Promise<SubscriptionPage> {
-  const query = new URLSearchParams({ limit: "500" });
-  if (pageCursor) query.set("after", pageCursor);
-  const response = await fetch(`${apiURL}/subscriptions?${query}`, { headers });
+  const response = await fetch(`${apiURL}/subscriptions/list`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ limit: 500, after: pageCursor }),
+    cache: "no-store",
+  });
   if (!response.ok) {
     throw new Error(`Could not read subscriptions: ${response.status}`);
   }

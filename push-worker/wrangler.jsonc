@@ -12,8 +12,11 @@
   },
   "observability": {
     "enabled": true,
-    "logs": { "head_sampling_rate": 1 },
-    "traces": { "enabled": true, "head_sampling_rate": 0.05 }
+    "redact_query_string": true,
+    // Keep only explicit, sanitized error codes; URLs can contain endpoints
+    // from older clients. Cloudflare's own operational processing is separate.
+    "logs": { "enabled": true, "invocation_logs": false, "head_sampling_rate": 1 },
+    "traces": { "enabled": false }
   },
   "d1_databases": [
     {

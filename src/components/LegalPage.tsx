@@ -141,15 +141,17 @@ function PrivacyContent() {
 
       <h2>Grundsatz</h2>
       <p>
-        Fächerbagger ist eine statische Website: keine Benutzerkonten, kein
-        Tracking, keine Werbung. Ihre Filter und Einstellungen verlassen Ihr
-        Gerät nicht.
+        Fächerbagger verwendet keine Werbung und keine Dienste zur Analyse
+        Ihres Nutzungsverhaltens. Ihre gespeicherten Orte und Einstellungen
+        bleiben auf Ihrem Gerät. Für einzelne Funktionen werden die unten
+        beschriebenen Dienste eingebunden.
       </p>
 
       <h2>Aufruf der Seite</h2>
       <p>
         Beim Aufruf überträgt Ihr Browser technisch notwendige Daten wie Ihre
-        IP-Adresse an den Hosting-Dienst. Rechtsgrundlage ist Art. 6 Abs. 1
+        IP-Adresse an GitHub Pages, den Hosting-Dienst dieser Website.
+        Rechtsgrundlage ist Art. 6 Abs. 1
         lit. f DSGVO (Bereitstellung des Angebots).
       </p>
 
@@ -157,14 +159,20 @@ function PrivacyContent() {
       <p>
         Kartenkacheln und Kartenstil kommen von{" "}
         <a href="https://openfreemap.org/">OpenFreeMap</a>. Dabei erhält dieser
-        Dienst Ihre IP-Adresse, aber erst, wenn eine Karte angezeigt wird.
+        Dienst Ihre IP-Adresse und die angeforderten Kartenbereiche, aber
+        erst, wenn eine Karte angezeigt wird. OpenFreeMap kann Cloudflare zur
+        Auslieferung einsetzen. Ihre eingezeichneten Gebiete werden nicht als
+        eigene Daten übertragen.{" "}
+        <a href="https://openfreemap.org/privacy/">Datenschutz bei OpenFreeMap</a>
       </p>
 
       <h2>Standort</h2>
       <p>
-        Ihr Standort wird nur abgefragt, wenn Sie es auslösen. Er wird nur im
-        Browser verwendet (Kartenausschnitt, Sortierung nach Entfernung) und
-        nicht übertragen. Sie können die Freigabe jederzeit widerrufen.
+        Ihren Standort fragt die App nur auf Ihre Anforderung ab. Sie verwendet
+        ihn auf Ihrem Gerät zur Entfernungssortierung und zur Wahl des
+        Kartenausschnitts. Wenn eine Karte angezeigt wird, werden die dafür
+        benötigten Kartenbereiche beim Kartendienst angefordert. Sie können
+        die Standortfreigabe jederzeit in Ihrem Browser widerrufen.
       </p>
 
       <h2>Adresssuche</h2>
@@ -191,24 +199,57 @@ function PrivacyContent() {
 
       <h2>Benachrichtigungen (Web Push)</h2>
       <p>
-        <strong>Ihre Orte bleiben auf Ihrem Gerät.</strong> Umkreise,
-        Strecken, Flächen, Straßen, beobachtete Baustellen und Ihre Auswahl
-        liegen nur in Ihrem Browser. Wir kennen sie nicht.
+        <strong>Ihre gespeicherten Orte bleiben auf Ihrem Gerät.</strong>{" "}
+        Gebiete, Strecken, Straßen und beobachtete Baustellen werden nicht an
+        den Benachrichtigungsdienst übertragen. Ihr Gerät prüft selbst, welche
+        Meldungen zu Ihrer Auswahl passen.
       </p>
       <p>
-        Beim Einschalten speichert unser Benachrichtigungsdienst nur eine
-        anonyme Geräteadresse, die Ihr Browser erzeugt (Push-Endpoint und
-        Schlüssel). In Safari und Firefox kommt das Datum hinzu, an dem Ihr
-        Gerät die nächste Nachricht erwartet. Bei neuen Meldungen erhalten alle
-        angemeldeten Geräte denselben Hinweis ohne Inhalt. Erst Ihr Gerät
-        prüft, ob etwas davon Sie betrifft, und zeigt nur dann eine
-        Benachrichtigung. Der Dienst weiß daher nicht, wo Sie wohnen oder was
-        Ihnen angezeigt wird.
+        Wenn Sie Benachrichtigungen einschalten, speichert unser
+        Benachrichtigungsdienst bei Cloudflare eine technische Zustelladresse
+        und die zugehörigen Schlüssel. Diese Adresse ermöglicht die Zustellung
+        an Ihr Browser-Abo und dessen Wiedererkennung. Gespeichert werden
+        außerdem technische Zeitangaben zur Anmeldung und Zustellung.
+        Bei Safari und Firefox kommt das Datum der nächsten geplanten
+        Nachricht hinzu. Persönliche Meldungen werden auf Ihrem Gerät erzeugt.
       </p>
       <p>
-        Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Beim
-        Ausschalten wird die Geräteadresse gelöscht. Zugestellt wird über den
-        Push-Dienst Ihres Browser-Herstellers.
+        Beim Kontakt mit dem Dienst verarbeitet Cloudflare auch Ihre
+        IP-Adresse und technische Verbindungsdaten. Für den Versand werden
+        die Zustelldaten außerdem auf einem GitHub-Actions-Server verarbeitet.
+        Die Zustellung erfolgt über den Push-Dienst Ihres Browsers, je nach
+        Browser von Apple, Google oder Mozilla.
+      </p>
+      <p>
+        Die Anmeldung erfolgt mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a
+        DSGVO). Sie können diese jederzeit durch Ausschalten der
+        Benachrichtigungen widerrufen. Dabei wird die Zustelladresse aus der
+        laufenden Datenbank gelöscht. Ist der Dienst nicht erreichbar, bleibt
+        ein Löschauftrag auf Ihrem Gerät und wird beim nächsten App-Aufruf oder
+        bei erneuter Verbindung wieder versucht. Dafür müssen die lokalen
+        App-Daten erhalten bleiben. Ungültige Anmeldungen werden entfernt,
+        sobald der Push-Dienst sie beim Versand als ungültig meldet.
+      </p>
+      <p>
+        In zeitlich begrenzten Datenbanksicherungen können ältere Daten noch
+        bis zu 30 Tage enthalten sein. Automatische Aufrufprotokolle und
+        Ablaufaufzeichnungen der Push-API sind ausgeschaltet. Für die
+        Fehlerdiagnose protokollieren wir nur allgemeine Fehlercodes, keine
+        Zustelladressen oder Schlüssel. Diese Fehlerprotokolle werden bei
+        Cloudflare je nach Tarif bis zu sieben Tage gespeichert.
+      </p>
+      <p>
+        Cloudflare, Inc. und GitHub, Inc. sind US-Anbieter. Die Verarbeitung
+        kann auch außerhalb der EU stattfinden. Cloudflare beschreibt die
+        Schutzmaßnahmen für internationale Übermittlungen in seinen{" "}
+        <a href="https://www.cloudflare.com/trust-hub/gdpr/">Datenschutzinformationen</a>{" "}
+        und seinem{" "}
+        <a href="https://www.cloudflare.com/cloudflare-customer-dpa/">
+          Vertrag zur Auftragsverarbeitung
+        </a>. Informationen zu GitHub finden Sie in dessen{" "}
+        <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">
+          Datenschutzerklärung
+        </a>.
       </p>
 
       <h2>Lokale Speicherung</h2>

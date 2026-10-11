@@ -4,6 +4,7 @@ import type {
   PushUnavailableReason,
 } from "../hooks/usePushNotifications.ts";
 import { AppIcon } from "./AppIcon.tsx";
+import { PushPrivacyHint } from "./PushPrivacyHint.tsx";
 import "./NotificationSwitch.css";
 
 const UNAVAILABLE_HINTS: Record<PushUnavailableReason, string> = {
@@ -71,11 +72,13 @@ export function NotificationSwitch({
         )}
         {!isActive && !unavailableReason && variant === "banner" && (
           <p className="notification-switch__hint">
-            Wir melden neue Baustellen an Ihren Orten. Die Orte bleiben auf
-            diesem Gerät.
+            Wir melden neue Baustellen an Ihren Orten.
           </p>
         )}
-        {variant === "row" && feedbackMessage && (
+        {!isActive && !unavailableReason && subscriptionState !== "unknown" && (
+          <PushPrivacyHint className="notification-switch__hint" />
+        )}
+        {feedbackMessage && (
           <p className="notification-switch__hint" role="status">
             {feedbackMessage}
           </p>
