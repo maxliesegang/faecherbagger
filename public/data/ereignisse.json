@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T11:31:26.174Z",
+  "generatedAt": "2026-10-12T22:38:10.077Z",
   "events": [
     {
       "kind": "changed",
@@ -118,6 +118,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V1217:2026-10-11T22:00:00Z",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V1217",
+      "point": [
+        8.474866,
+        48.952037
+      ],
+      "closure": "full",
+      "startDate": "2026-08-10",
+      "endDate": "2027-07-29",
+      "municipality": "Karlsruhe",
+      "location": "Böhmerwaldstraße zw. Thüringer Straßem und Mecklenburger Straße",
+      "previousClosure": "full",
+      "previousStartDate": "2027-02-08"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V2134:2026-10-08T22:00:00Z",
       "siteId": "2026V2134",
       "point": [
@@ -211,6 +228,50 @@
       "municipality": "Karlsruhe",
       "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
       "announcedOn": "2026-10-09"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V3205:2026-10-11T22:00:00Z",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V3205",
+      "point": [
+        8.498679,
+        48.998834
+      ],
+      "extentPoints": [
+        [
+          8.49864,
+          48.99889
+        ],
+        [
+          8.49871,
+          48.99752
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-01",
+      "endDate": "2027-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Vogelsang",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-19"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V6360:2026-10-11T22:00:00Z",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V6360",
+      "point": [
+        8.330465,
+        49.032671
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-19",
+      "endDate": "2026-11-23",
+      "municipality": "Karlsruhe",
+      "location": "B10 Südtangente zwischen AS9 und AS10",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-15"
     },
     {
       "kind": "changed",
@@ -378,18 +439,18 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V6379",
-      "siteId": "2026V6379",
+      "signature": "new:2026V5490",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V5490",
       "point": [
-        8.390565,
-        48.998275
+        8.466705,
+        49.001968
       ],
       "closure": "full",
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-12",
+      "startDate": "2026-11-27",
+      "endDate": "2026-11-27",
       "municipality": "Karlsruhe",
-      "location": "Hirschstraße zw. Südendstraße und Vorholzstraße",
-      "announcedOn": "2026-10-09"
+      "location": "Pfinzstraße zw. Pforzheimer Straße und Durlacher Allee"
     },
     {
       "kind": "new",
@@ -483,6 +544,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V6427",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V6427",
+      "point": [
+        8.423053,
+        49.011326
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "Haid-und-Neu-Str./Karl-Wilhelm-Platz"
+    },
+    {
+      "kind": "new",
       "signature": "new:30096",
       "announcedOn": "2026-10-12",
       "siteId": "30096",
@@ -570,6 +646,21 @@
       "endDate": "2027-02-28",
       "municipality": "Bruchsal",
       "location": "Obere Mühlstraße 26"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40436",
+      "announcedOn": "2026-10-13",
+      "siteId": "40436",
+      "point": [
+        8.412941,
+        48.948443
+      ],
+      "closure": "full",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-31",
+      "municipality": "Ettlingen",
+      "location": "Durlacher Straße"
     },
     {
       "kind": "starts-soon",
@@ -836,6 +927,22 @@
     },
     {
       "kind": "starts-soon",
+      "signature": "starts-soon:2026V5328:2026-10-27:14",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V5328",
+      "point": [
+        8.44215,
+        49.032055
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-27",
+      "endDate": "2026-11-21",
+      "municipality": "Karlsruhe",
+      "location": "Glogauer Straße zw. Königsberger Straße und Neisser Straße",
+      "reminderLeadDays": 14
+    },
+    {
+      "kind": "starts-soon",
       "signature": "starts-soon:2026V5665:2026-10-12:1",
       "announcedOn": "2026-10-11",
       "siteId": "2026V5665",
@@ -883,6 +990,22 @@
     },
     {
       "kind": "starts-soon",
+      "signature": "starts-soon:2026V6197:2026-10-14:1",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V6197",
+      "point": [
+        8.391418,
+        49.002229
+      ],
+      "closure": "full",
+      "startDate": "2026-10-14",
+      "endDate": "2026-10-14",
+      "municipality": "Karlsruhe",
+      "location": "Jollystraße zw. Roon- und Boeckhstraße",
+      "reminderLeadDays": 1
+    },
+    {
+      "kind": "starts-soon",
       "signature": "starts-soon:2026V6323:2026-10-16",
       "siteId": "2026V6323",
       "point": [
@@ -926,22 +1049,6 @@
       "endDate": "2026-10-30",
       "municipality": "Karlsruhe",
       "location": "Pfarrstraße Haus Nr.12-18 und Haus Nr. 43-51",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6379:2026-10-12:1",
-      "announcedOn": "2026-10-11",
-      "siteId": "2026V6379",
-      "point": [
-        8.390565,
-        48.998275
-      ],
-      "closure": "full",
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-12",
-      "municipality": "Karlsruhe",
-      "location": "Hirschstraße zw. Südendstraße und Vorholzstraße",
       "reminderLeadDays": 1
     },
     {

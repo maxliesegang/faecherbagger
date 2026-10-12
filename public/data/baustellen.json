@@ -2405,7 +2405,7 @@
   },
   {
     "id": "2026V0102",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -3523,7 +3523,7 @@
   },
   {
     "id": "2026V1217",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -3532,14 +3532,14 @@
     "location": "Böhmerwaldstraße zw. Thüringer Straßem und Mecklenburger Straße",
     "notes": "Vollsperrung mit Abwicklung in mehreren Abschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-02-08",
+    "startDate": "2026-08-10",
     "endDate": "2027-07-29",
     "point": [
       8.474866,
       48.952037
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-30T22:00:00Z"
+    "lastModified": "2026-10-11T22:00:00Z"
   },
   {
     "id": "2026V1387",
@@ -4372,12 +4372,12 @@
         49.02268
       ],
       [
-        8.35597,
-        49.02432
-      ],
-      [
         8.35665,
         49.02297
+      ],
+      [
+        8.35597,
+        49.02432
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -4918,7 +4918,7 @@
     "location": "Vogelsang",
     "notes": "Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-19",
+    "startDate": "2026-12-01",
     "endDate": "2027-12-31",
     "point": [
       8.498679,
@@ -4935,7 +4935,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-29T22:00:00Z"
+    "lastModified": "2026-10-11T22:00:00Z"
   },
   {
     "id": "2026V3250",
@@ -5550,26 +5550,6 @@
     "lastModified": "2026-09-27T22:00:00Z"
   },
   {
-    "id": "2026V4194",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-31",
-    "endDate": "2026-10-12",
-    "point": [
-      8.47753,
-      48.971312
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-27T22:00:00Z"
-  },
-  {
     "id": "2026V4195",
     "phase": "active",
     "category": "gas-water",
@@ -5781,7 +5761,7 @@
   },
   {
     "id": "2026V4336",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -7126,6 +7106,26 @@
     "lastModified": "2026-09-21T22:00:00Z"
   },
   {
+    "id": "2026V5490",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfinzstraße zw. Pforzheimer Straße und Durlacher Allee",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-27",
+    "endDate": "2026-11-27",
+    "point": [
+      8.466705,
+      49.001968
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-11T22:00:00Z"
+  },
+  {
     "id": "2026V5495",
     "phase": "active",
     "category": "gas-water",
@@ -7298,26 +7298,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-17T22:00:00Z"
-  },
-  {
-    "id": "2026V5708",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bahnübergang Belchenstraße/Im Weiherwald",
-    "notes": null,
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-09",
-    "endDate": "2026-10-12",
-    "point": [
-      8.389164,
-      48.982052
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
   },
   {
     "id": "2026V5717",
@@ -8304,31 +8284,11 @@
     "location": "B10 Südtangente zwischen AS9 und AS10",
     "notes": "Sperrung des jeweils linken Fahrstreifens, Zweistreifige Verkehrsführung in beiden Fahrtrichtungen, teilweise Verschwenk auf Standstreifen",
     "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-15",
-    "endDate": "2026-11-12",
+    "startDate": "2026-10-19",
+    "endDate": "2026-11-23",
     "point": [
       8.330465,
       49.032671
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
-  },
-  {
-    "id": "2026V6379",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Südendstraße und Graf-Rhena-Straße",
-    "notes": "Vollsperrung im Zeitraum 11.00 Uhr bis 15.00 Uhr",
-    "cause": "Privat",
-    "startDate": "2026-10-12",
-    "endDate": "2026-10-12",
-    "point": [
-      8.390565,
-      48.998275
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-11T22:00:00Z"
@@ -8449,6 +8409,26 @@
     "point": [
       8.414416,
       48.999202
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-11T22:00:00Z"
+  },
+  {
+    "id": "2026V6427",
+    "phase": "upcoming",
+    "category": "soil-survey",
+    "artRaw": "Baugrunduntersuchung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Haid-und-Neu-Str./Karl-Wilhelm-Platz",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich/ Haltestellenbereich, lokale Engstellen",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-22",
+    "point": [
+      8.423053,
+      49.011326
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-11T22:00:00Z"
@@ -10255,7 +10235,7 @@
     "notes": "Leitungsverlegung / Vollsperrung / Umleitung ist entsprechend ausgeschildert",
     "cause": "Stadtbauamt",
     "startDate": "2026-08-24",
-    "endDate": "2026-10-23",
+    "endDate": "2026-11-30",
     "point": [
       8.480132,
       49.079324
@@ -11326,6 +11306,26 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-10-01T09:57:39Z"
+  },
+  {
+    "id": "40436",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Durlacher Straße",
+    "notes": "Vollsperrung zwischen Alexiusstraße und Vogelsangweg\n\nBitte die ausgeschilderte Umleitung beachten!",
+    "cause": "Stadtwerke Ettlingen",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-31",
+    "point": [
+      8.412941,
+      48.948443
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-10-12T10:39:51Z"
   },
   {
     "id": "40643",
