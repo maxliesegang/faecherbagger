@@ -1,86 +1,31 @@
 {
-  "since": "2026-10-12T22:38:10.077Z",
+  "since": "2026-10-13T11:19:36.917Z",
   "added": [
-    "2025V6487",
-    "2026V3196",
-    "2026V3514",
-    "2026V6441",
-    "2026V6448",
-    "2026V6457",
-    "30097",
-    "30233",
-    "30240",
-    "30241",
-    "30242",
-    "30243",
-    "40171"
+    "2026V2154",
+    "2026V3211",
+    "2026V5390",
+    "2026V6480",
+    "2026V6497",
+    "30105",
+    "30234",
+    "30238"
   ],
   "modified": [
-    "2026V0255",
-    "2026V0768",
-    "2026V4336",
-    "2026V5311",
-    "2026V5794",
-    "40172"
+    "2026V0662"
   ],
   "removed": [
-    "2026V3515",
-    "40150"
+    "2026V4799",
+    "2026V4800"
   ],
   "relevantModifications": [
     {
-      "id": "2026V0255",
+      "id": "2026V0662",
       "changedFields": [
         "period"
       ],
       "previousClosure": "full",
-      "previousStartDate": "2026-09-21",
-      "previousEndDate": "2026-11-22"
-    },
-    {
-      "id": "2026V0768",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-05",
-      "previousEndDate": "2027-03-15"
-    },
-    {
-      "id": "2026V4336",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "full",
-      "previousStartDate": "2026-10-13",
-      "previousEndDate": "2026-10-26"
-    },
-    {
-      "id": "2026V5311",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "full",
-      "previousStartDate": "2026-09-21",
-      "previousEndDate": "2026-11-06"
-    },
-    {
-      "id": "2026V5794",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-10",
-      "previousEndDate": "2027-01-25"
-    },
-    {
-      "id": "40172",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2025-10-21",
-      "previousEndDate": "2026-12-31"
+      "previousStartDate": "2026-11-02",
+      "previousEndDate": "2027-04-30"
     }
   ]
 }

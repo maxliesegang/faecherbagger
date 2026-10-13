@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Tue, 13 Oct 2026 11:19:36 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Oct 2026 20:51:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -30,6 +30,17 @@ Zeitraum: 22.10.2026 – 17.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Karlsruher Straße 3 – Rheinstetten]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30105</link>
+            <guid isPermaLink="false">faecherbagger:30105:2026-10-13T09:07:03Z</guid>
+            <pubDate>Tue, 13 Oct 2026 09:07:03 GMT</pubDate>
+            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 12.10.2026 – 30.10.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></description>
+            <category>Strom/TK-Versorgung</category>
         </item>
         <item>
             <title><![CDATA[Geplant: 76297 Stutensee, Hagenbuchenstraße 22 – Stutensee]]></title>
@@ -79,6 +90,18 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
+            <title><![CDATA[Geplant: Westmarkstraße zw. Auer Straße und Leußlerstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0662</link>
+            <guid isPermaLink="false">faecherbagger:2026V0662:2026-10-12T22:00:00Z</guid>
+            <pubDate>Mon, 12 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Straßenbau · Vollsperrung
+Zeitraum: 30.11.2026 – 30.04.2027
+Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Straßenbau</category>
+        </item>
+        <item>
             <title><![CDATA[Geplant: Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0768</link>
             <guid isPermaLink="false">faecherbagger:2026V0768:2026-10-12T22:00:00Z</guid>
@@ -91,6 +114,17 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
         </item>
         <item>
+            <title><![CDATA[Geplant: Vorholzstraße zw. Karlstraße und Hirschstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2154</link>
+            <guid isPermaLink="false">faecherbagger:2026V2154:2026-10-12T22:00:00Z</guid>
+            <pubDate>Mon, 12 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Kanalbau · Vollsperrung
+Zeitraum: 19.10.2026 – 30.10.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Kanalbau</category>
+        </item>
+        <item>
             <title><![CDATA[Aktuell: Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3196</link>
             <guid isPermaLink="false">faecherbagger:2026V3196:2026-10-12T22:00:00Z</guid>
@@ -100,6 +134,18 @@ Zeitraum: 18.08.2026 – 23.10.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Schlössleweg zw. Badener Straße und Lußstraße, Lußstraße zw. Lußsteige und Schlössleweg – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3211</link>
+            <guid isPermaLink="false">faecherbagger:2026V3211:2026-10-12T22:00:00Z</guid>
+            <pubDate>Mon, 12 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 19.10.2026 – 31.12.2026
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Strom/TK-Versorgung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße – Karlsruhe]]></title>
@@ -134,6 +180,17 @@ Zeitraum: 21.09.2026 – 04.11.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Enzstraße zw. Mainstraße und Tauberstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5390</link>
+            <guid isPermaLink="false">faecherbagger:2026V5390:2026-10-12T22:00:00Z</guid>
+            <pubDate>Mon, 12 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 28.10.2026 – 28.10.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Kraneinsatz</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Prakstr., Karl-Wilhelm-Str. – Karlsruhe]]></title>
@@ -182,6 +239,30 @@ Hinweis: Nächtliche Sperrung vs. 1:00 Uhr - 4:00 Uhr
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></description>
             <category>Kraneinsatz</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: K9659/ B10/ B3 – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6480</link>
+            <guid isPermaLink="false">faecherbagger:2026V6480:2026-10-12T22:00:00Z</guid>
+            <pubDate>Mon, 12 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Grünpflege · Mit Behinderung
+Zeitraum: 14.10.2026 – 14.10.2026
+Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung
+Verantwortlich: Gartenbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Grünpflege</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Pfinztalstraße zw. Seeboldstraße und Pforzheimer Straße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6497</link>
+            <guid isPermaLink="false">faecherbagger:2026V6497:2026-10-12T22:00:00Z</guid>
+            <pubDate>Mon, 12 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Gleisbau · Vollsperrung
+Zeitraum: 14.10.2026 – 15.10.2026
+Hinweis: vs. ab 19:00 Uhr - 4:00 Uhr, Versetzten der Gleitwand
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Gleisbau</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Erlenweg 8 – Bruchsal]]></title>
@@ -241,6 +322,31 @@ Quelle: Stadt Bruchsal]]></description>
             <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
 Zeitraum: 13.10.2026 – 21.10.2026
 Hinweis: Fahrbahn zur Erneuerung von defekten Hydranten verengt
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></description>
+            <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Hoheneggerstraße 10 – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30238</link>
+            <guid isPermaLink="false">faecherbagger:30238:2026-10-12T08:38:26Z</guid>
+            <pubDate>Mon, 12 Oct 2026 08:38:26 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 13.10.2026 – 21.10.2026
+Hinweis: Kurzzeitige Verengung zur Sanierung einen Hydranten
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></description>
+            <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Am Alten Schloss – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30234</link>
+            <guid isPermaLink="false">faecherbagger:30234:2026-10-12T08:26:38Z</guid>
+            <pubDate>Mon, 12 Oct 2026 08:26:38 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 13.10.2026 – 21.10.2026
+Hinweis: Einmündung Pfeilersraße verengt.
+Es wird ein defekter Hydrant erneuert.
 Verantwortlich: Stadtwerke
 Quelle: Stadt Bruchsal]]></description>
             <category>Gas/Wasser</category>
@@ -3121,18 +3227,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Westmarkstraße zw. Auer Straße und Leußlerstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0662</link>
-            <guid isPermaLink="false">faecherbagger:2026V0662:2026-08-30T22:00:00Z</guid>
-            <pubDate>Sun, 30 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Straßenbau · Vollsperrung
-Zeitraum: 02.11.2026 – 30.04.2027
-Hinweis: Aufteilung nicht vorgenommen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Straßenbau</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: Ostmarkstraße zwischen Westmarkstraße und Kärntner Straße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1163</link>
             <guid isPermaLink="false">faecherbagger:2026V1163:2026-08-30T22:00:00Z</guid>
@@ -3768,29 +3862,6 @@ Zeitraum: 02.11.2026 – 23.12.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Lußstraße zw. Schlössleweg und Lußsteige – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4799</link>
-            <guid isPermaLink="false">faecherbagger:2026V4799:2026-07-30T22:00:00Z</guid>
-            <pubDate>Thu, 30 Jul 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 01.08.2026 – 25.11.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Schlössleweg, Badener Straße, Lußstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4800</link>
-            <guid isPermaLink="false">faecherbagger:2026V4800:2026-07-30T22:00:00Z</guid>
-            <pubDate>Thu, 30 Jul 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 05.09.2026 – 25.11.2026
-Hinweis: Restarbeiten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Strom/TK-Versorgung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Landgrabenstraße zw. Neue Anlage Straße u. Kreisel – Karlsruhe]]></title>

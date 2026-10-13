@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T11:19:36.917Z",
+  "generatedAt": "2026-10-13T20:51:47.127Z",
   "events": [
     {
       "kind": "changed",
@@ -132,6 +132,23 @@
       "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße",
       "previousClosure": "full",
       "previousStartDate": "2026-09-21"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0662:2026-10-12T22:00:00Z",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V0662",
+      "point": [
+        8.461323,
+        48.992959
+      ],
+      "closure": "full",
+      "startDate": "2026-11-30",
+      "endDate": "2027-04-30",
+      "municipality": "Karlsruhe",
+      "location": "Westmarkstraße zw. Auer Straße und Leußlerstraße",
+      "previousClosure": "full",
+      "previousStartDate": "2026-11-02"
     },
     {
       "kind": "changed",
@@ -510,6 +527,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V2154",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V2154",
+      "point": [
+        8.392748,
+        48.999658
+      ],
+      "closure": "full",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Vorholzstraße zw. Karlstraße und Hirschstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:2026V3028",
       "siteId": "2026V3028",
       "point": [
@@ -537,6 +569,21 @@
       "endDate": "2026-10-23",
       "municipality": "Karlsruhe",
       "location": "Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3211",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V3211",
+      "point": [
+        8.476246,
+        48.994484
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-19",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Schlössleweg zw. Badener Straße und Lußstraße, Lußstraße zw. Lußsteige und Schlössleweg"
     },
     {
       "kind": "new",
@@ -597,6 +644,21 @@
       "endDate": "2026-10-23",
       "municipality": "Karlsruhe",
       "location": "Hirschberger Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5390",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V5390",
+      "point": [
+        8.394368,
+        48.985005
+      ],
+      "closure": "full",
+      "startDate": "2026-10-28",
+      "endDate": "2026-10-28",
+      "municipality": "Karlsruhe",
+      "location": "Enzstraße zw. Mainstraße und Tauberstraße"
     },
     {
       "kind": "new",
@@ -765,6 +827,110 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V6480",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V6480",
+      "point": [
+        8.489641,
+        49.012264
+      ],
+      "extentPoints": [
+        [
+          8.4885,
+          49.01015
+        ],
+        [
+          8.48384,
+          49.00821
+        ],
+        [
+          8.47929,
+          49.01073
+        ],
+        [
+          8.46928,
+          49.0151
+        ],
+        [
+          8.47412,
+          49.01333
+        ],
+        [
+          8.47365,
+          49.01029
+        ],
+        [
+          8.46923,
+          49.00811
+        ],
+        [
+          8.46681,
+          49.00546
+        ],
+        [
+          8.46296,
+          49.00296
+        ],
+        [
+          8.48692,
+          49.00597
+        ],
+        [
+          8.49051,
+          49.01317
+        ],
+        [
+          8.49391,
+          49.01564
+        ],
+        [
+          8.49882,
+          49.01735
+        ],
+        [
+          8.50236,
+          49.01968
+        ],
+        [
+          8.50567,
+          49.02273
+        ],
+        [
+          8.50912,
+          49.02559
+        ],
+        [
+          8.51239,
+          49.02875
+        ],
+        [
+          8.51495,
+          49.03176
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-14",
+      "endDate": "2026-10-14",
+      "municipality": "Karlsruhe",
+      "location": "K9659/ B10/ B3"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6497",
+      "announcedOn": "2026-10-13",
+      "siteId": "2026V6497",
+      "point": [
+        8.465617,
+        48.999863
+      ],
+      "closure": "full",
+      "startDate": "2026-10-14",
+      "endDate": "2026-10-15",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Seeboldstraße und Pforzheimer Straße"
+    },
+    {
+      "kind": "new",
       "signature": "new:30096",
       "announcedOn": "2026-10-12",
       "siteId": "30096",
@@ -825,6 +991,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:30105",
+      "announcedOn": "2026-10-13",
+      "siteId": "30105",
+      "point": [
+        8.308576,
+        48.971323
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-30",
+      "municipality": "Rheinstetten",
+      "location": "Karlsruher Straße 3"
+    },
+    {
+      "kind": "new",
       "signature": "new:30227",
       "siteId": "30227",
       "point": [
@@ -852,6 +1033,36 @@
       "endDate": "2026-10-20",
       "municipality": "Bruchsal",
       "location": "Kiefernweg 13a"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30234",
+      "announcedOn": "2026-10-13",
+      "siteId": "30234",
+      "point": [
+        8.59873,
+        49.125031
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-21",
+      "municipality": "Bruchsal",
+      "location": "Am Alten Schloss"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30238",
+      "announcedOn": "2026-10-13",
+      "siteId": "30238",
+      "point": [
+        8.595981,
+        49.125524
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-21",
+      "municipality": "Bruchsal",
+      "location": "Hoheneggerstraße 10"
     },
     {
       "kind": "new",
