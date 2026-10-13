@@ -142,7 +142,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Am Fasanengarten 2; Hansjakobstraße 1-14; Hölderlinstraße 1-5",
-    "notes": "Aufteilung nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2027-01-25",
     "endDate": "2027-05-31",
@@ -386,6 +386,10 @@
     ],
     "extentPoints": [
       [
+        8.40346,
+        48.98145
+      ],
+      [
         8.40414,
         48.98483
       ],
@@ -394,12 +398,8 @@
         48.98245
       ],
       [
-        8.40357,
-        48.98114
-      ],
-      [
-        8.4044,
-        48.98239
+        8.40428,
+        48.98278
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -1754,6 +1754,26 @@
     "lastModified": "2026-08-03T22:00:00Z"
   },
   {
+    "id": "2025V6487",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Yorckstraße zw. Wichernstraße u. Yorckplatz",
+    "notes": "Lokale Arbeitsstelle Höhe Nr. 59",
+    "cause": "Privat",
+    "startDate": "2026-02-09",
+    "endDate": "2026-11-06",
+    "point": [
+      8.369963,
+      49.00646
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-12T22:00:00Z"
+  },
+  {
     "id": "2025V6511",
     "phase": "upcoming",
     "category": "tunnel",
@@ -2685,23 +2705,23 @@
   },
   {
     "id": "2026V0255",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
+    "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
+    "startDate": "2026-11-05",
     "endDate": "2026-11-22",
     "point": [
       8.474962,
       48.9993
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
+    "lastModified": "2026-10-12T22:00:00Z"
   },
   {
     "id": "2026V0274",
@@ -3235,7 +3255,7 @@
   },
   {
     "id": "2026V0768",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -3244,14 +3264,14 @@
     "location": "Blumentorstraße, Pfinzstraße, Friedrich-Eberle-Straße, Oberlinstraße",
     "notes": "Abwicklung in mehreren Bauabschnitte, Straßenquerungen = lokale Engstelle wechselseitig, Arbeitsstelle im Geh-, und Radwegbereich",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-05",
-    "endDate": "2027-03-15",
+    "startDate": "2026-10-14",
+    "endDate": "2027-03-12",
     "point": [
       8.47583,
       49.002039
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-28T22:00:00Z"
+    "lastModified": "2026-10-12T22:00:00Z"
   },
   {
     "id": "2026V0781",
@@ -3416,7 +3436,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Thüringer Straße zw. Böhmerwaldstraße und Esslinger Straße",
-    "notes": "Vollsperrung in 2 Abschnitten",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-03",
     "endDate": "2026-10-31",
@@ -4868,6 +4888,26 @@
     "lastModified": "2026-10-07T22:00:00Z"
   },
   {
+    "id": "2026V3196",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-18",
+    "endDate": "2026-10-23",
+    "point": [
+      8.423901,
+      49.016368
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-12T22:00:00Z"
+  },
+  {
     "id": "2026V3197",
     "phase": "active",
     "category": "district-heating",
@@ -5128,24 +5168,24 @@
     "lastModified": "2026-06-01T22:00:00Z"
   },
   {
-    "id": "2026V3515",
+    "id": "2026V3514",
     "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Karl-Weysser-Straße und Pfintalstraße",
-    "notes": "Badener Straße ab Karl-Weyser-Straße = Einbahnstraße in Richtung Hengstplatz",
+    "location": "Pfinztalstraße zw. Badener Straße u. Eichelgasse; Badener Straße zwischen Gymnasiumstraße und Pfintalstraße",
+    "notes": "Karl-Weyser-Straße = Vollsperrung zw. Badener Straße und Grötzinger Straße",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-24",
-    "endDate": "2026-11-22",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-04",
     "point": [
-      8.475669,
-      48.999394
+      8.475786,
+      48.999371
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
+    "lastModified": "2026-10-12T22:00:00Z"
   },
   {
     "id": "2026V3554",
@@ -5771,13 +5811,13 @@
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-10-13",
-    "endDate": "2026-10-26",
+    "endDate": "2026-10-27",
     "point": [
       8.448186,
       49.025858
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
+    "lastModified": "2026-10-12T22:00:00Z"
   },
   {
     "id": "2026V4340",
@@ -6900,16 +6940,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Pfinztalstraße zw. Marstallstaße und Karlsburgstraße",
-    "notes": "vs 6 Wochen",
+    "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-09-21",
-    "endDate": "2026-11-06",
+    "endDate": "2026-11-04",
     "point": [
       8.47394,
       48.999128
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-23T22:00:00Z"
+    "lastModified": "2026-10-12T22:00:00Z"
   },
   {
     "id": "2026V5327",
@@ -7525,20 +7565,20 @@
   },
   {
     "id": "2026V5794",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Am Fasanengarten, Prakstr., Karl-Wilhelm-Str.",
+    "location": "Prakstr., Karl-Wilhelm-Str.",
     "notes": "Aufteilung nicht vorgenommen, Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-10",
+    "startDate": "2026-12-01",
     "endDate": "2027-01-25",
     "point": [
-      8.422852,
-      49.012202
+      8.422927,
+      49.011876
     ],
     "extentPoints": [
       [
@@ -7552,14 +7592,10 @@
       [
         8.42203,
         49.01097
-      ],
-      [
-        8.42101,
-        49.01325
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
+    "lastModified": "2026-10-12T22:00:00Z"
   },
   {
     "id": "2026V5797",
@@ -8118,16 +8154,16 @@
     ],
     "extentPoints": [
       [
-        8.40555,
-        48.9663
+        8.40608,
+        48.96634
       ],
       [
-        8.40787,
-        48.96653
+        8.40826,
+        48.96628
       ],
       [
-        8.41002,
-        48.96681
+        8.41053,
+        48.96655
       ],
       [
         8.40576,
@@ -8432,6 +8468,66 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-11T22:00:00Z"
+  },
+  {
+    "id": "2026V6441",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Herdweg zw. K9659/ Gewerbegebiet Auf der Breit und Alte Weingartener Straße",
+    "notes": "Gleisüberfahrt für alle Verkehrsteilnehmer gesperrt",
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2026-11-08",
+    "endDate": "2026-11-11",
+    "point": [
+      8.480603,
+      49.016044
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-12T22:00:00Z"
+  },
+  {
+    "id": "2026V6448",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Kastellstraße zw. Turmbergstraße und Stäffele",
+    "notes": "Höhe Haus Nr. 20",
+    "cause": "Privat",
+    "startDate": "2026-10-19",
+    "endDate": "2026-10-19",
+    "point": [
+      8.48378,
+      49.000159
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-12T22:00:00Z"
+  },
+  {
+    "id": "2026V6457",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karlstraße zw. Kaiserstraße und Akademiestraße",
+    "notes": "Nächtliche Sperrung vs. 1:00 Uhr - 4:00 Uhr",
+    "cause": "Privat",
+    "startDate": "2026-10-23",
+    "endDate": "2026-10-23",
+    "point": [
+      8.39513,
+      49.010265
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-12T22:00:00Z"
   },
   {
     "id": "30016",
@@ -8988,6 +9084,26 @@
     "lastModified": "2026-10-01T12:56:15Z"
   },
   {
+    "id": "30097",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Hertzstraße 118",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-16",
+    "point": [
+      8.281333,
+      48.956218
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-01T13:20:50Z"
+  },
+  {
     "id": "30099",
     "phase": "active",
     "category": "road-maintenance",
@@ -9412,6 +9528,26 @@
     "lastModified": "2026-10-08T05:20:44Z"
   },
   {
+    "id": "30233",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kiefernweg 13a",
+    "notes": "Der Kiefernweg muss zwischen Franz-Sigel-Straße und Eichenweg für den Anschluss von Versorgungsleitugnen gesperrt werden.\nFür Fußgänger bleibt ein Durchgang offen.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "point": [
+      8.568466,
+      49.113181
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-12T06:36:59Z"
+  },
+  {
     "id": "30236",
     "phase": "active",
     "category": "bridge",
@@ -9430,6 +9566,86 @@
     ],
     "source": "Stadt Baden-Baden",
     "lastModified": "2026-07-31T13:20:13Z"
+  },
+  {
+    "id": "30240",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Luisenstraße vor der Post",
+    "notes": "Fahrbahn zur Erneuerung von defekten Hydranten verengt",
+    "cause": "Stadtwerke",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-21",
+    "point": [
+      8.593069,
+      49.124487
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-12T08:42:38Z"
+  },
+  {
+    "id": "30241",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Prinz-Wilhelm-Straße vor der Karlsruher Straße",
+    "notes": "Die Fahrbahn wird kurzzeitig zur Erneuerung von defekten Hydranten verengt.",
+    "cause": "Stadtwerke",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-21",
+    "point": [
+      8.58777,
+      49.118163
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-12T08:44:53Z"
+  },
+  {
+    "id": "30242",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Schwimmbadstraße 9",
+    "notes": "Die Fahrbahn wird kurzzeitig zur Erneuerung von dekfekten Hydranten verengt.",
+    "cause": "Stadtwerke",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-21",
+    "point": [
+      8.592857,
+      49.121149
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-12T08:45:59Z"
+  },
+  {
+    "id": "30243",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Erlenweg 8",
+    "notes": "Die Fahrbahn wird für Arbeiten am Kanal verengt.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-30",
+    "point": [
+      8.570161,
+      49.116506
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-12T11:32:52Z"
   },
   {
     "id": "30286",
@@ -10506,26 +10722,6 @@
     "lastModified": "2026-08-05T10:30:33Z"
   },
   {
-    "id": "40150",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kornblumenweg 46",
-    "notes": "Vollsperrung wegen Kranstellung von 08.00 Uhr - 11.00 Uhr",
-    "cause": "Privat",
-    "startDate": "2026-10-12",
-    "endDate": "2026-10-12",
-    "point": [
-      8.52526,
-      49.101179
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-08-06T10:49:03Z"
-  },
-  {
     "id": "40153",
     "phase": "active",
     "category": "special-use",
@@ -10756,6 +10952,26 @@
     "lastModified": "2026-08-31T08:32:43Z"
   },
   {
+    "id": "40171",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Sudetenstraße 6",
+    "notes": "Lagerung von Baumaterial und dadurch Gehwegsperrung",
+    "cause": "Bauunternehmen",
+    "startDate": "2026-10-16",
+    "endDate": "2026-11-13",
+    "point": [
+      8.467592,
+      49.109386
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-10-13T05:29:50Z"
+  },
+  {
     "id": "40172",
     "phase": "active",
     "category": "special-use",
@@ -10774,6 +10990,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-10-15T13:25:10Z"
+  },
+  {
+    "id": "40172",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Hagenbuchenstraße 22",
+    "notes": "Gehwegsperrung, Halbseitige Straßensperrung",
+    "cause": "Bauunternehmen",
+    "startDate": "2026-10-19",
+    "endDate": "2026-12-18",
+    "point": [
+      8.472284,
+      49.106681
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-10-13T07:09:12Z"
   },
   {
     "id": "40176",
