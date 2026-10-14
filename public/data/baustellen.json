@@ -3255,7 +3255,7 @@
   },
   {
     "id": "2026V0768",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -3837,7 +3837,7 @@
   },
   {
     "id": "2026V1797",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -3846,14 +3846,14 @@
     "location": "Werrenstraße Kreuzungsbereich Gänsbergstraße",
     "notes": "vs 6 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-09",
-    "endDate": "2026-12-31",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-28",
     "point": [
       8.510674,
       48.953985
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-01T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2026V1798",
@@ -4595,7 +4595,7 @@
   },
   {
     "id": "2026V2670",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -4604,14 +4604,14 @@
     "location": "Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße",
     "notes": "Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn, Bauzeit vs. 10 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-12",
+    "startDate": "2026-10-26",
     "endDate": "2026-12-24",
     "point": [
       8.398203,
       49.00463
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2026V2716",
@@ -6942,26 +6942,6 @@
     "lastModified": "2026-10-12T22:00:00Z"
   },
   {
-    "id": "2026V5327",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Königsberger Straße und Im Eichbäumle",
-    "notes": "Erneuerung Bahnübergang, halbseitige Sperrung mit wechselnder Verkehrsführung, KfZ nur in Fahrtrichtung Süden möglich",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-28",
-    "endDate": "2026-10-13",
-    "point": [
-      8.441634,
-      49.031301
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
-  },
-  {
     "id": "2026V5328",
     "phase": "upcoming",
     "category": "rail",
@@ -7881,7 +7861,7 @@
   },
   {
     "id": "2026V6197",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -8164,16 +8144,16 @@
     ],
     "extentPoints": [
       [
-        8.40555,
-        48.9663
+        8.40608,
+        48.96634
       ],
       [
-        8.40787,
-        48.96653
+        8.40826,
+        48.96628
       ],
       [
-        8.41002,
-        48.96681
+        8.41053,
+        48.96655
       ],
       [
         8.40576,
@@ -8189,7 +8169,7 @@
   },
   {
     "id": "2026V6340",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -8198,14 +8178,14 @@
     "location": "Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-08",
-    "endDate": "2026-10-24",
+    "startDate": "2026-10-19",
+    "endDate": "2026-11-14",
     "point": [
       8.421892,
       49.013259
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-07T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2026V6345",
@@ -8540,8 +8520,28 @@
     "lastModified": "2026-10-12T22:00:00Z"
   },
   {
-    "id": "2026V6480",
+    "id": "2026V6460",
     "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Tullastraße zw. Haid-und-Neu-Straße, Rintheimer Straße zw. Tullastraße und Berckmüllerstraße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-03-30",
+    "endDate": "2027-05-15",
+    "point": [
+      8.431713,
+      49.011495
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-13T22:00:00Z"
+  },
+  {
+    "id": "2026V6480",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -8635,7 +8635,7 @@
   },
   {
     "id": "2026V6497",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -9226,26 +9226,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-10-01T13:20:50Z"
-  },
-  {
-    "id": "30099",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Umgehungsstraße zwischen Feuerwehrhaus und Zufahrt Keltenhalle",
-    "notes": null,
-    "cause": "Stadtbauamt",
-    "startDate": "2026-10-06",
-    "endDate": "2026-10-13",
-    "point": [
-      8.297433,
-      48.96909
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-10-06T07:54:46Z"
   },
   {
     "id": "30100",
@@ -11486,6 +11466,26 @@
     "lastModified": "2026-10-02T07:52:12Z"
   },
   {
+    "id": "40213",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Franz-Bläsi-Straße vor der Kaiserstraße",
+    "notes": "Für Dacharbeiten am Gebäude Kaiserstraße 15 muss die Franz-Bläsi-Straße voraussichtlich am 14.10.2026 von zwischen 07 und 18 Uhr gesperrt werden.\nBetroffen ist der Abschnitt zwischen Kaiserstraße und Wilderichstraße.",
+    "cause": "Privat",
+    "startDate": "2026-10-14",
+    "endDate": "2026-10-14",
+    "point": [
+      8.593611,
+      49.127355
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-02T08:42:50Z"
+  },
+  {
     "id": "40220",
     "phase": "active",
     "category": "special-use",
@@ -11504,6 +11504,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-09T08:30:01Z"
+  },
+  {
+    "id": "40221",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Schwabenstraße 6",
+    "notes": "Hochbau mit Kran.\nFahrbahn verengt. Gehweg gesperrt.",
+    "cause": "Privat",
+    "startDate": "2026-10-14",
+    "endDate": "2026-11-11",
+    "point": [
+      8.646482,
+      49.09923
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-09T09:49:11Z"
   },
   {
     "id": "40236",
