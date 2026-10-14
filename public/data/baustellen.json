@@ -104,11 +104,11 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße",
-    "notes": "Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen",
+    "notes": "Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-08-30",
     "endDate": "2026-10-17",
@@ -131,7 +131,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-17T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2023V0127",
@@ -1556,20 +1556,20 @@
     "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
+    "closure": "one-direction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Uhlandstraße zw. Gorthestraße und Sophienstraße",
+    "location": "Uhlandstraße zw. Goethestraße und Sophienstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-14",
-    "endDate": "2026-11-06",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-29",
     "point": [
       8.374663,
       49.008925
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2025V6085",
@@ -2301,13 +2301,13 @@
     "notes": "Baustelle im Gehweg/Parkbereich, Bauzeit ca 4 Wochen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-19",
-    "endDate": "2026-10-16",
+    "endDate": "2026-10-21",
     "point": [
       8.396389,
       49.007375
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-11T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2026V0071",
@@ -4340,11 +4340,11 @@
     "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg",
     "notes": "Anliegerzufahrt Seydlitzstraße von Neureuter Straße",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-16",
+    "startDate": "2026-10-24",
     "endDate": "2026-11-30",
     "point": [
-      8.357103,
-      49.023802
+      8.357097,
+      49.023789
     ],
     "extentPoints": [
       [
@@ -4357,7 +4357,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-28T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2026V2505",
@@ -5579,7 +5579,7 @@
     "notes": "Geh- und Radweg = gesperrt",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-06-22",
-    "endDate": "2026-10-30",
+    "endDate": "2026-12-22",
     "point": [
       8.433331,
       48.998717
@@ -5607,7 +5607,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2026V4127",
@@ -8551,7 +8551,7 @@
     "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung",
     "cause": "Gartenbauamt",
     "startDate": "2026-10-14",
-    "endDate": "2026-10-14",
+    "endDate": "2026-10-15",
     "point": [
       8.489641,
       49.012264
@@ -8631,7 +8631,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2026V6497",
@@ -8652,6 +8652,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-12T22:00:00Z"
+  },
+  {
+    "id": "2026V6510",
+    "phase": "upcoming",
+    "category": "demolition",
+    "artRaw": "Abbruch/Rückbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Saarlandstraße zw. Neufeldstraße und Eggensteiner Straße",
+    "notes": "Höhe Haus Nr 67, lokale 1-streifige Verkehrsführung inkl. Sperrung Geh- und Radweg am Baufeld",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-19",
+    "endDate": "2027-03-05",
+    "point": [
+      8.338708,
+      49.031203
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-13T22:00:00Z"
+  },
+  {
+    "id": "2026V6512",
+    "phase": "upcoming",
+    "category": "demolition",
+    "artRaw": "Abbruch/Rückbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Neufeldstraße zw. Eggensteiner Straße und Saarlandstraße",
+    "notes": "Höhe Haus Nr 5, lokale 1-streifige Verkehrsführung inkl. Sperrung Geh- und Radweg am Baufeld",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-19",
+    "endDate": "2027-03-05",
+    "point": [
+      8.338854,
+      49.03165
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "30016",
@@ -9690,6 +9730,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-12T08:26:38Z"
+  },
+  {
+    "id": "30235",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Bahnhofsstraße Ecke Franz-Bläsi-Straße",
+    "notes": "Erneuerung eines defekten Hydranten.\nDa die Stelle ungünstig in der Ecke liegt, kann aus der Franz-Bläsi-Straße nicht abgebogen werden. Die Straße wird daher vor der Baustelle gesperrt.\nDer Verkehr vom Europaplatz kann durchfahren und auch der Radverkehr ist weiterhin in beiden Richtungen möglich.\n\nDauer: 1 Tag im Zeitraum. Beginn erst um 09 Uhr",
+    "cause": "Stadtwerke",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-21",
+    "point": [
+      8.592626,
+      49.12606
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-12T08:29:15Z"
   },
   {
     "id": "30236",
@@ -11696,10 +11756,10 @@
     "siteType": "stationary",
     "municipality": "Ettlingen",
     "location": "Moosbronner Straße 1 Haltestelle",
-    "notes": "Halbseitige Sperrung mittels LSA zum Neubau einer Wasserleittung",
+    "notes": "Halbseitige Sperrung mittels LSA zum Neubau einer Wasserleitung",
     "cause": "Stadtwerke Ettlingen",
     "startDate": "2026-10-05",
-    "endDate": "2026-10-16",
+    "endDate": "2026-10-30",
     "point": [
       8.42168,
       48.899612

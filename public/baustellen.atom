@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-14T09:11:40.148Z</updated>
+    <updated>2026-10-14T19:46:50.779Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -34,6 +34,41 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2022V6173:2026-10-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2022V6173"/>
+        <updated>2026-10-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 30.08.2026 – 17.10.2026
+Hinweis: Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Uhlandstraße zw. Goethestraße und Sophienstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V6084:2026-10-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6084"/>
+        <updated>2026-10-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
+Zeitraum: 12.10.2026 – 29.10.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Amalienstraße Kreuzung Herrenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V7364:2026-10-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7364"/>
+        <updated>2026-10-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 19.09.2026 – 21.10.2026
+Hinweis: Baustelle im Gehweg/Parkbereich, Bauzeit ca 4 Wochen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Werrenstraße Kreuzungsbereich Gänsbergstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V1797:2026-10-13T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1797"/>
@@ -41,6 +76,18 @@ Quelle: Stadt Karlsruhe]]></summary>
         <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
 Zeitraum: 12.10.2026 – 28.11.2026
 Hinweis: vs 6 Wochen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Siemensallee zw. B36/ Neureuter Straße und Laubenweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2504:2026-10-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2504"/>
+        <updated>2026-10-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 24.10.2026 – 30.11.2026
+Hinweis: Anliegerzufahrt Seydlitzstraße von Neureuter Straße
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
@@ -56,6 +103,18 @@ Hinweis: Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn, Bauzeit vs. 10 Wochen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Rußweg zw. Langenbruchweg und Mastweidenweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3932:2026-10-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3932"/>
+        <updated>2026-10-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
+Zeitraum: 22.06.2026 – 22.12.2026
+Hinweis: Geh- und Radweg = gesperrt
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße – Karlsruhe]]></title>
@@ -78,6 +137,42 @@ Zeitraum: 30.03.2027 – 15.05.2027
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: K9659/ B10/ B3 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6480:2026-10-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6480"/>
+        <updated>2026-10-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
+Zeitraum: 14.10.2026 – 15.10.2026
+Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung
+Verantwortlich: Gartenbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Saarlandstraße zw. Neufeldstraße und Eggensteiner Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6510:2026-10-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6510"/>
+        <updated>2026-10-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Abbruch/Rückbau · Mit Behinderung
+Zeitraum: 19.10.2026 – 05.03.2027
+Hinweis: Höhe Haus Nr 67, lokale 1-streifige Verkehrsführung inkl. Sperrung Geh- und Radweg am Baufeld
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Abbruch/Rückbau" term="demolition"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Neufeldstraße zw. Eggensteiner Straße und Saarlandstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6512:2026-10-13T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6512"/>
+        <updated>2026-10-13T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Abbruch/Rückbau · Mit Behinderung
+Zeitraum: 19.10.2026 – 05.03.2027
+Hinweis: Höhe Haus Nr 5, lokale 1-streifige Verkehrsführung inkl. Sperrung Geh- und Radweg am Baufeld
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Abbruch/Rückbau" term="demolition"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Karlsruher Straße 3 – Rheinstetten]]></title>
@@ -289,18 +384,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: K9659/ B10/ B3 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6480:2026-10-12T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6480"/>
-        <updated>2026-10-12T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 14.10.2026 – 14.10.2026
-Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Grünpflege" term="green-maintenance"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Pfinztalstraße zw. Seeboldstraße und Pforzheimer Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6497:2026-10-12T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6497"/>
@@ -382,6 +465,22 @@ Quelle: Stadt Bruchsal]]></summary>
         <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
 Zeitraum: 13.10.2026 – 21.10.2026
 Hinweis: Kurzzeitige Verengung zur Sanierung einen Hydranten
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Bahnhofsstraße Ecke Franz-Bläsi-Straße – Bruchsal]]></title>
+        <id>faecherbagger:30235:2026-10-12T08:29:15Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30235"/>
+        <updated>2026-10-12T08:29:15.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Sperrung (1 Richtung)
+Zeitraum: 13.10.2026 – 21.10.2026
+Hinweis: Erneuerung eines defekten Hydranten.
+Da die Stelle ungünstig in der Ecke liegt, kann aus der Franz-Bläsi-Straße nicht abgebogen werden. Die Straße wird daher vor der Baustelle gesperrt.
+Der Verkehr vom Europaplatz kann durchfahren und auch der Radverkehr ist weiterhin in beiden Richtungen möglich.
+
+Dauer: 1 Tag im Zeitraum. Beginn erst um 09 Uhr
 Verantwortlich: Stadtwerke
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
@@ -1418,8 +1517,8 @@ Quelle: Stadt Ettlingen]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40418"/>
         <updated>2026-10-01T06:26:06.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 05.10.2026 – 16.10.2026
-Hinweis: Halbseitige Sperrung mittels LSA zum Neubau einer Wasserleittung
+Zeitraum: 05.10.2026 – 30.10.2026
+Hinweis: Halbseitige Sperrung mittels LSA zum Neubau einer Wasserleitung
 Verantwortlich: Stadtwerke Ettlingen
 Quelle: Stadt Ettlingen]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
@@ -2162,17 +2261,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Uhlandstraße zw. Gorthestraße und Sophienstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6084:2026-09-17T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6084"/>
-        <updated>2026-09-17T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 14.09.2026 – 06.11.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Pfarrer-Blink-Straße zw. Untermühlstraße und Alte Karlsruher Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V2274:2026-09-17T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2274"/>
@@ -2755,18 +2843,6 @@ Quelle: Stadt Bruchsal]]></summary>
         <updated>2026-09-08T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
 Zeitraum: 31.10.2026 – 24.12.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Rußweg zw. Langenbruchweg und Mastweidenweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3932:2026-09-08T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3932"/>
-        <updated>2026-09-08T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
-Zeitraum: 22.06.2026 – 30.10.2026
-Hinweis: Geh- und Radweg = gesperrt
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
@@ -3608,18 +3684,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2022V6173:2026-08-17T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2022V6173"/>
-        <updated>2026-08-17T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Keine Behinderung
-Zeitraum: 30.08.2026 – 17.10.2026
-Hinweis: Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Werthmannstraße zw. Klosterweg und Pastor-Felke-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2024V6753:2026-08-16T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V6753"/>
@@ -3653,18 +3717,6 @@ Zeitraum: 12.08.2026 – 22.11.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Amalienstraße Kreuzung Herrenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V7364:2026-08-11T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7364"/>
-        <updated>2026-08-11T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 19.09.2026 – 16.10.2026
-Hinweis: Baustelle im Gehweg/Parkbereich, Bauzeit ca 4 Wochen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Rintheimer Querallee und Büchiger Allee – Karlsruhe]]></title>
@@ -3939,18 +3991,6 @@ Hinweis: Lagerung von Baumaterial / Einrichtung einer Halteverbotszone
 Verantwortlich: Privat
 Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Siemensallee zw. B36/ Neureuter Straße und Laubenweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2504:2026-07-28T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2504"/>
-        <updated>2026-07-28T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 16.10.2026 – 30.11.2026
-Hinweis: Anliegerzufahrt Seydlitzstraße von Neureuter Straße
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Stutenseer Allee Brückenbauwerk 119 – Stutensee]]></title>

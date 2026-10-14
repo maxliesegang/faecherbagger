@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T09:11:40.148Z",
+  "generatedAt": "2026-10-14T19:46:50.779Z",
   "events": [
     {
       "kind": "changed",
@@ -20,6 +20,37 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2022V6173:2026-10-13T22:00:00Z",
+      "announcedOn": "2026-10-14",
+      "siteId": "2022V6173",
+      "point": [
+        8.42701,
+        49.008832
+      ],
+      "extentPoints": [
+        [
+          8.4245,
+          49.01005
+        ],
+        [
+          8.42641,
+          49.00895
+        ],
+        [
+          8.42941,
+          49.00745
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-30",
+      "endDate": "2026-10-17",
+      "municipality": "Karlsruhe",
+      "location": "Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße",
+      "previousClosure": "none",
+      "previousStartDate": "2026-08-30"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2024V4193:2026-10-11T22:00:00Z",
       "announcedOn": "2026-10-12",
       "siteId": "2024V4193",
@@ -34,6 +65,23 @@
       "location": "Zirkel zw. Ritterstraße und Lammstraße",
       "previousClosure": "obstruction",
       "previousStartDate": "2024-04-15"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V6084:2026-10-13T22:00:00Z",
+      "announcedOn": "2026-10-14",
+      "siteId": "2025V6084",
+      "point": [
+        8.374663,
+        49.008925
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-29",
+      "municipality": "Karlsruhe",
+      "location": "Uhlandstraße zw. Goethestraße und Sophienstraße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-14"
     },
     {
       "kind": "changed",
@@ -115,6 +163,23 @@
       "municipality": "Karlsruhe",
       "location": "Ellmendinger Straße im Einmündungsbereich zur Lissenstraße",
       "announcedOn": "2026-10-09"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V7364:2026-10-13T22:00:00Z",
+      "announcedOn": "2026-10-14",
+      "siteId": "2025V7364",
+      "point": [
+        8.396389,
+        49.007375
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-19",
+      "endDate": "2026-10-21",
+      "municipality": "Karlsruhe",
+      "location": "Amalienstraße Kreuzung Herrenstraße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-19"
     },
     {
       "kind": "changed",
@@ -233,6 +298,33 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V2504:2026-10-13T22:00:00Z",
+      "announcedOn": "2026-10-14",
+      "siteId": "2026V2504",
+      "point": [
+        8.357097,
+        49.023789
+      ],
+      "extentPoints": [
+        [
+          8.35701,
+          49.02385
+        ],
+        [
+          8.35887,
+          49.02273
+        ]
+      ],
+      "closure": "full",
+      "startDate": "2026-10-24",
+      "endDate": "2026-11-30",
+      "municipality": "Karlsruhe",
+      "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg",
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-16"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V2670:2026-10-13T22:00:00Z",
       "announcedOn": "2026-10-14",
       "siteId": "2026V2670",
@@ -343,6 +435,45 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V3932:2026-10-13T22:00:00Z",
+      "announcedOn": "2026-10-14",
+      "siteId": "2026V3932",
+      "point": [
+        8.433331,
+        48.998717
+      ],
+      "extentPoints": [
+        [
+          8.43815,
+          48.99954
+        ],
+        [
+          8.43601,
+          48.99942
+        ],
+        [
+          8.43385,
+          48.99887
+        ],
+        [
+          8.43172,
+          48.9983
+        ],
+        [
+          8.42956,
+          48.99773
+        ]
+      ],
+      "closure": "full",
+      "startDate": "2026-06-22",
+      "endDate": "2026-12-22",
+      "municipality": "Karlsruhe",
+      "location": "Rußweg zw. Langenbruchweg und Mastweidenweg",
+      "previousClosure": "full",
+      "previousStartDate": "2026-06-22"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V4336:2026-10-12T22:00:00Z",
       "announcedOn": "2026-10-13",
       "siteId": "2026V4336",
@@ -439,6 +570,97 @@
       "location": "B10 Südtangente zwischen AS9 und AS10",
       "previousClosure": "obstruction",
       "previousStartDate": "2026-10-15"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V6480:2026-10-13T22:00:00Z",
+      "announcedOn": "2026-10-14",
+      "siteId": "2026V6480",
+      "point": [
+        8.489641,
+        49.012264
+      ],
+      "extentPoints": [
+        [
+          8.4885,
+          49.01015
+        ],
+        [
+          8.48384,
+          49.00821
+        ],
+        [
+          8.47929,
+          49.01073
+        ],
+        [
+          8.46928,
+          49.0151
+        ],
+        [
+          8.47412,
+          49.01333
+        ],
+        [
+          8.47365,
+          49.01029
+        ],
+        [
+          8.46923,
+          49.00811
+        ],
+        [
+          8.46681,
+          49.00546
+        ],
+        [
+          8.46296,
+          49.00296
+        ],
+        [
+          8.48692,
+          49.00597
+        ],
+        [
+          8.49051,
+          49.01317
+        ],
+        [
+          8.49391,
+          49.01564
+        ],
+        [
+          8.49882,
+          49.01735
+        ],
+        [
+          8.50236,
+          49.01968
+        ],
+        [
+          8.50567,
+          49.02273
+        ],
+        [
+          8.50912,
+          49.02559
+        ],
+        [
+          8.51239,
+          49.02875
+        ],
+        [
+          8.51495,
+          49.03176
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-14",
+      "endDate": "2026-10-15",
+      "municipality": "Karlsruhe",
+      "location": "K9659/ B10/ B3",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-14"
     },
     {
       "kind": "changed",
@@ -893,95 +1115,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V6480",
-      "announcedOn": "2026-10-13",
-      "siteId": "2026V6480",
-      "point": [
-        8.489641,
-        49.012264
-      ],
-      "extentPoints": [
-        [
-          8.4885,
-          49.01015
-        ],
-        [
-          8.48384,
-          49.00821
-        ],
-        [
-          8.47929,
-          49.01073
-        ],
-        [
-          8.46928,
-          49.0151
-        ],
-        [
-          8.47412,
-          49.01333
-        ],
-        [
-          8.47365,
-          49.01029
-        ],
-        [
-          8.46923,
-          49.00811
-        ],
-        [
-          8.46681,
-          49.00546
-        ],
-        [
-          8.46296,
-          49.00296
-        ],
-        [
-          8.48692,
-          49.00597
-        ],
-        [
-          8.49051,
-          49.01317
-        ],
-        [
-          8.49391,
-          49.01564
-        ],
-        [
-          8.49882,
-          49.01735
-        ],
-        [
-          8.50236,
-          49.01968
-        ],
-        [
-          8.50567,
-          49.02273
-        ],
-        [
-          8.50912,
-          49.02559
-        ],
-        [
-          8.51239,
-          49.02875
-        ],
-        [
-          8.51495,
-          49.03176
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-14",
-      "endDate": "2026-10-14",
-      "municipality": "Karlsruhe",
-      "location": "K9659/ B10/ B3"
-    },
-    {
-      "kind": "new",
       "signature": "new:2026V6497",
       "announcedOn": "2026-10-13",
       "siteId": "2026V6497",
@@ -994,6 +1127,36 @@
       "endDate": "2026-10-15",
       "municipality": "Karlsruhe",
       "location": "Pfinztalstraße zw. Seeboldstraße und Pforzheimer Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6510",
+      "announcedOn": "2026-10-14",
+      "siteId": "2026V6510",
+      "point": [
+        8.338708,
+        49.031203
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-19",
+      "endDate": "2027-03-05",
+      "municipality": "Karlsruhe",
+      "location": "Saarlandstraße zw. Neufeldstraße und Eggensteiner Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6512",
+      "announcedOn": "2026-10-14",
+      "siteId": "2026V6512",
+      "point": [
+        8.338854,
+        49.03165
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-19",
+      "endDate": "2027-03-05",
+      "municipality": "Karlsruhe",
+      "location": "Neufeldstraße zw. Eggensteiner Straße und Saarlandstraße"
     },
     {
       "kind": "new",
@@ -1114,6 +1277,21 @@
       "endDate": "2026-10-21",
       "municipality": "Bruchsal",
       "location": "Am Alten Schloss"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30235",
+      "announcedOn": "2026-10-14",
+      "siteId": "30235",
+      "point": [
+        8.592626,
+        49.12606
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-21",
+      "municipality": "Bruchsal",
+      "location": "Bahnhofsstraße Ecke Franz-Bläsi-Straße"
     },
     {
       "kind": "new",
@@ -1402,21 +1580,6 @@
       "municipality": "Karlsruhe",
       "location": "Freydorfstraße zw. Moltke- u. Grenadierstraße",
       "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V2504:2026-10-16",
-      "siteId": "2026V2504",
-      "point": [
-        8.357103,
-        49.023802
-      ],
-      "closure": "full",
-      "startDate": "2026-10-16",
-      "endDate": "2026-11-30",
-      "municipality": "Karlsruhe",
-      "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg",
-      "announcedOn": "2026-10-09"
     },
     {
       "kind": "starts-soon",

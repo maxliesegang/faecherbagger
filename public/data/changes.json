@@ -1,46 +1,74 @@
 {
-  "since": "2026-10-13T20:51:47.127Z",
+  "since": "2026-10-14T09:11:40.148Z",
   "added": [
-    "2026V6460",
-    "40213",
-    "40221"
+    "2026V6510",
+    "2026V6512",
+    "30235"
   ],
   "modified": [
-    "2026V1797",
-    "2026V2670",
-    "2026V6340"
+    "2022V6173",
+    "2025V6084",
+    "2025V7364",
+    "2026V2504",
+    "2026V3932",
+    "2026V6480"
   ],
-  "removed": [
-    "2026V5327",
-    "30099"
-  ],
+  "removed": [],
   "relevantModifications": [
     {
-      "id": "2026V1797",
+      "id": "2022V6173",
+      "changedFields": [
+        "closure"
+      ],
+      "previousClosure": "none",
+      "previousStartDate": "2026-08-30",
+      "previousEndDate": "2026-10-17"
+    },
+    {
+      "id": "2025V6084",
+      "changedFields": [
+        "period",
+        "closure"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-14",
+      "previousEndDate": "2026-11-06"
+    },
+    {
+      "id": "2025V7364",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-19",
+      "previousEndDate": "2026-10-16"
+    },
+    {
+      "id": "2026V2504",
       "changedFields": [
         "period"
       ],
       "previousClosure": "full",
-      "previousStartDate": "2026-11-09",
-      "previousEndDate": "2026-12-31"
+      "previousStartDate": "2026-10-16",
+      "previousEndDate": "2026-11-30"
     },
     {
-      "id": "2026V2670",
+      "id": "2026V3932",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-06-22",
+      "previousEndDate": "2026-10-30"
+    },
+    {
+      "id": "2026V6480",
       "changedFields": [
         "period"
       ],
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-12",
-      "previousEndDate": "2026-12-24"
-    },
-    {
-      "id": "2026V6340",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-08",
-      "previousEndDate": "2026-10-24"
+      "previousStartDate": "2026-10-14",
+      "previousEndDate": "2026-10-14"
     }
   ]
 }
