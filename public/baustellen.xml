@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Thu, 15 Oct 2026 08:44:22 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 15 Oct 2026 19:30:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -32,6 +32,17 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
+            <title><![CDATA[Aktuell: Lessingstraße Einmündungsbereich Sophienstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5275</link>
+            <guid isPermaLink="false">faecherbagger:2025V5275:2026-10-14T22:00:00Z</guid>
+            <pubDate>Wed, 14 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 28.08.2026 – 18.10.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Fernwärme</category>
+        </item>
+        <item>
             <title><![CDATA[Aktuell: Herrenstraße zw. Amalienstraße und Blumenstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7363</link>
             <guid isPermaLink="false">faecherbagger:2025V7363:2026-10-14T22:00:00Z</guid>
@@ -44,6 +55,53 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
         </item>
         <item>
+            <title><![CDATA[Geplant: Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3478</link>
+            <guid isPermaLink="false">faecherbagger:2026V3478:2026-10-14T22:00:00Z</guid>
+            <pubDate>Wed, 14 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 01.01.2027 – 30.04.2027
+Hinweis: Baubeginn im Janunar 2027 witterungsabhängig
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Lessingstraße zw. Sophienstraße und Kaiserallee – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5406</link>
+            <guid isPermaLink="false">faecherbagger:2026V5406:2026-10-14T22:00:00Z</guid>
+            <pubDate>Wed, 14 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Fernwärme · Mit Behinderung
+Zeitraum: 19.10.2026 – 30.10.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Fernwärme</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Am Entenfang – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6429</link>
+            <guid isPermaLink="false">faecherbagger:2026V6429:2026-10-14T22:00:00Z</guid>
+            <pubDate>Wed, 14 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Straßenunterhaltung · Sperrung (1 Richtung)
+Zeitraum: 19.10.2026 – 23.10.2026
+Hinweis: vs. an zwei Nächten zw. 22:00 Uhr - 6:00 Uhr, Arbeiten im Gleisbereich mit Sperrung der Wender/ Wechselseitig
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Straßenunterhaltung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: K9659/ B10/ B3 – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6480</link>
+            <guid isPermaLink="false">faecherbagger:2026V6480:2026-10-14T22:00:00Z</guid>
+            <pubDate>Wed, 14 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Grünpflege · Mit Behinderung
+Zeitraum: 14.10.2026 – 16.10.2026
+Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung
+Verantwortlich: Gartenbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Grünpflege</category>
+        </item>
+        <item>
             <title><![CDATA[Geplant: B36/ unterhalb Brücke L605 – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6526</link>
             <guid isPermaLink="false">faecherbagger:2026V6526:2026-10-14T22:00:00Z</guid>
@@ -52,6 +110,18 @@ Quelle: Stadt Karlsruhe]]></description>
 Zeitraum: 19.10.2026 – 20.10.2026
 Hinweis: 1-streifige Verkehrsführung, beide Fahrtrichtungen wechselseitig betroffen
 Verantwortlich: Land Baden - Württemberg
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Brückenbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6546</link>
+            <guid isPermaLink="false">faecherbagger:2026V6546:2026-10-14T22:00:00Z</guid>
+            <pubDate>Wed, 14 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Brückenbau · Vollsperrung
+Zeitraum: 22.10.2026 – 22.10.2026
+Hinweis: Reparatur Sturmschaden, Sperrung Richtung Rheinhafen/ Landau, Umfahrung über Lameystraße
+Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></description>
             <category>Brückenbau</category>
         </item>
@@ -159,18 +229,6 @@ Zeitraum: 30.03.2027 – 15.05.2027
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: K9659/ B10/ B3 – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6480</link>
-            <guid isPermaLink="false">faecherbagger:2026V6480:2026-10-13T22:00:00Z</guid>
-            <pubDate>Tue, 13 Oct 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 14.10.2026 – 15.10.2026
-Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Grünpflege</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Saarlandstraße zw. Neufeldstraße und Eggensteiner Straße – Karlsruhe]]></title>
@@ -2370,17 +2428,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Lessingstraße Einmündungsbereich Sophienstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5275</link>
-            <guid isPermaLink="false">faecherbagger:2025V5275:2026-09-15T22:00:00Z</guid>
-            <pubDate>Tue, 15 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 28.08.2026 – 16.10.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Fernwärme</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: Breslauer Straße Wohnwege 64 A - I und 66 A -L – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5363</link>
             <guid isPermaLink="false">faecherbagger:2025V5363:2026-09-15T22:00:00Z</guid>
@@ -3744,17 +3791,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3478</link>
-            <guid isPermaLink="false">faecherbagger:2026V3478:2026-08-06T22:00:00Z</guid>
-            <pubDate>Thu, 06 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 16.11.2026 – 31.12.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gas/Wasser</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: Dossentalstraße 5 – Bruchsal]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40149</link>
             <guid isPermaLink="false">faecherbagger:40149:2026-08-05T10:30:33Z</guid>
@@ -4888,6 +4924,17 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwe
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Kreuzstraße 32 – Rheinstetten]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30044</link>
+            <guid isPermaLink="false">faecherbagger:30044:2026-04-22T07:32:28Z</guid>
+            <pubDate>Wed, 22 Apr 2026 07:32:28 GMT</pubDate>
+            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Vollsperrung
+Zeitraum: 04.05.2026 – 30.11.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></description>
+            <category>Strom/TK-Versorgung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Dornwaldstr., Anton-Bruckner-Str. – Karlsruhe]]></title>

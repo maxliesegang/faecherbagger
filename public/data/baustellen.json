@@ -73,8 +73,8 @@
     "startDate": "2027-03-08",
     "endDate": "2027-06-13",
     "point": [
-      8.424182,
-      49.006267
+      8.424346,
+      49.006226
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-11T22:00:00Z"
@@ -1349,13 +1349,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-28",
-    "endDate": "2026-10-16",
+    "endDate": "2026-10-18",
     "point": [
       8.385041,
       49.007798
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
+    "lastModified": "2026-10-14T22:00:00Z"
   },
   {
     "id": "2025V5289",
@@ -5136,16 +5136,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee",
-    "notes": null,
+    "notes": "Baubeginn im Janunar 2027 witterungsabhängig",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-16",
-    "endDate": "2026-12-31",
+    "startDate": "2027-01-01",
+    "endDate": "2027-04-30",
     "point": [
       8.38442,
       48.99031
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-06T22:00:00Z"
+    "lastModified": "2026-10-14T22:00:00Z"
   },
   {
     "id": "2026V3480",
@@ -7022,6 +7022,26 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
+    "id": "2026V5406",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Lessingstraße zw. Sophienstraße und Kaiserallee",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-19",
+    "endDate": "2026-10-30",
+    "point": [
+      8.3854,
+      49.008904
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-14T22:00:00Z"
+  },
+  {
     "id": "2026V5451",
     "phase": "active",
     "category": "power-telecom",
@@ -8380,6 +8400,26 @@
     "lastModified": "2026-10-11T22:00:00Z"
   },
   {
+    "id": "2026V6429",
+    "phase": "upcoming",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Am Entenfang",
+    "notes": "vs. an zwei Nächten zw. 22:00 Uhr - 6:00 Uhr, Arbeiten im Gleisbereich mit Sperrung der Wender/ Wechselseitig",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-10-19",
+    "endDate": "2026-10-23",
+    "point": [
+      8.360323,
+      49.011126
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-14T22:00:00Z"
+  },
+  {
     "id": "2026V6441",
     "phase": "upcoming",
     "category": "rail",
@@ -8471,7 +8511,7 @@
     "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung",
     "cause": "Gartenbauamt",
     "startDate": "2026-10-14",
-    "endDate": "2026-10-15",
+    "endDate": "2026-10-16",
     "point": [
       8.489641,
       49.012264
@@ -8551,7 +8591,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-13T22:00:00Z"
+    "lastModified": "2026-10-14T22:00:00Z"
   },
   {
     "id": "2026V6497",
@@ -8634,6 +8674,26 @@
     "lastModified": "2026-10-14T22:00:00Z"
   },
   {
+    "id": "2026V6546",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente",
+    "notes": "Reparatur Sturmschaden, Sperrung Richtung Rheinhafen/ Landau, Umfahrung über Lameystraße",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-22",
+    "endDate": "2026-10-22",
+    "point": [
+      8.359324,
+      49.009674
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-14T22:00:00Z"
+  },
+  {
     "id": "30016",
     "phase": "active",
     "category": "power-telecom",
@@ -8710,6 +8770,48 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-04-01T07:20:07Z"
+  },
+  {
+    "id": "30044",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Kreuzstraße 32",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-05-04",
+    "endDate": "2026-11-30",
+    "point": [
+      8.309724,
+      48.975105
+    ],
+    "extentPoints": [
+      [
+        8.30693,
+        48.97604
+      ],
+      [
+        8.30781,
+        48.97468
+      ],
+      [
+        8.30932,
+        48.97365
+      ],
+      [
+        8.31135,
+        48.97458
+      ],
+      [
+        8.30913,
+        48.97577
+      ]
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-04-22T07:32:28Z"
   },
   {
     "id": "30047",
@@ -10042,48 +10144,52 @@
     ],
     "extentPoints": [
       [
-        8.30547,
-        48.97814
+        8.30475,
+        48.97934
       ],
       [
-        8.30742,
-        48.9792
+        8.30664,
+        48.97869
       ],
       [
-        8.30879,
-        48.98036
+        8.30819,
+        48.97971
       ],
       [
-        8.30983,
-        48.98171
+        8.30938,
+        48.98101
       ],
       [
-        8.31044,
-        48.98319
+        8.31014,
+        48.98245
       ],
       [
-        8.31215,
-        48.98404
+        8.31085,
+        48.9838
       ],
       [
-        8.31451,
+        8.31328,
+        48.98406
+      ],
+      [
+        8.31571,
         48.9841
       ],
       [
-        8.31687,
-        48.98404
+        8.31806,
+        48.98398
       ],
       [
-        8.31928,
-        48.98392
+        8.32045,
+        48.98393
       ],
       [
-        8.32157,
-        48.98399
+        8.32269,
+        48.98406
       ],
       [
-        8.32388,
-        48.98433
+        8.32506,
+        48.9846
       ]
     ],
     "source": "Stadt Rheinstetten",
