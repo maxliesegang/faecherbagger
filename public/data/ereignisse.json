@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T19:30:43.610Z",
+  "generatedAt": "2026-10-16T08:39:58.347Z",
   "events": [
     {
       "kind": "changed",
@@ -213,6 +213,23 @@
       "municipality": "Karlsruhe",
       "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße",
       "previousClosure": "full",
+      "previousStartDate": "2026-09-21"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0367:2026-10-15T22:00:00Z",
+      "announcedOn": "2026-10-16",
+      "siteId": "2026V0367",
+      "point": [
+        8.448072,
+        49.025332
+      ],
+      "closure": "none",
+      "startDate": "2026-09-21",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße",
+      "previousClosure": "none",
       "previousStartDate": "2026-09-21"
     },
     {
@@ -527,6 +544,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V5765:2026-10-15T22:00:00Z",
+      "announcedOn": "2026-10-16",
+      "siteId": "2026V5765",
+      "point": [
+        8.318762,
+        49.039198
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-07",
+      "endDate": "2026-10-23",
+      "municipality": "Karlsruhe",
+      "location": "Gewann Grabenort",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-07"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V5794:2026-10-12T22:00:00Z",
       "announcedOn": "2026-10-13",
       "siteId": "2026V5794",
@@ -700,6 +734,33 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:40072:2026-05-18T10:38:52Z",
+      "announcedOn": "2026-10-16",
+      "siteId": "40072",
+      "point": [
+        8.396106,
+        49.040062
+      ],
+      "extentPoints": [
+        [
+          8.48057,
+          49.10613
+        ],
+        [
+          8.31162,
+          48.974
+        ]
+      ],
+      "closure": "none",
+      "startDate": "2026-05-15",
+      "endDate": "2026-10-31",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Wallonenstraße 28-30",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-05"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:40075:2026-10-06T15:26:27Z",
       "announcedOn": "2026-10-12",
       "siteId": "40075",
@@ -727,6 +788,33 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:40077:2026-10-15T16:42:46Z",
+      "announcedOn": "2026-10-16",
+      "siteId": "40077",
+      "point": [
+        8.379117,
+        49.012392
+      ],
+      "extentPoints": [
+        [
+          8.29601,
+          48.95896
+        ],
+        [
+          8.46226,
+          49.06578
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-16",
+      "endDate": "2026-10-23",
+      "municipality": "Rheinstetten",
+      "location": "Sommerstraße 2-2a",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-05-12"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:40172:2026-10-13T07:09:12Z",
       "announcedOn": "2026-10-13",
       "siteId": "40172",
@@ -741,6 +829,21 @@
       "location": "76297 Stutensee, Hagenbuchenstraße 22",
       "previousClosure": "obstruction",
       "previousStartDate": "2025-10-21"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2021V4565",
+      "announcedOn": "2026-10-16",
+      "siteId": "2021V4565",
+      "point": [
+        8.379352,
+        48.998884
+      ],
+      "closure": "none",
+      "startDate": "2026-07-13",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule)"
     },
     {
       "kind": "new",
@@ -1179,21 +1282,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V6497",
-      "announcedOn": "2026-10-13",
-      "siteId": "2026V6497",
-      "point": [
-        8.465617,
-        48.999863
-      ],
-      "closure": "full",
-      "startDate": "2026-10-14",
-      "endDate": "2026-10-15",
-      "municipality": "Karlsruhe",
-      "location": "Pfinztalstraße zw. Seeboldstraße und Pforzheimer Straße"
-    },
-    {
-      "kind": "new",
       "signature": "new:2026V6510",
       "announcedOn": "2026-10-14",
       "siteId": "2026V6510",
@@ -1236,6 +1324,21 @@
       "endDate": "2026-10-20",
       "municipality": "Karlsruhe",
       "location": "B36/ unterhalb Brücke L605"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6529",
+      "announcedOn": "2026-10-16",
+      "siteId": "2026V6529",
+      "point": [
+        8.468602,
+        48.956829
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-09",
+      "endDate": "2026-12-24",
+      "municipality": "Karlsruhe",
+      "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße"
     },
     {
       "kind": "new",
@@ -1363,21 +1466,6 @@
       "endDate": "2026-10-30",
       "municipality": "Rheinstetten",
       "location": "Karlsruher Straße 3"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30218",
-      "announcedOn": "2026-10-15",
-      "siteId": "30218",
-      "point": [
-        8.584002,
-        49.076545
-      ],
-      "closure": "full",
-      "startDate": "2026-10-15",
-      "endDate": "2026-10-15",
-      "municipality": "Bruchsal",
-      "location": "Hirschstraße 9"
     },
     {
       "kind": "new",
@@ -1531,6 +1619,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:40170",
+      "announcedOn": "2026-10-16",
+      "siteId": "40170",
+      "point": [
+        8.599891,
+        49.127597
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-16",
+      "endDate": "2026-11-15",
+      "municipality": "Bruchsal",
+      "location": "Styrumstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:40171",
       "announcedOn": "2026-10-13",
       "siteId": "40171",
@@ -1546,40 +1649,18 @@
     },
     {
       "kind": "new",
-      "signature": "new:40215",
-      "announcedOn": "2026-10-15",
-      "siteId": "40215",
+      "signature": "new:40173",
+      "announcedOn": "2026-10-16",
+      "siteId": "40173",
       "point": [
-        8.651511,
-        49.087723
+        8.474797,
+        49.100545
       ],
-      "extentPoints": [
-        [
-          8.65278,
-          49.09349
-        ],
-        [
-          8.65158,
-          49.09189
-        ],
-        [
-          8.65102,
-          49.09028
-        ],
-        [
-          8.65093,
-          49.08869
-        ],
-        [
-          8.65176,
-          49.08538
-        ]
-      ],
-      "closure": "full",
-      "startDate": "2026-10-15",
-      "endDate": "2026-10-15",
-      "municipality": "Bruchsal",
-      "location": "Wirtschaftsweg zwischen Heidelsheim und Helmsheim, sowie Helmsheim und Gondelsheim"
+      "closure": "none",
+      "startDate": "2026-10-23",
+      "endDate": "2026-11-20",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Berliner Allee"
     },
     {
       "kind": "new",
@@ -1613,6 +1694,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:40227",
+      "announcedOn": "2026-10-16",
+      "siteId": "40227",
+      "point": [
+        8.647376,
+        49.084135
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-16",
+      "endDate": "2026-10-16",
+      "municipality": "Bruchsal",
+      "location": "Zum Haug 26"
+    },
+    {
+      "kind": "new",
       "signature": "new:40436",
       "announcedOn": "2026-10-13",
       "siteId": "40436",
@@ -1641,64 +1737,6 @@
       "municipality": "Karlsruhe",
       "location": "Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn",
       "reminderLeadDays": 14
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2025V6317:2026-10-12:1",
-      "announcedOn": "2026-10-11",
-      "siteId": "2025V6317",
-      "point": [
-        8.403394,
-        49.005516
-      ],
-      "extentPoints": [
-        [
-          8.41503,
-          49.00541
-        ],
-        [
-          8.41287,
-          49.00588
-        ],
-        [
-          8.41076,
-          49.00613
-        ],
-        [
-          8.40824,
-          49.00587
-        ],
-        [
-          8.40571,
-          49.0056
-        ],
-        [
-          8.40302,
-          49.00559
-        ],
-        [
-          8.40039,
-          49.00559
-        ],
-        [
-          8.39793,
-          49.00559
-        ],
-        [
-          8.39548,
-          49.00559
-        ],
-        [
-          8.39277,
-          49.00558
-        ]
-      ],
-      "closure": "full",
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-15",
-      "municipality": "Karlsruhe",
-      "location": "Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)",
-      "reminderLeadDays": 1
     },
     {
       "kind": "starts-soon",
