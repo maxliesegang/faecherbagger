@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T19:05:08.733Z",
+  "generatedAt": "2026-10-17T08:10:54.515Z",
   "events": [
     {
       "kind": "changed",
@@ -711,97 +711,6 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V6480:2026-10-14T22:00:00Z",
-      "announcedOn": "2026-10-15",
-      "siteId": "2026V6480",
-      "point": [
-        8.489641,
-        49.012264
-      ],
-      "extentPoints": [
-        [
-          8.4885,
-          49.01015
-        ],
-        [
-          8.48384,
-          49.00821
-        ],
-        [
-          8.47929,
-          49.01073
-        ],
-        [
-          8.46928,
-          49.0151
-        ],
-        [
-          8.47412,
-          49.01333
-        ],
-        [
-          8.47365,
-          49.01029
-        ],
-        [
-          8.46923,
-          49.00811
-        ],
-        [
-          8.46681,
-          49.00546
-        ],
-        [
-          8.46296,
-          49.00296
-        ],
-        [
-          8.48692,
-          49.00597
-        ],
-        [
-          8.49051,
-          49.01317
-        ],
-        [
-          8.49391,
-          49.01564
-        ],
-        [
-          8.49882,
-          49.01735
-        ],
-        [
-          8.50236,
-          49.01968
-        ],
-        [
-          8.50567,
-          49.02273
-        ],
-        [
-          8.50912,
-          49.02559
-        ],
-        [
-          8.51239,
-          49.02875
-        ],
-        [
-          8.51495,
-          49.03176
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-14",
-      "endDate": "2026-10-16",
-      "municipality": "Karlsruhe",
-      "location": "K9659/ B10/ B3",
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-14"
-    },
-    {
-      "kind": "changed",
       "signature": "changed:30086:2026-08-31T12:56:38Z",
       "announcedOn": "2026-10-10",
       "siteId": "30086",
@@ -959,21 +868,6 @@
       "municipality": "Karlsruhe",
       "location": "Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee",
       "announcedOn": "2026-10-09"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2025V1418",
-      "announcedOn": "2026-10-12",
-      "siteId": "2025V1418",
-      "point": [
-        8.359404,
-        49.023278
-      ],
-      "closure": "full",
-      "startDate": "2026-06-01",
-      "endDate": "2026-10-16",
-      "municipality": "Karlsruhe",
-      "location": "Bonner Straße zw. Siemensallee und Bonner Platz"
     },
     {
       "kind": "new",
@@ -1612,21 +1506,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:30097",
-      "announcedOn": "2026-10-13",
-      "siteId": "30097",
-      "point": [
-        8.281333,
-        48.956218
-      ],
-      "closure": "full",
-      "startDate": "2026-10-13",
-      "endDate": "2026-10-16",
-      "municipality": "Rheinstetten",
-      "location": "Hertzstraße 118"
-    },
-    {
-      "kind": "new",
       "signature": "new:30098",
       "announcedOn": "2026-10-16",
       "siteId": "30098",
@@ -1912,21 +1791,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:40227",
-      "announcedOn": "2026-10-16",
-      "siteId": "40227",
-      "point": [
-        8.647376,
-        49.084135
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-16",
-      "endDate": "2026-10-16",
-      "municipality": "Bruchsal",
-      "location": "Zum Haug 26"
-    },
-    {
-      "kind": "new",
       "signature": "new:40436",
       "announcedOn": "2026-10-13",
       "siteId": "40436",
@@ -1954,6 +1818,22 @@
       "endDate": "2026-11-28",
       "municipality": "Karlsruhe",
       "location": "Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn",
+      "reminderLeadDays": 14
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2025V6918:2026-10-31:14",
+      "announcedOn": "2026-10-17",
+      "siteId": "2025V6918",
+      "point": [
+        8.395878,
+        49.006724
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-31",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Herrenstraße zw. Kriegsstraße u. Blumenstraße",
       "reminderLeadDays": 14
     },
     {
@@ -2066,6 +1946,22 @@
       "municipality": "Karlsruhe",
       "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße",
       "announcedOn": "2026-10-09"
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V3198:2026-10-31:14",
+      "announcedOn": "2026-10-17",
+      "siteId": "2026V3198",
+      "point": [
+        8.42408,
+        49.016155
+      ],
+      "closure": "full",
+      "startDate": "2026-10-31",
+      "endDate": "2026-12-24",
+      "municipality": "Karlsruhe",
+      "location": "Pastor-Felke-Straße zw. Werthmannstraße und Sebastian-Kneipp-Straße",
+      "reminderLeadDays": 14
     },
     {
       "kind": "starts-soon",
@@ -2196,22 +2092,6 @@
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V6073:2026-10-12:1",
-      "announcedOn": "2026-10-11",
-      "siteId": "2026V6073",
-      "point": [
-        8.396955,
-        48.989821
-      ],
-      "closure": "none",
-      "startDate": "2026-10-12",
-      "endDate": "2026-10-16",
-      "municipality": "Karlsruhe",
-      "location": "Geh- und Radwegverbingung zw. Weiherfeldstraße und Schwarzwaldstraße",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
       "signature": "starts-soon:2026V6323:2026-10-16",
       "siteId": "2026V6323",
       "point": [
@@ -2293,6 +2173,36 @@
       "endDate": "2026-10-30",
       "municipality": "Karlsruhe",
       "location": "Pfarrstraße Haus Nr.12-18 und Haus Nr. 43-51",
+      "reminderLeadDays": 1
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V6353:2026-10-18:1",
+      "announcedOn": "2026-10-17",
+      "siteId": "2026V6353",
+      "point": [
+        8.366651,
+        49.050568
+      ],
+      "extentPoints": [
+        [
+          8.36767,
+          49.05303
+        ],
+        [
+          8.36709,
+          49.05164
+        ],
+        [
+          8.36628,
+          49.0504
+        ]
+      ],
+      "closure": "full",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-18",
+      "municipality": "Karlsruhe",
+      "location": "B36 Fahrtrichtung Karlsruhe, Ausfahrt Neureut-Süd",
       "reminderLeadDays": 1
     },
     {
