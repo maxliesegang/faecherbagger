@@ -120,40 +120,6 @@
     "lastModified": "2026-06-17T22:00:00Z"
   },
   {
-    "id": "2022V6173",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße",
-    "notes": "Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-08-30",
-    "endDate": "2026-10-17",
-    "point": [
-      8.42701,
-      49.008832
-    ],
-    "extentPoints": [
-      [
-        8.4245,
-        49.01005
-      ],
-      [
-        8.42641,
-        49.00895
-      ],
-      [
-        8.42941,
-        49.00745
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-13T22:00:00Z"
-  },
-  {
     "id": "2023V0127",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -7999,7 +7965,7 @@
   },
   {
     "id": "2026V6353",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "full",
@@ -8330,88 +8296,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-13T22:00:00Z"
-  },
-  {
-    "id": "2026V6523",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "K9654/ Rittnertstraße zw. B3 und Ortseingang Stupferich",
-    "notes": "Arbeitsstellen am Fahrbahnrand, beide Fahrtrichtungen wechselseitig",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-10-17",
-    "endDate": "2026-10-17",
-    "point": [
-      8.497484,
-      48.979291
-    ],
-    "extentPoints": [
-      [
-        8.47725,
-        48.99755
-      ],
-      [
-        8.48034,
-        48.99518
-      ],
-      [
-        8.48422,
-        48.99379
-      ],
-      [
-        8.48793,
-        48.99195
-      ],
-      [
-        8.49088,
-        48.989
-      ],
-      [
-        8.49362,
-        48.98684
-      ],
-      [
-        8.49558,
-        48.98364
-      ],
-      [
-        8.49734,
-        48.98054
-      ],
-      [
-        8.49788,
-        48.97766
-      ],
-      [
-        8.49944,
-        48.97474
-      ],
-      [
-        8.50203,
-        48.9724
-      ],
-      [
-        8.50375,
-        48.96943
-      ],
-      [
-        8.50535,
-        48.96658
-      ],
-      [
-        8.50562,
-        48.96353
-      ],
-      [
-        8.50588,
-        48.96032
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-15T22:00:00Z"
   },
   {
     "id": "2026V6526",
@@ -11026,26 +10910,6 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-08-24T09:30:19Z"
-  },
-  {
-    "id": "40208",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kornblumenweg 12",
-    "notes": "Sackgasse gesperrt",
-    "cause": "Privat",
-    "startDate": "2026-10-05",
-    "endDate": "2026-10-17",
-    "point": [
-      8.52413,
-      49.102391
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-30T06:18:26Z"
   },
   {
     "id": "40210",
