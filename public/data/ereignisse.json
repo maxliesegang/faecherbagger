@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T09:28:59.207Z",
+  "generatedAt": "2026-10-19T20:45:57.168Z",
   "events": [
     {
       "kind": "changed",
@@ -34,6 +34,57 @@
       "location": "Zirkel zw. Ritterstraße und Lammstraße",
       "previousClosure": "obstruction",
       "previousStartDate": "2024-04-15"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V0778:2026-10-18T22:00:00Z",
+      "announcedOn": "2026-10-19",
+      "siteId": "2025V0778",
+      "point": [
+        8.38722,
+        49.008579
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-11-23",
+      "endDate": "2026-12-19",
+      "municipality": "Karlsruhe",
+      "location": "Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße",
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-10-05"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V5289:2026-10-18T22:00:00Z",
+      "announcedOn": "2026-10-19",
+      "siteId": "2025V5289",
+      "point": [
+        8.39056,
+        48.999133
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-09-21",
+      "endDate": "2026-10-21",
+      "municipality": "Karlsruhe",
+      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-21"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V5291:2026-10-18T22:00:00Z",
+      "announcedOn": "2026-10-19",
+      "siteId": "2025V5291",
+      "point": [
+        8.390449,
+        48.998563
+      ],
+      "closure": "full",
+      "startDate": "2026-10-22",
+      "endDate": "2026-12-08",
+      "municipality": "Karlsruhe",
+      "location": "Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn",
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-26"
     },
     {
       "kind": "changed",
@@ -470,8 +521,8 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V4345:2026-10-15T22:00:00Z",
-      "announcedOn": "2026-10-16",
+      "signature": "changed:2026V4345:2026-10-18T22:00:00Z",
+      "announcedOn": "2026-10-19",
       "siteId": "2026V4345",
       "point": [
         8.445067,
@@ -479,28 +530,45 @@
       ],
       "closure": "one-direction",
       "startDate": "2026-11-02",
-      "endDate": "2026-11-22",
+      "endDate": "2026-11-23",
       "municipality": "Karlsruhe",
       "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
-      "previousClosure": "full",
+      "previousClosure": "one-direction",
       "previousStartDate": "2026-11-02"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V4346:2026-10-15T22:00:00Z",
-      "announcedOn": "2026-10-16",
+      "signature": "changed:2026V4346:2026-10-18T22:00:00Z",
+      "announcedOn": "2026-10-19",
       "siteId": "2026V4346",
       "point": [
         8.445497,
         49.03491
       ],
       "closure": "full",
-      "startDate": "2026-11-23",
-      "endDate": "2026-12-10",
+      "startDate": "2026-11-24",
+      "endDate": "2026-12-13",
       "municipality": "Karlsruhe",
       "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
-      "previousClosure": "one-direction",
-      "previousStartDate": "2026-11-16"
+      "previousClosure": "full",
+      "previousStartDate": "2026-11-23"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5272:2026-10-18T22:00:00Z",
+      "announcedOn": "2026-10-19",
+      "siteId": "2026V5272",
+      "point": [
+        8.386763,
+        49.017096
+      ],
+      "closure": "full",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-28",
+      "municipality": "Karlsruhe",
+      "location": "Knielinger Allee zw. Fachhochschule und Erzbergerstraße",
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-19"
     },
     {
       "kind": "changed",
@@ -617,6 +685,23 @@
       "location": "Am Entenfang",
       "previousClosure": "one-direction",
       "previousStartDate": "2026-10-19"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V6546:2026-10-18T22:00:00Z",
+      "announcedOn": "2026-10-19",
+      "siteId": "2026V6546",
+      "point": [
+        8.359324,
+        49.009674
+      ],
+      "closure": "full",
+      "startDate": "2026-10-23",
+      "endDate": "2026-10-23",
+      "municipality": "Karlsruhe",
+      "location": "B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente",
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-22"
     },
     {
       "kind": "changed",
@@ -760,6 +845,43 @@
       "endDate": "2027-06-13",
       "municipality": "Karlsruhe",
       "location": "Wolfartsweierer Straße zwischen Durlacher Allee und Gottesauer Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V5720",
+      "announcedOn": "2026-10-19",
+      "siteId": "2025V5720",
+      "point": [
+        8.454898,
+        49.026707
+      ],
+      "extentPoints": [
+        [
+          8.4534,
+          49.02349
+        ],
+        [
+          8.45376,
+          49.02482
+        ],
+        [
+          8.45519,
+          49.02604
+        ],
+        [
+          8.45651,
+          49.02712
+        ],
+        [
+          8.45646,
+          49.02866
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-24",
+      "endDate": "2026-11-15",
+      "municipality": "Karlsruhe",
+      "location": "Ruschgraben, Karlsruher Str., Hagdornstr."
     },
     {
       "kind": "new",
@@ -999,6 +1121,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V6341",
+      "announcedOn": "2026-10-19",
+      "siteId": "2026V6341",
+      "point": [
+        8.381983,
+        49.010161
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-27",
+      "municipality": "Karlsruhe",
+      "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:2026V6387",
       "announcedOn": "2026-10-12",
       "siteId": "2026V6387",
@@ -1209,21 +1346,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V6546",
-      "announcedOn": "2026-10-15",
-      "siteId": "2026V6546",
-      "point": [
-        8.359324,
-        49.009674
-      ],
-      "closure": "full",
-      "startDate": "2026-10-22",
-      "endDate": "2026-10-22",
-      "municipality": "Karlsruhe",
-      "location": "B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente"
-    },
-    {
-      "kind": "new",
       "signature": "new:2026V6573",
       "announcedOn": "2026-10-16",
       "siteId": "2026V6573",
@@ -1266,6 +1388,83 @@
       "endDate": "2026-10-20",
       "municipality": "Karlsruhe",
       "location": "Honsellstraße/ Lameyplatz zw. B36/ Starckstraße und Lameystraße/ Rheinstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6609",
+      "announcedOn": "2026-10-19",
+      "siteId": "2026V6609",
+      "point": [
+        8.366239,
+        49.00451
+      ],
+      "extentPoints": [
+        [
+          8.38383,
+          48.99176
+        ],
+        [
+          8.37992,
+          48.9924
+        ],
+        [
+          8.37668,
+          48.9936
+        ],
+        [
+          8.37404,
+          48.99563
+        ],
+        [
+          8.3724,
+          48.99758
+        ],
+        [
+          8.37013,
+          48.99963
+        ],
+        [
+          8.36814,
+          49.00172
+        ],
+        [
+          8.36679,
+          49.00385
+        ],
+        [
+          8.36477,
+          49.00561
+        ],
+        [
+          8.36217,
+          49.00726
+        ],
+        [
+          8.35888,
+          49.00872
+        ],
+        [
+          8.35573,
+          49.00972
+        ],
+        [
+          8.35347,
+          49.01196
+        ],
+        [
+          8.35143,
+          49.01395
+        ],
+        [
+          8.3495,
+          49.01606
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-22",
+      "endDate": "2026-11-24",
+      "municipality": "Karlsruhe",
+      "location": "B10/ K9657/Südtangente zw. Edeltrudtunnel und Honsellstraße"
     },
     {
       "kind": "new",
@@ -1845,22 +2044,6 @@
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2025V5291:2026-10-26:14",
-      "announcedOn": "2026-10-12",
-      "siteId": "2025V5291",
-      "point": [
-        8.390449,
-        48.998563
-      ],
-      "closure": "full",
-      "startDate": "2026-10-26",
-      "endDate": "2026-11-28",
-      "municipality": "Karlsruhe",
-      "location": "Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn",
-      "reminderLeadDays": 14
-    },
-    {
-      "kind": "starts-soon",
       "signature": "starts-soon:2025V6536:2026-11-01:14",
       "announcedOn": "2026-10-18",
       "siteId": "2025V6536",
@@ -2246,7 +2429,7 @@
       ],
       "closure": "one-direction",
       "startDate": "2026-11-02",
-      "endDate": "2026-11-22",
+      "endDate": "2026-11-23",
       "municipality": "Karlsruhe",
       "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
       "reminderLeadDays": 14
@@ -2372,22 +2555,6 @@
       "municipality": "Karlsruhe",
       "location": "Luisenstraße zw. Rüppurrer Straße und Marienstraße",
       "reminderLeadDays": 14
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V5272:2026-10-19:1",
-      "announcedOn": "2026-10-18",
-      "siteId": "2026V5272",
-      "point": [
-        8.386763,
-        49.017096
-      ],
-      "closure": "full",
-      "startDate": "2026-10-19",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "Knielinger Allee zw. Fachhochschule und Erzbergerstraße",
-      "reminderLeadDays": 1
     },
     {
       "kind": "starts-soon",
@@ -2777,6 +2944,22 @@
       "endDate": "2026-10-20",
       "municipality": "Karlsruhe",
       "location": "B36/ unterhalb Brücke L605",
+      "reminderLeadDays": 1
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V6584:2026-10-20:1",
+      "announcedOn": "2026-10-19",
+      "siteId": "2026V6584",
+      "point": [
+        8.353797,
+        49.013299
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-20",
+      "municipality": "Karlsruhe",
+      "location": "Honsellstraße/ Lameyplatz zw. B36/ Starckstraße und Lameystraße/ Rheinstraße",
       "reminderLeadDays": 1
     },
     {

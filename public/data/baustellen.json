@@ -897,7 +897,7 @@
   },
   {
     "id": "2025V0778",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "one-direction",
@@ -906,14 +906,14 @@
     "location": "Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße",
     "notes": "Höhe Haus Nr 35",
     "cause": "Privat",
-    "startDate": "2026-10-05",
-    "endDate": "2026-11-20",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-19",
     "point": [
       8.38722,
       49.008579
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
+    "lastModified": "2026-10-18T22:00:00Z"
   },
   {
     "id": "2025V0914",
@@ -1301,13 +1301,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-21",
-    "endDate": "2026-10-30",
+    "endDate": "2026-10-21",
     "point": [
       8.39056,
       48.999133
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
+    "lastModified": "2026-10-18T22:00:00Z"
   },
   {
     "id": "2025V5291",
@@ -1320,14 +1320,14 @@
     "location": "Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn",
     "notes": "Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-26",
-    "endDate": "2026-11-28",
+    "startDate": "2026-10-22",
+    "endDate": "2026-12-08",
     "point": [
       8.390449,
       48.998563
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-28T22:00:00Z"
+    "lastModified": "2026-10-18T22:00:00Z"
   },
   {
     "id": "2025V5363",
@@ -1368,6 +1368,48 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-06-10T22:00:00Z"
+  },
+  {
+    "id": "2025V5720",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ruschgraben, Karlsruher Str., Hagdornstr.",
+    "notes": "lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Nothgehweg auf der Fahbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-24",
+    "endDate": "2026-11-15",
+    "point": [
+      8.454898,
+      49.026707
+    ],
+    "extentPoints": [
+      [
+        8.4534,
+        49.02349
+      ],
+      [
+        8.45376,
+        49.02482
+      ],
+      [
+        8.45519,
+        49.02604
+      ],
+      [
+        8.45651,
+        49.02712
+      ],
+      [
+        8.45646,
+        49.02866
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-18T22:00:00Z"
   },
   {
     "id": "2025V6065",
@@ -4178,12 +4220,12 @@
     ],
     "extentPoints": [
       [
-        8.35701,
-        49.02385
+        8.35759,
+        49.02341
       ],
       [
-        8.35887,
-        49.02273
+        8.35597,
+        49.02432
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -5701,13 +5743,13 @@
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-11-02",
-    "endDate": "2026-11-22",
+    "endDate": "2026-11-23",
     "point": [
       8.445067,
       49.034873
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-15T22:00:00Z"
+    "lastModified": "2026-10-18T22:00:00Z"
   },
   {
     "id": "2026V4346",
@@ -5720,34 +5762,14 @@
     "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
     "notes": "Straßenbau, Gehwegführung kurzzeitig im Baufeld",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-23",
-    "endDate": "2026-12-10",
+    "startDate": "2026-11-24",
+    "endDate": "2026-12-13",
     "point": [
       8.445497,
       49.03491
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-15T22:00:00Z"
-  },
-  {
-    "id": "2026V4347",
-    "phase": "upcoming",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-23",
-    "endDate": "2026-12-06",
-    "point": [
-      8.44541,
-      49.034882
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-09T22:00:00Z"
+    "lastModified": "2026-10-18T22:00:00Z"
   },
   {
     "id": "2026V4385",
@@ -6749,13 +6771,13 @@
     "notes": "Geh- und Radweg = Vollsperrung",
     "cause": "Tiefbauamt",
     "startDate": "2026-10-19",
-    "endDate": "2026-10-23",
+    "endDate": "2026-10-28",
     "point": [
       8.386763,
       49.017096
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-19T22:00:00Z"
+    "lastModified": "2026-10-18T22:00:00Z"
   },
   {
     "id": "2026V5311",
@@ -7694,16 +7716,16 @@
     ],
     "extentPoints": [
       [
-        8.40227,
-        49.01114
+        8.40158,
+        49.01135
       ],
       [
-        8.40435,
-        49.01072
+        8.40349,
+        49.01077
       ],
       [
-        8.40648,
-        49.01101
+        8.40587,
+        49.01086
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -7906,6 +7928,26 @@
     "lastModified": "2026-10-13T22:00:00Z"
   },
   {
+    "id": "2026V6341",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-27",
+    "point": [
+      8.381983,
+      49.010161
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-18T22:00:00Z"
+  },
+  {
     "id": "2026V6345",
     "phase": "active",
     "category": "sewer",
@@ -7977,8 +8019,8 @@
     "startDate": "2026-10-12",
     "endDate": "2026-10-30",
     "point": [
-      8.326597,
-      49.005175
+      8.326573,
+      49.005155
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-08T22:00:00Z"
@@ -8334,14 +8376,14 @@
     "location": "B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente",
     "notes": "Reparatur Sturmschaden, Sperrung Richtung Rheinhafen/ Landau, Umfahrung über Lameystraße",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-22",
-    "endDate": "2026-10-22",
+    "startDate": "2026-10-23",
+    "endDate": "2026-10-23",
     "point": [
       8.359324,
       49.009674
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-14T22:00:00Z"
+    "lastModified": "2026-10-18T22:00:00Z"
   },
   {
     "id": "2026V6573",
@@ -8399,6 +8441,88 @@
     "point": [
       8.353797,
       49.013299
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-18T22:00:00Z"
+  },
+  {
+    "id": "2026V6609",
+    "phase": "upcoming",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "B10/ K9657/Südtangente zw. Edeltrudtunnel und Honsellstraße",
+    "notes": "in den Nächten vs. 22:00 Uhr - 4:30 Uhr, beide Fahrtrichtungen, wechselseitig",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-22",
+    "endDate": "2026-11-24",
+    "point": [
+      8.366239,
+      49.00451
+    ],
+    "extentPoints": [
+      [
+        8.38383,
+        48.99176
+      ],
+      [
+        8.37992,
+        48.9924
+      ],
+      [
+        8.37668,
+        48.9936
+      ],
+      [
+        8.37404,
+        48.99563
+      ],
+      [
+        8.3724,
+        48.99758
+      ],
+      [
+        8.37013,
+        48.99963
+      ],
+      [
+        8.36814,
+        49.00172
+      ],
+      [
+        8.36679,
+        49.00385
+      ],
+      [
+        8.36477,
+        49.00561
+      ],
+      [
+        8.36217,
+        49.00726
+      ],
+      [
+        8.35888,
+        49.00872
+      ],
+      [
+        8.35573,
+        49.00972
+      ],
+      [
+        8.35347,
+        49.01196
+      ],
+      [
+        8.35143,
+        49.01395
+      ],
+      [
+        8.3495,
+        49.01606
+      ]
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-18T22:00:00Z"
@@ -10575,7 +10699,7 @@
       ],
       [
         8.5056,
-        49.11502
+        49.11484
       ]
     ],
     "source": "Stadt Bruchsal",
