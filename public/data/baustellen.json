@@ -776,14 +776,14 @@
     "location": "Kaiserstraße zw. Kronenstraße und Adlerstraße",
     "notes": null,
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-01",
-    "endDate": "2027-02-26",
+    "startDate": "2026-10-20",
+    "endDate": "2026-11-06",
     "point": [
       8.407929,
       49.00947
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2025V0239",
@@ -1719,7 +1719,7 @@
     "notes": "jeweils nachts zw.19:00 Uhr u. 5:30 Uhr",
     "cause": "Tiefbauamt",
     "startDate": "2026-11-01",
-    "endDate": "2026-11-06",
+    "endDate": "2026-11-05",
     "point": [
       8.502727,
       49.004894
@@ -1755,7 +1755,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2025-11-17T23:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2025V6769",
@@ -2744,44 +2744,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-05-18T22:00:00Z"
-  },
-  {
-    "id": "2026V0332",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bannwaldallee zw. Griesbachstraße und Zufahrt Südtangente",
-    "notes": "Gemeinsame Umsetzung mit Leitungsbau Gas/Wasser durch die Netzservice GmbH der Stadtwerke, Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-09-21",
-    "endDate": "2027-08-31",
-    "point": [
-      8.370497,
-      48.998804
-    ],
-    "extentPoints": [
-      [
-        8.36793,
-        49.00086
-      ],
-      [
-        8.36938,
-        48.99975
-      ],
-      [
-        8.37082,
-        48.99845
-      ],
-      [
-        8.37219,
-        48.99723
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-01T22:00:00Z"
   },
   {
     "id": "2026V0333",
@@ -4003,7 +3965,7 @@
   },
   {
     "id": "2026V2154",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "full",
@@ -4113,13 +4075,13 @@
     "notes": "Höhe Haus Nr 9, Geh- und Radweg einseitig gesperrt",
     "cause": "Privat",
     "startDate": "2026-05-15",
-    "endDate": "2026-10-30",
+    "endDate": "2026-12-31",
     "point": [
       8.394084,
       49.050151
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-16T22:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V2418",
@@ -4220,12 +4182,12 @@
     ],
     "extentPoints": [
       [
-        8.35759,
-        49.02341
+        8.35701,
+        49.02385
       ],
       [
-        8.35597,
-        49.02432
+        8.35887,
+        49.02273
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -4484,26 +4446,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-13T22:00:00Z"
-  },
-  {
-    "id": "2026V2716",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Amalinestraße und Sophienstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-05-08",
-    "endDate": "2026-10-19",
-    "point": [
-      8.391418,
-      49.007211
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
   },
   {
     "id": "2026V2798",
@@ -6761,7 +6703,7 @@
   },
   {
     "id": "2026V5272",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
@@ -6770,14 +6712,14 @@
     "location": "Knielinger Allee zw. Fachhochschule und Erzbergerstraße",
     "notes": "Geh- und Radweg = Vollsperrung",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-19",
+    "startDate": "2026-10-26",
     "endDate": "2026-10-28",
     "point": [
       8.386763,
       49.017096
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V5311",
@@ -6958,7 +6900,7 @@
     "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Moltkestraße Höhe Erzbergerstraße",
@@ -6971,7 +6913,7 @@
       49.014782
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V5490",
@@ -7507,7 +7449,7 @@
   },
   {
     "id": "2026V5881",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -7716,37 +7658,17 @@
     ],
     "extentPoints": [
       [
+        8.40737,
+        49.01145
+      ],
+      [
         8.40158,
         49.01135
       ],
       [
         8.40349,
         49.01077
-      ],
-      [
-        8.40587,
-        49.01086
       ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
-  },
-  {
-    "id": "2026V6254",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Kaiser- und Amalienstraße",
-    "notes": "6.00 bis 18.00 Uhr",
-    "cause": "Privat",
-    "startDate": "2026-10-19",
-    "endDate": "2026-10-19",
-    "point": [
-      8.391757,
-      49.009896
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-30T22:00:00Z"
@@ -8226,26 +8148,6 @@
     "lastModified": "2026-10-12T22:00:00Z"
   },
   {
-    "id": "2026V6448",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Kastellstraße zw. Turmbergstraße und Stäffele",
-    "notes": "Höhe Haus Nr. 20",
-    "cause": "Privat",
-    "startDate": "2026-10-19",
-    "endDate": "2026-10-19",
-    "point": [
-      8.48378,
-      49.000159
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
-  },
-  {
     "id": "2026V6457",
     "phase": "upcoming",
     "category": "crane",
@@ -8426,8 +8328,90 @@
     "lastModified": "2026-10-15T22:00:00Z"
   },
   {
-    "id": "2026V6584",
+    "id": "2026V6577",
     "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Südtangente zw. Fiduciastraße und Schwarzwaldkreuz",
+    "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung, wechselseitig, beide Fahrtrichtungen",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-10-21",
+    "endDate": "2026-10-21",
+    "point": [
+      8.42429,
+      48.995001
+    ],
+    "extentPoints": [
+      [
+        8.4473,
+        48.98654
+      ],
+      [
+        8.44441,
+        48.98817
+      ],
+      [
+        8.4414,
+        48.98955
+      ],
+      [
+        8.43814,
+        48.99044
+      ],
+      [
+        8.43498,
+        48.99125
+      ],
+      [
+        8.43197,
+        48.99264
+      ],
+      [
+        8.42909,
+        48.99439
+      ],
+      [
+        8.42584,
+        48.99507
+      ],
+      [
+        8.42271,
+        48.99493
+      ],
+      [
+        8.41918,
+        48.99432
+      ],
+      [
+        8.41566,
+        48.99367
+      ],
+      [
+        8.41213,
+        48.99288
+      ],
+      [
+        8.40871,
+        48.99185
+      ],
+      [
+        8.40541,
+        48.99059
+      ],
+      [
+        8.40173,
+        48.98967
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6584",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "obstruction",
@@ -9246,40 +9230,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-16T07:10:18Z"
-  },
-  {
-    "id": "30223",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Schulstraße, Bachstraße, Obere Mühlstraße",
-    "notes": "Fahrbahn eingeengt, Restfahrbahnbreite mind. 3,05 m. Gehwege nicht betroffen.",
-    "cause": "Stadtwerke",
-    "startDate": "2026-10-19",
-    "endDate": "2026-10-19",
-    "point": [
-      8.556266,
-      49.084702
-    ],
-    "extentPoints": [
-      [
-        8.55423,
-        49.08534
-      ],
-      [
-        8.55589,
-        49.08455
-      ],
-      [
-        8.55804,
-        49.08428
-      ]
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-30T05:30:49Z"
   },
   {
     "id": "30226",
@@ -10132,26 +10082,6 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-05-18T10:38:52Z"
-  },
-  {
-    "id": "40074",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Gewerbering 31a",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-19",
-    "endDate": "2026-10-19",
-    "point": [
-      8.307957,
-      48.963701
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-10-06T14:48:18Z"
   },
   {
     "id": "40075",
@@ -11184,6 +11114,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-02T07:52:12Z"
+  },
+  {
+    "id": "40217",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Wörthstraße 6",
+    "notes": "Sperrung der Fahrbahn und des Geheges auf der Seite des Baugrundstücks.\n\nGrund: Montage von Balkonen mit Mobilkran\n\nFußgänger und (schiebende) Radfahrer können auf der Straßenseite gegenüber passieren.\n\nFür Anlieger wird die Zufahrt vom Friedrichsplatz her freigegeben. Außerdem kann von der Kaiserstraße aus Ri. Schloßstraße direkt in die Hoheneggerstraße zugefahren werden. Dort werden zwei der Poller vorrübergehend entfernt.",
+    "cause": "Privat",
+    "startDate": "2026-10-20",
+    "endDate": "2026-10-29",
+    "point": [
+      8.594911,
+      49.125503
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-08T11:35:55Z"
   },
   {
     "id": "40220",
