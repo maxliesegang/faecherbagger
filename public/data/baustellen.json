@@ -2292,7 +2292,7 @@
     "location": "Schlossplatz zw. Herrenstraße u. Zirkel",
     "notes": "Jederzeit ein Fahrstreifen im Haupttunnel und in der Tiefspur (Höhe max. 2,00 m) frei, Parkhauszufahrten sind angebunden",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-23",
+    "startDate": "2026-11-21",
     "endDate": "2027-02-28",
     "point": [
       8.404175,
@@ -2313,7 +2313,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-11T23:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V0102",
@@ -4446,6 +4446,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-13T22:00:00Z"
+  },
+  {
+    "id": "2026V2714",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hirschstraße zw. Amalienstraße und Sophienstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-04-20",
+    "endDate": "2027-02-15",
+    "point": [
+      8.391415,
+      49.007231
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V2798",
@@ -6592,8 +6612,8 @@
     "location": "Koyweg zw. Hinterwiesenweg und Elfmorgenbruch",
     "notes": null,
     "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-22",
-    "endDate": "2026-11-17",
+    "startDate": "2026-10-23",
+    "endDate": "2026-11-13",
     "point": [
       8.448665,
       49.011279
@@ -6819,7 +6839,7 @@
       48.985005
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V5400",
@@ -6860,6 +6880,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-14T22:00:00Z"
+  },
+  {
+    "id": "2026V5444",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hölderlinstraße, Emil-Gött-Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-30",
+    "point": [
+      8.420956,
+      49.012043
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V5451",
@@ -6977,7 +7017,7 @@
   },
   {
     "id": "2026V5649",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "one-direction",
@@ -6986,14 +7026,14 @@
     "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-15",
-    "endDate": "2026-11-20",
+    "startDate": "2026-11-09",
+    "endDate": "2026-12-11",
     "point": [
       8.460286,
       48.995006
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-01T22:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V5661",
@@ -7658,16 +7698,16 @@
     ],
     "extentPoints": [
       [
-        8.40737,
-        49.01145
-      ],
-      [
         8.40158,
         49.01135
       ],
       [
         8.40349,
         49.01077
+      ],
+      [
+        8.40587,
+        49.01086
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -7698,7 +7738,7 @@
     "phase": "upcoming",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
+    "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Gablonzer Str. 23",
@@ -7711,7 +7751,7 @@
       49.023444
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-04T22:00:00Z"
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V6279",
@@ -7966,26 +8006,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-11T22:00:00Z"
-  },
-  {
-    "id": "2026V6381",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Albert-Schweitzer-Straße zw. Bertha-von-Suttner-Straße und Theodor-Heuss-Allee",
-    "notes": "Lokale Engstelle mit Signalisierung",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-09",
-    "endDate": "2026-12-14",
-    "point": [
-      8.446978,
-      49.044824
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
   },
   {
     "id": "2026V6387",
@@ -8510,6 +8530,206 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-18T22:00:00Z"
+  },
+  {
+    "id": "2026V6622",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Auf dem Schlössle",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-26",
+    "endDate": "2026-10-27",
+    "point": [
+      8.475962,
+      48.994297
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6638",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Turmbergstraße zw. Posseltstraße und Wolfweg",
+    "notes": "Einspurige Verkehrsführung mit Engstellensignalisierung",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-19",
+    "point": [
+      8.481535,
+      48.998528
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6639",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Turmbergstraße zw. Am Burgweg und Kastellstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-20",
+    "endDate": "2026-12-09",
+    "point": [
+      8.481471,
+      48.998584
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6640",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bergbahnstraße zw. Turmbergstraße und Kastellstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-12-10",
+    "endDate": "2026-12-24",
+    "point": [
+      8.481242,
+      48.99871
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6641",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bergbahnstraße zw. Turmbergstraße und Am Steinbruch",
+    "notes": "Verkehrsführung über Provisorium auf Mittelinsel",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-07",
+    "endDate": "2027-01-18",
+    "point": [
+      8.481127,
+      48.998777
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6642",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bergbahnstraße zw. Turmbergstraße und Am Steinbruch",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-19",
+    "endDate": "2027-01-31",
+    "point": [
+      8.481023,
+      48.998751
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6643",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Lammstraße zw. Am Schlossplatz und Zirkel",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-01",
+    "endDate": "2026-11-30",
+    "point": [
+      8.402933,
+      49.010528
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6646",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bergbahnstraße zw. Am Steinbruch und Posseltstraße",
+    "notes": "Durchfahrt Turmbergstraße zur Bergbahnstraße gesperrt, Bergbahnstraße Verkehrsführung über Provisorium auf der Mittelinsel",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-02-01",
+    "endDate": "2027-02-11",
+    "point": [
+      8.480941,
+      48.998664
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6647",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bergbahnstraße zw. Am Steinbruch und Turmbergstraße",
+    "notes": "Durchfahrt Posseltstraße - Bergbahnstraße in beide Richtungen gesperrt, Gegenläufige Verkehrsführung Bergbahnstraße Nordfahrbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-02-12",
+    "endDate": "2027-02-23",
+    "point": [
+      8.481056,
+      48.998569
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V6648",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bergbahnstraße zw. Turmbergstraße und am Steinbruch",
+    "notes": "Verkehrsführung über Provisorium auf der Mittelinsel",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-02-24",
+    "endDate": "2027-03-07",
+    "point": [
+      8.480995,
+      48.998771
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "30016",
@@ -9263,7 +9483,7 @@
     "notes": "Gehweg gesperrt, Notweg für Fußgänger eingerichtet",
     "cause": "Privat",
     "startDate": "2026-10-07",
-    "endDate": "2026-10-21",
+    "endDate": "2026-10-30",
     "point": [
       8.579617,
       49.077624
@@ -10162,6 +10382,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-10-15T16:42:46Z"
+  },
+  {
+    "id": "40078",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Karlstraße 39 Ecke Albgaustraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-09-17",
+    "endDate": "2026-11-28",
+    "point": [
+      8.311387,
+      48.977082
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-20T07:00:13Z"
   },
   {
     "id": "40079",
