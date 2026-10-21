@@ -1,33 +1,160 @@
 {
-  "since": "2026-10-20T19:40:57.552Z",
+  "since": "2026-10-21T09:01:51.971Z",
   "added": [
-    "2025V5482",
-    "2026V6069",
-    "2026V6677",
-    "30251",
-    "30252",
-    "40235"
+    "2026V6031",
+    "2026V6437",
+    "2026V6439",
+    "2026V6684"
   ],
   "modified": [
-    "40176"
+    "2025V5289",
+    "2025V5291",
+    "2025V6918",
+    "2026V2502",
+    "2026V3196",
+    "2026V3197",
+    "2026V3198",
+    "2026V3554",
+    "2026V3555",
+    "2026V3556",
+    "2026V3558",
+    "2026V3559",
+    "2026V3560",
+    "2026V3561",
+    "2026V4990"
   ],
   "removed": [
-    "2026V5881",
-    "2026V6526",
-    "2026V6584",
-    "30103",
-    "30233",
-    "40420"
+    "2026V2799",
+    "2026V5490",
+    "2026V5807",
+    "40441"
   ],
   "relevantModifications": [
     {
-      "id": "40176",
+      "id": "2025V5289",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-21",
+      "previousEndDate": "2026-10-21"
+    },
+    {
+      "id": "2025V5291",
       "changedFields": [
         "period"
       ],
       "previousClosure": "full",
-      "previousStartDate": "2026-09-09",
-      "previousEndDate": "2027-02-01"
+      "previousStartDate": "2026-10-22",
+      "previousEndDate": "2026-12-08"
+    },
+    {
+      "id": "2025V6918",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-31",
+      "previousEndDate": "2026-12-31"
+    },
+    {
+      "id": "2026V2502",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-19",
+      "previousEndDate": "2026-10-30"
+    },
+    {
+      "id": "2026V3196",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-08-18",
+      "previousEndDate": "2026-10-23"
+    },
+    {
+      "id": "2026V3197",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-10",
+      "previousEndDate": "2026-10-30"
+    },
+    {
+      "id": "2026V3198",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-31",
+      "previousEndDate": "2026-12-24"
+    },
+    {
+      "id": "2026V3554",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-09-15",
+      "previousEndDate": "2026-11-09"
+    },
+    {
+      "id": "2026V3555",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-09",
+      "previousEndDate": "2026-11-23"
+    },
+    {
+      "id": "2026V3556",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-11-23",
+      "previousEndDate": "2026-11-30"
+    },
+    {
+      "id": "2026V3558",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-30",
+      "previousEndDate": "2027-02-26"
+    },
+    {
+      "id": "2026V3559",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-11-23",
+      "previousEndDate": "2026-11-30"
+    },
+    {
+      "id": "2026V3560",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-11-23",
+      "previousEndDate": "2026-11-30"
+    },
+    {
+      "id": "2026V3561",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-11-09",
+      "previousEndDate": "2026-11-30"
     }
   ]
 }

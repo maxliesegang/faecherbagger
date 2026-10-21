@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-21T09:01:51.971Z</updated>
+    <updated>2026-10-21T19:43:07.776Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -58,6 +58,28 @@ Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Vorholzstraße u. Südendstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V5289:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5289"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 21.09.2026 – 30.10.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn – Karlsruhe]]></title>
+        <id>faecherbagger:2025V5291:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5291"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+Zeitraum: 31.10.2026 – 08.12.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Amalienstraße und Kriegsstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V5482:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5482"/>
@@ -68,6 +90,172 @@ Hinweis: Straßenquerung = lokale Engstelle wechselseitig
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Herrenstraße zw. Kriegsstraße u. Blumenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V6918:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6918"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 01.02.2027 – 30.04.2027
+Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, Bauzeit von Bauko gesschätzt
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Hildebrandstraße zw. Reichenbachstraße und Auer Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2502:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2502"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+Zeitraum: 26.10.2026 – 30.10.2026
+Hinweis: zwei Bauabschnitte
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3196:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3196"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
+Zeitraum: 18.08.2026 – 21.10.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3197:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3197"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 21.10.2026 – 20.12.2026
+Hinweis: 1-streifige Verkehrsführung
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Pastor-Felke-Straße zw. Werthmannstraße und Sebastian-Kneipp-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3198:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3198"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+Zeitraum: 20.12.2026 – 24.12.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3554:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3554"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
+Zeitraum: 15.09.2026 – 26.10.2026
+Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher FAhrtrichtung
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3555:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3555"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+Zeitraum: 26.10.2026 – 09.11.2026
+Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher Fahrtrichtung
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3556:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3556"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
+Zeitraum: 09.11.2026 – 16.11.2026
+Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Speyerer Straße und Rechts der Alb – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3558:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3558"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+Zeitraum: 16.11.2026 – 26.02.2027
+Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen, Sperberweg Einbahnstraße ab Nürnberger Straße
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Sperberweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3559:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3559"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Vollsperrung
+Zeitraum: 09.11.2026 – 16.11.2026
+Hinweis: Sperrung Ein- und Ausfahrt Nürnberger Straße
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Rechts der Alb zw. Nürnberger Straße und Freiburger Straße und zw. Nürnberger Straße und Maria-Matheis-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3560:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3560"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
+Zeitraum: 09.11.2026 – 16.11.2026
+Hinweis: Rechts der Alb Ausfahrt auf Nürnberger Straße aus beiden Richtungen gesperrt
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3561:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3561"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
+Zeitraum: 16.11.2026 – 26.02.2027
+Hinweis: Einbahnstraße ab Nürnberger Straße
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Rastatter Straße 1 bis 103 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4990:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4990"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 10.08.2026 – 31.12.2026
+Hinweis: Arbeitsstellen in den Gehwegen, Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Südtangente zw. Fiduciastraße und Schwarzwaldkreuz – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6031:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6031"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Grünpflege · Mit Behinderung
+Zeitraum: 23.10.2026 – 23.10.2026
+Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung, beide Fahrtrichtungen wechselseitig
+Verantwortlich: Gartenbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Waldstraße zw. Ludwigsplatz und Bürgerstraße – Karlsruhe]]></title>
@@ -81,6 +269,30 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Geplant: Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6437:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6437"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Baugrunduntersuchung · Mit Behinderung
+Zeitraum: 28.10.2026 – 30.10.2026
+Hinweis: Abwicklung in mehreren lokalen Engstellen, Arbeitsstelle im Geh-, und Radwegbereich oder der Fahrbahn
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Baugrunduntersuchung" term="soil-survey"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Leopoldstraße zw. Kaiserstraße und Stephanienstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6439:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6439"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Baugrunduntersuchung · Mit Behinderung
+Zeitraum: 28.10.2026 – 28.10.2026
+Hinweis: lokale Engstellen, Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Baugrunduntersuchung" term="soil-survey"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Raiherwiesenstraße Ecke Schinnrainstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6677:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6677"/>
@@ -91,6 +303,17 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Notgehweg über Parkplätze, 
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Im Weiherwald zw. Belchenstraße und Lohwiesenweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6684:2026-10-20T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6684"/>
+        <updated>2026-10-20T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Grünpflege · Vollsperrung
+Zeitraum: 29.10.2026 – 29.10.2026
+Verantwortlich: Forstamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Obere Mühlstraße 48 – Bruchsal]]></title>
@@ -406,29 +629,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Vorholzstraße u. Südendstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V5289:2026-10-18T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5289"/>
-        <updated>2026-10-18T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 21.09.2026 – 21.10.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn – Karlsruhe]]></title>
-        <id>faecherbagger:2025V5291:2026-10-18T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5291"/>
-        <updated>2026-10-18T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
-Zeitraum: 22.10.2026 – 08.12.2026
-Hinweis: Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Ruschgraben, Karlsruher Str., Hagdornstr. – Karlsruhe]]></title>
         <id>faecherbagger:2025V5720:2026-10-18T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5720"/>
@@ -439,18 +639,6 @@ Hinweis: lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren 
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Hildebrandstraße zw. Reichenbachstraße und Auer Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2502:2026-10-18T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2502"/>
-        <updated>2026-10-18T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
-Zeitraum: 19.10.2026 – 30.10.2026
-Hinweis: zwei Bauabschnitte
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße – Karlsruhe]]></title>
@@ -527,9 +715,9 @@ Quelle: Stadt Karlsruhe]]></summary>
         <id>faecherbagger:30247:2026-10-16T06:05:45Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30247"/>
         <updated>2026-10-16T06:05:45.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
 Zeitraum: 19.10.2026 – 06.11.2026
-Hinweis: verengte Fahrbahn, Gehweg einseitig gesperrt
+Hinweis: Vollsperrung für den Fahrzeugverkehr, Gehweg einseitig begehbar.
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Kanalbau" term="sewer"/>
@@ -732,18 +920,6 @@ Hinweis: Fahrbahn wegen Sanierung verengt
 Verantwortlich: Fachgebiet Baubetriebshof
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Lange Straße – Ettlingen]]></title>
-        <id>faecherbagger:40441:2026-10-14T06:08:38Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40441"/>
-        <updated>2026-10-14T06:08:38.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
-Zeitraum: 19.10.2026 – 31.12.2026
-Hinweis: Vollsperrung wg. Anschlussarbeiten. Halteverbote werden in der Schluchstraße installiert um den ÖPNV während des Bauzeitraumes aufrecht erhalten zu können. Bitte die Umleitungsbeschilderung beachten.
-Verantwortlich: Privat
-Quelle: Stadt Ettlingen]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Uhlandstraße zw. Goethestraße und Sophienstraße – Karlsruhe]]></title>
@@ -955,17 +1131,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitte, Straßenquerungen = lokale Engste
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3196:2026-10-12T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3196"/>
-        <updated>2026-10-12T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
-Zeitraum: 18.08.2026 – 23.10.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Schlössleweg zw. Badener Straße und Lußstraße, Lußstraße zw. Lußsteige und Schlössleweg – Karlsruhe]]></title>
@@ -1294,18 +1459,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-10-11T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
 Zeitraum: 19.10.2026 – 25.10.2026
-Hinweis: Greisbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2799:2026-10-11T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2799"/>
-        <updated>2026-10-11T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 19.10.2026 – 22.11.2026
+Hinweis: Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
@@ -1368,17 +1522,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Pfinzstraße zw. Pforzheimer Straße und Durlacher Allee – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5490:2026-10-11T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5490"/>
-        <updated>2026-10-11T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
-Zeitraum: 27.11.2026 – 27.11.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: B10 Südtangente zwischen AS9 und AS10 – Karlsruhe]]></title>
@@ -1784,17 +1927,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Richard-Wagner-Straße zw. Ludwig-Marum-Straße und Schubertstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5807:2026-10-06T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5807"/>
-        <updated>2026-10-06T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
-Zeitraum: 03.11.2026 – 05.11.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße – Karlsruhe]]></title>
@@ -2642,18 +2774,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3197:2026-09-17T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3197"/>
-        <updated>2026-09-17T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 10.10.2026 – 30.10.2026
-Hinweis: 1-streifige Verkehrsführung
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3707:2026-09-17T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3707"/>
@@ -3123,17 +3243,6 @@ Quelle: Stadt Bruchsal]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Pastor-Felke-Straße zw. Werthmannstraße und Sebastian-Kneipp-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3198:2026-09-08T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3198"/>
-        <updated>2026-09-08T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
-Zeitraum: 31.10.2026 – 24.12.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: L623/ Talstraße zw. Im Brunnenfeld und Henri-Arnaud-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5661:2026-09-08T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5661"/>
@@ -3156,78 +3265,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabs
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3554:2026-09-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3554"/>
-        <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
-Zeitraum: 15.09.2026 – 09.11.2026
-Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher FAhrtrichtung
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3555:2026-09-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3555"/>
-        <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
-Zeitraum: 09.11.2026 – 23.11.2026
-Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher Fahrtrichtung
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3556:2026-09-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3556"/>
-        <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 23.11.2026 – 30.11.2026
-Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Sperberweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3559:2026-09-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3559"/>
-        <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Vollsperrung
-Zeitraum: 23.11.2026 – 30.11.2026
-Hinweis: Sperrung Ein- und Ausfahrt Nürnberger Straße
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Rechts der Alb zw. Nürnberger Straße und Freiburger Straße und zw. Nürnberger Straße und Maria-Matheis-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3560:2026-09-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3560"/>
-        <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 23.11.2026 – 30.11.2026
-Hinweis: Rechts der Alb Ausfahrt auf Nürnberger Straße aus beiden Richtungen gesperrt
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3561:2026-09-07T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3561"/>
-        <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 09.11.2026 – 30.11.2026
-Hinweis: Einbahnstraße ab Nürnberger Straße
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Fuchsbau 1-19 und 23-35 – Karlsruhe]]></title>
@@ -3984,18 +4021,6 @@ Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Rastatter Straße 1 bis 103 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4990:2026-08-09T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4990"/>
-        <updated>2026-08-09T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 10.08.2026 – 31.12.2026
-Hinweis: Arbeitsstellen in den Gehwegen, Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Herrenalber Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V4991:2026-08-09T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4991"/>
@@ -4713,18 +4738,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Speyerer Straße und Rechts der Alb – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3558:2026-06-02T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3558"/>
-        <updated>2026-06-02T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
-Zeitraum: 30.11.2026 – 26.02.2027
-Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen, Sperberweg Einbahnstraße ab Nürnberger Straße
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Pfalzstraße zw. Kirschstraße und Kastenwörthstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3480:2026-06-01T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3480"/>
@@ -4863,18 +4876,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Herrenstraße zw. Kriegsstraße u. Blumenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6918:2026-05-14T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6918"/>
-        <updated>2026-05-14T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 31.10.2026 – 31.12.2026
-Hinweis: Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Rohrackerweg 21 – Stutensee]]></title>

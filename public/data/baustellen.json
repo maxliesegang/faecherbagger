@@ -1301,13 +1301,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-21",
-    "endDate": "2026-10-21",
+    "endDate": "2026-10-30",
     "point": [
       8.39056,
       48.999133
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2025V5291",
@@ -1318,16 +1318,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Kreuzungsbereich Hirsch- / Südendstraße Nordfahrbahn",
-    "notes": "Aufteilung nicht vorgenommen",
+    "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-22",
+    "startDate": "2026-10-31",
     "endDate": "2026-12-08",
     "point": [
       8.390449,
       48.998563
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2025V5363",
@@ -1910,16 +1910,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Herrenstraße zw. Kriegsstraße u. Blumenstraße",
-    "notes": "Aufteilung nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, Bauzeit von Bauko gesschätzt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-31",
-    "endDate": "2026-12-31",
+    "startDate": "2027-02-01",
+    "endDate": "2027-04-30",
     "point": [
       8.395878,
       49.006724
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-05-14T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2025V6966",
@@ -4145,7 +4145,7 @@
   },
   {
     "id": "2026V2502",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -4154,14 +4154,14 @@
     "location": "Hildebrandstraße zw. Reichenbachstraße und Auer Straße",
     "notes": "zwei Bauabschnitte",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-19",
+    "startDate": "2026-10-26",
     "endDate": "2026-10-30",
     "point": [
       8.461598,
       48.994539
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V2503",
@@ -4496,33 +4496,13 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
-    "notes": "Greisbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen",
+    "notes": "Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen",
     "cause": "Tiefbauamt",
     "startDate": "2026-10-19",
     "endDate": "2026-10-25",
     "point": [
       8.368212,
       49.000854
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
-  },
-  {
-    "id": "2026V2799",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-22",
-    "point": [
-      8.368415,
-      49.000684
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-11T22:00:00Z"
@@ -4753,13 +4733,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-18",
-    "endDate": "2026-10-23",
+    "endDate": "2026-10-21",
     "point": [
       8.423901,
       49.016368
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3197",
@@ -4772,14 +4752,14 @@
     "location": "Pastor-Felke-Straße Kreuzungsbereich Werthmannstraße",
     "notes": "1-streifige Verkehrsführung",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-10",
-    "endDate": "2026-10-30",
+    "startDate": "2026-10-21",
+    "endDate": "2026-12-20",
     "point": [
       8.423974,
       49.016201
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3198",
@@ -4792,14 +4772,14 @@
     "location": "Pastor-Felke-Straße zw. Werthmannstraße und Sebastian-Kneipp-Straße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-31",
+    "startDate": "2026-12-20",
     "endDate": "2026-12-24",
     "point": [
       8.42408,
       49.016155
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-08T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3205",
@@ -5053,13 +5033,13 @@
     "notes": "Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher FAhrtrichtung",
     "cause": "Tiefbauamt",
     "startDate": "2026-09-15",
-    "endDate": "2026-11-09",
+    "endDate": "2026-10-26",
     "point": [
       8.398492,
       48.984331
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3555",
@@ -5072,14 +5052,14 @@
     "location": "Nürnberger Straße zw. Rechts der Alb und Sperberweg",
     "notes": "Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher Fahrtrichtung",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-09",
-    "endDate": "2026-11-23",
+    "startDate": "2026-10-26",
+    "endDate": "2026-11-09",
     "point": [
       8.398469,
       48.984344
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3556",
@@ -5092,14 +5072,14 @@
     "location": "Nürnberger Straße zw. Rechts der Alb und Sperberweg",
     "notes": "Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-23",
-    "endDate": "2026-11-30",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-16",
     "point": [
       8.398483,
       48.98435
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3558",
@@ -5112,14 +5092,14 @@
     "location": "Nürnberger Straße zw. Speyerer Straße und Rechts der Alb",
     "notes": "Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen, Sperberweg Einbahnstraße ab Nürnberger Straße",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-30",
+    "startDate": "2026-11-16",
     "endDate": "2027-02-26",
     "point": [
       8.398436,
       48.984418
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-02T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3559",
@@ -5132,14 +5112,14 @@
     "location": "Sperberweg",
     "notes": "Sperrung Ein- und Ausfahrt Nürnberger Straße",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-23",
-    "endDate": "2026-11-30",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-16",
     "point": [
       8.398864,
       48.984336
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3560",
@@ -5152,14 +5132,14 @@
     "location": "Rechts der Alb zw. Nürnberger Straße und Freiburger Straße und zw. Nürnberger Straße und Maria-Matheis-Straße",
     "notes": "Rechts der Alb Ausfahrt auf Nürnberger Straße aus beiden Richtungen gesperrt",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-23",
-    "endDate": "2026-11-30",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-16",
     "point": [
       8.397919,
       48.984328
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3561",
@@ -5172,14 +5152,14 @@
     "location": "Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße",
     "notes": "Einbahnstraße ab Nürnberger Straße",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-09",
-    "endDate": "2026-11-30",
+    "startDate": "2026-11-16",
+    "endDate": "2027-02-26",
     "point": [
       8.398844,
       48.984355
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3599",
@@ -6553,7 +6533,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-09T22:00:00Z"
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V4991",
@@ -6974,26 +6954,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-19T22:00:00Z"
-  },
-  {
-    "id": "2026V5490",
-    "phase": "upcoming",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinzstraße zw. Pforzheimer Straße und Durlacher Allee",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-27",
-    "endDate": "2026-11-27",
-    "point": [
-      8.466705,
-      49.001968
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
   },
   {
     "id": "2026V5495",
@@ -7448,26 +7408,6 @@
     "lastModified": "2026-09-13T22:00:00Z"
   },
   {
-    "id": "2026V5807",
-    "phase": "upcoming",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Richard-Wagner-Straße zw. Ludwig-Marum-Straße und Schubertstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-03",
-    "endDate": "2026-11-05",
-    "point": [
-      8.37095,
-      49.01316
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-06T22:00:00Z"
-  },
-  {
     "id": "2026V5811",
     "phase": "active",
     "category": "special-use",
@@ -7560,6 +7500,88 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-21T22:00:00Z"
+  },
+  {
+    "id": "2026V6031",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Südtangente zw. Fiduciastraße und Schwarzwaldkreuz",
+    "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung, beide Fahrtrichtungen wechselseitig",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-10-23",
+    "endDate": "2026-10-23",
+    "point": [
+      8.42826,
+      48.994344
+    ],
+    "extentPoints": [
+      [
+        8.44752,
+        48.98659
+      ],
+      [
+        8.44467,
+        48.98819
+      ],
+      [
+        8.44163,
+        48.98936
+      ],
+      [
+        8.43844,
+        48.99029
+      ],
+      [
+        8.43502,
+        48.99097
+      ],
+      [
+        8.43245,
+        48.99228
+      ],
+      [
+        8.42983,
+        48.99367
+      ],
+      [
+        8.42688,
+        48.99493
+      ],
+      [
+        8.42316,
+        48.99504
+      ],
+      [
+        8.41981,
+        48.99465
+      ],
+      [
+        8.41657,
+        48.9941
+      ],
+      [
+        8.41309,
+        48.99309
+      ],
+      [
+        8.40961,
+        48.99208
+      ],
+      [
+        8.40643,
+        48.99101
+      ],
+      [
+        8.40356,
+        48.98989
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V6069",
@@ -8168,6 +8190,80 @@
     "lastModified": "2026-10-15T22:00:00Z"
   },
   {
+    "id": "2026V6437",
+    "phase": "upcoming",
+    "category": "soil-survey",
+    "artRaw": "Baugrunduntersuchung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg",
+    "notes": "Abwicklung in mehreren lokalen Engstellen, Arbeitsstelle im Geh-, und Radwegbereich oder der Fahrbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-28",
+    "endDate": "2026-10-30",
+    "point": [
+      8.440768,
+      48.995658
+    ],
+    "extentPoints": [
+      [
+        8.44283,
+        48.99113
+      ],
+      [
+        8.44136,
+        48.99234
+      ],
+      [
+        8.44193,
+        48.99388
+      ],
+      [
+        8.44094,
+        48.9954
+      ],
+      [
+        8.43991,
+        48.99685
+      ],
+      [
+        8.4374,
+        48.99678
+      ],
+      [
+        8.43484,
+        48.99662
+      ],
+      [
+        8.43246,
+        48.9967
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-20T22:00:00Z"
+  },
+  {
+    "id": "2026V6439",
+    "phase": "upcoming",
+    "category": "soil-survey",
+    "artRaw": "Baugrunduntersuchung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Leopoldstraße zw. Kaiserstraße und Stephanienstraße",
+    "notes": "lokale Engstellen, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-28",
+    "endDate": "2026-10-28",
+    "point": [
+      8.389829,
+      49.010576
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-20T22:00:00Z"
+  },
+  {
     "id": "2026V6441",
     "phase": "upcoming",
     "category": "rail",
@@ -8727,6 +8823,60 @@
     "point": [
       8.459041,
       48.999066
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-20T22:00:00Z"
+  },
+  {
+    "id": "2026V6684",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Im Weiherwald zw. Belchenstraße und Lohwiesenweg",
+    "notes": null,
+    "cause": "Forstamt",
+    "startDate": "2026-10-29",
+    "endDate": "2026-10-29",
+    "point": [
+      8.385869,
+      48.978257
+    ],
+    "extentPoints": [
+      [
+        8.39031,
+        48.98213
+      ],
+      [
+        8.38823,
+        48.98179
+      ],
+      [
+        8.38788,
+        48.98013
+      ],
+      [
+        8.3865,
+        48.97885
+      ],
+      [
+        8.38509,
+        48.97771
+      ],
+      [
+        8.38277,
+        48.97722
+      ],
+      [
+        8.38075,
+        48.97639
+      ],
+      [
+        8.37875,
+        48.97674
+      ]
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-20T22:00:00Z"
@@ -9696,11 +9846,11 @@
     "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
-    "closure": "obstruction",
+    "closure": "full",
     "siteType": null,
     "municipality": "Bruchsal",
     "location": "Sofienstraße 7",
-    "notes": "verengte Fahrbahn, Gehweg einseitig gesperrt",
+    "notes": "Vollsperrung für den Fahrzeugverkehr, Gehweg einseitig begehbar.",
     "cause": "Privat",
     "startDate": "2026-10-19",
     "endDate": "2026-11-06",
@@ -9962,48 +10112,52 @@
     ],
     "extentPoints": [
       [
-        8.30547,
-        48.97814
+        8.30475,
+        48.97934
       ],
       [
-        8.30742,
-        48.9792
+        8.30664,
+        48.97869
       ],
       [
-        8.30879,
-        48.98036
+        8.30819,
+        48.97971
       ],
       [
-        8.30983,
-        48.98171
+        8.30938,
+        48.98101
       ],
       [
-        8.31044,
-        48.98319
+        8.31014,
+        48.98245
       ],
       [
-        8.31215,
-        48.98404
+        8.31085,
+        48.9838
       ],
       [
-        8.31451,
+        8.31328,
+        48.98406
+      ],
+      [
+        8.31571,
         48.9841
       ],
       [
-        8.31687,
-        48.98404
+        8.31806,
+        48.98398
       ],
       [
-        8.31928,
-        48.98392
+        8.32045,
+        48.98393
       ],
       [
-        8.32157,
-        48.98399
+        8.32269,
+        48.98406
       ],
       [
-        8.32388,
-        48.98433
+        8.32506,
+        48.9846
       ]
     ],
     "source": "Stadt Rheinstetten",
@@ -11832,26 +11986,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-10-12T10:39:51Z"
-  },
-  {
-    "id": "40441",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Lange Straße",
-    "notes": "Vollsperrung wg. Anschlussarbeiten. Halteverbote werden in der Schluchstraße installiert um den ÖPNV während des Bauzeitraumes aufrecht erhalten zu können. Bitte die Umleitungsbeschilderung beachten.",
-    "cause": "Privat",
-    "startDate": "2026-10-19",
-    "endDate": "2026-12-31",
-    "point": [
-      8.398891,
-      48.898959
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-10-14T06:08:38Z"
   },
   {
     "id": "40643",
