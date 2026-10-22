@@ -807,7 +807,7 @@
   },
   {
     "id": "2025V0248",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -1350,26 +1350,6 @@
     "lastModified": "2026-09-15T22:00:00Z"
   },
   {
-    "id": "2025V5482",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Amalienstraße und Kriegsstraße",
-    "notes": "Straßenquerung = lokale Engstelle wechselseitig",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-04",
-    "endDate": "2026-10-21",
-    "point": [
-      8.391369,
-      49.006531
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-20T22:00:00Z"
-  },
-  {
     "id": "2025V5639",
     "phase": "active",
     "category": "gas-water",
@@ -1587,7 +1567,7 @@
   },
   {
     "id": "2025V6087",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -1607,7 +1587,7 @@
   },
   {
     "id": "2025V6088",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "one-direction",
@@ -1912,14 +1892,14 @@
     "location": "Herrenstraße zw. Kriegsstraße u. Blumenstraße",
     "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, Bauzeit von Bauko gesschätzt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-02-01",
+    "startDate": "2027-01-01",
     "endDate": "2027-04-30",
     "point": [
       8.395878,
       49.006724
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-20T22:00:00Z"
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "2025V6966",
@@ -2180,46 +2160,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-30T22:00:00Z"
-  },
-  {
-    "id": "2025V7363",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herrenstraße zw. Amalienstraße und Blumenstraße",
-    "notes": "Bauzeit gesamt ca 12 Wochen (drei Bauabschnitte mit je Abschnitt 4 Wochen)",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-06-10",
-    "endDate": "2026-10-21",
-    "point": [
-      8.396864,
-      49.007636
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-14T22:00:00Z"
-  },
-  {
-    "id": "2025V7364",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Amalienstraße Kreuzung Herrenstraße",
-    "notes": "Baustelle im Gehweg/Parkbereich, Bauzeit ca 4 Wochen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-19",
-    "endDate": "2026-10-21",
-    "point": [
-      8.396389,
-      49.007375
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2026V0071",
@@ -4175,13 +4115,13 @@
     "notes": "Siemensallee zw. B 36 Neureuter Straße u. Hertzstraße",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-03",
-    "endDate": "2026-10-23",
+    "endDate": "2026-11-13",
     "point": [
-      8.356912,
-      49.023915
+      8.357412,
+      49.023546
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "2026V2504",
@@ -4194,11 +4134,11 @@
     "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg",
     "notes": "Anliegerzufahrt Seydlitzstraße von Neureuter Straße",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-24",
-    "endDate": "2026-11-30",
+    "startDate": "2026-11-13",
+    "endDate": "2026-12-18",
     "point": [
-      8.357097,
-      49.023789
+      8.356764,
+      49.02325
     ],
     "extentPoints": [
       [
@@ -4211,7 +4151,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-13T22:00:00Z"
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "2026V2505",
@@ -4224,24 +4164,28 @@
     "location": "Siemensallee zw. B36/ Neureuter Straße und Feierabendweg",
     "notes": "Laubenweg und Gleisüberfahrt Höhe Bonnerstraße",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-12-01",
-    "endDate": "2027-01-19",
+    "startDate": "2026-12-18",
+    "endDate": "2027-02-12",
     "point": [
-      8.357536,
-      49.02358
+      8.356769,
+      49.023263
     ],
     "extentPoints": [
       [
-        8.359,
-        49.02288
+        8.35595,
+        49.0243
       ],
       [
-        8.35701,
-        49.02383
+        8.35665,
+        49.02297
+      ],
+      [
+        8.35889,
+        49.02272
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "2026V2506",
@@ -4254,7 +4198,7 @@
     "location": "Siemensallee zw. B36/ Neureuter Straße und Heimgartenweg",
     "notes": "Feierabendweg = Vollsperrung",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-20",
+    "startDate": "2027-02-12",
     "endDate": "2027-03-09",
     "point": [
       8.357488,
@@ -4275,7 +4219,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "2026V2507",
@@ -4722,26 +4666,6 @@
     "lastModified": "2026-10-07T22:00:00Z"
   },
   {
-    "id": "2026V3196",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Werthmannstraße zw. Pastor-Felke-Straße und Klosterweg",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-18",
-    "endDate": "2026-10-21",
-    "point": [
-      8.423901,
-      49.016368
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-20T22:00:00Z"
-  },
-  {
     "id": "2026V3197",
     "phase": "active",
     "category": "district-heating",
@@ -5180,26 +5104,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-10T22:00:00Z"
-  },
-  {
-    "id": "2026V3613",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kaiserstraße zw. Herrenstraße und Ritterstraße",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2026-08-01",
-    "endDate": "2026-10-21",
-    "point": [
-      8.399988,
-      49.009793
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
   },
   {
     "id": "2026V3654",
@@ -6280,26 +6184,6 @@
     "lastModified": "2026-08-23T22:00:00Z"
   },
   {
-    "id": "2026V4713",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Laubenweg zw. Siemensallee u. Kepplerstraße",
-    "notes": "Lokale Engstelle",
-    "cause": "Privat",
-    "startDate": "2026-08-10",
-    "endDate": "2026-10-21",
-    "point": [
-      8.358059,
-      49.021689
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
     "id": "2026V4720",
     "phase": "active",
     "category": "special-use",
@@ -6623,7 +6507,7 @@
   },
   {
     "id": "2026V5154",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -7740,16 +7624,16 @@
     ],
     "extentPoints": [
       [
+        8.40737,
+        49.01145
+      ],
+      [
         8.40158,
         49.01135
       ],
       [
         8.40349,
         49.01077
-      ],
-      [
-        8.40587,
-        49.01086
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -7774,26 +7658,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-01T22:00:00Z"
-  },
-  {
-    "id": "2026V6277",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gablonzer Str. 23",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-21",
-    "endDate": "2026-10-21",
-    "point": [
-      8.355415,
-      49.023444
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V6279",
@@ -8444,88 +8308,6 @@
     "lastModified": "2026-10-15T22:00:00Z"
   },
   {
-    "id": "2026V6577",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Südtangente zw. Fiduciastraße und Schwarzwaldkreuz",
-    "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung, wechselseitig, beide Fahrtrichtungen",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-10-21",
-    "endDate": "2026-10-21",
-    "point": [
-      8.42429,
-      48.995001
-    ],
-    "extentPoints": [
-      [
-        8.4473,
-        48.98654
-      ],
-      [
-        8.44441,
-        48.98817
-      ],
-      [
-        8.4414,
-        48.98955
-      ],
-      [
-        8.43814,
-        48.99044
-      ],
-      [
-        8.43498,
-        48.99125
-      ],
-      [
-        8.43197,
-        48.99264
-      ],
-      [
-        8.42909,
-        48.99439
-      ],
-      [
-        8.42584,
-        48.99507
-      ],
-      [
-        8.42271,
-        48.99493
-      ],
-      [
-        8.41918,
-        48.99432
-      ],
-      [
-        8.41566,
-        48.99367
-      ],
-      [
-        8.41213,
-        48.99288
-      ],
-      [
-        8.40871,
-        48.99185
-      ],
-      [
-        8.40541,
-        48.99059
-      ],
-      [
-        8.40173,
-        48.98967
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-19T22:00:00Z"
-  },
-  {
     "id": "2026V6609",
     "phase": "upcoming",
     "category": "road-maintenance",
@@ -8838,8 +8620,8 @@
     "location": "Im Weiherwald zw. Belchenstraße und Lohwiesenweg",
     "notes": null,
     "cause": "Forstamt",
-    "startDate": "2026-10-29",
-    "endDate": "2026-10-29",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-05",
     "point": [
       8.385869,
       48.978257
@@ -8879,7 +8661,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-20T22:00:00Z"
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "30016",
