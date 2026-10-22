@@ -1010,6 +1010,44 @@
     "lastModified": "2026-02-25T23:00:00Z"
   },
   {
+    "id": "2025V2466",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Grenzstraße, Blattwiesenstraße, Alter Graben",
+    "notes": "Arbeitsstellen im Geh- und Radwegbereich in mehreren Abschnitten, Aufteilung nicht vorgenommen",
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-30",
+    "endDate": "2026-11-27",
+    "point": [
+      8.463345,
+      48.99353
+    ],
+    "extentPoints": [
+      [
+        8.46353,
+        48.99387
+      ],
+      [
+        8.46313,
+        48.9952
+      ],
+      [
+        8.46157,
+        48.99323
+      ],
+      [
+        8.46332,
+        48.9925
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-21T22:00:00Z"
+  },
+  {
     "id": "2025V3514",
     "phase": "active",
     "category": "power-telecom",
@@ -4015,13 +4053,13 @@
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Radweg Kriegsstraße = geänderte Verkehrsführung im Zuge der Bauarbeiten",
     "cause": "Vermögen und Bau",
     "startDate": "2026-06-18",
-    "endDate": "2026-10-31",
+    "endDate": "2026-11-03",
     "point": [
       8.396699,
       49.005665
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-11T22:00:00Z"
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "2026V2416",
@@ -4082,6 +4120,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-20T22:00:00Z"
+  },
+  {
+    "id": "2026V2489",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "St.-Florian-Straße zw. Litzenhardtstraße und Wendehammer",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-16",
+    "endDate": "2026-12-31",
+    "point": [
+      8.384846,
+      48.990353
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "2026V2502",
@@ -6607,7 +6665,7 @@
   },
   {
     "id": "2026V5272",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "full",
@@ -6616,14 +6674,14 @@
     "location": "Knielinger Allee zw. Fachhochschule und Erzbergerstraße",
     "notes": "Geh- und Radweg = Vollsperrung",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-26",
+    "startDate": "2026-10-20",
     "endDate": "2026-10-28",
     "point": [
       8.386763,
       49.017096
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-19T22:00:00Z"
+    "lastModified": "2026-10-21T22:00:00Z"
   },
   {
     "id": "2026V5311",
@@ -6878,26 +6936,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-01T22:00:00Z"
-  },
-  {
-    "id": "2026V5649",
-    "phase": "upcoming",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-09",
-    "endDate": "2026-12-11",
-    "point": [
-      8.460286,
-      48.995006
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V5661",

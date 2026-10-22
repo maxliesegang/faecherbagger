@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T09:04:12.027Z",
+  "generatedAt": "2026-10-22T19:35:09.244Z",
   "events": [
     {
       "kind": "changed",
@@ -231,6 +231,23 @@
       "location": "Vorholzstraße zw. Karlstraße und Hirschstraße",
       "previousClosure": "full",
       "previousStartDate": "2026-10-19"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V2409:2026-10-21T22:00:00Z",
+      "announcedOn": "2026-10-22",
+      "siteId": "2026V2409",
+      "point": [
+        8.396699,
+        49.005665
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-06-18",
+      "endDate": "2026-11-03",
+      "municipality": "Karlsruhe",
+      "location": "B10/ Kriegsstraße zw. Ritterstraße und Karlstor",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-06-18"
     },
     {
       "kind": "changed",
@@ -668,20 +685,20 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5272:2026-10-19T22:00:00Z",
-      "announcedOn": "2026-10-20",
+      "signature": "changed:2026V5272:2026-10-21T22:00:00Z",
+      "announcedOn": "2026-10-22",
       "siteId": "2026V5272",
       "point": [
         8.386763,
         49.017096
       ],
       "closure": "full",
-      "startDate": "2026-10-26",
+      "startDate": "2026-10-20",
       "endDate": "2026-10-28",
       "municipality": "Karlsruhe",
       "location": "Knielinger Allee zw. Fachhochschule und Erzbergerstraße",
       "previousClosure": "full",
-      "previousStartDate": "2026-10-19"
+      "previousStartDate": "2026-10-26"
     },
     {
       "kind": "changed",
@@ -699,23 +716,6 @@
       "location": "Moltkestraße Höhe Erzbergerstraße",
       "previousClosure": "obstruction",
       "previousStartDate": "2026-11-09"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V5649:2026-10-19T22:00:00Z",
-      "announcedOn": "2026-10-20",
-      "siteId": "2026V5649",
-      "point": [
-        8.460286,
-        48.995006
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-11-09",
-      "endDate": "2026-12-11",
-      "municipality": "Karlsruhe",
-      "location": "Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße",
-      "previousClosure": "one-direction",
-      "previousStartDate": "2026-10-15"
     },
     {
       "kind": "changed",
@@ -956,6 +956,39 @@
     },
     {
       "kind": "new",
+      "signature": "new:2025V2466",
+      "announcedOn": "2026-10-22",
+      "siteId": "2025V2466",
+      "point": [
+        8.463345,
+        48.99353
+      ],
+      "extentPoints": [
+        [
+          8.46353,
+          48.99387
+        ],
+        [
+          8.46313,
+          48.9952
+        ],
+        [
+          8.46157,
+          48.99323
+        ],
+        [
+          8.46332,
+          48.9925
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-30",
+      "endDate": "2026-11-27",
+      "municipality": "Karlsruhe",
+      "location": "Grenzstraße, Blattwiesenstraße, Alter Graben"
+    },
+    {
+      "kind": "new",
       "signature": "new:2025V5720",
       "announcedOn": "2026-10-19",
       "siteId": "2025V5720",
@@ -990,6 +1023,21 @@
       "endDate": "2026-11-15",
       "municipality": "Karlsruhe",
       "location": "Ruschgraben, Karlsruher Str., Hagdornstr."
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V2489",
+      "announcedOn": "2026-10-22",
+      "siteId": "2026V2489",
+      "point": [
+        8.384846,
+        48.990353
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-16",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "St.-Florian-Straße zw. Litzenhardtstraße und Wendehammer"
     },
     {
       "kind": "new",

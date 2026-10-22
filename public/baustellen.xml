@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Thu, 22 Oct 2026 09:04:12 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 22 Oct 2026 19:35:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -32,6 +32,18 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
         </item>
         <item>
+            <title><![CDATA[Geplant: Grenzstraße, Blattwiesenstraße, Alter Graben – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V2466</link>
+            <guid isPermaLink="false">faecherbagger:2025V2466:2026-10-21T22:00:00Z</guid>
+            <pubDate>Wed, 21 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 30.10.2026 – 27.11.2026
+Hinweis: Arbeitsstellen im Geh- und Radwegbereich in mehreren Abschnitten, Aufteilung nicht vorgenommen
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Strom/TK-Versorgung</category>
+        </item>
+        <item>
             <title><![CDATA[Geplant: Herrenstraße zw. Kriegsstraße u. Blumenstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6918</link>
             <guid isPermaLink="false">faecherbagger:2025V6918:2026-10-21T22:00:00Z</guid>
@@ -42,6 +54,29 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, Ba
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: B10/ Kriegsstraße zw. Ritterstraße und Karlstor – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2409</link>
+            <guid isPermaLink="false">faecherbagger:2026V2409:2026-10-21T22:00:00Z</guid>
+            <pubDate>Wed, 21 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 18.06.2026 – 03.11.2026
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Radweg Kriegsstraße = geänderte Verkehrsführung im Zuge der Bauarbeiten
+Verantwortlich: Vermögen und Bau
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: St.-Florian-Straße zw. Litzenhardtstraße und Wendehammer – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2489</link>
+            <guid isPermaLink="false">faecherbagger:2026V2489:2026-10-21T22:00:00Z</guid>
+            <pubDate>Wed, 21 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+Zeitraum: 16.11.2026 – 31.12.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Gas/Wasser</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Siemensallee zw. B36/ Neureuter Straße und Laubenweg – Karlsruhe]]></title>
@@ -90,6 +125,18 @@ Hinweis: Feierabendweg = Vollsperrung
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Knielinger Allee zw. Fachhochschule und Erzbergerstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5272</link>
+            <guid isPermaLink="false">faecherbagger:2026V5272:2026-10-21T22:00:00Z</guid>
+            <pubDate>Wed, 21 Oct 2026 22:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Straßenbau · Vollsperrung
+Zeitraum: 20.10.2026 – 28.10.2026
+Hinweis: Geh- und Radweg = Vollsperrung
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Straßenbau</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Im Weiherwald zw. Belchenstraße und Lohwiesenweg – Karlsruhe]]></title>
@@ -420,18 +467,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Knielinger Allee zw. Fachhochschule und Erzbergerstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5272</link>
-            <guid isPermaLink="false">faecherbagger:2026V5272:2026-10-19T22:00:00Z</guid>
-            <pubDate>Mon, 19 Oct 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Straßenbau · Vollsperrung
-Zeitraum: 26.10.2026 – 28.10.2026
-Hinweis: Geh- und Radweg = Vollsperrung
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Straßenbau</category>
-        </item>
-        <item>
             <title><![CDATA[Geplant: Enzstraße zw. Mainstraße und Tauberstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5390</link>
             <guid isPermaLink="false">faecherbagger:2026V5390:2026-10-19T22:00:00Z</guid>
@@ -461,17 +496,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <description><![CDATA[Geplant · Fernwärme · Keine Behinderung
 Zeitraum: 09.11.2026 – 27.11.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, geänderte Verkehrsführung im Zuge der Bauarbeiten, Fahrtrichtung Klinikum
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Fernwärme</category>
-        </item>
-        <item>
-            <title><![CDATA[Geplant: Reichenbachstraße zw. Ellmendinger Straße und Hildebrandstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5649</link>
-            <guid isPermaLink="false">faecherbagger:2026V5649:2026-10-19T22:00:00Z</guid>
-            <pubDate>Mon, 19 Oct 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 09.11.2026 – 11.12.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
@@ -4560,18 +4584,6 @@ Hinweis: Reinhold-Frank-Straße in Fahrtrichtung Süden gesperrt, Zufahrt von So
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gas/Wasser</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: B10/ Kriegsstraße zw. Ritterstraße und Karlstor – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2409</link>
-            <guid isPermaLink="false">faecherbagger:2026V2409:2026-06-11T22:00:00Z</guid>
-            <pubDate>Thu, 11 Jun 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 18.06.2026 – 31.10.2026
-Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Radweg Kriegsstraße = geänderte Verkehrsführung im Zuge der Bauarbeiten
-Verantwortlich: Vermögen und Bau
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Bauliche Sondernutzung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: L566 Bahnübergang – Rheinstetten]]></title>
