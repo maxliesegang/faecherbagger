@@ -374,6 +374,36 @@
     "lastModified": "2026-10-11T22:00:00Z"
   },
   {
+    "id": "2024V4910",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-26",
+    "endDate": "2026-11-30",
+    "point": [
+      8.45462,
+      48.989214
+    ],
+    "extentPoints": [
+      [
+        8.45398,
+        48.98946
+      ],
+      [
+        8.45671,
+        48.9885
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-22T22:00:00Z"
+  },
+  {
     "id": "2024V5097",
     "phase": "active",
     "category": "power-telecom",
@@ -463,7 +493,7 @@
       49.009589
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2024V5526",
@@ -956,6 +986,26 @@
     "lastModified": "2026-05-20T22:00:00Z"
   },
   {
+    "id": "2025V1418",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bonner Straße zw. Siemensallee und Bonner Platz",
+    "notes": "Kreuzungsbereich Karlsruher Weg= Vollsperrung, Sackgassen bis Baufeld",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-06-01",
+    "endDate": "2026-10-23",
+    "point": [
+      8.359404,
+      49.023278
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-22T22:00:00Z"
+  },
+  {
     "id": "2025V1542",
     "phase": "active",
     "category": "special-use",
@@ -1014,7 +1064,7 @@
     "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Grenzstraße, Blattwiesenstraße, Alter Graben",
@@ -1045,7 +1095,27 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-21T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
+  },
+  {
+    "id": "2025V3508",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Zähringerstraße 78",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2025-07-01",
+    "endDate": "2026-12-01",
+    "point": [
+      8.407163,
+      49.008861
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2025V3514",
@@ -1399,13 +1469,13 @@
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-05-18",
-    "endDate": "2026-10-31",
+    "endDate": "2026-11-21",
     "point": [
       8.446409,
       49.027283
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2025V5639",
@@ -1439,7 +1509,7 @@
     "notes": "lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Nothgehweg auf der Fahbahn",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-24",
-    "endDate": "2026-11-15",
+    "endDate": "2026-12-06",
     "point": [
       8.454898,
       49.026707
@@ -1467,7 +1537,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2025V6065",
@@ -2171,13 +2241,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-17",
-    "endDate": "2026-10-23",
+    "endDate": "2026-11-16",
     "point": [
       8.405584,
       49.008109
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-01T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2025V7302",
@@ -5767,13 +5837,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-21",
-    "endDate": "2026-10-23",
+    "endDate": "2026-11-11",
     "point": [
       8.391707,
       49.009771
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-04T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2026V4484",
@@ -6095,13 +6165,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-29",
-    "endDate": "2026-10-23",
+    "endDate": "2026-11-11",
     "point": [
       8.391674,
       49.009604
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-04T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2026V4632",
@@ -7408,16 +7478,16 @@
     ],
     "extentPoints": [
       [
-        8.44701,
-        49.03082
-      ],
-      [
         8.44205,
         49.03116
       ],
       [
         8.44122,
         49.02986
+      ],
+      [
+        8.44701,
+        49.03082
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -7536,14 +7606,14 @@
     "location": "Waldstraße zw. Ludwigsplatz und Bürgerstraße",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2026-10-26",
+    "startDate": "2026-10-27",
     "endDate": "2026-11-06",
     "point": [
-      8.396191,
-      49.008516
+      8.39618,
+      49.008511
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-20T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2026V6094",
@@ -7682,16 +7752,16 @@
     ],
     "extentPoints": [
       [
-        8.40737,
-        49.01145
-      ],
-      [
         8.40158,
         49.01135
       ],
       [
         8.40349,
         49.01077
+      ],
+      [
+        8.40587,
+        49.01086
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -7810,16 +7880,16 @@
     ],
     "extentPoints": [
       [
-        8.40555,
-        48.9663
+        8.40608,
+        48.96634
       ],
       [
-        8.40787,
-        48.96653
+        8.40826,
+        48.96628
       ],
       [
-        8.41002,
-        48.96681
+        8.41053,
+        48.96655
       ],
       [
         8.40576,
@@ -8076,7 +8146,7 @@
     "phase": "upcoming",
     "category": "soil-survey",
     "artRaw": "Baugrunduntersuchung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": "mobile",
     "municipality": "Karlsruhe",
     "location": "Haid-und-Neu-Str./Karl-Wilhelm-Platz",
@@ -8089,7 +8159,7 @@
       49.011326
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2026V6429",
@@ -8720,6 +8790,66 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-21T22:00:00Z"
+  },
+  {
+    "id": "2026V6745",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bonner Straße zw. Siemensalleee und Karlsruher Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-23",
+    "endDate": "2027-03-13",
+    "point": [
+      8.359307,
+      49.023139
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-22T22:00:00Z"
+  },
+  {
+    "id": "2026V6748",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Reichardtstraße/ Turmberg zw. Neisserstraße und Jean-Ritzert-Straße",
+    "notes": "vs. 6:00 Uhr - 11:00 Uhr",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-02",
+    "point": [
+      8.485423,
+      48.997341
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-22T22:00:00Z"
+  },
+  {
+    "id": "2026V6760",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Vorarlberger Straße",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-26",
+    "endDate": "2026-10-31",
+    "point": [
+      8.45337,
+      48.990243
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "30016",
