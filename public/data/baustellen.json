@@ -457,7 +457,7 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-30",
-    "endDate": "2026-11-13",
+    "endDate": "2026-12-04",
     "point": [
       8.387393,
       49.009589
@@ -753,17 +753,17 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Kaiserstraße zw. Kronenstraße und adlerstraße",
-    "notes": null,
+    "location": "Kaiserstraße zw. Kronenstraße und Adlerstraße",
+    "notes": "Adlerstraße = Vollsperrung",
     "cause": "Tiefbauamt",
     "startDate": "2026-06-01",
-    "endDate": "2026-10-30",
+    "endDate": "2026-11-27",
     "point": [
       8.406706,
       49.00957
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-01T22:00:00Z"
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2025V0238",
@@ -1286,6 +1286,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2025-08-28T22:00:00Z"
+  },
+  {
+    "id": "2025V5076",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Adlerstraße zw. Zähringerstraße u. Kaiserstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-29",
+    "endDate": "2026-11-20",
+    "point": [
+      8.406885,
+      49.009057
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2025V5173",
@@ -6545,7 +6565,7 @@
   },
   {
     "id": "2026V5152",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -7388,16 +7408,16 @@
     ],
     "extentPoints": [
       [
+        8.44701,
+        49.03082
+      ],
+      [
         8.44205,
         49.03116
       ],
       [
         8.44122,
         49.02986
-      ],
-      [
-        8.44701,
-        49.03082
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -7425,7 +7445,7 @@
   },
   {
     "id": "2026V6031",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -8187,7 +8207,7 @@
   },
   {
     "id": "2026V6457",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -8287,7 +8307,7 @@
   },
   {
     "id": "2026V6546",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "bridge",
     "artRaw": "Brückenbau",
     "closure": "full",
@@ -11074,26 +11094,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-10-15T13:25:10Z"
-  },
-  {
-    "id": "40173",
-    "phase": "upcoming",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Berliner Allee",
-    "notes": "Einrichtung von 2 Halteverbotszonen und 1 Ersatzhaltestelle anlässlich des Schienenersatzverkehrs",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-23",
-    "endDate": "2026-11-20",
-    "point": [
-      8.474797,
-      49.100545
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-10-16T05:21:22Z"
   },
   {
     "id": "40176",

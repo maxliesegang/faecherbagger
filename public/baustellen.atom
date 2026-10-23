@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-22T19:35:09.244Z</updated>
+    <updated>2026-10-23T08:59:26.164Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -12,15 +12,38 @@
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
     <entry>
-        <title type="html"><![CDATA[Geplant: Koyweg zw. Hinterwiesenweg und Elfmorgenbruch – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Koyweg zw. Hinterwiesenweg und Elfmorgenbruch – Karlsruhe]]></title>
         <id>faecherbagger:2026V5152:2026-10-23</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5152"/>
         <updated>2026-10-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gleisbau · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Gleisbau · Vollsperrung
 Zeitraum: 23.10.2026 – 13.11.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Kaiserstraße zw. Kronenstraße und Adlerstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V0237:2026-10-22T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V0237"/>
+        <updated>2026-10-22T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
+Zeitraum: 01.06.2026 – 27.11.2026
+Hinweis: Adlerstraße = Vollsperrung
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Adlerstraße zw. Zähringerstraße u. Kaiserstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V5076:2026-10-22T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5076"/>
+        <updated>2026-10-22T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
+Zeitraum: 29.08.2026 – 20.11.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße – Karlsruhe]]></title>
@@ -329,11 +352,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Südtangente zw. Fiduciastraße und Schwarzwaldkreuz – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Südtangente zw. Fiduciastraße und Schwarzwaldkreuz – Karlsruhe]]></title>
         <id>faecherbagger:2026V6031:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6031"/>
         <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Grünpflege · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Grünpflege · Mit Behinderung
 Zeitraum: 23.10.2026 – 23.10.2026
 Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung, beide Fahrtrichtungen wechselseitig
 Verantwortlich: Gartenbauamt
@@ -713,11 +736,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente – Karlsruhe]]></title>
         <id>faecherbagger:2026V6546:2026-10-18T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6546"/>
         <updated>2026-10-18T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Brückenbau · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Brückenbau · Vollsperrung
 Zeitraum: 23.10.2026 – 23.10.2026
 Hinweis: Reparatur Sturmschaden, Sperrung Richtung Rheinhafen/ Landau, Umfahrung über Lameystraße
 Verantwortlich: Tiefbauamt
@@ -747,18 +770,6 @@ Hinweis: Vollsperrung für den Fahrzeugverkehr, Gehweg einseitig begehbar.
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Kanalbau" term="sewer"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: 76297 Stutensee, Berliner Allee – Stutensee]]></title>
-        <id>faecherbagger:40173:2026-10-16T05:21:22Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40173"/>
-        <updated>2026-10-16T05:21:22.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gleisbau · Keine Behinderung
-Zeitraum: 23.10.2026 – 20.11.2026
-Hinweis: Einrichtung von 2 Halteverbotszonen und 1 Ersatzhaltestelle anlässlich des Schienenersatzverkehrs
-Verantwortlich: Deutsche Bahn AG
-Quelle: Stadt Stutensee]]></summary>
-        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Ernst-Frey-Str. 2 (BV Walter-Eucken-Schule) – Karlsruhe]]></title>
@@ -1193,11 +1204,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Karlstraße zw. Kaiserstraße und Akademiestraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Karlstraße zw. Kaiserstraße und Akademiestraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6457:2026-10-12T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6457"/>
         <updated>2026-10-12T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
 Zeitraum: 23.10.2026 – 23.10.2026
 Hinweis: Nächtliche Sperrung vs. 1:00 Uhr - 4:00 Uhr
 Verantwortlich: Privat
@@ -2103,17 +2114,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Kaiserstraße zw. Kronenstraße und adlerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V0237:2026-10-01T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V0237"/>
-        <updated>2026-10-01T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
-Zeitraum: 01.06.2026 – 30.10.2026
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Kreuzstraße zw. Hebelstraße und Zähringer Straße – Karlsruhe]]></title>
         <id>faecherbagger:2025V7216:2026-10-01T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7216"/>
@@ -2722,7 +2722,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V5284"/>
         <updated>2026-09-17T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 30.07.2026 – 13.11.2026
+Zeitraum: 30.07.2026 – 04.12.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
