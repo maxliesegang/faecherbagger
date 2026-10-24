@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T19:35:41.297Z",
+  "generatedAt": "2026-10-24T08:33:16.624Z",
   "events": [
     {
       "kind": "changed",
@@ -516,23 +516,6 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V3478:2026-10-14T22:00:00Z",
-      "announcedOn": "2026-10-15",
-      "siteId": "2026V3478",
-      "point": [
-        8.38442,
-        48.99031
-      ],
-      "closure": "full",
-      "startDate": "2027-01-01",
-      "endDate": "2027-04-30",
-      "municipality": "Karlsruhe",
-      "location": "Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee",
-      "previousClosure": "full",
-      "previousStartDate": "2026-11-16"
-    },
-    {
-      "kind": "changed",
       "signature": "changed:2026V3554:2026-10-20T22:00:00Z",
       "announcedOn": "2026-10-21",
       "siteId": "2026V3554",
@@ -788,23 +771,6 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5765:2026-10-15T22:00:00Z",
-      "announcedOn": "2026-10-16",
-      "siteId": "2026V5765",
-      "point": [
-        8.318762,
-        49.039198
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-07",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "Gewann Grabenort",
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-07"
-    },
-    {
-      "kind": "changed",
       "signature": "changed:2026V6069:2026-10-22T22:00:00Z",
       "announcedOn": "2026-10-23",
       "siteId": "2026V6069",
@@ -853,23 +819,6 @@
       "location": "Am Entenfang",
       "previousClosure": "one-direction",
       "previousStartDate": "2026-10-19"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V6546:2026-10-18T22:00:00Z",
-      "announcedOn": "2026-10-19",
-      "siteId": "2026V6546",
-      "point": [
-        8.359324,
-        49.009674
-      ],
-      "closure": "full",
-      "startDate": "2026-10-23",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente",
-      "previousClosure": "full",
-      "previousStartDate": "2026-10-22"
     },
     {
       "kind": "changed",
@@ -1067,21 +1016,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2025V1418",
-      "announcedOn": "2026-10-23",
-      "siteId": "2025V1418",
-      "point": [
-        8.359404,
-        49.023278
-      ],
-      "closure": "full",
-      "startDate": "2026-06-01",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "Bonner Straße zw. Siemensallee und Bonner Platz"
-    },
-    {
-      "kind": "new",
       "signature": "new:2025V3508",
       "announcedOn": "2026-10-23",
       "siteId": "2025V3508",
@@ -1183,21 +1117,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V5406",
-      "announcedOn": "2026-10-15",
-      "siteId": "2026V5406",
-      "point": [
-        8.3854,
-        49.008904
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-19",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Lessingstraße zw. Sophienstraße und Kaiserallee"
-    },
-    {
-      "kind": "new",
       "signature": "new:2026V5444",
       "announcedOn": "2026-10-20",
       "siteId": "2026V5444",
@@ -1210,83 +1129,6 @@
       "endDate": "2026-10-30",
       "municipality": "Karlsruhe",
       "location": "Hölderlinstraße, Emil-Gött-Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6031",
-      "announcedOn": "2026-10-21",
-      "siteId": "2026V6031",
-      "point": [
-        8.42826,
-        48.994344
-      ],
-      "extentPoints": [
-        [
-          8.44752,
-          48.98659
-        ],
-        [
-          8.44467,
-          48.98819
-        ],
-        [
-          8.44163,
-          48.98936
-        ],
-        [
-          8.43844,
-          48.99029
-        ],
-        [
-          8.43502,
-          48.99097
-        ],
-        [
-          8.43245,
-          48.99228
-        ],
-        [
-          8.42983,
-          48.99367
-        ],
-        [
-          8.42688,
-          48.99493
-        ],
-        [
-          8.42316,
-          48.99504
-        ],
-        [
-          8.41981,
-          48.99465
-        ],
-        [
-          8.41657,
-          48.9941
-        ],
-        [
-          8.41309,
-          48.99309
-        ],
-        [
-          8.40961,
-          48.99208
-        ],
-        [
-          8.40643,
-          48.99101
-        ],
-        [
-          8.40356,
-          48.98989
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-23",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "Südtangente zw. Fiduciastraße und Schwarzwaldkreuz"
     },
     {
       "kind": "new",
@@ -1701,43 +1543,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:30044",
-      "announcedOn": "2026-10-15",
-      "siteId": "30044",
-      "point": [
-        8.309724,
-        48.975105
-      ],
-      "extentPoints": [
-        [
-          8.30693,
-          48.97604
-        ],
-        [
-          8.30781,
-          48.97468
-        ],
-        [
-          8.30932,
-          48.97365
-        ],
-        [
-          8.31135,
-          48.97458
-        ],
-        [
-          8.30913,
-          48.97577
-        ]
-      ],
-      "closure": "full",
-      "startDate": "2026-05-04",
-      "endDate": "2026-11-30",
-      "municipality": "Rheinstetten",
-      "location": "Kreuzstraße 32"
-    },
-    {
-      "kind": "new",
       "signature": "new:30098",
       "announcedOn": "2026-10-16",
       "siteId": "30098",
@@ -1780,21 +1585,6 @@
       "endDate": "2026-11-15",
       "municipality": "Bruchsal",
       "location": "Weidenbusch, kurz vor Uferweg"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30237",
-      "announcedOn": "2026-10-15",
-      "siteId": "30237",
-      "point": [
-        8.596506,
-        49.125086
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-15",
-      "endDate": "2026-10-21",
-      "municipality": "Bruchsal",
-      "location": "Friedrichstraße 48"
     },
     {
       "kind": "new",
@@ -2099,6 +1889,22 @@
       "endDate": "2028-04-30",
       "municipality": "Karlsruhe",
       "location": "Hermann-Billing-Straße zw. Ettlinger Straße und Am Festplatz/ Badenwerkstraße",
+      "reminderLeadDays": 14
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V0096:2026-11-07:14",
+      "announcedOn": "2026-10-24",
+      "siteId": "2026V0096",
+      "point": [
+        8.379891,
+        49.005085
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-07",
+      "endDate": "2027-02-21",
+      "municipality": "Karlsruhe",
+      "location": "Gartenstraße zw. Brauerstraße u. Kriegstraße",
       "reminderLeadDays": 14
     },
     {
@@ -2597,81 +2403,33 @@
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V6031:2026-10-23:1",
-      "announcedOn": "2026-10-22",
-      "siteId": "2026V6031",
+      "signature": "starts-soon:2026V5943:2026-11-07:14",
+      "announcedOn": "2026-10-24",
+      "siteId": "2026V5943",
       "point": [
-        8.42826,
-        48.994344
+        8.444182,
+        49.03047
       ],
       "extentPoints": [
         [
-          8.44752,
-          48.98659
+          8.44205,
+          49.03116
         ],
         [
-          8.44467,
-          48.98819
+          8.44122,
+          49.02986
         ],
         [
-          8.44163,
-          48.98936
-        ],
-        [
-          8.43844,
-          48.99029
-        ],
-        [
-          8.43502,
-          48.99097
-        ],
-        [
-          8.43245,
-          48.99228
-        ],
-        [
-          8.42983,
-          48.99367
-        ],
-        [
-          8.42688,
-          48.99493
-        ],
-        [
-          8.42316,
-          48.99504
-        ],
-        [
-          8.41981,
-          48.99465
-        ],
-        [
-          8.41657,
-          48.9941
-        ],
-        [
-          8.41309,
-          48.99309
-        ],
-        [
-          8.40961,
-          48.99208
-        ],
-        [
-          8.40643,
-          48.99101
-        ],
-        [
-          8.40356,
-          48.98989
+          8.44701,
+          49.03082
         ]
       ],
       "closure": "obstruction",
-      "startDate": "2026-10-23",
-      "endDate": "2026-10-23",
+      "startDate": "2026-11-07",
+      "endDate": "2027-04-23",
       "municipality": "Karlsruhe",
-      "location": "Südtangente zw. Fiduciastraße und Schwarzwaldkreuz",
-      "reminderLeadDays": 1
+      "location": "Glogauer Straße und Im Eichbäumle",
+      "reminderLeadDays": 14
     },
     {
       "kind": "starts-soon",
@@ -2687,44 +2445,6 @@
       "endDate": "2026-12-22",
       "municipality": "Karlsruhe",
       "location": "Graf-Rhena-Str.2a",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6323:2026-10-16:1",
-      "announcedOn": "2026-10-15",
-      "siteId": "2026V6323",
-      "point": [
-        8.407874,
-        48.968214
-      ],
-      "extentPoints": [
-        [
-          8.40555,
-          48.9663
-        ],
-        [
-          8.40787,
-          48.96653
-        ],
-        [
-          8.41002,
-          48.96681
-        ],
-        [
-          8.40576,
-          48.97084
-        ],
-        [
-          8.40633,
-          48.97219
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-16",
-      "endDate": "2026-11-15",
-      "municipality": "Karlsruhe",
-      "location": "Battstraße zw. Herrenalber Straße und Hegaustraße, Breisgaustraße",
       "reminderLeadDays": 1
     },
     {
@@ -2777,22 +2497,6 @@
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V6457:2026-10-23:1",
-      "announcedOn": "2026-10-22",
-      "siteId": "2026V6457",
-      "point": [
-        8.39513,
-        49.010265
-      ],
-      "closure": "full",
-      "startDate": "2026-10-23",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "Karlstraße zw. Kaiserstraße und Akademiestraße",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
       "signature": "starts-soon:2026V6510:2026-10-19:1",
       "announcedOn": "2026-10-18",
       "siteId": "2026V6510",
@@ -2821,22 +2525,6 @@
       "endDate": "2027-03-05",
       "municipality": "Karlsruhe",
       "location": "Neufeldstraße zw. Eggensteiner Straße und Saarlandstraße",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6546:2026-10-23:1",
-      "announcedOn": "2026-10-22",
-      "siteId": "2026V6546",
-      "point": [
-        8.359324,
-        49.009674
-      ],
-      "closure": "full",
-      "startDate": "2026-10-23",
-      "endDate": "2026-10-23",
-      "municipality": "Karlsruhe",
-      "location": "B36/ Am Entenfang Auffahrtsrampe zur B10/ Südtangente",
       "reminderLeadDays": 1
     },
     {
@@ -2888,22 +2576,6 @@
       "municipality": "Karlsruhe",
       "location": "Im Weiherwald zw. Belchenstraße und Lohwiesenweg",
       "reminderLeadDays": 14
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:40171:2026-10-16:1",
-      "announcedOn": "2026-10-15",
-      "siteId": "40171",
-      "point": [
-        8.467592,
-        49.109386
-      ],
-      "closure": "none",
-      "startDate": "2026-10-16",
-      "endDate": "2026-11-13",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Sudetenstraße 6",
-      "reminderLeadDays": 1
     }
   ]
 }
