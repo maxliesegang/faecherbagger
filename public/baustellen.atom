@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-24T18:24:37.734Z</updated>
+    <updated>2026-10-25T08:51:59.554Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -4648,6 +4648,18 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-05-28T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
 Zeitraum: 01.02.2027 – 28.02.2027
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Wartburgstraße zw. Breite Straße und Marie-Alexandra-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1769:2026-05-28T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1769"/>
+        <updated>2026-05-28T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 25.10.2027 – 21.11.2027
+Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
