@@ -375,7 +375,7 @@
   },
   {
     "id": "2024V4910",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -4165,7 +4165,7 @@
   },
   {
     "id": "2026V2502",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -4473,7 +4473,7 @@
   },
   {
     "id": "2026V2670",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -4512,28 +4512,8 @@
     "lastModified": "2026-10-19T22:00:00Z"
   },
   {
-    "id": "2026V2798",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
-    "notes": "Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-19",
-    "endDate": "2026-10-25",
-    "point": [
-      8.368212,
-      49.000854
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
-  },
-  {
     "id": "2026V2800",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "one-direction",
@@ -4612,62 +4592,8 @@
     "lastModified": "2026-05-05T22:00:00Z"
   },
   {
-    "id": "2026V3008",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rintheimer Querallee und Büchiger Allee",
-    "notes": "ca. 5 Wochen Bauzeit, Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-05",
-    "endDate": "2026-10-25",
-    "point": [
-      8.428022,
-      49.023151
-    ],
-    "extentPoints": [
-      [
-        8.42986,
-        49.02412
-      ],
-      [
-        8.42807,
-        49.02317
-      ],
-      [
-        8.42609,
-        49.02381
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-10T22:00:00Z"
-  },
-  {
-    "id": "2026V3028",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-24",
-    "endDate": "2026-10-25",
-    "point": [
-      8.506198,
-      49.003911
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
-  },
-  {
     "id": "2026V3029",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -5047,7 +4973,7 @@
   },
   {
     "id": "2026V3555",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
     "closure": "obstruction",
@@ -5618,26 +5544,6 @@
     "lastModified": "2026-10-12T22:00:00Z"
   },
   {
-    "id": "2026V4340",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Beuthener Straße und Kösliner Straße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-09",
-    "endDate": "2026-10-25",
-    "point": [
-      8.445017,
-      49.034845
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
-  },
-  {
     "id": "2026V4344",
     "phase": "active",
     "category": "rail",
@@ -5961,7 +5867,7 @@
   },
   {
     "id": "2026V4595",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -6676,14 +6582,14 @@
     "location": "Knielinger Allee zw. Fachhochschule und Erzbergerstraße",
     "notes": "Geh- und Radweg = Vollsperrung",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-20",
-    "endDate": "2026-10-28",
+    "startDate": "2026-10-26",
+    "endDate": "2026-10-27",
     "point": [
       8.386763,
       49.017096
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-21T22:00:00Z"
+    "lastModified": "2026-10-25T23:00:00Z"
   },
   {
     "id": "2026V5311",
@@ -7833,7 +7739,7 @@
   },
   {
     "id": "2026V6387",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7953,7 +7859,7 @@
   },
   {
     "id": "2026V6429",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "one-direction",
@@ -8167,7 +8073,7 @@
   },
   {
     "id": "2026V6574",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -8269,7 +8175,7 @@
   },
   {
     "id": "2026V6622",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -8469,7 +8375,7 @@
   },
   {
     "id": "2026V6677",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -8583,7 +8489,7 @@
   },
   {
     "id": "2026V6760",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -8600,6 +8506,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-22T22:00:00Z"
+  },
+  {
+    "id": "2026V6765",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Ostring Kreuzungsbereich Durlacher Alllee",
+    "notes": "beide Fahrtrichtungen betroffen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-29",
+    "endDate": "2026-10-29",
+    "point": [
+      8.437465,
+      49.005188
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-25T23:00:00Z"
   },
   {
     "id": "30016",

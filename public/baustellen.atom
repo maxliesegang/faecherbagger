@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-25T18:35:23.082Z</updated>
+    <updated>2026-10-26T09:33:17.409Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -11,6 +11,30 @@
     <link rel="alternate" href="https://maxliesegang.github.io/faecherbagger/"/>
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Knielinger Allee zw. Fachhochschule und Erzbergerstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5272:2026-10-25T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5272"/>
+        <updated>2026-10-25T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Vollsperrung
+Zeitraum: 26.10.2026 – 27.10.2026
+Hinweis: Geh- und Radweg = Vollsperrung
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Ostring Kreuzungsbereich Durlacher Alllee – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6765:2026-10-25T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6765"/>
+        <updated>2026-10-25T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 29.10.2026 – 29.10.2026
+Hinweis: beide Fahrtrichtungen betroffen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Koyweg zw. Hinterwiesenweg und Elfmorgenbruch – Karlsruhe]]></title>
         <id>faecherbagger:2026V5152:2026-10-23</id>
@@ -23,11 +47,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße – Karlsruhe]]></title>
         <id>faecherbagger:2024V4910:2026-10-22T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V4910"/>
         <updated>2026-10-22T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 26.10.2026 – 30.11.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Telekommunikation
@@ -195,11 +219,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Vorarlberger Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Vorarlberger Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6760:2026-10-22T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6760"/>
         <updated>2026-10-22T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 26.10.2026 – 31.10.2026
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
@@ -300,18 +324,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Knielinger Allee zw. Fachhochschule und Erzbergerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5272:2026-10-21T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5272"/>
-        <updated>2026-10-21T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Vollsperrung
-Zeitraum: 20.10.2026 – 28.10.2026
-Hinweis: Geh- und Radweg = Vollsperrung
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Im Weiherwald zw. Belchenstraße und Lohwiesenweg – Karlsruhe]]></title>
         <id>faecherbagger:2026V6684:2026-10-21T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6684"/>
@@ -369,11 +381,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Hildebrandstraße zw. Reichenbachstraße und Auer Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Hildebrandstraße zw. Reichenbachstraße und Auer Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V2502:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2502"/>
         <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Fernwärme · Vollsperrung
 Zeitraum: 26.10.2026 – 30.10.2026
 Hinweis: zwei Bauabschnitte
 Verantwortlich: Stadtwerke Karlsruhe
@@ -416,11 +428,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
         <id>faecherbagger:2026V3555:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3555"/>
         <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
 Zeitraum: 26.10.2026 – 09.11.2026
 Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher Fahrtrichtung
 Verantwortlich: Tiefbauamt
@@ -524,11 +536,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Baugrunduntersuchung" term="soil-survey"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Raiherwiesenstraße Ecke Schinnrainstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Raiherwiesenstraße Ecke Schinnrainstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6677:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6677"/>
         <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 26.10.2026 – 30.10.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Notgehweg über Parkplätze, Störungsbeseitigung
 Verantwortlich: Telekommunikation
@@ -651,11 +663,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Auf dem Schlössle – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Auf dem Schlössle – Karlsruhe]]></title>
         <id>faecherbagger:2026V6622:2026-10-19T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6622"/>
         <updated>2026-10-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
 Zeitraum: 26.10.2026 – 27.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
@@ -931,11 +943,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Am Entenfang – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Am Entenfang – Karlsruhe]]></title>
         <id>faecherbagger:2026V6429:2026-10-15T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6429"/>
         <updated>2026-10-15T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenunterhaltung · Sperrung (1 Richtung)
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Sperrung (1 Richtung)
 Zeitraum: 26.10.2026 – 30.10.2026
 Hinweis: vs. an zwei Nächten zw. 19:00 Uhr - 6:00 Uhr, Arbeiten im Gleisbereich mit Sperrung der Wender/ Wechselseitig
 Verantwortlich: Verkehrsbetriebe Karlsruhe
@@ -967,11 +979,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Seminarstraße zwischen Bismarckstraße und Moltkestraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Seminarstraße zwischen Bismarckstraße und Moltkestraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6574:2026-10-15T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6574"/>
         <updated>2026-10-15T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 26.10.2026 – 23.12.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
@@ -1059,11 +1071,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V2670:2026-10-13T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2670"/>
         <updated>2026-10-13T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 26.10.2026 – 24.12.2026
 Hinweis: Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn, Bauzeit vs. 10 Wochen
 Verantwortlich: Stadtwerke Karlsruhe
@@ -1532,22 +1544,10 @@ Quelle: Stadt Karlsruhe]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2798:2026-10-11T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2798"/>
-        <updated>2026-10-11T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 19.10.2026 – 25.10.2026
-Hinweis: Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V2800:2026-10-11T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2800"/>
         <updated>2026-10-11T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
 Zeitraum: 26.10.2026 – 23.12.2026
 Hinweis: Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen
 Verantwortlich: Tiefbauamt
@@ -1602,11 +1602,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Nikolausstraße zw. Allmendstraße und Lützowstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Nikolausstraße zw. Allmendstraße und Lützowstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6387:2026-10-11T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6387"/>
         <updated>2026-10-11T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
 Zeitraum: 26.10.2026 – 27.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
@@ -1707,21 +1707,10 @@ Quelle: Stadt Karlsruhe]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3028:2026-10-08T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3028"/>
-        <updated>2026-10-08T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
-Zeitraum: 24.08.2026 – 25.10.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3029:2026-10-08T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3029"/>
         <updated>2026-10-08T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
 Zeitraum: 26.10.2026 – 11.01.2027
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
@@ -3206,11 +3195,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Fuchsbau 1-19 und 23-35 – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Fuchsbau 1-19 und 23-35 – Karlsruhe]]></title>
         <id>faecherbagger:2026V4595:2026-09-07T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4595"/>
         <updated>2026-09-07T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 26.10.2026 – 29.01.2027
 Hinweis: vs. 10 Wochen Bauzeit, Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
@@ -3761,17 +3750,6 @@ Quelle: Stadt Bruchsal]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Beuthener Straße und Kösliner Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4340:2026-08-23T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4340"/>
-        <updated>2026-08-23T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gleisbau · Sperrung (1 Richtung)
-Zeitraum: 09.09.2026 – 25.10.2026
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Im Eichbäumle – Karlsruhe]]></title>
         <id>faecherbagger:2026V4704:2026-08-23T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4704"/>
@@ -3911,18 +3889,6 @@ Zeitraum: 12.08.2026 – 22.11.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Rintheimer Querallee und Büchiger Allee – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3008:2026-08-10T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3008"/>
-        <updated>2026-08-10T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 05.08.2026 – 25.10.2026
-Hinweis: ca. 5 Wochen Bauzeit, Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Lammstraße zw. Ritterstraße u. Lammstraße – Karlsruhe]]></title>

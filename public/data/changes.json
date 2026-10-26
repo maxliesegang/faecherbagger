@@ -1,7 +1,26 @@
 {
-  "since": "2026-10-25T08:51:59.554Z",
-  "added": [],
-  "modified": [],
-  "removed": [],
-  "relevantModifications": []
+  "since": "2026-10-25T18:35:23.082Z",
+  "added": [
+    "2026V6765"
+  ],
+  "modified": [
+    "2026V5272"
+  ],
+  "removed": [
+    "2026V2798",
+    "2026V3008",
+    "2026V3028",
+    "2026V4340"
+  ],
+  "relevantModifications": [
+    {
+      "id": "2026V5272",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-20",
+      "previousEndDate": "2026-10-28"
+    }
+  ]
 }
