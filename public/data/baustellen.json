@@ -540,12 +540,12 @@
     ],
     "extentPoints": [
       [
-        8.40414,
-        48.98483
+        8.40185,
+        48.98253
       ],
       [
-        8.40207,
-        48.98245
+        8.40414,
+        48.98483
       ],
       [
         8.40357,
@@ -854,26 +854,6 @@
     "lastModified": "2026-01-29T23:00:00Z"
   },
   {
-    "id": "2025V0141",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Adlerstraße zw. Zähringerstraße und Kasierstraße",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2025-10-13",
-    "endDate": "2026-11-25",
-    "point": [
-      8.406775,
-      49.00933
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-31T22:00:00Z"
-  },
-  {
     "id": "2025V0142",
     "phase": "active",
     "category": "road-construction",
@@ -887,8 +867,8 @@
     "startDate": "2026-05-04",
     "endDate": "2026-11-20",
     "point": [
-      8.407159,
-      49.009393
+      8.407262,
+      49.009389
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-01T22:00:00Z"
@@ -912,26 +892,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-22T22:00:00Z"
-  },
-  {
-    "id": "2025V0238",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kaiserstraße zw. Kronenstraße und Adlerstraße",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-20",
-    "endDate": "2026-11-30",
-    "point": [
-      8.407929,
-      49.00947
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2025V0239",
@@ -1141,29 +1101,45 @@
     "startDate": "2026-10-30",
     "endDate": "2026-11-27",
     "point": [
-      8.463345,
-      48.99353
+      8.463231,
+      48.993824
     ],
     "extentPoints": [
       [
-        8.46353,
-        48.99387
+        8.46187,
+        48.99341
       ],
       [
-        8.46313,
-        48.9952
+        8.46446,
+        48.99465
       ],
       [
-        8.46157,
-        48.99323
-      ],
-      [
-        8.46332,
-        48.9925
+        8.46255,
+        48.99214
       ]
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-22T22:00:00Z"
+  },
+  {
+    "id": "2025V3261",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Im Säuterich, Kremnitzer Straße, Hauerlandstraße, Preßburgerstraße Ostmarkstraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Straßenquerungen = lokale Engstelle wechselseitig",
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-05",
+    "endDate": "2026-11-28",
+    "point": [
+      8.450479,
+      48.989476
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2025V3508",
@@ -1982,16 +1958,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße",
-    "notes": null,
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-14",
-    "endDate": "2026-12-31",
+    "startDate": "2026-10-19",
+    "endDate": "2026-12-24",
     "point": [
       8.400107,
       49.004041
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-09T22:00:00Z"
+    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2025V6773",
@@ -2408,14 +2384,14 @@
     "location": "Gartenstraße zw. Brauerstraße u. Kriegstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-07",
+    "startDate": "2026-11-23",
     "endDate": "2027-02-21",
     "point": [
       8.379891,
       49.005085
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-28T22:00:00Z"
+    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2026V0097",
@@ -2533,7 +2509,7 @@
   },
   {
     "id": "2026V0127",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -2542,14 +2518,14 @@
     "location": "Knoten Brauerstraße / Reinhold-Frank-Straße / Kriegsstraße / Gartenstraße",
     "notes": "Jollystraße mit Kopfwender, Zufahrt Tankstelle frei",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-12",
+    "startDate": "2026-11-30",
     "endDate": "2027-02-21",
     "point": [
       8.387448,
       49.004326
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-05T23:00:00Z"
+    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2026V0128",
@@ -3382,26 +3358,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-27T22:00:00Z"
-  },
-  {
-    "id": "2026V0876",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Lammstraße zw. Am Schlossplatz und Zirkel",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-03-02",
-    "endDate": "2026-10-31",
-    "point": [
-      8.402933,
-      49.010528
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-09T23:00:00Z"
   },
   {
     "id": "2026V0900",
@@ -4556,6 +4512,26 @@
     "lastModified": "2026-07-12T22:00:00Z"
   },
   {
+    "id": "2026V2527",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Lammstraße zw. Zirkel und Schlossplatz",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-03-02",
+    "endDate": "2026-10-31",
+    "point": [
+      8.402933,
+      49.010528
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-26T23:00:00Z"
+  },
+  {
     "id": "2026V2667",
     "phase": "active",
     "category": "power-telecom",
@@ -4629,7 +4605,7 @@
   },
   {
     "id": "2026V2670",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -4638,14 +4614,14 @@
     "location": "Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße",
     "notes": "Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn, Bauzeit vs. 10 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-26",
+    "startDate": "2026-11-09",
     "endDate": "2026-12-24",
     "point": [
       8.398203,
       49.00463
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-13T22:00:00Z"
+    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2026V2714",
@@ -5770,14 +5746,14 @@
     "location": "Brauerstraße zw. Roonstraße und Gartenstaße",
     "notes": "Verkehrsführung ab der Roonstraße in nördlicher Richtung auf der Gegenfahrbahn, Zufahrt Putlitzstraße über Anliegerfahrbahn",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-04",
+    "startDate": "2026-11-30",
     "endDate": "2027-03-07",
     "point": [
       8.38651,
       49.002938
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-07T22:00:00Z"
+    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2026V4479",
@@ -6646,6 +6622,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-16T22:00:00Z"
+  },
+  {
+    "id": "2026V5178",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerung = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-26",
+    "endDate": "2027-11-20",
+    "point": [
+      8.438127,
+      49.020775
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2026V5229",
@@ -8208,6 +8204,26 @@
     "lastModified": "2026-10-15T22:00:00Z"
   },
   {
+    "id": "2026V6563",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kaiserstraße zw. Kronenstraße und Adlerstraße",
+    "notes": "Höhe Haus 36a",
+    "cause": "Hochbau und Gebäudewirtschaft",
+    "startDate": "2026-10-20",
+    "endDate": "2026-11-06",
+    "point": [
+      8.407854,
+      49.009455
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-26T23:00:00Z"
+  },
+  {
     "id": "2026V6573",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -8804,6 +8820,46 @@
     "lastModified": "2026-10-25T23:00:00Z"
   },
   {
+    "id": "2026V6802",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kaiserstraße zw. Kronenstraße und Adlerstraße",
+    "notes": "Höhe Haus 36a",
+    "cause": "Hochbau und Gebäudewirtschaft",
+    "startDate": "2026-10-28",
+    "endDate": "2026-11-30",
+    "point": [
+      8.408128,
+      49.009421
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-26T23:00:00Z"
+  },
+  {
+    "id": "2026V6809",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße",
+    "notes": "Durchfahrt Gartenstraße in Richtung Steinhäuserstraße Vollsperrung, Kopfwender in der Gartenstraße vor Baustelle",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-26",
+    "endDate": "2026-11-22",
+    "point": [
+      8.380108,
+      49.005
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-26T23:00:00Z"
+  },
+  {
     "id": "30016",
     "phase": "active",
     "category": "power-telecom",
@@ -8842,6 +8898,52 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-04-01T07:20:07Z"
+  },
+  {
+    "id": "30041",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Kirchplatz 3",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-04-20",
+    "endDate": "2026-12-15",
+    "point": [
+      8.307745,
+      48.973347
+    ],
+    "extentPoints": [
+      [
+        8.30592,
+        48.97493
+      ],
+      [
+        8.30568,
+        48.97335
+      ],
+      [
+        8.30763,
+        48.9727
+      ],
+      [
+        8.3089,
+        48.97157
+      ],
+      [
+        8.31035,
+        48.97307
+      ],
+      [
+        8.30819,
+        48.97404
+      ]
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-04-15T07:39:29Z"
   },
   {
     "id": "30044",
@@ -10944,20 +11046,30 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Siedlungsstraße 5-9",
-    "notes": "Gehwegvollsperrung mit gegenüberliegendem Halteverbot wegen Kranstellung",
+    "municipality": "Bruchsal",
+    "location": "Wiesenstraße 28",
+    "notes": "Fahrbahn verengt, Gehweg gesperrt.",
     "cause": "Privat",
-    "startDate": "2026-09-21",
-    "endDate": "2027-01-31",
+    "startDate": "2026-08-25",
+    "endDate": "2026-11-24",
     "point": [
-      8.505736,
-      49.115076
+      8.540577,
+      49.11695
     ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-18T06:46:27Z"
+    "extentPoints": [
+      [
+        8.61015,
+        49.12074
+      ],
+      [
+        8.5056,
+        49.11484
+      ]
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-08-24T05:42:04Z"
   },
   {
     "id": "40160",
@@ -11248,6 +11360,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-10-21T05:53:24Z"
+  },
+  {
+    "id": "40177",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Wallonenstraße 30",
+    "notes": "Halbseitige Straßensperrung sowie Gehwegsperrung",
+    "cause": "Bauunternehmen",
+    "startDate": "2026-10-27",
+    "endDate": "2026-11-27",
+    "point": [
+      8.480593,
+      49.10607
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-10-27T08:45:49Z"
   },
   {
     "id": "40179",
