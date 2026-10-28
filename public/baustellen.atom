@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-27T20:16:46.942Z</updated>
+    <updated>2026-10-28T10:14:29.768Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -11,6 +11,42 @@
     <link rel="alternate" href="https://maxliesegang.github.io/faecherbagger/"/>
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Geplant: 76297 Stutensee, Keiststraße – Stutensee]]></title>
+        <id>faecherbagger:40179:2026-10-28T07:59:10Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40179"/>
+        <updated>2026-10-28T07:59:10.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Keine Behinderung
+Zeitraum: 29.10.2026 – 13.11.2026
+Hinweis: Containeraufstellung
+Verantwortlich: Privat
+Quelle: Stadt Stutensee]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2025V6769:2026-10-27T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6769"/>
+        <updated>2026-10-27T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 22.10.2026 – 30.01.2027
+Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Rheinhafenstraße zw. Schifferstraße und Agathenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6832:2026-10-27T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6832"/>
+        <updated>2026-10-27T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenunterhaltung · Mit Behinderung
+Zeitraum: 02.11.2026 – 13.11.2026
+Hinweis: Baufeld auf Fahrbahn, geänderte Verkehrsführung
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Wallonenstraße 30 – Stutensee]]></title>
         <id>faecherbagger:40177:2026-10-27T08:45:49Z</id>
@@ -80,18 +116,6 @@ Quelle: Stadt Karlsruhe]]></summary>
 Zeitraum: 30.10.2026 – 27.11.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V6769:2026-10-26T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6769"/>
-        <updated>2026-10-26T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 19.10.2026 – 24.12.2026
-Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
@@ -202,17 +226,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Lußstraße zw. Lußsteige und Schlössleweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6636:2026-10-26T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6636"/>
-        <updated>2026-10-26T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
-Zeitraum: 27.10.2026 – 27.10.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kraneinsatz" term="crane"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Zirkel zw. Ritterstraße und Lammstraße und Lammstraße zw. Zirkel und Kaiserstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6770:2026-10-26T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6770"/>
@@ -225,11 +238,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Kaiserstraße zw. Kronenstraße und Adlerstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Kaiserstraße zw. Kronenstraße und Adlerstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6802:2026-10-26T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6802"/>
         <updated>2026-10-26T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kanalbau · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
 Zeitraum: 28.10.2026 – 30.11.2026
 Hinweis: Höhe Haus 36a
 Verantwortlich: Hochbau und Gebäudewirtschaft
@@ -331,23 +344,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Knielinger Allee zw. Fachhochschule und Erzbergerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5272:2026-10-25T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5272"/>
-        <updated>2026-10-25T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Vollsperrung
-Zeitraum: 26.10.2026 – 27.10.2026
-Hinweis: Geh- und Radweg = Vollsperrung
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Königsberger Straße und Neisser Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Königsberger Straße und Neisser Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5328:2026-10-25T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5328"/>
         <updated>2026-10-25T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gleisbau · Sperrung (1 Richtung)
+        <summary type="html"><![CDATA[Aktuell · Gleisbau · Sperrung (1 Richtung)
 Zeitraum: 28.10.2026 – 22.11.2026
 Hinweis: Haltestellenumbau, halbseitige Sperrung, KfZ nur in Fahrtrichtung Süden möglich
 Verantwortlich: Verkehrsbetriebe Karlsruhe
@@ -849,18 +850,6 @@ Quelle: Stadt Bruchsal]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: 76297 Stutensee, Spechaastraße 28 – Stutensee]]></title>
-        <id>faecherbagger:40176:2026-10-21T05:53:24Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40176"/>
-        <updated>2026-10-21T05:53:24.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 28.10.2026 – 28.10.2026
-Hinweis: Vollsperrung
-Verantwortlich: Privat
-Quelle: Stadt Stutensee]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Vorholzstraße u. Südendstraße – Karlsruhe]]></title>
         <id>faecherbagger:2025V5289:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5289"/>
@@ -991,11 +980,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Ottostraße zw. Edgar-Heller-Straße und Geisenrainweg – Karlsruhe]]></title>
         <id>faecherbagger:2026V6437:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6437"/>
         <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Baugrunduntersuchung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Baugrunduntersuchung · Mit Behinderung
 Zeitraum: 28.10.2026 – 30.10.2026
 Hinweis: Abwicklung in mehreren lokalen Engstellen, Arbeitsstelle im Geh-, und Radwegbereich oder der Fahrbahn
 Verantwortlich: Stadtwerke Karlsruhe
@@ -1003,11 +992,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Baugrunduntersuchung" term="soil-survey"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Leopoldstraße zw. Kaiserstraße und Stephanienstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Leopoldstraße zw. Kaiserstraße und Stephanienstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6439:2026-10-20T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6439"/>
         <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Baugrunduntersuchung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Baugrunduntersuchung · Mit Behinderung
 Zeitraum: 28.10.2026 – 28.10.2026
 Hinweis: lokale Engstellen, Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
@@ -1097,11 +1086,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Enzstraße zw. Mainstraße und Tauberstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Enzstraße zw. Mainstraße und Tauberstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5390:2026-10-19T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5390"/>
         <updated>2026-10-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
 Zeitraum: 28.10.2026 – 28.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
@@ -1129,17 +1118,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, geänderte Verkehrsführung i
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Auf dem Schlössle – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6622:2026-10-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6622"/>
-        <updated>2026-10-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 26.10.2026 – 27.10.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Turmbergstraße zw. Posseltstraße und Wolfweg – Karlsruhe]]></title>
@@ -1259,6 +1237,18 @@ Quelle: Stadt Bruchsal]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Bodelschwinghstraße  8 – Ettlingen]]></title>
+        <id>faecherbagger:40447:2026-10-19T11:02:17Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40447"/>
+        <updated>2026-10-19T11:02:17.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 28.10.2026 – 31.01.2027
+Hinweis: Aufstellung eines Baukranes für Rohbauarbeiten
+Verantwortlich: Privat
+Quelle: Stadt Ettlingen]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Durlacher Allee 35-55/Seubertstr./Gerwigstr.37-48, – Karlsruhe]]></title>
         <id>faecherbagger:2021V5885:2026-10-18T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2021V5885"/>
@@ -1293,17 +1283,6 @@ Hinweis: Sperrung Anliegerfahrbahn für KfZ, Verschwenk der Fahrbahn über den G
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Scheffelstraße zw. Kaiserallee und Sophienstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6341:2026-10-18T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6341"/>
-        <updated>2026-10-18T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 12.10.2026 – 27.10.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: B10/ K9657/Südtangente zw. Edeltrudtunnel und Honsellstraße – Karlsruhe]]></title>
@@ -1752,17 +1731,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Am Sportpark zw. Gustav-Heinemann-Allee und Schweidnitzer Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4336:2026-10-12T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4336"/>
-        <updated>2026-10-12T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gleisbau · Vollsperrung
-Zeitraum: 13.10.2026 – 27.10.2026
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Pfinztalstraße zw. Marstallstaße und Karlsburgstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5311:2026-10-12T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5311"/>
@@ -2004,17 +1972,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Nikolausstraße zw. Allmendstraße und Lützowstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6387:2026-10-11T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6387"/>
-        <updated>2026-10-11T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 26.10.2026 – 27.10.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Nikolausstraße zw. Allmendstraße und Lützowstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6388:2026-10-11T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6388"/>
@@ -2026,11 +1983,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Yorckstraße zw. Sophienstraße und Yorckplatz – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Yorckstraße zw. Sophienstraße und Yorckplatz – Karlsruhe]]></title>
         <id>faecherbagger:2026V6395:2026-10-11T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6395"/>
         <updated>2026-10-11T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
 Zeitraum: 28.10.2026 – 29.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
@@ -2476,12 +2433,13 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Kaiserstraße zw. Adlerstraße und Kronen straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Kaiserstraße zw. Adlerstraße und Kronenstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6261:2026-10-01T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6261"/>
         <updated>2026-10-01T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Straßenbau · Vollsperrung
 Zeitraum: 01.10.2026 – 26.02.2027
+Hinweis: Kronenstraße = Sackgasse bis Kaiserstraße
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
@@ -3311,11 +3269,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5797:2026-09-13T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5797"/>
         <updated>2026-09-13T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Vollsperrung
 Zeitraum: 28.10.2026 – 28.10.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
