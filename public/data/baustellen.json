@@ -1569,11 +1569,11 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Ruschgraben, Karlsruher Str., Hagdornstr.",
-    "notes": "lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Nothgehweg auf der Fahbahn",
+    "location": "Ruschgraben, Karlsruher Str., Bruchsaler Str., Hagdornstr.",
+    "notes": "lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Notgehweg auf der Fahbahn",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-24",
-    "endDate": "2026-12-06",
+    "endDate": "2027-02-20",
     "point": [
       8.454898,
       49.026707
@@ -1601,7 +1601,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
+    "lastModified": "2026-10-28T23:00:00Z"
   },
   {
     "id": "2025V6065",
@@ -1958,7 +1958,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-10-22",
     "endDate": "2027-02-20",
@@ -4216,26 +4216,6 @@
     "lastModified": "2026-10-19T22:00:00Z"
   },
   {
-    "id": "2026V2444",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Maximilianstraße zw. Weberstr. u. Stabelstr.",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-05",
-    "endDate": "2027-03-12",
-    "point": [
-      8.383095,
-      49.014289
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
     "id": "2026V2489",
     "phase": "upcoming",
     "category": "gas-water",
@@ -5025,7 +5005,7 @@
   },
   {
     "id": "2026V3480",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -6035,13 +6015,33 @@
     "notes": null,
     "cause": "Tiefbauamt",
     "startDate": "2026-10-05",
-    "endDate": "2026-10-30",
+    "endDate": "2026-11-06",
     "point": [
       8.383624,
       49.013735
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-01T22:00:00Z"
+    "lastModified": "2026-10-28T23:00:00Z"
+  },
+  {
+    "id": "2026V4601",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Maximilianstraße zw. Stabelstraße und Weberstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-06",
+    "endDate": "2027-01-11",
+    "point": [
+      8.38262,
+      49.013783
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-28T23:00:00Z"
   },
   {
     "id": "2026V4615",
@@ -6326,6 +6326,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-03T22:00:00Z"
+  },
+  {
+    "id": "2026V4846",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hermann-Billing-Straße zw. Ettlinger Straße u. Beiertheimer Allee (Zufahrt Landratsamt)",
+    "notes": "Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-22",
+    "endDate": "2026-11-27",
+    "point": [
+      8.401678,
+      49.004005
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-28T23:00:00Z"
   },
   {
     "id": "2026V4881",
@@ -6664,6 +6684,66 @@
     "lastModified": "2026-08-18T22:00:00Z"
   },
   {
+    "id": "2026V5282",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Weberstraße zw. Haydnplatz und Maximilianstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-05",
+    "endDate": "2027-01-11",
+    "point": [
+      8.382266,
+      49.01378
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-28T23:00:00Z"
+  },
+  {
+    "id": "2026V5283",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Weberstraße zw. Moltkestraße und Maximilianstraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2027-01-11",
+    "endDate": "2027-03-19",
+    "point": [
+      8.383153,
+      49.014317
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-28T23:00:00Z"
+  },
+  {
+    "id": "2026V5284",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Moltkestraße Höhe Weberstraße",
+    "notes": "signalisierte 1-streifige Verkehrsführung, Abwicklung in zwei Bauabschnitten",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-03-01",
+    "endDate": "2027-03-19",
+    "point": [
+      8.383599,
+      49.014788
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-28T23:00:00Z"
+  },
+  {
     "id": "2026V5311",
     "phase": "active",
     "category": "rail",
@@ -6762,26 +6842,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
-    "id": "2026V5390",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Enzstraße zw. Mainstraße und Tauberstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-28",
-    "endDate": "2026-10-28",
-    "point": [
-      8.394368,
-      48.985005
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-19T22:00:00Z"
   },
   {
     "id": "2026V5400",
@@ -7288,26 +7348,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-12T22:00:00Z"
-  },
-  {
-    "id": "2026V5797",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gleiwitzer Straße zw. Glogauer Straße und Liegnitzer Straße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-28",
-    "endDate": "2026-10-28",
-    "point": [
-      8.440818,
-      49.029765
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-13T22:00:00Z"
   },
   {
     "id": "2026V5811",
@@ -7910,26 +7950,6 @@
     "lastModified": "2026-10-11T22:00:00Z"
   },
   {
-    "id": "2026V6427",
-    "phase": "active",
-    "category": "soil-survey",
-    "artRaw": "Baugrunduntersuchung",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Haid-und-Neu-Straße/Karl-Wilhelm-Platz",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich/ Haltestellenbereich, lokale Engstellen",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-10-27",
-    "endDate": "2026-10-28",
-    "point": [
-      8.423053,
-      49.011326
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-25T23:00:00Z"
-  },
-  {
     "id": "2026V6429",
     "phase": "active",
     "category": "road-maintenance",
@@ -7999,26 +8019,6 @@
         8.43246,
         48.9967
       ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-20T22:00:00Z"
-  },
-  {
-    "id": "2026V6439",
-    "phase": "active",
-    "category": "soil-survey",
-    "artRaw": "Baugrunduntersuchung",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Leopoldstraße zw. Kaiserstraße und Stephanienstraße",
-    "notes": "lokale Engstellen, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-28",
-    "endDate": "2026-10-28",
-    "point": [
-      8.389829,
-      49.010576
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-20T22:00:00Z"
@@ -8264,6 +8264,88 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-18T22:00:00Z"
+  },
+  {
+    "id": "2026V6621",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Südtangente zw. Schwarzwaldkreuz und A5",
+    "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung, wechselseitig, beide Fahrtrichtungen",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-02",
+    "point": [
+      8.421829,
+      48.994767
+    ],
+    "extentPoints": [
+      [
+        8.44052,
+        48.98971
+      ],
+      [
+        8.43798,
+        48.99034
+      ],
+      [
+        8.43533,
+        48.99108
+      ],
+      [
+        8.43292,
+        48.992
+      ],
+      [
+        8.43079,
+        48.99317
+      ],
+      [
+        8.42878,
+        48.99451
+      ],
+      [
+        8.42583,
+        48.99515
+      ],
+      [
+        8.4229,
+        48.99487
+      ],
+      [
+        8.41997,
+        48.99459
+      ],
+      [
+        8.41713,
+        48.99408
+      ],
+      [
+        8.41429,
+        48.99357
+      ],
+      [
+        8.41151,
+        48.99265
+      ],
+      [
+        8.40894,
+        48.99173
+      ],
+      [
+        8.40658,
+        48.99079
+      ],
+      [
+        8.40436,
+        48.98998
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-28T23:00:00Z"
   },
   {
     "id": "2026V6636",
@@ -8601,7 +8683,7 @@
   },
   {
     "id": "2026V6765",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -8818,6 +8900,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-27T23:00:00Z"
+  },
+  {
+    "id": "2026V6881",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Stabelstraße zw. Moltkestraße und Hildapromenade",
+    "notes": "Höhe Maximilianstraße = lokale 1-streifige Verkehrsführung, Notgehweg auf der Fahrbahn",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-10-28",
+    "endDate": "2026-11-06",
+    "point": [
+      8.384495,
+      49.013731
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-28T23:00:00Z"
   },
   {
     "id": "30016",
@@ -9494,6 +9596,26 @@
     "lastModified": "2025-12-17T08:32:50Z"
   },
   {
+    "id": "30110",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Unterer Legel 1b",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-29",
+    "endDate": "2026-10-30",
+    "point": [
+      8.296936,
+      48.964979
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-15T08:24:03Z"
+  },
+  {
     "id": "30115",
     "phase": "active",
     "category": "special-use",
@@ -9946,6 +10068,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-23T09:13:42Z"
+  },
+  {
+    "id": "30259",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Stafforter Weg 3",
+    "notes": "Fahrbahn verengt",
+    "cause": "Fachgebiet Tiefbau",
+    "startDate": "2026-10-29",
+    "endDate": "2026-11-13",
+    "point": [
+      8.573861,
+      49.124002
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-28T14:00:43Z"
   },
   {
     "id": "30280",
@@ -11065,7 +11207,7 @@
       ],
       [
         8.5056,
-        49.11502
+        49.11484
       ]
     ],
     "source": "Stadt Bruchsal",
@@ -11192,26 +11334,6 @@
     "lastModified": "2026-10-05T06:51:42Z"
   },
   {
-    "id": "40168",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Neue Straße 48",
-    "notes": "Einrichtung einer Halteverbotszone",
-    "cause": "Privat",
-    "startDate": "2026-10-12",
-    "endDate": "2026-10-28",
-    "point": [
-      8.469586,
-      49.064122
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-10-05T07:10:47Z"
-  },
-  {
     "id": "40169",
     "phase": "active",
     "category": "special-use",
@@ -11335,18 +11457,8 @@
     "startDate": "2026-09-09",
     "endDate": "2027-02-01",
     "point": [
-      8.577816,
-      49.106986
-    ],
-    "extentPoints": [
-      [
-        8.64581,
-        49.10149
-      ],
-      [
-        8.50977,
-        49.11258
-      ]
+      8.645765,
+      49.101452
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-04T07:39:10Z"
@@ -11385,31 +11497,21 @@
     "startDate": "2026-09-09",
     "endDate": "2026-11-23",
     "point": [
-      8.642681,
-      49.100979
+      8.576946,
+      49.107418
+    ],
+    "extentPoints": [
+      [
+        8.64275,
+        49.10098
+      ],
+      [
+        8.5112,
+        49.11381
+      ]
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-09T05:43:09Z"
-  },
-  {
-    "id": "40179",
-    "phase": "upcoming",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Keiststraße",
-    "notes": "Containeraufstellung",
-    "cause": "Privat",
-    "startDate": "2026-10-29",
-    "endDate": "2026-11-13",
-    "point": [
-      8.51121,
-      49.113857
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-10-28T07:59:10Z"
   },
   {
     "id": "40180",
@@ -11824,22 +11926,32 @@
   {
     "id": "40242",
     "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
     "siteType": null,
-    "municipality": "Rastatt",
-    "location": "76437 Rastatt / Förch Parkplatz beim Schloß Favorite",
-    "notes": null,
-    "cause": "Fachbereich Bauen und Verkehr",
-    "startDate": "2026-10-05",
-    "endDate": "2026-12-04",
+    "municipality": "Bruchsal",
+    "location": "Schillerstraße 12",
+    "notes": "Gehweg gesperrt.",
+    "cause": "Privat",
+    "startDate": "2026-10-17",
+    "endDate": "2026-11-30",
     "point": [
-      8.23306,
-      48.820968
+      8.435921,
+      48.963333
     ],
-    "source": "Stadt Rastatt",
-    "lastModified": "2026-09-21T11:52:38Z"
+    "extentPoints": [
+      [
+        8.63878,
+        49.10575
+      ],
+      [
+        8.23242,
+        48.81972
+      ]
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-29T06:34:33Z"
   },
   {
     "id": "40248",
@@ -12062,6 +12174,48 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-10-12T10:39:51Z"
+  },
+  {
+    "id": "40443",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Ettlingen",
+    "location": "Rudolf-Plank-Straße Zwi. Kreisel Hertzstraße und Rudolf-Plank-Straße 4",
+    "notes": "Montage und Inbetriebnahme einer Lichtsignalanalage und Asphaltsanierung",
+    "cause": "Tiefbauamt Ettlingen",
+    "startDate": "2026-10-29",
+    "endDate": "2026-10-30",
+    "point": [
+      8.373039,
+      48.93704
+    ],
+    "extentPoints": [
+      [
+        8.36865,
+        48.93976
+      ],
+      [
+        8.3705,
+        48.93885
+      ],
+      [
+        8.37196,
+        48.93785
+      ],
+      [
+        8.37334,
+        48.9366
+      ],
+      [
+        8.37444,
+        48.93545
+      ]
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-10-14T07:34:42Z"
   },
   {
     "id": "40447",
