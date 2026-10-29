@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T10:38:03.646Z",
+  "generatedAt": "2026-10-29T20:42:42.540Z",
   "events": [
     {
       "kind": "changed",
@@ -104,23 +104,6 @@
       "location": "Grenzstraße, Blattwiesenstraße, Alter Graben",
       "previousClosure": "obstruction",
       "previousStartDate": "2026-10-30"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V5289:2026-10-20T22:00:00Z",
-      "announcedOn": "2026-10-21",
-      "siteId": "2025V5289",
-      "point": [
-        8.39056,
-        48.999133
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-09-21",
-      "endDate": "2026-10-30",
-      "municipality": "Karlsruhe",
-      "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße",
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-09-21"
     },
     {
       "kind": "changed",
@@ -422,20 +405,20 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V2670:2026-10-26T23:00:00Z",
-      "announcedOn": "2026-10-27",
+      "signature": "changed:2026V2670:2026-10-28T23:00:00Z",
+      "announcedOn": "2026-10-29",
       "siteId": "2026V2670",
       "point": [
         8.398203,
         49.00463
       ],
       "closure": "obstruction",
-      "startDate": "2026-11-09",
-      "endDate": "2026-12-24",
+      "startDate": "2027-02-20",
+      "endDate": "2027-04-30",
       "municipality": "Karlsruhe",
       "location": "Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße",
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-26"
+      "previousStartDate": "2026-11-09"
     },
     {
       "kind": "changed",
@@ -2288,21 +2271,6 @@
       "endDate": "2027-06-30",
       "municipality": "Rastatt",
       "location": "76437 Rastatt, Breslauer Straße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40419",
-      "announcedOn": "2026-10-26",
-      "siteId": "40419",
-      "point": [
-        8.410454,
-        48.938878
-      ],
-      "closure": "full",
-      "startDate": "2026-10-26",
-      "endDate": "2026-10-30",
-      "municipality": "Ettlingen",
-      "location": "Wilhelmstraße HN 1 bis HN 7"
     },
     {
       "kind": "new",

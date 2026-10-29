@@ -1482,26 +1482,6 @@
     "lastModified": "2025-09-28T22:00:00Z"
   },
   {
-    "id": "2025V5289",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Vorholzstraße u. Südendstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-10-30",
-    "point": [
-      8.39056,
-      48.999133
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-20T22:00:00Z"
-  },
-  {
     "id": "2025V5291",
     "phase": "upcoming",
     "category": "district-heating",
@@ -4574,14 +4554,14 @@
     "location": "Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße",
     "notes": "Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn, Bauzeit vs. 10 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-09",
-    "endDate": "2026-12-24",
+    "startDate": "2027-02-20",
+    "endDate": "2027-04-30",
     "point": [
       8.398203,
       49.00463
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
+    "lastModified": "2026-10-28T23:00:00Z"
   },
   {
     "id": "2026V2714",
@@ -6677,8 +6657,8 @@
     "startDate": "2026-11-01",
     "endDate": "2026-12-31",
     "point": [
-      8.409595,
-      49.00088
+      8.40996,
+      49.000891
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-18T22:00:00Z"
@@ -7502,26 +7482,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-27T23:00:00Z"
-  },
-  {
-    "id": "2026V6185",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Graf-Rhena-Str.2a",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-19",
-    "endDate": "2026-12-22",
-    "point": [
-      8.392424,
-      48.997232
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-29T22:00:00Z"
   },
   {
     "id": "2026V6203",
@@ -9209,13 +9169,13 @@
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
-    "siteType": null,
+    "siteType": "mobile",
     "municipality": "Stutensee",
     "location": "76297 Stutensee, Friedrichstaler Allee/Lessingstraße bis Heidelberger Ring 68",
     "notes": "Abschnittsweise halbseitige Straßensperrungen sowie Gehwegsperrungen",
     "cause": "Telekommunikation",
     "startDate": "2026-07-27",
-    "endDate": "2026-10-30",
+    "endDate": "2026-12-18",
     "point": [
       8.471731,
       49.102335
@@ -12144,10 +12104,10 @@
     "siteType": "stationary",
     "municipality": "Ettlingen",
     "location": "Wilhelmstraße HN 1 bis HN 7",
-    "notes": "Vollsperrung der Straße für Asphaltsanierung und Sinkkästen.",
+    "notes": "Vollsperrung der Straße für Asphaltsanierung und Sinkkästen.\nVerlängerung wg. Verzögerungen bei den vorherigen Maßnahmen im genannten Bereich. Öffnung voraussichtlich im Laufe des Mittwochs nachdem die Markierungsarbeiten erledigt wurden.",
     "cause": "Tiefbauamt Ettlingen",
     "startDate": "2026-10-26",
-    "endDate": "2026-10-30",
+    "endDate": "2026-11-04",
     "point": [
       8.410454,
       48.938878

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-10-29T10:38:03.646Z</updated>
+    <updated>2026-10-29T20:42:42.540Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -31,6 +31,18 @@ Quelle: Stadt Bruchsal]]></summary>
         <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 24.08.2026 – 20.02.2027
 Hinweis: lokle Arbeitsstellen im Geh- und Radwegbereich, Abwicklung in mehreren Bauabschnitten, Notgehweg auf der Fahbahn
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2670:2026-10-28T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2670"/>
+        <updated>2026-10-28T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 20.02.2027 – 30.04.2027
+Hinweis: Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn, Bauzeit vs. 10 Wochen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
@@ -383,18 +395,6 @@ Zeitraum: 02.03.2026 – 31.10.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Ritterstraße zw. Kriegsstraße und Hermann-Billing-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2670:2026-10-26T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2670"/>
-        <updated>2026-10-26T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 09.11.2026 – 24.12.2026
-Hinweis: Arbeitsstelle im Gehweg, Notweg auf der Fahrbahn, Bauzeit vs. 10 Wochen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Pfalzstraße zw. Kirschstraße und Kastenwörthstraße – Karlsruhe]]></title>
@@ -1043,17 +1043,6 @@ Hinweis: Straße wegen Sanierung Fahrbahnschäden halb gesperrt
 Verantwortlich: Fachgebiet Baubetriebshof
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Hirschstraße zw. Vorholzstraße u. Südendstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2025V5289:2026-10-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5289"/>
-        <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 21.09.2026 – 30.10.2026
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Hildebrandstraße zw. Reichenbachstraße und Auer Straße – Karlsruhe]]></title>
@@ -2658,8 +2647,9 @@ Quelle: Stadt Ettlingen]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40419"/>
         <updated>2026-10-01T06:24:15.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Vollsperrung
-Zeitraum: 26.10.2026 – 30.10.2026
+Zeitraum: 26.10.2026 – 04.11.2026
 Hinweis: Vollsperrung der Straße für Asphaltsanierung und Sinkkästen.
+Verlängerung wg. Verzögerungen bei den vorherigen Maßnahmen im genannten Bereich. Öffnung voraussichtlich im Laufe des Mittwochs nachdem die Markierungsarbeiten erledigt wurden.
 Verantwortlich: Tiefbauamt Ettlingen
 Quelle: Stadt Ettlingen]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
@@ -2730,17 +2720,6 @@ Zeitraum: 01.10.2026 – 20.11.2026
 Hinweis: Gehwegsperrung mit Halteverbot
 Verantwortlich: Privat
 Quelle: Stadt Stutensee]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Graf-Rhena-Str.2a – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6185:2026-09-29T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6185"/>
-        <updated>2026-09-29T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Keine Behinderung
-Zeitraum: 19.10.2026 – 22.12.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
@@ -4577,7 +4556,7 @@ Quelle: Stadt Stutensee]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30060"/>
         <updated>2026-07-13T07:27:31.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 27.07.2026 – 30.10.2026
+Zeitraum: 27.07.2026 – 18.12.2026
 Hinweis: Abschnittsweise halbseitige Straßensperrungen sowie Gehwegsperrungen
 Verantwortlich: Telekommunikation
 Quelle: Stadt Stutensee]]></summary>
