@@ -5567,13 +5567,13 @@
     "notes": "Verkehr von der Beuthener Straße nur in die Waldstadt hinein möglich. Ausfahrt über am Sportpark bzw. Kolberger Straße",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-11-02",
-    "endDate": "2026-11-20",
+    "endDate": "2026-11-23",
     "point": [
       8.445062,
       49.034872
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-25T23:00:00Z"
+    "lastModified": "2026-10-29T23:00:00Z"
   },
   {
     "id": "2026V4346",
@@ -8630,16 +8630,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Vorarlberger Straße",
-    "notes": null,
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-10-26",
-    "endDate": "2026-10-31",
+    "endDate": "2026-11-07",
     "point": [
       8.45337,
       48.990243
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
+    "lastModified": "2026-10-29T23:00:00Z"
   },
   {
     "id": "2026V6770",
@@ -8692,14 +8692,14 @@
     "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-20",
+    "startDate": "2026-11-24",
     "endDate": "2026-11-27",
     "point": [
       8.445275,
       49.034996
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-25T23:00:00Z"
+    "lastModified": "2026-10-29T23:00:00Z"
   },
   {
     "id": "2026V6782",
@@ -8860,6 +8860,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-28T23:00:00Z"
+  },
+  {
+    "id": "2026V6915",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Veilchenstraße zw. Gerwigstraße und Durlacher Allee",
+    "notes": "Nur während des Kraneinsatzes Veilchenstraße/ Durlacher Allee geöffnet",
+    "cause": "Privat",
+    "startDate": "2026-11-12",
+    "endDate": "2026-11-12",
+    "point": [
+      8.427268,
+      49.008184
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-29T23:00:00Z"
+  },
+  {
+    "id": "2026V6944",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wasgaustraße zw. Tiroler Straße und Memeler Straße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-07",
+    "point": [
+      8.455252,
+      48.988942
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-29T23:00:00Z"
   },
   {
     "id": "30016",
@@ -10260,10 +10300,6 @@
     ],
     "extentPoints": [
       [
-        8.30755,
-        48.98072
-      ],
-      [
         8.30475,
         48.97934
       ],
@@ -10272,36 +10308,44 @@
         48.97869
       ],
       [
-        8.30968,
-        48.98134
+        8.30819,
+        48.97971
       ],
       [
-        8.31029,
-        48.98282
+        8.30938,
+        48.98101
       ],
       [
-        8.31163,
-        48.98404
+        8.31014,
+        48.98245
       ],
       [
-        8.3139,
-        48.98408
+        8.31085,
+        48.9838
       ],
       [
-        8.31629,
-        48.98407
+        8.31328,
+        48.98406
       ],
       [
-        8.31867,
-        48.98395
+        8.31571,
+        48.9841
       ],
       [
-        8.32101,
-        48.98396
+        8.31806,
+        48.98398
       ],
       [
-        8.32328,
-        48.9842
+        8.32045,
+        48.98393
+      ],
+      [
+        8.32269,
+        48.98406
+      ],
+      [
+        8.32506,
+        48.9846
       ]
     ],
     "source": "Stadt Rheinstetten",

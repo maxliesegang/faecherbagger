@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T10:39:51.791Z",
+  "generatedAt": "2026-10-30T20:14:06.388Z",
   "events": [
     {
       "kind": "changed",
@@ -422,8 +422,8 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V4345:2026-10-25T23:00:00Z",
-      "announcedOn": "2026-10-26",
+      "signature": "changed:2026V4345:2026-10-29T23:00:00Z",
+      "announcedOn": "2026-10-30",
       "siteId": "2026V4345",
       "point": [
         8.445062,
@@ -431,7 +431,7 @@
       ],
       "closure": "one-direction",
       "startDate": "2026-11-02",
-      "endDate": "2026-11-20",
+      "endDate": "2026-11-23",
       "municipality": "Karlsruhe",
       "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
       "previousClosure": "one-direction",
@@ -743,6 +743,40 @@
       "location": "Im Weiherwald zw. Belchenstraße und Lohwiesenweg",
       "previousClosure": "full",
       "previousStartDate": "2026-10-29"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V6760:2026-10-29T23:00:00Z",
+      "announcedOn": "2026-10-30",
+      "siteId": "2026V6760",
+      "point": [
+        8.45337,
+        48.990243
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-26",
+      "endDate": "2026-11-07",
+      "municipality": "Karlsruhe",
+      "location": "Vorarlberger Straße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-26"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V6779:2026-10-29T23:00:00Z",
+      "announcedOn": "2026-10-30",
+      "siteId": "2026V6779",
+      "point": [
+        8.445275,
+        49.034996
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-24",
+      "endDate": "2026-11-27",
+      "municipality": "Karlsruhe",
+      "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-20"
     },
     {
       "kind": "changed",
@@ -1463,21 +1497,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V6760",
-      "announcedOn": "2026-10-23",
-      "siteId": "2026V6760",
-      "point": [
-        8.45337,
-        48.990243
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-26",
-      "endDate": "2026-10-31",
-      "municipality": "Karlsruhe",
-      "location": "Vorarlberger Straße"
-    },
-    {
-      "kind": "new",
       "signature": "new:2026V6770",
       "announcedOn": "2026-10-27",
       "siteId": "2026V6770",
@@ -1505,21 +1524,6 @@
       "endDate": "2026-11-19",
       "municipality": "Karlsruhe",
       "location": "B36/ Neureuter Straße/ Anliegerfahrbahn"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6779",
-      "announcedOn": "2026-10-26",
-      "siteId": "2026V6779",
-      "point": [
-        8.445275,
-        49.034996
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-20",
-      "endDate": "2026-11-27",
-      "municipality": "Karlsruhe",
-      "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße"
     },
     {
       "kind": "new",
@@ -1640,6 +1644,36 @@
       "endDate": "2026-11-06",
       "municipality": "Karlsruhe",
       "location": "Stabelstraße zw. Moltkestraße und Hildapromenade"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6915",
+      "announcedOn": "2026-10-30",
+      "siteId": "2026V6915",
+      "point": [
+        8.427268,
+        49.008184
+      ],
+      "closure": "full",
+      "startDate": "2026-11-12",
+      "endDate": "2026-11-12",
+      "municipality": "Karlsruhe",
+      "location": "Veilchenstraße zw. Gerwigstraße und Durlacher Allee"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6944",
+      "announcedOn": "2026-10-30",
+      "siteId": "2026V6944",
+      "point": [
+        8.455252,
+        48.988942
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-07",
+      "municipality": "Karlsruhe",
+      "location": "Wasgaustraße zw. Tiroler Straße und Memeler Straße"
     },
     {
       "kind": "new",
@@ -2825,22 +2859,6 @@
       "municipality": "Karlsruhe",
       "location": "Im Weiherwald zw. Belchenstraße und Lohwiesenweg",
       "reminderLeadDays": 14
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6760:2026-10-26:1",
-      "announcedOn": "2026-10-25",
-      "siteId": "2026V6760",
-      "point": [
-        8.45337,
-        48.990243
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-10-26",
-      "endDate": "2026-10-31",
-      "municipality": "Karlsruhe",
-      "location": "Vorarlberger Straße",
-      "reminderLeadDays": 1
     },
     {
       "kind": "starts-soon",
