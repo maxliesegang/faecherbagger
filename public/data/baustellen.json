@@ -20,26 +20,6 @@
     "lastModified": "2026-10-11T22:00:00Z"
   },
   {
-    "id": "2020V3604",
-    "phase": "upcoming",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rheinhold-Frank-Straße zw. Belfortstraße und Mühlburger Tor",
-    "notes": "Dauer vsl. 3 Wochen",
-    "cause": "Tiefbauamt",
-    "startDate": "2027-02-15",
-    "endDate": "2027-03-12",
-    "point": [
-      8.387382,
-      49.009233
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
-  },
-  {
     "id": "2020V5173",
     "phase": "active",
     "category": "stop-rebuild",
@@ -1089,7 +1069,7 @@
   },
   {
     "id": "2025V2466",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "none",
@@ -1311,7 +1291,7 @@
   },
   {
     "id": "2025V4376",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -1676,26 +1656,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-19T22:00:00Z"
-  },
-  {
-    "id": "2025V6084",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Uhlandstraße zw. Goethestraße und Sophienstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-12",
-    "endDate": "2026-10-29",
-    "point": [
-      8.374663,
-      49.008925
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-13T22:00:00Z"
   },
   {
     "id": "2025V6085",
@@ -7296,6 +7256,26 @@
     "lastModified": "2026-09-09T22:00:00Z"
   },
   {
+    "id": "2026V5761",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Haid-und-Neu-Straße zw. Tullastraße und Helmertstraße",
+    "notes": "Arbeitsstelle im Gehwegbereich, Fußgängerführung über Radweg und Parkstreifen, Ausleitung Radfahrer auf Fahrstreifen",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-09",
+    "endDate": "2027-12-11",
+    "point": [
+      8.431945,
+      49.014192
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-29T23:00:00Z"
+  },
+  {
     "id": "2026V5794",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -7811,23 +7791,23 @@
   },
   {
     "id": "2026V6360",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "bridge",
     "artRaw": "Brückenbau",
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "B10 Südtangente zwischen AS9 und AS10",
-    "notes": "Sperrung des jeweils linken Fahrstreifens, Zweistreifige Verkehrsführung in beiden Fahrtrichtungen, teilweise Verschwenk auf Standstreifen",
+    "notes": "vs 3 Wochen, Bautermin von Bauko geschätzt, Sperrung des jeweils linken Fahrstreifens, Zweistreifige Verkehrsführung in beiden Fahrtrichtungen, teilweise Verschwenk auf Standstreifen",
     "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-23",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-27",
     "point": [
       8.330465,
       49.032671
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
+    "lastModified": "2026-10-29T23:00:00Z"
   },
   {
     "id": "2026V6388",
@@ -8084,6 +8064,26 @@
     "lastModified": "2026-10-15T22:00:00Z"
   },
   {
+    "id": "2026V6544",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bahnübergang am VIehweg",
+    "notes": null,
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2026-11-08",
+    "endDate": "2026-11-11",
+    "point": [
+      8.492336,
+      49.028563
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-10-29T23:00:00Z"
+  },
+  {
     "id": "2026V6563",
     "phase": "active",
     "category": "special-use",
@@ -8309,7 +8309,7 @@
   },
   {
     "id": "2026V6636",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -8319,13 +8319,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-10-30",
-    "endDate": "2026-10-30",
+    "endDate": "2026-11-02",
     "point": [
       8.476532,
       48.994186
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-27T23:00:00Z"
+    "lastModified": "2026-10-29T23:00:00Z"
   },
   {
     "id": "2026V6638",
@@ -8640,26 +8640,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-22T22:00:00Z"
-  },
-  {
-    "id": "2026V6765",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Ostring Kreuzungsbereich Durlacher Alllee",
-    "notes": "beide Fahrtrichtungen betroffen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-29",
-    "endDate": "2026-10-29",
-    "point": [
-      8.437465,
-      49.005188
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-25T23:00:00Z"
   },
   {
     "id": "2026V6770",
@@ -10280,6 +10260,10 @@
     ],
     "extentPoints": [
       [
+        8.30755,
+        48.98072
+      ],
+      [
         8.30475,
         48.97934
       ],
@@ -10288,44 +10272,36 @@
         48.97869
       ],
       [
-        8.30819,
-        48.97971
+        8.30968,
+        48.98134
       ],
       [
-        8.30938,
-        48.98101
+        8.31029,
+        48.98282
       ],
       [
-        8.31014,
-        48.98245
+        8.31163,
+        48.98404
       ],
       [
-        8.31085,
-        48.9838
+        8.3139,
+        48.98408
       ],
       [
-        8.31328,
-        48.98406
+        8.31629,
+        48.98407
       ],
       [
-        8.31571,
-        48.9841
+        8.31867,
+        48.98395
       ],
       [
-        8.31806,
-        48.98398
+        8.32101,
+        48.98396
       ],
       [
-        8.32045,
-        48.98393
-      ],
-      [
-        8.32269,
-        48.98406
-      ],
-      [
-        8.32506,
-        48.9846
+        8.32328,
+        48.9842
       ]
     ],
     "source": "Stadt Rheinstetten",
@@ -10720,6 +10696,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-10-22T07:36:07Z"
+  },
+  {
+    "id": "40080",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Karlstraße 40",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-30",
+    "endDate": "2026-10-30",
+    "point": [
+      8.31142,
+      48.97677
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-28T08:27:45Z"
   },
   {
     "id": "40082",
@@ -11624,26 +11620,6 @@
     "lastModified": "2026-10-02T07:52:12Z"
   },
   {
-    "id": "40217",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Wörthstraße 6",
-    "notes": "Sperrung der Fahrbahn und des Geheges auf der Seite des Baugrundstücks.\n\nGrund: Montage von Balkonen mit Mobilkran\n\nFußgänger und (schiebende) Radfahrer können auf der Straßenseite gegenüber passieren.\n\nFür Anlieger wird die Zufahrt vom Friedrichsplatz her freigegeben. Außerdem kann von der Kaiserstraße aus Ri. Schloßstraße direkt in die Hoheneggerstraße zugefahren werden. Dort werden zwei der Poller vorrübergehend entfernt.",
-    "cause": "Privat",
-    "startDate": "2026-10-20",
-    "endDate": "2026-10-29",
-    "point": [
-      8.594911,
-      49.125503
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-08T11:35:55Z"
-  },
-  {
     "id": "40220",
     "phase": "active",
     "category": "special-use",
@@ -11882,6 +11858,46 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-09-17T05:12:51Z"
+  },
+  {
+    "id": "40240",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Törlesstraße 9",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Privat",
+    "startDate": "2026-10-30",
+    "endDate": "2026-11-30",
+    "point": [
+      8.644202,
+      49.103009
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-26T07:44:31Z"
+  },
+  {
+    "id": "40241",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Lorenzrain 10",
+    "notes": "Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.",
+    "cause": "Privat",
+    "startDate": "2026-10-30",
+    "endDate": "2026-12-05",
+    "point": [
+      8.651533,
+      49.103068
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-27T08:22:38Z"
   },
   {
     "id": "40242",
