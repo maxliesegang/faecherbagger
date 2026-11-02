@@ -1,42 +1,83 @@
 {
-  "since": "2026-11-01T19:56:06.414Z",
+  "since": "2026-11-02T11:55:11.965Z",
   "added": [
-    "2026V4195",
-    "2026V6843",
-    "30116",
-    "30246",
-    "40206",
-    "40229",
-    "40238",
-    "40244",
-    "40454"
+    "2025V4584",
+    "2026V4492",
+    "2026V6955",
+    "2026V6965",
+    "2026V6966",
+    "2026V6967",
+    "2026V6970",
+    "2026V6971",
+    "40418"
   ],
   "modified": [
-    "2023V4019",
-    "2026V6915"
+    "2022V6173",
+    "2022V6190",
+    "2023V0606",
+    "2026V4792",
+    "2026V6636",
+    "2026V6809"
   ],
   "removed": [
-    "2026V4250",
-    "2026V4344"
+    "2026V4551"
   ],
   "relevantModifications": [
     {
-      "id": "2023V4019",
+      "id": "2022V6173",
+      "changedFields": [
+        "period",
+        "closure"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-08-30",
+      "previousEndDate": "2026-12-31"
+    },
+    {
+      "id": "2022V6190",
       "changedFields": [
         "period"
       ],
       "previousClosure": "obstruction",
-      "previousStartDate": "2027-01-11",
-      "previousEndDate": "2028-03-31"
+      "previousStartDate": "2026-08-18",
+      "previousEndDate": "2026-12-31"
     },
     {
-      "id": "2026V6915",
+      "id": "2023V0606",
       "changedFields": [
+        "period",
         "closure"
       ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-07-29",
+      "previousEndDate": "2026-12-31"
+    },
+    {
+      "id": "2026V4792",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-02",
+      "previousEndDate": "2027-06-30"
+    },
+    {
+      "id": "2026V6636",
+      "changedFields": [
+        "period"
+      ],
       "previousClosure": "full",
-      "previousStartDate": "2026-11-12",
-      "previousEndDate": "2026-11-12"
+      "previousStartDate": "2026-10-30",
+      "previousEndDate": "2026-11-02"
+    },
+    {
+      "id": "2026V6809",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-26",
+      "previousEndDate": "2026-11-22"
     }
   ]
 }

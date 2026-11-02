@@ -104,14 +104,14 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Essenweinstraße, Sternbergstraße,  Gerwigstraße, Veilchenstraße, Haizingerstraße",
     "notes": "Baustelle im Gehwegbereich, Ausführung in mehreren Abschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-08-30",
-    "endDate": "2026-12-31",
+    "endDate": "2026-11-30",
     "point": [
       8.42701,
       49.008832
@@ -131,7 +131,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2022V6190",
@@ -145,7 +145,7 @@
     "notes": "Arbeiten Im Gehwegbereich, Ausführung in mehreren Abschnitten, Aufteilung nicht vorgenommen",
     "cause": "Telekommunikation",
     "startDate": "2026-08-18",
-    "endDate": "2026-12-31",
+    "endDate": "2026-11-30",
     "point": [
       8.424027,
       49.007965
@@ -173,7 +173,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2023V0127",
@@ -214,14 +214,14 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Bernhardusplatz, Adenauerring, Karl-Wilhelm-Straße, Bernhardtstraße",
     "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich",
     "cause": "Telekommunikation",
     "startDate": "2026-07-29",
-    "endDate": "2026-12-31",
+    "endDate": "2026-11-30",
     "point": [
       8.419127,
       49.009905
@@ -249,7 +249,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2023V2982",
@@ -1282,6 +1282,44 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-13T22:00:00Z"
+  },
+  {
+    "id": "2025V4584",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wolfartsweierer Straße zw. Durlacher Allee und Frühlingstraße und Sommerstraße zw. Frühlingstraße und Gottesauer Straße",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-03-12",
+    "endDate": "2026-12-23",
+    "point": [
+      8.423686,
+      49.005683
+    ],
+    "extentPoints": [
+      [
+        8.42531,
+        49.00728
+      ],
+      [
+        8.42438,
+        49.00584
+      ],
+      [
+        8.4239,
+        49.00398
+      ],
+      [
+        8.41986,
+        49.00546
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2025V4609",
@@ -5298,6 +5336,26 @@
     "lastModified": "2026-09-27T22:00:00Z"
   },
   {
+    "id": "2026V4492",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bodelschwinghstraße zw. Siemensallee und Anliegerfahrbahn Siemensallee",
+    "notes": "Lagerfläche für Baustelle",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-05-04",
+    "endDate": "2027-08-06",
+    "point": [
+      8.362906,
+      49.020387
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
     "id": "2026V4500",
     "phase": "active",
     "category": "gas-water",
@@ -5400,26 +5458,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
-    "id": "2026V4551",
-    "phase": "active",
-    "category": "demolition",
-    "artRaw": "Abbruch/Rückbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bergbahnstraße zw. B 3 Grötzinger Straße und Am Steinbruch",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-11",
-    "endDate": "2026-11-02",
-    "point": [
-      8.479498,
-      48.999712
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-07T22:00:00Z"
   },
   {
     "id": "2026V4562",
@@ -5785,7 +5823,7 @@
   },
   {
     "id": "2026V4792",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -5794,7 +5832,7 @@
     "location": "Karl-Wilhelm-Platz/Haid-und-Neu-Str./Georg-Friedrich-Straße/Rudolfstr./Bernhardstr./Melanchtonstr./Essenweinstr./Sternbergstr.",
     "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh- und Radweg, Straßenquerungen = halbseitige lokale Engstelle",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-02",
+    "startDate": "2026-11-09",
     "endDate": "2027-06-30",
     "point": [
       8.424194,
@@ -5827,7 +5865,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-15T22:00:00Z"
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2026V4843",
@@ -7619,13 +7657,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-10-30",
-    "endDate": "2026-11-02",
+    "endDate": "2026-11-03",
     "point": [
       8.476532,
       48.994186
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-29T23:00:00Z"
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2026V6638",
@@ -7641,8 +7679,8 @@
     "startDate": "2026-11-02",
     "endDate": "2026-11-19",
     "point": [
-      8.481535,
-      48.998528
+      8.481137,
+      48.998723
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-19T22:00:00Z"
@@ -8043,7 +8081,7 @@
   },
   {
     "id": "2026V6809",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -8052,14 +8090,14 @@
     "location": "Gartenstraße zw. Weinbrennerplatz und Steinhäuserstraße",
     "notes": "Durchfahrt Gartenstraße in Richtung Steinhäuserstraße Vollsperrung, Kopfwender in der Gartenstraße vor Baustelle",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-26",
-    "endDate": "2026-11-22",
+    "startDate": "2026-11-04",
+    "endDate": "2026-11-29",
     "point": [
       8.381376,
       49.004608
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2026V6832",
@@ -8200,6 +8238,140 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-29T23:00:00Z"
+  },
+  {
+    "id": "2026V6955",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Breslauer Straße Kreuzungsbereich Grünbergstraße",
+    "notes": "vs.9:00 Uhr - 13:00 Uhr",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-17",
+    "endDate": "2026-11-17",
+    "point": [
+      8.442987,
+      49.028076
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
+    "id": "2026V6965",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
+    "notes": "nächtliche Vollsperrung am 5.11.2026 ab 19.00 Uhr bis 6.11.2026 um 2.00 Uhr",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-06",
+    "point": [
+      8.476071,
+      48.999092
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
+    "id": "2026V6966",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
+    "notes": "nächtliche Vollsperrung am 9.11.2026 ab 18.00 Uhr bis 10.11.2026 um 2.00 Uhr",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-10",
+    "point": [
+      8.476071,
+      48.999092
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
+    "id": "2026V6967",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
+    "notes": "nächtliche Vollsperrung am 10.11.2026 ab 19.00 Uhr bis 22.00 Uhr",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-10",
+    "point": [
+      8.476071,
+      48.999092
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
+    "id": "2026V6970",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bergbahnstraße zwischen Am Steinbruch und Grötzinger Straße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-10-30",
+    "endDate": "2027-01-30",
+    "point": [
+      8.479509,
+      48.99971
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
+    "id": "2026V6971",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kapellenstraße zw. Durlacher Tor und Ludwig-Erhard-Allee",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-10-01",
+    "endDate": "2028-09-30",
+    "point": [
+      8.413588,
+      49.007092
+    ],
+    "extentPoints": [
+      [
+        8.41151,
+        49.00626
+      ],
+      [
+        8.41379,
+        49.00699
+      ],
+      [
+        8.41562,
+        49.00797
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "30016",
@@ -10936,6 +11108,26 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-09-24T05:22:58Z"
+  },
+  {
+    "id": "40418",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Moosbronner Straße 1 Haltestelle",
+    "notes": "Halbseitige Sperrung mittels LSA zum Neubau einer Wasserleitung",
+    "cause": "Stadtwerke Ettlingen",
+    "startDate": "2026-10-05",
+    "endDate": "2026-11-13",
+    "point": [
+      8.42168,
+      48.899612
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-10-01T06:26:06Z"
   },
   {
     "id": "40419",
