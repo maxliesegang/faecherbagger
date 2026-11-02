@@ -282,7 +282,7 @@
     "location": "Herrenalber Straße zwischen Battstraße und Diakonissenstraße",
     "notes": "Abwicklung in mehreren Bauabschnitten, vs 14 Monate",
     "cause": "Tiefbauamt",
-    "startDate": "2027-01-11",
+    "startDate": "2027-04-01",
     "endDate": "2028-03-31",
     "point": [
       8.404491,
@@ -311,7 +311,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-09T22:00:00Z"
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2023V4962",
@@ -480,12 +480,12 @@
     ],
     "extentPoints": [
       [
-        8.40414,
-        48.98483
+        8.40185,
+        48.98253
       ],
       [
-        8.40207,
-        48.98245
+        8.40414,
+        48.98483
       ],
       [
         8.40357,
@@ -2621,7 +2621,7 @@
   },
   {
     "id": "2026V0277",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -3003,7 +3003,7 @@
   },
   {
     "id": "2026V0691",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -3197,7 +3197,7 @@
   },
   {
     "id": "2026V1012",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -3291,7 +3291,7 @@
   },
   {
     "id": "2026V1387",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "none",
@@ -4347,7 +4347,7 @@
   },
   {
     "id": "2026V2864",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -4857,7 +4857,7 @@
   },
   {
     "id": "2026V3716",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -5008,6 +5008,26 @@
     "lastModified": "2026-09-27T22:00:00Z"
   },
   {
+    "id": "2026V4195",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Zweibrückener Straße zw. Rehbuckel und Ebersteinstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-14",
+    "point": [
+      8.477454,
+      48.970932
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
     "id": "2026V4246",
     "phase": "active",
     "category": "special-use",
@@ -5028,28 +5048,8 @@
     "lastModified": "2026-08-24T22:00:00Z"
   },
   {
-    "id": "2026V4250",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Waldenburger Straße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-10",
-    "endDate": "2026-11-01",
-    "point": [
-      8.44577,
-      49.028476
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-10T22:00:00Z"
-  },
-  {
     "id": "2026V4251",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -5178,28 +5178,8 @@
     "lastModified": "2026-10-18T22:00:00Z"
   },
   {
-    "id": "2026V4344",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-10-02",
-    "endDate": "2026-11-01",
-    "point": [
-      8.445058,
-      49.034882
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-20T22:00:00Z"
-  },
-  {
     "id": "2026V4345",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "one-direction",
@@ -5805,7 +5785,7 @@
   },
   {
     "id": "2026V4792",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -6167,7 +6147,7 @@
   },
   {
     "id": "2026V5229",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -6487,7 +6467,7 @@
   },
   {
     "id": "2026V5666",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -7205,7 +7185,7 @@
   },
   {
     "id": "2026V6388",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7547,7 +7527,7 @@
   },
   {
     "id": "2026V6621",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -7649,7 +7629,7 @@
   },
   {
     "id": "2026V6638",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -7903,7 +7883,7 @@
   },
   {
     "id": "2026V6748",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -8003,7 +7983,7 @@
   },
   {
     "id": "2026V6782",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "full",
@@ -8083,7 +8063,7 @@
   },
   {
     "id": "2026V6832",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "obstruction",
@@ -8142,6 +8122,26 @@
     "lastModified": "2026-10-27T23:00:00Z"
   },
   {
+    "id": "2026V6843",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Lessingstraße zw. Sophienstraße und Kaiserallee",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-30",
+    "endDate": "2026-11-07",
+    "point": [
+      8.385084,
+      49.007866
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
     "id": "2026V6881",
     "phase": "active",
     "category": "road-construction",
@@ -8166,7 +8166,7 @@
     "phase": "upcoming",
     "category": "crane",
     "artRaw": "Kraneinsatz",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": "stationary",
     "municipality": "Karlsruhe",
     "location": "Veilchenstraße zw. Gerwigstraße und Durlacher Allee",
@@ -8179,11 +8179,11 @@
       49.008184
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-29T23:00:00Z"
+    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2026V6944",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -8808,6 +8808,26 @@
     "lastModified": "2026-10-27T09:05:17Z"
   },
   {
+    "id": "30116",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Begonienstraße 1",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-11",
+    "point": [
+      8.304199,
+      48.965326
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-28T07:55:12Z"
+  },
+  {
     "id": "30124",
     "phase": "active",
     "category": "road-maintenance",
@@ -8980,6 +9000,26 @@
     ],
     "source": "Stadt Baden-Baden",
     "lastModified": "2026-07-31T13:20:13Z"
+  },
+  {
+    "id": "30246",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Justus-Knecht-Straße",
+    "notes": "Behinderungen durch Kabelarbeiten an der Einmündung Prinz-Wilhelm-Straße\n\nDauer voraussichtlich eine Woche im Zeitraum",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-27",
+    "point": [
+      8.588145,
+      49.120297
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-15T06:01:51Z"
   },
   {
     "id": "30247",
@@ -10316,6 +10356,26 @@
     "lastModified": "2026-09-14T09:10:41Z"
   },
   {
+    "id": "40206",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Schillerstraße 4",
+    "notes": "Gerüst mit Fußgängertunnel",
+    "cause": "Privat",
+    "startDate": "2026-09-30",
+    "endDate": "2027-01-15",
+    "point": [
+      8.638996,
+      49.104644
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-09-23T07:42:12Z"
+  },
+  {
     "id": "40207",
     "phase": "active",
     "category": "district-heating",
@@ -10486,6 +10546,26 @@
     "lastModified": "2026-10-13T12:43:07Z"
   },
   {
+    "id": "40229",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Vichystraße 9",
+    "notes": "Sanierung der Fahrbahn in der Grundstückszufahrt.\nDie Fahrbahn ist verengt und der Verkehr aus dem Grundstück muss zeitweilig zum Wendebereich ausfahren und kann dort drehen.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-21",
+    "point": [
+      8.554839,
+      49.12174
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-13T13:00:49Z"
+  },
+  {
     "id": "40230",
     "phase": "active",
     "category": "road-maintenance",
@@ -10606,6 +10686,26 @@
     "lastModified": "2026-09-17T05:12:51Z"
   },
   {
+    "id": "40238",
+    "phase": "active",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Siemens-Unterführung",
+    "notes": "Sperrung der Fahrbahn für Arbeiten der Bahn.\nDie Arbeiten finden nachts statt. Gesperrt wird ab 20:30 Uhr bis 05.50 Uhr. Damit müssen keine Busse entfallen.\n\nDie Geh- und Radwege sind nciht betroffen und befahrbar.",
+    "cause": "Deutsche Bahn AG",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-07",
+    "point": [
+      8.59124,
+      49.127334
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-24T14:58:01Z"
+  },
+  {
     "id": "40240",
     "phase": "active",
     "category": "special-use",
@@ -10674,6 +10774,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-29T06:34:33Z"
+  },
+  {
+    "id": "40244",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Kornblumenweg 27",
+    "notes": "Vollsperrung für den Fahrzeugverkehr, Fußgänger frei",
+    "cause": "Privat",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-06",
+    "point": [
+      8.524808,
+      49.101189
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-30T09:01:27Z"
   },
   {
     "id": "40248",
@@ -10896,6 +11016,48 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-10-21T08:36:19Z"
+  },
+  {
+    "id": "40454",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "none",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Schluttenbach",
+    "notes": "Glasfaserausbau in Bauabschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-02",
+    "endDate": "2026-12-26",
+    "point": [
+      8.405585,
+      48.900323
+    ],
+    "extentPoints": [
+      [
+        8.4046,
+        48.90187
+      ],
+      [
+        8.4042,
+        48.90033
+      ],
+      [
+        8.40589,
+        48.89945
+      ],
+      [
+        8.40553,
+        48.89797
+      ],
+      [
+        8.40654,
+        48.90107
+      ]
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-10-22T08:51:44Z"
   },
   {
     "id": "40643",
