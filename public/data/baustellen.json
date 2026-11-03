@@ -1708,14 +1708,14 @@
     "location": "Hermann-Billing-Straße zw. Ettlinger Straße und Am Festplatz/ Badenwerkstraße",
     "notes": "Umleitung der Gehwegführung mit Lichtsignalanlage zur Querung der Fahrbahn",
     "cause": "Privat",
-    "startDate": "2026-11-04",
+    "startDate": "2026-11-28",
     "endDate": "2028-04-30",
     "point": [
       8.400995,
       49.004073
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
+    "lastModified": "2026-11-02T23:00:00Z"
   },
   {
     "id": "2025V6487",
@@ -2722,20 +2722,20 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Scheffelstraße zw. Kaiserallee u. Sophienstraße",
     "notes": "Arbeitsstelle / BE-Flächen im Gehweg u. in Parkflächen",
     "cause": "Privat",
     "startDate": "2026-01-23",
-    "endDate": "2026-12-31",
+    "endDate": "2027-12-31",
     "point": [
       8.381781,
       49.009214
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-05-18T22:00:00Z"
+    "lastModified": "2026-11-02T23:00:00Z"
   },
   {
     "id": "2026V0333",
@@ -3038,26 +3038,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-02-24T23:00:00Z"
-  },
-  {
-    "id": "2026V0691",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Scheffelstraße zw. Kaiserallee und Sophienstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-02",
-    "endDate": "2027-12-31",
-    "point": [
-      8.381675,
-      49.009031
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-06T22:00:00Z"
   },
   {
     "id": "2026V0725",
@@ -5176,6 +5156,26 @@
     "lastModified": "2026-07-12T22:00:00Z"
   },
   {
+    "id": "2026V4321",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Scheffelstraße zw. Kaiserallee und Goethestraße",
+    "notes": "Wechselseitig halbseitig gesperrt in mehreren Abschnitten. Scheffelstraße zwischen Kaiserallee und Goethestraße Einbahnstraßenregelung, nur Fahrtrichtung Goethestraße möglich",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-02",
+    "endDate": "2026-11-28",
+    "point": [
+      8.381763,
+      49.009658
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-02T23:00:00Z"
+  },
+  {
     "id": "2026V4335",
     "phase": "active",
     "category": "rail",
@@ -6155,13 +6155,13 @@
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerung = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-10-26",
-    "endDate": "2027-11-20",
+    "endDate": "2026-12-11",
     "point": [
       8.438127,
       49.020775
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
+    "lastModified": "2026-11-02T23:00:00Z"
   },
   {
     "id": "2026V5229",
@@ -6422,6 +6422,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-19T22:00:00Z"
+  },
+  {
+    "id": "2026V5490",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfinzstraße zw. Pforzheimer Straße und Durlacher Allee",
+    "notes": "Nachtarbeit zw. 22.00 und 5.00 Uhr",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-12-05",
+    "endDate": "2026-12-06",
+    "point": [
+      8.466705,
+      49.001968
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-02T23:00:00Z"
   },
   {
     "id": "2026V5495",
@@ -7978,6 +7998,26 @@
     "lastModified": "2026-11-01T23:00:00Z"
   },
   {
+    "id": "2026V6816",
+    "phase": "active",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hermann-Billing-Straße zw. Beiertheimer Allee und Ettlinger Allee",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-10-30",
+    "endDate": "2026-11-03",
+    "point": [
+      8.401273,
+      49.003872
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-02T23:00:00Z"
+  },
+  {
     "id": "2026V6832",
     "phase": "active",
     "category": "road-maintenance",
@@ -8252,6 +8292,26 @@
     "lastModified": "2026-11-01T23:00:00Z"
   },
   {
+    "id": "2026V6987",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Leibnitzstraße zw. Südendstraße und Kolpingplatz",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2027-02-23",
+    "endDate": "2027-02-25",
+    "point": [
+      8.392695,
+      48.997901
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-02T23:00:00Z"
+  },
+  {
     "id": "2026V6989",
     "phase": "upcoming",
     "category": "crane",
@@ -8267,6 +8327,66 @@
     "point": [
       8.387425,
       49.009594
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-02T23:00:00Z"
+  },
+  {
+    "id": "2026V7006",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bergbahnstraße Kreuzung Am Steinbruch",
+    "notes": "Arbeitsstellen im Gehweg in mehreren Abschnitten, Fußgängerführung über Notweg auf Fahrbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-17",
+    "point": [
+      8.480219,
+      48.999128
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-02T23:00:00Z"
+  },
+  {
+    "id": "2026V7007",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kastellstraße Kreuzung Bergbahnstraße",
+    "notes": "Arbeitsstelle im Gehweg, Fußgängerführung über Notweg auf Fahrbahn",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-08",
+    "point": [
+      8.481185,
+      48.998769
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-02T23:00:00Z"
+  },
+  {
+    "id": "2026V7008",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ringstraße an Einmündung zu Steinbügelstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-28",
+    "endDate": "2026-11-14",
+    "point": [
+      8.452191,
+      48.978827
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-02T23:00:00Z"
@@ -9812,6 +9932,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-06-11T05:34:41Z"
+  },
+  {
+    "id": "40103",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Büchenauer Straße 5",
+    "notes": "Gehweg gesperrt mit Einrichtung eines Notweges.\nWegfall von Parkplätzen",
+    "cause": "Privat",
+    "startDate": "2025-07-11",
+    "endDate": "2027-01-31",
+    "point": [
+      8.552462,
+      49.086612
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2025-07-11T06:30:49Z"
   },
   {
     "id": "40113",
