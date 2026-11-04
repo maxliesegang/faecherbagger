@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T11:47:02.943Z",
+  "generatedAt": "2026-11-04T21:36:06.142Z",
   "events": [
     {
       "kind": "changed",
@@ -148,6 +148,23 @@
       "location": "Herrenalber Straße zwischen Battstraße und Diakonissenstraße",
       "previousClosure": "obstruction",
       "previousStartDate": "2027-01-11"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2024V6908:2026-11-03T23:00:00Z",
+      "announcedOn": "2026-11-04",
+      "siteId": "2024V6908",
+      "point": [
+        8.501192,
+        49.005914
+      ],
+      "closure": "full",
+      "startDate": "2026-04-20",
+      "endDate": "2027-02-26",
+      "municipality": "Karlsruhe",
+      "location": "An der Pfinz zw. \"Sauerbrücke\"/ Friedrichstraße und Im Gässle",
+      "previousClosure": "full",
+      "previousStartDate": "2026-04-20"
     },
     {
       "kind": "changed",
@@ -793,6 +810,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V3547",
+      "announcedOn": "2026-11-04",
+      "siteId": "2026V3547",
+      "point": [
+        8.426884,
+        49.010116
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-31",
+      "endDate": "2026-12-10",
+      "municipality": "Karlsruhe",
+      "location": "Essenweinstraße zw. Sternbergstraße und Humboldtstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:2026V4195",
       "announcedOn": "2026-11-02",
       "siteId": "2026V4195",
@@ -1093,6 +1125,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V6619",
+      "announcedOn": "2026-11-04",
+      "siteId": "2026V6619",
+      "point": [
+        8.333193,
+        49.00518
+      ],
+      "closure": "full",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-05",
+      "municipality": "Karlsruhe",
+      "location": "Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:2026V6757",
       "announcedOn": "2026-11-03",
       "siteId": "2026V6757",
@@ -1225,103 +1272,6 @@
       "endDate": "2026-11-06",
       "municipality": "Karlsruhe",
       "location": "Stabelstraße zw. Moltkestraße und Hildapromenade"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6889",
-      "announcedOn": "2026-11-04",
-      "siteId": "2026V6889",
-      "point": [
-        8.471672,
-        48.994907
-      ],
-      "extentPoints": [
-        [
-          8.4885,
-          49.01015
-        ],
-        [
-          8.47815,
-          49.01135
-        ],
-        [
-          8.46928,
-          49.0151
-        ],
-        [
-          8.46852,
-          49.00762
-        ],
-        [
-          8.46148,
-          49.00245
-        ],
-        [
-          8.49391,
-          49.01564
-        ],
-        [
-          8.50189,
-          49.01936
-        ],
-        [
-          8.50823,
-          49.02483
-        ],
-        [
-          8.51363,
-          49.03054
-        ],
-        [
-          8.44737,
-          48.98629
-        ],
-        [
-          8.43864,
-          48.99016
-        ],
-        [
-          8.43004,
-          48.99367
-        ],
-        [
-          8.41997,
-          48.99459
-        ],
-        [
-          8.41012,
-          48.99219
-        ],
-        [
-          8.48545,
-          48.99285
-        ],
-        [
-          8.49212,
-          48.9881
-        ],
-        [
-          8.49702,
-          48.98199
-        ],
-        [
-          8.49951,
-          48.97457
-        ],
-        [
-          8.50407,
-          48.96834
-        ],
-        [
-          8.50552,
-          48.96102
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-04",
-      "endDate": "2026-12-18",
-      "municipality": "Karlsruhe",
-      "location": "Südtangente zw. Schwarzwaldkreuz und A5"
     },
     {
       "kind": "new",
@@ -2509,22 +2459,6 @@
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V5229:2026-11-02:1",
-      "announcedOn": "2026-11-01",
-      "siteId": "2026V5229",
-      "point": [
-        8.418114,
-        49.012217
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-02",
-      "endDate": "2027-04-03",
-      "municipality": "Karlsruhe",
-      "location": "Adenauerring zw. Engesserstraße und Am Fasanenplatz",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
       "signature": "starts-soon:2026V5241:2026-11-01:1",
       "announcedOn": "2026-10-31",
       "siteId": "2026V5241",
@@ -2875,6 +2809,22 @@
       "endDate": "2026-11-08",
       "municipality": "Karlsruhe",
       "location": "Kastellstraße Kreuzung Bergbahnstraße",
+      "reminderLeadDays": 1
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V7011:2026-11-05:1",
+      "announcedOn": "2026-11-04",
+      "siteId": "2026V7011",
+      "point": [
+        8.362638,
+        49.011416
+      ],
+      "closure": "full",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-05",
+      "municipality": "Karlsruhe",
+      "location": "Rheinstraße Gleisübergang Nuitstraße",
       "reminderLeadDays": 1
     },
     {

@@ -4,11 +4,46 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Wed, 04 Nov 2026 11:47:02 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 04 Nov 2026 21:36:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
         <atom:link href="https://maxliesegang.github.io/faecherbagger/baustellen.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Aktuell: An der Pfinz zw. "Sauerbrücke"/ Friedrichstraße und Im Gässle – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2024V6908</link>
+            <guid isPermaLink="false">faecherbagger:2024V6908:2026-11-03T23:00:00Z</guid>
+            <pubDate>Tue, 03 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Stützwand · Vollsperrung
+Zeitraum: 20.04.2026 – 26.02.2027
+Verantwortlich: Land Baden - Württemberg
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Stützwand</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Vogelsang – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3205</link>
+            <guid isPermaLink="false">faecherbagger:2026V3205:2026-11-03T23:00:00Z</guid>
+            <pubDate>Tue, 03 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+Zeitraum: 15.03.2027 – 31.12.2027
+Hinweis: Aufteilung nicht vorgenommen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Essenweinstraße zw. Sternbergstraße und Humboldtstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3547</link>
+            <guid isPermaLink="false">faecherbagger:2026V3547:2026-11-03T23:00:00Z</guid>
+            <pubDate>Tue, 03 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Kanalbau · Mit Behinderung
+Zeitraum: 31.07.2026 – 10.12.2026
+Hinweis: Inlinersanierung, Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Kanalbau</category>
+        </item>
         <item>
             <title><![CDATA[Geplant: Scheffelstraße zw. Kaiserallee und Goethestraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4319</link>
@@ -118,6 +153,17 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
         </item>
         <item>
+            <title><![CDATA[Geplant: Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6619</link>
+            <guid isPermaLink="false">faecherbagger:2026V6619:2026-11-03T23:00:00Z</guid>
+            <pubDate>Tue, 03 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 05.11.2026 – 05.11.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Kraneinsatz</category>
+        </item>
+        <item>
             <title><![CDATA[Geplant: Scheffelstraße zw. Goethestraße und Kaiserallee – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6842</link>
             <guid isPermaLink="false">faecherbagger:2026V6842:2026-11-03T23:00:00Z</guid>
@@ -135,7 +181,7 @@ Quelle: Stadt Karlsruhe]]></description>
             <guid isPermaLink="false">faecherbagger:2026V6889:2026-11-03T23:00:00Z</guid>
             <pubDate>Tue, 03 Nov 2026 23:00:00 GMT</pubDate>
             <description><![CDATA[Aktuell · Grünpflege · Mit Behinderung
-Zeitraum: 04.11.2026 – 18.12.2026
+Zeitraum: 04.11.2026 – 05.11.2026
 Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung, wechselseitig, beide Fahrtrichtungen
 Verantwortlich: Gartenbauamt
 Quelle: Stadt Karlsruhe]]></description>
@@ -1232,7 +1278,7 @@ Quelle: Stadt Bruchsal]]></description>
             <guid isPermaLink="false">faecherbagger:2026V5152:2026-10-23</guid>
             <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Aktuell · Gleisbau · Vollsperrung
-Zeitraum: 23.10.2026 – 13.11.2026
+Zeitraum: 23.10.2026 – 18.12.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
@@ -1413,7 +1459,7 @@ Quelle: Stadt Rheinstetten]]></description>
             <guid isPermaLink="false">faecherbagger:2026V5154:2026-10-22</guid>
             <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Aktuell · Gleisbau · Vollsperrung
-Zeitraum: 22.10.2026 – 17.11.2026
+Zeitraum: 22.10.2026 – 18.12.2026
 Verantwortlich: Deutsche Bahn AG
 Quelle: Stadt Karlsruhe]]></description>
             <category>Gleisbau</category>
@@ -2468,18 +2514,6 @@ Hinweis: Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></description>
             <category>Straßenbau</category>
-        </item>
-        <item>
-            <title><![CDATA[Geplant: Vogelsang – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3205</link>
-            <guid isPermaLink="false">faecherbagger:2026V3205:2026-10-11T22:00:00Z</guid>
-            <pubDate>Sun, 11 Oct 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
-Zeitraum: 15.03.2027 – 31.12.2027
-Hinweis: Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gas/Wasser</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Sonnenstraße zw. Hardtstraße und Steubenstraße – Karlsruhe]]></title>
@@ -4056,18 +4090,6 @@ Quelle: Stadt Bruchsal]]></description>
             <category>Bauliche Sondernutzung</category>
         </item>
         <item>
-            <title><![CDATA[Aktuell: Adenauerring zw. Engesserstraße und Am Fasanenplatz – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5229</link>
-            <guid isPermaLink="false">faecherbagger:2026V5229:2026-08-23T22:00:00Z</guid>
-            <pubDate>Sun, 23 Aug 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 02.11.2026 – 03.04.2027
-Hinweis: Aufteilung nicht vorgenommen
-Verantwortlich: Vermögen und Bau
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gas/Wasser</category>
-        </item>
-        <item>
             <title><![CDATA[Geplant: Karl-Martin-Graff-Straße zw. Ringelberghol und Gustav-Hofmann-Straße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3030</link>
             <guid isPermaLink="false">faecherbagger:2026V3030:2026-08-20T22:00:00Z</guid>
@@ -4215,7 +4237,7 @@ Quelle: Stadt Bruchsal]]></description>
             <guid isPermaLink="false">faecherbagger:30082:2026-08-05T10:00:54Z</guid>
             <pubDate>Wed, 05 Aug 2026 10:00:54 GMT</pubDate>
             <description><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 17.08.2026 – 06.11.2026
+Zeitraum: 17.08.2026 – 27.11.2026
 Verantwortlich: Stadtwerke Karlsruhe (Rheinstetten)
 Quelle: Stadt Rheinstetten]]></description>
             <category>Fernwärme</category>
@@ -5029,17 +5051,6 @@ Zeitraum: 20.04.2026 – 20.12.2026
 Verantwortlich: Privat
 Quelle: Stadt Rastatt]]></description>
             <category>Bauliche Sondernutzung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: An der pfinz zw. "Sauerbrücke"/ Freidrichstraße und Im Gässle – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2024V6908</link>
-            <guid isPermaLink="false">faecherbagger:2024V6908:2026-04-09T22:00:00Z</guid>
-            <pubDate>Thu, 09 Apr 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Stützwand · Vollsperrung
-Zeitraum: 20.04.2026 – 30.12.2026
-Verantwortlich: Land Baden - Württemberg
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Stützwand</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Killifeldstraße Anliegerfahrbahn zw. Lissenstraße u. Killidfeldstraße Hauptfahrbahn – Karlsruhe]]></title>

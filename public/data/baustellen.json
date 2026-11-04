@@ -641,17 +641,17 @@
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "An der pfinz zw. \"Sauerbrücke\"/ Freidrichstraße und Im Gässle",
+    "location": "An der Pfinz zw. \"Sauerbrücke\"/ Friedrichstraße und Im Gässle",
     "notes": null,
     "cause": "Land Baden - Württemberg",
     "startDate": "2026-04-20",
-    "endDate": "2026-12-30",
+    "endDate": "2027-02-26",
     "point": [
       8.501192,
       49.005914
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-09T22:00:00Z"
+    "lastModified": "2026-11-03T23:00:00Z"
   },
   {
     "id": "2024V7070",
@@ -4471,7 +4471,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
+    "lastModified": "2026-11-03T23:00:00Z"
   },
   {
     "id": "2026V3211",
@@ -4622,6 +4622,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-12T22:00:00Z"
+  },
+  {
+    "id": "2026V3547",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Essenweinstraße zw. Sternbergstraße und Humboldtstraße",
+    "notes": "Inlinersanierung, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-07-31",
+    "endDate": "2026-12-10",
+    "point": [
+      8.426884,
+      49.010116
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-03T23:00:00Z"
   },
   {
     "id": "2026V3555",
@@ -6235,7 +6255,7 @@
     "notes": null,
     "cause": "Deutsche Bahn AG",
     "startDate": "2026-10-23",
-    "endDate": "2026-11-13",
+    "endDate": "2026-12-18",
     "point": [
       8.448665,
       49.011279
@@ -6255,7 +6275,7 @@
     "notes": null,
     "cause": "Deutsche Bahn AG",
     "startDate": "2026-10-22",
-    "endDate": "2026-11-17",
+    "endDate": "2026-12-18",
     "point": [
       8.450468,
       49.015278
@@ -6282,26 +6302,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-02T23:00:00Z"
-  },
-  {
-    "id": "2026V5229",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Adenauerring zw. Engesserstraße und Am Fasanenplatz",
-    "notes": "Aufteilung nicht vorgenommen",
-    "cause": "Vermögen und Bau",
-    "startDate": "2026-11-02",
-    "endDate": "2027-04-03",
-    "point": [
-      8.418114,
-      49.012217
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-23T22:00:00Z"
   },
   {
     "id": "2026V5235",
@@ -7684,6 +7684,26 @@
     "lastModified": "2026-10-18T22:00:00Z"
   },
   {
+    "id": "2026V6619",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-05",
+    "point": [
+      8.333193,
+      49.00518
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-03T23:00:00Z"
+  },
+  {
     "id": "2026V6638",
     "phase": "active",
     "category": "gas-water",
@@ -8229,7 +8249,7 @@
     "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung, wechselseitig, beide Fahrtrichtungen",
     "cause": "Gartenbauamt",
     "startDate": "2026-11-04",
-    "endDate": "2026-12-18",
+    "endDate": "2026-11-05",
     "point": [
       8.471672,
       48.994907
@@ -8687,8 +8707,8 @@
     "startDate": "2026-11-16",
     "endDate": "2027-03-24",
     "point": [
-      8.394727,
-      49.01446
+      8.394793,
+      49.014444
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-03T23:00:00Z"
@@ -9089,7 +9109,7 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
     "startDate": "2026-08-17",
-    "endDate": "2026-11-06",
+    "endDate": "2026-11-27",
     "point": [
       8.323039,
       48.982352
