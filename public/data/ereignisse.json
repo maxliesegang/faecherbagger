@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T11:45:27.835Z",
+  "generatedAt": "2026-11-05T21:37:02.427Z",
   "events": [
     {
       "kind": "changed",
@@ -221,6 +221,74 @@
       "location": "Ruschgraben, Karlsruher Str., Bruchsaler Str., Hagdornstr.",
       "previousClosure": "obstruction",
       "previousStartDate": "2026-08-24"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V6085:2026-11-04T23:00:00Z",
+      "announcedOn": "2026-11-05",
+      "siteId": "2025V6085",
+      "point": [
+        8.374461,
+        49.008479
+      ],
+      "closure": "full",
+      "startDate": "2026-11-30",
+      "endDate": "2026-12-17",
+      "municipality": "Karlsruhe",
+      "location": "Uhlandstraße Kreuzungsbereich Sophienstraße",
+      "previousClosure": "full",
+      "previousStartDate": "2026-11-23"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V6086:2026-11-04T23:00:00Z",
+      "announcedOn": "2026-11-05",
+      "siteId": "2025V6086",
+      "point": [
+        8.374436,
+        49.008377
+      ],
+      "closure": "full",
+      "startDate": "2026-11-30",
+      "endDate": "2026-12-17",
+      "municipality": "Karlsruhe",
+      "location": "Sophienstraße Wender Höhe Uhlandstraße",
+      "previousClosure": "full",
+      "previousStartDate": "2026-11-09"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V6087:2026-11-04T23:00:00Z",
+      "announcedOn": "2026-11-05",
+      "siteId": "2025V6087",
+      "point": [
+        8.374335,
+        49.008237
+      ],
+      "closure": "full",
+      "startDate": "2026-11-09",
+      "endDate": "2026-11-30",
+      "municipality": "Karlsruhe",
+      "location": "Uhlandstraße zw. Sophienstraße und Draisstraße",
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-22"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2025V6088:2026-11-04T23:00:00Z",
+      "announcedOn": "2026-11-05",
+      "siteId": "2025V6088",
+      "point": [
+        8.374023,
+        49.008367
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-11-30",
+      "endDate": "2026-12-17",
+      "municipality": "Karlsruhe",
+      "location": "Sophienstraße zw. Yorckstraße und Uhlandstraße",
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-10-22"
     },
     {
       "kind": "changed",
@@ -648,6 +716,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V6745:2026-11-04T23:00:00Z",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V6745",
+      "point": [
+        8.359307,
+        49.023139
+      ],
+      "closure": "full",
+      "startDate": "2026-10-23",
+      "endDate": "2026-12-12",
+      "municipality": "Karlsruhe",
+      "location": "Bonner Straße zw. Siemensallee und Karlsruher Straße",
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-23"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V6760:2026-10-29T23:00:00Z",
       "announcedOn": "2026-10-30",
       "siteId": "2026V6760",
@@ -797,6 +882,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2023V2060",
+      "announcedOn": "2026-11-05",
+      "siteId": "2023V2060",
+      "point": [
+        8.455716,
+        48.975962
+      ],
+      "closure": "obstruction",
+      "startDate": "2024-08-09",
+      "endDate": "2027-03-31",
+      "municipality": "Karlsruhe",
+      "location": "Steinkreuzstraße zw. Ringstraße und Hohenbergstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:2025V4584",
       "announcedOn": "2026-11-03",
       "siteId": "2025V4584",
@@ -830,6 +930,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2025V6084",
+      "announcedOn": "2026-11-05",
+      "siteId": "2025V6084",
+      "point": [
+        8.374663,
+        49.008925
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-11-08",
+      "municipality": "Karlsruhe",
+      "location": "Uhlandstraße zw. Goethestraße und Sophienstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:2026V1806",
       "announcedOn": "2026-11-01",
       "siteId": "2026V1806",
@@ -845,6 +960,50 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V3008",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V3008",
+      "point": [
+        8.428022,
+        49.023151
+      ],
+      "extentPoints": [
+        [
+          8.42986,
+          49.02412
+        ],
+        [
+          8.42807,
+          49.02317
+        ],
+        [
+          8.42609,
+          49.02381
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-08-05",
+      "endDate": "2026-11-30",
+      "municipality": "Karlsruhe",
+      "location": "Rintheimer Querallee und Büchiger Allee"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3481",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V3481",
+      "point": [
+        8.334773,
+        49.004829
+      ],
+      "closure": "full",
+      "startDate": "2027-01-04",
+      "endDate": "2027-03-21",
+      "municipality": "Karlsruhe",
+      "location": "Pfalzstraße Kreuzungsbereich Krämerstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:2026V3547",
       "announcedOn": "2026-11-04",
       "siteId": "2026V3547",
@@ -857,6 +1016,21 @@
       "endDate": "2026-12-10",
       "municipality": "Karlsruhe",
       "location": "Essenweinstraße zw. Sternbergstraße und Humboldtstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4030",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V4030",
+      "point": [
+        8.427431,
+        49.022954
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-01",
+      "endDate": "2026-12-31",
+      "municipality": "Karlsruhe",
+      "location": "Rintheiemr Querallee Höhe Büchiger Allee"
     },
     {
       "kind": "new",
@@ -1037,6 +1211,66 @@
       "endDate": "2027-01-11",
       "municipality": "Karlsruhe",
       "location": "Maximilianstraße zw. Stabelstraße und Weberstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4766",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V4766",
+      "point": [
+        8.334144,
+        49.004948
+      ],
+      "closure": "full",
+      "startDate": "2027-03-22",
+      "endDate": "2027-04-26",
+      "municipality": "Karlsruhe",
+      "location": "Pfalzstraße zw. Krämerstraße und Langenackerstraße ( Südseite )"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4767",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V4767",
+      "point": [
+        8.333361,
+        49.005164
+      ],
+      "closure": "full",
+      "startDate": "2027-04-27",
+      "endDate": "2027-06-20",
+      "municipality": "Karlsruhe",
+      "location": "Pfalzstraße zw. Kastenwörtstraße und Langenackerstraße ( Nordseite)"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4769",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V4769",
+      "point": [
+        8.336528,
+        49.004571
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-11-09",
+      "endDate": "2026-11-11",
+      "municipality": "Karlsruhe",
+      "location": "Rheinhafenstraße Kreuzungsbereich Kirschstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V4770",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V4770",
+      "point": [
+        8.336448,
+        49.004435
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-14",
+      "endDate": "2027-01-03",
+      "municipality": "Karlsruhe",
+      "location": "Kirschstraße zw. Turnerstraße und Rehinhafenstraße"
     },
     {
       "kind": "new",
@@ -1561,6 +1795,96 @@
       "endDate": "2026-12-08",
       "municipality": "Karlsruhe",
       "location": "Südendstraße zw. Brauerstraße und Lorenzstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7057",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V7057",
+      "point": [
+        8.457105,
+        49.02934
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-11",
+      "endDate": "2026-11-18",
+      "municipality": "Karlsruhe",
+      "location": "Karlsruher Straße Höhe Hagdornstraße/ Julius-Bender-Starße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7058",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V7058",
+      "point": [
+        8.412946,
+        49.003318
+      ],
+      "closure": "full",
+      "startDate": "2026-11-11",
+      "endDate": "2026-11-11",
+      "municipality": "Karlsruhe",
+      "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7059",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V7059",
+      "point": [
+        8.409622,
+        49.026599
+      ],
+      "closure": "full",
+      "startDate": "2026-12-02",
+      "endDate": "2026-12-02",
+      "municipality": "Karlsruhe",
+      "location": "Grabener Allee zw. Kanalweg und Adenauerring"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7063",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V7063",
+      "point": [
+        8.387979,
+        48.998091
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-11-09",
+      "endDate": "2026-12-23",
+      "municipality": "Karlsruhe",
+      "location": "Franken- zw. Graf-Rhena- und Südendstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7074",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V7074",
+      "point": [
+        8.334175,
+        49.004948
+      ],
+      "closure": "full",
+      "startDate": "2027-06-21",
+      "endDate": "2027-08-08",
+      "municipality": "Karlsruhe",
+      "location": "Pfalzstraße zw. Krämerstraße und Langenackerstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7075",
+      "announcedOn": "2026-11-05",
+      "siteId": "2026V7075",
+      "point": [
+        8.333353,
+        49.005158
+      ],
+      "closure": "full",
+      "startDate": "2027-08-09",
+      "endDate": "2027-09-03",
+      "municipality": "Karlsruhe",
+      "location": "Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße"
     },
     {
       "kind": "new",

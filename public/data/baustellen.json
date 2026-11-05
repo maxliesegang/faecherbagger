@@ -252,6 +252,26 @@
     "lastModified": "2026-11-01T23:00:00Z"
   },
   {
+    "id": "2023V2060",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Steinkreuzstraße zw. Ringstraße und Hohenbergstraße",
+    "notes": "signalisierte 1-streifige Verkehrsführung",
+    "cause": "Privat",
+    "startDate": "2024-08-09",
+    "endDate": "2027-03-31",
+    "point": [
+      8.455716,
+      48.975962
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
     "id": "2023V2982",
     "phase": "active",
     "category": "road-construction",
@@ -1578,6 +1598,26 @@
     "lastModified": "2026-08-19T22:00:00Z"
   },
   {
+    "id": "2025V6084",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Uhlandstraße zw. Goethestraße und Sophienstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-12",
+    "endDate": "2026-11-08",
+    "point": [
+      8.374663,
+      49.008925
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
     "id": "2025V6085",
     "phase": "upcoming",
     "category": "district-heating",
@@ -1586,16 +1626,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Uhlandstraße Kreuzungsbereich Sophienstraße",
-    "notes": "Sophienstraße in Fahrtrichtung Yorckstraße gesperrt",
+    "notes": "Sophienstraße in Fahrtrichtung Yorckstraße gesperrt, Bauzeit von Bauko geschätzt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-23",
-    "endDate": "2026-12-23",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-17",
     "point": [
       8.374461,
       49.008479
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2025V6086",
@@ -1606,20 +1646,20 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Sophienstraße Wender Höhe Uhlandstraße",
-    "notes": "Sophienstraße zw. Gutenbergstraße und Uhlandstraße = Fahrtrichtung Yorckstraße gesperrt",
+    "notes": "Sophienstraße zw. Gutenbergstraße und Uhlandstraße = Fahrtrichtung Yorckstraße gesperrt, Bauzeit von Bauko geschätzt, Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-09",
-    "endDate": "2026-12-05",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-17",
     "point": [
       8.374436,
       49.008377
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-21T22:00:00Z"
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2025V6087",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "full",
@@ -1628,34 +1668,34 @@
     "location": "Uhlandstraße zw. Sophienstraße und Draisstraße",
     "notes": "Sophienstraße zw. Uhlandstraße und Gabelsbergstraße",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-22",
-    "endDate": "2026-11-14",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-30",
     "point": [
       8.374335,
       49.008237
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2025V6088",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "one-direction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Sophienstraße zw. Yorckstraße und Uhlandstraße",
-    "notes": null,
+    "notes": "Bauzeit von Bauko geschätzt, Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-22",
-    "endDate": "2026-11-14",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-17",
     "point": [
       8.374023,
       49.008367
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2025V6344",
@@ -4364,6 +4404,40 @@
     "lastModified": "2026-05-05T22:00:00Z"
   },
   {
+    "id": "2026V3008",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Rintheimer Querallee und Büchiger Allee",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-05",
+    "endDate": "2026-11-30",
+    "point": [
+      8.428022,
+      49.023151
+    ],
+    "extentPoints": [
+      [
+        8.42986,
+        49.02412
+      ],
+      [
+        8.42807,
+        49.02317
+      ],
+      [
+        8.42609,
+        49.02381
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
     "id": "2026V3029",
     "phase": "active",
     "category": "gas-water",
@@ -4602,6 +4676,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-26T23:00:00Z"
+  },
+  {
+    "id": "2026V3481",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfalzstraße Kreuzungsbereich Krämerstraße",
+    "notes": "Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-04",
+    "endDate": "2027-03-21",
+    "point": [
+      8.334773,
+      49.004829
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2026V3547",
@@ -4944,6 +5038,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-13T22:00:00Z"
+  },
+  {
+    "id": "2026V4030",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Rintheiemr Querallee Höhe Büchiger Allee",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Notgehweg auf der Fahrbahn, Bautermin von Bauko geschätzt",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-12-01",
+    "endDate": "2026-12-31",
+    "point": [
+      8.427431,
+      49.022954
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2026V4127",
@@ -5940,6 +6054,86 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-08-10T22:00:00Z"
+  },
+  {
+    "id": "2026V4766",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfalzstraße zw. Krämerstraße und Langenackerstraße ( Südseite )",
+    "notes": "Langenackerstraße zw. Pfalzstraße und Turnerstraße = Vollsperrung, Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-03-22",
+    "endDate": "2027-04-26",
+    "point": [
+      8.334144,
+      49.004948
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V4767",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfalzstraße zw. Kastenwörtstraße und Langenackerstraße ( Nordseite)",
+    "notes": "Langenackerstraße zw. Pfalzstraße und Ankerstraße = Vollsperrung, Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-04-27",
+    "endDate": "2027-06-20",
+    "point": [
+      8.333361,
+      49.005164
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V4769",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Rheinhafenstraße Kreuzungsbereich Kirschstraße",
+    "notes": "Rheinhafenstraße = Zufahrt Kirschstraße gesperrt, Kirschstraße Ausfahrt Rheinhafenstraße = offen, Pfalzstraße = Sackgasse bis Kirschstraße",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-11",
+    "point": [
+      8.336528,
+      49.004571
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V4770",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kirschstraße zw. Turnerstraße und Rehinhafenstraße",
+    "notes": "Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-12-14",
+    "endDate": "2027-01-03",
+    "point": [
+      8.336448,
+      49.004435
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2026V4792",
@@ -7925,17 +8119,17 @@
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Bonner Straße zw. Siemensalleee und Karlsruher Straße",
+    "location": "Bonner Straße zw. Siemensallee und Karlsruher Straße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-10-23",
-    "endDate": "2027-03-13",
+    "endDate": "2026-12-12",
     "point": [
       8.359307,
       49.023139
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2026V6757",
@@ -8712,6 +8906,126 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-03T23:00:00Z"
+  },
+  {
+    "id": "2026V7057",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karlsruher Straße Höhe Hagdornstraße/ Julius-Bender-Starße",
+    "notes": "Straßenquerungen = lokale Engstelle wechselseitig, zwei Bauabschnitte",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-11",
+    "endDate": "2026-11-18",
+    "point": [
+      8.457105,
+      49.02934
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V7058",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße",
+    "notes": "vs. 7:00 Uhr - 12:00 Uhr",
+    "cause": "Privat",
+    "startDate": "2026-11-11",
+    "endDate": "2026-11-11",
+    "point": [
+      8.412946,
+      49.003318
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V7059",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Karlsruhe",
+    "location": "Grabener Allee zw. Kanalweg und Adenauerring",
+    "notes": "vs. 7:00 Uhr - 10:00 Uhr",
+    "cause": "Privat",
+    "startDate": "2026-12-02",
+    "endDate": "2026-12-02",
+    "point": [
+      8.409622,
+      49.026599
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V7063",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Franken- zw. Graf-Rhena- und Südendstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-09",
+    "endDate": "2026-12-23",
+    "point": [
+      8.387979,
+      48.998091
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V7074",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfalzstraße zw. Krämerstraße und Langenackerstraße",
+    "notes": "Langenackerstraße zw. Turnerstraße und Pfalzstraße = Vollsperrung",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-06-21",
+    "endDate": "2027-08-08",
+    "point": [
+      8.334175,
+      49.004948
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V7075",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße",
+    "notes": "Langenackerstraße zw. Pfalzstraße und Ankerstraße = Vollsperrung",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-08-09",
+    "endDate": "2027-09-03",
+    "point": [
+      8.333353,
+      49.005158
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "30016",
@@ -11861,7 +12175,7 @@
     "notes": "Anschlussarbeiten für das Neubaugebiet (Kanal, Entwässerung etc.)",
     "cause": "Tiefbauamt Ettlingen",
     "startDate": "2026-10-27",
-    "endDate": "2027-01-22",
+    "endDate": "2027-01-10",
     "point": [
       8.399079,
       48.898941
