@@ -7735,17 +7735,17 @@
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Bahnübergang am VIehweg",
-    "notes": null,
+    "location": "Bahnübergang am Viehweg",
+    "notes": "Gleisüberfahrt für alle Verkehrsteilnehmer gesperrt",
     "cause": "Deutsche Bahn AG",
     "startDate": "2026-11-08",
     "endDate": "2026-11-11",
     "point": [
-      8.492336,
-      49.028563
+      8.492401,
+      49.028569
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-29T23:00:00Z"
+    "lastModified": "2026-11-05T23:00:00Z"
   },
   {
     "id": "2026V6563",
@@ -8121,13 +8121,13 @@
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-10-26",
-    "endDate": "2026-11-07",
+    "endDate": "2026-11-14",
     "point": [
       8.45337,
       48.990243
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-29T23:00:00Z"
+    "lastModified": "2026-11-05T23:00:00Z"
   },
   {
     "id": "2026V6770",
@@ -8401,13 +8401,13 @@
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-11-02",
-    "endDate": "2026-11-07",
+    "endDate": "2026-11-14",
     "point": [
       8.455252,
       48.988942
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-29T23:00:00Z"
+    "lastModified": "2026-11-05T23:00:00Z"
   },
   {
     "id": "2026V6955",
@@ -8928,6 +8928,92 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-04T23:00:00Z"
+  },
+  {
+    "id": "2026V7092",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Südtangente zw. Edeltruidtunnel und Abfahrt Honsellstraße",
+    "notes": "vs. 9:00 Uh r. 15:00 Uhr, Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-09",
+    "point": [
+      8.368006,
+      49.001407
+    ],
+    "extentPoints": [
+      [
+        8.38433,
+        48.9916
+      ],
+      [
+        8.3812,
+        48.99208
+      ],
+      [
+        8.37828,
+        48.99276
+      ],
+      [
+        8.37595,
+        48.99379
+      ],
+      [
+        8.37401,
+        48.99547
+      ],
+      [
+        8.37245,
+        48.99732
+      ],
+      [
+        8.37065,
+        48.99897
+      ],
+      [
+        8.36889,
+        49.00053
+      ],
+      [
+        8.36733,
+        49.00248
+      ],
+      [
+        8.36631,
+        49.00437
+      ],
+      [
+        8.36416,
+        49.00596
+      ],
+      [
+        8.36216,
+        49.00725
+      ],
+      [
+        8.3599,
+        49.0085
+      ],
+      [
+        8.35687,
+        49.00921
+      ],
+      [
+        8.35462,
+        49.01054
+      ],
+      [
+        8.35301,
+        49.01235
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-05T23:00:00Z"
   },
   {
     "id": "30016",

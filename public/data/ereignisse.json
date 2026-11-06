@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T11:42:54.111Z",
+  "generatedAt": "2026-11-06T21:07:54.418Z",
   "events": [
     {
       "kind": "changed",
@@ -668,8 +668,8 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V6760:2026-10-29T23:00:00Z",
-      "announcedOn": "2026-10-30",
+      "signature": "changed:2026V6760:2026-11-05T23:00:00Z",
+      "announcedOn": "2026-11-06",
       "siteId": "2026V6760",
       "point": [
         8.45337,
@@ -677,7 +677,7 @@
       ],
       "closure": "obstruction",
       "startDate": "2026-10-26",
-      "endDate": "2026-11-07",
+      "endDate": "2026-11-14",
       "municipality": "Karlsruhe",
       "location": "Vorarlberger Straße",
       "previousClosure": "obstruction",
@@ -733,6 +733,23 @@
       "location": "Veilchenstraße zw. Gerwigstraße und Durlacher Allee",
       "previousClosure": "full",
       "previousStartDate": "2026-11-12"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V6944:2026-11-05T23:00:00Z",
+      "announcedOn": "2026-11-06",
+      "siteId": "2026V6944",
+      "point": [
+        8.455252,
+        48.988942
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-14",
+      "municipality": "Karlsruhe",
+      "location": "Wasgaustraße zw. Tiroler Straße und Memeler Straße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-02"
     },
     {
       "kind": "changed",
@@ -1433,21 +1450,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V6944",
-      "announcedOn": "2026-10-30",
-      "siteId": "2026V6944",
-      "point": [
-        8.455252,
-        48.988942
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-02",
-      "endDate": "2026-11-07",
-      "municipality": "Karlsruhe",
-      "location": "Wasgaustraße zw. Tiroler Straße und Memeler Straße"
-    },
-    {
-      "kind": "new",
       "signature": "new:2026V6955",
       "announcedOn": "2026-11-03",
       "siteId": "2026V6955",
@@ -1855,6 +1857,87 @@
       "endDate": "2027-09-03",
       "municipality": "Karlsruhe",
       "location": "Pfalzstraße zw. Langenackerstraße und Kastenwörtstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7092",
+      "announcedOn": "2026-11-06",
+      "siteId": "2026V7092",
+      "point": [
+        8.368006,
+        49.001407
+      ],
+      "extentPoints": [
+        [
+          8.38433,
+          48.9916
+        ],
+        [
+          8.3812,
+          48.99208
+        ],
+        [
+          8.37828,
+          48.99276
+        ],
+        [
+          8.37595,
+          48.99379
+        ],
+        [
+          8.37401,
+          48.99547
+        ],
+        [
+          8.37245,
+          48.99732
+        ],
+        [
+          8.37065,
+          48.99897
+        ],
+        [
+          8.36889,
+          49.00053
+        ],
+        [
+          8.36733,
+          49.00248
+        ],
+        [
+          8.36631,
+          49.00437
+        ],
+        [
+          8.36416,
+          49.00596
+        ],
+        [
+          8.36216,
+          49.00725
+        ],
+        [
+          8.3599,
+          49.0085
+        ],
+        [
+          8.35687,
+          49.00921
+        ],
+        [
+          8.35462,
+          49.01054
+        ],
+        [
+          8.35301,
+          49.01235
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-09",
+      "endDate": "2026-11-09",
+      "municipality": "Karlsruhe",
+      "location": "Südtangente zw. Edeltruidtunnel und Abfahrt Honsellstraße"
     },
     {
       "kind": "new",
@@ -2805,22 +2888,6 @@
       "municipality": "Karlsruhe",
       "location": "Holländerstraße zw. Hinter der Kirche und Valentinstraße",
       "reminderLeadDays": 14
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6944:2026-11-02:1",
-      "announcedOn": "2026-11-01",
-      "siteId": "2026V6944",
-      "point": [
-        8.455252,
-        48.988942
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-02",
-      "endDate": "2026-11-07",
-      "municipality": "Karlsruhe",
-      "location": "Wasgaustraße zw. Tiroler Straße und Memeler Straße",
-      "reminderLeadDays": 1
     },
     {
       "kind": "starts-soon",

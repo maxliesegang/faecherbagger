@@ -4,7 +4,7 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Fri, 06 Nov 2026 11:42:54 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 06 Nov 2026 21:07:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
@@ -117,6 +117,42 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Kraneinsatz</category>
         </item>
         <item>
+            <title><![CDATA[Geplant: Bahnübergang am Viehweg – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6544</link>
+            <guid isPermaLink="false">faecherbagger:2026V6544:2026-11-05T23:00:00Z</guid>
+            <pubDate>Thu, 05 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 08.11.2026 – 11.11.2026
+Hinweis: Gleisüberfahrt für alle Verkehrsteilnehmer gesperrt
+Verantwortlich: Deutsche Bahn AG
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Vorarlberger Straße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6760</link>
+            <guid isPermaLink="false">faecherbagger:2026V6760:2026-11-05T23:00:00Z</guid>
+            <pubDate>Thu, 05 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 26.10.2026 – 14.11.2026
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Strom/TK-Versorgung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Wasgaustraße zw. Tiroler Straße und Memeler Straße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6944</link>
+            <guid isPermaLink="false">faecherbagger:2026V6944:2026-11-05T23:00:00Z</guid>
+            <pubDate>Thu, 05 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 02.11.2026 – 14.11.2026
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Strom/TK-Versorgung</category>
+        </item>
+        <item>
             <title><![CDATA[Aktuell: B36/ Neureuter Straße  zw. Sudetenstraße und L605 – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7019</link>
             <guid isPermaLink="false">faecherbagger:2026V7019:2026-11-05T23:00:00Z</guid>
@@ -124,6 +160,18 @@ Quelle: Stadt Karlsruhe]]></description>
             <description><![CDATA[Aktuell · Grünpflege · Mit Behinderung
 Zeitraum: 06.11.2026 – 07.11.2026
 Hinweis: vs. 9:00 Uhr - 15:00 Uhr
+Verantwortlich: Gartenbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Grünpflege</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Südtangente zw. Edeltruidtunnel und Abfahrt Honsellstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7092</link>
+            <guid isPermaLink="false">faecherbagger:2026V7092:2026-11-05T23:00:00Z</guid>
+            <pubDate>Thu, 05 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Grünpflege · Mit Behinderung
+Zeitraum: 09.11.2026 – 09.11.2026
+Hinweis: vs. 9:00 Uh r. 15:00 Uhr, Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung
 Verantwortlich: Gartenbauamt
 Quelle: Stadt Karlsruhe]]></description>
             <category>Grünpflege</category>
@@ -1065,29 +1113,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Brückenbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Bahnübergang am VIehweg – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6544</link>
-            <guid isPermaLink="false">faecherbagger:2026V6544:2026-10-29T23:00:00Z</guid>
-            <pubDate>Thu, 29 Oct 2026 23:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 08.11.2026 – 11.11.2026
-Verantwortlich: Deutsche Bahn AG
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Bauliche Sondernutzung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Vorarlberger Straße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6760</link>
-            <guid isPermaLink="false">faecherbagger:2026V6760:2026-10-29T23:00:00Z</guid>
-            <pubDate>Thu, 29 Oct 2026 23:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 26.10.2026 – 07.11.2026
-Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
             <title><![CDATA[Geplant: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6779</link>
             <guid isPermaLink="false">faecherbagger:2026V6779:2026-10-29T23:00:00Z</guid>
@@ -1097,18 +1122,6 @@ Zeitraum: 24.11.2026 – 27.11.2026
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Haltestellenumbau</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Wasgaustraße zw. Tiroler Straße und Memeler Straße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6944</link>
-            <guid isPermaLink="false">faecherbagger:2026V6944:2026-10-29T23:00:00Z</guid>
-            <pubDate>Thu, 29 Oct 2026 23:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 02.11.2026 – 07.11.2026
-Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Strom/TK-Versorgung</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Schillerstraße 12 – Bruchsal]]></title>
