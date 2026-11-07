@@ -1,32 +1,30 @@
 {
-  "since": "2026-11-06T11:42:54.111Z",
-  "added": [
-    "2026V7092"
+  "since": "2026-11-06T21:07:54.418Z",
+  "added": [],
+  "modified": [],
+  "removed": [
+    "2025V6487",
+    "2025V6536",
+    "2026V4029",
+    "2026V4600",
+    "2026V4645",
+    "2026V6058",
+    "2026V6069",
+    "2026V6388",
+    "2026V6563",
+    "2026V6881",
+    "2026V6965",
+    "2026V7012",
+    "30247",
+    "30253",
+    "30260",
+    "30286",
+    "40060",
+    "40223",
+    "40225",
+    "40228",
+    "40231",
+    "40244"
   ],
-  "modified": [
-    "2026V6544",
-    "2026V6760",
-    "2026V6944"
-  ],
-  "removed": [],
-  "relevantModifications": [
-    {
-      "id": "2026V6760",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-26",
-      "previousEndDate": "2026-11-07"
-    },
-    {
-      "id": "2026V6944",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-11-02",
-      "previousEndDate": "2026-11-07"
-    }
-  ]
+  "relevantModifications": []
 }

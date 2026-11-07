@@ -1784,26 +1784,6 @@
     "lastModified": "2026-11-02T23:00:00Z"
   },
   {
-    "id": "2025V6487",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Yorckstraße zw. Wichernstraße u. Yorckplatz",
-    "notes": "Lokale Arbeitsstelle Höhe Nr. 59",
-    "cause": "Privat",
-    "startDate": "2026-02-09",
-    "endDate": "2026-11-06",
-    "point": [
-      8.369963,
-      49.00646
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
-  },
-  {
     "id": "2025V6511",
     "phase": "upcoming",
     "category": "tunnel",
@@ -1844,56 +1824,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-01-11T23:00:00Z"
-  },
-  {
-    "id": "2025V6536",
-    "phase": "active",
-    "category": "tunnel",
-    "artRaw": "Tunnelwartung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B 10 Augustenburgstraße Tunnel Grötzingen",
-    "notes": "jeweils in den Nächten Mo-Do vs. ab 19:00 Uhr u. 5:30 Uhr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-11-01",
-    "endDate": "2026-11-06",
-    "point": [
-      8.502727,
-      49.004894
-    ],
-    "extentPoints": [
-      [
-        8.49532,
-        49.00512
-      ],
-      [
-        8.4976,
-        49.00465
-      ],
-      [
-        8.49998,
-        49.00466
-      ],
-      [
-        8.50241,
-        49.00483
-      ],
-      [
-        8.50494,
-        49.005
-      ],
-      [
-        8.50758,
-        49.00519
-      ],
-      [
-        8.51027,
-        49.00537
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-04T23:00:00Z"
   },
   {
     "id": "2025V6769",
@@ -5072,40 +5002,6 @@
     "lastModified": "2026-10-13T22:00:00Z"
   },
   {
-    "id": "2026V4029",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rintheimer Querallee und Büchiger Allee",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-05",
-    "endDate": "2026-11-06",
-    "point": [
-      8.42729,
-      49.023063
-    ],
-    "extentPoints": [
-      [
-        8.42744,
-        49.02299
-      ],
-      [
-        8.42579,
-        49.02399
-      ],
-      [
-        8.42953,
-        49.02371
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-05T23:00:00Z"
-  },
-  {
     "id": "2026V4127",
     "phase": "active",
     "category": "special-use",
@@ -5850,26 +5746,6 @@
     "lastModified": "2026-09-20T22:00:00Z"
   },
   {
-    "id": "2026V4600",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Maximilianstraße zw. Stabelstraße und Weberstraße",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-05",
-    "endDate": "2026-11-06",
-    "point": [
-      8.383624,
-      49.013735
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-28T23:00:00Z"
-  },
-  {
     "id": "2026V4601",
     "phase": "active",
     "category": "road-construction",
@@ -5928,84 +5804,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-07-23T22:00:00Z"
-  },
-  {
-    "id": "2026V4645",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "L 604 zw. Waldstadt/Theodor-Heuss-Allee und Eggenstein Höhe B 36",
-    "notes": "Drückjagd",
-    "cause": "Forst BW",
-    "startDate": "2026-11-06",
-    "endDate": "2026-11-06",
-    "point": [
-      8.421564,
-      49.053324
-    ],
-    "extentPoints": [
-      [
-        8.43903,
-        49.04404
-      ],
-      [
-        8.43664,
-        49.04573
-      ],
-      [
-        8.43383,
-        49.04719
-      ],
-      [
-        8.43084,
-        49.04856
-      ],
-      [
-        8.42811,
-        49.0499
-      ],
-      [
-        8.42544,
-        49.0513
-      ],
-      [
-        8.42301,
-        49.05234
-      ],
-      [
-        8.42107,
-        49.05397
-      ],
-      [
-        8.41946,
-        49.0558
-      ],
-      [
-        8.41802,
-        49.05771
-      ],
-      [
-        8.41605,
-        49.05944
-      ],
-      [
-        8.414,
-        49.06097
-      ],
-      [
-        8.41138,
-        49.06255
-      ],
-      [
-        8.40875,
-        49.06391
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-26T22:00:00Z"
   },
   {
     "id": "2026V4683",
@@ -7196,46 +6994,6 @@
     "lastModified": "2026-11-04T23:00:00Z"
   },
   {
-    "id": "2026V6058",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark",
-    "notes": "1-streifige Verkehrsführung in beiden Fahrtrichtungen, vs. 9:00 Uhr - 15:00 Uhr",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-06",
-    "endDate": "2026-11-06",
-    "point": [
-      8.445085,
-      49.020896
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-05T23:00:00Z"
-  },
-  {
-    "id": "2026V6069",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Waldstraße zw. Ludwigsplatz und Bürgerstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-10-27",
-    "endDate": "2026-11-06",
-    "point": [
-      8.395759,
-      49.008728
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
-  },
-  {
     "id": "2026V6094",
     "phase": "active",
     "category": "special-use",
@@ -7548,26 +7306,6 @@
     "lastModified": "2026-10-29T23:00:00Z"
   },
   {
-    "id": "2026V6388",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Nikolausstraße zw. Allmendstraße und Lützowstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-06",
-    "point": [
-      8.403079,
-      48.96699
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
-  },
-  {
     "id": "2026V6395",
     "phase": "active",
     "category": "crane",
@@ -7746,26 +7484,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-05T23:00:00Z"
-  },
-  {
-    "id": "2026V6563",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kaiserstraße zw. Kronenstraße und Adlerstraße",
-    "notes": "Höhe Haus 36a",
-    "cause": "Hochbau und Gebäudewirtschaft",
-    "startDate": "2026-10-20",
-    "endDate": "2026-11-06",
-    "point": [
-      8.407854,
-      49.009455
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
   },
   {
     "id": "2026V6573",
@@ -8350,26 +8068,6 @@
     "lastModified": "2026-11-01T23:00:00Z"
   },
   {
-    "id": "2026V6881",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Stabelstraße zw. Moltkestraße und Hildapromenade",
-    "notes": "Höhe Maximilianstraße = lokale 1-streifige Verkehrsführung, Notgehweg auf der Fahrbahn",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-28",
-    "endDate": "2026-11-06",
-    "point": [
-      8.384495,
-      49.013731
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-28T23:00:00Z"
-  },
-  {
     "id": "2026V6915",
     "phase": "upcoming",
     "category": "crane",
@@ -8425,26 +8123,6 @@
     "point": [
       8.442987,
       49.028076
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-01T23:00:00Z"
-  },
-  {
-    "id": "2026V6965",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
-    "notes": "nächtliche Vollsperrung am 5.11.2026 ab 19.00 Uhr bis 6.11.2026 um 2.00 Uhr",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-05",
-    "endDate": "2026-11-06",
-    "point": [
-      8.476071,
-      48.999092
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-01T23:00:00Z"
@@ -8642,26 +8320,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-02T23:00:00Z"
-  },
-  {
-    "id": "2026V7012",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rheinstraße Gleisübergang Nuitstraße",
-    "notes": "vs. 22:00 Uhr - 6:00 Uhr",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-06",
-    "endDate": "2026-11-06",
-    "point": [
-      8.362638,
-      49.011416
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-03T23:00:00Z"
   },
   {
     "id": "2026V7015",
@@ -9856,26 +9514,6 @@
     "lastModified": "2026-10-15T06:01:51Z"
   },
   {
-    "id": "30247",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Sofienstraße 7",
-    "notes": "Vollsperrung für den Fahrzeugverkehr, Gehweg einseitig begehbar.",
-    "cause": "Privat",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-06",
-    "point": [
-      8.582124,
-      49.075994
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-16T06:05:45Z"
-  },
-  {
     "id": "30248",
     "phase": "active",
     "category": "power-telecom",
@@ -9956,26 +9594,6 @@
     "lastModified": "2026-10-20T12:09:06Z"
   },
   {
-    "id": "30253",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Hildastraße",
-    "notes": "Schaffung eines breiteren Gehweges.\nDazu wird der verbliebene Rest des Parkstreifens zurückgebaut.\nDie Fahrbahn wird tagsüber für Arbeitsraum verengt.\nDer Fußgängerverkehr wird über die Amalienstraße umgeleitet.",
-    "cause": "Fachgebiet Tiefbau",
-    "startDate": "2026-10-26",
-    "endDate": "2026-11-06",
-    "point": [
-      8.591746,
-      49.12431
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-21T06:36:35Z"
-  },
-  {
     "id": "30254",
     "phase": "active",
     "category": "district-heating",
@@ -10016,26 +9634,6 @@
     "lastModified": "2026-10-28T14:00:43Z"
   },
   {
-    "id": "30260",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Stafforter Weg 6",
-    "notes": "Fahrbahn verengt",
-    "cause": "Stadtwerke",
-    "startDate": "2026-11-04",
-    "endDate": "2026-11-06",
-    "point": [
-      8.572814,
-      49.124107
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-03T11:45:33Z"
-  },
-  {
     "id": "30280",
     "phase": "active",
     "category": "bridge",
@@ -10054,88 +9652,6 @@
     ],
     "source": "Stadt Baden-Baden",
     "lastModified": "2026-09-16T12:26:24Z"
-  },
-  {
-    "id": "30286",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Baden-Baden",
-    "location": "B3 alt zwischen Steinbach und Sinzheim",
-    "notes": "Umleitung über neue B3",
-    "cause": "Land Baden - Württemberg",
-    "startDate": "2026-10-02",
-    "endDate": "2026-11-06",
-    "point": [
-      8.163086,
-      48.742274
-    ],
-    "extentPoints": [
-      [
-        8.1677,
-        48.75692
-      ],
-      [
-        8.16671,
-        48.75521
-      ],
-      [
-        8.16626,
-        48.75304
-      ],
-      [
-        8.1669,
-        48.75105
-      ],
-      [
-        8.16685,
-        48.74888
-      ],
-      [
-        8.1655,
-        48.74713
-      ],
-      [
-        8.16411,
-        48.74513
-      ],
-      [
-        8.16341,
-        48.74332
-      ],
-      [
-        8.16256,
-        48.74135
-      ],
-      [
-        8.16162,
-        48.73949
-      ],
-      [
-        8.16069,
-        48.73764
-      ],
-      [
-        8.15979,
-        48.73581
-      ],
-      [
-        8.15856,
-        48.73365
-      ],
-      [
-        8.15702,
-        48.73168
-      ],
-      [
-        8.15562,
-        48.72984
-      ]
-    ],
-    "source": "Stadt Baden-Baden",
-    "lastModified": "2026-09-25T11:09:50Z"
   },
   {
     "id": "30347",
@@ -10316,26 +9832,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-07-17T08:52:33Z"
-  },
-  {
-    "id": "40060",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Prinz-Wilhelm-Straße Ecke Justus-Knecht-Straße",
-    "notes": "Neubau von zwei Wohnanlagen.\nDie Justus-Knecht-Straße wird für den Kfz-Verkehr gesperrt.\n\nFür Fußgänger gibt es einen Notweg durch die Baustelle und eine provisorischen Insel über die Prinz-Wilhelm-Straße.\nDie bauliche Verkehrsinsel ist dann nicht mehr nutzbar, da auf der Baustelleneite der Gehweg gesperrt wird.\n\nAm 19.06.2026 muss die Prinz-Wilhelm-Straße für Montagearbeiten vom Bahnhof her gesperrt und über die Justus-Knecht-Straße (die dafür wieder offen ist) umgeleitet werden.\nDie Arbeiten dauern nur 4-5 Stunden.",
-    "cause": "Privat",
-    "startDate": "2026-03-23",
-    "endDate": "2026-11-06",
-    "point": [
-      8.588561,
-      49.120363
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-03-19T15:52:11Z"
   },
   {
     "id": "40061",
@@ -11514,66 +11010,6 @@
     "lastModified": "2026-10-09T09:49:11Z"
   },
   {
-    "id": "40223",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Württemberger Straße 119",
-    "notes": "Gehweg gesperrt, Ausweichmöglichkeit vorhanden",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-06",
-    "point": [
-      8.611052,
-      49.118786
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-12T07:34:03Z"
-  },
-  {
-    "id": "40225",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Heinrich-Blanc-Straße an der Einmündung John-Deere-Straße",
-    "notes": "Sanierung von Fahrbahnschäden. Es ist je eine Hälfte der Fahrbahn nacheinender gesperrt.",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-06",
-    "point": [
-      8.561481,
-      49.123898
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-12T13:48:59Z"
-  },
-  {
-    "id": "40228",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Vichystraße 1",
-    "notes": "Sanierung einer Schadstelle am Fahrbahnrand",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-06",
-    "point": [
-      8.560564,
-      49.121028
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-13T12:43:07Z"
-  },
-  {
     "id": "40229",
     "phase": "active",
     "category": "road-maintenance",
@@ -11612,26 +11048,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-13T13:36:42Z"
-  },
-  {
-    "id": "40231",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "John-Deere-Straße gegenüber Dittemannswiesen",
-    "notes": "Fahrbahn wegen Sanierung verengt",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-06",
-    "point": [
-      8.564481,
-      49.118665
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-14T09:54:07Z"
   },
   {
     "id": "40232",
@@ -11842,26 +11258,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-29T06:34:33Z"
-  },
-  {
-    "id": "40244",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kornblumenweg 27",
-    "notes": "Vollsperrung für den Fahrzeugverkehr, Fußgänger frei",
-    "cause": "Privat",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-06",
-    "point": [
-      8.524808,
-      49.101189
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-30T09:01:27Z"
   },
   {
     "id": "40246",
