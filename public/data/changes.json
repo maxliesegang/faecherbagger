@@ -1,7 +1,26 @@
 {
-  "since": "2026-11-07T10:49:52.625Z",
+  "since": "2026-11-07T19:42:20.277Z",
   "added": [],
-  "modified": [],
-  "removed": [],
-  "relevantModifications": []
+  "modified": [
+    "40113"
+  ],
+  "removed": [
+    "2025V7017",
+    "2026V0286",
+    "2026V6843",
+    "2026V7019",
+    "40238"
+  ],
+  "relevantModifications": [
+    {
+      "id": "40113",
+      "changedFields": [
+        "period",
+        "closure"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-06-11",
+      "previousEndDate": "2026-11-07"
+    }
+  ]
 }

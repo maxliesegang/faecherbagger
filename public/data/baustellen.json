@@ -500,12 +500,12 @@
     ],
     "extentPoints": [
       [
-        8.40185,
-        48.98253
-      ],
-      [
         8.40414,
         48.98483
+      ],
+      [
+        8.40207,
+        48.98245
       ],
       [
         8.40357,
@@ -2130,26 +2130,6 @@
     "lastModified": "2026-10-08T22:00:00Z"
   },
   {
-    "id": "2025V7017",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz/Kriegstraße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-11-07",
-    "point": [
-      8.378668,
-      49.005442
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-28T22:00:00Z"
-  },
-  {
     "id": "2025V7216",
     "phase": "active",
     "category": "district-heating",
@@ -2712,26 +2692,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-03-09T23:00:00Z"
-  },
-  {
-    "id": "2026V0286",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz",
-    "notes": "Vollsperrung Gartenstraße vor Kreuzung Steinhäuserstraße mit Kopfwender",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-11-07",
-    "point": [
-      8.381355,
-      49.004642
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-28T22:00:00Z"
   },
   {
     "id": "2026V0302",
@@ -7367,7 +7327,7 @@
   },
   {
     "id": "2026V6441",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -7467,7 +7427,7 @@
   },
   {
     "id": "2026V6544",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -8048,26 +8008,6 @@
     "lastModified": "2026-11-03T23:00:00Z"
   },
   {
-    "id": "2026V6843",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Lessingstraße zw. Sophienstraße und Kaiserallee",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-30",
-    "endDate": "2026-11-07",
-    "point": [
-      8.385084,
-      49.007866
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-01T23:00:00Z"
-  },
-  {
     "id": "2026V6915",
     "phase": "upcoming",
     "category": "crane",
@@ -8360,92 +8300,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-03T23:00:00Z"
-  },
-  {
-    "id": "2026V7019",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "B36/ Neureuter Straße  zw. Sudetenstraße und L605",
-    "notes": "vs. 9:00 Uhr - 15:00 Uhr",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-11-06",
-    "endDate": "2026-11-07",
-    "point": [
-      8.374845,
-      49.060643
-    ],
-    "extentPoints": [
-      [
-        8.36488,
-        49.04385
-      ],
-      [
-        8.36555,
-        49.04642
-      ],
-      [
-        8.36628,
-        49.04901
-      ],
-      [
-        8.36704,
-        49.0516
-      ],
-      [
-        8.3684,
-        49.05394
-      ],
-      [
-        8.36976,
-        49.05629
-      ],
-      [
-        8.37189,
-        49.05833
-      ],
-      [
-        8.37435,
-        49.06027
-      ],
-      [
-        8.377,
-        49.06226
-      ],
-      [
-        8.38021,
-        49.06317
-      ],
-      [
-        8.38387,
-        49.06361
-      ],
-      [
-        8.38781,
-        49.06396
-      ],
-      [
-        8.39175,
-        49.06422
-      ],
-      [
-        8.39568,
-        49.06438
-      ],
-      [
-        8.39947,
-        49.06499
-      ],
-      [
-        8.4024,
-        49.06626
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-05T23:00:00Z"
   },
   {
     "id": "2026V7029",
@@ -10158,30 +10012,20 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
+    "closure": "one-direction",
     "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Margeritenweg 8",
-    "notes": "Sperrung von Stellplätzen",
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Krokusweg & Narzissenweg",
+    "notes": "Jeweils Kranaufstellung mit halbseitiger Straßensperrung",
     "cause": "Privat",
-    "startDate": "2026-06-11",
-    "endDate": "2026-11-07",
+    "startDate": "2026-07-20",
+    "endDate": "2027-03-31",
     "point": [
-      8.495823,
-      49.081846
+      8.467121,
+      49.060764
     ],
-    "extentPoints": [
-      [
-        8.52453,
-        49.1029
-      ],
-      [
-        8.46707,
-        49.06077
-      ]
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-06-12T09:02:31Z"
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-07-01T11:41:32Z"
   },
   {
     "id": "40115",
@@ -11168,26 +11012,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-22T12:05:31Z"
-  },
-  {
-    "id": "40238",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Siemens-Unterführung",
-    "notes": "Sperrung der Fahrbahn für Arbeiten der Bahn.\nDie Arbeiten finden nachts statt. Gesperrt wird ab 20:30 Uhr bis 05.50 Uhr. Damit müssen keine Busse entfallen.\n\nDie Geh- und Radwege sind nciht betroffen und befahrbar.",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-07",
-    "point": [
-      8.59124,
-      49.127334
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-24T14:58:01Z"
   },
   {
     "id": "40240",
