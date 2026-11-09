@@ -4354,6 +4354,26 @@
     "lastModified": "2026-08-20T22:00:00Z"
   },
   {
+    "id": "2026V3192",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Werderstraße zw. Marienstraße und Rüppurrer Straße",
+    "notes": "Höhe Haus Nr 68",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-07-15",
+    "endDate": "2026-11-27",
+    "point": [
+      8.409222,
+      49.001515
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-08T23:00:00Z"
+  },
+  {
     "id": "2026V3197",
     "phase": "active",
     "category": "district-heating",
@@ -4592,26 +4612,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-03T23:00:00Z"
-  },
-  {
-    "id": "2026V3555",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Nürnberger Straße zw. Rechts der Alb und Sperberweg",
-    "notes": "Einengung der Fahrbahn mit Lichtsignalanlage, Sperberweg Einbahnstraße in südlicher Fahrtrichtung",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-26",
-    "endDate": "2026-11-09",
-    "point": [
-      8.398469,
-      48.984344
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-20T22:00:00Z"
   },
   {
     "id": "2026V3556",
@@ -6243,7 +6243,7 @@
   },
   {
     "id": "2026V5241",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
     "closure": "obstruction",
@@ -7231,17 +7231,17 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-11-05",
-    "endDate": "2026-11-09",
+    "endDate": "2026-11-10",
     "point": [
       8.372247,
       49.007912
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-05T23:00:00Z"
+    "lastModified": "2026-11-08T23:00:00Z"
   },
   {
     "id": "2026V6401",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -8043,7 +8043,7 @@
   },
   {
     "id": "2026V6967",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -8376,92 +8376,6 @@
     "lastModified": "2026-11-04T23:00:00Z"
   },
   {
-    "id": "2026V7092",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Südtangente zw. Edeltruidtunnel und Abfahrt Honsellstraße",
-    "notes": "vs. 9:00 Uh r. 15:00 Uhr, Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-11-09",
-    "endDate": "2026-11-09",
-    "point": [
-      8.368006,
-      49.001407
-    ],
-    "extentPoints": [
-      [
-        8.38433,
-        48.9916
-      ],
-      [
-        8.3812,
-        48.99208
-      ],
-      [
-        8.37828,
-        48.99276
-      ],
-      [
-        8.37595,
-        48.99379
-      ],
-      [
-        8.37401,
-        48.99547
-      ],
-      [
-        8.37245,
-        48.99732
-      ],
-      [
-        8.37065,
-        48.99897
-      ],
-      [
-        8.36889,
-        49.00053
-      ],
-      [
-        8.36733,
-        49.00248
-      ],
-      [
-        8.36631,
-        49.00437
-      ],
-      [
-        8.36416,
-        49.00596
-      ],
-      [
-        8.36216,
-        49.00725
-      ],
-      [
-        8.3599,
-        49.0085
-      ],
-      [
-        8.35687,
-        49.00921
-      ],
-      [
-        8.35462,
-        49.01054
-      ],
-      [
-        8.35301,
-        49.01235
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-05T23:00:00Z"
-  },
-  {
     "id": "2026V7124",
     "phase": "upcoming",
     "category": "special-use",
@@ -8537,6 +8451,66 @@
     "point": [
       8.432221,
       49.010166
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-08T23:00:00Z"
+  },
+  {
+    "id": "2026V7142",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Douglasstraße zw. Kaiserstraße und Akademiestraße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-16",
+    "endDate": "2026-11-20",
+    "point": [
+      8.393472,
+      49.010141
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-08T23:00:00Z"
+  },
+  {
+    "id": "2026V7144",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gustav-Hofmann-Str. 19b-23",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-12-10",
+    "endDate": "2026-12-10",
+    "point": [
+      8.506787,
+      49.003208
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-08T23:00:00Z"
+  },
+  {
+    "id": "2026V7146",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Jean-Ritzert-Straße zw. Sepp-Heberger-Weg und Rittnertstraße",
+    "notes": "1-streifige Verkehrsführung mit Lichtsignal",
+    "cause": "Forst BW",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-04",
+    "point": [
+      8.487977,
+      48.996393
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-08T23:00:00Z"
@@ -9520,6 +9494,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-28T14:00:43Z"
+  },
+  {
+    "id": "30263",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Paul-Gerhardt-Straße ab der Fritz-Erler-Straße",
+    "notes": "Im Sackgassenteil der Paul-Gerhardt-Straße werden Wasser- und Fernwärmeleitungen verlegt.\n\nDie Fahrbahn muss dazu verengt werden.",
+    "cause": "Energieversorgung",
+    "startDate": "2026-11-09",
+    "endDate": "2026-11-18",
+    "point": [
+      8.570799,
+      49.119396
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-06T08:25:34Z"
   },
   {
     "id": "30280",
@@ -10769,7 +10763,7 @@
     "notes": "Sanierung Kanal mit Inlinertechnik.\nFür die Fahrzeuge muss zweitweilig gesperrt werden:\n1. Phase vom 21. bis 23.09.26 - 1 bis 2 Tage Dauer\n2. Phase vom 16. bis 20.11.26 - 2 bis 3 Tage Dauer\nFalls es stark regnet, verschieben sich die Arbeiten.",
     "cause": "Eigenbetrieb Umwelttechnik",
     "startDate": "2026-09-21",
-    "endDate": "2026-11-20",
+    "endDate": "2026-11-27",
     "point": [
       8.588112,
       49.07646
