@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T23:52:45.131Z",
+  "generatedAt": "2026-11-10T11:59:30.330Z",
   "events": [
     {
       "kind": "changed",
@@ -267,6 +267,37 @@
       "location": "Hermann-Billing-Straße zw. Ettlinger Straße und Am Festplatz/ Badenwerkstraße",
       "previousClosure": "none",
       "previousStartDate": "2026-11-04"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0100:2026-11-09T23:00:00Z",
+      "announcedOn": "2026-11-10",
+      "siteId": "2026V0100",
+      "point": [
+        8.404175,
+        49.010809
+      ],
+      "extentPoints": [
+        [
+          8.4017,
+          49.01132
+        ],
+        [
+          8.40371,
+          49.0108
+        ],
+        [
+          8.40589,
+          49.01091
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-23",
+      "endDate": "2027-02-28",
+      "municipality": "Karlsruhe",
+      "location": "Schlossplatz zw. Herrenstraße u. Zirkel",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-21"
     },
     {
       "kind": "changed",
@@ -545,6 +576,37 @@
       "location": "Glogauer Straße und Im Eichbäumle",
       "previousClosure": "obstruction",
       "previousStartDate": "2026-11-07"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V6253:2026-11-09T23:00:00Z",
+      "announcedOn": "2026-11-10",
+      "siteId": "2026V6253",
+      "point": [
+        8.404595,
+        49.011125
+      ],
+      "extentPoints": [
+        [
+          8.40158,
+          49.01135
+        ],
+        [
+          8.40349,
+          49.01077
+        ],
+        [
+          8.40587,
+          49.01086
+        ]
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-10-05",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "Schlossplatz zw. Herrenstraße u. Zirkel",
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-10-05"
     },
     {
       "kind": "changed",
@@ -1534,6 +1596,91 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V7152",
+      "announcedOn": "2026-11-10",
+      "siteId": "2026V7152",
+      "point": [
+        8.485405,
+        48.997376
+      ],
+      "closure": "none",
+      "startDate": "2026-11-09",
+      "endDate": "2027-10-30",
+      "municipality": "Karlsruhe",
+      "location": "Reichardtstraße/Turmberg Parkplatz bei der Bergstation"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7153",
+      "announcedOn": "2026-11-10",
+      "siteId": "2026V7153",
+      "point": [
+        8.483161,
+        48.997934
+      ],
+      "closure": "full",
+      "startDate": "2026-11-02",
+      "endDate": "2027-07-30",
+      "municipality": "Karlsruhe",
+      "location": "Wolfweg und Wirtschaftsweg unterhalb der Bergbahntrasse"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7159",
+      "announcedOn": "2026-11-10",
+      "siteId": "2026V7159",
+      "point": [
+        8.472952,
+        48.989025
+      ],
+      "closure": "full",
+      "startDate": "2026-11-20",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Geigersbergstraße zw. Ernst-Barlach-Straße und Lußsteige"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7169",
+      "announcedOn": "2026-11-10",
+      "siteId": "2026V7169",
+      "point": [
+        8.39224,
+        48.999702
+      ],
+      "closure": "full",
+      "startDate": "2026-12-14",
+      "endDate": "2026-12-18",
+      "municipality": "Karlsruhe",
+      "location": "Vorholzstraße zw, Karlstraße und Hirschstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30089",
+      "announcedOn": "2026-11-10",
+      "siteId": "30089",
+      "point": [
+        8.60761,
+        49.134578
+      ],
+      "extentPoints": [
+        [
+          8.60517,
+          49.13523
+        ],
+        [
+          8.60728,
+          49.13452
+        ]
+      ],
+      "closure": "full",
+      "startDate": "2026-03-30",
+      "endDate": "2026-12-31",
+      "municipality": "Bruchsal",
+      "location": "Haydnstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:30112",
       "announcedOn": "2026-11-09",
       "siteId": "30112",
@@ -1818,6 +1965,43 @@
     },
     {
       "kind": "new",
+      "signature": "new:40239",
+      "announcedOn": "2026-11-10",
+      "siteId": "40239",
+      "point": [
+        8.616691,
+        49.117476
+      ],
+      "extentPoints": [
+        [
+          8.61188,
+          49.11854
+        ],
+        [
+          8.61408,
+          49.11797
+        ],
+        [
+          8.61644,
+          49.11746
+        ],
+        [
+          8.61826,
+          49.11673
+        ],
+        [
+          8.61993,
+          49.11547
+        ]
+      ],
+      "closure": "full",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-20",
+      "municipality": "Bruchsal",
+      "location": "Württemberger Straße zw. Schlachthof und Bahnbrücke"
+    },
+    {
+      "kind": "new",
       "signature": "new:40246",
       "announcedOn": "2026-11-06",
       "siteId": "40246",
@@ -2014,36 +2198,6 @@
       "endDate": "2027-02-21",
       "municipality": "Karlsruhe",
       "location": "Gartenstraße zw. Brauerstraße u. Kriegstraße",
-      "reminderLeadDays": 14
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V0100:2026-11-21:14",
-      "announcedOn": "2026-11-07",
-      "siteId": "2026V0100",
-      "point": [
-        8.404175,
-        49.010809
-      ],
-      "extentPoints": [
-        [
-          8.4017,
-          49.01132
-        ],
-        [
-          8.40371,
-          49.0108
-        ],
-        [
-          8.40589,
-          49.01091
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-21",
-      "endDate": "2027-02-28",
-      "municipality": "Karlsruhe",
-      "location": "Schlossplatz zw. Herrenstraße u. Zirkel",
       "reminderLeadDays": 14
     },
     {

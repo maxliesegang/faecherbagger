@@ -1,28 +1,36 @@
 {
-  "since": "2026-11-09T12:24:48.570Z",
+  "since": "2026-11-09T23:52:45.131Z",
   "added": [
-    "2026V3192",
-    "2026V7142",
-    "2026V7144",
-    "2026V7146",
-    "30263"
+    "2026V7152",
+    "2026V7153",
+    "2026V7159",
+    "2026V7169",
+    "30089",
+    "40239"
   ],
   "modified": [
-    "2026V6395"
+    "2026V0100",
+    "2026V6253"
   ],
-  "removed": [
-    "2026V3555",
-    "2026V7092"
-  ],
+  "removed": [],
   "relevantModifications": [
     {
-      "id": "2026V6395",
+      "id": "2026V0100",
       "changedFields": [
         "period"
       ],
-      "previousClosure": "full",
-      "previousStartDate": "2026-11-05",
-      "previousEndDate": "2026-11-09"
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-21",
+      "previousEndDate": "2027-02-28"
+    },
+    {
+      "id": "2026V6253",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-10-05",
+      "previousEndDate": "2026-11-20"
     }
   ]
 }

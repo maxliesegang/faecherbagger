@@ -2294,7 +2294,7 @@
     "location": "Schlossplatz zw. Herrenstraße u. Zirkel",
     "notes": "Jederzeit ein Fahrstreifen im Haupttunnel und in der Tiefspur (Höhe max. 2,00 m) frei, Parkhauszufahrten sind angebunden",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-21",
+    "startDate": "2026-11-23",
     "endDate": "2027-02-28",
     "point": [
       8.404175,
@@ -2315,7 +2315,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-19T22:00:00Z"
+    "lastModified": "2026-11-09T23:00:00Z"
   },
   {
     "id": "2026V0102",
@@ -7017,7 +7017,7 @@
     "notes": null,
     "cause": "Tiefbauamt",
     "startDate": "2026-10-05",
-    "endDate": "2026-11-20",
+    "endDate": "2026-11-22",
     "point": [
       8.404595,
       49.011125
@@ -7037,7 +7037,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
+    "lastModified": "2026-11-09T23:00:00Z"
   },
   {
     "id": "2026V6261",
@@ -8509,11 +8509,91 @@
     "startDate": "2026-11-30",
     "endDate": "2026-12-04",
     "point": [
-      8.487977,
-      48.996393
+      8.488156,
+      48.996404
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-08T23:00:00Z"
+  },
+  {
+    "id": "2026V7152",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Reichardtstraße/Turmberg Parkplatz bei der Bergstation",
+    "notes": "Baustelleneinrichtung/Entfall von öffentlichen Parkplätzen",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-09",
+    "endDate": "2027-10-30",
+    "point": [
+      8.485405,
+      48.997376
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-09T23:00:00Z"
+  },
+  {
+    "id": "2026V7153",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wolfweg und Wirtschaftsweg unterhalb der Bergbahntrasse",
+    "notes": "Sperrung Wolfweg werktags zwischen 7.00 und 17.00 Uhr, Wanderwege dauerhaft umgeleitet",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-02",
+    "endDate": "2027-07-30",
+    "point": [
+      8.483161,
+      48.997934
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-09T23:00:00Z"
+  },
+  {
+    "id": "2026V7159",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Geigersbergstraße zw. Ernst-Barlach-Straße und Lußsteige",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-20",
+    "endDate": "2026-11-20",
+    "point": [
+      8.472952,
+      48.989025
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-09T23:00:00Z"
+  },
+  {
+    "id": "2026V7169",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Vorholzstraße zw, Karlstraße und Hirschstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-12-14",
+    "endDate": "2026-12-18",
+    "point": [
+      8.39224,
+      48.999702
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-09T23:00:00Z"
   },
   {
     "id": "30016",
@@ -8998,6 +9078,36 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-08-31T12:56:38Z"
+  },
+  {
+    "id": "30089",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Haydnstraße",
+    "notes": "Haydnstraße - Gehweg gesperrt und Fahrbahn verengt",
+    "cause": "Stadtwerke",
+    "startDate": "2026-03-30",
+    "endDate": "2026-12-31",
+    "point": [
+      8.60761,
+      49.134578
+    ],
+    "extentPoints": [
+      [
+        8.60517,
+        49.13523
+      ],
+      [
+        8.60728,
+        49.13452
+      ]
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-03-20T08:41:50Z"
   },
   {
     "id": "30096",
@@ -11060,6 +11170,48 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-22T12:05:31Z"
+  },
+  {
+    "id": "40239",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Württemberger Straße zw. Schlachthof und Bahnbrücke",
+    "notes": "Neue Fahrbahndecke in der Württemberger Straße bis an die Baustelle Bahnbrücke.\nIn der ersten Woche können Anwohner mit einer Einbahnregelung vom Schlachthof her zufahren.\nIn der zweiten Woche muss der Bereich gesperrt werden und ist nur noch fußläufig zugänglich.\n\nDie Zufahrt von Feuerwehr und Rettungsdiensten ist in Notfällen sichergestellt.",
+    "cause": "Fachgebiet Tiefbau",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-20",
+    "point": [
+      8.616691,
+      49.117476
+    ],
+    "extentPoints": [
+      [
+        8.61188,
+        49.11854
+      ],
+      [
+        8.61408,
+        49.11797
+      ],
+      [
+        8.61644,
+        49.11746
+      ],
+      [
+        8.61826,
+        49.11673
+      ],
+      [
+        8.61993,
+        49.11547
+      ]
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-24T15:43:43Z"
   },
   {
     "id": "40240",

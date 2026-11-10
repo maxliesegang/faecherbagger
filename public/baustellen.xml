@@ -4,11 +4,80 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Mon, 09 Nov 2026 23:52:45 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Nov 2026 11:59:30 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
         <atom:link href="https://maxliesegang.github.io/faecherbagger/baustellen.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Geplant: Schlossplatz zw. Herrenstraße u. Zirkel – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0100</link>
+            <guid isPermaLink="false">faecherbagger:2026V0100:2026-11-09T23:00:00Z</guid>
+            <pubDate>Mon, 09 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Tunnel · Mit Behinderung
+Zeitraum: 23.11.2026 – 28.02.2027
+Hinweis: Jederzeit ein Fahrstreifen im Haupttunnel und in der Tiefspur (Höhe max. 2,00 m) frei, Parkhauszufahrten sind angebunden
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Tunnel</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Schlossplatz zw. Herrenstraße u. Zirkel – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6253</link>
+            <guid isPermaLink="false">faecherbagger:2026V6253:2026-11-09T23:00:00Z</guid>
+            <pubDate>Mon, 09 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Stützwand · Sperrung (1 Richtung)
+Zeitraum: 05.10.2026 – 22.11.2026
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Stützwand</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Reichardtstraße/Turmberg Parkplatz bei der Bergstation – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7152</link>
+            <guid isPermaLink="false">faecherbagger:2026V7152:2026-11-09T23:00:00Z</guid>
+            <pubDate>Mon, 09 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Keine Behinderung
+Zeitraum: 09.11.2026 – 30.10.2027
+Hinweis: Baustelleneinrichtung/Entfall von öffentlichen Parkplätzen
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Wolfweg und Wirtschaftsweg unterhalb der Bergbahntrasse – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7153</link>
+            <guid isPermaLink="false">faecherbagger:2026V7153:2026-11-09T23:00:00Z</guid>
+            <pubDate>Mon, 09 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gleisbau · Vollsperrung
+Zeitraum: 02.11.2026 – 30.07.2027
+Hinweis: Sperrung Wolfweg werktags zwischen 7.00 und 17.00 Uhr, Wanderwege dauerhaft umgeleitet
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Gleisbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Geigersbergstraße zw. Ernst-Barlach-Straße und Lußsteige – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7159</link>
+            <guid isPermaLink="false">faecherbagger:2026V7159:2026-11-09T23:00:00Z</guid>
+            <pubDate>Mon, 09 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 20.11.2026 – 20.11.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Kraneinsatz</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Vorholzstraße zw, Karlstraße und Hirschstraße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7169</link>
+            <guid isPermaLink="false">faecherbagger:2026V7169:2026-11-09T23:00:00Z</guid>
+            <pubDate>Mon, 09 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 14.12.2026 – 18.12.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Kraneinsatz</category>
+        </item>
         <item>
             <title><![CDATA[Geplant: Erbprinzenstraße zw. Ritterstraße und Karlstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6381</link>
@@ -1604,6 +1673,22 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Kraneinsatz</category>
         </item>
         <item>
+            <title><![CDATA[Aktuell: Württemberger Straße zw. Schlachthof und Bahnbrücke – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40239</link>
+            <guid isPermaLink="false">faecherbagger:40239:2026-10-24T15:43:43Z</guid>
+            <pubDate>Sat, 24 Oct 2026 15:43:43 GMT</pubDate>
+            <description><![CDATA[Aktuell · Straßenunterhaltung · Vollsperrung
+Zeitraum: 10.11.2026 – 20.11.2026
+Hinweis: Neue Fahrbahndecke in der Württemberger Straße bis an die Baustelle Bahnbrücke.
+In der ersten Woche können Anwohner mit einer Einbahnregelung vom Schlachthof her zufahren.
+In der zweiten Woche muss der Bereich gesperrt werden und ist nur noch fußläufig zugänglich.
+
+Die Zufahrt von Feuerwehr und Rettungsdiensten ist in Notfällen sichergestellt.
+Verantwortlich: Fachgebiet Tiefbau
+Quelle: Stadt Bruchsal]]></description>
+            <category>Straßenunterhaltung</category>
+        </item>
+        <item>
             <title><![CDATA[Aktuell: Koyweg zw. Hinterwiesenweg und Elfmorgenbruch – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5152</link>
             <guid isPermaLink="false">faecherbagger:2026V5152:2026-10-23</guid>
@@ -2024,18 +2109,6 @@ Zeitraum: 17.09.2026 – 28.11.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></description>
             <category>Bauliche Sondernutzung</category>
-        </item>
-        <item>
-            <title><![CDATA[Geplant: Schlossplatz zw. Herrenstraße u. Zirkel – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0100</link>
-            <guid isPermaLink="false">faecherbagger:2026V0100:2026-10-19T22:00:00Z</guid>
-            <pubDate>Mon, 19 Oct 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Tunnel · Mit Behinderung
-Zeitraum: 21.11.2026 – 28.02.2027
-Hinweis: Jederzeit ein Fahrstreifen im Haupttunnel und in der Tiefspur (Höhe max. 2,00 m) frei, Parkhauszufahrten sind angebunden
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Tunnel</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Lärchenweg zw. Fichtenweg und Donauschwabenstraße – Karlsruhe]]></title>
@@ -3065,17 +3138,6 @@ Zeitraum: 24.12.2026 – 17.01.2027
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></description>
             <category>Straßenbau</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Schlossplatz zw. Herrenstraße u. Zirkel – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6253</link>
-            <guid isPermaLink="false">faecherbagger:2026V6253:2026-09-30T22:00:00Z</guid>
-            <pubDate>Wed, 30 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Stützwand · Sperrung (1 Richtung)
-Zeitraum: 05.10.2026 – 20.11.2026
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Stützwand</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: 76297 Stutensee, Oberfeldstraße 4 – Stutensee]]></title>
@@ -5075,6 +5137,18 @@ Zeitraum: 07.04.2026 – 01.04.2027
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></description>
             <category>Bauliche Sondernutzung</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: Haydnstraße – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30089</link>
+            <guid isPermaLink="false">faecherbagger:30089:2026-03-20T08:41:50Z</guid>
+            <pubDate>Fri, 20 Mar 2026 08:41:50 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
+Zeitraum: 30.03.2026 – 31.12.2026
+Hinweis: Haydnstraße - Gehweg gesperrt und Fahrbahn verengt
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></description>
+            <category>Gas/Wasser</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Gänsbergstraße zw. Werrenstraße und Wiesentalstraße – Karlsruhe]]></title>
