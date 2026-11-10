@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-11-10T11:59:30.330Z</updated>
+    <updated>2026-11-10T21:30:14.722Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -11,6 +11,18 @@
     <link rel="alternate" href="https://maxliesegang.github.io/faecherbagger/"/>
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Geplant: 76297 Stutensee, Blankenlocher Straße 9 – Stutensee]]></title>
+        <id>faecherbagger:40188:2026-11-10T12:47:58Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40188"/>
+        <updated>2026-11-10T12:47:58.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 11.11.2026 – 11.11.2026
+Hinweis: Vollsperrung
+Verantwortlich: Bauunternehmen
+Quelle: Stadt Stutensee]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Schlossplatz zw. Herrenstraße u. Zirkel – Karlsruhe]]></title>
         <id>faecherbagger:2026V0100:2026-11-09T23:00:00Z</id>
@@ -24,6 +36,30 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Tunnel" term="tunnel"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Siemensallee zw. B36/ Neureuter Straße und Laubenweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2503:2026-11-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2503"/>
+        <updated>2026-11-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Sperrung (1 Richtung)
+Zeitraum: 03.08.2026 – 10.11.2026
+Hinweis: Siemensallee zw. B 36 Neureuter Straße u. Hertzstraße
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Siemensallee zw. B36/ Neureuter Straße und Laubenweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2504:2026-11-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2504"/>
+        <updated>2026-11-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 11.11.2026 – 19.02.2027
+Hinweis: Anliegerzufahrt Seydlitzstraße von Neureuter Straße
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Schlossplatz zw. Herrenstraße u. Zirkel – Karlsruhe]]></title>
         <id>faecherbagger:2026V6253:2026-11-09T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6253"/>
@@ -33,6 +69,30 @@ Zeitraum: 05.10.2026 – 22.11.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Stützwand" term="retaining-wall"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Turmbergstraße zw. Posseltstraße und Wolfweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6638:2026-11-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6638"/>
+        <updated>2026-11-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 09.11.2026 – 30.11.2026
+Hinweis: Einspurige Verkehrsführung mit Engstellensignalisierung
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Graf-Rhena-Straße zw. Kolpingplatz/ Gebhardstraße und Sachsenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6921:2026-11-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6921"/>
+        <updated>2026-11-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 16.11.2026 – 22.12.2026
+Hinweis: Höhe Haus Nr 2a
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Reichardtstraße/Turmberg Parkplatz bei der Bergstation – Karlsruhe]]></title>
@@ -79,6 +139,39 @@ Zeitraum: 14.12.2026 – 18.12.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Graf-Rhena-Straße zw. Kolpingplatz/ Gebhardstraße und Sachsenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7184:2026-11-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7184"/>
+        <updated>2026-11-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 04.01.2027 – 31.12.2028
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Drosselsangweg 1 bis Rintheimer Hauptstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7185:2026-11-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7185"/>
+        <updated>2026-11-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 09.11.2026 – 12.12.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Jagdstraße von Rintheimer Hauptstr. bis Hinterwiesenweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7186:2026-11-09T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7186"/>
+        <updated>2026-11-09T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 10.11.2026 – 19.12.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Erbprinzenstraße zw. Ritterstraße und Karlstraße – Karlsruhe]]></title>
@@ -1908,30 +2001,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Siemensallee zw. B36/ Neureuter Straße und Laubenweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2503:2026-10-21T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2503"/>
-        <updated>2026-10-21T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Sperrung (1 Richtung)
-Zeitraum: 03.08.2026 – 13.11.2026
-Hinweis: Siemensallee zw. B 36 Neureuter Straße u. Hertzstraße
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Siemensallee zw. B36/ Neureuter Straße und Laubenweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2504:2026-10-21T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2504"/>
-        <updated>2026-10-21T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 13.11.2026 – 18.12.2026
-Hinweis: Anliegerzufahrt Seydlitzstraße von Neureuter Straße
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Siemensallee zw. B36/ Neureuter Straße und Feierabendweg – Karlsruhe]]></title>
         <id>faecherbagger:2026V2505:2026-10-21T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2505"/>
@@ -2146,18 +2215,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, geänderte Verkehrsführung i
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Turmbergstraße zw. Posseltstraße und Wolfweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6638:2026-10-19T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6638"/>
-        <updated>2026-10-19T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
-Zeitraum: 02.11.2026 – 19.11.2026
-Hinweis: Einspurige Verkehrsführung mit Engstellensignalisierung
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Turmbergstraße zw. Am Burgweg und Kastellstraße – Karlsruhe]]></title>
@@ -4365,7 +4422,7 @@ Quelle: Stadt Bruchsal]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40143"/>
         <updated>2026-07-29T08:31:05.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 10.08.2026 – 30.11.2026
+Zeitraum: 10.08.2026 – 31.01.2027
 Hinweis: Fahrbahn verengt, Mindestrestbreite von 3,05 m
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
