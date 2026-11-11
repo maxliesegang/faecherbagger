@@ -354,6 +354,26 @@
     "lastModified": "2026-08-27T22:00:00Z"
   },
   {
+    "id": "2023V6310",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße",
+    "notes": "Sackgassen bis Baufeld, Rad- und Fußweg wird umgeleitet",
+    "cause": "Privat",
+    "startDate": "2024-04-04",
+    "endDate": "2027-03-31",
+    "point": [
+      8.455509,
+      48.976131
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-10T23:00:00Z"
+  },
+  {
     "id": "2023V6394",
     "phase": "active",
     "category": "special-use",
@@ -565,13 +585,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-30",
-    "endDate": "2026-12-04",
+    "endDate": "2026-12-11",
     "point": [
       8.387393,
       49.009589
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "2024V5526",
@@ -3553,7 +3573,7 @@
   },
   {
     "id": "2026V1798",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -3926,28 +3946,8 @@
     "lastModified": "2026-10-21T22:00:00Z"
   },
   {
-    "id": "2026V2503",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Siemensallee zw. B36/ Neureuter Straße und Laubenweg",
-    "notes": "Siemensallee zw. B 36 Neureuter Straße u. Hertzstraße",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-03",
-    "endDate": "2026-11-10",
-    "point": [
-      8.357412,
-      49.023546
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-09T23:00:00Z"
-  },
-  {
     "id": "2026V2504",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -4584,14 +4584,14 @@
     "location": "Pfalzstraße Kreuzungsbereich Krämerstraße",
     "notes": "Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-04",
+    "startDate": "2027-01-11",
     "endDate": "2027-03-21",
     "point": [
       8.334773,
       49.004829
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-04T23:00:00Z"
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "2026V3547",
@@ -4812,6 +4812,96 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-17T22:00:00Z"
+  },
+  {
+    "id": "2026V3787",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen",
+    "notes": "9:00 Uh - 15:00 Uhr, lokale Fahrstreifensperrungen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-12",
+    "endDate": "2026-11-20",
+    "point": [
+      8.412088,
+      49.01388
+    ],
+    "extentPoints": [
+      [
+        8.3959,
+        49.02738
+      ],
+      [
+        8.39741,
+        49.02341
+      ],
+      [
+        8.39324,
+        49.02175
+      ],
+      [
+        8.39768,
+        49.01848
+      ],
+      [
+        8.3866,
+        49.01465
+      ],
+      [
+        8.38575,
+        49.00542
+      ],
+      [
+        8.43069,
+        48.99353
+      ],
+      [
+        8.42772,
+        48.99998
+      ],
+      [
+        8.44379,
+        49.00411
+      ],
+      [
+        8.41692,
+        49.00502
+      ],
+      [
+        8.4107,
+        49.0051
+      ],
+      [
+        8.41934,
+        49.00868
+      ],
+      [
+        8.41836,
+        49.01308
+      ],
+      [
+        8.43677,
+        49.01471
+      ],
+      [
+        8.41578,
+        49.0206
+      ],
+      [
+        8.42067,
+        49.02274
+      ],
+      [
+        8.42427,
+        49.02541
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "2026V3807",
@@ -5565,13 +5655,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2027-07-20",
-    "endDate": "2027-08-14",
+    "endDate": "2027-08-06",
     "point": [
       8.356843,
       49.024955
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-21T22:00:00Z"
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "2026V4595",
@@ -5831,13 +5921,13 @@
     "notes": "Rheinhafenstraße = Zufahrt Kirschstraße gesperrt, Kirschstraße Ausfahrt Rheinhafenstraße = offen, Pfalzstraße = Sackgasse bis Kirschstraße",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-11-09",
-    "endDate": "2026-11-11",
+    "endDate": "2026-12-11",
     "point": [
       8.336528,
       49.004571
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-04T23:00:00Z"
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "2026V4770",
@@ -5848,16 +5938,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Kirschstraße zw. Turnerstraße und Rehinhafenstraße",
-    "notes": "Aufteilung nicht vorgenommen",
+    "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-12-14",
-    "endDate": "2027-01-03",
+    "endDate": "2026-12-22",
     "point": [
       8.336448,
       49.004435
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-04T23:00:00Z"
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "2026V4792",
@@ -7220,26 +7310,6 @@
     "lastModified": "2026-10-29T23:00:00Z"
   },
   {
-    "id": "2026V6395",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Yorckstraße zw. Sophienstraße und Yorckplatz",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-05",
-    "endDate": "2026-11-10",
-    "point": [
-      8.372247,
-      49.007912
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-08T23:00:00Z"
-  },
-  {
     "id": "2026V6401",
     "phase": "active",
     "category": "crane",
@@ -8042,46 +8112,6 @@
     "lastModified": "2026-11-01T23:00:00Z"
   },
   {
-    "id": "2026V6966",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
-    "notes": "nächtliche Vollsperrung am 9.11.2026 ab 18.00 Uhr bis 10.11.2026 um 2.00 Uhr",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-09",
-    "endDate": "2026-11-10",
-    "point": [
-      8.476071,
-      48.999092
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-01T23:00:00Z"
-  },
-  {
-    "id": "2026V6967",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
-    "notes": "nächtliche Vollsperrung am 10.11.2026 ab 19.00 Uhr bis 22.00 Uhr",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-10",
-    "endDate": "2026-11-10",
-    "point": [
-      8.476071,
-      48.999092
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-01T23:00:00Z"
-  },
-  {
     "id": "2026V6970",
     "phase": "active",
     "category": "road-construction",
@@ -8277,7 +8307,7 @@
   },
   {
     "id": "2026V7057",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -8297,7 +8327,7 @@
   },
   {
     "id": "2026V7058",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -8674,6 +8704,114 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-09T23:00:00Z"
+  },
+  {
+    "id": "2026V7199",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
+    "notes": "vs. 18:00 Uhr - 23:00 Uhr",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-11",
+    "endDate": "2026-11-11",
+    "point": [
+      8.476071,
+      48.999092
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-10T23:00:00Z"
+  },
+  {
+    "id": "2026V7200",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
+    "notes": "vs. 18:00 Uhr - 23:00 Uhr",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-12",
+    "endDate": "2026-11-12",
+    "point": [
+      8.476071,
+      48.999092
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-10T23:00:00Z"
+  },
+  {
+    "id": "2026V7208",
+    "phase": "upcoming",
+    "category": "traffic-reroute",
+    "artRaw": "geänderte Verkehrsführung im Zuge von Baumaßnahmen",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg",
+    "notes": "1-streifige Verkehrsführung",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-24",
+    "endDate": "2026-11-25",
+    "point": [
+      8.350235,
+      49.014504
+    ],
+    "extentPoints": [
+      [
+        8.35246,
+        49.01389
+      ],
+      [
+        8.35016,
+        49.01455
+      ],
+      [
+        8.34796,
+        49.01515
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-10T23:00:00Z"
+  },
+  {
+    "id": "2026V7209",
+    "phase": "upcoming",
+    "category": "traffic-reroute",
+    "artRaw": "geänderte Verkehrsführung im Zuge von Baumaßnahmen",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg",
+    "notes": "1-streifige Verkehrsführung",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-30",
+    "endDate": "2026-11-30",
+    "point": [
+      8.350235,
+      49.014504
+    ],
+    "extentPoints": [
+      [
+        8.35246,
+        49.01389
+      ],
+      [
+        8.35016,
+        49.01455
+      ],
+      [
+        8.34796,
+        49.01515
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "30016",
@@ -9706,6 +9844,26 @@
     "lastModified": "2026-11-06T08:25:34Z"
   },
   {
+    "id": "30265",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Mozartweg - Höhe Uhlandweg",
+    "notes": "Gehweg verengt evtl. gesperrt mit Notweg auf der Fahrbahn",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-11",
+    "endDate": "2026-11-25",
+    "point": [
+      8.603894,
+      49.128743
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-10T06:57:14Z"
+  },
+  {
     "id": "30280",
     "phase": "active",
     "category": "bridge",
@@ -10449,7 +10607,7 @@
     "notes": "Hochbau größeren Umfangs:\nAm Alten Güterbahnhof: Die Fahrbahn wird verengt. Es bleiben zwei Spuren zu 3 m.\nElie-Wiese-Weg: Punktuelle Verengung und Sperrung im mittleren Abschnitt. Anlieger, Fußgänger und Radverkerh ist möglich.\nHenry-Dunant-Weg: Vollsperrung vor dem Elie-Wiesel-Weg. Kein Durchgang für Fußgänger.",
     "cause": "Privat",
     "startDate": "2026-07-30",
-    "endDate": "2026-12-31",
+    "endDate": "2027-08-31",
     "point": [
       8.58635,
       49.123268
@@ -10943,6 +11101,26 @@
   },
   {
     "id": "40188",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Blankenlocher Straße 9",
+    "notes": "Vollsperrung",
+    "cause": "Bauunternehmen",
+    "startDate": "2026-11-11",
+    "endDate": "2026-11-11",
+    "point": [
+      8.509453,
+      49.093456
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-11-10T12:47:58Z"
+  },
+  {
+    "id": "40188",
     "phase": "upcoming",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
@@ -11192,26 +11370,6 @@
     "lastModified": "2026-10-16T07:26:35Z"
   },
   {
-    "id": "40234",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Hafnergasse 4",
-    "notes": "Vollsperung der Fahrbahn. Durchgang für Fußgänger möglich.",
-    "cause": "Privat",
-    "startDate": "2026-11-05",
-    "endDate": "2026-11-10",
-    "point": [
-      8.644693,
-      49.102409
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-19T07:48:02Z"
-  },
-  {
     "id": "40235",
     "phase": "active",
     "category": "road-maintenance",
@@ -11250,26 +11408,6 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-09-17T05:12:51Z"
-  },
-  {
-    "id": "40237",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Hochstraße 5",
-    "notes": "Vollsperrung für den Fahrzeugverkehr, Fußgänger frei.",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-11-05",
-    "endDate": "2026-11-10",
-    "point": [
-      8.60004,
-      49.120603
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-22T12:05:31Z"
   },
   {
     "id": "40239",

@@ -1,45 +1,74 @@
 {
-  "since": "2026-11-10T11:59:30.330Z",
+  "since": "2026-11-10T21:30:14.722Z",
   "added": [
-    "2026V6921",
-    "2026V7184",
-    "2026V7185",
-    "2026V7186",
-    "40188"
+    "2023V6310",
+    "2026V3787",
+    "2026V7199",
+    "2026V7200",
+    "2026V7208",
+    "2026V7209",
+    "30265"
   ],
   "modified": [
-    "2026V2503",
-    "2026V2504",
-    "2026V6638"
+    "2024V5284",
+    "2026V3481",
+    "2026V4566",
+    "2026V4769",
+    "2026V4770"
   ],
-  "removed": [],
+  "removed": [
+    "2026V2503",
+    "2026V6395",
+    "2026V6966",
+    "2026V6967",
+    "40234",
+    "40237"
+  ],
   "relevantModifications": [
     {
-      "id": "2026V2503",
+      "id": "2024V5284",
       "changedFields": [
         "period"
       ],
       "previousClosure": "one-direction",
-      "previousStartDate": "2026-08-03",
-      "previousEndDate": "2026-11-13"
+      "previousStartDate": "2026-07-30",
+      "previousEndDate": "2026-12-04"
     },
     {
-      "id": "2026V2504",
+      "id": "2026V3481",
       "changedFields": [
         "period"
       ],
       "previousClosure": "full",
-      "previousStartDate": "2026-11-13",
-      "previousEndDate": "2026-12-18"
+      "previousStartDate": "2027-01-04",
+      "previousEndDate": "2027-03-21"
     },
     {
-      "id": "2026V6638",
+      "id": "2026V4566",
       "changedFields": [
         "period"
       ],
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-11-02",
-      "previousEndDate": "2026-11-19"
+      "previousStartDate": "2027-07-20",
+      "previousEndDate": "2027-08-14"
+    },
+    {
+      "id": "2026V4769",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-11-09",
+      "previousEndDate": "2026-11-11"
+    },
+    {
+      "id": "2026V4770",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-12-14",
+      "previousEndDate": "2027-01-03"
     }
   ]
 }
