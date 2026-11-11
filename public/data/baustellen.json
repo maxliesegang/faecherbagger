@@ -1755,13 +1755,13 @@
     "notes": "Abwicklung in mehreren Bauabschnitten; Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2027-01-11",
-    "endDate": "2029-12-14",
+    "endDate": "2028-12-15",
     "point": [
       8.439658,
       49.029778
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-13T22:00:00Z"
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "2025V6381",
@@ -2205,23 +2205,23 @@
   },
   {
     "id": "2026V0049",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
+    "closure": "one-direction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz",
     "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-02",
-    "endDate": "2027-06-06",
+    "startDate": "2027-02-01",
+    "endDate": "2027-07-31",
     "point": [
       8.374735,
       49.004983
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-05T23:00:00Z"
+    "lastModified": "2026-11-10T23:00:00Z"
   },
   {
     "id": "2026V0071",
@@ -4827,8 +4827,8 @@
     "startDate": "2026-11-12",
     "endDate": "2026-11-20",
     "point": [
-      8.412088,
-      49.01388
+      8.410756,
+      49.012634
     ],
     "extentPoints": [
       [
@@ -4838,10 +4838,6 @@
       [
         8.39741,
         49.02341
-      ],
-      [
-        8.39324,
-        49.02175
       ],
       [
         8.39768,
@@ -4896,8 +4892,12 @@
         49.02274
       ],
       [
-        8.42427,
-        49.02541
+        8.41187,
+        48.99307
+      ],
+      [
+        8.37224,
+        48.99735
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -6652,40 +6652,6 @@
     "lastModified": "2026-09-15T22:00:00Z"
   },
   {
-    "id": "2026V5705",
-    "phase": "upcoming",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hertzstr., Stösserstr., Isoldestr.",
-    "notes": "Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-03-01",
-    "endDate": "2027-12-31",
-    "point": [
-      8.364358,
-      49.016733
-    ],
-    "extentPoints": [
-      [
-        8.36257,
-        49.01609
-      ],
-      [
-        8.36441,
-        49.01675
-      ],
-      [
-        8.36652,
-        49.01652
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
-  },
-  {
     "id": "2026V5717",
     "phase": "upcoming",
     "category": "green-maintenance",
@@ -7288,26 +7254,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-07T22:00:00Z"
-  },
-  {
-    "id": "2026V6360",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B10 Südtangente zwischen AS9 und AS10",
-    "notes": "vs 3 Wochen, Bautermin von Bauko geschätzt, Sperrung des jeweils linken Fahrstreifens, Zweistreifige Verkehrsführung in beiden Fahrtrichtungen, teilweise Verschwenk auf Standstreifen",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-11-09",
-    "endDate": "2026-11-27",
-    "point": [
-      8.330465,
-      49.032671
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-29T23:00:00Z"
   },
   {
     "id": "2026V6401",
@@ -8706,46 +8652,6 @@
     "lastModified": "2026-11-09T23:00:00Z"
   },
   {
-    "id": "2026V7199",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
-    "notes": "vs. 18:00 Uhr - 23:00 Uhr",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-11",
-    "endDate": "2026-11-11",
-    "point": [
-      8.476071,
-      48.999092
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-10T23:00:00Z"
-  },
-  {
-    "id": "2026V7200",
-    "phase": "upcoming",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
-    "notes": "vs. 18:00 Uhr - 23:00 Uhr",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-12",
-    "endDate": "2026-11-12",
-    "point": [
-      8.476071,
-      48.999092
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-10T23:00:00Z"
-  },
-  {
     "id": "2026V7208",
     "phase": "upcoming",
     "category": "traffic-reroute",
@@ -9864,6 +9770,26 @@
     "lastModified": "2026-11-10T06:57:14Z"
   },
   {
+    "id": "30273",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Am Mantel 11",
+    "notes": "Störung Wasserversorgung. Im Zeitraum wird kurzzeitig am Fahrbahnrand aufgegraben.",
+    "cause": "Stadtwerke",
+    "startDate": "2026-11-11",
+    "endDate": "2026-11-20",
+    "point": [
+      8.562747,
+      49.140492
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-11T13:06:09Z"
+  },
+  {
     "id": "30280",
     "phase": "active",
     "category": "bridge",
@@ -10514,6 +10440,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-07-07T05:30:32Z"
+  },
+  {
+    "id": "40122",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Heidelberger Ring ggü. 22",
+    "notes": "Lagerung von Baumaterial auf den öffentlichen Parkplätzen / Einrichtung einer Halteverbotszone",
+    "cause": "Privat",
+    "startDate": "2026-07-20",
+    "endDate": "2026-12-18",
+    "point": [
+      8.471377,
+      49.100948
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-07-10T08:46:21Z"
   },
   {
     "id": "40123",

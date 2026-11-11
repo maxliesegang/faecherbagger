@@ -4,11 +4,23 @@
         <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
         <link>https://maxliesegang.github.io/faecherbagger/</link>
         <description>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</description>
-        <lastBuildDate>Wed, 11 Nov 2026 11:37:34 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 11 Nov 2026 22:20:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Fächerbagger</generator>
         <language>de</language>
         <atom:link href="https://maxliesegang.github.io/faecherbagger/baustellen.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Aktuell: Am Mantel 11 – Bruchsal]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=30273</link>
+            <guid isPermaLink="false">faecherbagger:30273:2026-11-11T13:06:09Z</guid>
+            <pubDate>Wed, 11 Nov 2026 13:06:09 GMT</pubDate>
+            <description><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 11.11.2026 – 20.11.2026
+Hinweis: Störung Wasserversorgung. Im Zeitraum wird kurzzeitig am Fahrbahnrand aufgegraben.
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></description>
+            <category>Gas/Wasser</category>
+        </item>
         <item>
             <title><![CDATA[Aktuell: Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße – Karlsruhe]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2023V6310</link>
@@ -28,6 +40,30 @@ Quelle: Stadt Karlsruhe]]></description>
             <pubDate>Tue, 10 Nov 2026 23:00:00 GMT</pubDate>
             <description><![CDATA[Aktuell · Fernwärme · Sperrung (1 Richtung)
 Zeitraum: 30.07.2026 – 11.12.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Fernwärme</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6344</link>
+            <guid isPermaLink="false">faecherbagger:2025V6344:2026-11-10T23:00:00Z</guid>
+            <pubDate>Tue, 10 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 11.01.2027 – 15.12.2028
+Hinweis: Abwicklung in mehreren Bauabschnitten; Aufteilung nicht vorgenommen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></description>
+            <category>Gas/Wasser</category>
+        </item>
+        <item>
+            <title><![CDATA[Geplant: Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz – Karlsruhe]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0049</link>
+            <guid isPermaLink="false">faecherbagger:2026V0049:2026-11-10T23:00:00Z</guid>
+            <pubDate>Tue, 10 Nov 2026 23:00:00 GMT</pubDate>
+            <description><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
+Zeitraum: 01.02.2027 – 31.07.2027
+Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
@@ -89,30 +125,6 @@ Zeitraum: 14.12.2026 – 22.12.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Fernwärme</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7199</link>
-            <guid isPermaLink="false">faecherbagger:2026V7199:2026-11-10T23:00:00Z</guid>
-            <pubDate>Tue, 10 Nov 2026 23:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Gleisbau · Vollsperrung
-Zeitraum: 11.11.2026 – 11.11.2026
-Hinweis: vs. 18:00 Uhr - 23:00 Uhr
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gleisbau</category>
-        </item>
-        <item>
-            <title><![CDATA[Geplant: Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7200</link>
-            <guid isPermaLink="false">faecherbagger:2026V7200:2026-11-10T23:00:00Z</guid>
-            <pubDate>Tue, 10 Nov 2026 23:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Gleisbau · Vollsperrung
-Zeitraum: 12.11.2026 – 12.11.2026
-Hinweis: vs. 18:00 Uhr - 23:00 Uhr
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gleisbau</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Honsellstraße zw. B36/ Starckstraße und Kurzheckweg – Karlsruhe]]></title>
@@ -498,18 +510,6 @@ Hinweis: Arbeiten an der Lichtsignalanlage, Aufteilung nicht vorgenommen
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V0049</link>
-            <guid isPermaLink="false">faecherbagger:2026V0049:2026-11-05T23:00:00Z</guid>
-            <pubDate>Thu, 05 Nov 2026 23:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Fernwärme · Mit Behinderung
-Zeitraum: 02.11.2026 – 06.06.2027
-Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Fernwärme</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Hirschstraße zw. Welfenstraße und Barbarossaplatz – Karlsruhe]]></title>
@@ -1363,18 +1363,6 @@ Hinweis: Arbeitsstelle im Gehwegbereich, Fußgängerführung über Radweg und Pa
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
-            <title><![CDATA[Aktuell: B10 Südtangente zwischen AS9 und AS10 – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6360</link>
-            <guid isPermaLink="false">faecherbagger:2026V6360:2026-10-29T23:00:00Z</guid>
-            <pubDate>Thu, 29 Oct 2026 23:00:00 GMT</pubDate>
-            <description><![CDATA[Aktuell · Brückenbau · Mit Behinderung
-Zeitraum: 09.11.2026 – 27.11.2026
-Hinweis: vs 3 Wochen, Bautermin von Bauko geschätzt, Sperrung des jeweils linken Fahrstreifens, Zweistreifige Verkehrsführung in beiden Fahrtrichtungen, teilweise Verschwenk auf Standstreifen
-Verantwortlich: Deutsche Bahn AG
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Brückenbau</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
@@ -3478,18 +3466,6 @@ Quelle: Stadt Karlsruhe]]></description>
             <category>Brückenbau</category>
         </item>
         <item>
-            <title><![CDATA[Geplant: Hertzstr., Stösserstr., Isoldestr. – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5705</link>
-            <guid isPermaLink="false">faecherbagger:2026V5705:2026-09-17T22:00:00Z</guid>
-            <pubDate>Thu, 17 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 01.03.2027 – 31.12.2027
-Hinweis: Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
             <title><![CDATA[Aktuell: 76437 Rastatt, Prinz-Eugen-Straße – Rastatt]]></title>
             <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40236</link>
             <guid isPermaLink="false">faecherbagger:40236:2026-09-17T05:12:51Z</guid>
@@ -3647,18 +3623,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwe
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></description>
             <category>Strom/TK-Versorgung</category>
-        </item>
-        <item>
-            <title><![CDATA[Geplant: Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße – Karlsruhe]]></title>
-            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=2025V6344</link>
-            <guid isPermaLink="false">faecherbagger:2025V6344:2026-09-13T22:00:00Z</guid>
-            <pubDate>Sun, 13 Sep 2026 22:00:00 GMT</pubDate>
-            <description><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 11.01.2027 – 14.12.2029
-Hinweis: Abwicklung in mehreren Bauabschnitten; Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></description>
-            <category>Gas/Wasser</category>
         </item>
         <item>
             <title><![CDATA[Aktuell: Neureuter Hauptstraße, Großschneiderweg, Welschneureuter Staße, Stefan-Zweig-Straße – Karlsruhe]]></title>
@@ -4645,6 +4609,18 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen, ge
 Verantwortlich: KASIG-Kombilösung
 Quelle: Stadt Karlsruhe]]></description>
             <category>Haltestellenumbau</category>
+        </item>
+        <item>
+            <title><![CDATA[Aktuell: 76297 Stutensee, Heidelberger Ring ggü. 22 – Stutensee]]></title>
+            <link>https://maxliesegang.github.io/faecherbagger/?baustelle=40122</link>
+            <guid isPermaLink="false">faecherbagger:40122:2026-07-10T08:46:21Z</guid>
+            <pubDate>Fri, 10 Jul 2026 08:46:21 GMT</pubDate>
+            <description><![CDATA[Aktuell · Bauliche Sondernutzung · Keine Behinderung
+Zeitraum: 20.07.2026 – 18.12.2026
+Hinweis: Lagerung von Baumaterial auf den öffentlichen Parkplätzen / Einrichtung einer Halteverbotszone
+Verantwortlich: Privat
+Quelle: Stadt Stutensee]]></description>
+            <category>Bauliche Sondernutzung</category>
         </item>
         <item>
             <title><![CDATA[Geplant: Hagsfelder Allee zwischen Am Sportpark und Traugott-Bender-Weg – Karlsruhe]]></title>

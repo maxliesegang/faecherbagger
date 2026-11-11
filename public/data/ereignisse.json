@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T11:37:34.796Z",
+  "generatedAt": "2026-11-11T22:20:26.759Z",
   "events": [
     {
       "kind": "changed",
@@ -231,6 +231,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2025V6344:2026-11-10T23:00:00Z",
+      "announcedOn": "2026-11-11",
+      "siteId": "2025V6344",
+      "point": [
+        8.439658,
+        49.029778
+      ],
+      "closure": "full",
+      "startDate": "2027-01-11",
+      "endDate": "2028-12-15",
+      "municipality": "Karlsruhe",
+      "location": "Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße",
+      "previousClosure": "full",
+      "previousStartDate": "2027-01-11"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2025V6455:2026-11-02T23:00:00Z",
       "announcedOn": "2026-11-03",
       "siteId": "2025V6455",
@@ -245,6 +262,23 @@
       "location": "Hermann-Billing-Straße zw. Ettlinger Straße und Am Festplatz/ Badenwerkstraße",
       "previousClosure": "none",
       "previousStartDate": "2026-11-04"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V0049:2026-11-10T23:00:00Z",
+      "announcedOn": "2026-11-11",
+      "siteId": "2026V0049",
+      "point": [
+        8.374735,
+        49.004983
+      ],
+      "closure": "one-direction",
+      "startDate": "2027-02-01",
+      "endDate": "2027-07-31",
+      "municipality": "Karlsruhe",
+      "location": "Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-02"
     },
     {
       "kind": "changed",
@@ -915,21 +949,6 @@
       "endDate": "2027-04-02",
       "municipality": "Karlsruhe",
       "location": "Erbprinzenstraße zw. Ritterstraße und Karlstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V0049",
-      "announcedOn": "2026-11-06",
-      "siteId": "2026V0049",
-      "point": [
-        8.374735,
-        49.004983
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-02",
-      "endDate": "2027-06-06",
-      "municipality": "Karlsruhe",
-      "location": "Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz"
     },
     {
       "kind": "new",
@@ -1782,36 +1801,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V7199",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V7199",
-      "point": [
-        8.476071,
-        48.999092
-      ],
-      "closure": "full",
-      "startDate": "2026-11-11",
-      "endDate": "2026-11-11",
-      "municipality": "Karlsruhe",
-      "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V7200",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V7200",
-      "point": [
-        8.476071,
-        48.999092
-      ],
-      "closure": "full",
-      "startDate": "2026-11-12",
-      "endDate": "2026-11-12",
-      "municipality": "Karlsruhe",
-      "location": "Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße"
-    },
-    {
-      "kind": "new",
       "signature": "new:2026V7208",
       "announcedOn": "2026-11-11",
       "siteId": "2026V7208",
@@ -1985,6 +1974,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:30273",
+      "announcedOn": "2026-11-11",
+      "siteId": "30273",
+      "point": [
+        8.562747,
+        49.140492
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-11",
+      "endDate": "2026-11-20",
+      "municipality": "Bruchsal",
+      "location": "Am Mantel 11"
+    },
+    {
+      "kind": "new",
       "signature": "new:40072",
       "announcedOn": "2026-11-04",
       "siteId": "40072",
@@ -2027,6 +2031,21 @@
       "endDate": "2027-01-31",
       "municipality": "Bruchsal",
       "location": "Büchenauer Straße 5"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40122",
+      "announcedOn": "2026-11-11",
+      "siteId": "40122",
+      "point": [
+        8.471377,
+        49.100948
+      ],
+      "closure": "none",
+      "startDate": "2026-07-20",
+      "endDate": "2026-12-18",
+      "municipality": "Stutensee",
+      "location": "76297 Stutensee, Heidelberger Ring ggü. 22"
     },
     {
       "kind": "new",
@@ -2441,6 +2460,92 @@
     },
     {
       "kind": "starts-soon",
+      "signature": "starts-soon:2026V3787:2026-11-12:1",
+      "announcedOn": "2026-11-11",
+      "siteId": "2026V3787",
+      "point": [
+        8.410756,
+        49.012634
+      ],
+      "extentPoints": [
+        [
+          8.3959,
+          49.02738
+        ],
+        [
+          8.39741,
+          49.02341
+        ],
+        [
+          8.39768,
+          49.01848
+        ],
+        [
+          8.3866,
+          49.01465
+        ],
+        [
+          8.38575,
+          49.00542
+        ],
+        [
+          8.43069,
+          48.99353
+        ],
+        [
+          8.42772,
+          48.99998
+        ],
+        [
+          8.44379,
+          49.00411
+        ],
+        [
+          8.41692,
+          49.00502
+        ],
+        [
+          8.4107,
+          49.0051
+        ],
+        [
+          8.41934,
+          49.00868
+        ],
+        [
+          8.41836,
+          49.01308
+        ],
+        [
+          8.43677,
+          49.01471
+        ],
+        [
+          8.41578,
+          49.0206
+        ],
+        [
+          8.42067,
+          49.02274
+        ],
+        [
+          8.41187,
+          48.99307
+        ],
+        [
+          8.37224,
+          48.99735
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-12",
+      "endDate": "2026-11-20",
+      "municipality": "Karlsruhe",
+      "location": "Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen",
+      "reminderLeadDays": 1
+    },
+    {
+      "kind": "starts-soon",
       "signature": "starts-soon:2026V4792:2026-11-09:1",
       "announcedOn": "2026-11-08",
       "siteId": "2026V4792",
@@ -2573,22 +2678,6 @@
       "endDate": "2027-04-23",
       "municipality": "Karlsruhe",
       "location": "Glogauer Straße und Im Eichbäumle",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6360:2026-11-09:1",
-      "announcedOn": "2026-11-08",
-      "siteId": "2026V6360",
-      "point": [
-        8.330465,
-        49.032671
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-09",
-      "endDate": "2026-11-27",
-      "municipality": "Karlsruhe",
-      "location": "B10 Südtangente zwischen AS9 und AS10",
       "reminderLeadDays": 1
     },
     {
