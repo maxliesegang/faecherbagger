@@ -634,6 +634,26 @@
     "lastModified": "2026-08-18T22:00:00Z"
   },
   {
+    "id": "2024V5788",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gartenstraße zw. Brauerstraße und Einmündung Jollystraße",
+    "notes": "Keine Zufahrt zur L605/Brauerstraße möglich, Einfahrt zu Tankstelle bleibt erhalten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-03",
+    "endDate": "2026-11-29",
+    "point": [
+      8.387054,
+      49.004347
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-11T23:00:00Z"
+  },
+  {
     "id": "2024V5789",
     "phase": "active",
     "category": "sewer",
@@ -1826,38 +1846,86 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "K 9675 zw. AS3 und AS4 (Edeltrudtunnel)",
-    "notes": "So - Mo, vs. 22:00 Uhr - 5:00 Uhr",
+    "notes": "So - Mo, vs. 21:00 Uhr - 5:00 Uhr",
     "cause": "Tiefbauamt",
     "startDate": "2026-11-22",
-    "endDate": "2026-11-28",
+    "endDate": "2026-11-29",
     "point": [
-      8.388013,
-      48.990589
+      8.391418,
+      48.989555
     ],
     "extentPoints": [
       [
-        8.38398,
-        48.99192
+        8.37711,
+        48.99272
       ],
       [
-        8.38584,
-        48.99109
+        8.37885,
+        48.99199
       ],
       [
-        8.38773,
-        48.99043
+        8.38068,
+        48.99133
       ],
       [
-        8.38991,
-        48.98975
+        8.38325,
+        48.99159
       ],
       [
-        8.39208,
-        48.98931
+        8.38139,
+        48.99338
+      ],
+      [
+        8.38533,
+        48.99126
+      ],
+      [
+        8.38727,
+        48.99059
+      ],
+      [
+        8.38934,
+        48.98992
+      ],
+      [
+        8.39154,
+        48.98943
+      ],
+      [
+        8.39354,
+        48.9891
+      ],
+      [
+        8.39569,
+        48.98895
+      ],
+      [
+        8.39807,
+        48.98904
+      ],
+      [
+        8.40023,
+        48.98913
+      ],
+      [
+        8.40229,
+        48.98967
+      ],
+      [
+        8.4036,
+        48.99084
+      ],
+      [
+        8.4034,
+        48.98854
+      ],
+      [
+        8.40564,
+        48.99104
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-11T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2025V6769",
@@ -1925,13 +1993,13 @@
     "notes": "Reinhold-Frank-Straße zw. Viktoriastraße u.Kriegsstraße in südlicher Richtung gesperrt",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-08-24",
-    "endDate": "2027-03-07",
+    "endDate": "2027-03-28",
     "point": [
       8.386729,
       49.00553
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-09T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2025V6908",
@@ -1944,14 +2012,14 @@
     "location": "Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße",
     "notes": "Reinhold-Frank-Straße zw. Viktoriastraße u.Kriegsstraße in südlicher Richtung gesperrt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-03-08",
+    "startDate": "2027-03-29",
     "endDate": "2027-04-04",
     "point": [
       8.38646,
       49.005536
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-27T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2025V6909",
@@ -1965,7 +2033,7 @@
     "notes": "Reinhold-Frank-Straße zw. Viktoriastraße u.Kriegsstraße in südlicher Richtung gesperrt",
     "cause": "Tiefbauamt",
     "startDate": "2027-04-05",
-    "endDate": "2027-07-04",
+    "endDate": "2027-07-25",
     "point": [
       8.38662,
       49.005201
@@ -1981,7 +2049,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-15T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2025V6918",
@@ -2274,14 +2342,14 @@
     "location": "Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-02-22",
-    "endDate": "2027-04-04",
+    "startDate": "2027-03-08",
+    "endDate": "2027-04-25",
     "point": [
       8.380352,
       49.004958
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-09T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0098",
@@ -2294,14 +2362,14 @@
     "location": "Gartenstraße zw. Brauerstraße und Lessingstraße",
     "notes": "Gartenstraße zw. Lessingstraße und Brauerstraße gesperrt",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-02-22",
-    "endDate": "2027-04-04",
+    "startDate": "2027-03-08",
+    "endDate": "2027-04-25",
     "point": [
       8.385596,
       49.004304
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-26T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0100",
@@ -2348,18 +2416,18 @@
     "location": "Brauerstraße zw. Gartenstraße u. Kriegstraße",
     "notes": "einstreifige Verkehrsführung mit Überleitung auf die Gegenfahrbahn",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-30",
-    "endDate": "2027-01-10",
+    "startDate": "2026-11-23",
+    "endDate": "2027-01-31",
     "point": [
       8.386934,
       49.00479
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0124",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -2368,14 +2436,14 @@
     "location": "Gartenstraße zw. Jollystraße und Brauerstraße",
     "notes": "Jollystraße mit Kopfwender, Zufahrt Tankstelle frei",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-04",
-    "endDate": "2027-03-07",
+    "startDate": "2026-11-23",
+    "endDate": "2027-03-28",
     "point": [
       8.386822,
       49.004251
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-07T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0127",
@@ -2388,14 +2456,14 @@
     "location": "Knoten Brauerstraße / Reinhold-Frank-Straße / Kriegsstraße / Gartenstraße",
     "notes": "Jollystraße mit Kopfwender, Zufahrt Tankstelle frei",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-30",
-    "endDate": "2027-02-21",
+    "startDate": "2026-11-23",
+    "endDate": "2027-03-14",
     "point": [
       8.387448,
       49.004326
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0128",
@@ -2408,14 +2476,14 @@
     "location": "Brauerstraße zw. Roonstraße u. Kriegstraße",
     "notes": "einstreifige Verkehrsführung mit Überleitung auf die Gegenfahrbahn",
     "cause": "Tiefbauamt",
-    "startDate": "2027-01-11",
-    "endDate": "2027-03-07",
+    "startDate": "2027-02-01",
+    "endDate": "2027-03-28",
     "point": [
       8.386955,
       49.004818
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-05T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0129",
@@ -2428,14 +2496,14 @@
     "location": "Brauerstraße zw. Haltestelle und Gartenstraße, Gartenstraße zw. Brauerstraße u. Lessingstraße",
     "notes": "Rechtsabbieger von Brauerstraße in Gartenstraße gesperrt, Gartenstraße in westlicher Richtung zw. Brauerstraße und Lessingstraße gesperrt",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-03-08",
-    "endDate": "2027-03-21",
+    "startDate": "2027-03-22",
+    "endDate": "2027-04-11",
     "point": [
       8.386766,
       49.004367
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-09T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0130",
@@ -2448,14 +2516,14 @@
     "location": "Brauerstraße zw. Kriegsstraße u. Gartenstraße",
     "notes": "Einstreifige Verkehrsführung mit Sperrung von Richtungsfahrbahnen",
     "cause": "Tiefbauamt",
-    "startDate": "2027-03-08",
-    "endDate": "2027-04-11",
+    "startDate": "2027-03-22",
+    "endDate": "2027-04-25",
     "point": [
       8.386798,
       49.004793
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-05T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0149",
@@ -2468,14 +2536,14 @@
     "location": "Brauerstraße zw. Haltestelle und Gartenstraße, Gartenstraße zw. Brauerstraße u. Lessingstraße",
     "notes": "Rechtsabbieger in Gartenstraße gesperrt, Gartenstraße in westlicher Richtung zw. Brauerstraße und Lessingstraße gesperrt",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-03-15",
-    "endDate": "2027-04-04",
+    "startDate": "2027-04-12",
+    "endDate": "2027-04-25",
     "point": [
       8.387012,
       49.004309
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-18T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0152",
@@ -2488,14 +2556,14 @@
     "location": "Gartenstraße zw. Steinhäuserstraße u. Weinbrennerplatz",
     "notes": "Keine Ausfahrt zur Kriegstraße möglich, Verkehrsführung mit Kopfwender",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-04-05",
-    "endDate": "2027-05-16",
+    "startDate": "2027-04-26",
+    "endDate": "2027-06-06",
     "point": [
       8.379961,
       49.005037
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-26T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0153",
@@ -2508,14 +2576,14 @@
     "location": "Gartenstraße zw. Brauerstraße und Lessingstraße",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-04-05",
-    "endDate": "2027-05-16",
+    "startDate": "2027-04-26",
+    "endDate": "2027-06-06",
     "point": [
       8.386198,
       49.00402
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-15T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0156",
@@ -2528,14 +2596,14 @@
     "location": "Brauerstraße zw. Kriegsstraße u. Gartenstraße",
     "notes": "Einstreifige Verkehrsführung mit Überleitung auf die Gegenfahrbahn",
     "cause": "Tiefbauamt",
-    "startDate": "2027-04-05",
-    "endDate": "2027-07-04",
+    "startDate": "2027-04-26",
+    "endDate": "2027-07-25",
     "point": [
       8.386793,
       49.004925
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-18T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0163",
@@ -2548,14 +2616,14 @@
     "location": "Gartenstraße Kreuzung Steinhäuserstraße",
     "notes": "Steinhäuserstraße in südlicher Richtung gesperrt, Einfahrt Gartenstraße Richtung Westen gesperrt",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-05-17",
-    "endDate": "2027-05-30",
+    "startDate": "2027-06-07",
+    "endDate": "2027-06-20",
     "point": [
       8.381811,
       49.004592
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-15T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0164",
@@ -2568,14 +2636,14 @@
     "location": "Gartenstraße zw. Brauerstraße und Lessingstraße",
     "notes": "Gartenstraße West zur Brauerstraße gesperrt",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-05-17",
-    "endDate": "2027-06-20",
+    "startDate": "2027-06-07",
+    "endDate": "2027-07-11",
     "point": [
       8.386307,
       49.00403
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-15T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0167",
@@ -2588,14 +2656,14 @@
     "location": "Gartenstraße zw. Lessingstraße u. Kreuzung Steinhäuserstraße",
     "notes": "Gartenstraße in Östlicher Richtung zw. Steinhäuserstraße u. Lessingstraße gesperrt, Lessingstraße in südlicher Richtung gesperrt",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2027-05-31",
-    "endDate": "2027-06-20",
+    "startDate": "2027-06-21",
+    "endDate": "2027-07-11",
     "point": [
       8.381741,
       49.004573
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-01-15T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0168",
@@ -2608,14 +2676,14 @@
     "location": "Kriegsstraße zw. Leopoldstraße u. Lessingstraße, Reinhold-Frank-Straße zwischen Kriegstraße u. Viktoriastraße",
     "notes": "Reinhold-Frank-Straße zw. Viktoriastraße u.Kriegsstraße in südlicher Richtung gesperrt",
     "cause": "Tiefbauamt",
-    "startDate": "2027-07-05",
-    "endDate": "2027-07-18",
+    "startDate": "2027-07-26",
+    "endDate": "2027-08-08",
     "point": [
       8.386572,
       49.005427
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-27T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0255",
@@ -2669,7 +2737,7 @@
   },
   {
     "id": "2026V0277",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -2678,14 +2746,14 @@
     "location": "Gartenstraße zw. Lessingstraße und Brauerstraße",
     "notes": "Gartenstraße zw. Lessingstraße und Brauerstraße gesperrt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-02",
-    "endDate": "2027-01-31",
+    "startDate": "2026-11-23",
+    "endDate": "2027-02-07",
     "point": [
       8.385418,
       49.004315
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-07T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0282",
@@ -2698,14 +2766,14 @@
     "location": "Gartenstraße zw. Brauerstraße und Jollystraße",
     "notes": "Gartenstraße zw. Lessingstraße und Brauerstraße gesperrt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-11",
-    "endDate": "2027-03-07",
+    "startDate": "2027-02-01",
+    "endDate": "2027-03-28",
     "point": [
       8.385585,
       49.004299
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-09T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0302",
@@ -2800,14 +2868,14 @@
     "location": "Kriegstaße zw. Lessingstraße u. Brauerstraße/Brauerstraße zw. Kriegstraße u. Lessingstr.",
     "notes": "Brauerstraße Entfall von Richtungsfahrstreifen in südlicher Richtung/Kriegstraße Entfall von Richtungsfahrstreifen in östlicher Richtung",
     "cause": "Tiefbauamt",
-    "startDate": "2027-07-19",
-    "endDate": "2027-08-29",
+    "startDate": "2027-08-09",
+    "endDate": "2027-09-19",
     "point": [
       8.387034,
       49.005488
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-09T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0386",
@@ -2820,14 +2888,14 @@
     "location": "Kriegstraße zw. Reinhold-Frank-Straße u. Moningerstraße",
     "notes": "Entfall von Richtungsfahrstreifen mitÜberleitung auf die Gegenfahrbahn, Keine Ein- und Ausfahrt in/aus Lessingstraße Richtung Norden",
     "cause": "Tiefbauamt",
-    "startDate": "2027-08-30",
-    "endDate": "2027-09-19",
+    "startDate": "2027-09-20",
+    "endDate": "2027-10-10",
     "point": [
       8.385036,
       49.005494
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-09T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0387",
@@ -2840,14 +2908,14 @@
     "location": "Kriegstraße zw. Moningerstraße u. Brauerstraße",
     "notes": "Entfall von Richtungsfahrstreifen mitÜberleitung auf die Gegenfahrbahn, Keine Ein- und Ausfahrt in/aus Lessingstraße Richtung Süden",
     "cause": "Tiefbauamt",
-    "startDate": "2027-09-20",
-    "endDate": "2027-10-10",
+    "startDate": "2027-10-11",
+    "endDate": "2027-10-31",
     "point": [
       8.385282,
       49.005355
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-09T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0388",
@@ -2860,14 +2928,14 @@
     "location": "Kriegstraße zw. Lessingstraße und Leopoldstraße, Brauerstraße zw. Kriegstraße und Gartenstraße",
     "notes": null,
     "cause": "Tiefbauamt",
-    "startDate": "2027-10-11",
-    "endDate": "2027-10-24",
+    "startDate": "2027-11-01",
+    "endDate": "2027-11-14",
     "point": [
       8.387291,
       49.005451
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-27T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0419",
@@ -2880,14 +2948,14 @@
     "location": "Lessingstraße zw. Sophienstraße und Kriegstraße",
     "notes": "Ein- und Ausfahrt von/zu Kriegstraße gesperrt",
     "cause": "Tiefbauamt",
-    "startDate": "2027-08-30",
-    "endDate": "2027-09-19",
+    "startDate": "2027-09-20",
+    "endDate": "2027-10-10",
     "point": [
       8.384775,
       49.005798
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-09T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0420",
@@ -2900,14 +2968,14 @@
     "location": "Lessingstraße zw. Kriegstraße u. Gartenstraße",
     "notes": "Ein- und Ausfahrt von/zu Kriegstraße gesperrt",
     "cause": "Tiefbauamt",
-    "startDate": "2027-09-20",
-    "endDate": "2027-10-10",
+    "startDate": "2027-10-11",
+    "endDate": "2027-10-31",
     "point": [
       8.384714,
       49.005154
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-03-09T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V0452",
@@ -4511,7 +4579,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-02T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V3363",
@@ -4815,7 +4883,7 @@
   },
   {
     "id": "2026V3787",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "obstruction",
@@ -4831,6 +4899,10 @@
       49.012634
     ],
     "extentPoints": [
+      [
+        8.41567,
+        49.00803
+      ],
       [
         8.3959,
         49.02738
@@ -4864,16 +4936,8 @@
         49.00411
       ],
       [
-        8.41692,
-        49.00502
-      ],
-      [
         8.4107,
         49.0051
-      ],
-      [
-        8.41934,
-        49.00868
       ],
       [
         8.41836,
@@ -4915,13 +4979,13 @@
     "notes": "Wegen Sperrung Reinhold-Frank-Straße in südlicher Fahrtrichtung, Zusammenlegung der Linksabbiegerstreifen auf den Geradeaus-Rechts-Fahrstreifen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-29",
-    "endDate": "2027-07-04",
+    "endDate": "2027-08-08",
     "point": [
       8.387175,
       49.007626
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-22T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V3851",
@@ -5466,34 +5530,14 @@
     "location": "Brauerstraße zw. Roonstraße und Gartenstaße",
     "notes": "Verkehrsführung ab der Roonstraße in nördlicher Richtung auf der Gegenfahrbahn, Zufahrt Putlitzstraße über Anliegerfahrbahn",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-30",
+    "startDate": "2026-11-23",
     "endDate": "2027-03-07",
     "point": [
       8.38651,
       49.002938
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-26T23:00:00Z"
-  },
-  {
-    "id": "2026V4479",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-21",
-    "endDate": "2026-11-11",
-    "point": [
-      8.391707,
-      49.009771
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V4484",
@@ -5768,26 +5812,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-08T23:00:00Z"
-  },
-  {
-    "id": "2026V4615",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Amalienstraße und Kaiserstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-29",
-    "endDate": "2026-11-11",
-    "point": [
-      8.391674,
-      49.009604
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
   },
   {
     "id": "2026V4632",
@@ -7256,26 +7280,6 @@
     "lastModified": "2026-10-07T22:00:00Z"
   },
   {
-    "id": "2026V6401",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ritterstraße zw. Zirkel und Kaiserstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-10",
-    "endDate": "2026-11-11",
-    "point": [
-      8.401534,
-      49.010165
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
-  },
-  {
     "id": "2026V6406",
     "phase": "upcoming",
     "category": "district-heating",
@@ -7294,26 +7298,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-11T22:00:00Z"
-  },
-  {
-    "id": "2026V6441",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herdweg zw. K9659/ Gewerbegebiet Auf der Breit und Alte Weingartener Straße",
-    "notes": "Gleisüberfahrt für alle Verkehrsteilnehmer gesperrt",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-11-08",
-    "endDate": "2026-11-11",
-    "point": [
-      8.480603,
-      49.016044
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
   },
   {
     "id": "2026V6460",
@@ -7394,26 +7378,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-15T22:00:00Z"
-  },
-  {
-    "id": "2026V6544",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bahnübergang am Viehweg",
-    "notes": "Gleisüberfahrt für alle Verkehrsteilnehmer gesperrt",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-11-08",
-    "endDate": "2026-11-11",
-    "point": [
-      8.492401,
-      49.028569
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-05T23:00:00Z"
   },
   {
     "id": "2026V6573",
@@ -7899,7 +7863,7 @@
   },
   {
     "id": "2026V6838",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -7979,7 +7943,7 @@
   },
   {
     "id": "2026V6915",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "obstruction",
@@ -8267,26 +8231,6 @@
     "point": [
       8.457105,
       49.02934
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-04T23:00:00Z"
-  },
-  {
-    "id": "2026V7058",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Wielandtstraße zw. Rüppurrer Straße und Elisabeth-Großwendt-Straße",
-    "notes": "vs. 7:00 Uhr - 12:00 Uhr",
-    "cause": "Privat",
-    "startDate": "2026-11-11",
-    "endDate": "2026-11-11",
-    "point": [
-      8.412946,
-      49.003318
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-04T23:00:00Z"
@@ -8720,6 +8664,68 @@
     "lastModified": "2026-11-10T23:00:00Z"
   },
   {
+    "id": "2026V7228",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Werftstraße Höhe Haus 13 bis 20",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-21",
+    "endDate": "2026-11-21",
+    "point": [
+      8.334586,
+      49.016206
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-11T23:00:00Z"
+  },
+  {
+    "id": "2026V7238",
+    "phase": "upcoming",
+    "category": "tunnel",
+    "artRaw": "Tunnelwartung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "K 9675 zw. AS3 und AS4 (Edeltrudtunnel)",
+    "notes": "1-streifige Verkehrsführung, vs. ab 18:00 Uhr - 22:00 Uhr",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-23",
+    "endDate": "2026-11-24",
+    "point": [
+      8.388013,
+      48.990589
+    ],
+    "extentPoints": [
+      [
+        8.38398,
+        48.99192
+      ],
+      [
+        8.38584,
+        48.99109
+      ],
+      [
+        8.38773,
+        48.99043
+      ],
+      [
+        8.38991,
+        48.98975
+      ],
+      [
+        8.39208,
+        48.98931
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-11T23:00:00Z"
+  },
+  {
     "id": "30016",
     "phase": "active",
     "category": "power-telecom",
@@ -9044,26 +9050,6 @@
     "lastModified": "2026-07-13T07:27:31Z"
   },
   {
-    "id": "30070",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Rappenwörthstraße 34a Ecke Lilienstraße",
-    "notes": null,
-    "cause": "Stadtbauamt",
-    "startDate": "2026-07-20",
-    "endDate": "2026-11-11",
-    "point": [
-      8.300881,
-      48.964601
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-07-08T08:33:22Z"
-  },
-  {
     "id": "30075",
     "phase": "active",
     "category": "gas-water",
@@ -9374,26 +9360,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-10-27T09:05:17Z"
-  },
-  {
-    "id": "30116",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Begonienstraße 1",
-    "notes": null,
-    "cause": "Stadtbauamt",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-11",
-    "point": [
-      8.304199,
-      48.965326
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-10-28T07:55:12Z"
   },
   {
     "id": "30124",
@@ -9768,6 +9734,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-10T06:57:14Z"
+  },
+  {
+    "id": "30271",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Zollhallenstraße",
+    "notes": "2 Baugruben, verengte Fahrbahn",
+    "cause": "Stadtwerke",
+    "startDate": "2026-11-12",
+    "endDate": "2026-11-20",
+    "point": [
+      8.593432,
+      49.129726
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-11T13:02:41Z"
   },
   {
     "id": "30273",
@@ -10683,7 +10669,7 @@
     "notes": "Gehwegsperrung wegen Gerüstaufstellung",
     "cause": "Privat",
     "startDate": "2026-09-28",
-    "endDate": "2026-11-20",
+    "endDate": "2026-12-24",
     "point": [
       8.467989,
       49.061353
@@ -11046,46 +11032,6 @@
     "lastModified": "2026-11-05T08:53:34Z"
   },
   {
-    "id": "40188",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Blankenlocher Straße 9",
-    "notes": "Vollsperrung",
-    "cause": "Bauunternehmen",
-    "startDate": "2026-11-11",
-    "endDate": "2026-11-11",
-    "point": [
-      8.509453,
-      49.093456
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-11-10T12:47:58Z"
-  },
-  {
-    "id": "40188",
-    "phase": "upcoming",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Blankenlocher Straße 9",
-    "notes": "Vollsperrung",
-    "cause": "Bauunternehmen",
-    "startDate": "2026-11-11",
-    "endDate": "2026-11-11",
-    "point": [
-      8.509453,
-      49.093456
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-11-10T12:47:58Z"
-  },
-  {
     "id": "40193",
     "phase": "active",
     "category": "sewer",
@@ -11214,26 +11160,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-09T08:30:01Z"
-  },
-  {
-    "id": "40221",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Schwabenstraße 6",
-    "notes": "Hochbau mit Kran.\nFahrbahn verengt. Gehweg gesperrt.",
-    "cause": "Privat",
-    "startDate": "2026-10-14",
-    "endDate": "2026-11-11",
-    "point": [
-      8.646482,
-      49.09923
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-09T09:49:11Z"
   },
   {
     "id": "40229",
