@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T12:02:13.909Z",
+  "generatedAt": "2026-11-12T21:56:47.844Z",
   "events": [
     {
       "kind": "changed",
@@ -957,6 +957,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V5178:2026-11-11T23:00:00Z",
+      "announcedOn": "2026-11-12",
+      "siteId": "2026V5178",
+      "point": [
+        8.438127,
+        49.020775
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-26",
+      "endDate": "2026-12-02",
+      "municipality": "Karlsruhe",
+      "location": "Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße",
+      "previousClosure": "none",
+      "previousStartDate": "2026-10-26"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V5241:2026-11-05T23:00:00Z",
       "announcedOn": "2026-11-06",
       "siteId": "2026V5241",
@@ -1005,6 +1022,57 @@
       "location": "Hardtstraße zw. Lameystraße und Am Entenfang",
       "previousClosure": "obstruction",
       "previousStartDate": "2026-09-22"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5665:2026-11-11T23:00:00Z",
+      "announcedOn": "2026-11-12",
+      "siteId": "2026V5665",
+      "point": [
+        8.403946,
+        49.003965
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-12",
+      "endDate": "2026-12-13",
+      "municipality": "Karlsruhe",
+      "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-12"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5666:2026-11-11T23:00:00Z",
+      "announcedOn": "2026-11-12",
+      "siteId": "2026V5666",
+      "point": [
+        8.404711,
+        49.003936
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-14",
+      "endDate": "2027-01-31",
+      "municipality": "Karlsruhe",
+      "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-02"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V5667:2026-11-11T23:00:00Z",
+      "announcedOn": "2026-11-12",
+      "siteId": "2026V5667",
+      "point": [
+        8.404419,
+        49.003883
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-02-01",
+      "endDate": "2027-02-12",
+      "municipality": "Karlsruhe",
+      "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-12-21"
     },
     {
       "kind": "changed",
@@ -1067,6 +1135,23 @@
       "location": "Schlossplatz zw. Herrenstraße u. Zirkel",
       "previousClosure": "one-direction",
       "previousStartDate": "2026-10-05"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V6529:2026-11-11T23:00:00Z",
+      "announcedOn": "2026-11-12",
+      "siteId": "2026V6529",
+      "point": [
+        8.468602,
+        48.956829
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-17",
+      "endDate": "2027-01-30",
+      "municipality": "Karlsruhe",
+      "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-09"
     },
     {
       "kind": "changed",
@@ -1562,6 +1647,21 @@
       "endDate": "2027-06-20",
       "municipality": "Karlsruhe",
       "location": "Pfalzstraße zw. Kastenwörtstraße und Langenackerstraße ( Nordseite)"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V5311",
+      "announcedOn": "2026-11-12",
+      "siteId": "2026V5311",
+      "point": [
+        8.47394,
+        48.999128
+      ],
+      "closure": "full",
+      "startDate": "2026-09-21",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "Pfinztalstraße zw. Marstallstaße und Karlsburgstraße"
     },
     {
       "kind": "new",
@@ -2065,6 +2165,36 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V7262",
+      "announcedOn": "2026-11-12",
+      "siteId": "2026V7262",
+      "point": [
+        8.401771,
+        49.010369
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-16",
+      "endDate": "2027-03-31",
+      "municipality": "Karlsruhe",
+      "location": "Ritterstraße zw. Kaiserstraße und Zirkel"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7263",
+      "announcedOn": "2026-11-12",
+      "siteId": "2026V7263",
+      "point": [
+        8.423127,
+        49.004562
+      ],
+      "closure": "full",
+      "startDate": "2026-12-04",
+      "endDate": "2026-12-04",
+      "municipality": "Karlsruhe",
+      "location": "Frühlingstraße zw. Wolfartsweierer Straße und Lohfeldstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:30089",
       "announcedOn": "2026-11-10",
       "siteId": "30089",
@@ -2102,6 +2232,21 @@
       "endDate": "2026-12-04",
       "municipality": "Rheinstetten",
       "location": "Lichtenbergstr.3"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30117",
+      "announcedOn": "2026-11-12",
+      "siteId": "30117",
+      "point": [
+        8.313026,
+        48.975029
+      ],
+      "closure": "full",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-20",
+      "municipality": "Rheinstetten",
+      "location": "Hauptstraße 43"
     },
     {
       "kind": "new",
@@ -2177,6 +2322,21 @@
       "endDate": "2026-11-20",
       "municipality": "Bruchsal",
       "location": "Zollhallenstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:30272",
+      "announcedOn": "2026-11-12",
+      "siteId": "30272",
+      "point": [
+        8.5851,
+        49.115414
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-11",
+      "endDate": "2026-11-20",
+      "municipality": "Bruchsal",
+      "location": "Eichelbergweg 10"
     },
     {
       "kind": "new",
@@ -2725,22 +2885,6 @@
       "endDate": "2027-04-23",
       "municipality": "Karlsruhe",
       "location": "Glogauer Straße und Im Eichbäumle",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V6529:2026-11-09:1",
-      "announcedOn": "2026-11-08",
-      "siteId": "2026V6529",
-      "point": [
-        8.468602,
-        48.956829
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-09",
-      "endDate": "2026-12-24",
-      "municipality": "Karlsruhe",
-      "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße",
       "reminderLeadDays": 1
     },
     {

@@ -2693,14 +2693,14 @@
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße",
-    "notes": null,
+    "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße, Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
+    "notes": "Badener Straße in Richtung Hengstplatz frei",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-11-05",
     "endDate": "2026-11-22",
     "point": [
-      8.474962,
-      48.9993
+      8.47558,
+      48.999441
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-12T22:00:00Z"
@@ -4900,10 +4900,6 @@
     ],
     "extentPoints": [
       [
-        8.41567,
-        49.00803
-      ],
-      [
         8.3959,
         49.02738
       ],
@@ -4936,8 +4932,16 @@
         49.00411
       ],
       [
+        8.41692,
+        49.00502
+      ],
+      [
         8.4107,
         49.0051
+      ],
+      [
+        8.41934,
+        49.00868
       ],
       [
         8.41836,
@@ -6320,20 +6324,20 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Emmy-Noether-Straße zw. Ada-Lovelace-Straße und Wilhem-Schickard-Straße",
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerung = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-10-26",
-    "endDate": "2026-12-11",
+    "endDate": "2026-12-02",
     "point": [
       8.438127,
       49.020775
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-02T23:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V5235",
@@ -6434,6 +6438,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-28T23:00:00Z"
+  },
+  {
+    "id": "2026V5311",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pfinztalstraße zw. Marstallstaße und Karlsburgstraße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-09-21",
+    "endDate": "2026-11-22",
+    "point": [
+      8.47394,
+      48.999128
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V5327",
@@ -6627,17 +6651,17 @@
     "notes": "geänderte 1-streifige Verkehrsführung, Bauzeit vs. 4 Wochen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-10-12",
-    "endDate": "2026-11-15",
+    "endDate": "2026-12-13",
     "point": [
       8.403946,
       49.003965
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V5666",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -6646,14 +6670,14 @@
     "location": "Baumeisterstraße zw. Finterstraße und Ettinger Straße",
     "notes": "geänderte 1-streifige Verkehrsführung, Bauzeit vs 5 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-02",
-    "endDate": "2026-12-13",
+    "startDate": "2026-12-14",
+    "endDate": "2027-01-31",
     "point": [
       8.404711,
       49.003936
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-14T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V5667",
@@ -6666,14 +6690,14 @@
     "location": "Baumeisterstraße zw. Finterstraße und Ettlinger Straße",
     "notes": "1-streifige Verkehrsführung, Bauzeit vs 5 Tage",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-12-21",
-    "endDate": "2026-12-31",
+    "startDate": "2027-02-01",
+    "endDate": "2027-02-12",
     "point": [
       8.404419,
       49.003883
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V5717",
@@ -7361,7 +7385,7 @@
   },
   {
     "id": "2026V6529",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "traffic-reroute",
     "artRaw": "geänderte Verkehrsführung im Zuge von Baumaßnahmen",
     "closure": "obstruction",
@@ -7370,14 +7394,14 @@
     "location": "L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße",
     "notes": "signalisierte 1-streifige Verkehrsführung",
     "cause": "Gartenbauamt",
-    "startDate": "2026-11-09",
-    "endDate": "2026-12-24",
+    "startDate": "2026-11-17",
+    "endDate": "2027-01-30",
     "point": [
       8.468602,
       48.956829
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-15T22:00:00Z"
+    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V6573",
@@ -8726,6 +8750,46 @@
     "lastModified": "2026-11-11T23:00:00Z"
   },
   {
+    "id": "2026V7262",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ritterstraße zw. Kaiserstraße und Zirkel",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-16",
+    "endDate": "2027-03-31",
+    "point": [
+      8.401771,
+      49.010369
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-11T23:00:00Z"
+  },
+  {
+    "id": "2026V7263",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Frühlingstraße zw. Wolfartsweierer Straße und Lohfeldstraße",
+    "notes": "Höhe Netanel-Weil-Straße, vs. 7:00 Uhr - 10:00 Uhr",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-12-04",
+    "endDate": "2026-12-04",
+    "point": [
+      8.423127,
+      49.004562
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-11T23:00:00Z"
+  },
+  {
     "id": "30016",
     "phase": "active",
     "category": "power-telecom",
@@ -9362,6 +9426,26 @@
     "lastModified": "2026-10-27T09:05:17Z"
   },
   {
+    "id": "30117",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Hauptstraße 43",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-20",
+    "point": [
+      8.313026,
+      48.975029
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-05T07:55:46Z"
+  },
+  {
     "id": "30124",
     "phase": "active",
     "category": "road-maintenance",
@@ -9754,6 +9838,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-11T13:02:41Z"
+  },
+  {
+    "id": "30272",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Eichelbergweg 10",
+    "notes": "Gehweg einseitig gesperrt.",
+    "cause": "Privat",
+    "startDate": "2026-11-11",
+    "endDate": "2026-11-20",
+    "point": [
+      8.5851,
+      49.115414
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-11T13:04:05Z"
   },
   {
     "id": "30273",
