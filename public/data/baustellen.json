@@ -452,6 +452,44 @@
     "lastModified": "2026-10-25T23:00:00Z"
   },
   {
+    "id": "2024V4092",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ottostraße, Dieselstraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Notgehweg auf der Fahrbahn, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-01-19",
+    "endDate": "2026-11-27",
+    "point": [
+      8.449332,
+      48.994499
+    ],
+    "extentPoints": [
+      [
+        8.4487,
+        48.99304
+      ],
+      [
+        8.44931,
+        48.99447
+      ],
+      [
+        8.44451,
+        48.99323
+      ],
+      [
+        8.44657,
+        48.99276
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
     "id": "2024V4193",
     "phase": "active",
     "category": "special-use",
@@ -470,6 +508,84 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-11T22:00:00Z"
+  },
+  {
+    "id": "2024V4663",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Weiherfeld Gebietsausbau",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich a ca 50 m, wechselseitige lokale Fahrtstreifensperrungen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2025-09-08",
+    "endDate": "2027-10-30",
+    "point": [
+      8.392771,
+      48.984219
+    ],
+    "extentPoints": [
+      [
+        8.39453,
+        48.98488
+      ],
+      [
+        8.39243,
+        48.9806
+      ],
+      [
+        8.39084,
+        48.98333
+      ],
+      [
+        8.39252,
+        48.98423
+      ],
+      [
+        8.39411,
+        48.98326
+      ],
+      [
+        8.39009,
+        48.98485
+      ],
+      [
+        8.39266,
+        48.98706
+      ],
+      [
+        8.38992,
+        48.98666
+      ],
+      [
+        8.39492,
+        48.98641
+      ],
+      [
+        8.39654,
+        48.98252
+      ],
+      [
+        8.39552,
+        48.98118
+      ],
+      [
+        8.39204,
+        48.98575
+      ],
+      [
+        8.39621,
+        48.98394
+      ],
+      [
+        8.39069,
+        48.98159
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2024V4910",
@@ -520,12 +636,12 @@
     ],
     "extentPoints": [
       [
-        8.40185,
-        48.98253
-      ],
-      [
         8.40414,
         48.98483
+      ],
+      [
+        8.40207,
+        48.98245
       ],
       [
         8.40357,
@@ -3620,6 +3736,26 @@
     "lastModified": "2026-06-28T22:00:00Z"
   },
   {
+    "id": "2026V1779",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karlstraße zw. Herrenstraße und Amalienstraße",
+    "notes": "Arbeiten im Gehwegbereich, Fußgängerführung über Parkstreifen",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-16",
+    "endDate": "2026-12-18",
+    "point": [
+      8.394888,
+      49.007183
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
     "id": "2026V1796",
     "phase": "upcoming",
     "category": "gas-water",
@@ -3912,6 +4048,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-05T23:00:00Z"
+  },
+  {
+    "id": "2026V2039",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Sophien- zw. Herder- u. Geranienstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-04-05",
+    "endDate": "2027-05-28",
+    "point": [
+      8.369435,
+      49.009176
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V2043",
@@ -4322,7 +4478,7 @@
     "lastModified": "2026-10-19T22:00:00Z"
   },
   {
-    "id": "2026V2800",
+    "id": "2026V2798",
     "phase": "active",
     "category": "road-construction",
     "artRaw": "Straßenbau",
@@ -4332,14 +4488,34 @@
     "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
     "notes": "Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen",
     "cause": "Tiefbauamt",
-    "startDate": "2026-10-26",
-    "endDate": "2026-12-23",
+    "startDate": "2026-10-19",
+    "endDate": "2026-11-16",
+    "point": [
+      8.368212,
+      49.000854
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V2800",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
+    "notes": "Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-17",
+    "endDate": "2026-12-18",
     "point": [
       8.368225,
       49.00079
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-11T22:00:00Z"
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V2801",
@@ -4362,6 +4538,26 @@
     "lastModified": "2026-09-30T22:00:00Z"
   },
   {
+    "id": "2026V2813",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bannwaldallee, Parkplatz Höhe Fuß- und Radweg Europahalle",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-17",
+    "endDate": "2026-12-18",
+    "point": [
+      8.375049,
+      48.993843
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
     "id": "2026V2881",
     "phase": "active",
     "category": "special-use",
@@ -4380,6 +4576,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-05-05T22:00:00Z"
+  },
+  {
+    "id": "2026V3005",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ludwig-Marum-Straße zw. Wendtstraße und Blücherstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-02-01",
+    "endDate": "2027-03-26",
+    "point": [
+      8.373735,
+      49.013363
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V3029",
@@ -4900,12 +5116,12 @@
     ],
     "extentPoints": [
       [
-        8.3959,
-        49.02738
-      ],
-      [
         8.39741,
         49.02341
+      ],
+      [
+        8.3959,
+        49.02738
       ],
       [
         8.39768,
@@ -5652,44 +5868,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-13T22:00:00Z"
-  },
-  {
-    "id": "2026V4562",
-    "phase": "upcoming",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Amalienbadstraße zw. Auerstraße/ Rommelstraße und Pfinztalstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-11",
-    "endDate": "2027-12-31",
-    "point": [
-      8.465314,
-      48.997615
-    ],
-    "extentPoints": [
-      [
-        8.46321,
-        48.99602
-      ],
-      [
-        8.46465,
-        48.99701
-      ],
-      [
-        8.46589,
-        48.99809
-      ],
-      [
-        8.46712,
-        48.99941
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-25T23:00:00Z"
   },
   {
     "id": "2026V4566",
@@ -7080,34 +7258,30 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße",
-    "notes": null,
+    "notes": "Weihnachtsferien - keine Bautätigkeiten",
     "cause": "Tiefbauamt",
-    "startDate": "2026-12-24",
+    "startDate": "2026-12-19",
     "endDate": "2027-01-17",
     "point": [
-      8.370497,
-      48.998804
+      8.371637,
+      48.997317
     ],
     "extentPoints": [
       [
-        8.36793,
-        49.00086
+        8.36764,
+        49.00141
       ],
       [
-        8.36938,
-        48.99975
+        8.36895,
+        49.00018
       ],
       [
-        8.37082,
-        48.99845
-      ],
-      [
-        8.37219,
-        48.99723
+        8.37492,
+        48.99407
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V6253",
@@ -7886,26 +8060,6 @@
     "lastModified": "2026-10-27T23:00:00Z"
   },
   {
-    "id": "2026V6838",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Holländerstraße zw. Hinter der Kirche und Valentinstraße",
-    "notes": "vs. 8:00 Uhr - 11:00 Uhr",
-    "cause": "Privat",
-    "startDate": "2026-11-12",
-    "endDate": "2026-11-12",
-    "point": [
-      8.331079,
-      49.003972
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-27T23:00:00Z"
-  },
-  {
     "id": "2026V6840",
     "phase": "upcoming",
     "category": "crane",
@@ -7964,26 +8118,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-08T23:00:00Z"
-  },
-  {
-    "id": "2026V6915",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Veilchenstraße zw. Gerwigstraße und Durlacher Allee",
-    "notes": "Nur während des Kraneinsatzes Veilchenstraße/ Durlacher Allee geöffnet",
-    "cause": "Privat",
-    "startDate": "2026-11-12",
-    "endDate": "2026-11-12",
-    "point": [
-      8.427268,
-      49.008184
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-01T23:00:00Z"
   },
   {
     "id": "2026V6921",
@@ -8098,6 +8232,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
+    "id": "2026V6985",
+    "phase": "upcoming",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kirchstraße zw. Augustenburgstraße u. Eisenbahnstraße",
+    "notes": "Bauzeit vsl. 4-5 Monate",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-05-03",
+    "endDate": "2027-10-01",
+    "point": [
+      8.497821,
+      49.005029
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V6987",
@@ -8238,6 +8392,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-03T23:00:00Z"
+  },
+  {
+    "id": "2026V7046",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Badener Straße zw. Pfinztalstraße und Karl-Weyser-Straße",
+    "notes": "Richtung Hengsplatz frei",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-18",
+    "point": [
+      8.475869,
+      48.999208
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V7057",
@@ -8430,14 +8604,14 @@
     "location": "Douglasstraße zw. Kaiserstraße und Akademiestraße",
     "notes": null,
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-16",
-    "endDate": "2026-11-20",
+    "startDate": "2026-11-19",
+    "endDate": "2026-11-19",
     "point": [
       8.393472,
       49.010141
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-08T23:00:00Z"
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V7144",
@@ -8750,6 +8924,146 @@
     "lastModified": "2026-11-11T23:00:00Z"
   },
   {
+    "id": "2026V7243",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Amalienbadstraße zw. Rommelstraße und Kanzlerstraße",
+    "notes": "Bauzeit vs. 11 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-25",
+    "endDate": "2027-04-11",
+    "point": [
+      8.463975,
+      48.996462
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V7244",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Amalienbadstraße zw. Rommelstraße und Kanzlerstraße",
+    "notes": "Bauzeit vs. 8 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-04-12",
+    "endDate": "2027-06-06",
+    "point": [
+      8.464956,
+      48.997261
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V7245",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Amalienbadstraße zw. Rommelstraße und Kanzlerstraße",
+    "notes": "Bauzeit vs. 14 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-06-07",
+    "endDate": "2027-09-12",
+    "point": [
+      8.465525,
+      48.997818
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V7246",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Amalienbadstraße zw. Rommelstraße und Kanzlerstraße und Kanzlerstraße zw. Amalienbadstraße und Gärtnerstraße",
+    "notes": "Bauzeit vs. 4 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-09-13",
+    "endDate": "2027-10-10",
+    "point": [
+      8.466173,
+      48.998351
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V7247",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Amalienbadstraße zw. Rommelstraße und Kanzlerstraße und Kanzlerstraße zw. Gritznertstraße und Gärtnerstraße",
+    "notes": "Bauzeit vs. 2 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-10-11",
+    "endDate": "2027-10-24",
+    "point": [
+      8.466148,
+      48.998406
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V7248",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Amalienbadstraße zw. Pfinztalstraße und Kanzlerstraße",
+    "notes": "Bauzeit vs. 5 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-10-25",
+    "endDate": "2027-11-28",
+    "point": [
+      8.466491,
+      48.998677
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V7250",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Amalienbadstraße zw. Pfinztalstraße und Kanzlerstraße",
+    "notes": "Bauzeit vs. 5 Wochen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-04",
+    "endDate": "2027-02-07",
+    "point": [
+      8.467067,
+      48.999265
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
     "id": "2026V7262",
     "phase": "upcoming",
     "category": "special-use",
@@ -8788,6 +9102,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-11T23:00:00Z"
+  },
+  {
+    "id": "2026V7276",
+    "phase": "upcoming",
+    "category": "other",
+    "artRaw": "Bauwerksprüfung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hauptbahnstraße unterhalb der Brücke/Überführung im Zuge der Durlacher Allee",
+    "notes": "1-streifige Verkehrsführung mit Lichtsignal",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-01-19",
+    "endDate": "2027-01-19",
+    "point": [
+      8.460569,
+      49.00096
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V7277",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Fiduciastraße zw. Ottostraße und Wachhausstraße",
+    "notes": "Arbeitsstelle im Gehweg, Umleitung Fuß- und Radverkehr über gegenübliegende Straßenseite",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-16",
+    "endDate": "2026-11-28",
+    "point": [
+      8.449363,
+      48.994522
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "30016",
@@ -9446,6 +9800,66 @@
     "lastModified": "2026-11-05T07:55:46Z"
   },
   {
+    "id": "30118",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Unterer Legel 7",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-10-16",
+    "endDate": "2026-11-13",
+    "point": [
+      8.299133,
+      48.966245
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-05T08:30:16Z"
+  },
+  {
+    "id": "30119",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Wilhelm-Danner-Straße 48",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-04",
+    "endDate": "2026-11-13",
+    "point": [
+      8.309887,
+      48.970515
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-05T09:48:17Z"
+  },
+  {
+    "id": "30120",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Häfenweg 18 und 20",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-13",
+    "point": [
+      8.336628,
+      48.963611
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-05T11:54:50Z"
+  },
+  {
     "id": "30124",
     "phase": "active",
     "category": "road-maintenance",
@@ -9751,7 +10165,7 @@
     "notes": "Verlegung von Fernwärme entlang Bahnhofsplatz und ein Abzweig in die Amalienstraße.\nBetroffen ist nur ein kurzer Straßenabschnitt im Einmündungsbereich.\n\nBahnhofplatz wird halbseitig gesperrt, die Amalienstraße muss voll gesperrt werden und der Geh- und Radweg entlang Bahnhofsplatz muss für einen Hausanschluss verengt werden.",
     "cause": "Fachgebiet Tiefbau",
     "startDate": "2026-10-26",
-    "endDate": "2026-11-13",
+    "endDate": "2026-11-20",
     "point": [
       8.591461,
       49.125313
@@ -9818,6 +10232,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-10T06:57:14Z"
+  },
+  {
+    "id": "30268",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Lindenweg 4",
+    "notes": "Fahrbahn für den Fahrzeugverkehr vollgesperrt, Fußgänger frei.",
+    "cause": "Privat",
+    "startDate": "2026-11-13",
+    "endDate": "2026-11-27",
+    "point": [
+      8.587122,
+      49.115197
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-11T06:26:02Z"
   },
   {
     "id": "30271",
@@ -11399,8 +11833,8 @@
     "startDate": "2026-11-10",
     "endDate": "2026-11-20",
     "point": [
-      8.616691,
-      49.117476
+      8.624017,
+      49.114908
     ],
     "extentPoints": [
       [
@@ -11422,6 +11856,46 @@
       [
         8.61993,
         49.11547
+      ],
+      [
+        8.62201,
+        49.11407
+      ],
+      [
+        8.62291,
+        49.11261
+      ],
+      [
+        8.62508,
+        49.11221
+      ],
+      [
+        8.62747,
+        49.1124
+      ],
+      [
+        8.63,
+        49.1129
+      ],
+      [
+        8.6316,
+        49.11186
+      ],
+      [
+        8.63349,
+        49.11085
+      ],
+      [
+        8.63539,
+        49.10984
+      ],
+      [
+        8.63745,
+        49.109
+      ],
+      [
+        8.63892,
+        49.10772
       ]
     ],
     "source": "Stadt Bruchsal",
@@ -11516,6 +11990,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-04T08:52:26Z"
+  },
+  {
+    "id": "40247",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Raiffeisenstraße",
+    "notes": "Fahrbahn verengt, gegenüberliegender Parkseitenstreifen nicht nutzbar.",
+    "cause": "Privat",
+    "startDate": "2026-11-13",
+    "endDate": "2026-11-30",
+    "point": [
+      8.552223,
+      49.086871
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-09T08:54:52Z"
   },
   {
     "id": "40248",
@@ -11638,6 +12132,26 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2025-09-08T08:45:29Z"
+  },
+  {
+    "id": "40308",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Bismarckstraße",
+    "notes": "Vollsperrung der Bismarckstraße von 09.12.2026 - 29.01.2027",
+    "cause": "Fachbereich Bauen und Verkehr",
+    "startDate": "2026-11-13",
+    "endDate": "2027-01-29",
+    "point": [
+      8.211229,
+      48.858384
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-11-09T09:15:27Z"
   },
   {
     "id": "40418",
