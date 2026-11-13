@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T11:46:13.514Z",
+  "generatedAt": "2026-11-13T21:41:56.054Z",
   "events": [
     {
       "kind": "changed",
@@ -1220,8 +1220,8 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V6944:2026-11-05T23:00:00Z",
-      "announcedOn": "2026-11-06",
+      "signature": "changed:2026V6944:2026-11-12T23:00:00Z",
+      "announcedOn": "2026-11-13",
       "siteId": "2026V6944",
       "point": [
         8.455252,
@@ -1229,7 +1229,7 @@
       ],
       "closure": "obstruction",
       "startDate": "2026-11-02",
-      "endDate": "2026-11-14",
+      "endDate": "2026-11-21",
       "municipality": "Karlsruhe",
       "location": "Wasgaustraße zw. Tiroler Straße und Memeler Straße",
       "previousClosure": "obstruction",
@@ -1579,6 +1579,36 @@
       "endDate": "2027-03-26",
       "municipality": "Karlsruhe",
       "location": "Ludwig-Marum-Straße zw. Wendtstraße und Blücherstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3092",
+      "announcedOn": "2026-11-13",
+      "siteId": "2026V3092",
+      "point": [
+        8.40667,
+        49.00971
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-16",
+      "endDate": "2026-12-18",
+      "municipality": "Karlsruhe",
+      "location": "Adlerstraße 7-13"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V3146",
+      "announcedOn": "2026-11-13",
+      "siteId": "2026V3146",
+      "point": [
+        8.391719,
+        49.008831
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-05-18",
+      "endDate": "2026-11-13",
+      "municipality": "Karlsruhe",
+      "location": "Kaiserstraße, Hirschstraße, Amalinestraße"
     },
     {
       "kind": "new",
@@ -2447,6 +2477,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:30123",
+      "announcedOn": "2026-11-13",
+      "siteId": "30123",
+      "point": [
+        8.339295,
+        48.963967
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-13",
+      "municipality": "Rheinstetten",
+      "location": "Akazienweg 5"
+    },
+    {
+      "kind": "new",
       "signature": "new:30263",
       "announcedOn": "2026-11-10",
       "siteId": "30263",
@@ -2594,43 +2639,6 @@
       "endDate": "2026-12-31",
       "municipality": "Stutensee",
       "location": "76297 Stutensee, Linkenheimer Straße 28"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40239",
-      "announcedOn": "2026-11-10",
-      "siteId": "40239",
-      "point": [
-        8.616691,
-        49.117476
-      ],
-      "extentPoints": [
-        [
-          8.61188,
-          49.11854
-        ],
-        [
-          8.61408,
-          49.11797
-        ],
-        [
-          8.61644,
-          49.11746
-        ],
-        [
-          8.61826,
-          49.11673
-        ],
-        [
-          8.61993,
-          49.11547
-        ]
-      ],
-      "closure": "full",
-      "startDate": "2026-11-10",
-      "endDate": "2026-11-20",
-      "municipality": "Bruchsal",
-      "location": "Württemberger Straße zw. Schlachthof und Bahnbrücke"
     },
     {
       "kind": "new",

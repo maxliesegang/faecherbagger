@@ -636,12 +636,12 @@
     ],
     "extentPoints": [
       [
-        8.40414,
-        48.98483
+        8.40185,
+        48.98253
       ],
       [
-        8.40207,
-        48.98245
+        8.40414,
+        48.98483
       ],
       [
         8.40357,
@@ -4638,6 +4638,46 @@
     "lastModified": "2026-08-20T22:00:00Z"
   },
   {
+    "id": "2026V3092",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Adlerstraße 7-13",
+    "notes": "Arbeiten im Gehwegbereich",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-16",
+    "endDate": "2026-12-18",
+    "point": [
+      8.40667,
+      49.00971
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V3146",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kaiserstraße, Hirschstraße, Amalinestraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-05-18",
+    "endDate": "2026-11-13",
+    "point": [
+      8.391719,
+      49.008831
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
     "id": "2026V3192",
     "phase": "active",
     "category": "gas-water",
@@ -5116,12 +5156,12 @@
     ],
     "extentPoints": [
       [
-        8.39741,
-        49.02341
-      ],
-      [
         8.3959,
         49.02738
+      ],
+      [
+        8.39741,
+        49.02341
       ],
       [
         8.39768,
@@ -8151,13 +8191,13 @@
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-11-02",
-    "endDate": "2026-11-14",
+    "endDate": "2026-11-21",
     "point": [
       8.455252,
       48.988942
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-05T23:00:00Z"
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V6955",
@@ -8631,7 +8671,7 @@
       49.003208
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-08T23:00:00Z"
+    "lastModified": "2026-11-12T23:00:00Z"
   },
   {
     "id": "2026V7146",
@@ -9858,6 +9898,26 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-11-05T11:54:50Z"
+  },
+  {
+    "id": "30123",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Akazienweg 5",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-04",
+    "endDate": "2026-11-13",
+    "point": [
+      8.339295,
+      48.963967
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-10T09:46:10Z"
   },
   {
     "id": "30124",
@@ -11827,11 +11887,11 @@
     "closure": "full",
     "siteType": null,
     "municipality": "Bruchsal",
-    "location": "Württemberger Straße zw. Schlachthof und Bahnbrücke",
-    "notes": "Neue Fahrbahndecke in der Württemberger Straße bis an die Baustelle Bahnbrücke.\nIn der ersten Woche können Anwohner mit einer Einbahnregelung vom Schlachthof her zufahren.\nIn der zweiten Woche muss der Bereich gesperrt werden und ist nur noch fußläufig zugänglich.\n\nDie Zufahrt von Feuerwehr und Rettungsdiensten ist in Notfällen sichergestellt.",
+    "location": "L 618, Württemberger Straße und Markgrafenstraße",
+    "notes": "Neue Fahrbahndecke in der Württemberger Straße bis an die Baustelle Bahnbrücke.\nVoraussichtlich bis 20.11.2026.\nAb dem 18.11.2026 bis voraussichtlich 30.11.2026 findet auf der Heidesheimer Seite der Deckeneinbau statt. Die Viktor-Renner-Straße wird zeitweiig nicht erreichbar sein.\n\nIm Anschluss wird noch im schon länger gesperrten Abschnitt mit der Bahnbrücke gearbeitet.\n\nDie Sperrungen können sich witterungsbedingt verschieben oder verlängern.\nEs ist geplant, die Gesamtmaßnahme bis Weihnachten 2026 abzuschließen und die L 618 zwischen Bruchsal und Heidelsheim wieder freizugeben.",
     "cause": "Fachgebiet Tiefbau",
     "startDate": "2026-11-10",
-    "endDate": "2026-11-20",
+    "endDate": "2026-11-30",
     "point": [
       8.624017,
       49.114908

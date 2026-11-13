@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-11-13T11:46:13.514Z</updated>
+    <updated>2026-11-13T21:41:56.054Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -105,6 +105,30 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Geplant: Adlerstraße 7-13 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3092:2026-11-12T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3092"/>
+        <updated>2026-11-12T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 16.11.2026 – 18.12.2026
+Hinweis: Arbeiten im Gehwegbereich
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Kaiserstraße, Hirschstraße, Amalinestraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3146:2026-11-12T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3146"/>
+        <updated>2026-11-12T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 18.05.2026 – 13.11.2026
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6248:2026-11-12T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6248"/>
@@ -115,6 +139,18 @@ Hinweis: Weihnachtsferien - keine Bautätigkeiten
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Wasgaustraße zw. Tiroler Straße und Memeler Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6944:2026-11-12T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6944"/>
+        <updated>2026-11-12T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 02.11.2026 – 21.11.2026
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Kirchstraße zw. Augustenburgstraße u. Eisenbahnstraße – Karlsruhe]]></title>
@@ -150,6 +186,17 @@ Zeitraum: 19.11.2026 – 19.11.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Gustav-Hofmann-Str. 19b-23 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7144:2026-11-12T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7144"/>
+        <updated>2026-11-12T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 10.12.2026 – 10.12.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Amalienbadstraße zw. Rommelstraße und Kanzlerstraße – Karlsruhe]]></title>
@@ -935,6 +982,17 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Geänderte Verkehrsführung" term="traffic-reroute"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Akazienweg 5 – Rheinstetten]]></title>
+        <id>faecherbagger:30123:2026-11-10T09:46:10Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30123"/>
+        <updated>2026-11-10T09:46:10.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 04.11.2026 – 13.11.2026
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Mozartweg - Höhe Uhlandweg – Bruchsal]]></title>
         <id>faecherbagger:30265:2026-11-10T06:57:14Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30265"/>
@@ -1236,17 +1294,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Gustav-Hofmann-Str. 19b-23 – Karlsruhe]]></title>
-        <id>faecherbagger:2026V7144:2026-11-08T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7144"/>
-        <updated>2026-11-08T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 10.12.2026 – 10.12.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Jean-Ritzert-Straße zw. Sepp-Heberger-Weg und Rittnertstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V7146:2026-11-08T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7146"/>
@@ -1327,18 +1374,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <updated>2026-11-05T23:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
 Zeitraum: 26.10.2026 – 14.11.2026
-Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Wasgaustraße zw. Tiroler Straße und Memeler Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6944:2026-11-05T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6944"/>
-        <updated>2026-11-05T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 02.11.2026 – 14.11.2026
 Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
@@ -2522,17 +2557,20 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Württemberger Straße zw. Schlachthof und Bahnbrücke – Bruchsal]]></title>
+        <title type="html"><![CDATA[Aktuell: L 618, Württemberger Straße und Markgrafenstraße – Bruchsal]]></title>
         <id>faecherbagger:40239:2026-10-24T15:43:43Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40239"/>
         <updated>2026-10-24T15:43:43.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Vollsperrung
-Zeitraum: 10.11.2026 – 20.11.2026
+Zeitraum: 10.11.2026 – 30.11.2026
 Hinweis: Neue Fahrbahndecke in der Württemberger Straße bis an die Baustelle Bahnbrücke.
-In der ersten Woche können Anwohner mit einer Einbahnregelung vom Schlachthof her zufahren.
-In der zweiten Woche muss der Bereich gesperrt werden und ist nur noch fußläufig zugänglich.
+Voraussichtlich bis 20.11.2026.
+Ab dem 18.11.2026 bis voraussichtlich 30.11.2026 findet auf der Heidesheimer Seite der Deckeneinbau statt. Die Viktor-Renner-Straße wird zeitweiig nicht erreichbar sein.
 
-Die Zufahrt von Feuerwehr und Rettungsdiensten ist in Notfällen sichergestellt.
+Im Anschluss wird noch im schon länger gesperrten Abschnitt mit der Bahnbrücke gearbeitet.
+
+Die Sperrungen können sich witterungsbedingt verschieben oder verlängern.
+Es ist geplant, die Gesamtmaßnahme bis Weihnachten 2026 abzuschließen und die L 618 zwischen Bruchsal und Heidelsheim wieder freizugeben.
 Verantwortlich: Fachgebiet Tiefbau
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
