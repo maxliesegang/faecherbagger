@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T11:07:43.859Z",
+  "generatedAt": "2026-11-14T20:11:29.760Z",
   "events": [
     {
       "kind": "changed",
@@ -1121,7 +1121,7 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:40242:2026-09-21T11:52:38Z",
+      "signature": "changed:40242:2026-10-29T06:34:33Z",
       "announcedOn": "2026-11-14",
       "siteId": "40242",
       "point": [
@@ -1138,13 +1138,13 @@
           48.81972
         ]
       ],
-      "closure": "full",
-      "startDate": "2026-10-05",
-      "endDate": "2026-12-04",
-      "municipality": "Rastatt",
-      "location": "76437 Rastatt / Förch Parkplatz beim Schloß Favorite",
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-10-17"
+      "closure": "obstruction",
+      "startDate": "2026-10-17",
+      "endDate": "2026-11-30",
+      "municipality": "Bruchsal",
+      "location": "Schillerstraße 12",
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-05"
     },
     {
       "kind": "new",

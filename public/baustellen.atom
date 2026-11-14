@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-11-14T11:07:43.859Z</updated>
+    <updated>2026-11-14T20:11:29.760Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -2112,6 +2112,18 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Haltestellenumbau" term="stop-rebuild"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Schillerstraße 12 – Bruchsal]]></title>
+        <id>faecherbagger:40242:2026-10-29T06:34:33Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40242"/>
+        <updated>2026-10-29T06:34:33.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 17.10.2026 – 30.11.2026
+Hinweis: Gehweg gesperrt.
+Verantwortlich: Privat
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Aktuell: Ruschgraben, Karlsruher Str., Bruchsaler Str., Hagdornstr. – Karlsruhe]]></title>
         <id>faecherbagger:2025V5720:2026-10-28T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V5720"/>
@@ -3825,17 +3837,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwe
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: 76437 Rastatt / Förch Parkplatz beim Schloß Favorite – Rastatt]]></title>
-        <id>faecherbagger:40242:2026-09-21T11:52:38Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40242"/>
-        <updated>2026-09-21T11:52:38.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Vollsperrung
-Zeitraum: 05.10.2026 – 04.12.2026
-Verantwortlich: Fachbereich Bauen und Verkehr
-Quelle: Stadt Rastatt]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Herweghstraße zw. Struvestraße und Reinmuthstraße und Lorscher Straße – Karlsruhe]]></title>

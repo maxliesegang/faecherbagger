@@ -616,12 +616,12 @@
     ],
     "extentPoints": [
       [
-        8.40414,
-        48.98483
+        8.40185,
+        48.98253
       ],
       [
-        8.40207,
-        48.98245
+        8.40414,
+        48.98483
       ],
       [
         8.40357,
@@ -5046,20 +5046,20 @@
     ],
     "extentPoints": [
       [
-        8.39324,
-        49.02175
-      ],
-      [
-        8.39768,
-        49.01848
-      ],
-      [
-        8.3866,
-        49.01465
+        8.38791,
+        49.01393
       ],
       [
         8.3959,
         49.02738
+      ],
+      [
+        8.39741,
+        49.02341
+      ],
+      [
+        8.39768,
+        49.01848
       ],
       [
         8.38575,
@@ -11684,16 +11684,16 @@
   {
     "id": "40242",
     "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
     "siteType": null,
-    "municipality": "Rastatt",
-    "location": "76437 Rastatt / Förch Parkplatz beim Schloß Favorite",
-    "notes": null,
-    "cause": "Fachbereich Bauen und Verkehr",
-    "startDate": "2026-10-05",
-    "endDate": "2026-12-04",
+    "municipality": "Bruchsal",
+    "location": "Schillerstraße 12",
+    "notes": "Gehweg gesperrt.",
+    "cause": "Privat",
+    "startDate": "2026-10-17",
+    "endDate": "2026-11-30",
     "point": [
       8.435921,
       48.963333
@@ -11708,8 +11708,8 @@
         48.81972
       ]
     ],
-    "source": "Stadt Rastatt",
-    "lastModified": "2026-09-21T11:52:38Z"
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-29T06:34:33Z"
   },
   {
     "id": "40247",
