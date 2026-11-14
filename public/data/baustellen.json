@@ -40,26 +40,6 @@
     "lastModified": "2026-10-15T22:00:00Z"
   },
   {
-    "id": "2021V5885",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Durlacher Allee 35-55/Seubertstr./Gerwigstr.37-48,",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-02",
-    "endDate": "2026-11-13",
-    "point": [
-      8.429234,
-      49.007643
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
-  },
-  {
     "id": "2022V5437",
     "phase": "upcoming",
     "category": "gas-water",
@@ -636,12 +616,12 @@
     ],
     "extentPoints": [
       [
-        8.40185,
-        48.98253
-      ],
-      [
         8.40414,
         48.98483
+      ],
+      [
+        8.40207,
+        48.98245
       ],
       [
         8.40357,
@@ -2346,26 +2326,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-22T22:00:00Z"
-  },
-  {
-    "id": "2025V7302",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Landgrabenstraße zw. Neue Anlage Straße u. Kreisel",
-    "notes": "BA 2 Straßenbau und Bauhnübergangstechnik, Abwicklung der 3 Bahnübergänge in Bulach wechselweise, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-09-28",
-    "endDate": "2026-11-13",
-    "point": [
-      8.37884,
-      48.991167
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-29T22:00:00Z"
   },
   {
     "id": "2025V7354",
@@ -4658,26 +4618,6 @@
     "lastModified": "2026-11-12T23:00:00Z"
   },
   {
-    "id": "2026V3146",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kaiserstraße, Hirschstraße, Amalinestraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-05-18",
-    "endDate": "2026-11-13",
-    "point": [
-      8.391719,
-      49.008831
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-12T23:00:00Z"
-  },
-  {
     "id": "2026V3192",
     "phase": "active",
     "category": "gas-water",
@@ -5088,56 +5028,6 @@
     "lastModified": "2026-07-19T22:00:00Z"
   },
   {
-    "id": "2026V3707",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-07-30",
-    "endDate": "2026-11-13",
-    "point": [
-      8.387524,
-      49.00879
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
-  },
-  {
-    "id": "2026V3716",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B3/Südtangente Kreuzungsbereiche Fiduciastraße und B3 Ortsumfahrung Wolfartsweier",
-    "notes": "Erneuerung der Lichtsignalanlage, Entfall von Richtungsfahrstreifen",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-13",
-    "point": [
-      8.447177,
-      48.986526
-    ],
-    "extentPoints": [
-      [
-        8.44462,
-        48.98797
-      ],
-      [
-        8.44663,
-        48.98684
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-17T22:00:00Z"
-  },
-  {
     "id": "2026V3787",
     "phase": "active",
     "category": "crane",
@@ -5156,12 +5046,8 @@
     ],
     "extentPoints": [
       [
-        8.3959,
-        49.02738
-      ],
-      [
-        8.39741,
-        49.02341
+        8.39324,
+        49.02175
       ],
       [
         8.39768,
@@ -5170,6 +5056,10 @@
       [
         8.3866,
         49.01465
+      ],
+      [
+        8.3959,
+        49.02738
       ],
       [
         8.38575,
@@ -8080,26 +7970,6 @@
     "lastModified": "2026-11-01T23:00:00Z"
   },
   {
-    "id": "2026V6832",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rheinhafenstraße zw. Schifferstraße und Agathenstraße",
-    "notes": "Baufeld auf Fahrbahn, geänderte Verkehrsführung",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-13",
-    "point": [
-      8.33911,
-      49.004055
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-27T23:00:00Z"
-  },
-  {
     "id": "2026V6840",
     "phase": "upcoming",
     "category": "crane",
@@ -9840,86 +9710,6 @@
     "lastModified": "2026-11-05T07:55:46Z"
   },
   {
-    "id": "30118",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Unterer Legel 7",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-10-16",
-    "endDate": "2026-11-13",
-    "point": [
-      8.299133,
-      48.966245
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-11-05T08:30:16Z"
-  },
-  {
-    "id": "30119",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Wilhelm-Danner-Straße 48",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-11-04",
-    "endDate": "2026-11-13",
-    "point": [
-      8.309887,
-      48.970515
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-11-05T09:48:17Z"
-  },
-  {
-    "id": "30120",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Häfenweg 18 und 20",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-11-05",
-    "endDate": "2026-11-13",
-    "point": [
-      8.336628,
-      48.963611
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-11-05T11:54:50Z"
-  },
-  {
-    "id": "30123",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Akazienweg 5",
-    "notes": null,
-    "cause": "Telekommunikation",
-    "startDate": "2026-11-04",
-    "endDate": "2026-11-13",
-    "point": [
-      8.339295,
-      48.963967
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-11-10T09:46:10Z"
-  },
-  {
     "id": "30124",
     "phase": "active",
     "category": "road-maintenance",
@@ -10232,26 +10022,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-21T07:39:13Z"
-  },
-  {
-    "id": "30259",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Stafforter Weg 3",
-    "notes": "Fahrbahn verengt",
-    "cause": "Fachgebiet Tiefbau",
-    "startDate": "2026-10-29",
-    "endDate": "2026-11-13",
-    "point": [
-      8.573861,
-      49.124002
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-28T14:00:43Z"
   },
   {
     "id": "30263",
@@ -11376,26 +11146,6 @@
     "lastModified": "2026-09-01T08:51:16Z"
   },
   {
-    "id": "40171",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Sudetenstraße 6",
-    "notes": "Lagerung von Baumaterial und dadurch Gehwegsperrung",
-    "cause": "Bauunternehmen",
-    "startDate": "2026-10-16",
-    "endDate": "2026-11-13",
-    "point": [
-      8.467592,
-      49.109386
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-10-13T05:29:50Z"
-  },
-  {
     "id": "40172",
     "phase": "active",
     "category": "special-use",
@@ -11499,18 +11249,8 @@
     "startDate": "2026-09-09",
     "endDate": "2026-11-23",
     "point": [
-      8.576946,
-      49.107418
-    ],
-    "extentPoints": [
-      [
-        8.64275,
-        49.10098
-      ],
-      [
-        8.5112,
-        49.11381
-      ]
+      8.642681,
+      49.100979
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-09T05:43:09Z"
@@ -11780,46 +11520,6 @@
     "lastModified": "2026-10-13T13:00:49Z"
   },
   {
-    "id": "40230",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Vichystraße 14",
-    "notes": "Sanierung der Fahrbahn im Bereich der Grundstückszufahrt",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-13",
-    "point": [
-      8.552886,
-      49.122017
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-13T13:36:42Z"
-  },
-  {
-    "id": "40232",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "John-Deere-Straße in Höhe 41",
-    "notes": "Fahrbahn für Sanierung von Schäden verengt",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-10-19",
-    "endDate": "2026-11-13",
-    "point": [
-      8.563162,
-      49.119311
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-14T13:18:40Z"
-  },
-  {
     "id": "40233",
     "phase": "active",
     "category": "special-use",
@@ -11838,26 +11538,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-16T07:26:35Z"
-  },
-  {
-    "id": "40235",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "John-Deere-Straße 1b",
-    "notes": "Straße wegen Sanierung Fahrbahnschäden halb gesperrt",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-10-21",
-    "endDate": "2026-11-13",
-    "point": [
-      8.565028,
-      49.130239
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-21T05:57:05Z"
   },
   {
     "id": "40236",
@@ -12004,16 +11684,16 @@
   {
     "id": "40242",
     "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "full",
     "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Schillerstraße 12",
-    "notes": "Gehweg gesperrt.",
-    "cause": "Privat",
-    "startDate": "2026-10-17",
-    "endDate": "2026-11-30",
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt / Förch Parkplatz beim Schloß Favorite",
+    "notes": null,
+    "cause": "Fachbereich Bauen und Verkehr",
+    "startDate": "2026-10-05",
+    "endDate": "2026-12-04",
     "point": [
       8.435921,
       48.963333
@@ -12028,28 +11708,8 @@
         48.81972
       ]
     ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-29T06:34:33Z"
-  },
-  {
-    "id": "40246",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kurpfalzstraße 31",
-    "notes": "Gehweg verengt.",
-    "cause": "Privat",
-    "startDate": "2026-11-06",
-    "endDate": "2026-11-13",
-    "point": [
-      8.644463,
-      49.085286
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-04T08:52:26Z"
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-09-21T11:52:38Z"
   },
   {
     "id": "40247",
@@ -12214,26 +11874,6 @@
     "lastModified": "2026-11-09T09:15:27Z"
   },
   {
-    "id": "40418",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Moosbronner Straße 1 Haltestelle",
-    "notes": "Halbseitige Sperrung mittels LSA zum Neubau einer Wasserleitung",
-    "cause": "Stadtwerke Ettlingen",
-    "startDate": "2026-10-05",
-    "endDate": "2026-11-13",
-    "point": [
-      8.42168,
-      48.899612
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-10-01T06:26:06Z"
-  },
-  {
     "id": "40436",
     "phase": "active",
     "category": "gas-water",
@@ -12334,26 +11974,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-10-22T08:51:44Z"
-  },
-  {
-    "id": "40455",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Rheinstraße",
-    "notes": "Vollsperrung Abbiegespur in die Wasenstraße! Umleitung via Kreisverkehr Dieselstraße/Rheinstraße/Bulacher Straße!",
-    "cause": "Tiefbauamt Ettlingen",
-    "startDate": "2026-11-09",
-    "endDate": "2026-11-13",
-    "point": [
-      8.398239,
-      48.94527
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-10-22T11:35:59Z"
   },
   {
     "id": "40643",
