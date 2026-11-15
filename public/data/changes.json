@@ -1,10 +1,17 @@
 {
-  "since": "2026-11-14T11:07:43.859Z",
+  "since": "2026-11-14T20:11:29.760Z",
   "added": [],
   "modified": [
     "40242"
   ],
-  "removed": [],
+  "removed": [
+    "2024V4193",
+    "2026V4195",
+    "2026V6340",
+    "2026V6345",
+    "2026V6760",
+    "2026V7008"
+  ],
   "relevantModifications": [
     {
       "id": "40242",
@@ -12,9 +19,9 @@
         "period",
         "closure"
       ],
-      "previousClosure": "full",
-      "previousStartDate": "2026-10-05",
-      "previousEndDate": "2026-12-04"
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-10-17",
+      "previousEndDate": "2026-11-30"
     }
   ]
 }
