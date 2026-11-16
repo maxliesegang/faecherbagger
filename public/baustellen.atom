@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-11-16T12:20:32.794Z</updated>
+    <updated>2026-11-16T23:53:08.229Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -71,16 +71,15 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Landgrabenstraße zw. Neue Anlage Straße u. Kreisel – Karlsruhe]]></title>
-        <id>faecherbagger:2025V7302:2026-11-15T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2025V7302"/>
+        <title type="html"><![CDATA[Geplant: Schwarzwaldstraße zw. Hinterm Hauptbahnhof und Vicor-Gollancz-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1367:2026-11-15T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1367"/>
         <updated>2026-11-15T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Vollsperrung
-Zeitraum: 28.09.2026 – 16.11.2026
-Hinweis: BA 2 Straßenbau und Bauhnübergangstechnik, Abwicklung der 3 Bahnübergänge in Bulach wechselweise, Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Deutsche Bahn AG
+        <summary type="html"><![CDATA[Geplant · Kanalbau · Vollsperrung
+Zeitraum: 12.04.2027 – 23.04.2027
+Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
+        <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: St.-Florian-Straße zw. Litzenhardtstraße und Wendehammer – Karlsruhe]]></title>
@@ -118,6 +117,54 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Nürnberger Straße zw. Speyerer Straße und Rechts der Alb – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3558:2026-11-15T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3558"/>
+        <updated>2026-11-15T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
+Zeitraum: 17.11.2026 – 26.02.2027
+Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen, Sperberweg Einbahnstraße ab Nürnberger Straße
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3561:2026-11-15T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3561"/>
+        <updated>2026-11-15T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
+Zeitraum: 17.11.2026 – 26.02.2027
+Hinweis: Einbahnstraße ab Nürnberger Straße
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Königsberger Straße und Im Eichbäumle – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5327:2026-11-15T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5327"/>
+        <updated>2026-11-15T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gleisbau · Sperrung (1 Richtung)
+Zeitraum: 28.09.2026 – 22.11.2026
+Hinweis: Erneuerung Bahnübergang, halbseitige Sperrung mit wechselnder Verkehrsführung, KfZ nur in Fahrtrichtung Süden möglich
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Königsberger Straße und Neisser Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5328:2026-11-15T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5328"/>
+        <updated>2026-11-15T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gleisbau · Vollsperrung
+Zeitraum: 23.11.2026 – 29.11.2026
+Hinweis: Haltestellenumbau, Vollsperrung im Bereich der Haltestelle Gogauer Straße
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Klosterweg zw.Edelsheimstr. und Pastor-Felke-Str. – Karlsruhe]]></title>
         <id>faecherbagger:2026V5515:2026-11-15T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5515"/>
@@ -128,6 +175,18 @@ Hinweis: Aufteilung nicht vorgenommen, Arbeitsstelle im Geh-, und Radwegbereich,
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6058:2026-11-15T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6058"/>
+        <updated>2026-11-15T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
+Zeitraum: 06.11.2026 – 20.11.2026
+Hinweis: 1-streifige Verkehrsführung in beiden Fahrtrichtungen, vs. 9:00 Uhr - 15:00 Uhr
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Schlesierstraße zw. Westmarkstraße u. Memeler Straße – Karlsruhe]]></title>
@@ -145,7 +204,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <id>faecherbagger:2026V7282:2026-11-15T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7282"/>
         <updated>2026-11-15T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Keine Behinderung
 Zeitraum: 23.11.2026 – 23.11.2026
 Verantwortlich: Privat
 Quelle: Stadt Karlsruhe]]></summary>
@@ -200,22 +259,10 @@ Quelle: Stadt Karlsruhe]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2798:2026-11-12T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2798"/>
-        <updated>2026-11-12T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 19.10.2026 – 16.11.2026
-Hinweis: Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V2800:2026-11-12T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2800"/>
         <updated>2026-11-12T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
 Zeitraum: 17.11.2026 – 18.12.2026
 Hinweis: Griesbachstraße = Fahrtrichtung Junker-und-Ruh-Straße offen
 Verantwortlich: Tiefbauamt
@@ -223,11 +270,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Bannwaldallee, Parkplatz Höhe Fuß- und Radweg Europahalle – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Bannwaldallee, Parkplatz Höhe Fuß- und Radweg Europahalle – Karlsruhe]]></title>
         <id>faecherbagger:2026V2813:2026-11-12T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2813"/>
         <updated>2026-11-12T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Straßenbau · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
 Zeitraum: 17.11.2026 – 18.12.2026
 Verantwortlich: Tiefbauamt
 Quelle: Stadt Karlsruhe]]></summary>
@@ -875,11 +922,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: L623/ Am Wetterbach zw. Zur Ziegelhütte und Bachstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6529:2026-11-11T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6529"/>
         <updated>2026-11-11T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Geänderte Verkehrsführung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Geänderte Verkehrsführung · Mit Behinderung
 Zeitraum: 17.11.2026 – 30.01.2027
 Hinweis: signalisierte 1-streifige Verkehrsführung
 Verantwortlich: Gartenbauamt
@@ -967,6 +1014,17 @@ Hinweis: 2 Baugruben, verengte Fahrbahn
 Verantwortlich: Stadtwerke
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Hochstraße 10 – Bruchsal]]></title>
+        <id>faecherbagger:30270:2026-11-11T13:00:24Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30270"/>
+        <updated>2026-11-11T13:00:24.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 11.11.2026 – 20.11.2026
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Lindenweg 4 – Bruchsal]]></title>
@@ -1108,6 +1166,20 @@ Hinweis: 1-streifige Verkehrsführung
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Geänderte Verkehrsführung" term="traffic-reroute"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Pforzheimer Straße – Ettlingen]]></title>
+        <id>faecherbagger:40477:2026-11-10T08:58:18Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40477"/>
+        <updated>2026-11-10T08:58:18.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Grünpflege · Keine Behinderung
+Zeitraum: 17.11.2026 – 25.11.2026
+Hinweis: Vollsperrung des Geh- und Radweges vom Luisenkreisel bis zur Buhlschen Mühle
+
+vom 24.11.-25.11.2026
+Verantwortlich: Tiefbauamt Ettlingen
+Quelle: Stadt Ettlingen]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76437 Rastatt, Rauentaler Straße – Rastatt]]></title>
@@ -1900,11 +1972,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Am Storrenacker Höhe Interpneu – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Am Storrenacker Höhe Interpneu – Karlsruhe]]></title>
         <id>faecherbagger:2026V7015:2026-11-03T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7015"/>
         <updated>2026-11-03T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
 Zeitraum: 17.11.2026 – 17.11.2026
 Hinweis: Höhe Haus Nr 30, lokale 1-streifige Verkehrsführung
 Verantwortlich: Privat
@@ -2160,11 +2232,11 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Breslauer Straße Kreuzungsbereich Grünbergstraße – Karlsruhe]]></title>
+        <title type="html"><![CDATA[Aktuell: Breslauer Straße Kreuzungsbereich Grünbergstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6955:2026-11-01T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6955"/>
         <updated>2026-11-01T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Mit Behinderung
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Mit Behinderung
 Zeitraum: 17.11.2026 – 17.11.2026
 Hinweis: vs.9:00 Uhr - 13:00 Uhr
 Verantwortlich: Stadtwerke Karlsruhe
@@ -2347,18 +2419,6 @@ Hinweis: Abwicklung in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Königsberger Straße und Im Eichbäumle – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5327:2026-10-27T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5327"/>
-        <updated>2026-10-27T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gleisbau · Sperrung (1 Richtung)
-Zeitraum: 28.09.2026 – 23.11.2026
-Hinweis: Erneuerung Bahnübergang, halbseitige Sperrung mit wechselnder Verkehrsführung, KfZ nur in Fahrtrichtung Süden möglich
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Tullastraße Gleisüberfahrt Höhe Schückstraße – Karlsruhe]]></title>
@@ -2555,18 +2615,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <summary type="html"><![CDATA[Geplant · Gleisbau · Vollsperrung
 Zeitraum: 28.11.2026 – 18.12.2026
 Hinweis: Straßenbau, Gehwegführung wegen Pflasterarbeiten kurzzeitig im gesperrten Baufeld
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Königsberger Straße und Neisser Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5328:2026-10-25T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5328"/>
-        <updated>2026-10-25T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gleisbau · Sperrung (1 Richtung)
-Zeitraum: 28.10.2026 – 22.11.2026
-Hinweis: Haltestellenumbau, halbseitige Sperrung, KfZ nur in Fahrtrichtung Süden möglich
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
@@ -2835,66 +2883,6 @@ Zeitraum: 20.12.2026 – 24.12.2026
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Nürnberger Straße zw. Rechts der Alb und Sperberweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3556:2026-10-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3556"/>
-        <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 09.11.2026 – 16.11.2026
-Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Nürnberger Straße zw. Speyerer Straße und Rechts der Alb – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3558:2026-10-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3558"/>
-        <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Mit Behinderung
-Zeitraum: 16.11.2026 – 26.02.2027
-Hinweis: Einengung der Fahrbahn mit Lichtsignalanlage, Rechts der Alb Einbahnstraße ab Nürnberger Straße in beide Richtungen, Sperberweg Einbahnstraße ab Nürnberger Straße
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Sperberweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3559:2026-10-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3559"/>
-        <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Vollsperrung
-Zeitraum: 09.11.2026 – 16.11.2026
-Hinweis: Sperrung Ein- und Ausfahrt Nürnberger Straße
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Rechts der Alb zw. Nürnberger Straße und Freiburger Straße und zw. Nürnberger Straße und Maria-Matheis-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3560:2026-10-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3560"/>
-        <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 09.11.2026 – 16.11.2026
-Hinweis: Rechts der Alb Ausfahrt auf Nürnberger Straße aus beiden Richtungen gesperrt
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Sperberweg zw. Nürnberger Straße und Maria-Matheis-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3561:2026-10-20T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3561"/>
-        <updated>2026-10-20T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Straßenbau · Sperrung (1 Richtung)
-Zeitraum: 16.11.2026 – 26.02.2027
-Hinweis: Einbahnstraße ab Nürnberger Straße
-Verantwortlich: Tiefbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Straßenbau" term="road-construction"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Rastatter Straße 1 bis 103 – Karlsruhe]]></title>
@@ -3238,6 +3226,17 @@ Hinweis: Behinderungen durch Kabelarbeiten an der Einmündung Prinz-Wilhelm-Stra
 Dauer voraussichtlich eine Woche im Zeitraum
 Verantwortlich: Telekommunikation
 Quelle: Stadt Bruchsal]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Diverse Straßen – Rheinstetten]]></title>
+        <id>faecherbagger:30109:2026-10-14T10:03:09Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30109"/>
+        <updated>2026-10-14T10:03:09.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 16.11.2026 – 31.12.2027
+Verantwortlich: Telekommunikation
+Quelle: Stadt Rheinstetten]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
