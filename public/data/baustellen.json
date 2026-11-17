@@ -616,12 +616,12 @@
     ],
     "extentPoints": [
       [
-        8.40414,
-        48.98483
+        8.40185,
+        48.98253
       ],
       [
-        8.40207,
-        48.98245
+        8.40414,
+        48.98483
       ],
       [
         8.40357,
@@ -681,13 +681,13 @@
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-30",
-    "endDate": "2026-12-11",
+    "endDate": "2026-12-18",
     "point": [
       8.387393,
       49.009589
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-10T23:00:00Z"
+    "lastModified": "2026-11-16T23:00:00Z"
   },
   {
     "id": "2024V5526",
@@ -1123,17 +1123,17 @@
     "closure": "one-direction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Reinhold-Frank-Straße zw. Amalinestraße und Sophienstraße",
+    "location": "Reinhold-Frank-Straße zw. Amalienstraße und Sophienstraße",
     "notes": "Höhe Haus Nr 35",
     "cause": "Privat",
-    "startDate": "2026-11-23",
-    "endDate": "2026-12-19",
+    "startDate": "2027-02-08",
+    "endDate": "2027-03-20",
     "point": [
       8.38722,
       49.008579
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
+    "lastModified": "2026-11-16T23:00:00Z"
   },
   {
     "id": "2025V1414",
@@ -4998,6 +4998,26 @@
     "lastModified": "2026-07-19T22:00:00Z"
   },
   {
+    "id": "2026V3707",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Belfortstraße zw. Reinhold-Frank-Straße und Leopoldstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-07-30",
+    "endDate": "2026-12-18",
+    "point": [
+      8.387524,
+      49.00879
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-16T23:00:00Z"
+  },
+  {
     "id": "2026V3787",
     "phase": "active",
     "category": "crane",
@@ -5006,7 +5026,7 @@
     "siteType": "mobile",
     "municipality": "Karlsruhe",
     "location": "Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen",
-    "notes": "9:00 Uh - 15:00 Uhr, lokale Fahrstreifensperrungen",
+    "notes": "9:00 Uh - 15:00 Uhr, lokale Fahrstreifensperrungen und an einzelnen Standorten auch vor und nach dem Berufsverkehr",
     "cause": "Tiefbauamt",
     "startDate": "2026-11-12",
     "endDate": "2026-11-20",
@@ -5085,7 +5105,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-10T23:00:00Z"
+    "lastModified": "2026-11-16T23:00:00Z"
   },
   {
     "id": "2026V3807",
@@ -7273,7 +7293,7 @@
   },
   {
     "id": "2026V6279",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -7282,14 +7302,14 @@
     "location": "Herrenalber Str. Nähe Nr. 34",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2026-11-16",
-    "endDate": "2026-11-17",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-03",
     "point": [
       8.406156,
       48.977639
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-04T22:00:00Z"
+    "lastModified": "2026-11-16T23:00:00Z"
   },
   {
     "id": "2026V6347",
@@ -8340,6 +8360,66 @@
     "lastModified": "2026-11-04T23:00:00Z"
   },
   {
+    "id": "2026V7078",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gottesauer Straße zw. Ostendstraße und Lachnerstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-18",
+    "endDate": "2027-06-25",
+    "point": [
+      8.418993,
+      49.007454
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-16T23:00:00Z"
+  },
+  {
+    "id": "2026V7079",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gottesauer Straße Kreuzungsbereich Lachnerstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-18",
+    "endDate": "2027-06-25",
+    "point": [
+      8.419588,
+      49.007159
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-16T23:00:00Z"
+  },
+  {
+    "id": "2026V7080",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gottesauer Straße zw. Lachnerstraße und Degenfeldstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-18",
+    "endDate": "2027-06-25",
+    "point": [
+      8.420184,
+      49.006884
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-16T23:00:00Z"
+  },
+  {
     "id": "2026V7124",
     "phase": "active",
     "category": "special-use",
@@ -8712,7 +8792,7 @@
     "phase": "upcoming",
     "category": "tunnel",
     "artRaw": "Tunnelwartung",
-    "closure": "obstruction",
+    "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "K 9675 zw. AS3 und AS4 (Edeltrudtunnel)",
@@ -8747,7 +8827,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-11T23:00:00Z"
+    "lastModified": "2026-11-16T23:00:00Z"
   },
   {
     "id": "2026V7243",
@@ -9138,6 +9218,98 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-16T23:00:00Z"
+  },
+  {
+    "id": "2026V7369",
+    "phase": "upcoming",
+    "category": "tunnel",
+    "artRaw": "Tunnelwartung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "K 9675 Südtangente zw. AS3 und AS4 (Edeltrudtunnel)",
+    "notes": "vs. 1 Woche, Nächtliche Arbeitsstellen zw. 22.00 und 5.00 Uhr",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-05-31",
+    "endDate": "2027-07-24",
+    "point": [
+      8.388013,
+      48.990589
+    ],
+    "extentPoints": [
+      [
+        8.38398,
+        48.99192
+      ],
+      [
+        8.38584,
+        48.99109
+      ],
+      [
+        8.38773,
+        48.99043
+      ],
+      [
+        8.38991,
+        48.98975
+      ],
+      [
+        8.39208,
+        48.98931
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-16T23:00:00Z"
+  },
+  {
+    "id": "30015",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Diverse Straßen",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-02-09",
+    "endDate": "2026-12-31",
+    "point": [
+      8.29626,
+      48.962969
+    ],
+    "extentPoints": [
+      [
+        8.29301,
+        48.96154
+      ],
+      [
+        8.29174,
+        48.9603
+      ],
+      [
+        8.29453,
+        48.96307
+      ],
+      [
+        8.29545,
+        48.96184
+      ],
+      [
+        8.29933,
+        48.96453
+      ],
+      [
+        8.30124,
+        48.96533
+      ],
+      [
+        8.30207,
+        48.96681
+      ]
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-02-04T09:36:52Z"
   },
   {
     "id": "30032",
@@ -9740,6 +9912,68 @@
     "lastModified": "2026-10-01T12:56:15Z"
   },
   {
+    "id": "30103",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Rheinstetten",
+    "location": "Bachstraße 5-29 und 8-18",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-17",
+    "endDate": "2026-12-19",
+    "point": [
+      8.289104,
+      48.959213
+    ],
+    "extentPoints": [
+      [
+        8.28974,
+        48.95829
+      ],
+      [
+        8.28758,
+        48.95875
+      ],
+      [
+        8.29426,
+        48.95851
+      ],
+      [
+        8.29207,
+        48.95895
+      ],
+      [
+        8.29639,
+        48.95853
+      ],
+      [
+        8.29804,
+        48.95938
+      ],
+      [
+        8.28784,
+        48.96193
+      ],
+      [
+        8.28759,
+        48.96057
+      ],
+      [
+        8.29031,
+        48.95966
+      ],
+      [
+        8.28529,
+        48.95872
+      ]
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-08T08:37:53Z"
+  },
+  {
     "id": "30104",
     "phase": "active",
     "category": "power-telecom",
@@ -9998,6 +10232,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-03-18T13:27:33Z"
+  },
+  {
+    "id": "30125",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Ebersteinstraße 28",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-16",
+    "endDate": "2026-12-04",
+    "point": [
+      8.263627,
+      48.966823
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-17T11:45:13Z"
   },
   {
     "id": "30143",
@@ -11812,16 +12066,16 @@
   {
     "id": "40210",
     "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "obstruction",
     "siteType": null,
-    "municipality": "Rastatt",
-    "location": "76437 Rastatt, Franz-Abt-Straße und Röttererbergstraße",
-    "notes": "Vollsperrung für Fernwärmeausbau",
-    "cause": "star.EW",
-    "startDate": "2026-09-21",
-    "endDate": "2026-12-18",
+    "municipality": "Bruchsal",
+    "location": "Steinackerstraße 36",
+    "notes": "Hochbau mit Kran, Gehweg gesperrt und Fahrbahn verengt.",
+    "cause": "Privat",
+    "startDate": "2026-10-01",
+    "endDate": "2026-12-31",
     "point": [
       8.396735,
       48.989779
@@ -11836,8 +12090,8 @@
         48.86709
       ]
     ],
-    "source": "Stadt Rastatt",
-    "lastModified": "2026-08-25T12:22:49Z"
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-10-01T13:50:09Z"
   },
   {
     "id": "40212",
@@ -12202,6 +12456,26 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-09-28T11:25:28Z"
+  },
+  {
+    "id": "40255",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Gustav-Laforsch-Straße 49",
+    "notes": "Instandhaltungsarbeiten an der Fahrbahn.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-11-16",
+    "endDate": "2026-11-20",
+    "point": [
+      8.52834,
+      49.100001
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-17T12:37:15Z"
   },
   {
     "id": "40268",
