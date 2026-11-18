@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T12:31:57.907Z",
+  "generatedAt": "2026-11-18T22:44:01.846Z",
   "events": [
     {
       "kind": "changed",
@@ -836,6 +836,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V3005:2026-11-17T23:00:00Z",
+      "announcedOn": "2026-11-18",
+      "siteId": "2026V3005",
+      "point": [
+        8.373735,
+        49.013363
+      ],
+      "closure": "one-direction",
+      "startDate": "2027-03-08",
+      "endDate": "2027-05-14",
+      "municipality": "Karlsruhe",
+      "location": "Ludwig-Marum-Straße zw. Wendtstraße und Blücherstraße",
+      "previousClosure": "one-direction",
+      "previousStartDate": "2027-02-01"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V3478:2026-11-15T23:00:00Z",
       "announcedOn": "2026-11-16",
       "siteId": "2026V3478",
@@ -1125,6 +1142,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V6058:2026-11-17T23:00:00Z",
+      "announcedOn": "2026-11-18",
+      "siteId": "2026V6058",
+      "point": [
+        8.445085,
+        49.020896
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-27",
+      "municipality": "Karlsruhe",
+      "location": "Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-06"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V6248:2026-11-12T23:00:00Z",
       "announcedOn": "2026-11-13",
       "siteId": "2026V6248",
@@ -1371,6 +1405,23 @@
       "location": "Douglasstraße zw. Kaiserstraße und Akademiestraße",
       "previousClosure": "full",
       "previousStartDate": "2026-11-16"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:2026V7209:2026-11-17T23:00:00Z",
+      "announcedOn": "2026-11-18",
+      "siteId": "2026V7209",
+      "point": [
+        8.350377,
+        49.014478
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-30",
+      "endDate": "2026-12-05",
+      "municipality": "Karlsruhe",
+      "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-30"
     },
     {
       "kind": "changed",
@@ -1660,6 +1711,47 @@
     },
     {
       "kind": "new",
+      "signature": "new:2025V3995",
+      "announcedOn": "2026-11-18",
+      "siteId": "2025V3995",
+      "point": [
+        8.380204,
+        49.058309
+      ],
+      "extentPoints": [
+        [
+          8.37692,
+          49.0612
+        ],
+        [
+          8.37844,
+          49.06013
+        ],
+        [
+          8.38008,
+          49.05929
+        ],
+        [
+          8.38084,
+          49.05785
+        ],
+        [
+          8.38092,
+          49.05624
+        ],
+        [
+          8.38149,
+          49.0549
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-03-08",
+      "endDate": "2028-07-25",
+      "municipality": "Karlsruhe",
+      "location": "Am Zinken 15-25 u 2-62 + Neureuter Hauptstr. 300-348"
+    },
+    {
+      "kind": "new",
       "signature": "new:2025V7026",
       "announcedOn": "2026-11-17",
       "siteId": "2025V7026",
@@ -1682,6 +1774,21 @@
       "endDate": "2027-01-10",
       "municipality": "Karlsruhe",
       "location": "Stephanienstraße zw. Karlstraße u. Leopoldstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V1232",
+      "announcedOn": "2026-11-18",
+      "siteId": "2026V1232",
+      "point": [
+        8.429504,
+        49.009852
+      ],
+      "closure": "full",
+      "startDate": "2027-02-01",
+      "endDate": "2027-07-31",
+      "municipality": "Karlsruhe",
+      "location": "Essenweinstraße zw. Tullastraße und Sternbergstraße"
     },
     {
       "kind": "new",
@@ -1786,21 +1893,6 @@
       "endDate": "2026-12-18",
       "municipality": "Karlsruhe",
       "location": "Bannwaldallee, Parkplatz Höhe Fuß- und Radweg Europahalle"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V3005",
-      "announcedOn": "2026-11-13",
-      "siteId": "2026V3005",
-      "point": [
-        8.373735,
-        49.013363
-      ],
-      "closure": "one-direction",
-      "startDate": "2027-02-01",
-      "endDate": "2027-03-26",
-      "municipality": "Karlsruhe",
-      "location": "Ludwig-Marum-Straße zw. Wendtstraße und Blücherstraße"
     },
     {
       "kind": "new",
@@ -1934,6 +2026,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V4484",
+      "announcedOn": "2026-11-18",
+      "siteId": "2026V4484",
+      "point": [
+        8.3863,
+        48.998591
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-07-27",
+      "endDate": "2026-11-30",
+      "municipality": "Karlsruhe",
+      "location": "Südendstraße zw. Brauerstraße und Boeckhstraße"
+    },
+    {
+      "kind": "new",
       "signature": "new:2026V5311",
       "announcedOn": "2026-11-12",
       "siteId": "2026V5311",
@@ -1978,6 +2085,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V5656",
+      "announcedOn": "2026-11-18",
+      "siteId": "2026V5656",
+      "point": [
+        8.47183,
+        49.03281
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-23",
+      "endDate": "2026-12-19",
+      "municipality": "Karlsruhe",
+      "location": "An der Roßweid 18"
+    },
+    {
+      "kind": "new",
       "signature": "new:2026V5680",
       "announcedOn": "2026-11-17",
       "siteId": "2026V5680",
@@ -1990,21 +2112,6 @@
       "endDate": "2027-05-14",
       "municipality": "Karlsruhe",
       "location": "Am Storrenacker zw. Elfmorgenbruchstraße u. einschl. Einmündung Printzstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V6058",
-      "announcedOn": "2026-11-17",
-      "siteId": "2026V6058",
-      "point": [
-        8.445085,
-        49.020896
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-06",
-      "endDate": "2026-11-20",
-      "municipality": "Karlsruhe",
-      "location": "Haid- u.-Neu-Straße zw. Hirtenweg und Am Sportpark"
     },
     {
       "kind": "new",
@@ -2199,64 +2306,6 @@
       "endDate": "2026-12-19",
       "municipality": "Karlsruhe",
       "location": "Jagdstraße von Rintheimer Hauptstr. bis Hinterwiesenweg"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V7208",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V7208",
-      "point": [
-        8.350235,
-        49.014504
-      ],
-      "extentPoints": [
-        [
-          8.35246,
-          49.01389
-        ],
-        [
-          8.35016,
-          49.01455
-        ],
-        [
-          8.34796,
-          49.01515
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-24",
-      "endDate": "2026-11-25",
-      "municipality": "Karlsruhe",
-      "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2026V7209",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V7209",
-      "point": [
-        8.350235,
-        49.014504
-      ],
-      "extentPoints": [
-        [
-          8.35246,
-          49.01389
-        ],
-        [
-          8.35016,
-          49.01455
-        ],
-        [
-          8.34796,
-          49.01515
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-30",
-      "endDate": "2026-11-30",
-      "municipality": "Karlsruhe",
-      "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg"
     },
     {
       "kind": "new",
@@ -2649,6 +2698,36 @@
       "endDate": "2026-11-18",
       "municipality": "Karlsruhe",
       "location": "Brücke über die Alb"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7419",
+      "announcedOn": "2026-11-18",
+      "siteId": "2026V7419",
+      "point": [
+        8.348552,
+        49.014984
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-05",
+      "endDate": "2026-12-12",
+      "municipality": "Karlsruhe",
+      "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7422",
+      "announcedOn": "2026-11-18",
+      "siteId": "2026V7422",
+      "point": [
+        8.352153,
+        49.013948
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-02-01",
+      "endDate": "2027-02-28",
+      "municipality": "Karlsruhe",
+      "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg"
     },
     {
       "kind": "new",
@@ -3906,36 +3985,6 @@
       "endDate": "2026-12-04",
       "municipality": "Karlsruhe",
       "location": "Jean-Ritzert-Straße zw. Sepp-Heberger-Weg und Rittnertstraße",
-      "reminderLeadDays": 14
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2026V7209:2026-11-30:14",
-      "announcedOn": "2026-11-16",
-      "siteId": "2026V7209",
-      "point": [
-        8.350235,
-        49.014504
-      ],
-      "extentPoints": [
-        [
-          8.35246,
-          49.01389
-        ],
-        [
-          8.35016,
-          49.01455
-        ],
-        [
-          8.34796,
-          49.01515
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-30",
-      "endDate": "2026-11-30",
-      "municipality": "Karlsruhe",
-      "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg",
       "reminderLeadDays": 14
     },
     {
