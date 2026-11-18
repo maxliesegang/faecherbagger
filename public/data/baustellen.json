@@ -1136,6 +1136,26 @@
     "lastModified": "2026-11-16T23:00:00Z"
   },
   {
+    "id": "2025V1107",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karlstraße 21 - 21A und und Waldstraße 40A und 40B",
+    "notes": "Arbeiten im Gehwegbereich, Fußgängerführung über Parkstreifen",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-20",
+    "endDate": "2026-12-18",
+    "point": [
+      8.395096,
+      49.00907
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-17T23:00:00Z"
+  },
+  {
     "id": "2025V1414",
     "phase": "upcoming",
     "category": "gas-water",
@@ -3095,13 +3115,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-03-02",
-    "endDate": "2026-11-20",
+    "endDate": "2027-01-16",
     "point": [
       8.374221,
       49.009587
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-27T22:00:00Z"
+    "lastModified": "2026-11-17T23:00:00Z"
   },
   {
     "id": "2026V0658",
@@ -4262,12 +4282,12 @@
     ],
     "extentPoints": [
       [
-        8.35702,
-        49.02385
-      ],
-      [
         8.36157,
         49.02124
+      ],
+      [
+        8.35702,
+        49.02385
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -5568,16 +5588,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Haid-und-Neu-Straße zw. Hirtenweg und Karlsruher Straße",
-    "notes": "Sperrung Anliegerfahrbahn für KfZ, Verschwenk der Fahrbahn über den Grünstreifen, Tageweise einstreifige Verkehrsführung mit Signalisierung",
+    "notes": "Verschwenk der Fahrbahn über den Grünstreifen",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-07-13",
-    "endDate": "2026-11-20",
+    "endDate": "2026-11-27",
     "point": [
       8.44509,
       49.021042
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
+    "lastModified": "2026-11-17T23:00:00Z"
   },
   {
     "id": "2026V4345",
@@ -6080,26 +6100,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-01T23:00:00Z"
-  },
-  {
-    "id": "2026V4843",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Brücke über Pfinzentlastungskanal Stusenseer Allee",
-    "notes": null,
-    "cause": "Land Baden - Württemberg",
-    "startDate": "2026-07-31",
-    "endDate": "2026-11-17",
-    "point": [
-      8.447704,
-      49.051309
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-03T22:00:00Z"
   },
   {
     "id": "2026V4844",
@@ -7478,16 +7478,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Seminarstraße zwischen Bismarckstraße und Moltkestraße",
-    "notes": null,
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich = gesperrt",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-17",
-    "endDate": "2026-12-23",
+    "startDate": "2026-11-18",
+    "endDate": "2027-02-26",
     "point": [
       8.393911,
       49.013753
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-16T23:00:00Z"
+    "lastModified": "2026-11-17T23:00:00Z"
   },
   {
     "id": "2026V6609",
@@ -7992,26 +7992,6 @@
     "lastModified": "2026-11-12T23:00:00Z"
   },
   {
-    "id": "2026V6955",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Breslauer Straße Kreuzungsbereich Grünbergstraße",
-    "notes": "vs.9:00 Uhr - 13:00 Uhr",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-17",
-    "endDate": "2026-11-17",
-    "point": [
-      8.442987,
-      49.028076
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-01T23:00:00Z"
-  },
-  {
     "id": "2026V6970",
     "phase": "active",
     "category": "road-construction",
@@ -8126,46 +8106,6 @@
     "lastModified": "2026-11-03T23:00:00Z"
   },
   {
-    "id": "2026V7006",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bergbahnstraße Kreuzung Am Steinbruch",
-    "notes": "Arbeitsstellen im Gehweg in mehreren Abschnitten, Fußgängerführung über Notweg auf Fahrbahn",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-05",
-    "endDate": "2026-11-17",
-    "point": [
-      8.480219,
-      48.999128
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-02T23:00:00Z"
-  },
-  {
-    "id": "2026V7015",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": "stationary",
-    "municipality": "Karlsruhe",
-    "location": "Am Storrenacker Höhe Interpneu",
-    "notes": "Höhe Haus Nr 30, lokale 1-streifige Verkehrsführung",
-    "cause": "Privat",
-    "startDate": "2026-11-17",
-    "endDate": "2026-11-17",
-    "point": [
-      8.470105,
-      49.024631
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-03T23:00:00Z"
-  },
-  {
     "id": "2026V7017",
     "phase": "active",
     "category": "special-use",
@@ -8251,13 +8191,13 @@
     "notes": "Richtung Hengsplatz frei",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-11-23",
-    "endDate": "2026-12-18",
+    "endDate": "2026-12-06",
     "point": [
-      8.475869,
-      48.999208
+      8.475842,
+      48.99922
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-12T23:00:00Z"
+    "lastModified": "2026-11-17T23:00:00Z"
   },
   {
     "id": "2026V7057",
@@ -8370,14 +8310,14 @@
     "location": "Gottesauer Straße zw. Ostendstraße und Lachnerstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-18",
-    "endDate": "2027-06-25",
+    "startDate": "2027-01-11",
+    "endDate": "2027-02-24",
     "point": [
       8.418993,
       49.007454
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-16T23:00:00Z"
+    "lastModified": "2026-11-17T23:00:00Z"
   },
   {
     "id": "2026V7079",
@@ -8390,14 +8330,14 @@
     "location": "Gottesauer Straße Kreuzungsbereich Lachnerstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-18",
-    "endDate": "2027-06-25",
+    "startDate": "2027-02-25",
+    "endDate": "2027-05-09",
     "point": [
       8.419588,
       49.007159
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-16T23:00:00Z"
+    "lastModified": "2026-11-17T23:00:00Z"
   },
   {
     "id": "2026V7080",
@@ -8410,14 +8350,14 @@
     "location": "Gottesauer Straße zw. Lachnerstraße und Degenfeldstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-18",
-    "endDate": "2027-06-25",
+    "startDate": "2027-05-10",
+    "endDate": "2027-06-26",
     "point": [
       8.420184,
       49.006884
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-16T23:00:00Z"
+    "lastModified": "2026-11-17T23:00:00Z"
   },
   {
     "id": "2026V7124",
@@ -9260,6 +9200,66 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-16T23:00:00Z"
+  },
+  {
+    "id": "2026V7387",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Moltkestraße zw. Fichtestraßer u. Seminarstraße",
+    "notes": "Zeitweise 1-streigige Verkehrsführung mit Lichtsignal, zeitweise Sperrung des südlichen Geh- und Radwegs, Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-04-01",
+    "endDate": "2027-07-31",
+    "point": [
+      8.392721,
+      49.015056
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-17T23:00:00Z"
+  },
+  {
+    "id": "2026V7394",
+    "phase": "upcoming",
+    "category": "stop-rebuild",
+    "artRaw": "Haltestellenumbau mit Straßenumgestaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Grötzinger Straße zw. Karl-Weysser-Straße und Gymnasiumstraße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-05",
+    "point": [
+      8.478397,
+      48.99985
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-17T23:00:00Z"
+  },
+  {
+    "id": "2026V7409",
+    "phase": "active",
+    "category": "bridge",
+    "artRaw": "Brückenbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Brücke über die Alb",
+    "notes": "Sturmschaden",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-18",
+    "point": [
+      8.397234,
+      48.98218
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-17T23:00:00Z"
   },
   {
     "id": "30015",
@@ -10718,6 +10718,26 @@
     "lastModified": "2026-11-11T13:06:09Z"
   },
   {
+    "id": "30274",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Am Schlossgarten",
+    "notes": "Am Damianstor wird der neue Kanal überprüft. Dazu müssen Fahrzeuge für die Kanalbefahrung in der Straße Am Schlossgarten am Schacht abgestellt werden.\nDie Straße ist Am Schlossgarten ist für bis zu einen Tag gesperrt.",
+    "cause": "Eigenbetrieb Umwelttechnik",
+    "startDate": "2026-11-18",
+    "endDate": "2026-11-18",
+    "point": [
+      8.599659,
+      49.129548
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-13T06:51:19Z"
+  },
+  {
     "id": "30277",
     "phase": "active",
     "category": "power-telecom",
@@ -11470,26 +11490,6 @@
     "lastModified": "2025-08-22T05:39:24Z"
   },
   {
-    "id": "40138",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Stutenseer Allee Brückenbauwerk 119",
-    "notes": "Vollsperrung",
-    "cause": "Land Baden - Württemberg",
-    "startDate": "2026-08-03",
-    "endDate": "2026-11-17",
-    "point": [
-      8.447742,
-      49.051405
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-07-28T07:57:11Z"
-  },
-  {
     "id": "40143",
     "phase": "active",
     "category": "special-use",
@@ -11984,6 +11984,26 @@
     "lastModified": "2026-11-16T07:04:36Z"
   },
   {
+    "id": "40192",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Hasenäckerweg",
+    "notes": "Vollsperrung",
+    "cause": "Bauunternehmen",
+    "startDate": "2026-12-03",
+    "endDate": "2026-12-03",
+    "point": [
+      8.485641,
+      49.076914
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-11-18T07:05:44Z"
+  },
+  {
     "id": "40193",
     "phase": "active",
     "category": "sewer",
@@ -12317,7 +12337,7 @@
     "notes": "Vollsperrung der Fahrbahn. Durchgang für Fußgänger möglich.",
     "cause": "Privat",
     "startDate": "2026-10-30",
-    "endDate": "2026-12-05",
+    "endDate": "2026-12-23",
     "point": [
       8.651533,
       49.103068
@@ -12576,6 +12596,26 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-11-10T07:11:24Z"
+  },
+  {
+    "id": "40315",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Altmurgweg 1",
+    "notes": "Verlegung von Stromkable",
+    "cause": "Fachbereich Bauen und Verkehr",
+    "startDate": "2026-11-18",
+    "endDate": "2026-12-04",
+    "point": [
+      8.194269,
+      48.868641
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-11-12T13:53:33Z"
   },
   {
     "id": "40436",
