@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-11-19T12:22:40.723Z</updated>
+    <updated>2026-11-19T22:47:56.442Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -47,6 +47,17 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Geplant: Sophien- zw. Herder- u. Geranienstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V2039:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2039"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
+Zeitraum: 22.03.2027 – 28.05.2027
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Karl- zw. Ebert- u. Kolpingplatz – Karlsruhe]]></title>
         <id>faecherbagger:2026V3411:2026-11-18T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3411"/>
@@ -57,6 +68,41 @@ Hinweis: Aufteilung nicht vorgenommen, Bauzeit vs 14 Monate, Abwicklung in mehre
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4345:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4345"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gleisbau · Sperrung (1 Richtung)
+Zeitraum: 02.11.2026 – 22.11.2026
+Hinweis: Verkehr von der Beuthener Straße nur in die Waldstadt hinein möglich. Ausfahrt über am Sportpark bzw. Kolberger Straße
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4346:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4346"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gleisbau · Vollsperrung
+Zeitraum: 30.11.2026 – 18.12.2026
+Hinweis: Straßenbau, Gehwegführung wegen Pflasterarbeiten kurzzeitig im gesperrten Baufeld
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4539:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4539"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Vollsperrung
+Zeitraum: 21.09.2026 – 04.12.2026
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Ottostraße, Kieselweg, Wachhausstraße,Geißenrainweg – Karlsruhe]]></title>
@@ -92,6 +138,29 @@ Hinweis: 1-streifige Verkehrsführung mit Lichtsignal
 Verantwortlich: Gartenbauamt
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6779:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6779"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Haltestellenumbau · Mit Behinderung
+Zeitraum: 23.11.2026 – 29.11.2026
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Haltestellenumbau" term="stop-rebuild"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Kriegsstraße zw. Weinbrennerplatz u. Kühler Krug – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6968:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6968"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gleisbau · Sperrung (1 Richtung)
+Zeitraum: 02.08.2027 – 31.03.2028
+Hinweis: Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: L623/ Am Wetterbach zw. Bachgasse u. Busenbacher Straße – Karlsruhe]]></title>
@@ -137,6 +206,53 @@ Zeitraum: 01.07.2027 – 31.08.2027
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Tunnel" term="tunnel"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Kriegsstraße/Karoline-Luise-Tunnel zwischen Hirschstraße und Henriette-Obermüller-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7485:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7485"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Tunnel · Vollsperrung
+Zeitraum: 15.03.2027 – 18.03.2027
+Hinweis: Sperrungen täglich ab 9:00 Uhr - 18:00 Uhr
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Tunnel" term="tunnel"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel) – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7486:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7486"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Tunnel · Vollsperrung
+Zeitraum: 04.10.2027 – 07.10.2027
+Hinweis: Sperrungen täglich 9:00 bis 18:00 Uhr
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Tunnel" term="tunnel"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Gleiwitzer Straße und Königsberger Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7489:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7489"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 19.11.2026 – 19.12.2026
+Hinweis: Arbeiten in Geh- und Radwegbereich.
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Mannheimer zw. Heilbronner u. Hirtenweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7490:2026-11-18T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7490"/>
+        <updated>2026-11-18T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gleisbau · Mit Behinderung
+Zeitraum: 30.03.2027 – 15.05.2027
+Verantwortlich: Verkehrsbetriebe Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: 76297 Stutensee, Hasenäckerweg – Stutensee]]></title>
@@ -853,17 +969,6 @@ Hinweis: Arbeiten im Gehwegbereich, Fußgängerführung über Parkstreifen
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Sophien- zw. Herder- u. Geranienstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V2039:2026-11-12T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2039"/>
-        <updated>2026-11-12T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Sperrung (1 Richtung)
-Zeitraum: 05.04.2027 – 28.05.2027
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Bannwaldallee zw. Junker-und-Ruh-Straße und Griesbachstraße – Karlsruhe]]></title>
@@ -2718,18 +2823,6 @@ Quelle: Stadt Bruchsal]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4345:2026-10-29T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4345"/>
-        <updated>2026-10-29T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gleisbau · Sperrung (1 Richtung)
-Zeitraum: 02.11.2026 – 23.11.2026
-Hinweis: Verkehr von der Beuthener Straße nur in die Waldstadt hinein möglich. Ausfahrt über am Sportpark bzw. Kolberger Straße
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Haid-und-Neu-Straße zw. Tullastraße und Helmertstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5761:2026-10-29T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5761"/>
@@ -2740,17 +2833,6 @@ Hinweis: Arbeitsstelle im Gehwegbereich, Fußgängerführung über Radweg und Pa
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6779:2026-10-29T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6779"/>
-        <updated>2026-10-29T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Haltestellenumbau · Mit Behinderung
-Zeitraum: 24.11.2026 – 27.11.2026
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Haltestellenumbau" term="stop-rebuild"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Schillerstraße 12 – Bruchsal]]></title>
@@ -3033,18 +3115,6 @@ Zeitraum: 13.03.2025 – 31.07.2028
 Verantwortlich: Vermögen und Bau
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4346:2026-10-25T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4346"/>
-        <updated>2026-10-25T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gleisbau · Vollsperrung
-Zeitraum: 28.11.2026 – 18.12.2026
-Hinweis: Straßenbau, Gehwegführung wegen Pflasterarbeiten kurzzeitig im gesperrten Baufeld
-Verantwortlich: Verkehrsbetriebe Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Haltestellenumbau, Vollsperrung – Karlsruhe]]></title>
@@ -3709,7 +3779,7 @@ Quelle: Stadt Rastatt]]></summary>
         <updated>2026-10-12T22:00:00.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Gleisbau · Vollsperrung
 Zeitraum: 05.11.2026 – 22.11.2026
-Hinweis: Badener Straße in Richtung Hengstplatz frei
+Hinweis: Badener Straße in Richtung Hengstplatz frei; Linienverkehr frei
 Verantwortlich: Verkehrsbetriebe Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
@@ -5530,6 +5600,18 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Kaiserallee zw. Grillparzer Straße und Uhlandstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1695:2026-06-04T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1695"/>
+        <updated>2026-06-04T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Mit Behinderung
+Zeitraum: 01.03.2027 – 31.08.2027
+Hinweis: Kreuzungsbereich Yorkstraße, Aufteilung nicht vorgenommen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Esslinger Straße zw. Thüringer Straße und Ludwigsburger Straße – Karlsruhe]]></title>

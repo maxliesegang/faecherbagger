@@ -1,57 +1,57 @@
 {
-  "since": "2026-11-18T22:44:01.846Z",
+  "since": "2026-11-19T12:22:40.723Z",
   "added": [
-    "2023V5988",
-    "2025V6641",
-    "2026V3411",
-    "2026V5185",
-    "2026V7453",
-    "2026V7477",
-    "2026V7479",
-    "2026V7483",
-    "40138",
-    "40249"
+    "2026V1695",
+    "2026V4539",
+    "2026V6968",
+    "2026V7485",
+    "2026V7486",
+    "2026V7489",
+    "2026V7490"
   ],
   "modified": [
-    "2023V2982",
-    "2026V5368",
-    "2026V6529"
+    "2026V2039",
+    "2026V4345",
+    "2026V4346",
+    "2026V6779"
   ],
-  "removed": [
-    "2026V7057",
-    "2026V7409",
-    "30107",
-    "30263",
-    "30274"
-  ],
+  "removed": [],
   "relevantModifications": [
     {
-      "id": "2023V2982",
+      "id": "2026V2039",
       "changedFields": [
-        "period",
-        "closure"
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2027-04-05",
+      "previousEndDate": "2027-05-28"
+    },
+    {
+      "id": "2026V4345",
+      "changedFields": [
+        "period"
+      ],
+      "previousClosure": "one-direction",
+      "previousStartDate": "2026-11-02",
+      "previousEndDate": "2026-11-23"
+    },
+    {
+      "id": "2026V4346",
+      "changedFields": [
+        "period"
       ],
       "previousClosure": "full",
-      "previousStartDate": "2025-03-03",
-      "previousEndDate": "2026-12-31"
+      "previousStartDate": "2026-11-28",
+      "previousEndDate": "2026-12-18"
     },
     {
-      "id": "2026V5368",
+      "id": "2026V6779",
       "changedFields": [
         "period"
       ],
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-09-22",
-      "previousEndDate": "2026-12-09"
-    },
-    {
-      "id": "2026V6529",
-      "changedFields": [
-        "period"
-      ],
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-11-17",
-      "previousEndDate": "2027-01-30"
+      "previousStartDate": "2026-11-24",
+      "previousEndDate": "2026-11-27"
     }
   ]
 }

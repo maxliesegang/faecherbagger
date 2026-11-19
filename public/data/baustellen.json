@@ -2900,7 +2900,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße, Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
-    "notes": "Badener Straße in Richtung Hengstplatz frei",
+    "notes": "Badener Straße in Richtung Hengstplatz frei; Linienverkehr frei",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-11-05",
     "endDate": "2026-11-22",
@@ -3652,6 +3652,26 @@
     "lastModified": "2026-08-27T22:00:00Z"
   },
   {
+    "id": "2026V1695",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kaiserallee zw. Grillparzer Straße und Uhlandstraße",
+    "notes": "Kreuzungsbereich Yorkstraße, Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-03-01",
+    "endDate": "2027-08-31",
+    "point": [
+      8.3745,
+      49.01081
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-06-04T22:00:00Z"
+  },
+  {
     "id": "2026V1762",
     "phase": "active",
     "category": "gas-water",
@@ -4156,14 +4176,14 @@
     "location": "Sophien- zw. Herder- u. Geranienstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-04-05",
+    "startDate": "2027-03-22",
     "endDate": "2027-05-28",
     "point": [
       8.369435,
-      49.009176
+      49.009236
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-12T23:00:00Z"
+    "lastModified": "2026-11-18T23:00:00Z"
   },
   {
     "id": "2026V2043",
@@ -4368,16 +4388,16 @@
     ],
     "extentPoints": [
       [
-        8.35597,
-        49.02432
-      ],
-      [
         8.35897,
         49.02268
       ],
       [
         8.35665,
         49.02297
+      ],
+      [
+        8.35597,
+        49.02432
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -5751,13 +5771,13 @@
     "notes": "Verkehr von der Beuthener Straße nur in die Waldstadt hinein möglich. Ausfahrt über am Sportpark bzw. Kolberger Straße",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-11-02",
-    "endDate": "2026-11-23",
+    "endDate": "2026-11-22",
     "point": [
       8.445062,
       49.034872
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-29T23:00:00Z"
+    "lastModified": "2026-11-18T23:00:00Z"
   },
   {
     "id": "2026V4346",
@@ -5770,14 +5790,14 @@
     "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
     "notes": "Straßenbau, Gehwegführung wegen Pflasterarbeiten kurzzeitig im gesperrten Baufeld",
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-28",
+    "startDate": "2026-11-30",
     "endDate": "2026-12-18",
     "point": [
       8.445138,
       49.035112
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-25T23:00:00Z"
+    "lastModified": "2026-11-18T23:00:00Z"
   },
   {
     "id": "2026V4385",
@@ -5928,6 +5948,40 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-09-13T22:00:00Z"
+  },
+  {
+    "id": "2026V4539",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Geh- und Radweg entlang der VBK Gleistrasse zw. Schweidnitzerstraße bis Glogauer Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-09-21",
+    "endDate": "2026-12-04",
+    "point": [
+      8.444894,
+      49.030199
+    ],
+    "extentPoints": [
+      [
+        8.44148,
+        49.03074
+      ],
+      [
+        8.44406,
+        49.03032
+      ],
+      [
+        8.44664,
+        49.0299
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-18T23:00:00Z"
   },
   {
     "id": "2026V4566",
@@ -7337,22 +7391,8 @@
     "startDate": "2026-11-06",
     "endDate": "2027-04-23",
     "point": [
-      8.444182,
-      49.03047
-    ],
-    "extentPoints": [
-      [
-        8.44205,
-        49.03116
-      ],
-      [
-        8.44122,
-        49.02986
-      ],
-      [
-        8.44701,
-        49.03082
-      ]
+      8.446955,
+      49.030366
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-04T23:00:00Z"
@@ -8076,14 +8116,14 @@
     "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-24",
-    "endDate": "2026-11-27",
+    "startDate": "2026-11-23",
+    "endDate": "2026-11-29",
     "point": [
       8.44525,
       49.035031
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-29T23:00:00Z"
+    "lastModified": "2026-11-18T23:00:00Z"
   },
   {
     "id": "2026V6802",
@@ -8224,6 +8264,44 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-12T23:00:00Z"
+  },
+  {
+    "id": "2026V6968",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kriegsstraße zw. Weinbrennerplatz u. Kühler Krug",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-08-02",
+    "endDate": "2028-03-31",
+    "point": [
+      8.371684,
+      49.005551
+    ],
+    "extentPoints": [
+      [
+        8.36731,
+        49.00572
+      ],
+      [
+        8.36968,
+        49.00544
+      ],
+      [
+        8.37204,
+        49.00545
+      ],
+      [
+        8.37428,
+        49.00556
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-18T23:00:00Z"
   },
   {
     "id": "2026V6970",
@@ -9339,29 +9417,69 @@
     "startDate": "2027-05-31",
     "endDate": "2027-07-24",
     "point": [
-      8.388013,
-      48.990589
+      8.389222,
+      48.990084
     ],
     "extentPoints": [
       [
-        8.38398,
-        48.99192
+        8.37711,
+        48.99272
       ],
       [
-        8.38584,
-        48.99109
+        8.37885,
+        48.99199
       ],
       [
-        8.38773,
-        48.99043
+        8.38068,
+        48.99133
       ],
       [
-        8.38991,
-        48.98975
+        8.38325,
+        48.99159
       ],
       [
-        8.39208,
-        48.98931
+        8.38139,
+        48.99338
+      ],
+      [
+        8.38533,
+        48.99126
+      ],
+      [
+        8.38727,
+        48.99059
+      ],
+      [
+        8.38934,
+        48.98992
+      ],
+      [
+        8.39154,
+        48.98942
+      ],
+      [
+        8.39691,
+        48.98919
+      ],
+      [
+        8.39921,
+        48.98924
+      ],
+      [
+        8.40124,
+        48.98948
+      ],
+      [
+        8.40359,
+        48.98993
+      ],
+      [
+        8.4034,
+        48.98854
+      ],
+      [
+        8.40502,
+        48.99108
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -9593,6 +9711,170 @@
         8.42209,
         49.008
       ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-18T23:00:00Z"
+  },
+  {
+    "id": "2026V7485",
+    "phase": "upcoming",
+    "category": "tunnel",
+    "artRaw": "Tunnelwartung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kriegsstraße/Karoline-Luise-Tunnel zwischen Hirschstraße und Henriette-Obermüller-Straße",
+    "notes": "Sperrungen täglich ab 9:00 Uhr - 18:00 Uhr",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-03-15",
+    "endDate": "2027-03-18",
+    "point": [
+      8.40422,
+      49.005484
+    ],
+    "extentPoints": [
+      [
+        8.39148,
+        49.00544
+      ],
+      [
+        8.39387,
+        49.0054
+      ],
+      [
+        8.39652,
+        49.00543
+      ],
+      [
+        8.39923,
+        49.00545
+      ],
+      [
+        8.40193,
+        49.00545
+      ],
+      [
+        8.40443,
+        49.00544
+      ],
+      [
+        8.40684,
+        49.00557
+      ],
+      [
+        8.40935,
+        49.00585
+      ],
+      [
+        8.41192,
+        49.00594
+      ],
+      [
+        8.41437,
+        49.00541
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-18T23:00:00Z"
+  },
+  {
+    "id": "2026V7486",
+    "phase": "upcoming",
+    "category": "tunnel",
+    "artRaw": "Tunnelwartung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kriegsstraße zw. Hirschstraße und Henriette-Obermüller-Straße (Karoline-Luise-Tunnel)",
+    "notes": "Sperrungen täglich 9:00 bis 18:00 Uhr",
+    "cause": "Tiefbauamt",
+    "startDate": "2027-10-04",
+    "endDate": "2027-10-07",
+    "point": [
+      8.403394,
+      49.005516
+    ],
+    "extentPoints": [
+      [
+        8.41503,
+        49.00541
+      ],
+      [
+        8.41287,
+        49.00588
+      ],
+      [
+        8.41076,
+        49.00613
+      ],
+      [
+        8.40824,
+        49.00587
+      ],
+      [
+        8.40571,
+        49.0056
+      ],
+      [
+        8.40302,
+        49.00559
+      ],
+      [
+        8.40039,
+        49.00559
+      ],
+      [
+        8.39793,
+        49.00559
+      ],
+      [
+        8.39548,
+        49.00559
+      ],
+      [
+        8.39277,
+        49.00558
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-18T23:00:00Z"
+  },
+  {
+    "id": "2026V7489",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Glogauer Straße zw. Gleiwitzer Straße und Königsberger Straße",
+    "notes": "Arbeiten in Geh- und Radwegbereich.",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-19",
+    "endDate": "2026-12-19",
+    "point": [
+      8.441327,
+      49.030297
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-18T23:00:00Z"
+  },
+  {
+    "id": "2026V7490",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Mannheimer zw. Heilbronner u. Hirtenweg",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-03-30",
+    "endDate": "2027-05-15",
+    "point": [
+      8.444183,
+      49.016484
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-18T23:00:00Z"
