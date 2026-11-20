@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T12:23:30.688Z",
+  "generatedAt": "2026-11-20T22:24:36.587Z",
   "events": [
     {
       "kind": "changed",
@@ -1064,23 +1064,6 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5329:2026-11-19T23:00:00Z",
-      "announcedOn": "2026-11-20",
-      "siteId": "2026V5329",
-      "point": [
-        8.441751,
-        49.031081
-      ],
-      "closure": "full",
-      "startDate": "2026-11-23",
-      "endDate": "2026-11-29",
-      "municipality": "Karlsruhe",
-      "location": "Haltestellenumbau, Vollsperrung",
-      "previousClosure": "full",
-      "previousStartDate": "2026-11-23"
-    },
-    {
-      "kind": "changed",
       "signature": "changed:2026V5368:2026-11-18T23:00:00Z",
       "announcedOn": "2026-11-19",
       "siteId": "2026V5368",
@@ -1248,8 +1231,8 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V6779:2026-11-18T23:00:00Z",
-      "announcedOn": "2026-11-19",
+      "signature": "changed:2026V6779:2026-11-19T23:00:00Z",
+      "announcedOn": "2026-11-20",
       "siteId": "2026V6779",
       "point": [
         8.44525,
@@ -1257,16 +1240,16 @@
       ],
       "closure": "obstruction",
       "startDate": "2026-11-23",
-      "endDate": "2026-11-29",
+      "endDate": "2026-11-30",
       "municipality": "Karlsruhe",
       "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
       "previousClosure": "obstruction",
-      "previousStartDate": "2026-11-24"
+      "previousStartDate": "2026-11-23"
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V6944:2026-11-12T23:00:00Z",
-      "announcedOn": "2026-11-13",
+      "signature": "changed:2026V6944:2026-11-19T23:00:00Z",
+      "announcedOn": "2026-11-20",
       "siteId": "2026V6944",
       "point": [
         8.455252,
@@ -1274,7 +1257,7 @@
       ],
       "closure": "obstruction",
       "startDate": "2026-11-02",
-      "endDate": "2026-11-21",
+      "endDate": "2026-11-28",
       "municipality": "Karlsruhe",
       "location": "Wasgaustraße zw. Tiroler Straße und Memeler Straße",
       "previousClosure": "obstruction",
@@ -1726,6 +1709,21 @@
       "endDate": "2027-11-15",
       "municipality": "Karlsruhe",
       "location": "Prinzenweg, Schneewittchenweg, Rotkäppchenweg, Hänselweg, Aschenbrödelweg, Steinmannstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2025V3257",
+      "announcedOn": "2026-11-20",
+      "siteId": "2025V3257",
+      "point": [
+        8.451103,
+        48.991257
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-01",
+      "endDate": "2027-01-30",
+      "municipality": "Karlsruhe",
+      "location": "Ostmarkstraße, Leutschauer Straße, Zipser Straße, Im Säuterich, Kremnitzer Straße"
     },
     {
       "kind": "new",
@@ -3006,6 +3004,62 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V7512",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V7512",
+      "point": [
+        8.390557,
+        48.994712
+      ],
+      "extentPoints": [
+        [
+          8.38373,
+          48.99525
+        ],
+        [
+          8.38612,
+          48.99499
+        ],
+        [
+          8.38876,
+          48.99477
+        ],
+        [
+          8.39088,
+          48.99471
+        ],
+        [
+          8.3932,
+          48.99453
+        ],
+        [
+          8.39848,
+          48.99415
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-23",
+      "endDate": "2026-11-28",
+      "municipality": "Karlsruhe",
+      "location": "Ebertstraße 1 - 41"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7515",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V7515",
+      "point": [
+        8.39142,
+        49.009116
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-30",
+      "endDate": "2026-12-18",
+      "municipality": "Karlsruhe",
+      "location": "Amalienstraße 32A"
+    },
+    {
+      "kind": "new",
       "signature": "new:30015",
       "announcedOn": "2026-11-18",
       "siteId": "30015",
@@ -3502,6 +3556,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:40221",
+      "announcedOn": "2026-11-20",
+      "siteId": "40221",
+      "point": [
+        8.646482,
+        49.09923
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-10-14",
+      "endDate": "2026-11-30",
+      "municipality": "Bruchsal",
+      "location": "Schwabenstraße 6"
+    },
+    {
+      "kind": "new",
       "signature": "new:40243",
       "announcedOn": "2026-11-16",
       "siteId": "40243",
@@ -3514,6 +3583,21 @@
       "endDate": "2027-06-30",
       "municipality": "Bruchsal",
       "location": "Styrumstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:40246",
+      "announcedOn": "2026-11-20",
+      "siteId": "40246",
+      "point": [
+        8.644463,
+        49.085286
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-27",
+      "municipality": "Bruchsal",
+      "location": "Kurpfalzstraße 31"
     },
     {
       "kind": "new",
