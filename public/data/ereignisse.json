@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T22:47:56.442Z",
+  "generatedAt": "2026-11-20T12:23:30.688Z",
   "events": [
     {
       "kind": "changed",
@@ -120,6 +120,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2025V1107:2026-11-19T23:00:00Z",
+      "announcedOn": "2026-11-20",
+      "siteId": "2025V1107",
+      "point": [
+        8.395081,
+        49.009073
+      ],
+      "closure": "none",
+      "startDate": "2026-11-20",
+      "endDate": "2026-12-18",
+      "municipality": "Karlsruhe",
+      "location": "Karlstraße 21 - 21A und und Waldstraße 40A und 40B",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2026-11-20"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2025V5267:2026-11-16T23:00:00Z",
       "announcedOn": "2026-11-17",
       "siteId": "2025V5267",
@@ -134,23 +151,6 @@
       "location": "Augartenstraße Höhe Nr. 21",
       "previousClosure": "none",
       "previousStartDate": "2025-11-24"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2025V6344:2026-11-10T23:00:00Z",
-      "announcedOn": "2026-11-11",
-      "siteId": "2025V6344",
-      "point": [
-        8.439658,
-        49.029778
-      ],
-      "closure": "full",
-      "startDate": "2027-01-11",
-      "endDate": "2028-12-15",
-      "municipality": "Karlsruhe",
-      "location": "Gleiwitzerstraße zw. Liegnitzer Straße und Glogauer Straße",
-      "previousClosure": "full",
-      "previousStartDate": "2027-01-11"
     },
     {
       "kind": "changed",
@@ -316,23 +316,6 @@
       "location": "Herrenstraße zw. Kriegsstraße u. Blumenstraße",
       "previousClosure": "obstruction",
       "previousStartDate": "2027-01-01"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V0049:2026-11-10T23:00:00Z",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V0049",
-      "point": [
-        8.374735,
-        49.004983
-      ],
-      "closure": "one-direction",
-      "startDate": "2027-02-01",
-      "endDate": "2027-07-31",
-      "municipality": "Karlsruhe",
-      "location": "Eisenlohrstraße zw. Kriegsstraße und Gustav-Heller-Platz",
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-11-02"
     },
     {
       "kind": "changed",
@@ -792,6 +775,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V1763:2026-11-19T23:00:00Z",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V1763",
+      "point": [
+        8.390931,
+        48.992806
+      ],
+      "closure": "full",
+      "startDate": "2027-01-11",
+      "endDate": "2027-02-28",
+      "municipality": "Karlsruhe",
+      "location": "Marie-Alexandra-Straße zw. Karlstraße und Gebhardstraße / Karolinenstraße zw. Marie-Alexandra-Straße und Cäciliastraße",
+      "previousClosure": "full",
+      "previousStartDate": "2027-01-01"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V2039:2026-11-18T23:00:00Z",
       "announcedOn": "2026-11-19",
       "siteId": "2026V2039",
@@ -860,6 +860,23 @@
     },
     {
       "kind": "changed",
+      "signature": "changed:2026V3029:2026-11-19T23:00:00Z",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V3029",
+      "point": [
+        8.505439,
+        49.003775
+      ],
+      "closure": "full",
+      "startDate": "2026-10-26",
+      "endDate": "2026-12-18",
+      "municipality": "Karlsruhe",
+      "location": "Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße",
+      "previousClosure": "full",
+      "previousStartDate": "2026-10-26"
+    },
+    {
+      "kind": "changed",
       "signature": "changed:2026V3478:2026-11-15T23:00:00Z",
       "announcedOn": "2026-11-16",
       "siteId": "2026V3478",
@@ -874,23 +891,6 @@
       "location": "Neue-Anlage-Straße zw. Litzenhardtstraße und Bannwaldallee",
       "previousClosure": "full",
       "previousStartDate": "2027-01-01"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V3481:2026-11-10T23:00:00Z",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V3481",
-      "point": [
-        8.334773,
-        49.004829
-      ],
-      "closure": "full",
-      "startDate": "2027-01-11",
-      "endDate": "2027-03-21",
-      "municipality": "Karlsruhe",
-      "location": "Pfalzstraße Kreuzungsbereich Krämerstraße",
-      "previousClosure": "full",
-      "previousStartDate": "2027-01-04"
     },
     {
       "kind": "changed",
@@ -1013,57 +1013,6 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V4566:2026-11-10T23:00:00Z",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V4566",
-      "point": [
-        8.356843,
-        49.024955
-      ],
-      "closure": "obstruction",
-      "startDate": "2027-07-20",
-      "endDate": "2027-08-06",
-      "municipality": "Karlsruhe",
-      "location": "Daimlerstraße zw. Siemensallee und B36/ Neureuter Straße",
-      "previousClosure": "obstruction",
-      "previousStartDate": "2027-07-20"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V4769:2026-11-10T23:00:00Z",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V4769",
-      "point": [
-        8.336528,
-        49.004571
-      ],
-      "closure": "one-direction",
-      "startDate": "2026-11-09",
-      "endDate": "2026-12-11",
-      "municipality": "Karlsruhe",
-      "location": "Rheinhafenstraße Kreuzungsbereich Kirschstraße",
-      "previousClosure": "one-direction",
-      "previousStartDate": "2026-11-09"
-    },
-    {
-      "kind": "changed",
-      "signature": "changed:2026V4770:2026-11-10T23:00:00Z",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V4770",
-      "point": [
-        8.336448,
-        49.004435
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-12-14",
-      "endDate": "2026-12-22",
-      "municipality": "Karlsruhe",
-      "location": "Kirschstraße zw. Turnerstraße und Rehinhafenstraße",
-      "previousClosure": "obstruction",
-      "previousStartDate": "2026-12-14"
-    },
-    {
-      "kind": "changed",
       "signature": "changed:2026V5149:2026-11-16T23:00:00Z",
       "announcedOn": "2026-11-17",
       "siteId": "2026V5149",
@@ -1115,20 +1064,20 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V5328:2026-11-15T23:00:00Z",
-      "announcedOn": "2026-11-17",
-      "siteId": "2026V5328",
+      "signature": "changed:2026V5329:2026-11-19T23:00:00Z",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V5329",
       "point": [
-        8.442336,
-        49.032095
+        8.441751,
+        49.031081
       ],
       "closure": "full",
       "startDate": "2026-11-23",
       "endDate": "2026-11-29",
       "municipality": "Karlsruhe",
-      "location": "Glogauer Straße zw. Königsberger Straße und Neisser Straße",
-      "previousClosure": "one-direction",
-      "previousStartDate": "2026-10-28"
+      "location": "Haltestellenumbau, Vollsperrung",
+      "previousClosure": "full",
+      "previousStartDate": "2026-11-23"
     },
     {
       "kind": "changed",
@@ -1418,23 +1367,6 @@
     },
     {
       "kind": "changed",
-      "signature": "changed:2026V7142:2026-11-12T23:00:00Z",
-      "announcedOn": "2026-11-13",
-      "siteId": "2026V7142",
-      "point": [
-        8.393472,
-        49.010141
-      ],
-      "closure": "full",
-      "startDate": "2026-11-19",
-      "endDate": "2026-11-19",
-      "municipality": "Karlsruhe",
-      "location": "Douglasstraße zw. Kaiserstraße und Akademiestraße",
-      "previousClosure": "full",
-      "previousStartDate": "2026-11-16"
-    },
-    {
-      "kind": "changed",
       "signature": "changed:2026V7209:2026-11-17T23:00:00Z",
       "announcedOn": "2026-11-18",
       "siteId": "2026V7209",
@@ -1488,6 +1420,33 @@
       "location": "K 9675 zw. AS3 und AS4 (Edeltrudtunnel)",
       "previousClosure": "obstruction",
       "previousStartDate": "2026-11-23"
+    },
+    {
+      "kind": "changed",
+      "signature": "changed:40009:2026-01-15T12:35:22Z",
+      "announcedOn": "2026-11-20",
+      "siteId": "40009",
+      "point": [
+        8.411417,
+        49.031108
+      ],
+      "extentPoints": [
+        [
+          8.5299,
+          49.10421
+        ],
+        [
+          8.2928,
+          48.958
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-02-02",
+      "endDate": "2027-01-31",
+      "municipality": "Bruchsal",
+      "location": "Im Grün 2",
+      "previousClosure": "obstruction",
+      "previousStartDate": "2025-02-27"
     },
     {
       "kind": "changed",
@@ -1598,21 +1557,6 @@
       "endDate": "2028-04-20",
       "municipality": "Karlsruhe",
       "location": "Killisfeldstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:2023V6310",
-      "announcedOn": "2026-11-11",
-      "siteId": "2023V6310",
-      "point": [
-        8.455509,
-        48.976131
-      ],
-      "closure": "full",
-      "startDate": "2024-04-04",
-      "endDate": "2027-03-31",
-      "municipality": "Karlsruhe",
-      "location": "Vorbergstraße zw. Hohenbergstraße/Quellenstraße und Ringstraße"
     },
     {
       "kind": "new",
@@ -1752,18 +1696,36 @@
     },
     {
       "kind": "new",
-      "signature": "new:2025V1107",
-      "announcedOn": "2026-11-18",
-      "siteId": "2025V1107",
+      "signature": "new:2025V2163",
+      "announcedOn": "2026-11-20",
+      "siteId": "2025V2163",
       "point": [
-        8.395096,
-        49.00907
+        8.413973,
+        48.969695
+      ],
+      "extentPoints": [
+        [
+          8.4128,
+          48.96894
+        ],
+        [
+          8.41328,
+          48.97031
+        ],
+        [
+          8.41557,
+          48.97051
+        ],
+        [
+          8.41487,
+          48.96908
+        ]
       ],
       "closure": "obstruction",
-      "startDate": "2026-11-20",
-      "endDate": "2026-12-18",
+      "startDate": "2025-11-25",
+      "endDate": "2027-11-15",
       "municipality": "Karlsruhe",
-      "location": "Karlstraße 21 - 21A und und Waldstraße 40A und 40B"
+      "location": "Prinzenweg, Schneewittchenweg, Rotkäppchenweg, Hänselweg, Aschenbrödelweg, Steinmannstraße"
     },
     {
       "kind": "new",
@@ -2012,91 +1974,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:2026V3787",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V3787",
-      "point": [
-        8.412088,
-        49.01388
-      ],
-      "extentPoints": [
-        [
-          8.3959,
-          49.02738
-        ],
-        [
-          8.39741,
-          49.02341
-        ],
-        [
-          8.39324,
-          49.02175
-        ],
-        [
-          8.39768,
-          49.01848
-        ],
-        [
-          8.3866,
-          49.01465
-        ],
-        [
-          8.38575,
-          49.00542
-        ],
-        [
-          8.43069,
-          48.99353
-        ],
-        [
-          8.42772,
-          48.99998
-        ],
-        [
-          8.44379,
-          49.00411
-        ],
-        [
-          8.41692,
-          49.00502
-        ],
-        [
-          8.4107,
-          49.0051
-        ],
-        [
-          8.41934,
-          49.00868
-        ],
-        [
-          8.41836,
-          49.01308
-        ],
-        [
-          8.43677,
-          49.01471
-        ],
-        [
-          8.41578,
-          49.0206
-        ],
-        [
-          8.42067,
-          49.02274
-        ],
-        [
-          8.42427,
-          49.02541
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-12",
-      "endDate": "2026-11-20",
-      "municipality": "Karlsruhe",
-      "location": "Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen"
-    },
-    {
-      "kind": "new",
       "signature": "new:2026V4484",
       "announcedOn": "2026-11-18",
       "siteId": "2026V4484",
@@ -2261,6 +2138,36 @@
       "endDate": "2027-05-14",
       "municipality": "Karlsruhe",
       "location": "Am Storrenacker zw. Elfmorgenbruchstraße u. einschl. Einmündung Printzstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6069",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V6069",
+      "point": [
+        8.395759,
+        49.008728
+      ],
+      "closure": "full",
+      "startDate": "2026-10-27",
+      "endDate": "2026-11-27",
+      "municipality": "Karlsruhe",
+      "location": "Waldstraße zw. Ludwigsplatz und Bürgerstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V6780",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V6780",
+      "point": [
+        8.396633,
+        49.008561
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-07",
+      "endDate": "2027-12-18",
+      "municipality": "Karlsruhe",
+      "location": "Bürgerstraße zw. Blumenstraße und Erbprinzenstraße"
     },
     {
       "kind": "new",
@@ -3022,6 +2929,83 @@
     },
     {
       "kind": "new",
+      "signature": "new:2026V7506",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V7506",
+      "point": [
+        8.392281,
+        48.992694
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-24",
+      "endDate": "2027-01-10",
+      "municipality": "Karlsruhe",
+      "location": "Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7507",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V7507",
+      "point": [
+        8.447181,
+        48.996301
+      ],
+      "extentPoints": [
+        [
+          8.44962,
+          48.99588
+        ],
+        [
+          8.44743,
+          48.99627
+        ],
+        [
+          8.44525,
+          48.99668
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2027-02-22",
+      "endDate": "2027-07-31",
+      "municipality": "Karlsruhe",
+      "location": "Ottostraße zw. Killisfeldstraße und Dieselstraße"
+    },
+    {
+      "kind": "new",
+      "signature": "new:2026V7509",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V7509",
+      "point": [
+        8.366464,
+        49.049216
+      ],
+      "extentPoints": [
+        [
+          8.36691,
+          49.05099
+        ],
+        [
+          8.36507,
+          49.05002
+        ],
+        [
+          8.36641,
+          49.04887
+        ],
+        [
+          8.36633,
+          49.04718
+        ]
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-27",
+      "endDate": "2026-11-27",
+      "municipality": "Karlsruhe",
+      "location": "B36 Ausfahrt Neureut Süd"
+    },
+    {
+      "kind": "new",
       "signature": "new:30015",
       "announcedOn": "2026-11-18",
       "siteId": "30015",
@@ -3353,21 +3337,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:30265",
-      "announcedOn": "2026-11-11",
-      "siteId": "30265",
-      "point": [
-        8.603894,
-        49.128743
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-11",
-      "endDate": "2026-11-25",
-      "municipality": "Bruchsal",
-      "location": "Mozartweg - Höhe Uhlandweg"
-    },
-    {
-      "kind": "new",
       "signature": "new:30268",
       "announcedOn": "2026-11-13",
       "siteId": "30268",
@@ -3428,21 +3397,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:30273",
-      "announcedOn": "2026-11-11",
-      "siteId": "30273",
-      "point": [
-        8.562747,
-        49.140492
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-11",
-      "endDate": "2026-11-20",
-      "municipality": "Bruchsal",
-      "location": "Am Mantel 11"
-    },
-    {
-      "kind": "new",
       "signature": "new:30277",
       "announcedOn": "2026-11-16",
       "siteId": "30277",
@@ -3458,6 +3412,21 @@
     },
     {
       "kind": "new",
+      "signature": "new:30282",
+      "announcedOn": "2026-11-20",
+      "siteId": "30282",
+      "point": [
+        8.644709,
+        49.102206
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-11-19",
+      "endDate": "2026-11-30",
+      "municipality": "Bruchsal",
+      "location": "Luthergasse 4"
+    },
+    {
+      "kind": "new",
       "signature": "new:40083",
       "announcedOn": "2026-11-16",
       "siteId": "40083",
@@ -3470,21 +3439,6 @@
       "endDate": "2026-11-30",
       "municipality": "Rheinstetten",
       "location": "Frankenstraße 8"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40122",
-      "announcedOn": "2026-11-11",
-      "siteId": "40122",
-      "point": [
-        8.471377,
-        49.100948
-      ],
-      "closure": "none",
-      "startDate": "2026-07-20",
-      "endDate": "2026-12-18",
-      "municipality": "Stutensee",
-      "location": "76297 Stutensee, Heidelberger Ring ggü. 22"
     },
     {
       "kind": "new",
@@ -3578,18 +3532,18 @@
     },
     {
       "kind": "new",
-      "signature": "new:40249",
-      "announcedOn": "2026-11-19",
-      "siteId": "40249",
+      "signature": "new:40251",
+      "announcedOn": "2026-11-20",
+      "siteId": "40251",
       "point": [
-        8.581102,
-        49.131011
+        8.544353,
+        49.089673
       ],
-      "closure": "obstruction",
-      "startDate": "2026-11-19",
-      "endDate": "2026-11-19",
+      "closure": "full",
+      "startDate": "2026-11-20",
+      "endDate": "2026-12-18",
       "municipality": "Bruchsal",
-      "location": "Zieglerweg 9"
+      "location": "Franz-Liszt-Straße 16"
     },
     {
       "kind": "new",
@@ -3665,22 +3619,6 @@
       "endDate": "2026-11-25",
       "municipality": "Ettlingen",
       "location": "Pforzheimer Straße"
-    },
-    {
-      "kind": "starts-soon",
-      "signature": "starts-soon:2025V1107:2026-11-20:1",
-      "announcedOn": "2026-11-19",
-      "siteId": "2025V1107",
-      "point": [
-        8.395096,
-        49.00907
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-20",
-      "endDate": "2026-12-18",
-      "municipality": "Karlsruhe",
-      "location": "Karlstraße 21 - 21A und und Waldstraße 40A und 40B",
-      "reminderLeadDays": 1
     },
     {
       "kind": "starts-soon",
@@ -3858,92 +3796,6 @@
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V3787:2026-11-12:1",
-      "announcedOn": "2026-11-11",
-      "siteId": "2026V3787",
-      "point": [
-        8.410756,
-        49.012634
-      ],
-      "extentPoints": [
-        [
-          8.3959,
-          49.02738
-        ],
-        [
-          8.39741,
-          49.02341
-        ],
-        [
-          8.39768,
-          49.01848
-        ],
-        [
-          8.3866,
-          49.01465
-        ],
-        [
-          8.38575,
-          49.00542
-        ],
-        [
-          8.43069,
-          48.99353
-        ],
-        [
-          8.42772,
-          48.99998
-        ],
-        [
-          8.44379,
-          49.00411
-        ],
-        [
-          8.41692,
-          49.00502
-        ],
-        [
-          8.4107,
-          49.0051
-        ],
-        [
-          8.41934,
-          49.00868
-        ],
-        [
-          8.41836,
-          49.01308
-        ],
-        [
-          8.43677,
-          49.01471
-        ],
-        [
-          8.41578,
-          49.0206
-        ],
-        [
-          8.42067,
-          49.02274
-        ],
-        [
-          8.41187,
-          48.99307
-        ],
-        [
-          8.37224,
-          48.99735
-        ]
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-12",
-      "endDate": "2026-11-20",
-      "municipality": "Karlsruhe",
-      "location": "Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
       "signature": "starts-soon:2026V3911:2026-12-01:14",
       "announcedOn": "2026-11-17",
       "siteId": "2026V3911",
@@ -3956,6 +3808,22 @@
       "endDate": "2027-03-31",
       "municipality": "Karlsruhe",
       "location": "Parkstraße zw. Karl-Wilhem-Platz und Am Fasanengarten",
+      "reminderLeadDays": 14
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V4251:2026-12-04:14",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V4251",
+      "point": [
+        8.445906,
+        49.028211
+      ],
+      "closure": "obstruction",
+      "startDate": "2026-12-04",
+      "endDate": "2027-01-15",
+      "municipality": "Karlsruhe",
+      "location": "Hirschberger Straße, Waldenburger Straße",
       "reminderLeadDays": 14
     },
     {
@@ -4038,18 +3906,34 @@
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V6777:2026-11-19:1",
-      "announcedOn": "2026-11-18",
-      "siteId": "2026V6777",
+      "signature": "starts-soon:2026V6770:2026-12-04:14",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V6770",
       "point": [
-        8.355921,
-        49.022083
+        8.402746,
+        49.010254
       ],
       "closure": "obstruction",
-      "startDate": "2026-11-19",
-      "endDate": "2026-11-19",
+      "startDate": "2026-12-04",
+      "endDate": "2027-01-29",
       "municipality": "Karlsruhe",
-      "location": "B36/ Neureuter Straße/ Anliegerfahrbahn",
+      "location": "Zirkel zw. Ritterstraße und Lammstraße und Lammstraße zw. Zirkel und Kaiserstraße",
+      "reminderLeadDays": 14
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V6840:2026-11-21:1",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V6840",
+      "point": [
+        8.401881,
+        49.005301
+      ],
+      "closure": "one-direction",
+      "startDate": "2026-11-21",
+      "endDate": "2026-11-22",
+      "municipality": "Karlsruhe",
+      "location": "B10/ Kriegsstraße zw. Badenwerkstraße/ Am Festplatz und Ettlinger Straße",
       "reminderLeadDays": 1
     },
     {
@@ -4134,22 +4018,6 @@
     },
     {
       "kind": "starts-soon",
-      "signature": "starts-soon:2026V7142:2026-11-19:1",
-      "announcedOn": "2026-11-18",
-      "siteId": "2026V7142",
-      "point": [
-        8.393472,
-        49.010141
-      ],
-      "closure": "full",
-      "startDate": "2026-11-19",
-      "endDate": "2026-11-19",
-      "municipality": "Karlsruhe",
-      "location": "Douglasstraße zw. Kaiserstraße und Akademiestraße",
-      "reminderLeadDays": 1
-    },
-    {
-      "kind": "starts-soon",
       "signature": "starts-soon:2026V7146:2026-11-30:14",
       "announcedOn": "2026-11-16",
       "siteId": "2026V7146",
@@ -4182,6 +4050,22 @@
     },
     {
       "kind": "starts-soon",
+      "signature": "starts-soon:2026V7228:2026-11-21:1",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V7228",
+      "point": [
+        8.334586,
+        49.016206
+      ],
+      "closure": "full",
+      "startDate": "2026-11-21",
+      "endDate": "2026-11-21",
+      "municipality": "Karlsruhe",
+      "location": "Werftstraße Höhe Haus 13 bis 20",
+      "reminderLeadDays": 1
+    },
+    {
+      "kind": "starts-soon",
       "signature": "starts-soon:2026V7262:2026-11-16:1",
       "announcedOn": "2026-11-15",
       "siteId": "2026V7262",
@@ -4195,6 +4079,22 @@
       "municipality": "Karlsruhe",
       "location": "Ritterstraße zw. Kaiserstraße und Zirkel",
       "reminderLeadDays": 1
+    },
+    {
+      "kind": "starts-soon",
+      "signature": "starts-soon:2026V7263:2026-12-04:14",
+      "announcedOn": "2026-11-20",
+      "siteId": "2026V7263",
+      "point": [
+        8.423127,
+        49.004562
+      ],
+      "closure": "full",
+      "startDate": "2026-12-04",
+      "endDate": "2026-12-04",
+      "municipality": "Karlsruhe",
+      "location": "Frühlingstraße zw. Wolfartsweierer Straße und Lohfeldstraße",
+      "reminderLeadDays": 14
     },
     {
       "kind": "starts-soon",
