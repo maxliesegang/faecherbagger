@@ -632,44 +632,6 @@
     "lastModified": "2026-10-22T22:00:00Z"
   },
   {
-    "id": "2024V5097",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Danziger Straße, Falkenweg, Dammerstocker Straße, Saarbrücker Straße, Ettlinger Allee",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2025-04-07",
-    "endDate": "2026-11-20",
-    "point": [
-      8.403151,
-      48.982134
-    ],
-    "extentPoints": [
-      [
-        8.40185,
-        48.98253
-      ],
-      [
-        8.40414,
-        48.98483
-      ],
-      [
-        8.40357,
-        48.98114
-      ],
-      [
-        8.4044,
-        48.98239
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-25T23:00:00Z"
-  },
-  {
     "id": "2024V5135",
     "phase": "active",
     "category": "power-telecom",
@@ -1028,26 +990,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-01-29T23:00:00Z"
-  },
-  {
-    "id": "2025V0142",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Kaiserstraße zw. Kreuzstraße und Kronenstraße",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2026-05-04",
-    "endDate": "2026-11-20",
-    "point": [
-      8.407262,
-      49.009389
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-01T22:00:00Z"
   },
   {
     "id": "2025V0237",
@@ -1702,26 +1644,6 @@
     "lastModified": "2025-08-28T22:00:00Z"
   },
   {
-    "id": "2025V5076",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Adlerstraße zw. Zähringerstraße u. Kaiserstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-08-29",
-    "endDate": "2026-11-20",
-    "point": [
-      8.406885,
-      49.009057
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
-  },
-  {
     "id": "2025V5173",
     "phase": "active",
     "category": "special-use",
@@ -2220,40 +2142,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-27T23:00:00Z"
-  },
-  {
-    "id": "2025V6773",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Gleistrasse entlang Steinkreuzstraße",
-    "notes": "Zeitweise Engstelle mit Lichtsignal auf der Steinkreuzstraße für Be- und Entladevorgänge",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-20",
-    "point": [
-      8.459291,
-      48.979769
-    ],
-    "extentPoints": [
-      [
-        8.46098,
-        48.98238
-      ],
-      [
-        8.46037,
-        48.98096
-      ],
-      [
-        8.45903,
-        48.97962
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-15T22:00:00Z"
   },
   {
     "id": "2025V6907",
@@ -5256,96 +5144,6 @@
     "lastModified": "2026-11-16T23:00:00Z"
   },
   {
-    "id": "2026V3787",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen",
-    "notes": "9:00 Uh - 15:00 Uhr, lokale Fahrstreifensperrungen und an einzelnen Standorten auch vor und nach dem Berufsverkehr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-11-12",
-    "endDate": "2026-11-20",
-    "point": [
-      8.410756,
-      49.012634
-    ],
-    "extentPoints": [
-      [
-        8.3959,
-        49.02738
-      ],
-      [
-        8.39741,
-        49.02341
-      ],
-      [
-        8.39768,
-        49.01848
-      ],
-      [
-        8.3866,
-        49.01465
-      ],
-      [
-        8.38575,
-        49.00542
-      ],
-      [
-        8.43069,
-        48.99353
-      ],
-      [
-        8.42772,
-        48.99998
-      ],
-      [
-        8.44379,
-        49.00411
-      ],
-      [
-        8.41692,
-        49.00502
-      ],
-      [
-        8.4107,
-        49.0051
-      ],
-      [
-        8.41934,
-        49.00868
-      ],
-      [
-        8.41836,
-        49.01308
-      ],
-      [
-        8.43677,
-        49.01471
-      ],
-      [
-        8.41578,
-        49.0206
-      ],
-      [
-        8.42067,
-        49.02274
-      ],
-      [
-        8.41187,
-        48.99307
-      ],
-      [
-        8.37224,
-        48.99735
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-16T23:00:00Z"
-  },
-  {
     "id": "2026V3807",
     "phase": "active",
     "category": "gas-water",
@@ -7516,26 +7314,6 @@
     "lastModified": "2026-10-27T23:00:00Z"
   },
   {
-    "id": "2026V6203",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rintheimer Hauptstraße zw. Hirtenweg und Drosselsangweg",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-01",
-    "endDate": "2026-11-20",
-    "point": [
-      8.447523,
-      49.017127
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-30T22:00:00Z"
-  },
-  {
     "id": "2026V6248",
     "phase": "upcoming",
     "category": "road-construction",
@@ -8225,7 +8003,7 @@
   },
   {
     "id": "2026V6840",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "one-direction",
@@ -8710,26 +8488,6 @@
     "lastModified": "2026-11-17T23:00:00Z"
   },
   {
-    "id": "2026V7124",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Rastatter Straße zw. Herdwigstraße und Ostendorfstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-16",
-    "endDate": "2026-11-20",
-    "point": [
-      8.405421,
-      48.975339
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-08T23:00:00Z"
-  },
-  {
     "id": "2026V7125",
     "phase": "upcoming",
     "category": "special-use",
@@ -8870,26 +8628,6 @@
     "lastModified": "2026-11-09T23:00:00Z"
   },
   {
-    "id": "2026V7159",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Geigersbergstraße zw. Ernst-Barlach-Straße und Lußsteige",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-20",
-    "endDate": "2026-11-20",
-    "point": [
-      8.472952,
-      48.989025
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-09T23:00:00Z"
-  },
-  {
     "id": "2026V7169",
     "phase": "upcoming",
     "category": "crane",
@@ -8991,7 +8729,7 @@
   },
   {
     "id": "2026V7228",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -10988,26 +10726,6 @@
     "lastModified": "2026-10-27T09:05:17Z"
   },
   {
-    "id": "30117",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Hauptstraße 43",
-    "notes": null,
-    "cause": "Stadtbauamt",
-    "startDate": "2026-11-10",
-    "endDate": "2026-11-20",
-    "point": [
-      8.313026,
-      48.975029
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-11-05T07:55:46Z"
-  },
-  {
     "id": "30124",
     "phase": "active",
     "category": "road-maintenance",
@@ -11046,26 +10764,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-11-17T11:45:13Z"
-  },
-  {
-    "id": "30143",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Hauptstraße 101",
-    "notes": "Restbreite der Fahrbahn: min. 3,50 m. Für Fußgänger ist ein Notweg eingerichtet.",
-    "cause": "Privat",
-    "startDate": "2026-11-16",
-    "endDate": "2026-11-20",
-    "point": [
-      8.576745,
-      49.078086
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-06-16T09:11:37Z"
   },
   {
     "id": "30151",
@@ -11292,86 +10990,6 @@
     "lastModified": "2026-10-16T10:28:09Z"
   },
   {
-    "id": "30251",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Luthergasse 9",
-    "notes": "Straßensperrung wegen Wasserrohrbruch.\nDie Durchfahrt ist beengt möglich.",
-    "cause": "Stadtwerke",
-    "startDate": "2026-10-21",
-    "endDate": "2026-11-20",
-    "point": [
-      8.644521,
-      49.102192
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-19T14:27:37Z"
-  },
-  {
-    "id": "30252",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Obere Mühlstraße 48",
-    "notes": "Fahrbahn verengt, Gehwege nicht betroffen",
-    "cause": "Stadtwerke",
-    "startDate": "2026-10-21",
-    "endDate": "2026-11-20",
-    "point": [
-      8.562496,
-      49.08213
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-20T12:09:06Z"
-  },
-  {
-    "id": "30254",
-    "phase": "active",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Bahnhofsplatz an der Einmündung Amalienstraße",
-    "notes": "Verlegung von Fernwärme entlang Bahnhofsplatz und ein Abzweig in die Amalienstraße.\nBetroffen ist nur ein kurzer Straßenabschnitt im Einmündungsbereich.\n\nBahnhofplatz wird halbseitig gesperrt, die Amalienstraße muss voll gesperrt werden und der Geh- und Radweg entlang Bahnhofsplatz muss für einen Hausanschluss verengt werden.",
-    "cause": "Fachgebiet Tiefbau",
-    "startDate": "2026-10-26",
-    "endDate": "2026-11-20",
-    "point": [
-      8.591461,
-      49.125313
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-21T07:39:13Z"
-  },
-  {
-    "id": "30259",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Stafforter Weg 3",
-    "notes": "Schaden am Kanal - Fahrbahn verengt",
-    "cause": "Fachgebiet Tiefbau",
-    "startDate": "2026-10-29",
-    "endDate": "2026-11-20",
-    "point": [
-      8.573861,
-      49.124002
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-28T14:00:43Z"
-  },
-  {
     "id": "30265",
     "phase": "active",
     "category": "power-telecom",
@@ -11410,86 +11028,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-11T06:26:02Z"
-  },
-  {
-    "id": "30270",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Hochstraße 10",
-    "notes": null,
-    "cause": "Stadtwerke",
-    "startDate": "2026-11-11",
-    "endDate": "2026-11-20",
-    "point": [
-      8.597634,
-      49.120401
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-11T13:00:24Z"
-  },
-  {
-    "id": "30271",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Zollhallenstraße",
-    "notes": "2 Baugruben, verengte Fahrbahn",
-    "cause": "Stadtwerke",
-    "startDate": "2026-11-12",
-    "endDate": "2026-11-20",
-    "point": [
-      8.593432,
-      49.129726
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-11T13:02:41Z"
-  },
-  {
-    "id": "30272",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Eichelbergweg 10",
-    "notes": "Gehweg einseitig gesperrt.",
-    "cause": "Privat",
-    "startDate": "2026-11-11",
-    "endDate": "2026-11-20",
-    "point": [
-      8.5851,
-      49.115414
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-11T13:04:05Z"
-  },
-  {
-    "id": "30273",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Am Mantel 11",
-    "notes": "Störung Wasserversorgung. Im Zeitraum wird kurzzeitig am Fahrbahnrand aufgegraben.",
-    "cause": "Stadtwerke",
-    "startDate": "2026-11-11",
-    "endDate": "2026-11-20",
-    "point": [
-      8.562747,
-      49.140492
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-11T13:06:09Z"
   },
   {
     "id": "30277",
@@ -12464,26 +12002,6 @@
     "lastModified": "2026-09-25T08:21:42Z"
   },
   {
-    "id": "40163",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Oberfeldstraße 4",
-    "notes": "Gehwegsperrung mit Halteverbot",
-    "cause": "Privat",
-    "startDate": "2026-10-01",
-    "endDate": "2026-11-20",
-    "point": [
-      8.46811,
-      49.058036
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-09-30T07:44:22Z"
-  },
-  {
     "id": "40164",
     "phase": "active",
     "category": "special-use",
@@ -12572,26 +12090,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-10-15T13:25:10Z"
-  },
-  {
-    "id": "40173",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Berliner Allee",
-    "notes": "Einrichtung von 2 Halteverbotszonen und 1 Ersatzhaltestelle anlässlich des Schienenersatzverkehrs",
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-23",
-    "endDate": "2026-11-20",
-    "point": [
-      8.474797,
-      49.100545
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-10-16T05:21:22Z"
   },
   {
     "id": "40176",
@@ -13020,32 +12518,22 @@
   {
     "id": "40236",
     "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
     "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Gustav-Laforsch-Straße 47",
-    "notes": "Vollsperrung für den Fahrzeugverkehr, Fußgänger frei.",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-11-16",
-    "endDate": "2026-11-20",
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Prinz-Eugen-Straße",
+    "notes": null,
+    "cause": "Fachbereich Bauen und Verkehr",
+    "startDate": "2026-10-05",
+    "endDate": "2027-04-09",
     "point": [
-      8.37008,
-      48.97761
+      8.211822,
+      48.854991
     ],
-    "extentPoints": [
-      [
-        8.52831,
-        49.10031
-      ],
-      [
-        8.21152,
-        48.85503
-      ]
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-22T06:03:01Z"
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-09-17T05:12:51Z"
   },
   {
     "id": "40239",
@@ -13342,26 +12830,6 @@
     "lastModified": "2026-09-28T11:25:28Z"
   },
   {
-    "id": "40255",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Gustav-Laforsch-Straße 49",
-    "notes": "Instandhaltungsarbeiten an der Fahrbahn.",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-11-16",
-    "endDate": "2026-11-20",
-    "point": [
-      8.52834,
-      49.100001
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-17T12:37:15Z"
-  },
-  {
     "id": "40268",
     "phase": "active",
     "category": "gas-water",
@@ -13440,26 +12908,6 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-11-09T09:15:27Z"
-  },
-  {
-    "id": "40313",
-    "phase": "active",
-    "category": "road-construction",
-    "artRaw": "Straßenbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Rastatt",
-    "location": "76437 Rastatt, Rauentaler Straße",
-    "notes": "Vollsperrung der Einmündung Lochfeldstraße",
-    "cause": "Fachbereich Bauen und Verkehr",
-    "startDate": "2026-11-16",
-    "endDate": "2026-11-20",
-    "point": [
-      8.217234,
-      48.860626
-    ],
-    "source": "Stadt Rastatt",
-    "lastModified": "2026-11-10T07:11:24Z"
   },
   {
     "id": "40315",
