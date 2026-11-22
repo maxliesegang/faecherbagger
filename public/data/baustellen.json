@@ -1704,26 +1704,6 @@
     "lastModified": "2026-11-02T23:00:00Z"
   },
   {
-    "id": "2025V5363",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Breslauer Straße Wohnwege 64 A - I und 66 A -L",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-05-18",
-    "endDate": "2026-11-21",
-    "point": [
-      8.446409,
-      49.027283
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
-  },
-  {
     "id": "2025V5720",
     "phase": "active",
     "category": "power-telecom",
@@ -2015,7 +1995,7 @@
   },
   {
     "id": "2025V6511",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "tunnel",
     "artRaw": "Tunnelwartung",
     "closure": "full",
@@ -3778,6 +3758,26 @@
     "lastModified": "2026-05-28T22:00:00Z"
   },
   {
+    "id": "2026V1770",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wartburgstraße zw. Marie-Alexandra-Straße und Hohenzollernstraße",
+    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-11-22",
+    "endDate": "2027-12-31",
+    "point": [
+      8.385747,
+      48.993484
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-04-01T22:00:00Z"
+  },
+  {
     "id": "2026V1775",
     "phase": "active",
     "category": "special-use",
@@ -4368,12 +4368,12 @@
     ],
     "extentPoints": [
       [
-        8.35702,
-        49.02385
-      ],
-      [
         8.36157,
         49.02124
+      ],
+      [
+        8.35702,
+        49.02385
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -7601,7 +7601,7 @@
   },
   {
     "id": "2026V6609",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "road-maintenance",
     "artRaw": "Straßenunterhaltung",
     "closure": "obstruction",
@@ -8726,26 +8726,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-17T23:00:00Z"
-  },
-  {
-    "id": "2026V7228",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Werftstraße Höhe Haus 13 bis 20",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-21",
-    "endDate": "2026-11-21",
-    "point": [
-      8.334586,
-      49.016206
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-11T23:00:00Z"
   },
   {
     "id": "2026V7238",
@@ -12474,26 +12454,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-09T09:49:11Z"
-  },
-  {
-    "id": "40229",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Vichystraße 9",
-    "notes": "Sanierung der Fahrbahn in der Grundstückszufahrt.\nDie Fahrbahn ist verengt und der Verkehr aus dem Grundstück muss zeitweilig zum Wendebereich ausfahren und kann dort drehen.",
-    "cause": "Fachgebiet Baubetriebshof",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-21",
-    "point": [
-      8.554839,
-      49.12174
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-13T13:00:49Z"
   },
   {
     "id": "40233",
