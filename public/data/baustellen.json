@@ -1173,7 +1173,7 @@
   },
   {
     "id": "2025V2163",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -1182,7 +1182,7 @@
     "location": "Prinzenweg, Schneewittchenweg, Rotkäppchenweg, Hänselweg, Aschenbrödelweg, Steinmannstraße",
     "notes": "Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2025-11-25",
+    "startDate": "2027-01-11",
     "endDate": "2027-11-15",
     "point": [
       8.413973,
@@ -1207,7 +1207,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-19T23:00:00Z"
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2025V2464",
@@ -1597,7 +1597,7 @@
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-03-12",
-    "endDate": "2026-12-23",
+    "endDate": "2026-12-17",
     "point": [
       8.423686,
       49.005683
@@ -1621,7 +1621,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-01T23:00:00Z"
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2025V4609",
@@ -2104,26 +2104,6 @@
     "lastModified": "2026-11-18T23:00:00Z"
   },
   {
-    "id": "2025V6769",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Herrmann-Billing-Straße zw. Ettlinger Straße und Ritterstraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-22",
-    "endDate": "2027-02-20",
-    "point": [
-      8.400107,
-      49.004041
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-27T23:00:00Z"
-  },
-  {
     "id": "2025V6907",
     "phase": "active",
     "category": "gas-water",
@@ -2335,7 +2315,7 @@
   },
   {
     "id": "2025V6973",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -2344,14 +2324,34 @@
     "location": "Lissenstraße zw. Zufahrt Getränkemarkt u. Killisfeldstraße Anliegerfahrbahn",
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-09",
+    "startDate": "2026-12-09",
     "endDate": "2027-04-18",
     "point": [
       8.4545,
       48.995857
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
+    "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
+    "id": "2025V7009",
+    "phase": "active",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ellmendinger Straße im Einmündungsbereich zur Lissenstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-08-31",
+    "endDate": "2026-12-08",
+    "point": [
+      8.454504,
+      48.99531
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2025V7026",
@@ -2445,7 +2445,7 @@
   },
   {
     "id": "2026V0096",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -2505,7 +2505,7 @@
   },
   {
     "id": "2026V0100",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "tunnel",
     "artRaw": "Tunnelbau",
     "closure": "obstruction",
@@ -2539,7 +2539,7 @@
   },
   {
     "id": "2026V0102",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "obstruction",
@@ -2559,7 +2559,7 @@
   },
   {
     "id": "2026V0124",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -2579,7 +2579,7 @@
   },
   {
     "id": "2026V0127",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -2818,26 +2818,6 @@
     "lastModified": "2026-11-11T23:00:00Z"
   },
   {
-    "id": "2026V0255",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Badener Straße u. Jägerstraße, Badener Straße zw. Karl-Weysser-Straße und Pfinztalstraße",
-    "notes": "Badener Straße in Richtung Hengstplatz frei; Linienverkehr frei",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-05",
-    "endDate": "2026-11-22",
-    "point": [
-      8.47558,
-      48.999441
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
-  },
-  {
     "id": "2026V0274",
     "phase": "active",
     "category": "gas-water",
@@ -2869,7 +2849,7 @@
   },
   {
     "id": "2026V0277",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "full",
@@ -2968,26 +2948,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-01-19T23:00:00Z"
-  },
-  {
-    "id": "2026V0367",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Haid-und-Neu-Straße zw. Am Sportpark und Sinsheimer Straße",
-    "notes": "Umbau der Haltestelle Fächerbad",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-22",
-    "point": [
-      8.448072,
-      49.025332
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-15T22:00:00Z"
   },
   {
     "id": "2026V0385",
@@ -3110,26 +3070,6 @@
     "lastModified": "2026-11-11T23:00:00Z"
   },
   {
-    "id": "2026V0452",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Ernst-Friedrich-Straße zw. Gritznerstraße und Pfinztalstraße",
-    "notes": "In nördlicher Richtung in alle Fahrtrichtungen gesperrt. Keine Querung des Gleiskörpers möglich",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-22",
-    "point": [
-      8.4643,
-      48.999716
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-24T23:00:00Z"
-  },
-  {
     "id": "2026V0635",
     "phase": "active",
     "category": "special-use",
@@ -3150,46 +3090,6 @@
     "lastModified": "2026-11-17T23:00:00Z"
   },
   {
-    "id": "2026V0658",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Durlacher Allee zw. Dornwaldstraße und Ernst-Friedrich-Straße",
-    "notes": "Rechtsabbiegen in südlicher Richtung auf Ernst-Friedrich-Straße möglich. Keine Querung des Gleiskörpers möglich",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-22",
-    "point": [
-      8.463591,
-      49.000384
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-24T23:00:00Z"
-  },
-  {
-    "id": "2026V0659",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pforzheimer Straße zw. Pfinzstraße und Pfinztalstraße",
-    "notes": "Rechtsabbiegen auf Durlacher Allee möglich. Keine Querung des Gleiskörpers möglich",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-22",
-    "point": [
-      8.464985,
-      49.000306
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-24T23:00:00Z"
-  },
-  {
     "id": "2026V0662",
     "phase": "upcoming",
     "category": "road-construction",
@@ -3208,26 +3108,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-10-12T22:00:00Z"
-  },
-  {
-    "id": "2026V0671",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Amalienbadstraße und Pforzheimer Straße",
-    "notes": "Rechtsabbiegen in Pforzheimer Straße und geradeaus auf Durlacher Allee möglich. Keine Querung des Gleiskörpers möglich",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-22",
-    "point": [
-      8.465282,
-      48.999907
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-24T23:00:00Z"
   },
   {
     "id": "2026V0725",
@@ -4368,12 +4248,12 @@
     ],
     "extentPoints": [
       [
-        8.36157,
-        49.02124
-      ],
-      [
         8.35702,
         49.02385
+      ],
+      [
+        8.36157,
+        49.02124
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -5616,26 +5496,6 @@
     "lastModified": "2026-11-17T23:00:00Z"
   },
   {
-    "id": "2026V4345",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Lauenburger Straße und Kösliner Straße",
-    "notes": "Verkehr von der Beuthener Straße nur in die Waldstadt hinein möglich. Ausfahrt über am Sportpark bzw. Kolberger Straße",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-22",
-    "point": [
-      8.445062,
-      49.034872
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-18T23:00:00Z"
-  },
-  {
     "id": "2026V4346",
     "phase": "upcoming",
     "category": "rail",
@@ -5677,7 +5537,7 @@
   },
   {
     "id": "2026V4394",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "obstruction",
@@ -5858,26 +5718,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-10T23:00:00Z"
-  },
-  {
-    "id": "2026V4595",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Fuchsbau 1-19 und 23-35",
-    "notes": "vs. 10 Wochen Bauzeit, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-26",
-    "endDate": "2027-01-29",
-    "point": [
-      8.48208,
-      48.970312
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-07T22:00:00Z"
   },
   {
     "id": "2026V4598",
@@ -6622,48 +6462,8 @@
     "lastModified": "2026-10-28T23:00:00Z"
   },
   {
-    "id": "2026V5311",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. Marstallstaße und Karlsburgstraße",
-    "notes": null,
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-22",
-    "point": [
-      8.47394,
-      48.999128
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-11T23:00:00Z"
-  },
-  {
-    "id": "2026V5327",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Königsberger Straße und Im Eichbäumle",
-    "notes": "Erneuerung Bahnübergang, halbseitige Sperrung mit wechselnder Verkehrsführung, KfZ nur in Fahrtrichtung Süden möglich",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-09-28",
-    "endDate": "2026-11-22",
-    "point": [
-      8.441634,
-      49.031301
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-15T23:00:00Z"
-  },
-  {
     "id": "2026V5329",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "full",
@@ -6817,7 +6617,7 @@
   },
   {
     "id": "2026V5656",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -7346,40 +7146,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-12T23:00:00Z"
-  },
-  {
-    "id": "2026V6253",
-    "phase": "active",
-    "category": "retaining-wall",
-    "artRaw": "Stützwand",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Schlossplatz zw. Herrenstraße u. Zirkel",
-    "notes": null,
-    "cause": "Tiefbauamt",
-    "startDate": "2026-10-05",
-    "endDate": "2026-11-22",
-    "point": [
-      8.404595,
-      49.011125
-    ],
-    "extentPoints": [
-      [
-        8.40158,
-        49.01135
-      ],
-      [
-        8.40349,
-        49.01077
-      ],
-      [
-        8.40587,
-        49.01086
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-09T23:00:00Z"
   },
   {
     "id": "2026V6261",
@@ -7923,7 +7689,7 @@
   },
   {
     "id": "2026V6779",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "stop-rebuild",
     "artRaw": "Haltestellenumbau mit Straßenumgestaltung",
     "closure": "obstruction",
@@ -7953,13 +7719,13 @@
     "notes": "Querung Leitungsverlegung in 2 Abschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-12-07",
-    "endDate": "2027-12-18",
+    "endDate": "2026-12-19",
     "point": [
       8.396633,
       49.008561
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-19T23:00:00Z"
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2026V6802",
@@ -8000,26 +7766,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-01T23:00:00Z"
-  },
-  {
-    "id": "2026V6840",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "one-direction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "B10/ Kriegsstraße zw. Badenwerkstraße/ Am Festplatz und Ettlinger Straße",
-    "notes": "vs. ab 22:00 Uhr nächtliche Sperrung",
-    "cause": "Privat",
-    "startDate": "2026-11-21",
-    "endDate": "2026-11-22",
-    "point": [
-      8.401881,
-      49.005301
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-27T23:00:00Z"
   },
   {
     "id": "2026V6842",
@@ -8235,7 +7981,7 @@
   },
   {
     "id": "2026V6993",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
@@ -8295,7 +8041,7 @@
   },
   {
     "id": "2026V7045",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "rail",
     "artRaw": "Gleisbau",
     "closure": "one-direction",
@@ -8305,7 +8051,7 @@
     "notes": "Beibehaltung der Fahrtrichtungs-Sperrungen für Restarbeiten unter Bahnverkehr",
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-11-23",
-    "endDate": "2026-11-28",
+    "endDate": "2026-12-04",
     "point": [
       8.464204,
       48.999677
@@ -8325,11 +8071,11 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-16T23:00:00Z"
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2026V7046",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "one-direction",
@@ -8339,13 +8085,13 @@
     "notes": "Richtung Hengsplatz frei",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-11-23",
-    "endDate": "2026-12-06",
+    "endDate": "2026-12-04",
     "point": [
       8.475842,
       48.99922
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-17T23:00:00Z"
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2026V7059",
@@ -8489,7 +8235,7 @@
   },
   {
     "id": "2026V7125",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -8648,6 +8394,44 @@
     "lastModified": "2026-11-09T23:00:00Z"
   },
   {
+    "id": "2026V7177",
+    "phase": "upcoming",
+    "category": "soil-survey",
+    "artRaw": "Baugrunduntersuchung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Boeckhstraße zw. Putlitzstraße und Südendstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-26",
+    "endDate": "2026-11-26",
+    "point": [
+      8.388452,
+      49.000943
+    ],
+    "extentPoints": [
+      [
+        8.38909,
+        49.00317
+      ],
+      [
+        8.38891,
+        49.00167
+      ],
+      [
+        8.38804,
+        49.0002
+      ],
+      [
+        8.38786,
+        48.9987
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
     "id": "2026V7184",
     "phase": "upcoming",
     "category": "special-use",
@@ -8729,7 +8513,7 @@
   },
   {
     "id": "2026V7238",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "tunnel",
     "artRaw": "Tunnelwartung",
     "closure": "full",
@@ -9011,7 +8795,7 @@
   },
   {
     "id": "2026V7282",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "none",
@@ -9263,7 +9047,7 @@
   },
   {
     "id": "2026V7394",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "stop-rebuild",
     "artRaw": "Haltestellenumbau mit Straßenumgestaltung",
     "closure": "full",
@@ -9273,13 +9057,13 @@
     "notes": null,
     "cause": "Verkehrsbetriebe Karlsruhe",
     "startDate": "2026-11-23",
-    "endDate": "2026-12-05",
+    "endDate": "2026-12-04",
     "point": [
       8.478397,
       48.99985
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-17T23:00:00Z"
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2026V7419",
@@ -9729,7 +9513,7 @@
   },
   {
     "id": "2026V7512",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -9792,6 +9576,46 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-19T23:00:00Z"
+  },
+  {
+    "id": "2026V7542",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Fuß- und Radweg zw. Wolfartsweierer Brücke und Mastweidenweg",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-31",
+    "point": [
+      8.432188,
+      48.998236
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
+    "id": "2026V7544",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Wörthsraße zw. Bismarckstraße und Moltkestraße",
+    "notes": "Straßenquerung in 2 Abschnitten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-12-10",
+    "endDate": "2026-12-19",
+    "point": [
+      8.395601,
+      49.013288
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "30015",
@@ -10256,9 +10080,9 @@
   {
     "id": "30075",
     "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
     "siteType": "stationary",
     "municipality": "Rheinstetten",
     "location": "Friedrich-Ebert-Straße 6",
@@ -10796,6 +10620,26 @@
     "lastModified": "2026-06-15T13:47:20Z"
   },
   {
+    "id": "30183",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Am Köpfel 6",
+    "notes": "Rohrbruch",
+    "cause": "Privat",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-11",
+    "point": [
+      8.194493,
+      48.870588
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-11-20T11:26:36Z"
+  },
+  {
     "id": "30198",
     "phase": "active",
     "category": "district-heating",
@@ -11028,6 +10872,46 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-16T09:28:54Z"
+  },
+  {
+    "id": "30278",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "In der Gottesau 14-18",
+    "notes": "Fahrbahn verengt.",
+    "cause": "Stadtwerke",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-04",
+    "point": [
+      8.649994,
+      49.086473
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-17T12:09:59Z"
+  },
+  {
+    "id": "30279",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Dieselweg 6 - 43",
+    "notes": "Verlegung von neuen Wasserleitungen in sieben Wohnwegen im Gebiet hinter der Antoniuskirche.\n\nDer Dieselweg muss dafür auch stellenweise verengt werden.",
+    "cause": "Stadtwerke",
+    "startDate": "2026-11-23",
+    "endDate": "2027-04-01",
+    "point": [
+      8.56999,
+      49.120776
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-17T14:36:28Z"
   },
   {
     "id": "30280",
@@ -11982,6 +11866,26 @@
     "lastModified": "2026-09-25T08:21:42Z"
   },
   {
+    "id": "40163",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Oberfeldstraße 4",
+    "notes": "Gehwegsperrung mit Halteverbot",
+    "cause": "Privat",
+    "startDate": "2026-10-01",
+    "endDate": "2026-11-30",
+    "point": [
+      8.46811,
+      49.058036
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-09-30T07:44:22Z"
+  },
+  {
     "id": "40164",
     "phase": "active",
     "category": "special-use",
@@ -12023,7 +11927,7 @@
   },
   {
     "id": "40166",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "obstruction",
@@ -12790,6 +12694,26 @@
     "lastModified": "2026-09-28T11:25:28Z"
   },
   {
+    "id": "40253",
+    "phase": "active",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Schwetzinger Straße - Parkplatz beim Schwimmbad",
+    "notes": "Im Bereich des Parkfeldes E müssen umfangreiche Schäden im Pflaster und in der Fahrbahndecke behoben werden.\nEin Teil des Parkplatzes wird dazu gesperrt. Für Arbeiten im Einfahrtsbereich muss die Straße außerdem zeitwilig verengt werden.",
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-11-23",
+    "endDate": "2027-01-16",
+    "point": [
+      8.589234,
+      49.133941
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-16T13:56:57Z"
+  },
+  {
     "id": "40268",
     "phase": "active",
     "category": "gas-water",
@@ -12888,6 +12812,26 @@
     ],
     "source": "Stadt Rastatt",
     "lastModified": "2026-11-12T13:53:33Z"
+  },
+  {
+    "id": "40317",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Rastatt",
+    "location": "76437 Rastatt, Baumeisterstraße",
+    "notes": null,
+    "cause": "star.EW",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-11",
+    "point": [
+      8.217858,
+      48.856022
+    ],
+    "source": "Stadt Rastatt",
+    "lastModified": "2026-11-16T08:29:40Z"
   },
   {
     "id": "40436",
