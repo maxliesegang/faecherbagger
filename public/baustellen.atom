@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-11-24T02:38:52.898Z</updated>
+    <updated>2026-11-24T14:27:46.168Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -11,6 +11,355 @@
     <link rel="alternate" href="https://maxliesegang.github.io/faecherbagger/"/>
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Gartenstraße – Stutensee]]></title>
+        <id>faecherbagger:40194:2026-11-24T05:21:29Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40194"/>
+        <updated>2026-11-24T05:21:29.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 23.11.2026 – 24.11.2026
+Hinweis: Vollsperrung aufgrund Glasfaserarbeiten
+Verantwortlich: Telekommunikation
+Quelle: Stadt Stutensee]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Reinhold-Frank-Straße zw. Kriegsstraße und Viktoriastraße – Karlsruhe]]></title>
+        <id>faecherbagger:2023V4978:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2023V4978"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Mit Behinderung
+Zeitraum: 19.04.2027 – 28.05.2027
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Ostring zwischen Haid-und-Neru-Straße und Rintheimer Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2023V6167:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2023V6167"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 15.06.2027 – 13.08.2027
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Boeckhstraße zw. Putlitzstraße und Südendstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2024V3820:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V3820"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+Zeitraum: 30.11.2026 – 30.04.2028
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Essenweinstraße zw. Tullastraße und Sternbergstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1232:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1232"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+Zeitraum: 01.03.2027 – 30.09.2027
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1762:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1762"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
+Zeitraum: 21.09.2026 – 23.12.2026
+Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Karlstraße und Gebhardstraße / Karolinenstraße zw. Marie-Alexandra-Straße und Cäciliastraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1763:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1763"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 11.01.2027 – 21.03.2027
+Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 6 Wochen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Gebhardstraße und Karolinenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1764:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1764"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 22.03.2027 – 04.07.2027
+Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 9 Wochen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Karolinenstraße und Cäciliastraße/Gebhardstraße zw. Cäciliastraße und Hohenzollernstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1765:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1765"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 05.07.2027 – 29.08.2027
+Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 8 Wochen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Gebhardstraße und Wartburgstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1766:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1766"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 30.08.2027 – 21.11.2027
+Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs 12 Wochen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Cäciliastraße und Wartburgstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1767:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1767"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 22.11.2027 – 02.01.2028
+Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 6 Wochen
+Verantwortlich: Stadt Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Vogelsang – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3205:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3205"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+Zeitraum: 15.03.2027 – 30.09.2028
+Hinweis: Abwicklung in mehreren Bauabschnitten, signalisierte 1-streifige Verkehrsführung in den Fahrbahnen und Vollsperrungen in den Anwohnerwegen
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Stephaniensstraße  zw. Wörthstraße und Karlstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3314:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3314"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 11.01.2027 – 30.01.2027
+Hinweis: Straßenquerungen = lokale Engstelle wechselseitig
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen – Karlsruhe]]></title>
+        <id>faecherbagger:2026V3787:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3787"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Kraneinsatz · Mit Behinderung
+Zeitraum: 12.11.2026 – 25.11.2026
+Hinweis: 9:00 Uh - 15:00 Uhr, lokale Fahrstreifensperrungen und an einzelnen Standorten auch vor und nach dem Berufsverkehr
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Essostraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4696:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4696"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 01.01.2027 – 31.12.2027
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: B10/ Ludwig-Erhard-Allee zw. Kreisverkehr und Henriette Obermüller Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5427:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5427"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Straßenbau · Sperrung (1 Richtung)
+Zeitraum: 13.05.2027 – 30.05.2027
+Verantwortlich: Tiefbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Straßenbau" term="road-construction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Parkstraße 30-68, Karl-Wilhelm-Straße 11-23 und 24-30 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V5794:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5794"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 30.11.2026 – 30.03.2027
+Hinweis: Aufteilung nicht vorgenommen, Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Leopoldstraße zw. Kaiserstraße und Stephanienstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6690:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6690"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
+Zeitraum: 01.04.2027 – 18.06.2027
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: B36 zw. Messe Karlsruhe und Pulverhausstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6692:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6692"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Grünpflege · Mit Behinderung
+Zeitraum: 25.11.2026 – 25.11.2026
+Hinweis: Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung
+Verantwortlich: Gartenbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Grünpflege" term="green-maintenance"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Fasanenstraße zw. Kaiserstraße und Fasanenplatz – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7114:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7114"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kanalbau · Vollsperrung
+Zeitraum: 26.11.2026 – 09.12.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Herrenalber Str., Kreuzung Rastatter Str., Frauenalber Str. u. Allmendstr. – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7494:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7494"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
+Zeitraum: 02.03.2027 – 31.12.2027
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7506:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7506"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Keine Behinderung
+Zeitraum: 24.12.2026 – 10.01.2027
+Hinweis: Weihnachtbaupause
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Killisfeldstraße zw. Bleichstraße und Raiherwiesenstraße 15 – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7537:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7537"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 07.12.2026 – 29.01.2027
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Wechselseitige Gehwegvollsperrung
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Cristofstraße zw. Ernst-Friedrich-Straße und Auer Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7539:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7539"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 07.12.2026 – 29.01.2027
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Wechselseitige Gehwegvollsperrung
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Ernst-Friedrich-Straße zw. Steinmetzstraße und Bleichstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7541:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7541"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+Zeitraum: 07.12.2026 – 29.01.2027
+Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Gehwegvollsperrung
+Verantwortlich: Telekommunikation
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Mahlbergstraße zw. Hellbergstraße und Mahlbergstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7571:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7571"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 13.01.2027 – 14.01.2027
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7573:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7573"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+Zeitraum: 22.02.2027 – 21.03.2027
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Leopopldstraße zw. Belfortstraße u. Sophienstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7577:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7577"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Keine Behinderung
+Zeitraum: 19.04.2027 – 30.06.2027
+Hinweis: Lokale Arbeitsstelle Höhe Nr. 16
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Eisenlohrstraße zw. Kriegsstraße und Bunsenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7580:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7580"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 25.11.2026 – 26.11.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Eggensteiner Straße zw. Saarlandstraße und Dreikönigstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7611:2026-11-23T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7611"/>
+        <updated>2026-11-23T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 26.11.2026 – 26.11.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Kastenwörtstraße zw. Hammweg u. Pfalzstraße – Karlsruhe]]></title>
         <id>faecherbagger:2024V6803:2026-11-22T23:00:00Z</id>
@@ -245,18 +594,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Karlstraße und Gebhardstraße / Karolinenstraße zw. Marie-Alexandra-Straße und Cäciliastraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1763:2026-11-19T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1763"/>
-        <updated>2026-11-19T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 11.01.2027 – 28.02.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Karl-Martin-Graff-Straße zw. Gustav-Hofmann-Straße und Winkler-Dentz-Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3029:2026-11-19T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3029"/>
@@ -311,18 +648,6 @@ Hinweis: Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale En
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V7506:2026-11-19T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7506"/>
-        <updated>2026-11-19T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
-Zeitraum: 24.12.2026 – 10.01.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Ottostraße zw. Killisfeldstraße und Dieselstraße – Karlsruhe]]></title>
@@ -677,18 +1002,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Essenweinstraße zw. Tullastraße und Sternbergstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1232:2026-11-17T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1232"/>
-        <updated>2026-11-17T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
-Zeitraum: 01.02.2027 – 31.07.2027
-Hinweis: Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Ludwig-Marum-Straße zw. Wendtstraße und Blücherstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V3005:2026-11-17T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3005"/>
@@ -866,16 +1179,15 @@ Quelle: Stadt Rheinstetten]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Boeckhstraße zw. Putlitzstraße und Südendstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2024V3820:2026-11-16T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V3820"/>
-        <updated>2026-11-16T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Fernwärme · Mit Behinderung
-Zeitraum: 30.11.2026 – 30.04.2028
-Hinweis: Abwicklung in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Fernwärme" term="district-heating"/>
+        <title type="html"><![CDATA[Aktuell: Peter-und-Paul-Straße 13 - 19 – Bruchsal]]></title>
+        <id>faecherbagger:40254:2026-11-17T08:52:50Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40254"/>
+        <updated>2026-11-17T08:52:50.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Vollsperrung
+Zeitraum: 23.11.2026 – 18.12.2026
+Verantwortlich: Fachgebiet Baubetriebshof
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Straßenunterhaltung" term="road-maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Koellestraße 10-26 und 13-27a – Karlsruhe]]></title>
@@ -1949,7 +2261,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30268"/>
         <updated>2026-11-11T06:26:02.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
-Zeitraum: 13.11.2026 – 27.11.2026
+Zeitraum: 13.11.2026 – 11.02.2027
 Hinweis: Fahrbahn für den Fahrzeugverkehr vollgesperrt, Fußgänger frei.
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
@@ -2612,18 +2924,6 @@ Zeitraum: 20.04.2026 – 26.02.2027
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Stützwand" term="retaining-wall"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Vogelsang – Karlsruhe]]></title>
-        <id>faecherbagger:2026V3205:2026-11-03T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V3205"/>
-        <updated>2026-11-03T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
-Zeitraum: 15.03.2027 – 31.12.2027
-Hinweis: Aufteilung nicht vorgenommen
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Essenweinstraße zw. Sternbergstraße und Humboldtstraße – Karlsruhe]]></title>
@@ -3818,18 +4118,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Prakstr., Karl-Wilhelm-Str. – Karlsruhe]]></title>
-        <id>faecherbagger:2026V5794:2026-10-12T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5794"/>
-        <updated>2026-10-12T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 01.12.2026 – 25.01.2027
-Hinweis: Aufteilung nicht vorgenommen, Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Durlacher Straße – Ettlingen]]></title>
         <id>faecherbagger:40436:2026-10-12T10:39:51Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40436"/>
@@ -4904,18 +5192,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1762:2026-08-25T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1762"/>
-        <updated>2026-08-25T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Vollsperrung
-Zeitraum: 21.09.2026 – 31.12.2026
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Geplant: Kornblumenstraße zw. Frauenhoferstraße und Parkstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V5400:2026-08-25T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V5400"/>
@@ -5191,17 +5467,6 @@ Hinweis: Vollsperrung
 Verantwortlich: Land Baden - Württemberg
 Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Essostraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4696:2026-07-27T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4696"/>
-        <updated>2026-07-27T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 01.09.2026 – 31.12.2026
-Verantwortlich: Telekommunikation
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Busenbacher Str. 13 – Karlsruhe]]></title>
@@ -5564,18 +5829,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Geplant: Wartburgstraße zw. Breite Straße und Marie-Alexandra-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1769:2026-05-28T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1769"/>
-        <updated>2026-05-28T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 25.10.2027 – 21.11.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Diverse Straßen – Rheinstetten]]></title>
         <id>faecherbagger:30058:2026-05-27T07:53:23Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30058"/>
@@ -5815,78 +6068,6 @@ Quelle: Stadt Rastatt]]></summary>
         <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
 Zeitraum: 19.04.2027 – 31.07.2027
 Hinweis: Abwicklung in mehreren Bauabschnitten mit je. ca. 50 m Länge, Zufahrt bis zum Baufeld als Sackgasse frei
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Gebhardstraße und Karolinenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1764:2026-04-01T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1764"/>
-        <updated>2026-04-01T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 01.03.2027 – 25.04.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Karolinenstraße und Cäciliastraße/Gebhardstraße zw. Cäciliastraße und Hohenzollernstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1765:2026-04-01T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1765"/>
-        <updated>2026-04-01T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 26.04.2027 – 20.06.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Gebhardstraße und Wartburgstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1766:2026-04-01T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1766"/>
-        <updated>2026-04-01T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 21.06.2027 – 15.08.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Cäciliastraße und Wartburgstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1767:2026-04-01T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1767"/>
-        <updated>2026-04-01T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 16.08.2027 – 26.09.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
-Verantwortlich: Stadt Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Marie-Alexandra-Straße zw. Cäciliastraße und Wartburgstraße, Wartburgstraße zw. Breite Straße und Hohenzollernstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1768:2026-04-01T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1768"/>
-        <updated>2026-04-01T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 27.09.2027 – 24.10.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Wartburgstraße zw. Marie-Alexandra-Straße und Hohenzollernstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1770:2026-04-01T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1770"/>
-        <updated>2026-04-01T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Vollsperrung
-Zeitraum: 22.11.2027 – 31.12.2027
-Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten
 Verantwortlich: Stadtwerke Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>

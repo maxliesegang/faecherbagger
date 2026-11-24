@@ -334,6 +334,26 @@
     "lastModified": "2026-08-27T22:00:00Z"
   },
   {
+    "id": "2023V4978",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Reinhold-Frank-Straße zw. Kriegsstraße und Viktoriastraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-04-19",
+    "endDate": "2027-05-28",
+    "point": [
+      8.387038,
+      49.006325
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
     "id": "2023V5988",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -366,6 +386,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-18T23:00:00Z"
+  },
+  {
+    "id": "2023V6167",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ostring zwischen Haid-und-Neru-Straße und Rintheimer Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-06-15",
+    "endDate": "2027-08-13",
+    "point": [
+      8.436599,
+      49.015291
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2023V6310",
@@ -452,7 +492,7 @@
     "phase": "upcoming",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
-    "closure": "obstruction",
+    "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Boeckhstraße zw. Putlitzstraße und Südendstraße",
@@ -483,7 +523,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-16T23:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2024V4092",
@@ -3384,14 +3424,36 @@
     "location": "Essenweinstraße zw. Tullastraße und Sternbergstraße",
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-02-01",
-    "endDate": "2027-07-31",
+    "startDate": "2027-03-01",
+    "endDate": "2027-09-30",
     "point": [
-      8.429504,
-      49.009852
+      8.429588,
+      49.010211
+    ],
+    "extentPoints": [
+      [
+        8.42764,
+        49.0108
+      ],
+      [
+        8.42736,
+        49.00925
+      ],
+      [
+        8.42974,
+        49.00908
+      ],
+      [
+        8.43158,
+        49.00977
+      ],
+      [
+        8.43069,
+        49.01123
+      ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-17T23:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V1367",
@@ -3519,13 +3581,13 @@
     "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-09-21",
-    "endDate": "2026-12-31",
+    "endDate": "2026-12-23",
     "point": [
       8.392238,
       48.99275
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-25T22:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V1763",
@@ -3536,16 +3598,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Marie-Alexandra-Straße zw. Karlstraße und Gebhardstraße / Karolinenstraße zw. Marie-Alexandra-Straße und Cäciliastraße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
+    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 6 Wochen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2027-01-11",
-    "endDate": "2027-02-28",
+    "endDate": "2027-03-21",
     "point": [
       8.390931,
       48.992806
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-19T23:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V1764",
@@ -3556,16 +3618,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Marie-Alexandra-Straße zw. Gebhardstraße und Karolinenstraße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
+    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 9 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-03-01",
-    "endDate": "2027-04-25",
+    "startDate": "2027-03-22",
+    "endDate": "2027-07-04",
     "point": [
       8.390081,
       48.992851
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-01T22:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V1765",
@@ -3576,16 +3638,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Marie-Alexandra-Straße zw. Karolinenstraße und Cäciliastraße/Gebhardstraße zw. Cäciliastraße und Hohenzollernstraße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
+    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 8 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-04-26",
-    "endDate": "2027-06-20",
+    "startDate": "2027-07-05",
+    "endDate": "2027-08-29",
     "point": [
       8.389057,
       48.99287
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-01T22:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V1766",
@@ -3596,16 +3658,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Marie-Alexandra-Straße zw. Gebhardstraße und Wartburgstraße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
+    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs 12 Wochen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-06-21",
-    "endDate": "2027-08-15",
+    "startDate": "2027-08-30",
+    "endDate": "2027-11-21",
     "point": [
       8.387924,
       48.992955
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-01T22:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V1767",
@@ -3616,76 +3678,16 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Marie-Alexandra-Straße zw. Cäciliastraße und Wartburgstraße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
+    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 6 Wochen",
     "cause": "Stadt Karlsruhe",
-    "startDate": "2027-08-16",
-    "endDate": "2027-09-26",
+    "startDate": "2027-11-22",
+    "endDate": "2028-01-02",
     "point": [
       8.386943,
       48.992992
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-01T22:00:00Z"
-  },
-  {
-    "id": "2026V1768",
-    "phase": "upcoming",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Marie-Alexandra-Straße zw. Cäciliastraße und Wartburgstraße, Wartburgstraße zw. Breite Straße und Hohenzollernstraße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-09-27",
-    "endDate": "2027-10-24",
-    "point": [
-      8.386075,
-      48.993024
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-01T22:00:00Z"
-  },
-  {
-    "id": "2026V1769",
-    "phase": "upcoming",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wartburgstraße zw. Breite Straße und Marie-Alexandra-Straße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-10-25",
-    "endDate": "2027-11-21",
-    "point": [
-      8.385685,
-      48.99282
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-05-28T22:00:00Z"
-  },
-  {
-    "id": "2026V1770",
-    "phase": "upcoming",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Wartburgstraße zw. Marie-Alexandra-Straße und Hohenzollernstraße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-11-22",
-    "endDate": "2027-12-31",
-    "point": [
-      8.385747,
-      48.993484
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-04-01T22:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V1775",
@@ -4732,10 +4734,10 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Vogelsang",
-    "notes": "Aufteilung nicht vorgenommen",
+    "notes": "Abwicklung in mehreren Bauabschnitten, signalisierte 1-streifige Verkehrsführung in den Fahrbahnen und Vollsperrungen in den Anwohnerwegen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2027-03-15",
-    "endDate": "2027-12-31",
+    "endDate": "2028-09-30",
     "point": [
       8.498679,
       48.998834
@@ -4751,7 +4753,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-03T23:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V3211",
@@ -4822,6 +4824,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-11T23:00:00Z"
+  },
+  {
+    "id": "2026V3314",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Stephaniensstraße  zw. Wörthstraße und Karlstraße",
+    "notes": "Straßenquerungen = lokale Engstelle wechselseitig",
+    "cause": "Telekommunikation",
+    "startDate": "2027-01-11",
+    "endDate": "2027-01-30",
+    "point": [
+      8.395761,
+      49.012122
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V3363",
@@ -5052,6 +5074,96 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-16T23:00:00Z"
+  },
+  {
+    "id": "2026V3787",
+    "phase": "active",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "Kreuzungspunkte im Stadtgebiet, Arbeiten an den Verkehrsleitsystemen",
+    "notes": "9:00 Uh - 15:00 Uhr, lokale Fahrstreifensperrungen und an einzelnen Standorten auch vor und nach dem Berufsverkehr",
+    "cause": "Tiefbauamt",
+    "startDate": "2026-11-12",
+    "endDate": "2026-11-25",
+    "point": [
+      8.410756,
+      49.012634
+    ],
+    "extentPoints": [
+      [
+        8.3959,
+        49.02738
+      ],
+      [
+        8.39741,
+        49.02341
+      ],
+      [
+        8.39768,
+        49.01848
+      ],
+      [
+        8.3866,
+        49.01465
+      ],
+      [
+        8.38575,
+        49.00542
+      ],
+      [
+        8.43069,
+        48.99353
+      ],
+      [
+        8.42772,
+        48.99998
+      ],
+      [
+        8.44379,
+        49.00411
+      ],
+      [
+        8.41692,
+        49.00502
+      ],
+      [
+        8.4107,
+        49.0051
+      ],
+      [
+        8.41934,
+        49.00868
+      ],
+      [
+        8.41836,
+        49.01308
+      ],
+      [
+        8.43677,
+        49.01471
+      ],
+      [
+        8.41578,
+        49.0206
+      ],
+      [
+        8.42067,
+        49.02274
+      ],
+      [
+        8.41187,
+        48.99307
+      ],
+      [
+        8.37224,
+        48.99735
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V3807",
@@ -5887,7 +5999,7 @@
   },
   {
     "id": "2026V4696",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
     "closure": "obstruction",
@@ -5896,14 +6008,14 @@
     "location": "Essostraße",
     "notes": null,
     "cause": "Telekommunikation",
-    "startDate": "2026-09-01",
-    "endDate": "2026-12-31",
+    "startDate": "2027-01-01",
+    "endDate": "2027-12-31",
     "point": [
       8.323763,
       49.042861
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-27T22:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V4720",
@@ -6562,6 +6674,44 @@
     "lastModified": "2026-08-25T22:00:00Z"
   },
   {
+    "id": "2026V5427",
+    "phase": "upcoming",
+    "category": "road-construction",
+    "artRaw": "Straßenbau",
+    "closure": "one-direction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "B10/ Ludwig-Erhard-Allee zw. Kreisverkehr und Henriette Obermüller Straße",
+    "notes": null,
+    "cause": "Tiefbauamt",
+    "startDate": "2027-05-13",
+    "endDate": "2027-05-30",
+    "point": [
+      8.419707,
+      49.004376
+    ],
+    "extentPoints": [
+      [
+        8.42377,
+        49.0035
+      ],
+      [
+        8.42146,
+        49.00402
+      ],
+      [
+        8.41938,
+        49.00447
+      ],
+      [
+        8.41736,
+        49.00492
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
     "id": "2026V5452",
     "phase": "active",
     "category": "district-heating",
@@ -7007,11 +7157,11 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Prakstr., Karl-Wilhelm-Str.",
+    "location": "Parkstraße 30-68, Karl-Wilhelm-Straße 11-23 und 24-30",
     "notes": "Aufteilung nicht vorgenommen, Abwicklung in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-12-01",
-    "endDate": "2027-01-25",
+    "startDate": "2026-11-30",
+    "endDate": "2027-03-30",
     "point": [
       8.422927,
       49.011876
@@ -7031,7 +7181,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V5874",
@@ -7668,6 +7818,88 @@
     "lastModified": "2026-10-19T22:00:00Z"
   },
   {
+    "id": "2026V6690",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Leopoldstraße zw. Kaiserstraße und Stephanienstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-04-01",
+    "endDate": "2027-06-18",
+    "point": [
+      8.389825,
+      49.010593
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V6692",
+    "phase": "upcoming",
+    "category": "green-maintenance",
+    "artRaw": "Grünpflegearbeiten",
+    "closure": "obstruction",
+    "siteType": "mobile",
+    "municipality": "Karlsruhe",
+    "location": "B36 zw. Messe Karlsruhe und Pulverhausstraße",
+    "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung",
+    "cause": "Gartenbauamt",
+    "startDate": "2026-11-25",
+    "endDate": "2026-11-25",
+    "point": [
+      8.341885,
+      48.99378
+    ],
+    "extentPoints": [
+      [
+        8.33453,
+        48.98774
+      ],
+      [
+        8.33625,
+        48.98899
+      ],
+      [
+        8.33797,
+        48.99024
+      ],
+      [
+        8.33948,
+        48.99161
+      ],
+      [
+        8.341,
+        48.99299
+      ],
+      [
+        8.34256,
+        48.99438
+      ],
+      [
+        8.34293,
+        48.99592
+      ],
+      [
+        8.34309,
+        48.99753
+      ],
+      [
+        8.3438,
+        48.99919
+      ],
+      [
+        8.34444,
+        49.00079
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
     "id": "2026V6745",
     "phase": "active",
     "category": "gas-water",
@@ -8272,6 +8504,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-17T23:00:00Z"
+  },
+  {
+    "id": "2026V7114",
+    "phase": "upcoming",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Fasanenstraße zw. Kaiserstraße und Fasanenplatz",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-26",
+    "endDate": "2026-12-09",
+    "point": [
+      8.413098,
+      49.008605
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V7125",
@@ -9460,15 +9712,35 @@
     "lastModified": "2026-11-18T23:00:00Z"
   },
   {
-    "id": "2026V7506",
+    "id": "2026V7494",
     "phase": "upcoming",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
+    "location": "Herrenalber Str., Kreuzung Rastatter Str., Frauenalber Str. u. Allmendstr.",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-03-02",
+    "endDate": "2027-12-31",
+    "point": [
+      8.40469,
+      48.966113
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7506",
+    "phase": "upcoming",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
     "location": "Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße",
-    "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, Arbeitsstelle im Geh-, und Radwegbereich",
+    "notes": "Weihnachtbaupause",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-12-24",
     "endDate": "2027-01-10",
@@ -9477,7 +9749,7 @@
       48.992694
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-19T23:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V7507",
@@ -9570,16 +9842,20 @@
     ],
     "extentPoints": [
       [
-        8.38521,
-        48.99512
+        8.38373,
+        48.99525
       ],
       [
-        8.38734,
-        48.99489
+        8.38612,
+        48.99499
       ],
       [
-        8.39004,
-        48.99473
+        8.38876,
+        48.99477
+      ],
+      [
+        8.39088,
+        48.99471
       ],
       [
         8.3932,
@@ -9662,6 +9938,66 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
+    "id": "2026V7537",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Killisfeldstraße zw. Bleichstraße und Raiherwiesenstraße 15",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Wechselseitige Gehwegvollsperrung",
+    "cause": "Telekommunikation",
+    "startDate": "2026-12-07",
+    "endDate": "2027-01-29",
+    "point": [
+      8.460082,
+      48.997416
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7539",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Cristofstraße zw. Ernst-Friedrich-Straße und Auer Straße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Wechselseitige Gehwegvollsperrung",
+    "cause": "Telekommunikation",
+    "startDate": "2026-12-07",
+    "endDate": "2027-01-29",
+    "point": [
+      8.462881,
+      48.9993
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7541",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ernst-Friedrich-Straße zw. Steinmetzstraße und Bleichstraße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Gehwegvollsperrung",
+    "cause": "Telekommunikation",
+    "startDate": "2026-12-07",
+    "endDate": "2027-01-29",
+    "point": [
+      8.462524,
+      48.998105
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V7542",
@@ -9752,6 +10088,106 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
+    "id": "2026V7571",
+    "phase": "upcoming",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Mahlbergstraße zw. Hellbergstraße und Mahlbergstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2027-01-13",
+    "endDate": "2027-01-14",
+    "point": [
+      8.351015,
+      48.991339
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7573",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Marie-Alexandra-Straße zw. Karlstraße und Karolinenstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-02-22",
+    "endDate": "2027-03-21",
+    "point": [
+      8.391935,
+      48.992763
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7577",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Leopopldstraße zw. Belfortstraße u. Sophienstraße",
+    "notes": "Lokale Arbeitsstelle Höhe Nr. 16",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-04-19",
+    "endDate": "2027-06-30",
+    "point": [
+      8.389572,
+      49.008271
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7580",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Eisenlohrstraße zw. Kriegsstraße und Bunsenstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-25",
+    "endDate": "2026-11-26",
+    "point": [
+      8.374126,
+      49.004643
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7611",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Eggensteiner Straße zw. Saarlandstraße und Dreikönigstraße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-26",
+    "endDate": "2026-11-26",
+    "point": [
+      8.336872,
+      49.032942
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "30015",
@@ -10136,18 +10572,6 @@
     ],
     "extentPoints": [
       [
-        8.28573,
-        48.95973
-      ],
-      [
-        8.28394,
-        48.96043
-      ],
-      [
-        8.28251,
-        48.95944
-      ],
-      [
         8.29028,
         48.95964
       ],
@@ -10166,6 +10590,18 @@
       [
         8.3029,
         48.96693
+      ],
+      [
+        8.28573,
+        48.95973
+      ],
+      [
+        8.28394,
+        48.96043
+      ],
+      [
+        8.28251,
+        48.95944
       ]
     ],
     "source": "Stadt Rheinstetten",
@@ -10699,8 +11135,18 @@
     "startDate": "2026-10-26",
     "endDate": "2027-06-04",
     "point": [
-      8.308514,
-      48.971242
+      8.389767,
+      49.040214
+    ],
+    "extentPoints": [
+      [
+        8.30816,
+        48.9713
+      ],
+      [
+        8.471,
+        49.10921
+      ]
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-10-27T09:05:17Z"
@@ -11041,10 +11487,10 @@
     "notes": "Fahrbahn für den Fahrzeugverkehr vollgesperrt, Fußgänger frei.",
     "cause": "Privat",
     "startDate": "2026-11-13",
-    "endDate": "2026-11-27",
+    "endDate": "2027-02-11",
     "point": [
-      8.587122,
-      49.115197
+      8.587121,
+      49.115198
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-11T06:26:02Z"
@@ -12406,6 +12852,26 @@
     "lastModified": "2026-09-14T09:10:41Z"
   },
   {
+    "id": "40194",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Stutensee",
+    "location": "76297 Stutensee, Gartenstraße",
+    "notes": "Vollsperrung aufgrund Glasfaserarbeiten",
+    "cause": "Telekommunikation",
+    "startDate": "2026-11-23",
+    "endDate": "2026-11-24",
+    "point": [
+      8.514163,
+      49.091537
+    ],
+    "source": "Stadt Stutensee",
+    "lastModified": "2026-11-24T05:21:29Z"
+  },
+  {
     "id": "40205",
     "phase": "active",
     "category": "sewer",
@@ -12908,6 +13374,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-16T13:56:57Z"
+  },
+  {
+    "id": "40254",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Peter-und-Paul-Straße 13 - 19",
+    "notes": null,
+    "cause": "Fachgebiet Baubetriebshof",
+    "startDate": "2026-11-23",
+    "endDate": "2026-12-18",
+    "point": [
+      8.59696,
+      49.121475
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-17T08:52:50Z"
   },
   {
     "id": "40256",
