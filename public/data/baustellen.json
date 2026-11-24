@@ -786,6 +786,36 @@
     "lastModified": "2026-08-16T22:00:00Z"
   },
   {
+    "id": "2024V6803",
+    "phase": "upcoming",
+    "category": "stop-rebuild",
+    "artRaw": "Haltestellenumbau mit Straßenumgestaltung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kastenwörtstraße zw. Hammweg u. Pfalzstraße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-10-01",
+    "endDate": "2028-08-31",
+    "point": [
+      8.330545,
+      49.004369
+    ],
+    "extentPoints": [
+      [
+        8.3289,
+        49.00355
+      ],
+      [
+        8.33104,
+        49.00455
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
     "id": "2024V6908",
     "phase": "active",
     "category": "retaining-wall",
@@ -5126,6 +5156,36 @@
     "lastModified": "2026-10-13T22:00:00Z"
   },
   {
+    "id": "2026V3933",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Verbindung zw. Rußweg u.Mastweidenweg (Bahnübergänge)",
+    "notes": "Geh- und Radweg gesperrt",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-11",
+    "endDate": "2027-04-02",
+    "point": [
+      8.439837,
+      49.000425
+    ],
+    "extentPoints": [
+      [
+        8.43821,
+        48.99956
+      ],
+      [
+        8.44017,
+        49.00046
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
     "id": "2026V4127",
     "phase": "active",
     "category": "special-use",
@@ -5594,26 +5654,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-01T23:00:00Z"
-  },
-  {
-    "id": "2026V4500",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Bärenweg zw. Kirchfeldstraße und Alte Friedrichstraße",
-    "notes": "Aufteilung nicht vorgenommen",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-10-12",
-    "endDate": "2027-04-23",
-    "point": [
-      8.37596,
-      49.04905
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-23T22:00:00Z"
   },
   {
     "id": "2026V4502",
@@ -8794,26 +8834,6 @@
     "lastModified": "2026-11-12T23:00:00Z"
   },
   {
-    "id": "2026V7282",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Strählerweg Höhe Nr. 57/39",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-23",
-    "endDate": "2026-11-23",
-    "point": [
-      8.482293,
-      48.992398
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-15T23:00:00Z"
-  },
-  {
     "id": "2026V7349",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -9033,17 +9053,17 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Moltkestraße zw. Fichtestraßer u. Seminarstraße",
+    "location": "Moltkestraße zw. Fichtestraße u. Seminarstraße",
     "notes": "Zeitweise 1-streigige Verkehrsführung mit Lichtsignal, zeitweise Sperrung des südlichen Geh- und Radwegs, Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-04-01",
-    "endDate": "2027-07-31",
+    "startDate": "2027-04-05",
+    "endDate": "2027-09-25",
     "point": [
       8.392721,
       49.015056
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-17T23:00:00Z"
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2026V7394",
@@ -9161,6 +9181,26 @@
     "point": [
       8.393477,
       48.993884
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-18T23:00:00Z"
+  },
+  {
+    "id": "2026V7481",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Karl- zw. Ebert- u. Marie-Alexandra-Straße",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-08-02",
+    "endDate": "2027-12-31",
+    "point": [
+      8.393371,
+      48.99376
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-18T23:00:00Z"
@@ -9530,20 +9570,16 @@
     ],
     "extentPoints": [
       [
-        8.38373,
-        48.99525
+        8.38521,
+        48.99512
       ],
       [
-        8.38612,
-        48.99499
+        8.38734,
+        48.99489
       ],
       [
-        8.38876,
-        48.99477
-      ],
-      [
-        8.39088,
-        48.99471
+        8.39004,
+        48.99473
       ],
       [
         8.3932,
@@ -9576,6 +9612,56 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-19T23:00:00Z"
+  },
+  {
+    "id": "2026V7516",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Pforzheimer Straße, Waldshuter Str., Trainstraße und Funkerstraße",
+    "notes": "lokale Arbeitsstelle im Geh-, und Radwegbereich",
+    "cause": "Telekommunikation",
+    "startDate": "2027-01-11",
+    "endDate": "2027-03-31",
+    "point": [
+      8.468642,
+      49.002937
+    ],
+    "extentPoints": [
+      [
+        8.46387,
+        48.99908
+      ],
+      [
+        8.46518,
+        49.00021
+      ],
+      [
+        8.46672,
+        49.00135
+      ],
+      [
+        8.4682,
+        49.00262
+      ],
+      [
+        8.47224,
+        49.0035
+      ],
+      [
+        8.47497,
+        49.00348
+      ],
+      [
+        8.47709,
+        49.00358
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2026V7542",
@@ -9613,6 +9699,56 @@
     "point": [
       8.395601,
       49.013288
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
+    "id": "2026V7549",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Schlossbergstraße zw. Steinkreuzstraße und Schwimmbad",
+    "notes": "vs. 9:00 Uhr - 12:00 Uhr",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-12-14",
+    "endDate": "2026-12-14",
+    "point": [
+      8.453294,
+      48.97387
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-22T23:00:00Z"
+  },
+  {
+    "id": "2026V7553",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Kaiserplatz/Mühlbuger Tor",
+    "notes": null,
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-07-28",
+    "endDate": "2027-11-30",
+    "point": [
+      8.38714,
+      49.010512
+    ],
+    "extentPoints": [
+      [
+        8.38515,
+        49.01049
+      ],
+      [
+        8.38766,
+        49.01034
+      ]
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-22T23:00:00Z"
@@ -10000,6 +10136,18 @@
     ],
     "extentPoints": [
       [
+        8.28573,
+        48.95973
+      ],
+      [
+        8.28394,
+        48.96043
+      ],
+      [
+        8.28251,
+        48.95944
+      ],
+      [
         8.29028,
         48.95964
       ],
@@ -10018,18 +10166,6 @@
       [
         8.3029,
         48.96693
-      ],
-      [
-        8.28573,
-        48.95973
-      ],
-      [
-        8.28394,
-        48.96043
-      ],
-      [
-        8.28251,
-        48.95944
       ]
     ],
     "source": "Stadt Rheinstetten",
@@ -10076,6 +10212,26 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-07-13T07:27:31Z"
+  },
+  {
+    "id": "30070",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Rappenwörthstraße 34a Ecke Lilienstraße",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-07-20",
+    "endDate": "2026-11-27",
+    "point": [
+      8.300881,
+      48.964601
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-07-08T08:33:22Z"
   },
   {
     "id": "30075",
@@ -10412,6 +10568,26 @@
     "lastModified": "2026-10-08T11:13:51Z"
   },
   {
+    "id": "30107",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Kapellenstr. 3",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
+    "startDate": "2026-11-17",
+    "endDate": "2026-11-27",
+    "point": [
+      8.293836,
+      48.960701
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-10-13T09:53:53Z"
+  },
+  {
     "id": "30109",
     "phase": "active",
     "category": "power-telecom",
@@ -10528,6 +10704,46 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-10-27T09:05:17Z"
+  },
+  {
+    "id": "30117",
+    "phase": "active",
+    "category": "sewer",
+    "artRaw": "Kanalbau",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Hauptstraße 43",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-27",
+    "point": [
+      8.313026,
+      48.975029
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-05T07:55:46Z"
+  },
+  {
+    "id": "30121",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Rastatter Straße 5",
+    "notes": null,
+    "cause": "Stadtbauamt",
+    "startDate": "2026-11-24",
+    "endDate": "2026-12-02",
+    "point": [
+      8.289833,
+      48.958515
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-05T12:31:26Z"
   },
   {
     "id": "30124",
@@ -10772,26 +10988,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-15T06:01:51Z"
-  },
-  {
-    "id": "30248",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Weingartener Straße 47a",
-    "notes": "Gehweg gesperrt mit Notweg auf Parkstreifen",
-    "cause": "Telekommunikation",
-    "startDate": "2026-10-23",
-    "endDate": "2026-11-23",
-    "point": [
-      8.551406,
-      49.083121
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-16T10:21:41Z"
   },
   {
     "id": "30249",
@@ -12714,6 +12910,26 @@
     "lastModified": "2026-11-16T13:56:57Z"
   },
   {
+    "id": "40256",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Wittumstraße",
+    "notes": "Fahrbahn und Gehweg Vollsperrung, gegenüberliegender Gehweg frei",
+    "cause": "Privat",
+    "startDate": "2026-11-24",
+    "endDate": "2026-11-24",
+    "point": [
+      8.552401,
+      49.088868
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-19T07:31:21Z"
+  },
+  {
     "id": "40268",
     "phase": "active",
     "category": "gas-water",
@@ -12954,6 +13170,44 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-11-10T08:58:18Z"
+  },
+  {
+    "id": "40484",
+    "phase": "active",
+    "category": "road-maintenance",
+    "artRaw": "Straßenunterhaltung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Ettlingen",
+    "location": "Albwanderweg",
+    "notes": "Vollsperung wegen Ertüchtigung des Weges zum Hochwasserschutz\n\nUmleitung via Aussiedlerhöfe",
+    "cause": "Tiefbauamt Ettlingen",
+    "startDate": "2026-11-24",
+    "endDate": "2026-12-17",
+    "point": [
+      8.382899,
+      48.966337
+    ],
+    "extentPoints": [
+      [
+        8.38162,
+        48.96393
+      ],
+      [
+        8.38237,
+        48.96528
+      ],
+      [
+        8.38315,
+        48.96671
+      ],
+      [
+        8.38421,
+        48.96793
+      ]
+    ],
+    "source": "Stadt Ettlingen",
+    "lastModified": "2026-11-18T07:39:01Z"
   },
   {
     "id": "40643",
