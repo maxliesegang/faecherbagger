@@ -489,17 +489,17 @@
   },
   {
     "id": "2024V3820",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "district-heating",
     "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Boeckhstraße zw. Putlitzstraße und Südendstraße",
     "notes": "Abwicklung in mehreren Bauabschnitten",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-30",
-    "endDate": "2028-04-30",
+    "startDate": "2026-11-26",
+    "endDate": "2028-04-06",
     "point": [
       8.388388,
       49.000923
@@ -523,7 +523,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-23T23:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2024V4092",
@@ -876,26 +876,6 @@
     "lastModified": "2026-11-03T23:00:00Z"
   },
   {
-    "id": "2024V7070",
-    "phase": "upcoming",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Hirschstraße zw. Hirschbrücke u. Mathystraße",
-    "notes": "Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-18",
-    "endDate": "2027-08-31",
-    "point": [
-      8.391058,
-      49.003962
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-05-17T22:00:00Z"
-  },
-  {
     "id": "2024V7318",
     "phase": "upcoming",
     "category": "road-construction",
@@ -906,7 +886,7 @@
     "location": "L 623 zw. Wolfartsweier u. Grünwettersbach",
     "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Land Baden - Württemberg",
-    "startDate": "2027-02-01",
+    "startDate": "2027-02-15",
     "endDate": "2027-12-31",
     "point": [
       8.462177,
@@ -951,7 +931,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2025-11-26T23:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2024V7321",
@@ -1278,40 +1258,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-22T23:00:00Z"
-  },
-  {
-    "id": "2025V2464",
-    "phase": "upcoming",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Dietrichstr., Oberwaldstr., Hildebrandstraße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-11-30",
-    "endDate": "2027-05-31",
-    "point": [
-      8.458554,
-      48.996094
-    ],
-    "extentPoints": [
-      [
-        8.45741,
-        48.99682
-      ],
-      [
-        8.45939,
-        48.99632
-      ],
-      [
-        8.45797,
-        48.99531
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-02-25T23:00:00Z"
   },
   {
     "id": "2025V2466",
@@ -2424,6 +2370,26 @@
     "lastModified": "2026-11-22T23:00:00Z"
   },
   {
+    "id": "2025V7025",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Akademiestraße zw. Hans-Thoma-Straße und Karlstraße",
+    "notes": "Höhe Passagehof, Arbeitsstelle im Geh-, und Radwegbereich",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-30",
+    "endDate": "2026-12-12",
+    "point": [
+      8.395491,
+      49.010952
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-24T23:00:00Z"
+  },
+  {
     "id": "2025V7026",
     "phase": "active",
     "category": "power-telecom",
@@ -3170,14 +3136,14 @@
     "location": "Westmarkstraße zw. Auer Straße und Leußlerstraße",
     "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
     "cause": "Tiefbauamt",
-    "startDate": "2026-11-30",
-    "endDate": "2027-04-30",
+    "startDate": "2027-01-25",
+    "endDate": "2027-06-30",
     "point": [
       8.461323,
       48.992959
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-12T22:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2026V0725",
@@ -4204,8 +4170,8 @@
     "location": "Siemensallee zw. B36/ Neureuter Straße und Feierabendweg",
     "notes": "Laubenweg und Gleisüberfahrt Höhe Bonnerstraße",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-12-18",
-    "endDate": "2027-02-12",
+    "startDate": "2027-01-14",
+    "endDate": "2027-02-19",
     "point": [
       8.356769,
       49.023263
@@ -4225,7 +4191,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-21T22:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2026V2506",
@@ -4238,8 +4204,8 @@
     "location": "Siemensallee zw. B36/ Neureuter Straße und Heimgartenweg",
     "notes": "Feierabendweg = Vollsperrung",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-02-12",
-    "endDate": "2027-03-09",
+    "startDate": "2027-02-20",
+    "endDate": "2027-04-11",
     "point": [
       8.357488,
       49.023607
@@ -4259,7 +4225,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-21T22:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2026V2507",
@@ -4272,8 +4238,8 @@
     "location": "Siemensallee zw.B36/ Neureuter Straße, Feierabendweg und Heimgartenweg",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-03-10",
-    "endDate": "2027-04-28",
+    "startDate": "2027-04-12",
+    "endDate": "2027-05-31",
     "point": [
       8.357646,
       49.023508
@@ -4289,7 +4255,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2026V2508",
@@ -4302,8 +4268,8 @@
     "location": "Siemensallee zw. B36/ Neureuter Straße, Heimgartenweg und Bodelschwinghstraße",
     "notes": "Zietenstraße = Vollsperrung",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-04-29",
-    "endDate": "2027-06-17",
+    "startDate": "2027-06-01",
+    "endDate": "2027-07-18",
     "point": [
       8.357906,
       49.023368
@@ -4323,7 +4289,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2026V2509",
@@ -4336,8 +4302,8 @@
     "location": "Siemensallee zw. B36/ Neureuter Straße, Bodelschwinghstraße und Hertzstraße",
     "notes": null,
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-06-18",
-    "endDate": "2027-08-06",
+    "startDate": "2027-07-19",
+    "endDate": "2027-08-27",
     "point": [
       8.358186,
       49.023217
@@ -4357,7 +4323,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-07-12T22:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2026V2618",
@@ -5087,7 +5053,7 @@
     "notes": "9:00 Uh - 15:00 Uhr, lokale Fahrstreifensperrungen und an einzelnen Standorten auch vor und nach dem Berufsverkehr",
     "cause": "Tiefbauamt",
     "startDate": "2026-11-12",
-    "endDate": "2026-11-25",
+    "endDate": "2026-12-11",
     "point": [
       8.410756,
       49.012634
@@ -5163,7 +5129,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-23T23:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2026V3807",
@@ -5237,10 +5203,10 @@
     "notes": "Geh- und Radweg = gesperrt",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-06-22",
-    "endDate": "2026-12-22",
+    "endDate": "2026-12-18",
     "point": [
-      8.433331,
-      48.998717
+      8.434858,
+      48.999108
     ],
     "extentPoints": [
       [
@@ -5256,16 +5222,12 @@
         48.99887
       ],
       [
-        8.43172,
-        48.9983
-      ],
-      [
-        8.42956,
-        48.99773
+        8.43173,
+        48.99831
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-13T22:00:00Z"
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "2026V3933",
@@ -6234,40 +6196,6 @@
     "lastModified": "2026-09-17T22:00:00Z"
   },
   {
-    "id": "2026V4894",
-    "phase": "upcoming",
-    "category": "district-heating",
-    "artRaw": "Fernwärmeversorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Verbindung zw. Rußweg u.Mastweidenweg (Bahnübergänge)",
-    "notes": "Geh- und Radweg gesperrt",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-01-18",
-    "endDate": "2027-04-02",
-    "point": [
-      8.436544,
-      48.99953
-    ],
-    "extentPoints": [
-      [
-        8.43402,
-        48.99889
-      ],
-      [
-        8.43597,
-        48.9994
-      ],
-      [
-        8.43809,
-        48.99955
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-08-20T22:00:00Z"
-  },
-  {
     "id": "2026V4966",
     "phase": "active",
     "category": "power-telecom",
@@ -6400,46 +6328,6 @@
     "lastModified": "2026-11-16T23:00:00Z"
   },
   {
-    "id": "2026V5152",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Koyweg zw. Hinterwiesenweg und Elfmorgenbruch",
-    "notes": null,
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-23",
-    "endDate": "2026-11-25",
-    "point": [
-      8.448665,
-      49.011279
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": ""
-  },
-  {
-    "id": "2026V5154",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Gleisübergänge Hinterwiesenweg zw. Kleingärtnerweg und Jagdstraße",
-    "notes": null,
-    "cause": "Deutsche Bahn AG",
-    "startDate": "2026-10-22",
-    "endDate": "2026-11-25",
-    "point": [
-      8.450468,
-      49.015278
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": ""
-  },
-  {
     "id": "2026V5178",
     "phase": "active",
     "category": "power-telecom",
@@ -6512,26 +6400,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-18T23:00:00Z"
-  },
-  {
-    "id": "2026V5235",
-    "phase": "active",
-    "category": "rail",
-    "artRaw": "Gleisbau",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Pfinztalstraße zw. seboldstraße und Pforzheimer Straße",
-    "notes": "Schaltschrank im Gehwegbereich, Gehwegführung über Parkplätze",
-    "cause": "Verkehrsbetriebe Karlsruhe",
-    "startDate": "2026-10-19",
-    "endDate": "2027-10-23",
-    "point": [
-      8.466859,
-      48.999663
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-08T22:00:00Z"
   },
   {
     "id": "2026V5241",
@@ -7378,6 +7246,26 @@
     "lastModified": "2026-11-16T23:00:00Z"
   },
   {
+    "id": "2026V6340",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Am Fasanengarten zw. Emil-Gött-Straße und Parkstraße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-10-19",
+    "endDate": "2026-11-29",
+    "point": [
+      8.421892,
+      49.013259
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-24T23:00:00Z"
+  },
+  {
     "id": "2026V6347",
     "phase": "active",
     "category": "power-telecom",
@@ -7751,68 +7639,6 @@
     "point": [
       8.389825,
       49.010593
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-23T23:00:00Z"
-  },
-  {
-    "id": "2026V6692",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "B36 zw. Messe Karlsruhe und Pulverhausstraße",
-    "notes": "Arbeitsstellen am Fahrbahnrand, Seitenstreifen steht nicht zur Verfügung",
-    "cause": "Gartenbauamt",
-    "startDate": "2026-11-25",
-    "endDate": "2026-11-25",
-    "point": [
-      8.341885,
-      48.99378
-    ],
-    "extentPoints": [
-      [
-        8.33453,
-        48.98774
-      ],
-      [
-        8.33625,
-        48.98899
-      ],
-      [
-        8.33797,
-        48.99024
-      ],
-      [
-        8.33948,
-        48.99161
-      ],
-      [
-        8.341,
-        48.99299
-      ],
-      [
-        8.34256,
-        48.99438
-      ],
-      [
-        8.34293,
-        48.99592
-      ],
-      [
-        8.34309,
-        48.99753
-      ],
-      [
-        8.3438,
-        48.99919
-      ],
-      [
-        8.34444,
-        49.00079
-      ]
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-23T23:00:00Z"
@@ -8445,7 +8271,7 @@
   },
   {
     "id": "2026V7114",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
     "closure": "full",
@@ -8625,7 +8451,7 @@
   },
   {
     "id": "2026V7177",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "soil-survey",
     "artRaw": "Baugrunduntersuchung",
     "closure": "obstruction",
@@ -9876,26 +9702,6 @@
     "lastModified": "2026-11-23T23:00:00Z"
   },
   {
-    "id": "2026V7542",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Fuß- und Radweg zw. Wolfartsweierer Brücke und Mastweidenweg",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-23",
-    "endDate": "2026-12-31",
-    "point": [
-      8.432188,
-      48.998236
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-22T23:00:00Z"
-  },
-  {
     "id": "2026V7544",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -10046,8 +9852,42 @@
     "lastModified": "2026-11-23T23:00:00Z"
   },
   {
-    "id": "2026V7611",
+    "id": "2026V7589",
     "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Moltkestraße zw. Erzbergerstraße und Franz-Lust-Straße",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-03-15",
+    "endDate": "2027-05-30",
+    "point": [
+      8.38192,
+      49.014955
+    ],
+    "extentPoints": [
+      [
+        8.37805,
+        49.01512
+      ],
+      [
+        8.38022,
+        49.01503
+      ],
+      [
+        8.38261,
+        49.01493
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-24T23:00:00Z"
+  },
+  {
+    "id": "2026V7611",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
@@ -10104,6 +9944,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7649",
+    "phase": "active",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "none",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Jean-Ritzert-Straße zw. Sepp-Herberger-Weg und Schützenhaus Durlach",
+    "notes": "Bereitstellung zusätzlicher Parkflächen",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2026-11-25",
+    "endDate": "2028-03-31",
+    "point": [
+      8.486744,
+      48.996389
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-24T23:00:00Z"
   },
   {
     "id": "30015",
@@ -10488,18 +10348,6 @@
     ],
     "extentPoints": [
       [
-        8.28573,
-        48.95973
-      ],
-      [
-        8.28394,
-        48.96043
-      ],
-      [
-        8.28251,
-        48.95944
-      ],
-      [
         8.29028,
         48.95964
       ],
@@ -10518,6 +10366,18 @@
       [
         8.3029,
         48.96693
+      ],
+      [
+        8.28573,
+        48.95973
+      ],
+      [
+        8.28394,
+        48.96043
+      ],
+      [
+        8.28251,
+        48.95944
       ]
     ],
     "source": "Stadt Rheinstetten",
@@ -11975,8 +11835,18 @@
     "startDate": "2025-06-30",
     "endDate": "2026-11-30",
     "point": [
-      8.630818,
-      49.11261
+      8.468992,
+      49.039458
+    ],
+    "extentPoints": [
+      [
+        8.63016,
+        49.11307
+      ],
+      [
+        8.30739,
+        48.96622
+      ]
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-06-13T15:57:57Z"
@@ -12768,26 +12638,6 @@
     "lastModified": "2026-09-14T09:10:41Z"
   },
   {
-    "id": "40194",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Gartenstraße",
-    "notes": "Vollsperrung aufgrund Glasfaserarbeiten",
-    "cause": "Telekommunikation",
-    "startDate": "2026-11-23",
-    "endDate": "2026-11-24",
-    "point": [
-      8.514163,
-      49.091537
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-11-24T05:21:29Z"
-  },
-  {
     "id": "40205",
     "phase": "active",
     "category": "sewer",
@@ -13263,7 +13113,7 @@
     "notes": "Vollsperrung zwischen Scheffelstraße und Theodor-Storm-Straße, Neubau Wasserleitung",
     "cause": "star.EW",
     "startDate": "2026-10-05",
-    "endDate": "2026-12-04",
+    "endDate": "2027-04-02",
     "point": [
       8.193024,
       48.86036
@@ -13310,26 +13160,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-17T08:52:50Z"
-  },
-  {
-    "id": "40256",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Wittumstraße",
-    "notes": "Fahrbahn und Gehweg Vollsperrung, gegenüberliegender Gehweg frei",
-    "cause": "Privat",
-    "startDate": "2026-11-24",
-    "endDate": "2026-11-24",
-    "point": [
-      8.552401,
-      49.088868
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-19T07:31:21Z"
   },
   {
     "id": "40268",
@@ -13552,26 +13382,6 @@
     ],
     "source": "Stadt Ettlingen",
     "lastModified": "2026-10-22T08:51:44Z"
-  },
-  {
-    "id": "40477",
-    "phase": "active",
-    "category": "green-maintenance",
-    "artRaw": "Grünpflegearbeiten",
-    "closure": "none",
-    "siteType": "stationary",
-    "municipality": "Ettlingen",
-    "location": "Pforzheimer Straße",
-    "notes": "Vollsperrung des Geh- und Radweges vom Luisenkreisel bis zur Buhlschen Mühle\n\nvom 24.11.-25.11.2026",
-    "cause": "Tiefbauamt Ettlingen",
-    "startDate": "2026-11-17",
-    "endDate": "2026-11-25",
-    "point": [
-      8.417135,
-      48.939088
-    ],
-    "source": "Stadt Ettlingen",
-    "lastModified": "2026-11-10T08:58:18Z"
   },
   {
     "id": "40484",
