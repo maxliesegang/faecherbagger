@@ -1170,7 +1170,7 @@
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Reinhold-Frank-Straße zw. Amalienstraße und Sophienstraße",
-    "notes": "Höhe Haus Nr 35",
+    "notes": "Lokale Arbeitsstelle Höhe Haus Nr. 35, Dauer voraussichtlich 2 Wochen",
     "cause": "Privat",
     "startDate": "2027-02-08",
     "endDate": "2027-03-20",
@@ -2442,12 +2442,12 @@
     ],
     "extentPoints": [
       [
-        8.39069,
-        49.01112
+        8.39423,
+        49.01172
       ],
       [
-        8.39294,
-        49.01157
+        8.39069,
+        49.01112
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -3601,7 +3601,7 @@
     "notes": "Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnitten, vs. 6 Wochen",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2027-01-11",
-    "endDate": "2027-03-21",
+    "endDate": "2027-02-21",
     "point": [
       8.390931,
       48.992806
@@ -3697,17 +3697,17 @@
     "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
-    "location": "Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße",
+    "location": "L623/ Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße",
     "notes": "Höhe Haus Nr. 36, 1-streifige Verkehrsführung mit Lichtsignal",
     "cause": "Gartenbauamt",
     "startDate": "2026-04-13",
-    "endDate": "2026-12-18",
+    "endDate": "2027-03-13",
     "point": [
       8.483427,
       48.946039
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-06-28T22:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V1779",
@@ -4736,8 +4736,8 @@
     "location": "Vogelsang",
     "notes": "Abwicklung in mehreren Bauabschnitten, signalisierte 1-streifige Verkehrsführung in den Fahrbahnen und Vollsperrungen in den Anwohnerwegen",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2027-03-15",
-    "endDate": "2028-09-30",
+    "startDate": "2027-04-05",
+    "endDate": "2029-10-15",
     "point": [
       8.498679,
       48.998834
@@ -5318,6 +5318,26 @@
     "lastModified": "2026-09-27T22:00:00Z"
   },
   {
+    "id": "2026V4205",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Waldenburger Straße bis Ende Hirschberger Straße",
+    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-07-15",
+    "endDate": "2026-12-04",
+    "point": [
+      8.446753,
+      49.028809
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
     "id": "2026V4246",
     "phase": "active",
     "category": "special-use",
@@ -5373,26 +5393,6 @@
     "point": [
       8.445906,
       49.028211
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-04T23:00:00Z"
-  },
-  {
-    "id": "2026V4253",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Breslauer Straße, Schweidnitzer Straße",
-    "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-05",
-    "endDate": "2026-12-04",
-    "point": [
-      8.447697,
-      49.028606
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-04T23:00:00Z"
@@ -7556,88 +7556,6 @@
     "lastModified": "2026-11-17T23:00:00Z"
   },
   {
-    "id": "2026V6609",
-    "phase": "active",
-    "category": "road-maintenance",
-    "artRaw": "Straßenunterhaltung",
-    "closure": "obstruction",
-    "siteType": "mobile",
-    "municipality": "Karlsruhe",
-    "location": "B10/ K9657/Südtangente zw. Edeltrudtunnel und Honsellstraße",
-    "notes": "in den Nächten vs. 22:00 Uhr - 4:30 Uhr, beide Fahrtrichtungen, wechselseitig",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-11-22",
-    "endDate": "2026-11-24",
-    "point": [
-      8.366239,
-      49.00451
-    ],
-    "extentPoints": [
-      [
-        8.38383,
-        48.99176
-      ],
-      [
-        8.37992,
-        48.9924
-      ],
-      [
-        8.37668,
-        48.9936
-      ],
-      [
-        8.37404,
-        48.99563
-      ],
-      [
-        8.3724,
-        48.99758
-      ],
-      [
-        8.37013,
-        48.99963
-      ],
-      [
-        8.36814,
-        49.00172
-      ],
-      [
-        8.36679,
-        49.00385
-      ],
-      [
-        8.36477,
-        49.00561
-      ],
-      [
-        8.36217,
-        49.00726
-      ],
-      [
-        8.35888,
-        49.00872
-      ],
-      [
-        8.35573,
-        49.00972
-      ],
-      [
-        8.35347,
-        49.01196
-      ],
-      [
-        8.35143,
-        49.01395
-      ],
-      [
-        8.3495,
-        49.01606
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-18T22:00:00Z"
-  },
-  {
     "id": "2026V6638",
     "phase": "active",
     "category": "gas-water",
@@ -7839,7 +7757,7 @@
   },
   {
     "id": "2026V6692",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -8210,6 +8128,26 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-01T23:00:00Z"
+  },
+  {
+    "id": "2026V6973",
+    "phase": "upcoming",
+    "category": "rail",
+    "artRaw": "Gleisbau",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Gerwigstraße zw. Käppelestraße u. Tullastraße",
+    "notes": "Abwicklung in mehreren Bauabschnitten, Aufteilung nicht vorgenommen",
+    "cause": "Verkehrsbetriebe Karlsruhe",
+    "startDate": "2027-08-09",
+    "endDate": "2027-11-30",
+    "point": [
+      8.435714,
+      49.008645
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V6985",
@@ -8804,48 +8742,6 @@
     "lastModified": "2026-11-17T23:00:00Z"
   },
   {
-    "id": "2026V7238",
-    "phase": "active",
-    "category": "tunnel",
-    "artRaw": "Tunnelwartung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "K 9675 zw. AS3 und AS4 (Edeltrudtunnel)",
-    "notes": "1-streifige Verkehrsführung, vs. ab 18:00 Uhr - 22:00 Uhr",
-    "cause": "Tiefbauamt",
-    "startDate": "2026-11-23",
-    "endDate": "2026-11-24",
-    "point": [
-      8.388013,
-      48.990589
-    ],
-    "extentPoints": [
-      [
-        8.38398,
-        48.99192
-      ],
-      [
-        8.38584,
-        48.99109
-      ],
-      [
-        8.38773,
-        48.99043
-      ],
-      [
-        8.38991,
-        48.98975
-      ],
-      [
-        8.39208,
-        48.98931
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-16T23:00:00Z"
-  },
-  {
     "id": "2026V7243",
     "phase": "upcoming",
     "category": "district-heating",
@@ -9030,7 +8926,7 @@
     "phase": "active",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Schlesierstraße zw. Westmarkstraße u. Memeler Straße",
@@ -9043,7 +8939,7 @@
       48.987271
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-15T23:00:00Z"
+    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V7276",
@@ -9672,26 +9568,6 @@
     "lastModified": "2026-11-18T23:00:00Z"
   },
   {
-    "id": "2026V7489",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Glogauer Straße zw. Gleiwitzer Straße und Königsberger Straße",
-    "notes": "Arbeiten in Geh- und Radwegbereich.",
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-19",
-    "endDate": "2026-12-19",
-    "point": [
-      8.441327,
-      49.030297
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-18T23:00:00Z"
-  },
-  {
     "id": "2026V7490",
     "phase": "upcoming",
     "category": "rail",
@@ -10151,20 +10027,20 @@
   },
   {
     "id": "2026V7580",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "crane",
     "artRaw": "Kraneinsatz",
     "closure": "full",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Eisenlohrstraße zw. Kriegsstraße und Bunsenstraße",
-    "notes": null,
+    "notes": "Wender über Parkplätze",
     "cause": "Privat",
     "startDate": "2026-11-25",
     "endDate": "2026-11-26",
     "point": [
-      8.374126,
-      49.004643
+      8.374136,
+      49.004646
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-23T23:00:00Z"
@@ -10185,6 +10061,46 @@
     "point": [
       8.336872,
       49.032942
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7615",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Glogauer Straße zw. Liegnitzer Straße und Im Eichbäumle",
+    "notes": "Gehweg parallel zur Glogauer Str.vom Radweg bis Bahnübergang Glogauer Str. gesperrt.",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-25",
+    "endDate": "2026-12-01",
+    "point": [
+      8.441586,
+      49.030965
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-23T23:00:00Z"
+  },
+  {
+    "id": "2026V7616",
+    "phase": "active",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Verbindungsweg zw. Schweidnitzer Straße und Waldenburger Straße",
+    "notes": null,
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2026-11-25",
+    "endDate": "2026-12-04",
+    "point": [
+      8.447369,
+      49.029161
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-23T23:00:00Z"
@@ -10572,6 +10488,18 @@
     ],
     "extentPoints": [
       [
+        8.28573,
+        48.95973
+      ],
+      [
+        8.28394,
+        48.96043
+      ],
+      [
+        8.28251,
+        48.95944
+      ],
+      [
         8.29028,
         48.95964
       ],
@@ -10590,18 +10518,6 @@
       [
         8.3029,
         48.96693
-      ],
-      [
-        8.28573,
-        48.95973
-      ],
-      [
-        8.28394,
-        48.96043
-      ],
-      [
-        8.28251,
-        48.95944
       ]
     ],
     "source": "Stadt Rheinstetten",
@@ -10851,7 +10767,7 @@
     "notes": null,
     "cause": "Telekommunikation",
     "startDate": "2026-10-12",
-    "endDate": "2026-11-27",
+    "endDate": "2026-12-18",
     "point": [
       8.307845,
       48.963519
