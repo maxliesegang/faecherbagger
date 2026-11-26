@@ -876,6 +876,26 @@
     "lastModified": "2026-11-03T23:00:00Z"
   },
   {
+    "id": "2024V7070",
+    "phase": "upcoming",
+    "category": "district-heating",
+    "artRaw": "Fernwärmeversorgung",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Hirschstraße zw. Hirschbrücke u. Mathystraße",
+    "notes": "Abwicklung in mehreren Bauabschnitten",
+    "cause": "Stadtwerke Karlsruhe",
+    "startDate": "2027-01-18",
+    "endDate": "2027-08-31",
+    "point": [
+      8.391058,
+      49.003962
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-05-17T22:00:00Z"
+  },
+  {
     "id": "2024V7318",
     "phase": "upcoming",
     "category": "road-construction",
@@ -2408,12 +2428,12 @@
     ],
     "extentPoints": [
       [
-        8.39423,
-        49.01172
-      ],
-      [
         8.39069,
         49.01112
+      ],
+      [
+        8.39294,
+        49.01157
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -3393,30 +3413,8 @@
     "startDate": "2027-03-01",
     "endDate": "2027-09-30",
     "point": [
-      8.429588,
-      49.010211
-    ],
-    "extentPoints": [
-      [
-        8.42764,
-        49.0108
-      ],
-      [
-        8.42736,
-        49.00925
-      ],
-      [
-        8.42974,
-        49.00908
-      ],
-      [
-        8.43158,
-        49.00977
-      ],
-      [
-        8.43069,
-        49.01123
-      ]
+      8.429498,
+      49.00985
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-23T23:00:00Z"
@@ -3667,13 +3665,13 @@
     "notes": "Höhe Haus Nr. 36, 1-streifige Verkehrsführung mit Lichtsignal",
     "cause": "Gartenbauamt",
     "startDate": "2026-04-13",
-    "endDate": "2027-03-13",
+    "endDate": "2027-03-31",
     "point": [
       8.483427,
       48.946039
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-23T23:00:00Z"
+    "lastModified": "2026-11-25T23:00:00Z"
   },
   {
     "id": "2026V1779",
@@ -5941,7 +5939,7 @@
   },
   {
     "id": "2026V4683",
-    "phase": "active",
+    "phase": "upcoming",
     "category": "special-use",
     "artRaw": "Bauliche Sondernutzung",
     "closure": "full",
@@ -5950,14 +5948,14 @@
     "location": "Isoldestraße zw. Stösserstraße und Niebelungenstraße",
     "notes": null,
     "cause": "Privat",
-    "startDate": "2026-07-31",
-    "endDate": "2026-12-11",
+    "startDate": "2026-12-11",
+    "endDate": "2026-12-12",
     "point": [
       8.366439,
       49.016974
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-09-28T22:00:00Z"
+    "lastModified": "2026-11-25T23:00:00Z"
   },
   {
     "id": "2026V4696",
@@ -11172,26 +11170,6 @@
     "lastModified": "2026-10-01T10:00:00Z"
   },
   {
-    "id": "30236",
-    "phase": "active",
-    "category": "bridge",
-    "artRaw": "Brückenbau",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Baden-Baden",
-    "location": "Hindenburgplatz",
-    "notes": "Ausgewiesene Umleitungen beachten!\n\nSperrung Durchfahrt von Lange Straße in Luisenstraße/Kaiserallee.\n\nZufahrt Richtung Kurhaus über Albrecht-Dürer-Straße, Ausfahrt über den Leopoldsplatz in die Sophienstraße oder über die Werderstraße",
-    "cause": "Tiefbau",
-    "startDate": "2026-08-10",
-    "endDate": "2026-11-25",
-    "point": [
-      8.237029,
-      48.765017
-    ],
-    "source": "Stadt Baden-Baden",
-    "lastModified": "2026-07-31T13:20:13Z"
-  },
-  {
     "id": "30246",
     "phase": "active",
     "category": "power-telecom",
@@ -11230,26 +11208,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-10-16T10:28:09Z"
-  },
-  {
-    "id": "30265",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Mozartweg - Höhe Uhlandweg",
-    "notes": "Gehweg verengt evtl. gesperrt mit Notweg auf der Fahrbahn",
-    "cause": "Telekommunikation",
-    "startDate": "2026-11-11",
-    "endDate": "2026-11-25",
-    "point": [
-      8.603894,
-      49.128743
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-10T06:57:14Z"
   },
   {
     "id": "30268",
@@ -11872,6 +11830,26 @@
     "lastModified": "2026-11-16T09:21:29Z"
   },
   {
+    "id": "40085",
+    "phase": "active",
+    "category": "special-use",
+    "artRaw": "Bauliche Sondernutzung",
+    "closure": "full",
+    "siteType": "stationary",
+    "municipality": "Rheinstetten",
+    "location": "Karlstraße 40",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2026-11-26",
+    "endDate": "2026-11-26",
+    "point": [
+      8.311447,
+      48.976873
+    ],
+    "source": "Stadt Rheinstetten",
+    "lastModified": "2026-11-25T13:33:04Z"
+  },
+  {
     "id": "40086",
     "phase": "active",
     "category": "special-use",
@@ -11993,7 +11971,7 @@
     "notes": "Leitungsverlegung / Vollsperrung / Umleitung ist entsprechend ausgeschildert",
     "cause": "Stadtbauamt",
     "startDate": "2026-08-24",
-    "endDate": "2026-11-30",
+    "endDate": "2027-04-02",
     "point": [
       8.480132,
       49.079324
@@ -12495,7 +12473,7 @@
     "notes": "Vollsperrung",
     "cause": "Bauunternehmen",
     "startDate": "2026-11-02",
-    "endDate": "2026-12-18",
+    "endDate": "2027-05-28",
     "point": [
       8.479467,
       49.090007

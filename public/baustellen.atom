@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-11-25T23:50:13.167Z</updated>
+    <updated>2026-11-26T13:26:15.667Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -11,6 +11,40 @@
     <link rel="alternate" href="https://maxliesegang.github.io/faecherbagger/"/>
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: L623/ Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V1775:2026-11-25T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1775"/>
+        <updated>2026-11-25T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
+Zeitraum: 13.04.2026 – 31.03.2027
+Hinweis: Höhe Haus Nr. 36, 1-streifige Verkehrsführung mit Lichtsignal
+Verantwortlich: Gartenbauamt
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Isoldestraße zw. Stösserstraße und Niebelungenstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V4683:2026-11-25T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4683"/>
+        <updated>2026-11-25T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 11.12.2026 – 12.12.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Karlstraße 40 – Rheinstetten]]></title>
+        <id>faecherbagger:40085:2026-11-25T13:33:04Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40085"/>
+        <updated>2026-11-25T13:33:04.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
+Zeitraum: 26.11.2026 – 26.11.2026
+Verantwortlich: Privat
+Quelle: Stadt Rheinstetten]]></summary>
+        <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Boeckhstraße zw. Putlitzstraße und Südendstraße – Karlsruhe]]></title>
         <id>faecherbagger:2024V3820:2026-11-24T23:00:00Z</id>
@@ -281,18 +315,6 @@ Hinweis: Erneuerung Wasserversorgung und Hausanschlüsse in mehreren Bauabschnit
 Verantwortlich: Stadt Karlsruhe
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: L623/ Talstraße zw. Im Brunnenfeld und Henrie-Arnaud-Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V1775:2026-11-23T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1775"/>
-        <updated>2026-11-23T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 13.04.2026 – 13.03.2027
-Hinweis: Höhe Haus Nr. 36, 1-streifige Verkehrsführung mit Lichtsignal
-Verantwortlich: Gartenbauamt
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Vogelsang – Karlsruhe]]></title>
@@ -2480,18 +2502,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Mozartweg - Höhe Uhlandweg – Bruchsal]]></title>
-        <id>faecherbagger:30265:2026-11-10T06:57:14Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30265"/>
-        <updated>2026-11-10T06:57:14.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Strom/TK-Versorgung · Mit Behinderung
-Zeitraum: 11.11.2026 – 25.11.2026
-Hinweis: Gehweg verengt evtl. gesperrt mit Notweg auf der Fahrbahn
-Verantwortlich: Telekommunikation
-Quelle: Stadt Bruchsal]]></summary>
-        <category label="Strom/TK-Versorgung" term="power-telecom"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Siemensallee zw. B36/ Neureuter Straße und Laubenweg – Karlsruhe]]></title>
         <id>faecherbagger:2026V2504:2026-11-09T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V2504"/>
@@ -3202,7 +3212,7 @@ Quelle: Stadt Stutensee]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40182"/>
         <updated>2026-11-03T05:32:43.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 02.11.2026 – 18.12.2026
+Zeitraum: 02.11.2026 – 28.05.2027
 Hinweis: Vollsperrung
 Verantwortlich: Bauunternehmen
 Quelle: Stadt Stutensee]]></summary>
@@ -4460,17 +4470,6 @@ Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Isoldestraße zw. Stösserstraße und Niebelungenstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V4683:2026-09-28T22:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V4683"/>
-        <updated>2026-09-28T22:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 31.07.2026 – 11.12.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: 76437 Rastatt, Schillerstraße – Rastatt]]></title>
         <id>faecherbagger:40252:2026-09-28T11:25:28Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40252"/>
@@ -5401,22 +5400,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Brückenbau" term="bridge"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Hindenburgplatz – Baden-Baden]]></title>
-        <id>faecherbagger:30236:2026-07-31T13:20:13Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30236"/>
-        <updated>2026-07-31T13:20:13.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Brückenbau · Mit Behinderung
-Zeitraum: 10.08.2026 – 25.11.2026
-Hinweis: Ausgewiesene Umleitungen beachten!
-
-Sperrung Durchfahrt von Lange Straße in Luisenstraße/Kaiserallee.
-
-Zufahrt Richtung Kurhaus über Albrecht-Dürer-Straße, Ausfahrt über den Leopoldsplatz in die Sophienstraße oder über die Werderstraße
-Verantwortlich: Tiefbau
-Quelle: Stadt Baden-Baden]]></summary>
-        <category label="Brückenbau" term="bridge"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Thüringer Straße zw. Esslinger Straße und Böhmerwaldstraße – Karlsruhe]]></title>
         <id>faecherbagger:2026V1012:2026-07-30T22:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V1012"/>
@@ -5657,7 +5640,7 @@ Quelle: Stadt Rheinstetten]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40118"/>
         <updated>2026-07-07T05:30:32.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 24.08.2026 – 30.11.2026
+Zeitraum: 24.08.2026 – 02.04.2027
 Hinweis: Leitungsverlegung / Vollsperrung / Umleitung ist entsprechend ausgeschildert
 Verantwortlich: Stadtbauamt
 Quelle: Stadt Stutensee]]></summary>
@@ -5849,6 +5832,18 @@ Hinweis: Gehwegsperrung
 Verantwortlich: Privat
 Quelle: Stadt Stutensee]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Hirschstraße zw. Hirschbrücke u. Mathystraße – Karlsruhe]]></title>
+        <id>faecherbagger:2024V7070:2026-05-17T22:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V7070"/>
+        <updated>2026-05-17T22:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Fernwärme · Vollsperrung
+Zeitraum: 18.01.2027 – 31.08.2027
+Hinweis: Abwicklung in mehreren Bauabschnitten
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Fernwärme" term="district-heating"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: 76297 Stutensee, Rohrackerweg 21 – Stutensee]]></title>
