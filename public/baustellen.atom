@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maxliesegang.github.io/faecherbagger/</id>
     <title>Fächerbagger – Baustellen in der Region Karlsruhe</title>
-    <updated>2026-11-27T00:08:12.586Z</updated>
+    <updated>2026-11-27T13:22:46.438Z</updated>
     <generator>Fächerbagger</generator>
     <author>
         <name>TechnologieRegion Karlsruhe (TRK) – Mobilitätsportal</name>
@@ -12,15 +12,61 @@
     <link rel="self" href="https://maxliesegang.github.io/faecherbagger/baustellen.atom"/>
     <subtitle>Aktuelle und geplante Straßenbaustellen in der Region Karlsruhe.</subtitle>
     <entry>
+        <title type="html"><![CDATA[Aktuell: Auweg 7, 11, 13, 24 – Bruchsal]]></title>
+        <id>faecherbagger:30289:2026-11-27T07:14:18Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=30289"/>
+        <updated>2026-11-27T07:14:18.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 26.11.2026 – 29.01.2027
+Hinweis: Fahrbahn verengt, Fahrbahnmindestrestbreite 3,50 m
+Verantwortlich: Stadtwerke
+Quelle: Stadt Bruchsal]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Geplant: Ostmarkstraße, Grazer Straße, Tiroler Straße – Karlsruhe]]></title>
-        <id>faecherbagger:2024V4257:2026-11-25T23:00:00Z</id>
+        <id>faecherbagger:2024V4257:2026-11-26T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2024V4257"/>
-        <updated>2026-11-25T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Mit Behinderung
+        <updated>2026-11-26T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Strom/TK-Versorgung · Keine Behinderung
 Zeitraum: 09.12.2026 – 31.01.2027
 Verantwortlich: Telekommunikation
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Strom/TK-Versorgung" term="power-telecom"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Waldstraße zw. Ludwigsplatz und Bürgerstraße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V6069:2026-11-26T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6069"/>
+        <updated>2026-11-26T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Kanalbau · Mit Behinderung
+Zeitraum: 27.10.2026 – 27.11.2026
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kanalbau" term="sewer"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aktuell: Honsellstraße zw. B36/ Starckstraße und Kurzheckweg – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7209:2026-11-26T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7209"/>
+        <updated>2026-11-26T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Aktuell · Gas/Wasser · Mit Behinderung
+Zeitraum: 26.11.2026 – 05.12.2026
+Hinweis: 1-streifige Verkehrsführung, vs 1 Wochen, verkürzte Auffahrt Südtangente in Richtung Landau
+Verantwortlich: Stadtwerke Karlsruhe
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Gas/Wasser" term="gas-water"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Geplant: Bernhardstraße zw. Karl-Wilhelm-Straße und Ludwig-Wilhem-Straße – Karlsruhe]]></title>
+        <id>faecherbagger:2026V7702:2026-11-26T23:00:00Z</id>
+        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7702"/>
+        <updated>2026-11-26T23:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Geplant · Kraneinsatz · Vollsperrung
+Zeitraum: 19.01.2027 – 19.01.2027
+Verantwortlich: Privat
+Quelle: Stadt Karlsruhe]]></summary>
+        <category label="Kraneinsatz" term="crane"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße – Karlsruhe]]></title>
@@ -80,17 +126,6 @@ Hinweis: 1-streifige Verkehrsführung mit Lichtsignal
 Verantwortlich: Forst BW
 Quelle: Stadt Karlsruhe]]></summary>
         <category label="Grünpflege" term="green-maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Aktuell: Karlstraße 40 – Rheinstetten]]></title>
-        <id>faecherbagger:40085:2026-11-25T13:33:04Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40085"/>
-        <updated>2026-11-25T13:33:04.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Vollsperrung
-Zeitraum: 26.11.2026 – 26.11.2026
-Verantwortlich: Privat
-Quelle: Stadt Rheinstetten]]></summary>
-        <category label="Bauliche Sondernutzung" term="special-use"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Aktuell: Boeckhstraße zw. Putlitzstraße und Südendstraße – Karlsruhe]]></title>
@@ -840,17 +875,6 @@ Quelle: Stadt Karlsruhe]]></summary>
         <category label="Gleisbau" term="rail"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Aktuell: Waldstraße zw. Ludwigsplatz und Bürgerstraße – Karlsruhe]]></title>
-        <id>faecherbagger:2026V6069:2026-11-19T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6069"/>
-        <updated>2026-11-19T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Aktuell · Kanalbau · Vollsperrung
-Zeitraum: 27.10.2026 – 27.11.2026
-Verantwortlich: Privat
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Kanalbau" term="sewer"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Aktuell: Glogauer Straße zw. Lauenburger Straße und Kösliner Straße – Karlsruhe]]></title>
         <id>faecherbagger:2026V6779:2026-11-19T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V6779"/>
@@ -1307,18 +1331,6 @@ Quelle: Stadt Karlsruhe]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Geplant: Honsellstraße zw. B36/ Starckstraße und Kurzheckweg – Karlsruhe]]></title>
-        <id>faecherbagger:2026V7209:2026-11-17T23:00:00Z</id>
-        <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7209"/>
-        <updated>2026-11-17T23:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Geplant · Gas/Wasser · Mit Behinderung
-Zeitraum: 30.11.2026 – 05.12.2026
-Hinweis: 1-streifige Verkehrsführung, vs 1 Wochen, verkürzte Auffahrt Südtangente in Richtung Landau
-Verantwortlich: Stadtwerke Karlsruhe
-Quelle: Stadt Karlsruhe]]></summary>
-        <category label="Gas/Wasser" term="gas-water"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Geplant: Honsellstraße zw. B36/ Starckstraße und Kurzheckweg – Karlsruhe]]></title>
         <id>faecherbagger:2026V7419:2026-11-17T23:00:00Z</id>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=2026V7419"/>
         <updated>2026-11-17T23:00:00.000Z</updated>
@@ -1620,7 +1632,7 @@ Quelle: Stadt Bruchsal]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40083"/>
         <updated>2026-11-16T09:21:29.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 09.11.2026 – 30.11.2026
+Zeitraum: 09.11.2026 – 23.12.2026
 Verantwortlich: Privat
 Quelle: Stadt Rheinstetten]]></summary>
         <category label="Bauliche Sondernutzung" term="special-use"/>
@@ -3659,7 +3671,7 @@ Quelle: Stadt Karlsruhe]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40240"/>
         <updated>2026-10-26T07:44:31.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Bauliche Sondernutzung · Mit Behinderung
-Zeitraum: 30.10.2026 – 30.11.2026
+Zeitraum: 30.10.2026 – 14.12.2026
 Hinweis: Fahrbahn verengt.
 Verantwortlich: Privat
 Quelle: Stadt Bruchsal]]></summary>
@@ -3682,15 +3694,12 @@ Quelle: Stadt Karlsruhe]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40239"/>
         <updated>2026-10-24T15:43:43.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Straßenunterhaltung · Vollsperrung
-Zeitraum: 10.11.2026 – 30.11.2026
-Hinweis: Neue Fahrbahndecke in der Württemberger Straße bis an die Baustelle Bahnbrücke.
-Voraussichtlich bis 20.11.2026.
-Ab dem 18.11.2026 bis voraussichtlich 30.11.2026 findet auf der Heidesheimer Seite der Deckeneinbau statt. Die Viktor-Renner-Straße wird zeitweiig nicht erreichbar sein.
-
-Im Anschluss wird noch im schon länger gesperrten Abschnitt mit der Bahnbrücke gearbeitet.
-
-Die Sperrungen können sich witterungsbedingt verschieben oder verlängern.
-Es ist geplant, die Gesamtmaßnahme bis Weihnachten 2026 abzuschließen und die L 618 zwischen Bruchsal und Heidelsheim wieder freizugeben.
+Zeitraum: 10.11.2026 – 11.12.2026
+Hinweis: Neue Fahrbahndecken in der Württemberger Straße, der Markgrafenstraße in Heidselsheim und der L 618 zw. Bruchsal und Heidelsheim infolge des Brückenbaus an der Bahnlinie.
+Das Wetter hat für Verzögerungen gesorgt.
+Es ist geplant, in der Zeit bis zum 11.12.2026 die Heidelsheimer Seite (Markgrabenstraße bis zur B 35) fertigzustellen. Danach die Württemberger Straße.
+Die L 618 könnte dann bis Weihnachten für den Verkehr geöffent werden.
+Dies hängt aber stark von der Witterung ab.
 Verantwortlich: Fachgebiet Tiefbau
 Quelle: Stadt Bruchsal]]></summary>
         <category label="Straßenunterhaltung" term="road-maintenance"/>
@@ -6284,10 +6293,12 @@ Quelle: Stadt Bruchsal]]></summary>
         <link href="https://maxliesegang.github.io/faecherbagger/?baustelle=40082"/>
         <updated>2025-06-13T15:57:57.000Z</updated>
         <summary type="html"><![CDATA[Aktuell · Brückenbau · Keine Behinderung
-Zeitraum: 30.06.2025 – 30.11.2026
+Zeitraum: 30.06.2025 – 23.12.2026
 Hinweis: Die Bahnbrücke muss erneuert werden. Aufgrund der Lage muss sie abgebrochen und vor Ort zusammengebaut werden, was eine lange Sperrdauer zur Folge hat.
 
 Die Sperrung betrifft Fußgänger, Radfahrer und den Kfz-Verkehr. Umleitungen sind ausgeschildert.
+
+Die Arbeiten sollten bis Weihnachten beendet werden, alls die Witterung dies zulässt.
 
 Bauherr ist das Regierungspräsidium Karlsruhe
 Verantwortlich: Land Baden - Württemberg

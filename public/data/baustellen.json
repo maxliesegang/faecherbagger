@@ -568,7 +568,7 @@
     "phase": "upcoming",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Ostmarkstraße, Grazer Straße, Tiroler Straße",
@@ -599,7 +599,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-25T23:00:00Z"
+    "lastModified": "2026-11-26T23:00:00Z"
   },
   {
     "id": "2024V4663",
@@ -2461,8 +2461,8 @@
     "startDate": "2026-11-17",
     "endDate": "2027-01-10",
     "point": [
-      8.393901,
-      49.01175
+      8.392973,
+      49.011561
     ],
     "extentPoints": [
       [
@@ -7152,7 +7152,7 @@
     "phase": "active",
     "category": "sewer",
     "artRaw": "Kanalbau",
-    "closure": "full",
+    "closure": "obstruction",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Waldstraße zw. Ludwigsplatz und Bürgerstraße",
@@ -7165,7 +7165,7 @@
       49.008728
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-19T23:00:00Z"
+    "lastModified": "2026-11-26T23:00:00Z"
   },
   {
     "id": "2026V6094",
@@ -8547,7 +8547,7 @@
   },
   {
     "id": "2026V7209",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "gas-water",
     "artRaw": "Gas bzw. Wasserversorgung",
     "closure": "obstruction",
@@ -8556,14 +8556,14 @@
     "location": "Honsellstraße zw. B36/ Starckstraße und Kurzheckweg",
     "notes": "1-streifige Verkehrsführung, vs 1 Wochen, verkürzte Auffahrt Südtangente in Richtung Landau",
     "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-30",
+    "startDate": "2026-11-26",
     "endDate": "2026-12-05",
     "point": [
       8.350377,
       49.014478
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-17T23:00:00Z"
+    "lastModified": "2026-11-26T23:00:00Z"
   },
   {
     "id": "2026V7243",
@@ -9924,6 +9924,26 @@
     "lastModified": "2026-11-24T23:00:00Z"
   },
   {
+    "id": "2026V7702",
+    "phase": "upcoming",
+    "category": "crane",
+    "artRaw": "Kraneinsatz",
+    "closure": "full",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Bernhardstraße zw. Karl-Wilhelm-Straße und Ludwig-Wilhem-Straße",
+    "notes": null,
+    "cause": "Privat",
+    "startDate": "2027-01-19",
+    "endDate": "2027-01-19",
+    "point": [
+      8.42061,
+      49.010045
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-26T23:00:00Z"
+  },
+  {
     "id": "30015",
     "phase": "active",
     "category": "power-telecom",
@@ -9942,20 +9962,20 @@
     ],
     "extentPoints": [
       [
-        8.29453,
-        48.96307
-      ],
-      [
-        8.29545,
-        48.96184
-      ],
-      [
         8.29301,
         48.96154
       ],
       [
         8.29174,
         48.9603
+      ],
+      [
+        8.29453,
+        48.96307
+      ],
+      [
+        8.29545,
+        48.96184
       ],
       [
         8.29933,
@@ -11310,6 +11330,36 @@
     "lastModified": "2026-11-24T07:34:50Z"
   },
   {
+    "id": "30289",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Auweg 7, 11, 13, 24",
+    "notes": "Fahrbahn verengt, Fahrbahnmindestrestbreite 3,50 m",
+    "cause": "Stadtwerke",
+    "startDate": "2026-11-26",
+    "endDate": "2027-01-29",
+    "point": [
+      8.610928,
+      49.122453
+    ],
+    "extentPoints": [
+      [
+        8.60909,
+        49.12291
+      ],
+      [
+        8.61342,
+        49.12176
+      ]
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-27T07:14:18Z"
+  },
+  {
     "id": "30347",
     "phase": "active",
     "category": "sewer",
@@ -11768,23 +11818,13 @@
     "siteType": null,
     "municipality": "Bruchsal",
     "location": "L 618 zwischen Bruchsal und Heidelsheim",
-    "notes": "Die Bahnbrücke muss erneuert werden. Aufgrund der Lage muss sie abgebrochen und vor Ort zusammengebaut werden, was eine lange Sperrdauer zur Folge hat.\n\nDie Sperrung betrifft Fußgänger, Radfahrer und den Kfz-Verkehr. Umleitungen sind ausgeschildert.\n\nBauherr ist das Regierungspräsidium Karlsruhe",
+    "notes": "Die Bahnbrücke muss erneuert werden. Aufgrund der Lage muss sie abgebrochen und vor Ort zusammengebaut werden, was eine lange Sperrdauer zur Folge hat.\n\nDie Sperrung betrifft Fußgänger, Radfahrer und den Kfz-Verkehr. Umleitungen sind ausgeschildert.\n\nDie Arbeiten sollten bis Weihnachten beendet werden, alls die Witterung dies zulässt.\n\nBauherr ist das Regierungspräsidium Karlsruhe",
     "cause": "Land Baden - Württemberg",
     "startDate": "2025-06-30",
-    "endDate": "2026-11-30",
+    "endDate": "2026-12-23",
     "point": [
-      8.468992,
-      49.039458
-    ],
-    "extentPoints": [
-      [
-        8.63016,
-        49.11307
-      ],
-      [
-        8.30739,
-        48.96622
-      ]
+      8.630818,
+      49.11261
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2025-06-13T15:57:57Z"
@@ -11801,33 +11841,13 @@
     "notes": null,
     "cause": "Privat",
     "startDate": "2026-11-09",
-    "endDate": "2026-11-30",
+    "endDate": "2026-12-23",
     "point": [
       8.288188,
       48.957893
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-11-16T09:21:29Z"
-  },
-  {
-    "id": "40085",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Karlstraße 40",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-26",
-    "endDate": "2026-11-26",
-    "point": [
-      8.311447,
-      48.976873
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-11-25T13:33:04Z"
   },
   {
     "id": "40086",
@@ -12794,10 +12814,10 @@
     "siteType": null,
     "municipality": "Bruchsal",
     "location": "L 618, Württemberger Straße und Markgrafenstraße",
-    "notes": "Neue Fahrbahndecke in der Württemberger Straße bis an die Baustelle Bahnbrücke.\nVoraussichtlich bis 20.11.2026.\nAb dem 18.11.2026 bis voraussichtlich 30.11.2026 findet auf der Heidesheimer Seite der Deckeneinbau statt. Die Viktor-Renner-Straße wird zeitweiig nicht erreichbar sein.\n\nIm Anschluss wird noch im schon länger gesperrten Abschnitt mit der Bahnbrücke gearbeitet.\n\nDie Sperrungen können sich witterungsbedingt verschieben oder verlängern.\nEs ist geplant, die Gesamtmaßnahme bis Weihnachten 2026 abzuschließen und die L 618 zwischen Bruchsal und Heidelsheim wieder freizugeben.",
+    "notes": "Neue Fahrbahndecken in der Württemberger Straße, der Markgrafenstraße in Heidselsheim und der L 618 zw. Bruchsal und Heidelsheim infolge des Brückenbaus an der Bahnlinie.\nDas Wetter hat für Verzögerungen gesorgt.\nEs ist geplant, in der Zeit bis zum 11.12.2026 die Heidelsheimer Seite (Markgrabenstraße bis zur B 35) fertigzustellen. Danach die Württemberger Straße.\nDie L 618 könnte dann bis Weihnachten für den Verkehr geöffent werden.\nDies hängt aber stark von der Witterung ab.",
     "cause": "Fachgebiet Tiefbau",
     "startDate": "2026-11-10",
-    "endDate": "2026-11-30",
+    "endDate": "2026-12-11",
     "point": [
       8.624017,
       49.114908
@@ -12879,7 +12899,7 @@
     "notes": "Fahrbahn verengt.",
     "cause": "Privat",
     "startDate": "2026-10-30",
-    "endDate": "2026-11-30",
+    "endDate": "2026-12-14",
     "point": [
       8.644202,
       49.103009
