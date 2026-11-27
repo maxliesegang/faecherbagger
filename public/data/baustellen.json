@@ -564,6 +564,44 @@
     "lastModified": "2026-11-12T23:00:00Z"
   },
   {
+    "id": "2024V4257",
+    "phase": "upcoming",
+    "category": "power-telecom",
+    "artRaw": "Strom bzw. TK-Versorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Karlsruhe",
+    "location": "Ostmarkstraße, Grazer Straße, Tiroler Straße",
+    "notes": null,
+    "cause": "Telekommunikation",
+    "startDate": "2026-12-09",
+    "endDate": "2027-01-31",
+    "point": [
+      8.455186,
+      48.990405
+    ],
+    "extentPoints": [
+      [
+        8.45492,
+        48.9901
+      ],
+      [
+        8.45331,
+        48.99099
+      ],
+      [
+        8.45547,
+        48.99143
+      ],
+      [
+        8.45699,
+        48.98978
+      ]
+    ],
+    "source": "Stadt Karlsruhe",
+    "lastModified": "2026-11-25T23:00:00Z"
+  },
+  {
     "id": "2024V4663",
     "phase": "active",
     "category": "power-telecom",
@@ -646,14 +684,14 @@
     "phase": "active",
     "category": "power-telecom",
     "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
+    "closure": "none",
     "siteType": null,
     "municipality": "Karlsruhe",
     "location": "Tiroler Straße, Voralberger Straße, Wasgaustraße, Memeler Straße",
     "notes": "Arbeitsstelle im Geh-, und Radwegbereich, Straßenquerungen = lokale Engstelle wechselseitig, Abwicklung in mehreren Bauabschnitten",
     "cause": "Telekommunikation",
     "startDate": "2026-10-26",
-    "endDate": "2026-11-30",
+    "endDate": "2026-12-19",
     "point": [
       8.45462,
       48.989214
@@ -669,7 +707,7 @@
       ]
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-10-22T22:00:00Z"
+    "lastModified": "2026-11-25T23:00:00Z"
   },
   {
     "id": "2024V5135",
@@ -4641,13 +4679,13 @@
     "notes": "Höhe Haus Nr 68",
     "cause": "Stadtwerke Karlsruhe",
     "startDate": "2026-07-15",
-    "endDate": "2026-11-27",
+    "endDate": "2026-11-30",
     "point": [
       8.409222,
       49.001515
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-08T23:00:00Z"
+    "lastModified": "2026-11-25T23:00:00Z"
   },
   {
     "id": "2026V3197",
@@ -8378,14 +8416,14 @@
     "location": "Jean-Ritzert-Straße zw. Sepp-Heberger-Weg und Rittnertstraße",
     "notes": "1-streifige Verkehrsführung mit Lichtsignal",
     "cause": "Forst BW",
-    "startDate": "2026-11-30",
-    "endDate": "2026-12-04",
+    "startDate": "2026-12-01",
+    "endDate": "2026-12-03",
     "point": [
       8.488156,
       48.996404
     ],
     "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-08T23:00:00Z"
+    "lastModified": "2026-11-25T23:00:00Z"
   },
   {
     "id": "2026V7152",
@@ -8446,44 +8484,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-09T23:00:00Z"
-  },
-  {
-    "id": "2026V7177",
-    "phase": "active",
-    "category": "soil-survey",
-    "artRaw": "Baugrunduntersuchung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Boeckhstraße zw. Putlitzstraße und Südendstraße",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe",
-    "startDate": "2026-11-26",
-    "endDate": "2026-11-26",
-    "point": [
-      8.388452,
-      49.000943
-    ],
-    "extentPoints": [
-      [
-        8.38909,
-        49.00317
-      ],
-      [
-        8.38891,
-        49.00167
-      ],
-      [
-        8.38804,
-        49.0002
-      ],
-      [
-        8.38786,
-        48.9987
-      ]
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-22T23:00:00Z"
   },
   {
     "id": "2026V7184",
@@ -9487,7 +9487,7 @@
   },
   {
     "id": "2026V7509",
-    "phase": "upcoming",
+    "phase": "active",
     "category": "green-maintenance",
     "artRaw": "Grünpflegearbeiten",
     "closure": "obstruction",
@@ -9830,26 +9830,6 @@
     "lastModified": "2026-11-23T23:00:00Z"
   },
   {
-    "id": "2026V7580",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Eisenlohrstraße zw. Kriegsstraße und Bunsenstraße",
-    "notes": "Wender über Parkplätze",
-    "cause": "Privat",
-    "startDate": "2026-11-25",
-    "endDate": "2026-11-26",
-    "point": [
-      8.374136,
-      49.004646
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-23T23:00:00Z"
-  },
-  {
     "id": "2026V7589",
     "phase": "upcoming",
     "category": "power-telecom",
@@ -9882,26 +9862,6 @@
     ],
     "source": "Stadt Karlsruhe",
     "lastModified": "2026-11-24T23:00:00Z"
-  },
-  {
-    "id": "2026V7611",
-    "phase": "active",
-    "category": "crane",
-    "artRaw": "Kraneinsatz",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Karlsruhe",
-    "location": "Eggensteiner Straße zw. Saarlandstraße und Dreikönigstraße",
-    "notes": null,
-    "cause": "Privat",
-    "startDate": "2026-11-26",
-    "endDate": "2026-11-26",
-    "point": [
-      8.336872,
-      49.032942
-    ],
-    "source": "Stadt Karlsruhe",
-    "lastModified": "2026-11-23T23:00:00Z"
   },
   {
     "id": "2026V7615",
@@ -9982,20 +9942,20 @@
     ],
     "extentPoints": [
       [
-        8.29301,
-        48.96154
-      ],
-      [
-        8.29174,
-        48.9603
-      ],
-      [
         8.29453,
         48.96307
       ],
       [
         8.29545,
         48.96184
+      ],
+      [
+        8.29301,
+        48.96154
+      ],
+      [
+        8.29174,
+        48.9603
       ],
       [
         8.29933,
@@ -11328,6 +11288,26 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-19T11:08:09Z"
+  },
+  {
+    "id": "30285",
+    "phase": "active",
+    "category": "gas-water",
+    "artRaw": "Gas bzw. Wasserversorgung",
+    "closure": "obstruction",
+    "siteType": null,
+    "municipality": "Bruchsal",
+    "location": "Gustav-Laforsch-Straße 53",
+    "notes": "PKW- und Fußgängerverkehr frei, Straße verengt",
+    "cause": "Privat",
+    "startDate": "2026-11-24",
+    "endDate": "2026-12-04",
+    "point": [
+      8.528309,
+      49.099746
+    ],
+    "source": "Stadt Bruchsal",
+    "lastModified": "2026-11-24T07:34:50Z"
   },
   {
     "id": "30347",
