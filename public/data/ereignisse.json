@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T23:46:56.628Z",
+  "generatedAt": "2026-11-28T12:37:08.114Z",
   "events": [
     {
       "kind": "changed",
@@ -1757,51 +1757,6 @@
     },
     {
       "kind": "new",
-      "signature": "new:30070",
-      "announcedOn": "2026-11-24",
-      "siteId": "30070",
-      "point": [
-        8.300881,
-        48.964601
-      ],
-      "closure": "full",
-      "startDate": "2026-07-20",
-      "endDate": "2026-11-27",
-      "municipality": "Rheinstetten",
-      "location": "Rappenwörthstraße 34a Ecke Lilienstraße"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30107",
-      "announcedOn": "2026-11-24",
-      "siteId": "30107",
-      "point": [
-        8.293836,
-        48.960701
-      ],
-      "closure": "full",
-      "startDate": "2026-11-17",
-      "endDate": "2026-11-27",
-      "municipality": "Rheinstetten",
-      "location": "Kapellenstr. 3"
-    },
-    {
-      "kind": "new",
-      "signature": "new:30117",
-      "announcedOn": "2026-11-24",
-      "siteId": "30117",
-      "point": [
-        8.313026,
-        48.975029
-      ],
-      "closure": "full",
-      "startDate": "2026-11-10",
-      "endDate": "2026-11-27",
-      "municipality": "Rheinstetten",
-      "location": "Hauptstraße 43"
-    },
-    {
-      "kind": "new",
       "signature": "new:30121",
       "announcedOn": "2026-11-24",
       "siteId": "30121",
@@ -1944,21 +1899,6 @@
       "endDate": "2026-11-30",
       "municipality": "Bruchsal",
       "location": "Schwabenstraße 6"
-    },
-    {
-      "kind": "new",
-      "signature": "new:40246",
-      "announcedOn": "2026-11-20",
-      "siteId": "40246",
-      "point": [
-        8.644463,
-        49.085286
-      ],
-      "closure": "obstruction",
-      "startDate": "2026-11-06",
-      "endDate": "2026-11-27",
-      "municipality": "Bruchsal",
-      "location": "Kurpfalzstraße 31"
     },
     {
       "kind": "new",

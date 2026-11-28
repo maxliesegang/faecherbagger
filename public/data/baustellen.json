@@ -2354,12 +2354,12 @@
     ],
     "extentPoints": [
       [
-        8.39423,
-        49.01172
-      ],
-      [
         8.39069,
         49.01112
+      ],
+      [
+        8.39294,
+        49.01157
       ]
     ],
     "source": "Stadt Karlsruhe",
@@ -10030,26 +10030,6 @@
     "lastModified": "2026-07-13T07:27:31Z"
   },
   {
-    "id": "30070",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Rappenwörthstraße 34a Ecke Lilienstraße",
-    "notes": null,
-    "cause": "Stadtbauamt",
-    "startDate": "2026-07-20",
-    "endDate": "2026-11-27",
-    "point": [
-      8.300881,
-      48.964601
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-07-08T08:33:22Z"
-  },
-  {
     "id": "30075",
     "phase": "active",
     "category": "special-use",
@@ -10384,26 +10364,6 @@
     "lastModified": "2026-10-08T11:13:51Z"
   },
   {
-    "id": "30107",
-    "phase": "active",
-    "category": "gas-water",
-    "artRaw": "Gas bzw. Wasserversorgung",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Kapellenstr. 3",
-    "notes": null,
-    "cause": "Stadtwerke Karlsruhe (Rheinstetten)",
-    "startDate": "2026-11-17",
-    "endDate": "2026-11-27",
-    "point": [
-      8.293836,
-      48.960701
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-10-13T09:53:53Z"
-  },
-  {
     "id": "30109",
     "phase": "active",
     "category": "power-telecom",
@@ -10530,26 +10490,6 @@
     ],
     "source": "Stadt Rheinstetten",
     "lastModified": "2026-10-27T09:05:17Z"
-  },
-  {
-    "id": "30117",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": "stationary",
-    "municipality": "Rheinstetten",
-    "location": "Hauptstraße 43",
-    "notes": null,
-    "cause": "Stadtbauamt",
-    "startDate": "2026-11-10",
-    "endDate": "2026-11-27",
-    "point": [
-      8.313026,
-      48.975029
-    ],
-    "source": "Stadt Rheinstetten",
-    "lastModified": "2026-11-05T07:55:46Z"
   },
   {
     "id": "30121",
@@ -10776,26 +10716,6 @@
     "lastModified": "2026-10-01T10:00:00Z"
   },
   {
-    "id": "30246",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Justus-Knecht-Straße",
-    "notes": "Behinderungen durch Kabelarbeiten an der Einmündung Prinz-Wilhelm-Straße\n\nDauer voraussichtlich eine Woche im Zeitraum",
-    "cause": "Telekommunikation",
-    "startDate": "2026-11-02",
-    "endDate": "2026-11-27",
-    "point": [
-      8.588145,
-      49.120297
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-10-15T06:01:51Z"
-  },
-  {
     "id": "30249",
     "phase": "active",
     "category": "power-telecom",
@@ -10984,26 +10904,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-27T07:14:18Z"
-  },
-  {
-    "id": "30347",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Gehweg beim Damianstor gesperrt",
-    "notes": "Wegen Restarbeiten am Kanal ist vor dem Bären noch der Gehweg gesperrt. Fußgänger können am Damianstor den Durchgang auf der anderen Straßenseite nutzen.",
-    "cause": "Eigenbetrieb Umwelttechnik",
-    "startDate": "2026-02-02",
-    "endDate": "2026-11-27",
-    "point": [
-      8.600178,
-      49.129432
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2025-11-18T06:16:12Z"
   },
   {
     "id": "40009",
@@ -11938,26 +11838,6 @@
     "lastModified": "2026-10-02T06:11:02Z"
   },
   {
-    "id": "40165",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "none",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Goethestraße 37",
-    "notes": "Gehwegsperrung sowie Einrichtung einer Halteverbotszone",
-    "cause": "Privat",
-    "startDate": "2026-10-12",
-    "endDate": "2026-11-27",
-    "point": [
-      8.508052,
-      49.108989
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-10-05T06:40:38Z"
-  },
-  {
     "id": "40166",
     "phase": "active",
     "category": "special-use",
@@ -12026,26 +11906,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-09-04T07:39:10Z"
-  },
-  {
-    "id": "40177",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Stutensee",
-    "location": "76297 Stutensee, Wallonenstraße 30",
-    "notes": "Halbseitige Straßensperrung sowie Gehwegsperrung",
-    "cause": "Bauunternehmen",
-    "startDate": "2026-10-27",
-    "endDate": "2026-11-27",
-    "point": [
-      8.480593,
-      49.10607
-    ],
-    "source": "Stadt Stutensee",
-    "lastModified": "2026-10-27T08:45:49Z"
   },
   {
     "id": "40179",
@@ -12220,46 +12080,6 @@
     ],
     "source": "Stadt Stutensee",
     "lastModified": "2026-11-18T07:05:44Z"
-  },
-  {
-    "id": "40193",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Brunnenstraße",
-    "notes": "Sanierung Kanal mit Inlinertechnik.\nFür die Fahrzeuge muss zweitweilig gesperrt werden:\n1. Phase vom 21. bis 23.09.26 - 1 bis 2 Tage Dauer\n2. Phase vom 16. bis 20.11.26 - 2 bis 3 Tage Dauer\nFalls es stark regnet, verschieben sich die Arbeiten.",
-    "cause": "Eigenbetrieb Umwelttechnik",
-    "startDate": "2026-09-21",
-    "endDate": "2026-11-27",
-    "point": [
-      8.588112,
-      49.07646
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-14T09:10:41Z"
-  },
-  {
-    "id": "40205",
-    "phase": "active",
-    "category": "sewer",
-    "artRaw": "Kanalbau",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kreisel Ernst-Blickle-Straße / Schnabel-Henning-Straße / Paul-Gerhardt-Straße",
-    "notes": "Behinderungen durch eine Inlinersanierung an der Kanalisation.\nDer Innenkreisel ist für 1-2 Tag verengt, ebenso die Zufahrt aus Richtung Edeka.\nEs kommt zu keinen Sperrungen für Kfz oder auf den Geh- und Radwegen.",
-    "cause": "Eigenbetrieb Umwelttechnik",
-    "startDate": "2026-11-16",
-    "endDate": "2026-11-27",
-    "point": [
-      8.579113,
-      49.119869
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-09-23T06:53:51Z"
   },
   {
     "id": "40206",
@@ -12604,26 +12424,6 @@
     "lastModified": "2026-10-30T06:39:30Z"
   },
   {
-    "id": "40246",
-    "phase": "active",
-    "category": "special-use",
-    "artRaw": "Bauliche Sondernutzung",
-    "closure": "obstruction",
-    "siteType": null,
-    "municipality": "Bruchsal",
-    "location": "Kurpfalzstraße 31",
-    "notes": "Gehweg verengt.",
-    "cause": "Privat",
-    "startDate": "2026-11-06",
-    "endDate": "2026-11-27",
-    "point": [
-      8.644463,
-      49.085286
-    ],
-    "source": "Stadt Bruchsal",
-    "lastModified": "2026-11-04T08:52:26Z"
-  },
-  {
     "id": "40247",
     "phase": "active",
     "category": "special-use",
@@ -12642,48 +12442,6 @@
     ],
     "source": "Stadt Bruchsal",
     "lastModified": "2026-11-09T08:54:52Z"
-  },
-  {
-    "id": "40248",
-    "phase": "active",
-    "category": "power-telecom",
-    "artRaw": "Strom bzw. TK-Versorgung",
-    "closure": "full",
-    "siteType": null,
-    "municipality": "Rastatt",
-    "location": "76437 Rastatt, Siemensstraße",
-    "notes": null,
-    "cause": "star.EW",
-    "startDate": "2026-09-18",
-    "endDate": "2026-11-27",
-    "point": [
-      8.187214,
-      48.862211
-    ],
-    "extentPoints": [
-      [
-        8.1893,
-        48.86518
-      ],
-      [
-        8.18819,
-        48.86365
-      ],
-      [
-        8.18733,
-        48.86243
-      ],
-      [
-        8.18622,
-        48.8609
-      ],
-      [
-        8.18512,
-        48.85938
-      ]
-    ],
-    "source": "Stadt Rastatt",
-    "lastModified": "2026-09-23T12:45:18Z"
   },
   {
     "id": "40251",
